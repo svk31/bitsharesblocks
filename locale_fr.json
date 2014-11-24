@@ -1,0 +1,366 @@
+{
+	"nav": {
+		"home":"Accueil",
+		"blocks": "Blocs",
+		"delegates": "Délégués",
+		"accounts": "Comptes",
+		"assets": "Actifs",
+		"charts": "Tracés",
+		"general": "Général",
+		"supply": "BTS Quantité et Frais",
+		"btsgenesis": "BTS Bloc d'origine",
+		"btsxgenesis": "BTSX Bloc d'origine",
+		"about": "À propos du site"
+	},
+	"alerts": {
+		"del1": "J'ai crée un nouveau délégué, veuillez voter plutôt pour ",
+		"del2": "",
+		"del3": "Plus d'info",
+		"del4": "ici"
+	},
+	"footer": {
+		"vote": "Veuillez voter pour mon délégué",
+		"donate": "Donations",
+		"info": "Info/MAJ",
+		"thread": "BitsharesTalk Sujet",
+		"version": "Vérsion du client"
+	},
+	"home": {
+		"history":"BTS EVOLUTION DU PRIX DERNIERS 14 JOURS",
+		"price":"Prix",
+		"MA":"Moyenne Mobile 30 jours",
+		"health": {
+			"title": "ÉTAT DU RÉSEAU",
+			"alert": "Niveau d'alerte:",
+			"particip": "Taux de participation des délégués:",
+			"confirm": "Temps de confirmation:",
+			"forks": "Branchements derniers 24h:",
+			"forkBlock": "Hauteur de bloc du dernier branchement:",
+			"signee": "Signataire du branchement:",
+			"latency": "Latence du délégué:"
+		},
+		"delegate": {
+			"title": "STATS SUR LES DÉLÉGUÉS",
+			"reg": "Délégués inscris",
+			"votes": "Délégués avec des votes",
+			"payReg": "Frais d'inscription max",
+			"new24": "Nouveaux délégués derniers 24h",
+			"new7d": "Nouveaux délégués derniers 7j",
+			"pay": "Salaire maximal"
+		},
+		"blockchain": {
+			"title": "STATS DE LA BLOCKCHAIN ",
+			"supply": "Réserve disponible",
+			"unclaimed": "Non réclamé",
+			"collat": "Fixé en nantissement",
+			"change" :"24h changement de réserve",
+			"current": "Bloc courant",
+			"trx": "Blocs avec transactions",
+			"missed": "Total de blocs manqués"
+		},
+		"asset": {
+			"title": "STATS DES ACTIFS",
+			"number": "Nombre d'actifs",
+			"user": "Actifs d'utilisateurs",
+			"shortReg": "Inscription nom court",
+			"longReg": "Inscription nom long",
+			"new7d": "Nouvels actifs derniers 7j",
+			"new30d": "Nouvels actifs derniers 30j",
+			"trx": "Transactions d'actifs"
+		},
+		"user": {
+			"title": "STATS DES UTILISATEURS",
+			"number": "Nombre de comptes",
+			"sub": "Nombre de sous-comptes",
+			"new24": "Nouveaux comptes derniers 24h",
+			"new7d": "Nouveaux comptes derniers 7j"
+		},
+		"missed": {
+			"title": "DERNIER 10 BLOCS RATÉS"
+		},
+		"blocks": {
+			"title": "DERNIER 10 BLOCS"
+		},
+		"newUsers": {
+			"title": "NOUVELLES UTILISATEURS"
+		}
+	},
+	"blocks": {
+		"search1": "chercher une hauteur de bloc ou une transaction par id",
+		"search2": "afficher une hauteur de bloc specifique",
+		"current": "COURANT",
+		"higher": "PLUS HAUT",
+		"lower": "PLUS BAS",
+		"first": "PREMIER",
+		"last": "DERNIER",
+		"blocks": "BLOCS",
+		"showTrx": "Afficher seulement les blocs contenant des transactions",
+		"blockNum": "Numéro de bloc",
+		"timestamp": "Date",
+		"delegate": "Délégué",
+		"trxCount": "Nombre de transactions",
+		"trxValue": "Valeur de la transaction",
+		"fees": "Frais"
+	},
+	"block": {
+		"block": "Bloc",
+		"previous": "Bloc précédent",
+		"next": "Prochain bloc",
+		"details": {
+			"title": "DETAILS DU BLOC",
+			"signee": "Délégué signataire",
+			"size": "Taille du bloc",
+			"latency": "Latence",
+			"time": "Temps de traitement",
+			"hash1": "Hash précédent",
+			"hash2": "Prochain hash secret",
+			"hash3": "Hash secret précédent"
+		},
+		"trx": {
+			"title": "TRANSACTION",
+			"type": "Type d'opération",
+			"id": "ID de la transaction",
+			"fee": "Frais de la transaction",
+			"public": "Données publics",
+			"delegate": "Nom du délégué",
+			"feedUpdates": "Mise à jour de flux",
+			"feedPrice": "Prix du flux",
+			"votes": "Votes dans la transaction",
+			"price": "Ratio de prix",
+			"interest": "Intéret",
+			"priceLimit": "Limite de prix",
+			"collateral": "Collateral",
+			"assetName": "Nom de l'actif",
+			"assetAmount": "Quantité de l'actif",
+			"base": "Quantité de l'actif de base",
+			"amount": "Quantité",
+			"noVotes": "Aucun vote dans cette transaction",
+			"account": "Compte",
+			"message": "Message",
+			"key": "Cléf du proprietaire",
+			"asset": "Actif",
+			"description": "Description de l'actif",
+			"issuer": "Compte du créateur",
+			"for": "Pour délégué"
+		}
+	},
+	"delegates": {
+		"search": "Chercher un délégué",
+		"title": "INFO SUR LES DÉLÉGUÉS",
+		"standby": "Inclure les délégués en standby ",
+		"rank": "Rang",
+		"change24": "Changement 24h",
+		"change7": "Changement 7j",
+		"votes": "Nombre de votes",
+		"produced": "Produit",
+		"missed": "Raté",
+		"rate": "Taux de pay",
+		"latency": "Latence moyen",
+		"feeds": "Flux actifs",
+		"feedFreq": "Frequence des flux",
+		"rel": "Fiabilité",
+		"version": "Vérsion"
+	},
+	"delegate": {
+		"prevRank": "Rang précedent",
+		"nextRank": "Prochain rang",
+		"votesChart": "EVOLUTION DES VOTES",
+		"sumVotes": "Somme des votes",
+		"payChart": {
+			"title": "GAINS NET",
+			"name" : "Gains cumulés"
+		},
+		"rank": {
+			"title": "RANG ET VOTES",
+			"current": "Rang actuel",
+			"dayChange": "Changement de rang dernier 24h",
+			"weekChange": "Changement de rang dernier 7j",
+			"votes": "Nombre de votes pour",
+			"percentVotes": "Nombre de votes pour en pourcent"
+		},
+		"data": {
+			"title": "DONNÉES PUBLICS",
+			"description": "Description",
+			"proposal": "Présentation du délégué",
+			"location": "Pays hôte",
+			"handle": "BitsharesTalk nom d'utilisateur",
+			"ann": "Communiqué",
+			"role": "Rôle",
+			"website": "Site web",
+			"role_0": "Développement Core",
+			"role_1": "Marketing Core",
+			"role_2": "Développement indépendent",
+			"role_3": "Marketing indépendent",
+			"role_4": "Robinet",
+			"role_5": "Infrastructure",
+			"role_6": "Charité",
+			"role_7": "Support technique",
+			"role_8": "Lois/Régulations",
+			"role_9": "Media/Rélations Publics"
+		},
+		"feeds": {
+			"title": "FLUX DE PRIX",
+			"total": "Nombre total de flux",
+			"active": "Flux actifs",
+			"show": "Afficher les flux",
+			"valid": "Afficher uniquement les flux valides"
+		},
+		"info": {
+			"title": "INFO SUR LE DÉLÉGUÉ",
+			"earnings": "Gains totaux",
+			"withdrawn": "Gains retirés",
+			"fees": "Frais payés"
+
+		},
+		"prod": {
+			"title": "PRODUCTION DE BLOCS",
+			"prod": "Blocs produits",
+			"missed": "Blocs manqués",
+			"last": "Dernier bloc produit",
+			"lat50": "Latence moyen dernier 50 blocs",
+			"lat100": "Latence moyen dernier 100 blocs",
+			"lat200": "Latence moyen dernier 200 blocs"
+		},
+		"votes": {
+			"title": "HISTORIQUE DES VOTES",
+			"total": "VOTES TOTALS",
+			"net": "Votes nets >= 10000"
+		}
+	},
+	"accounts": {
+		"title": "COMPTES",
+		"search1": "Trouver un compte",
+		"search2": "allez à un ID spécifique",
+		"recent": "DERNIERS",
+		"newer": "PLUS RECÉNT",
+		"older": "PLUS ANCIEN",
+		"oldest": "PREMIERS",
+		"name": "Nom du compte",
+		"id": "ID",
+		"reg": "Date d'inscription",
+		"update": "Dernier mise à jour"
+	},
+	"account": {
+		"previous": "Compte précédent",
+		"next": "Prochain compte",
+		"title1": "INFO DU COMPTE",
+		"id": "ID du compte",
+		"owner": "Proprietaire",
+		"title2": "HISTORIQUE DES CLEFS ACTIFS",
+		"date": "Date",
+		"key": "Cléfs",
+		"website": "Site web"
+	},
+	"assets": {
+		"plot": {
+			"title": "TOUTES LES TRANSACTIONS D'ACTIFS SUR LES DERNIERS 14 JOURS",
+			"type1": "Vente",
+			"type2": "Achat",
+			"type3": "Vente à découvert",
+			"type4": "Couverture"
+		},
+		"market": {
+			"title": "ACTIFS DU MARCHÉ",
+			"th1": "Symbol",
+			"th2": "Profondeur achat",
+			"th3": "Profondeur vente",
+			"th4": "Flux valides",
+			"th5": "Flux moyen",
+			"th6": "Réserve",
+			"th7": "Volume 24h",
+			"th8": "Capitalisation"
+		},
+		"user": {
+			"title": "ACTIFS DES UTILISATEURS",
+			"th1": "ID de l'actif",
+			"th4": "Réserve courant",
+			"th5": "Réserve maximal"
+		}
+	},
+	"asset": {
+		"orderbook": "CARNET D'ORDRES",
+		"bids": "ACHATS",
+		"asks": "VENTES",
+		"shorts": "VENTES A DÉCOUVERT",
+		"priceH": "HISTORIQUE DE PRIX",
+		"alert1": "Marché inactif: Nombre de prix exterieur insufficent",
+		"alert2": "Marché inactif: Profondeur du marché insufficent",
+		"collateral": "Collateral",
+		"supply": "RÉSERVES",
+		"supplyAnd": "ET COLLATERAL (BTS) HISTORIQUE",
+		"sell": "Vendre",
+		"buy": "Acheter",
+		"short": "Vendre à découvert",
+		"chartSupply": "Réserve",
+		"ohlc": "Prix: OHBC",
+		"external": "Prix externe Coinmarketcap",
+		"volume": "Volume",
+		"assetInfo": {
+			"title": "INFO SUR L'ACTIF",
+			"base": "Actif de base",
+			"name": "Nom complét",
+			"precision": "Précision",
+			"regdate": "Date d'enregistrement"
+		},
+		"market": {
+			"title": "INFO SUR LE MARCHÉ",
+			"reserve": "Fond de réserve"
+		},
+		"feeds": {
+			"avg": "Prix moyen des flux",
+			"med": "Prix median dex flux",
+			"null": "Pas assez de flux dans les derniers 24 heures",
+			"last": "Dernier mise à jour (UTC)"
+		}
+	},
+	"charts": {
+		"titles" : {
+			"new": "NOUVEAUX COMPTES",
+			"total": "NOMBRE TOTAL DE COMPTES",
+			"assetTrx": "TOUTES LES TYPES DE TRANSACTION D'ACTIFS",
+			"btsTrx": "TYPE DE TRANSACTION BTS",
+			"trxCount": "NOMBRE DE TRANSACTION BTS",
+			"volume": "VOLUME DES TRANSACTIONS BTS",
+			"btcPrice": "HISTORIQUE DU PRIX BTS/BTC",
+			"usdPrice": "HISTORIQUE DU PRIX USD/BTS"
+		},
+		"value": "Valeur",
+		"reg": "Inscription de compte",
+		"transfer": "Transfer",
+		"feed": "Mise à jour de flux",
+		"update": "Mise à jour de compte",
+		"new": "Nouveaux comptes"
+	},
+	"supply": {
+		"title1": "INFO",
+		"title2": "CHANGEMENT DE RÉSERVE DEPUIS LE BRANCHEMENT BTS",
+		"title3": "RÉSERVE TOTAL DE BTS",
+		"title4": "FRAIS DE BTS PAYÉS",
+		"height": "Hauteur de block du branchement BTSX => BTS",
+		"supply": "Réserve au moment du branchement",
+		"change": "Changement de réserve depuis le branchement",
+		"changeY": "BTS changement de réserve",
+		"supplyY":"BTS réserve",
+		"feesY": "BTS frais"
+	},
+	"genesis": {
+		"stats": "STATISTIQUES",
+		"biggest": "NOMBRE D'ADRESSE PAR TAILLE DU SOLDE",
+		"total": "Nombre d'addresses totales",
+		"supply": "Réserve initial total",
+		"sharedrop": "Dilution accordé à PTS+AGS+DNS+VOTE",
+		"market": "Nombre d'actifs du marché",
+		"whale": "Plus grand solde",
+		"higher": "Addresses avec un solde plus grand que",
+		"percent": "POURCENTAGE DU RÉSERVE TOTAL PAR NOMBRE D'ADDRESSES",
+		"top": "TOP",
+		"addresses": "DES ADDRESSES",
+		"address": "Addresse",
+		"balance": "Solde",
+		"percentOf": "% du total",
+		"cumul": "% du total cumulatif",
+		"x": "Nombre de comptes",
+		"y": "% du réserve total",
+		"tooltip": "Pourcentage du réserve total"
+	}
+}
