@@ -141,7 +141,9 @@
 			"asset": "Actif",
 			"description": "Description de l'actif",
 			"issuer": "Compte du créateur",
-			"for": "Pour délégué"
+			"for": "Pour délégué",
+			"burn": "Burn",
+			"assetCreate": "Create asset"
 		}
 	},
 	"delegates": {
@@ -249,7 +251,9 @@
 		"title2": "HISTORIQUE DES CLEFS ACTIFS",
 		"date": "Date",
 		"key": "Cléfs",
-		"website": "Site web"
+		"website": "Site web",
+		"burn": "OPERATIONS DE BRULURE"
+
 	},
 	"assets": {
 		"plot": {
