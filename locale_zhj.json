@@ -319,7 +319,7 @@
 			"total": "账户的总数",
 			"assetTrx": "所有资产交易的种类",
 			"btsTrx": "BTS交易的种类",
-			"trxCount": "BTS 交易的数量S",
+			"trxCount": "BTS 交易的数量",
 			"volume": "BTS 交易量",
 			"btcPrice": "BTS/BTC价格历史",
 			"usdPrice": "USD/BTS价格历史"
