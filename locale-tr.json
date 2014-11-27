@@ -4,7 +4,7 @@
         "blocks": "Bloklar",
         "delegates": "Delegeler",
         "accounts": "Hesaplar",
-        "assets": "Assets",
+        "assets": "Varlıklar",
         "charts": "Grafikler",
         "general": "Genel",
         "supply": "BTS Miktarı ve Ücretler",
@@ -95,7 +95,7 @@
         "last": "SON",
         "blocks": "BLOKLAR",
         "showTrx": "Sadece işlem içeren blokları göster",
-        "blockNum": "Blok numarası",
+        "blockNum": "Blok yüksekliği",
         "timestamp": "Zaman damgası",
         "delegate": "Delege",
         "trxCount": "İşlem sayısı",
@@ -134,7 +134,7 @@
             "assetAmount": "Varlık miktarı",
             "base": "Baz varlık miktarı",
             "amount": "Miktar",
-            "noVotes": "Bu işlemde iç oy kullanılmamış",
+            "noVotes": "Bu işlemde hiç oy kullanılmamış",
             "account": "Hesap",
             "message": "Mesaj",
             "key": "anahtar",
@@ -143,7 +143,7 @@
             "issuer": "Piyasaya süren hesap",
             "for": "delege için",
             "burn": "Burn",
-            "assetCreate": "Create asset"
+            "assetCreate": "Varlık yarat"
         }
     },
     "delegates": {
@@ -151,15 +151,15 @@
         "title": "DELEGE BİLGİLERİ",
         "standby": "Beklemedeki delegeleri dahil et",
         "rank": "Sıra",
-        "change24": "24s değişim",
-        "change7": "7g değişim",
-        "votes": "Oy sayısı",
+        "change24": "24s Değişim",
+        "change7": "7g Değişim",
+        "votes": "Oy Oranı",
         "produced": "Üretilen",
         "missed": "Kaçırılan",
-        "rate": "Ödeme oranı",
-        "latency": "Ortalama gecikme",
-        "feeds": "Aktif feed sayısı",
-        "feedFreq": "Feed sıklığı",
+        "rate": "Ödeme Oranı",
+        "latency": "Ortalama Gecikme",
+        "feeds": "Aktif Feed Sayısı",
+        "feedFreq": "Feed Sıklığı",
         "rel": "Güvenilirlik",
         "version": "Versiyon"
     },
@@ -209,9 +209,9 @@
         },
         "info": {
             "title": "DELEGE BİLGİSİ",
-            "earnings": "Toplam Kazanç",
+            "earnings": "Toplam kazanç",
             "withdrawn": "Çekilen kazanç",
-            "fees": "toplam ödenen ücret"
+            "fees": "Toplam ödenen ücret"
         },
         "prod": {
             "title": "BLOK  ÜRETİMİ",
@@ -235,7 +235,7 @@
         "recent": "EN SON",
         "newer": "DAHA YENİ",
         "older": "DAHA ESKİ",
-        "oldest": "EM ESKİ",
+        "oldest": "EN ESKİ",
         "name": "Hesap Adı",
         "id": "ID",
         "reg": "Kayıt Tarihi",
@@ -251,7 +251,7 @@
         "date": "Tarih",
         "key": "Anahtar",
         "website": "Web sitesi",
-        "burn": "BURN OPERATIONS"
+        "burn": "BURN İŞLEMLERİ"
     },
     "assets": {
         "plot": {
@@ -262,15 +262,15 @@
             "type4": "Cover"
         },
         "market": {
-            "title": "pAZARDAKİ VARLIKLAR",
+            "title": "PAZARDAKİ VARLIKLAR",
             "th1": "Varlık Sembolü",
             "th2": "Bid derinliği",
             "th3": "Ask derinliği",
             "th4": "Geçerli feedler",
             "th5": "Ortalama Feed Fiyatı",
-            "th6": "Hisse arzı",
+            "th6": "Arz",
             "th7": "24s Hacim",
-            "th8": "pazar Değeri"
+            "th8": "Pazar Değeri"
         },
         "user": {
             "title": "KULLANICILAR TARAFINDAN PİYASAYA SÜRÜLMÜŞ VARLIKLAR",
@@ -295,7 +295,7 @@
         "short": "Short",
         "chartSupply": "Arz",
         "ohlc": "Fiyat: OHLC",
-        "external": "Harivi Coinmarketcap fiyatı",
+        "external": "Harici Coinmarketcap fiyatı",
         "volume": "Hacim",
         "assetInfo": {
             "title": "VARLIK BİLGİSİ",
@@ -327,7 +327,7 @@
             "usdPrice": "USD/BTS FİYAT GEÇMİŞİ"
         },
         "value": "Değer",
-        "reg": "Hesap kaydo",
+        "reg": "Hesap kaydı",
         "transfer": "Transfer",
         "feed": "Delege feed güncellemesi",
         "update": "Hesap güncellemesi",
@@ -351,7 +351,7 @@
         "total": "Toplam adres sayısı",
         "supply": "Toplam ilk arz",
         "sharedrop": "AGS+PTS+DNS+VOTE sharedrop miktarı",
-        "market": "pazar varlıklarının sayısı",
+        "market": "Pazar varlıklarının sayısı",
         "whale": "En büyük bakiyeli hesap",
         "higher": "Şu miktardan daha büyük bakiyeye sahip adres sayısı:",
         "percent": "ADRESLERE GÖRE TOPLAM ARZ YÜZDESİ",
