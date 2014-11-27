@@ -1,0 +1,371 @@
+{
+	"nav": {
+		"home":"홈",
+		"blocks": "블럭",
+		"delegates": "대표자",
+		"accounts": "계정",
+		"assets": "자산",
+		"charts": "차트",
+		"general": "일반",
+		"supply": "BTS 공급량 및 수수료",
+		"btsgenesis": "BTS Genesis",
+		"btsxgenesis": "BTSX Genesis",
+		"about": "About"
+	},
+	"alerts": {
+		"del1": "새 대표자를 생성했습니다.",
+		"del2": "에게 다시 투표해 주시면 감사하겠습니다",
+		"del3": "더보기",
+		"del4": "링크"
+	},
+	"footer": {
+		"vote": "대표자 투표",
+		"donate": "기부",
+		"info": "Info/Updates",
+		"thread": "BitsharesTalk Thread",
+		"version": "클라이언트 버전"
+	},
+	"home": {
+		"history":"지난 14일 BTS 시세",
+		"price":"시가",
+		"MA":"30일 이동평균",
+		"health": {
+			"title": "네트워크 상태",
+			"alert": "Network 위험도:",
+			"particip": "대표자 참여율:",
+			"confirm": "평균 컨펌시간:",
+			"forks": "24시간 내 Fork:",
+			"forkBlock": "마지막 Fork 블럭:",
+			"signee": "Fork 생성 대표자:",
+			"latency": "대표자 지연율:"
+		},
+		"delegate": {
+			"title": "대표자 통계",
+			"reg": "등록된 대표자",
+			"votes": "투표받은 대표자",
+			"payReg": "100% 지급시 수수료",
+			"new24": "지난 24시간 새 대표자",
+			"new7d": "지난 7일 새 대표자",
+			"pay": "최대 지급률"
+		},
+		"blockchain": {
+			"title": "블럭체인 통계",
+			"supply": "쉐어 공급량",
+			"unclaimed": "미지급",
+			"collat": "담보 저당량",
+			"change" :"지난 24시간 공급량 변화",
+			"current": "현재 블럭",
+			"trx": "거래를 포함한 블럭",
+			"missed": "누락된 블럭"
+		},
+		"asset": {
+			"title": "자산 통계",
+			"number": "자산 개수",
+			"user": "사용자 발행 자산",
+			"shortReg": "3-5글자 자산등록",
+			"longReg": "6-8글자 자산등록",
+			"new7d": "지난 7일 새 자산",
+			"new30d": "지난 30일 새 자산",
+			"trx": "자산 거래"
+		},
+		"user": {
+			"title": "사용자 통계",
+			"number": "총 계정수",
+			"sub": "총 하위계정 수",
+			"new24": "지난 24시간 새 계정",
+			"new7d": "지난 7일 새 계정"
+		},
+		"missed": {
+			"title": "마지막 10개 누락 블럭"
+		},
+		"blocks": {
+			"title": "마지막 10 블럭"
+		},
+		"newUsers": {
+			"title": "신규 계정"
+		}
+	},
+	"blocks": {
+		"search1": "블럭높이, 거래번호(txid) 검색",
+		"search2": "블럭으로 이동",
+		"current": "현재",
+		"higher": "이전",
+		"lower": "다음",
+		"first": "처음",
+		"last": "마지막",
+		"blocks": "블럭",
+		"showTrx": "거래를 포함한 블럭만 표시",
+		"blockNum": "블럭높이",
+		"timestamp": "생성시각",
+		"delegate": "대표자",
+		"trxCount": "거래개수",
+		"trxValue": "거래량",
+		"fees": "수수료"
+	},
+	"block": {
+		"block": "블럭",
+		"previous": "이전 블럭",
+		"next": "다음 블럭",
+		"details": {
+			"title": "블럭 상세정보",
+			"signee": "블럭생성 대표자",
+			"size": "블럭 크기",
+			"latency": "지연율",
+			"time": "처리시간",
+			"hash1": "이전 해쉬",
+			"hash2": "다음 암호화 해쉬",
+			"hash3": "이전 암호화 해쉬"
+		},
+		"trx": {
+			"title": "거래",
+			"type": "종류",
+			"id": "거래 ID",
+			"fee": "거래 수수료",
+			"public": "공개 정보",
+			"delegate": "대표자 이름",
+			"feedUpdates": "피드 업데이트",
+			"feedPrice": "피드 가격",
+			"votes": "거래 내 투표",
+			"price": "가격 비율",
+			"interest": "이자율",
+			"priceLimit": "가격 하한",
+			"collateral": "담보",
+			"assetName": "자산 이름",
+			"assetAmount": "자산 거래량",
+			"base": "기준자산 총량",
+			"amount": "거래량",
+			"noVotes": "이 거래와 관련된 투표가 없음",
+			"account": "계정",
+			"message": "메시지",
+			"key": "소유자 키",
+			"asset": "자산",
+			"description": "자산 설명",
+			"issuer": "발행자 계정",
+			"for": "For delegate",
+			"burn": "Burn",
+			"assetCreate": "자산 발행"
+		}
+	},
+	"delegates": {
+		"search": "대표자 찾기",
+		"title": "대표자 정보",
+		"standby": "대기중인 대표자 포함",
+		"rank": "순위",
+		"change24": "24시간내 변동",
+		"change7": "7일내 변동",
+		"votes": "득표율",
+		"produced": "블럭생성",
+		"missed": "누락",
+		"rate": "지급율",
+		"latency": "평균 지연율",
+		"feeds": "활성 피드",
+		"feedFreq": "피드 제공 빈도",
+		"rel": "신뢰도",
+		"version": "버전"
+	},
+	"delegate": {
+		"prevRank": "이전 순위",
+		"nextRank": "다음 순위",
+		"votesChart": "득표율 변화",
+		"sumVotes": "총 득표수",
+		"payChart": {
+			"title": "순수입",
+			"name" : "누적 수입"
+		},
+		"rank": {
+			"title": "순위 및 득표",
+			"current": "현재 순위",
+			"dayChange": "24시간내 변동",
+			"weekChange": "7일내 변동",
+			"votes": "득표 수",
+			"percentVotes": "득표율"
+		},
+		"data": {
+			"title": "공개 정보",
+			"description": "상세설명",
+			"proposal": "대표자 공약",
+			"location": "서버 위치",
+			"country": "Delegate country",
+			"handle": "BitsharesTalk 계정",
+			"ann": "공지",
+			"role": "역할",
+			"website": "웹사이트",
+			"role_0": "개발자",
+			"role_1": "마케팅",
+			"role_2": "Faucet",
+			"role_3": "기간망",
+			"role_4": "자선",
+			"role_5": "기술지원",
+			"role_6": "법률지원",
+			"role_7": "미디어/공공 홍보"
+		},
+		"feeds": {
+			"title": "대표자 피드",
+			"total": "총 제공 피드 수",
+			"active": "활성 피드",
+			"show": "피드 보기",
+			"valid": "유효한 피드만 보기"
+		},
+		"info": {
+			"title": "대표자 정보",
+			"earnings": "총 수입",
+			"withdrawn": "인출한 수입",
+			"fees": "총 지불 수수료"
+		},
+		"prod": {
+			"title": "블럭 생성",
+			"prod": "생성블럭 수",
+			"missed": "누락블럭 수",
+			"last": "최종 생성블럭",
+			"lat50": "지난 50블럭 평균 지연율",
+			"lat100": "지난 100블럭 평균 지연율",
+			"lat200": "지난 200블럭 평균 지연율"
+		},
+		"votes": {
+			"title": "득표 내역",
+			"total": "투표",
+			"net": "총득표 >= 10000"
+		}
+	},
+	"accounts": {
+		"title": "계정",
+		"search1": "계정 찾기",
+		"search2": "ID번호로 찾기",
+		"recent": "처음",
+		"newer": "이전",
+		"older": "다음",
+		"oldest": "마지막",
+		"name": "계정 이름",
+		"id": "ID",
+		"reg": "등록일시",
+		"update": "마지막 업데이트",
+		"yes": "예",
+		"no": "아니오"
+	},
+	"account": {
+		"previous": "이전 계정",
+		"next": "다음 계정",
+		"title1": "계정 정보",
+		"id": "계정 ID",
+		"owner": "소유자",
+		"title2": "활성키 내역",
+		"date": "일시",
+		"key": "키",
+		"website": "웹사이트",
+		"burn": "BURN 활동"
+	},
+	"assets": {
+		"plot": {
+			"title": "지난 7일간 유형별 자산거래 현황",
+			"type1": "매도",
+			"type2": "매수",
+			"type3": "공매도",
+			"type4": "커버"
+		},
+		"market": {
+			"title": "시장 발행 자산",
+			"th1": "자산 이름",
+			"th2": "매수 깊이",
+			"th3": "매도 깊이",
+			"th4": "유효 피드",
+			"th5": "평균 피드가격",
+			"th6": "총공급량",
+			"th7": "24시간 거래량",
+			"th8": "시가총액"
+		},
+		"user": {
+			"show": "Show user issued assets",
+			"title": "사용자 발행 자산",
+			"th1": "자산 ID",
+			"th4": "현재 공급량",
+			"th5": "최대 공급량"
+		}
+	},
+	"asset": {
+		"orderbook": "호가창",
+		"bids": "매수",
+		"asks": "매도",
+		"shorts": "공매도",
+		"priceH": "시세 추이",
+		"alert1": "시장 비활성: 피드 수가 불충분함",
+		"alert2": "시장 비활성: 시장 깊이가 불충분함",
+		"collateral": "담보",
+		"supply": "공급량",
+		"supplyAnd": "및 담보(BTS) 추이",
+		"sell": "매도",
+		"buy": "매수",
+		"short": "공매도",
+		"chartSupply": "공급량",
+		"ohlc": "시세: OHLC",
+		"external": "외부 Coinmarketcap 시세",
+		"volume": "거래량",
+		"assetInfo": {
+			"title": "자산 정보",
+			"base": "기준 자산",
+			"name": "자산명",
+			"precision": "소수자리수",
+			"regdate": "등록일시"
+		},
+		"market": {
+			"title": "시장 정보",
+			"reserve": "예비비"
+		},
+		"feeds": {
+			"avg": "평균 피드값",
+			"med": "중위 피드값",
+			"null": "지난 24시간동안 피드 불충분",
+			"last": "최종 업데이트 (UTC)"
+		}
+	},
+	"charts": {
+		"titles" : {
+			"new": "신규 계정",
+			"total": "총 계정수",
+			"assetTrx": "전체 자산 거래유형",
+			"btsTrx": "BTS 거래유형",
+			"trxCount": "BTS 거래 수",
+			"volume": "BTS 거래량",
+			"btcPrice": "BTS/BTC 시세 추이",
+			"usdPrice": "USD/BTS 시세 추이"
+		},
+		"value": "Value",
+		"reg": "Account registration",
+		"transfer": "Transfer",
+		"feed": "Delegate feed update",
+		"update": "Account update",
+		"new": "New accounts",
+		"ma15":"15일 이동평균"
+	},
+	"supply": {
+		"title1": "정보",
+		"title2": "하드포크 이후 공급량 변화",
+		"title3": "총 BTS 공급량",
+		"title4": "시간별 BTS 수수료 지불액",
+		"height": "BTSX => BTS 하드포크 블럭높이",
+		"supply": "하드포크시 공급량",
+		"change": "하드포크 이후 공급량 변화",
+		"changeY": "BTS 공급량 변화",
+		"supplyY":"BTS 공급량",
+		"feesY": "BTS 수수료"
+	},
+	"genesis": {
+		"stats": "통계",
+		"biggest": "잔액별 계정수",
+		"total": "총 계정수",
+		"supply": "초기공급량",
+		"sharedrop": "AGS+PTS+DNS+VOTE 쉐어드롭",
+		"market": "총 자산 개수",
+		"whale": "최대 잔액",
+		"higher": "다음 잔액 이상 주소 개수",
+		"percent": "계정 수에 따른 총 공급량 비율",
+		"top": "상위",
+		"addresses": "주소",
+		"address": "주소",
+		"balance": "잔액",
+		"percentOf": "%",
+		"cumul": "공급량 대비 누적 %",
+		"x": "계정 수",
+		"y": "공급량 대비 %",
+		"tooltip": "총 공급량 퍼센트"
+	}
+}

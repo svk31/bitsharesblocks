@@ -184,21 +184,20 @@
 			"title": "DONNÉES PUBLICS",
 			"description": "Description",
 			"proposal": "Présentation du délégué",
-			"location": "Pays hôte",
+			"location": "Pays hôte du serveur",
+			"country": "Pays du délégué",
 			"handle": "BitsharesTalk nom d'utilisateur",
 			"ann": "Communiqué",
 			"role": "Rôle",
 			"website": "Site web",
-			"role_0": "Développement Core",
-			"role_1": "Marketing Core",
-			"role_2": "Développement indépendent",
-			"role_3": "Marketing indépendent",
-			"role_4": "Robinet",
-			"role_5": "Infrastructure",
-			"role_6": "Charité",
-			"role_7": "Support technique",
-			"role_8": "Lois/Régulations",
-			"role_9": "Media/Rélations Publics"
+			"role_0": "Développement",
+			"role_1": "Marketing",
+			"role_2": "Robinet",
+			"role_3": "Infrastructure",
+			"role_4": "Charité",
+			"role_5": "Support technique",
+			"role_6": "Lois/Régulations",
+			"role_7": "Media/Rélations Publics"
 		},
 		"feeds": {
 			"title": "FLUX DE PRIX",
@@ -257,7 +256,7 @@
 	},
 	"assets": {
 		"plot": {
-			"title": "TOUTES LES TRANSACTIONS D'ACTIFS SUR LES DERNIERS 14 JOURS",
+			"title": "TOUTES LES TRANSACTIONS D'ACTIFS SUR LES DERNIERS 7 JOURS",
 			"type1": "Vente",
 			"type2": "Achat",
 			"type3": "Vente à découvert",
@@ -275,6 +274,7 @@
 			"th8": "Capitalisation"
 		},
 		"user": {
+			"show": "Afficher les actifs des utilisateurs",
 			"title": "ACTIFS DES UTILISATEURS",
 			"th1": "ID de l'actif",
 			"th4": "Réserve courant",
@@ -333,7 +333,8 @@
 		"transfer": "Transfer",
 		"feed": "Mise à jour de flux",
 		"update": "Mise à jour de compte",
-		"new": "Nouveaux comptes"
+		"new": "Nouveaux comptes",
+		"ma15": "Moyenne mobile 15 jours"
 	},
 	"supply": {
 		"title1": "INFO",

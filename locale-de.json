@@ -185,20 +185,19 @@
 			"description": "Beschreibung",
 			"proposal": "Vorschlag",
 			"location": "Serverort",
+			"country": "Delegate country",
 			"handle": "BitsharesTalk Benutzername",
 			"ann": "Ankündigung",
 			"role": "Rolle",
 			"website": "Webseite",
-			"role_0": "Kernentwicklung",
-			"role_1": "Kernmarketing",
-			"role_2": "Unabhängige Entwicklung",
-			"role_3": "Unabhängiges Marketing",
-			"role_4": "Faucet",
-			"role_5": "Backbone",
-			"role_6": "Charity",
-			"role_7": "Technischer Support",
-			"role_8": "Gesetze/Regulierung",
-			"role_9": "Media/Public Relations"
+			"role_0": "Entwicklung",
+			"role_1": "Marketing",
+			"role_2": "Faucet",
+			"role_3": "Backbone",
+			"role_4": "Charity",
+			"role_5": "Technischer Support",
+			"role_6": "Gesetze/Regulierung",
+			"role_7": "Media/Public Relations"
 		},
 		"feeds": {
 			"title": "FEEDS",
@@ -255,7 +254,7 @@
 	},
 	"assets": {
 		"plot": {
-			"title": "ALLE ASSET TRANSAKTIONSTYPEN DER LETZTEN 14 TAGE",
+			"title": "ALLE ASSET TRANSAKTIONSTYPEN DER LETZTEN 7 TAGE",
 			"type1": "Ask",
 			"type2": "Bid",
 			"type3": "Short",
@@ -273,6 +272,7 @@
 			"th8": "Market Cap"
 		},
 		"user": {
+			"show": "Show user issued assets",
 			"title": "NUTZER-DEFINIERTE ASSETS",
 			"th1": "Asset ID",
 			"th4": "Aktuelle Verfügbarkeit",
@@ -331,7 +331,8 @@
 		"transfer": "Transfer",
 		"feed": "Feedaktualisierung durch Delegierten",
 		"update": "Kontoaktualisierung",
-		"new": "Neues Konto"
+		"new": "Neues Konto",
+		"ma15":"15-Tage Moving Average"
 	},
 	"supply": {
 		"title1": "INFO",
