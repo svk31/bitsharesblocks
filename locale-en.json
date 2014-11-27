@@ -82,7 +82,7 @@
 			"title": "LAST 10 BLOCKS"
 		},
 		"newUsers": {
-			"title": "NEW USERS",
+			"title": "NEW USERS"
 		}
 	},
 	"blocks": {
@@ -121,7 +121,7 @@
 			"type": "Operation type",
 			"id": "Transaction ID",
 			"fee": "Transaction fee",
-			"publid": "Public data",
+			"public": "Public data",
 			"delegate": "Delegate name",
 			"feedUpdates": "Feed updates",
 			"feedPrice": "Feed price",
@@ -141,7 +141,9 @@
 			"asset": "Asset",
 			"description": "Asset Description",
 			"issuer": "Issuer account",
-			"for": "For delegate"
+			"for": "For delegate",
+			"burn": "Burn",
+			"assetCreate": "Create asset"
 		}
 	},
 	"delegates": {
@@ -209,8 +211,7 @@
 			"title": "DELEGATE INFO",
 			"earnings": "Total earnings",
 			"withdrawn": "Withdrawn earnings",
-			"fees": "Total fees paid",
-
+			"fees": "Total fees paid"
 		},
 		"prod": {
 			"title": "BLOCK PRODUCTION",
@@ -219,7 +220,7 @@
 			"last": "Last Block Produced",
 			"lat50": "Average latency last 50 blocks",
 			"lat100": "Average latency last 100 blocks",
-			"lat200": "Average latency last 200 blocks",
+			"lat200": "Average latency last 200 blocks"
 		},
 		"votes": {
 			"title": "VOTES HISTORY",
@@ -238,7 +239,9 @@
 		"name": "Account Name",
 		"id": "Id",
 		"reg": "Registration date",
-		"update": "Last update"
+		"update": "Last update",
+		"yes": "Yes",
+		"no": "No"
 	},
 	"account": {
 		"previous": "Previous account",
@@ -249,7 +252,8 @@
 		"title2": "ACTIVE KEY HISTORY",
 		"date": "Date",
 		"key": "Key",
-		"website": "Website"
+		"website": "Website",
+		"burn": "BURN OPERATIONS"
 	},
 	"assets": {
 		"plot": {
@@ -304,7 +308,7 @@
 		},
 		"market": {
 			"title": "MARKET INFO",
-			"reserve": "Reserve Fund",
+			"reserve": "Reserve Fund"
 		},
 		"feeds": {
 			"avg": "Average Feed Price",

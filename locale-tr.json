@@ -141,7 +141,9 @@
             "asset": "Varlık",
             "description": "Varlık tanımı",
             "issuer": "Piyasaya süren hesap",
-            "for": "delege için"
+            "for": "delege için",
+            "burn": "Burn",
+            "assetCreate": "Create asset"
         }
     },
     "delegates": {
@@ -248,7 +250,8 @@
         "title2": "AKTİF ANAHTAR GEÇMİŞİ",
         "date": "Tarih",
         "key": "Anahtar",
-        "website": "Web sitesi"
+        "website": "Web sitesi",
+        "burn": "BURN OPERATIONS"
     },
     "assets": {
         "plot": {

@@ -82,7 +82,7 @@
 			"title": "LETZTE 10 BLÖCKE"
 		},
 		"newUsers": {
-			"title": "NEUE KONTEN",
+			"title": "NEUE KONTEN"
 		}
 	},
 	"blocks": {
@@ -121,7 +121,7 @@
 			"type": "Operationstyp",
 			"id": "TransaktionsID",
 			"fee": "Transaktionsgebühr",
-			"publid": "Öffentliche Daten",
+			"public": "Öffentliche Daten",
 			"delegate": "Name des Delegierten",
 			"feedUpdates": "Feed Updates",
 			"feedPrice": "Feed Preis",
@@ -141,7 +141,9 @@
 			"asset": "Asset",
 			"description": "Assetbeschreibung",
 			"issuer": "Issuerkonto",
-			"for": "für Delegierten"
+			"for": "für Delegierten",
+			"burn": "Burn",
+			"assetCreate": "Create asset"
 		}
 	},
 	"delegates": {
@@ -209,8 +211,7 @@
 			"title": "DELEGIERTEN INFOS",
 			"earnings": "Gesamtertrag",
 			"withdrawn": "Eingeholter Ertrag",
-			"fees": "Bezahlte Gebühren",
-
+			"fees": "Bezahlte Gebühren"
 		},
 		"prod": {
 			"title": "BLOCK PRODUKTION",
@@ -219,7 +220,7 @@
 			"last": "Zuletzt produzierter Block",
 			"lat50": "Mittlere Latenz der letzten 50 blocks",
 			"lat100": "Mittlere Latenz der letzten 100 blocks",
-			"lat200": "Mittlere Latenz der letzten 200 blocks",
+			"lat200": "Mittlere Latenz der letzten 200 blocks"
 		},
 		"votes": {
 			"title": "STIMMEN VERLAUF",
@@ -249,7 +250,8 @@
 		"title2": "Aktiver Schlüssel - Verlauf",
 		"date": "Datum",
 		"key": "Schlüssel",
-		"website": "Webseite"
+		"website": "Webseite",
+		"burn": "BURN OPERATIONS"
 	},
 	"assets": {
 		"plot": {
@@ -304,7 +306,7 @@
 		},
 		"market": {
 			"title": "MARKET INFO",
-			"reserve": "Rücklage",
+			"reserve": "Rücklage"
 		},
 		"feeds": {
 			"avg": "Mittlerer Feed Preis",
