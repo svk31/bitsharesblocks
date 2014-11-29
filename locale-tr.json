@@ -185,7 +185,7 @@
             "description": "Tanım",
             "proposal": "Delegenin deklarasyonu",
             "location": "Sunucu lokasyonu",
-            "country": "Delegate country",
+            "country": "Delegenin ülkesi",
             "handle": "BitsharesTalk kullanıcı adı",
             "ann": "Duyurular",
             "role": "Rol",
@@ -272,7 +272,7 @@
             "th8": "Pazar Değeri"
         },
         "user": {
-            "show": "Show user issued assets",
+            "show": "Kullanıcılar tarafından piyasaya sürülen varlıkları göster",
             "title": "KULLANICILAR TARAFINDAN PİYASAYA SÜRÜLMÜŞ VARLIKLAR",
             "th1": "Varlık ID",
             "th4": "Şu anki Arz",
