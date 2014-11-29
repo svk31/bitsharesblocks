@@ -185,20 +185,19 @@
             "description": "Tanım",
             "proposal": "Delegenin deklarasyonu",
             "location": "Sunucu lokasyonu",
+            "country": "Delegate country",
             "handle": "BitsharesTalk kullanıcı adı",
             "ann": "Duyurular",
             "role": "Rol",
             "website": "Web sitesi",
-            "role_0": "Temel Geliştirme",
-            "role_1": "Temel Pazarlama",
-            "role_2": "Bağımsız Geliştirme",
-            "role_3": "Bağımsız Pazarlama",
-            "role_4": "Musluk (Faucet)",
-            "role_5": "Omurga",
-            "role_6": "Hayır işi",
-            "role_7": "Teknik Destek",
-            "role_8": "Hukuk/Regülasyon",
-            "role_9": "Medya/Halkla İlişkiler"
+            "role_0": "Geliştirme",
+            "role_1": "Pazarlama",
+            "role_2": "Musluk (Faucet)",
+            "role_3": "Omurga",
+            "role_4": "Hayır işi",
+            "role_5": "Teknik Destek",
+            "role_6": "Hukuk/Regülasyon",
+            "role_7": "Medya/Halkla İlişkiler"
         },
         "feeds": {
             "title": "DELEGE FEEDLERİ",
@@ -255,7 +254,7 @@
     },
     "assets": {
         "plot": {
-            "title": "TÜM VARLIK İŞLEM TİPLERİ SON 14 GÜN",
+            "title": "TÜM VARLIK İŞLEM TİPLERİ SON 7 GÜN",
             "type1": "Ask",
             "type2": "Bid",
             "type3": "Short",
@@ -273,6 +272,7 @@
             "th8": "Pazar Değeri"
         },
         "user": {
+            "show": "Show user issued assets",
             "title": "KULLANICILAR TARAFINDAN PİYASAYA SÜRÜLMÜŞ VARLIKLAR",
             "th1": "Varlık ID",
             "th4": "Şu anki Arz",
@@ -331,7 +331,8 @@
         "transfer": "Transfer",
         "feed": "Delege feed güncellemesi",
         "update": "Hesap güncellemesi",
-        "new": "Yeni hesaplar"
+        "new": "Yeni hesaplar",
+        "ma15": "15-günlük Hareketli Ortalama"
     },
     "supply": {
         "title1": "BİLGİ",

@@ -185,20 +185,19 @@
 			"description": "描述",
 			"proposal": "受托人的目标",
 			"location": "服务器的位置",
+			"country": "代表国家",
 			"handle": "BitsharesTalk论坛用户名",
 			"ann": "公告",
 			"role": "角色",
 			"website": "网站",
 			"role_0": "核心开发",
 			"role_1": "核心市场推广",
-			"role_2": "独立开发",
-			"role_3": "独立市场推广",
-			"role_4": "水龙头（赠币）",
-			"role_5": "支柱",
-			"role_6": "慈善",
-			"role_7": "技术支持",
-			"role_8": "法律与监管",
-			"role_9": "媒体与公关"
+			"role_2": "水龙头（赠币）",
+			"role_3": "支柱",
+			"role_4": "慈善",
+			"role_5": "技术支持",
+			"role_6": "法律与监管",
+			"role_7": "媒体与公关"
 		},
 		"feeds": {
 			"title": "受托人喂价种子",
@@ -256,7 +255,7 @@
 	},
 	"assets": {
 		"plot": {
-			"title": "过去14天所有的资产转账类型",
+			"title": "过去7天所有的资产转账类型",
 			"type1": "卖单",
 			"type2": "买单",
 			"type3": "空单",
@@ -274,6 +273,7 @@
 			"th8": "市值"
 		},
 		"user": {
+			"show": "Show user issued assets",
 			"title": "用户自定义资产",
 			"th1": "资产ID",
 			"th4": "当前供应量",
@@ -332,7 +332,8 @@
 		"transfer": "转账",
 		"feed": "受托人喂价种子更新",
 		"update": "账号更新",
-		"new": "新账号"
+		"new": "新账号",
+		"ma15":"15天移动平均价"
 	},
 	"supply": {
 		"title1": "INFO",

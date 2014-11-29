@@ -185,20 +185,19 @@
 			"description": "Description",
 			"proposal": "Delegate bid",
 			"location": "Server location",
+			"country": "Delegate country",
 			"handle": "BitsharesTalk username",
 			"ann": "Announcements",
 			"role": "Role",
 			"website": "Website",
-			"role_0": "Core Development",
-			"role_1": "Core Marketing",
-			"role_2": "Independent Development",
-			"role_3": "Independent Marketing",
-			"role_4": "Faucet",
-			"role_5": "Backbone",
-			"role_6": "Charity",
-			"role_7": "Technical Support",
-			"role_8": "Law/Regulations",
-			"role_9": "Media/Public Relations"
+			"role_0": "Development",
+			"role_1": "Marketing",
+			"role_2": "Faucet",
+			"role_3": "Backbone",
+			"role_4": "Charity",
+			"role_5": "Technical Support",
+			"role_6": "Law/Regulations",
+			"role_7": "Media/Public Relations"
 		},
 		"feeds": {
 			"title": "DELEGATE FEEDS",
@@ -257,7 +256,7 @@
 	},
 	"assets": {
 		"plot": {
-			"title": "ALL ASSETS TRANSACTION TYPES LAST 14 DAYS",
+			"title": "ALL ASSETS TRANSACTION TYPES LAST 7 DAYS",
 			"type1": "Ask",
 			"type2": "Bid",
 			"type3": "Short",
@@ -275,6 +274,7 @@
 			"th8": "Market Cap"
 		},
 		"user": {
+			"show": "Show user issued assets",
 			"title": "USER ISSUED ASSETS",
 			"th1": "Asset ID",
 			"th4": "Current Supply",
@@ -333,7 +333,8 @@
 		"transfer": "Transfer",
 		"feed": "Delegate feed update",
 		"update": "Account update",
-		"new": "New accounts"
+		"new": "New accounts",
+		"ma15": "15-day Moving Average"
 	},
 	"supply": {
 		"title1": "INFO",
