@@ -23,7 +23,8 @@
     "donate": "Donar",
     "info": "Info/Actualizaciones",
     "thread": "Hilo de BitsharesTalk",
-    "version": "Version del cliente"
+    "version": "Version del cliente",
+    "language": "Idioma"
   },
   "home": {
     "history": "PRECIO HISTORICO BTS ULTIMOS 14 DIAS",
@@ -46,7 +47,8 @@
       "payReg": "100% pay registration",
       "new24": "Nuevos delegados últimas 24h",
       "new7d": "Nuevos delegados últimos 7d",
-      "pay": "Máx proporción de pago"
+      "pay": "Máx proporción de pago",
+      "averagePay": "Average pay rate"
     },
     "blockchain": {
       "title": "ESTADISTICAS CADENA DE BLOQUES",
@@ -161,7 +163,8 @@
     "feeds": "Active feeds",
     "feedFreq": "Feed frequency",
     "rel": "Confiabilidad",
-    "version": "Versión"
+    "version": "Versión",
+    "filter": "filtrar"
   },
   "delegate": {
     "prevRank": "Rango anterior",
@@ -224,7 +227,7 @@
     "votes": {
       "title": "HISTORIA VOTOS",
       "total": "VOTOS TOTALES",
-      "net": "Votos netos >= 10000"
+      "net": "Votos netos >= 10,000"
     }
   },
   "accounts": {
@@ -240,7 +243,8 @@
     "reg": "Fecha de registración",
     "update": "Última actualización",
     "yes": "Sí",
-    "no": "No"
+    "no": "No",
+    "wall": "Wall total"
   },
   "account": {
     "previous": "Cuenta anterior",
@@ -278,7 +282,8 @@
       "title": "ACTIVOS EMITIDOS POR USUARIOS",
       "th1": "ID Activo",
       "th4": "Oferta Actual",
-      "th5": "Oferta Máxima"
+      "th5": "Oferta Máxima",
+      "th6": "Initialized"
     }
   },
   "asset": {

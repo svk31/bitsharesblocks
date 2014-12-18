@@ -23,7 +23,8 @@
 		"donate": "Spende",
 		"info": "Info/Updates",
 		"thread": "BitsharesTalk Thread",
-		"version": "Client Version"
+		"version": "Client Version",
+		"language": "Sprache"
 	},
 	"home": {
 		"history":"BTS PREIS HISTORIE ZULETZT 14 TAGE",
@@ -46,7 +47,8 @@
 			"payReg": "Registrierung mit 100% Bezahlung",
 			"new24": "Neue Delegierte der letzten 24h",
 			"new7d": "Neue Delegierte der letzten 7d",
-			"pay": "Max. Bezahlung"
+			"pay": "Max. Bezahlung",
+			"averagePay": "Average pay rate"
 		},
 		"blockchain": {
 			"title": "BLOCKKETTEN STATISTIK",
@@ -161,7 +163,8 @@
 		"feeds": "Active Feeds",
 		"feedFreq": "Häufigtkeit der Feeds",
 		"rel": "Verfügbarkeit",
-		"version": "Version"
+		"version": "Version",
+		"filter": "filter"
 	},
 	"delegate": {
 		"prevRank": "Verheriger Rang",
@@ -224,7 +227,7 @@
 		"votes": {
 			"title": "STIMMEN VERLAUF",
 			"total": "GESAMTSTIMMEN",
-			"net": "Netto Stimmen >= 10000"
+			"net": "Netto Stimmen >= 10,000"
 		}
 	},
 	"accounts": {
@@ -238,7 +241,10 @@
 		"name": "Kontoname",
 		"id": "Id",
 		"reg": "Registrierungsdatum",
-		"update": "Letztes Update"
+		"update": "Letztes Update",
+		"yes": "Ja",
+		"no": "Nein",
+		"wall": "Wall total"
 	},
 	"account": {
 		"previous": "Vorheriges Konto",
@@ -276,7 +282,8 @@
 			"title": "NUTZER-DEFINIERTE ASSETS",
 			"th1": "Asset ID",
 			"th4": "Aktuelle Verfügbarkeit",
-			"th5": "Maximale Verfügbarkeit"
+			"th5": "Maximale Verfügbarkeit",
+			"th6": "Initialized"
 		}
 	},
 	"asset": {

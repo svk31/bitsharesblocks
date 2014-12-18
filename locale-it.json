@@ -23,7 +23,8 @@
 		"donate": "Dona",
 		"info": "Info/Aggiornamenti",
 		"thread": "Thread BitsharesTalk",
-		"version": "Versione Client"
+		"version": "Versione Client",
+		"language": "Lingua"
 	},
 	"home": {
 		"history":"VALORE BTS, ULTIMI 14 GIORNI",
@@ -46,7 +47,8 @@
 			"payReg": "Costo registrazione al 100%",
 			"new24": "Nuovi delegati ultime 24h",
 			"new7d": "Nuovi delegati ultimi 7g",
-			"pay": "Paga Massima"
+			"pay": "Paga Massima",
+			"averagePay": "Average pay rate"
 		},
 		"blockchain": {
 			"title": "STATISTICHE BLOCKCHAIN",
@@ -161,7 +163,8 @@
 		"feeds": "Feed attivi",
 		"feedFreq": "Frequanza feed",
 		"rel": "Affidabilità",
-		"version": "Versione"
+		"version": "Versione",
+		"filter": "filtrare"
 	},
 	"delegate": {
 		"prevRank": "Precedente",
@@ -240,7 +243,8 @@
 		"reg": "Data registrazione",
 		"update": "Ultimo aggiornamento",
 		"yes": "Sì",
-		"no": "No"
+		"no": "No",
+		"wall": "Wall total"
 	},
 	"account": {
 		"previous": "Utente precedente",
@@ -278,7 +282,8 @@
 			"title": "MERCATI CREATI DAGLI UTENTI",
 			"th1": "ID",
 			"th4": "Disponibilità attuale",
-			"th5": "Disponibilità massima"
+			"th5": "Disponibilità massima",
+			"th6": "Initialized"
 		}
 	},
 	"asset": {

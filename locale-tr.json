@@ -1,369 +1,376 @@
 {
-    "nav": {
-        "home": "Ana Sayfa",
-        "blocks": "Bloklar",
-        "delegates": "Delegeler",
-        "accounts": "Hesaplar",
-        "assets": "Varlıklar",
-        "charts": "Grafikler",
-        "general": "Genel",
-        "supply": "BTS Miktarı ve Ücretler",
-        "btsgenesis": "BTS Kaynak Blok",
-        "btsxgenesis": "BTSX Kaynak Blok",
-        "about": "Hakkında"
-    },
-    "alerts": {
-        "del1": "Yeni bir delege oluşturdum, Lütfen oyunuzu ",
-        "del2": "delegesine değiştirin.",
-        "del3": "Daha fazla bilgi",
-        "del4": "burada"
-    },
-    "footer": {
-        "vote": "Lütfen delegeme oy verin",
-        "donate": "Bağışta bulunun",
-        "info": "Bilgi/Güncellemeler",
-        "thread": "BitsharesTalk Konu Başlığı",
-        "version": "İstemci versiyonu"
-    },
-    "home": {
-        "history": "SON 14 GÜNLÜK BTS FİYATI",
-        "price": "Fiyat",
-        "MA": "30-günlük Hareketli Ortalama",
-        "health": {
-            "title": "AĞ SAĞLIĞI",
-            "alert": "Ağ Alarm Seviyesi:",
-            "particip": "Delege Katılım Oranı:",
-            "confirm": "Ortalama Onay Süresi:",
-            "forks": "Son 24s içindeki forklar:",
-            "forkBlock": "Son fork'un blok yüksekliği:",
-            "signee": "Fork'u imzalayan delege:",
-            "latency": "Delegenin gecikme süresi:"
-        },
-        "delegate": {
-            "title": "DELEGE BİLGİLERİ",
-            "reg": "Kayıtlı delegeler",
-            "votes": "Oy almış delegeler",
-            "payReg": "100% ödemeli kayıtlar",
-            "new24": "Son 24 saat içinde kaydolan delegeler",
-            "new7d": "Son 7 gün içinde kaydolan delegeler",
-            "pay": "Maksimum ödeme"
-        },
-        "blockchain": {
-            "title": "BLOK ZİNCİRİ BİLGİLERİ",
-            "supply": "Toplam hisse",
-            "unclaimed": "Henüz sahiplenilmemiş hisse",
-            "collat": "Teminat olarak bağlı hisse",
-            "change": "24 saat arz değişimi",
-            "current": "Şu anki blok ",
-            "trx": "İşlem içeren bloklar",
-            "missed": "Kaçırılan toplam blok"
-        },
-        "asset": {
-            "title": "VARLIK BİLGİLERİ",
-            "number": "Varlık sayısı",
-            "user": "Kullanıcılar tarafından piyasaya sürülen varlıklar",
-            "shortReg": "Kısa isimli kayıtlar",
-            "longReg": "Uzun isimli kayıtlar",
-            "new7d": "Son 7 günde piyasaya sürülen varlıklar",
-            "new30d": "Son 30 günde piyasaya sürülen varlıklar",
-            "trx": "Varlıklar üzerinde yapılan işlemler"
-        },
-        "user": {
-            "title": "KULLANICI BİLGİLERİ",
-            "number": "Hesap sayısı",
-            "sub": "Alt-hesap sayısı",
-            "new24": "Son 24 saatte kaydolan kullanıcılar",
-            "new7d": "Son 7 günde kaydolan kullanıcılar"
-        },
-        "missed": {
-            "title": "KAÇIRILAN SON 10 BLOK"
-        },
-        "blocks": {
-            "title": "SON 10 BLOK"
-        },
-        "newUsers": {
-            "title": "YENİ KULLANICILAR"
-        }
-    },
-    "blocks": {
-        "search1": "blok yüksekliği ya da işlem ID'si arayın",
-        "search2": "blok yüksekliğine git",
-        "current": "ŞU ANKİ",
-        "higher": "DAHA YÜKSEK",
-        "lower": "DAHA ALÇAK",
-        "first": "İLK",
-        "last": "SON",
-        "blocks": "BLOKLAR",
-        "showTrx": "Sadece işlem içeren blokları göster",
-        "blockNum": "Blok yüksekliği",
-        "timestamp": "Zaman damgası",
-        "delegate": "Delege",
-        "trxCount": "İşlem sayısı",
-        "trxValue": "İşlem değeri",
-        "fees": "Ücretler"
-    },
-    "block": {
-        "block": "Blok",
-        "previous": "Önceki blok",
-        "next": "Sonraki blok",
-        "details": {
-            "title": "BLOK AYRINTILARI",
-            "signee": "İmzalayan delege",
-            "size": "Blok boyutu",
-            "latency": "Gecikme",
-            "time": "İşleme süresi",
-            "hash1": "Önceki hash",
-            "hash2": "Sonraki gizli hash",
-            "hash3": "Önceki gizli hash"
-        },
-        "trx": {
-            "title": "İŞLEM",
-            "type": "İşlem tipi",
-            "id": "İşlem ID'si",
-            "fee": "İşlem ücreti",
-            "publid": "Halka açık bilgi",
-            "delegate": "Delege adı",
-            "feedUpdates": "Feed güncellemeleri",
-            "feedPrice": "Feed fiyatı",
-            "votes": "İşlemdeki oylamalar",
-            "price": "Fiyat oranı",
-            "interest": "Faiz oranı",
-            "priceLimit": "Fiyat limiti",
-            "collateral": "Teminat",
-            "assetName": "Varlık adı",
-            "assetAmount": "Varlık miktarı",
-            "base": "Baz varlık miktarı",
-            "amount": "Miktar",
-            "noVotes": "Bu işlemde hiç oy kullanılmamış",
-            "account": "Hesap",
-            "message": "Mesaj",
-            "key": "anahtar",
-            "asset": "Varlık",
-            "description": "Varlık tanımı",
-            "issuer": "Piyasaya süren hesap",
-            "for": "delege için",
-            "burn": "Burn",
-            "assetCreate": "Varlık yarat"
-        }
-    },
-    "delegates": {
-        "search": "Delege ara",
-        "title": "DELEGE BİLGİLERİ",
-        "standby": "Beklemedeki delegeleri dahil et",
-        "rank": "Sıra",
-        "change24": "24s Değişim",
-        "change7": "7g Değişim",
-        "votes": "Oy Oranı",
-        "produced": "Üretilen",
-        "missed": "Kaçırılan",
-        "rate": "Ödeme Oranı",
-        "latency": "Ortalama Gecikme",
-        "feeds": "Aktif Feed Sayısı",
-        "feedFreq": "Feed Sıklığı",
-        "rel": "Güvenilirlik",
-        "version": "Versiyon"
+  "nav": {
+    "home": "Ana Sayfa",
+    "blocks": "Bloklar",
+    "delegates": "Delegeler",
+    "accounts": "Hesaplar",
+    "assets": "Varlıklar",
+    "charts": "Grafikler",
+    "general": "Genel",
+    "supply": "BTS Miktarı ve Ücretler",
+    "btsgenesis": "BTS Kaynak Blok",
+    "btsxgenesis": "BTSX Kaynak Blok",
+    "about": "Hakkında"
+  },
+  "alerts": {
+    "del1": "Yeni bir delege oluşturdum, Lütfen oyunuzu ",
+    "del2": "delegesine değiştirin.",
+    "del3": "Daha fazla bilgi",
+    "del4": "burada"
+  },
+  "footer": {
+    "vote": "Lütfen delegeme oy verin",
+    "donate": "Bağışta bulunun",
+    "info": "Bilgi/Güncellemeler",
+    "thread": "BitsharesTalk Konu Başlığı",
+    "version": "İstemci versiyonu",
+    "language": "Dil"
+  },
+  "home": {
+    "history": "SON 14 GÜNLÜK BTS FİYATI",
+    "price": "Fiyat",
+    "MA": "30-günlük Hareketli Ortalama",
+    "health": {
+      "title": "AĞ SAĞLIĞI",
+      "alert": "Ağ Alarm Seviyesi:",
+      "particip": "Delege Katılım Oranı:",
+      "confirm": "Ortalama Onay Süresi:",
+      "forks": "Son 24s içindeki forklar:",
+      "forkBlock": "Son fork'un blok yüksekliği:",
+      "signee": "Fork'u imzalayan delege:",
+      "latency": "Delegenin gecikme süresi:"
     },
     "delegate": {
-        "prevRank": "Önceki sıra",
-        "nextRank": "Sonraki sıra",
-        "votesChart": "OY DEĞİŞİMİ",
-        "sumVotes": "Toplam oy",
-        "payChart": {
-            "title": "TOPLAM KAZANÇ",
-            "name": "Kümülatif kazanç"
-        },
-        "rank": {
-            "title": "SIRA VE OYLAR",
-            "current": "Şu anki sıra",
-            "dayChange": "24s sıra değişimi",
-            "weekChange": "7g sıra değişimi",
-            "votes": "Lehteki oylar",
-            "percentVotes": "Lehteki oy oranı"
-        },
-        "data": {
-            "title": "HALKA AÇIK BİLGİ",
-            "description": "Tanım",
-            "proposal": "Delegenin deklarasyonu",
-            "location": "Sunucu lokasyonu",
-            "country": "Delegenin ülkesi",
-            "handle": "BitsharesTalk kullanıcı adı",
-            "ann": "Duyurular",
-            "role": "Rol",
-            "website": "Web sitesi",
-            "role_0": "Geliştirme",
-            "role_1": "Pazarlama",
-            "role_2": "Musluk (Faucet)",
-            "role_3": "Omurga",
-            "role_4": "Hayır işi",
-            "role_5": "Teknik Destek",
-            "role_6": "Hukuk/Regülasyon",
-            "role_7": "Medya/Halkla İlişkiler"
-        },
-        "feeds": {
-            "title": "DELEGE FEEDLERİ",
-            "total": "Toplam feed sayısı",
-            "active": "Aktif feedler",
-            "show": "feedleri göster",
-            "valid": "Sadece geçerli feedleri göster"
-        },
-        "info": {
-            "title": "DELEGE BİLGİSİ",
-            "earnings": "Toplam kazanç",
-            "withdrawn": "Çekilen kazanç",
-            "fees": "Toplam ödenen ücret"
-        },
-        "prod": {
-            "title": "BLOK  ÜRETİMİ",
-            "prod": "Üretilen Blok",
-            "missed": "Kaçırılan Blok",
-            "last": "Üretilen son blok",
-            "lat50": "Son 50 blokta ortalama gecikme",
-            "lat100": "Son 100 blokta ortalama gecikme",
-            "lat200": "Son 200 blokta ortalama gecikme"
-        },
-        "votes": {
-            "title": "OY GEÇMİŞİ",
-            "total": "TOPLAM OY",
-            "net": "Net Oy >= 10000"
-        }
+      "title": "DELEGE BİLGİLERİ",
+      "reg": "Kayıtlı delegeler",
+      "votes": "Oy almış delegeler",
+      "payReg": "100% ödemeli kayıtlar",
+      "new24": "Son 24 saat içinde kaydolan delegeler",
+      "new7d": "Son 7 gün içinde kaydolan delegeler",
+      "pay": "Maksimum ödeme",
+      "averagePay": "Average pay rate"
     },
-    "accounts": {
-        "title": "HESAPLAR",
-        "search1": "İsim ile hesap ara",
-        "search2": "IDye git",
-        "recent": "EN SON",
-        "newer": "DAHA YENİ",
-        "older": "DAHA ESKİ",
-        "oldest": "EN ESKİ",
-        "name": "Hesap Adı",
-        "id": "ID",
-        "reg": "Kayıt Tarihi",
-        "update": "Son güncelleme"
-    },
-    "account": {
-        "previous": "Önceki hesap",
-        "next": "Sonraki hesap",
-        "title1": "Hesap Bilgisi",
-        "id": "Hesap IDsi",
-        "owner": "Sahip",
-        "title2": "AKTİF ANAHTAR GEÇMİŞİ",
-        "date": "Tarih",
-        "key": "Anahtar",
-        "website": "Web sitesi",
-        "burn": "BURN İŞLEMLERİ"
-    },
-    "assets": {
-        "plot": {
-            "title": "TÜM VARLIK İŞLEM TİPLERİ SON 7 GÜN",
-            "type1": "Ask",
-            "type2": "Bid",
-            "type3": "Short",
-            "type4": "Cover"
-        },
-        "market": {
-            "title": "PAZARDAKİ VARLIKLAR",
-            "th1": "Varlık Sembolü",
-            "th2": "Bid derinliği",
-            "th3": "Ask derinliği",
-            "th4": "Geçerli feedler",
-            "th5": "Ortalama Feed Fiyatı",
-            "th6": "Arz",
-            "th7": "24s Hacim",
-            "th8": "Pazar Değeri"
-        },
-        "user": {
-            "show": "Kullanıcılar tarafından piyasaya sürülen varlıkları göster",
-            "title": "KULLANICILAR TARAFINDAN PİYASAYA SÜRÜLMÜŞ VARLIKLAR",
-            "th1": "Varlık ID",
-            "th4": "Şu anki Arz",
-            "th5": "Maksimum Arz"
-        }
+    "blockchain": {
+      "title": "BLOK ZİNCİRİ BİLGİLERİ",
+      "supply": "Toplam hisse",
+      "unclaimed": "Henüz sahiplenilmemiş hisse",
+      "collat": "Teminat olarak bağlı hisse",
+      "change": "24 saat arz değişimi",
+      "current": "Şu anki blok ",
+      "trx": "İşlem içeren bloklar",
+      "missed": "Kaçırılan toplam blok"
     },
     "asset": {
-        "orderbook": "SİPARİŞ DEFTERİ",
-        "bids": "ALIŞ TEKLİFLERİ",
-        "asks": "SATIŞ TEKLİFLERİ",
-        "shorts": "SHORTS",
-        "priceH": "FİYAT GEÇMİŞİ",
-        "alert1": "Tahta kapalı: Yeterli sayıda aktif feed yok",
-        "alert2": "Tahta kapalı: Yetersiz piyasa derinliği",
-        "collateral": "Teminat",
-        "supply": "ARZ",
-        "supplyAnd": "VE TEMİNAT (BTS) GEÇMİŞİ",
-        "sell": "Sat:",
-        "buy": "Satın al:",
-        "short": "Short",
-        "chartSupply": "Arz",
-        "ohlc": "Fiyat: OHLC",
-        "external": "Harici Coinmarketcap fiyatı",
-        "volume": "Hacim",
-        "assetInfo": {
-            "title": "VARLIK BİLGİSİ",
-            "base": "Baz Varlık",
-            "name": "Tam Adı",
-            "precision": "Hassasiyet",
-            "regdate": "Kayıt Tarihi"
-        },
-        "market": {
-            "title": "PAZAR BİLGİSİ",
-            "reserve": "İhtiyat Akçesi"
-        },
-        "feeds": {
-            "avg": "Ortalama Feed Fiyatı",
-            "med": "Medyan Feed Fiyatı",
-            "null": "Son 24 saatte yeterli feed yok",
-            "last": "Son güncelleme (UTC)"
-        }
+      "title": "VARLIK BİLGİLERİ",
+      "number": "Varlık sayısı",
+      "user": "Kullanıcılar tarafından piyasaya sürülen varlıklar",
+      "shortReg": "Kısa isimli kayıtlar",
+      "longReg": "Uzun isimli kayıtlar",
+      "new7d": "Son 7 günde piyasaya sürülen varlıklar",
+      "new30d": "Son 30 günde piyasaya sürülen varlıklar",
+      "trx": "Varlıklar üzerinde yapılan işlemler"
     },
-    "charts": {
-        "titles": {
-            "new": "YENİ HESAPLAR",
-            "total": "TOPLAM HESAP SAYISI",
-            "assetTrx": "TÜM VARLIK İŞLEM TİPLERİ",
-            "btsTrx": "BTS İŞLEM TİPLERİ",
-            "trxCount": "BTS İŞLEM SAYISI",
-            "volume": "BTS İŞLEM HACMİ",
-            "btcPrice": "BTS/BTC FİYAT GEÇMİŞİ",
-            "usdPrice": "USD/BTS FİYAT GEÇMİŞİ"
-        },
-        "value": "Değer",
-        "reg": "Hesap kaydı",
-        "transfer": "Transfer",
-        "feed": "Delege feed güncellemesi",
-        "update": "Hesap güncellemesi",
-        "new": "Yeni hesaplar",
-        "ma15": "15-günlük Hareketli Ortalama"
+    "user": {
+      "title": "KULLANICI BİLGİLERİ",
+      "number": "Hesap sayısı",
+      "sub": "Alt-hesap sayısı",
+      "new24": "Son 24 saatte kaydolan kullanıcılar",
+      "new7d": "Son 7 günde kaydolan kullanıcılar"
     },
-    "supply": {
-        "title1": "BİLGİ",
-        "title2": "BTS HARDFORK SONRASI ARZ DEĞİŞİMİ",
-        "title3": "TOPLAM BTS ARZI",
-        "title4": "ZAMANA GÖRE ÖDENEN BTS ÜCRETLERİ",
-        "height": "BTSX yüksekliği => BTS hardfork bloğu",
-        "supply": "Fork anındaki arz",
-        "change": "Hardfork sonrası arz değişimi",
-        "changeY": "BTS arz değişimi",
-        "supplyY": "BTS arzı",
-        "feesY": "BTS ücretleri"
+    "missed": {
+      "title": "KAÇIRILAN SON 10 BLOK"
     },
-    "genesis": {
-        "stats": "İSTATİSTİKLER",
-        "biggest": "BAKİYEYE GÖRE ADRES SAYILARI",
-        "total": "Toplam adres sayısı",
-        "supply": "Toplam ilk arz",
-        "sharedrop": "AGS+PTS+DNS+VOTE sharedrop miktarı",
-        "market": "Pazar varlıklarının sayısı",
-        "whale": "En büyük bakiyeli hesap",
-        "higher": "Şu miktardan daha büyük bakiyeye sahip adres sayısı:",
-        "percent": "ADRESLERE GÖRE TOPLAM ARZ YÜZDESİ",
-        "top": "TOP",
-        "addresses": "ADRES",
-        "address": "Adres",
-        "balance": "Bakiye",
-        "percentOf": "%",
-        "cumul": "Kümülatif %",
-        "x": "Hesap sayısı",
-        "y": "toplam arzın yüzdesi",
-        "tooltip": "Toplam arzın yüzdesi"
+    "blocks": {
+      "title": "SON 10 BLOK"
+    },
+    "newUsers": {
+      "title": "YENİ KULLANICILAR"
     }
+  },
+  "blocks": {
+    "search1": "blok yüksekliği ya da işlem ID'si arayın",
+    "search2": "blok yüksekliğine git",
+    "current": "ŞU ANKİ",
+    "higher": "DAHA YÜKSEK",
+    "lower": "DAHA ALÇAK",
+    "first": "İLK",
+    "last": "SON",
+    "blocks": "BLOKLAR",
+    "showTrx": "Sadece işlem içeren blokları göster",
+    "blockNum": "Blok yüksekliği",
+    "timestamp": "Zaman damgası",
+    "delegate": "Delege",
+    "trxCount": "İşlem sayısı",
+    "trxValue": "İşlem değeri",
+    "fees": "Ücretler"
+  },
+  "block": {
+    "block": "Blok",
+    "previous": "Önceki blok",
+    "next": "Sonraki blok",
+    "details": {
+      "title": "BLOK AYRINTILARI",
+      "signee": "İmzalayan delege",
+      "size": "Blok boyutu",
+      "latency": "Gecikme",
+      "time": "İşleme süresi",
+      "hash1": "Önceki hash",
+      "hash2": "Sonraki gizli hash",
+      "hash3": "Önceki gizli hash"
+    },
+    "trx": {
+      "title": "İŞLEM",
+      "type": "İşlem tipi",
+      "id": "İşlem ID'si",
+      "fee": "İşlem ücreti",
+      "publid": "Halka açık bilgi",
+      "delegate": "Delege adı",
+      "feedUpdates": "Feed güncellemeleri",
+      "feedPrice": "Feed fiyatı",
+      "votes": "İşlemdeki oylamalar",
+      "price": "Fiyat oranı",
+      "interest": "Faiz oranı",
+      "priceLimit": "Fiyat limiti",
+      "collateral": "Teminat",
+      "assetName": "Varlık adı",
+      "assetAmount": "Varlık miktarı",
+      "base": "Baz varlık miktarı",
+      "amount": "Miktar",
+      "noVotes": "Bu işlemde hiç oy kullanılmamış",
+      "account": "Hesap",
+      "message": "Mesaj",
+      "key": "anahtar",
+      "asset": "Varlık",
+      "description": "Varlık tanımı",
+      "issuer": "Piyasaya süren hesap",
+      "for": "delege için",
+      "burn": "Burn",
+      "assetCreate": "Varlık yarat"
+    }
+  },
+  "delegates": {
+    "search": "Delege ara",
+    "title": "DELEGE BİLGİLERİ",
+    "standby": "Beklemedeki delegeleri dahil et",
+    "rank": "Sıra",
+    "change24": "24s Değişim",
+    "change7": "7g Değişim",
+    "votes": "Oy Oranı",
+    "produced": "Üretilen",
+    "missed": "Kaçırılan",
+    "rate": "Ödeme Oranı",
+    "latency": "Ortalama Gecikme",
+    "feeds": "Aktif Feed Sayısı",
+    "feedFreq": "Feed Sıklığı",
+    "rel": "Güvenilirlik",
+    "version": "Versiyon",
+    "filter": "süzmek"
+  },
+  "delegate": {
+    "prevRank": "Önceki sıra",
+    "nextRank": "Sonraki sıra",
+    "votesChart": "OY DEĞİŞİMİ",
+    "sumVotes": "Toplam oy",
+    "payChart": {
+      "title": "TOPLAM KAZANÇ",
+      "name": "Kümülatif kazanç"
+    },
+    "rank": {
+      "title": "SIRA VE OYLAR",
+      "current": "Şu anki sıra",
+      "dayChange": "24s sıra değişimi",
+      "weekChange": "7g sıra değişimi",
+      "votes": "Lehteki oylar",
+      "percentVotes": "Lehteki oy oranı"
+    },
+    "data": {
+      "title": "HALKA AÇIK BİLGİ",
+      "description": "Tanım",
+      "proposal": "Delegenin deklarasyonu",
+      "location": "Sunucu lokasyonu",
+      "country": "Delegenin ülkesi",
+      "handle": "BitsharesTalk kullanıcı adı",
+      "ann": "Duyurular",
+      "role": "Rol",
+      "website": "Web sitesi",
+      "role_0": "Geliştirme",
+      "role_1": "Pazarlama",
+      "role_2": "Musluk (Faucet)",
+      "role_3": "Omurga",
+      "role_4": "Hayır işi",
+      "role_5": "Teknik Destek",
+      "role_6": "Hukuk/Regülasyon",
+      "role_7": "Medya/Halkla İlişkiler"
+    },
+    "feeds": {
+      "title": "DELEGE FEEDLERİ",
+      "total": "Toplam feed sayısı",
+      "active": "Aktif feedler",
+      "show": "feedleri göster",
+      "valid": "Sadece geçerli feedleri göster"
+    },
+    "info": {
+      "title": "DELEGE BİLGİSİ",
+      "earnings": "Toplam kazanç",
+      "withdrawn": "Çekilen kazanç",
+      "fees": "Toplam ödenen ücret"
+    },
+    "prod": {
+      "title": "BLOK  ÜRETİMİ",
+      "prod": "Üretilen Blok",
+      "missed": "Kaçırılan Blok",
+      "last": "Üretilen son blok",
+      "lat50": "Son 50 blokta ortalama gecikme",
+      "lat100": "Son 100 blokta ortalama gecikme",
+      "lat200": "Son 200 blokta ortalama gecikme"
+    },
+    "votes": {
+      "title": "OY GEÇMİŞİ",
+      "total": "TOPLAM OY",
+      "net": "Net Oy >= 10,000"
+    }
+  },
+  "accounts": {
+    "title": "HESAPLAR",
+    "search1": "İsim ile hesap ara",
+    "search2": "IDye git",
+    "recent": "EN SON",
+    "newer": "DAHA YENİ",
+    "older": "DAHA ESKİ",
+    "oldest": "EN ESKİ",
+    "name": "Hesap Adı",
+    "id": "ID",
+    "reg": "Kayıt Tarihi",
+    "update": "Son güncelleme",
+    "yes": "Evet",
+    "no": "Hayır",
+    "wall": "Wall total"
+  },
+  "account": {
+    "previous": "Önceki hesap",
+    "next": "Sonraki hesap",
+    "title1": "Hesap Bilgisi",
+    "id": "Hesap IDsi",
+    "owner": "Sahip",
+    "title2": "AKTİF ANAHTAR GEÇMİŞİ",
+    "date": "Tarih",
+    "key": "Anahtar",
+    "website": "Web sitesi",
+    "burn": "BURN İŞLEMLERİ"
+  },
+  "assets": {
+    "plot": {
+      "title": "TÜM VARLIK İŞLEM TİPLERİ SON 7 GÜN",
+      "type1": "Ask",
+      "type2": "Bid",
+      "type3": "Short",
+      "type4": "Cover"
+    },
+    "market": {
+      "title": "PAZARDAKİ VARLIKLAR",
+      "th1": "Varlık Sembolü",
+      "th2": "Bid derinliği",
+      "th3": "Ask derinliği",
+      "th4": "Geçerli feedler",
+      "th5": "Ortalama Feed Fiyatı",
+      "th6": "Arz",
+      "th7": "24s Hacim",
+      "th8": "Pazar Değeri"
+    },
+    "user": {
+      "show": "Kullanıcılar tarafından piyasaya sürülen varlıkları göster",
+      "title": "KULLANICILAR TARAFINDAN PİYASAYA SÜRÜLMÜŞ VARLIKLAR",
+      "th1": "Varlık ID",
+      "th4": "Şu anki Arz",
+      "th5": "Maksimum Arz",
+      "th6": "Initialized"
+    }
+  },
+  "asset": {
+    "orderbook": "SİPARİŞ DEFTERİ",
+    "bids": "ALIŞ TEKLİFLERİ",
+    "asks": "SATIŞ TEKLİFLERİ",
+    "shorts": "SHORTS",
+    "priceH": "FİYAT GEÇMİŞİ",
+    "alert1": "Tahta kapalı: Yeterli sayıda aktif feed yok",
+    "alert2": "Tahta kapalı: Yetersiz piyasa derinliği",
+    "collateral": "Teminat",
+    "supply": "ARZ",
+    "supplyAnd": "VE TEMİNAT (BTS) GEÇMİŞİ",
+    "sell": "Sat:",
+    "buy": "Satın al:",
+    "short": "Short",
+    "chartSupply": "Arz",
+    "ohlc": "Fiyat: OHLC",
+    "external": "Harici Coinmarketcap fiyatı",
+    "volume": "Hacim",
+    "assetInfo": {
+      "title": "VARLIK BİLGİSİ",
+      "base": "Baz Varlık",
+      "name": "Tam Adı",
+      "precision": "Hassasiyet",
+      "regdate": "Kayıt Tarihi"
+    },
+    "market": {
+      "title": "PAZAR BİLGİSİ",
+      "reserve": "İhtiyat Akçesi"
+    },
+    "feeds": {
+      "avg": "Ortalama Feed Fiyatı",
+      "med": "Medyan Feed Fiyatı",
+      "null": "Son 24 saatte yeterli feed yok",
+      "last": "Son güncelleme (UTC)"
+    }
+  },
+  "charts": {
+    "titles": {
+      "new": "YENİ HESAPLAR",
+      "total": "TOPLAM HESAP SAYISI",
+      "assetTrx": "TÜM VARLIK İŞLEM TİPLERİ",
+      "btsTrx": "BTS İŞLEM TİPLERİ",
+      "trxCount": "BTS İŞLEM SAYISI",
+      "volume": "BTS İŞLEM HACMİ",
+      "btcPrice": "BTS/BTC FİYAT GEÇMİŞİ",
+      "usdPrice": "USD/BTS FİYAT GEÇMİŞİ"
+    },
+    "value": "Değer",
+    "reg": "Hesap kaydı",
+    "transfer": "Transfer",
+    "feed": "Delege feed güncellemesi",
+    "update": "Hesap güncellemesi",
+    "new": "Yeni hesaplar",
+    "ma15": "15-günlük Hareketli Ortalama"
+  },
+  "supply": {
+    "title1": "BİLGİ",
+    "title2": "BTS HARDFORK SONRASI ARZ DEĞİŞİMİ",
+    "title3": "TOPLAM BTS ARZI",
+    "title4": "ZAMANA GÖRE ÖDENEN BTS ÜCRETLERİ",
+    "height": "BTSX yüksekliği => BTS hardfork bloğu",
+    "supply": "Fork anındaki arz",
+    "change": "Hardfork sonrası arz değişimi",
+    "changeY": "BTS arz değişimi",
+    "supplyY": "BTS arzı",
+    "feesY": "BTS ücretleri"
+  },
+  "genesis": {
+    "stats": "İSTATİSTİKLER",
+    "biggest": "BAKİYEYE GÖRE ADRES SAYILARI",
+    "total": "Toplam adres sayısı",
+    "supply": "Toplam ilk arz",
+    "sharedrop": "AGS+PTS+DNS+VOTE sharedrop miktarı",
+    "market": "Pazar varlıklarının sayısı",
+    "whale": "En büyük bakiyeli hesap",
+    "higher": "Şu miktardan daha büyük bakiyeye sahip adres sayısı:",
+    "percent": "ADRESLERE GÖRE TOPLAM ARZ YÜZDESİ",
+    "top": "TOP",
+    "addresses": "ADRES",
+    "address": "Adres",
+    "balance": "Bakiye",
+    "percentOf": "%",
+    "cumul": "Kümülatif %",
+    "x": "Hesap sayısı",
+    "y": "toplam arzın yüzdesi",
+    "tooltip": "Toplam arzın yüzdesi"
+  }
 }

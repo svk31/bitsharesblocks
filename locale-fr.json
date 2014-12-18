@@ -23,7 +23,8 @@
 		"donate": "Donations",
 		"info": "Info/MAJ",
 		"thread": "BitsharesTalk Sujet",
-		"version": "Vérsion du client"
+		"version": "Vérsion du client",
+		"language": "Langue"
 	},
 	"home": {
 		"history":"BTS EVOLUTION DU PRIX DERNIERS 14 JOURS",
@@ -46,7 +47,8 @@
 			"payReg": "Frais d'inscription max",
 			"new24": "Nouveaux délégués derniers 24h",
 			"new7d": "Nouveaux délégués derniers 7j",
-			"pay": "Salaire maximal"
+			"pay": "Salaire maximal",
+			"averagePay": "Salaire moyen"
 		},
 		"blockchain": {
 			"title": "STATS DE LA BLOCKCHAIN ",
@@ -161,7 +163,8 @@
 		"feeds": "Flux actifs",
 		"feedFreq": "Frequence des flux",
 		"rel": "Fiabilité",
-		"version": "Vérsion"
+		"version": "Vérsion",
+		"filter": "filtrer"
 	},
 	"delegate": {
 		"prevRank": "Rang précedent",
@@ -225,7 +228,7 @@
 		"votes": {
 			"title": "HISTORIQUE DES VOTES",
 			"total": "VOTES TOTALS",
-			"net": "Votes nets >= 10000"
+			"net": "Votes nets >= 10,000"
 		}
 	},
 	"accounts": {
@@ -239,7 +242,10 @@
 		"name": "Nom du compte",
 		"id": "ID",
 		"reg": "Date d'inscription",
-		"update": "Dernier mise à jour"
+		"update": "Dernier mise à jour",
+		"yes": "Oui",
+		"no": "Non",
+		"wall": "Solde du mur"
 	},
 	"account": {
 		"previous": "Compte précédent",
@@ -278,7 +284,8 @@
 			"title": "ACTIFS DES UTILISATEURS",
 			"th1": "ID de l'actif",
 			"th4": "Réserve courant",
-			"th5": "Réserve maximal"
+			"th5": "Réserve maximal",
+		        "th6": "Initialized"
 		}
 	},
 	"asset": {
