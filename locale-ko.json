@@ -28,7 +28,7 @@
 	},
 	"home": {
 		"history":"지난 14일 BTS 시세",
-		"price":"시가",
+		"price":"가격",
 		"MA":"30일 이동평균",
 		"health": {
 			"title": "네트워크 상태",
@@ -144,7 +144,7 @@
 			"description": "자산 설명",
 			"issuer": "발행자 계정",
 			"for": "For delegate",
-			"burn": "Burn",
+			"burn": "소각",
 			"assetCreate": "자산 발행"
 		}
 	},
@@ -158,13 +158,13 @@
 		"votes": "득표율",
 		"produced": "블럭생성",
 		"missed": "누락",
-		"rate": "지급율",
+		"rate": "지급률",
 		"latency": "평균 지연율",
 		"feeds": "활성 피드",
 		"feedFreq": "피드 제공 빈도",
 		"rel": "신뢰도",
 		"version": "버전",
-		"filter": "filter"
+		"filter": "필터"
 	},
 	"delegate": {
 		"prevRank": "이전 순위",
@@ -173,7 +173,7 @@
 		"sumVotes": "총 득표수",
 		"payChart": {
 			"title": "순수입",
-			"name" : "누적 수입"
+			"name" : "누적수입"
 		},
 		"rank": {
 			"title": "순위 및 득표",
@@ -213,7 +213,7 @@
 			"title": "대표자 정보",
 			"earnings": "총 수입",
 			"withdrawn": "인출한 수입",
-			"fees": "총 지불 수수료"
+			"fees": "총 수수료 지불"
 		},
 		"prod": {
 			"title": "블럭 생성",
@@ -256,7 +256,7 @@
 		"date": "일시",
 		"key": "키",
 		"website": "웹사이트",
-		"burn": "BURN 활동"
+		"burn": "소각 활동"
 	},
 	"assets": {
 		"plot": {
@@ -269,8 +269,8 @@
 		"market": {
 			"title": "시장 발행 자산",
 			"th1": "자산 이름",
-			"th2": "매수 깊이",
-			"th3": "매도 깊이",
+			"th2": "매수대기물량",
+			"th3": "매도대기물량",
 			"th4": "유효 피드",
 			"th5": "평균 피드가격",
 			"th6": "총공급량",
@@ -283,7 +283,7 @@
 			"th1": "자산 ID",
 			"th4": "현재 공급량",
 			"th5": "최대 공급량",
-			"th6": "Initialized"
+			"th6": "활성화"
 		}
 	},
 	"asset": {
@@ -297,8 +297,8 @@
 		"collateral": "담보",
 		"supply": "공급량",
 		"supplyAnd": "및 담보(BTS) 추이",
-		"sell": "매도",
-		"buy": "매수",
+		"sell": "판매",
+		"buy": "구입",
 		"short": "공매도",
 		"chartSupply": "공급량",
 		"ohlc": "시세: OHLC",
@@ -346,7 +346,7 @@
 		"title2": "하드포크 이후 공급량 변화",
 		"title3": "총 BTS 공급량",
 		"title4": "시간별 BTS 수수료 지불액",
-		"height": "BTSX => BTS 하드포크 블럭높이",
+		"height": "BTSX => BTS 하드포크 블럭번호",
 		"supply": "하드포크시 공급량",
 		"change": "하드포크 이후 공급량 변화",
 		"changeY": "BTS 공급량 변화",
