@@ -35,9 +35,9 @@
 			"alert": "네트워크 상태:",
 			"particip": "대표자 참여율:",
 			"confirm": "평균 컨펌시간:",
-			"forks": "24시간 내 Fork:",
-			"forkBlock": "마지막 Fork 블럭:",
-			"signee": "Fork 생성 대표자:",
+			"forks": "24시간 내 포크:",
+			"forkBlock": "마지막 포크 블럭:",
+			"signee": "포크 생성 대표자:",
 			"latency": "대표자 지연율:"
 		},
 		"delegate": {
@@ -48,7 +48,7 @@
 			"new24": "지난 24시간 새 대표자",
 			"new7d": "지난 7일 새 대표자",
 			"pay": "최대 지급률",
-			"averagePay": "Average pay rate"
+			"averagePay": "평균 지급률"
 		},
 		"blockchain": {
 			"title": "블럭체인 통계",
@@ -58,7 +58,7 @@
 			"change" :"지난 24시간 공급량 변화",
 			"current": "현재 블럭",
 			"trx": "거래를 포함한 블럭",
-			"missed": "누락된 블럭"
+			"missed": "총 누락 블럭"
 		},
 		"asset": {
 			"title": "자산 통계",
@@ -88,19 +88,19 @@
 		}
 	},
 	"blocks": {
-		"search1": "블럭높이, 거래번호(txid) 검색",
-		"search2": "블럭으로 이동",
+		"search1": "블럭번호, 거래번호(txid) 검색",
+		"search2": "블럭 이동",
 		"current": "현재",
 		"higher": "이전",
 		"lower": "다음",
 		"first": "처음",
-		"last": "마지막",
+		"last": "최근",
 		"blocks": "블럭",
 		"showTrx": "거래를 포함한 블럭만 표시",
 		"blockNum": "블럭높이",
 		"timestamp": "생성시각",
 		"delegate": "대표자",
-		"trxCount": "거래개수",
+		"trxCount": "거래수",
 		"trxValue": "거래량",
 		"fees": "수수료"
 	},
