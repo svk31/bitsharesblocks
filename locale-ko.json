@@ -21,10 +21,10 @@
 	"footer": {
 		"vote": "대표자 투표",
 		"donate": "기부",
-		"info": "Info/Updates",
+		"info": "정보/업데이트",
 		"thread": "BitsharesTalk Thread",
 		"version": "클라이언트 버전",
-		"language": "Language"
+		"language": "언어"
 	},
 	"home": {
 		"history":"지난 14일 BTS 시세",
@@ -32,7 +32,7 @@
 		"MA":"30일 이동평균",
 		"health": {
 			"title": "네트워크 상태",
-			"alert": "Network 위험도:",
+			"alert": "네트워크 상태:",
 			"particip": "대표자 참여율:",
 			"confirm": "평균 컨펌시간:",
 			"forks": "24시간 내 Fork:",
