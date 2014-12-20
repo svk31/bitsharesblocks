@@ -97,7 +97,7 @@
 		"last": "최근",
 		"blocks": "블럭",
 		"showTrx": "거래를 포함한 블럭만 표시",
-		"blockNum": "블럭높이",
+		"blockNum": "블럭번호",
 		"timestamp": "생성시각",
 		"delegate": "대표자",
 		"trxCount": "거래수",
@@ -188,7 +188,7 @@
 			"description": "상세설명",
 			"proposal": "대표자 공약",
 			"location": "서버 위치",
-			"country": "Delegate country",
+			"country": "국가",
 			"handle": "BitsharesTalk 계정",
 			"ann": "공지",
 			"role": "역할",
@@ -308,7 +308,7 @@
 			"title": "자산 정보",
 			"base": "기준 자산",
 			"name": "자산명",
-			"precision": "소수자리수",
+			"precision": "정밀도",
 			"regdate": "등록일시"
 		},
 		"market": {
@@ -333,12 +333,12 @@
 			"btcPrice": "BTS/BTC 시세 추이",
 			"usdPrice": "USD/BTS 시세 추이"
 		},
-		"value": "Value",
-		"reg": "Account registration",
+		"value": "값",
+		"reg": "계정 등록",
 		"transfer": "Transfer",
-		"feed": "Delegate feed update",
-		"update": "Account update",
-		"new": "New accounts",
+		"feed": "대표자 피드 업데이트",
+		"update": "계정 업데이트",
+		"new": "새 계정",
 		"ma15":"15일 이동평균"
 	},
 	"supply": {
