@@ -1,0 +1,8 @@
+User-agent: *
+Disallow:/*?id
+Disallow:/*?name
+Disallow:/*?trx
+Disallow:/*?top
+Disallow:/*&trx
+Disallow:/*&query
+Disallow:/*?query

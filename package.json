@@ -1,0 +1,19 @@
+{
+  "name": "bitsharesblocks",
+  "title": "Block explorer and more for Bitshares",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Sigve Kvalsvik"
+  },
+  "devDependencies": {
+    "lineman": "^0.34.0",
+    "lineman-angular": "^0.3.0",
+    "lineman-less": "0.0.1",
+    "protractor": "^1.2.0-beta1"
+  },
+  "scripts": {
+    "start": "lineman run",
+    "test": "lineman spec-ci"
+  }
+}

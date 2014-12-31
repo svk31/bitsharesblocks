@@ -1,0 +1,81 @@
+<div class="text-center col-xs-12">
+  <h1 id="delegateH">{{account.name}}</h1>
+
+  <img alt="Account Robo Avatar" height="100" width="100" ng-src="http://robohash.org/{{account.name}}.png?size=100x100" class="delegate-robo">
+
+  <div class="container" id="next-delegate">
+    <a ng-if="account._id>1" href="" ng-click="getNextAccount(account._id-1)" analytics-on analytics-event="Previous Account" analytics-category="Navigation" analytics-label="Previous Account"><span class="glyphicon glyphicon-arrow-left"></span> {{'account.previous' | translate }}</a>
+    <a href="" ng-click="getNextAccount(account._id+1)" analytics-on analytics-event="Next Account" analytics-category="Navigation" analytics-label="Next Account">{{'account.next' | translate }} <span class="glyphicon glyphicon-arrow-right"></span></a>
+  </div>
+</div>
+
+<div id="delinfo" class="col-md-5 col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{'account.title1' | translate }}</h3>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">{{'account.id' | translate }}:<span class="badge">{{account._id}}</span></li>
+      <li class="list-group-item">{{'accounts.reg' | translate }}:<span class="badge">{{account.registration_date | date:'short'}}</span></li>
+      <li class="list-group-item">{{'accounts.update' | translate }}:<span class="badge">{{account.last_update | date:'short'}}</span></li>
+
+      <li ng-if="account.public_data.version" class="list-group-item">{{'footer.version' | translate }}:<span ng-class="{'badge':true, 'alert-success': (account.version === 1), 'alert-warning': (account.version === 2 ), 'alert-danger': (account.version > 2)}">{{account.public_data.version}}</span></li>
+      <li ng-if="account.public_data.website" class="list-group-item">{{'account.website' | translate }}:<a style="float:right;" ng-href="{{account.public_data.website}}" target="_blank">{{account.public_data.website}}</a></li>
+      <li ng-if="account.public_data.gui_data.website" class="list-group-item">{{'account.website' | translate }}:<a style="float:right;" ng-href="{{account.public_data.gui_data.website}}" target="_blank">{{account.public_data.gui_data.website}}</a></li>
+      <li class="list-group-item">{{'account.owner' | translate }}:<span class="badge">{{account.owner_key}}</span></li>
+      <li ng-if="account.isDelegate===true" class="list-group-item">{{'blocks.delegate' | translate }}:<span style="float:right;"><a ui-sref="delegate({ 'name' : account.name })" once-text="account.name"></a></span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="col-md-7 col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{'account.title2' | translate }}</h3>
+    </div>
+
+    <table  class="table table-condensed table-hover table-bordered" style="margin-bottom:0;">
+      <thead>
+        <tr>
+          <th>{{'account.date' | translate }}</th>
+          <th>{{'account.key' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr ng-repeat="key in account.active_key_history track by $index" class="repeated-item">
+          <td>{{key[0] | date:'medium'}}</a></td>
+          <td>{{key[1]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div ng-if="account.burn.length > 0" class="col-md-7 col-xs-12 user-assets">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{'account.burn' | translate }}</h3>
+    </div>
+
+    <table  class="table table-condensed table-hover table-bordered" style="margin-bottom:0;">
+      <thead>
+        <tr>
+        <th>{{'blocks.blockNum' | translate }}</th>
+          <th>{{'block.trx.amount' | translate }}</th>
+          <th>{{'block.trx.message' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr ng-repeat="burn in account.burn track by $index" class="repeated-item">
+        <td><a ui-sref="block({ 'id' : burnBlocks[$index] })" >{{ burnBlocks[$index] }}</a></td>
+          <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</a></td>
+          <td>{{ burn.message }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+

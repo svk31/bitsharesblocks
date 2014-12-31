@@ -1,0 +1,111 @@
+
+<div class="col-md-5 col-sm-6 col-xs-12" style="clear:left;">
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h3 class="panel-title">{{ 'delegate.rank.title' | translate }}</h3>
+     </div>
+     <ul class="list-group">
+         <li class="list-group-item"><strong>{{ 'delegate.rank.current' | translate }}:</strong><span class="badge">{{delegate.rank}}</span></li>
+         <li class="list-group-item">{{ 'delegate.rank.dayChange' | translate }}:<span ng-if="showDayChange" class="badge">{{ranks.dayChange}}</span><span ng-if="!showDayChange" class="badge">n/a</span></li>
+         <li class="list-group-item">{{ 'delegate.rank.weekChange' | translate }}:<span ng-if="showWeekChange" class="badge">{{ ranks.weekChange }}</span><span ng-if="!showWeekChange" class="badge">n/a</span></li>
+         <li class="list-group-item">{{ 'delegate.rank.votes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for | number:0}} BTS</span></li>
+         <li class="list-group-item">{{ 'delegate.rank.percentVotes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for_percent}} %</span></li>
+     </ul>
+ </div>
+</div>
+
+<div class="col-md-5 col-sm-6 col-xs-12 votestable" style="clear:left;">
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h3 class="panel-title">{{ 'delegate.prod.title' | translate }}</h3>
+     </div>
+     <li class="list-group-item">{{ 'delegate.prod.prod' | translate }}:<span class="badge">{{delegate.delegate_info.blocks_produced}}</span></li>
+     <li class="list-group-item">{{ 'delegate.prod.missed' | translate }}:<span class="badge">{{delegate.delegate_info.blocks_missed}}</span></li>
+     <!-- <li ng-if="delegate.delegate_info.last_block_num_produced!==0" class="list-group-item">Blocks missed last 50 slots:<span ng-class="{'badge':true, 'alert-success': (missedSum==0), 'alert-info': (missedSum<3 && missedSum>=1), 'alert-warning': (missedSum<6 && missedSum>=3), 'alert-danger': (missedSum>7)}">{{missedSum}}</span></li> -->
+     <li class="list-group-item">{{ 'delegates.rel' | translate }}:<span ng-class="{'badge':true, 'alert-success': (delegate.reliability>=97.5), 'alert-info': (delegate.reliability<97.5 && delegate.reliability>=92.5), 'alert-warning': (delegate.reliability<92.5 && delegate.reliability>=80), 'alert-danger': (delegate.reliability<80)}">{{delegate.reliability | number:2}} %</span></li>
+     <li ng-if="delegate.delegate_info.last_block_num_produced==0" class="list-group-item">{{ 'delegate.prod.prod' | translate }}:<span style="float:right;">No blocks produced</a></li>
+     <li ng-if="delegate.delegate_info.last_block_num_produced!==0" class="list-group-item">{{ 'delegate.prod.last' | translate }}:<a style="float:right;" ui-sref="block({ 'id' : delegate.delegate_info.last_block_num_produced })" >{{delegate.delegate_info.last_block_num_produced}}</a></li>
+     <!-- <li ng-if="delegate.delegate_info.last_block_num_produced==0" class="list-group-item">{{delegate.delegate_info.last_block_num_produced}}:<span class="badge">n/a</span></li> -->
+     <li class="list-group-item">{{ 'delegate.prod.lat50' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg50<1.5 && latencies.avg50>=0), 'alert-warning': (latencies.avg50>1.5 && latencies.avg50<=3), 'alert-danger': (latencies.avg50<0 || latencies.avg50>3)}">{{latencies.avg50 | number:3}}s</span></li>
+     <li ng-if="latencies.avg100!='n/a'" class="list-group-item">{{ 'delegate.prod.lat100' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg100<1.5 && latencies.avg100>=0), 'alert-warning': (latencies.avg100>1.5 && latencies.avg100<=3), 'alert-danger': (latencies.avg100<0 || latencies.avg100>3)}">{{latencies.avg100  | number:3}}s</span></li>
+     <li ng-if="latencies.avg100=='n/a'" class="list-group-item">{{ 'delegate.prod.lat100' | translate }}:<span class="badge">{{latencies.avg100}}</span></li>
+     <li ng-if="latencies.avg200!='n/a'" class="list-group-item">{{ 'delegate.prod.lat200' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg200<=1.5 && latencies.avg200>=0), 'alert-warning': (latencies.avg200>1.5 && latencies.avg200<=3), 'alert-danger': (latencies.avg200<0 || latencies.avg200>3)}">{{latencies.avg200  | number:3}}s</span></li>
+     <li ng-if="latencies.avg200=='n/a'" class="list-group-item">{{ 'delegate.prod.lat200' | translate }}:<span class="badge">{{latencies.avg200}}</span></li>
+ </div>
+</div>
+
+<div id="delinfo" class="col-md-5 col-sm-6 col-xs-12">
+ <div class="panel panel-default">
+  <div class="panel-heading">
+   <h3 class="panel-title">{{ 'delegate.info.title' | translate }}</h3>
+</div>
+<ul class="list-group">
+   <li class="list-group-item">{{ 'account.id' | translate }}:<span class="badge">{{delegate.id}}</span></li>
+   <li class="list-group-item">{{ 'accounts.reg' | translate }}:<span class="badge">{{delegate.registration_date | date:'short'}}</span></li>
+   <li class="list-group-item">{{ 'accounts.update' | translate }}:<span class="badge">{{delegate.last_update | date:'short'}}</span></li>
+   <li class="list-group-item">{{ 'delegates.rate' | translate }}:<span class="badge">{{delegate.delegate_info.pay_rate}} %</span></li>
+   <li class="list-group-item">{{ 'delegate.info.earnings' | translate }}:<span class="badge">{{totalEarnings | number:2}} BTS</span></li>
+   <li class="list-group-item">{{ 'delegate.info.withdrawn' | translate }}:<span class="badge">{{(totalEarnings-delegate.delegate_info.pay_balance) | number:2}} BTS</span></li>
+   <li class="list-group-item">{{ 'delegate.info.fees' | translate }}:<span class="badge">{{totalFees | number:2}} BTS</span></li>
+</ul>
+</div>
+</div>
+
+<div ng-if="delegate.rank<102" class="col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-12 votestable">
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h3 class="panel-title">{{ 'delegate.feeds.title' | translate }}</h3>
+     </div>
+     <ul class="list-group">
+         <li class="list-group-item">{{ 'delegate.feeds.total' | translate }}: <span ng-class="{'badge':true,'alert-success': (feeds[0].totalFeeds>=3), 'alert-warning': (feeds[0].totalFeeds<3 && feeds[0].totalFeeds>=1), 'alert-danger': (feeds[0].totalFeeds<1)}">{{feeds[0].totalFeeds}}</span></li>
+         <li class="list-group-item">{{ 'delegate.feeds.active' | translate }}: <span ng-class="{'badge':true,'alert-success': (feeds[0].activeFeeds>=3), 'alert-warning': (feeds[0].activeFeeds<3 && feeds[0].activeFeeds>=1), 'alert-danger': (feeds[0].activeFeeds<1)}">{{feeds[0].activeFeeds}}</span></li>
+         <li class="list-group-item"><div class="checkbox">
+            <label syle="margin-right:1em;">
+               <input ng-model="$root.showFeeds" type="checkbox">{{ 'delegate.feeds.show' | translate }}
+           </label>
+           <label>
+               <input ng-model="$root.activeBoolean" type="checkbox" ng-change="filterFeeds(activeBoolean)">{{ 'delegate.feeds.valid' | translate }}
+           </label>
+       </div>
+   </li>
+</ul>
+
+<table ng-if="$root.showFeeds" class="table table-condensed table-hover table-bordered">
+  <thead>
+     <tr>
+        <th ng-click="orderByField='symbol'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="symbol" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.asset' | translate }}</th>
+        <th ng-click="orderByField='last_update'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="last_update" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'asset.feeds.last' | translate }}</th>
+        <th>{{ 'home.price' | translate }}</th>
+    </tr>
+</thead>
+<tbody>
+ <tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in filteredFeeds | orderBy: orderByField:reverseSort track by feed.symbol" class="repeated-item">
+    <td><a ui-sref="asset({ 'id' : feed.symbol})">{{feed.symbol}}</td>
+    <td>{{feed.last_update | date:'medium'}}</td>
+    <td ng-if="feed.symbol!='BTC' && feed.symbol!='GLD'">{{(feed.price | number:4)+' '+feed.symbol+'/'+'BTS'}}</td>
+    <td ng-if="feed.symbol=='BTC' || feed.symbol=='GLD'">{{(feed.price | number:7)+' '+feed.symbol+'/'+'BTS'}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-6 col-xs-12 votestable">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ 'delegate.votes.title' | translate }} ({{votes.votesCount}} {{ 'delegate.votes.total' | translate }})<span id="dropdown" ng-click="status.open= !status.open"><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></span></h3>
+        </div>
+        <table ng-if="status.open" class="table table-condensed">
+            <thead >
+                <th>{{ 'blocks.blockNum' | translate }}</th>
+                <th>{{ 'delegate.votes.net' | translate }} BTS</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="block in votes.votes.votes track by $index">
+                    <td><a ui-sref="block({ 'id' : block.block })" once-text="block.block"></a></td>
+                    <td>{{(block.vote) | number:0}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

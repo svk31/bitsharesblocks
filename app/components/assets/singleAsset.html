@@ -1,0 +1,192 @@
+<div ng-if="asset.status.last_error.message==='insufficient depth'" class="col-md-12">
+  <div class="alert alert-danger" role="alert">{{ 'asset.alert2' | translate }}</div>
+</div>
+
+<div ng-if="enoughFeeds === false" class="col-md-12">
+  <div class="alert alert-danger" role="alert">{{ 'asset.alert1' | translate }}</div>
+</div>
+
+<div ng-if="showOrders===true" class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.orderbook' | translate }}</h3>
+    </div>
+    <highchart id="chart1" config="orderBookChart"></highchart>
+  </div>
+</div>
+
+<div  ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.bids' | translate }} ({{ 'asset.buy' | translate }} {{prefix+asset.symbol}})</h3>
+    </div>
+    <table class="table table-condensed">
+
+      <thead>
+        <th>{{ 'home.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.amount' | translate }} (BTS)</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="ask in asset.asks | limitTo:10  track by $index">
+          <td>{{ask.price | number:3}}</td>
+          <td>{{ask.amount | number:3}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.asks' | translate }} ({{ 'asset.sell' | translate }} {{prefix+asset.symbol}})</h3>
+    </div>
+    <table class="table table-condensed">
+      <thead>
+        <th>{{ 'home.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="bid in asset.bids | orderBy:'price' | limitTo:10 track by $index">
+          <td>{{bid.price | number:3}}</td>
+          <td>{{bid.amount | number:3}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div ng-if="showOrders===true && asset.issuer_account_id ===-2" class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.shorts' | translate }} ({{ 'assets.plot.type3' | translate }} {{prefix+asset.symbol}})</h3>
+    </div>
+    <table class="table table-condensed">
+      <thead>
+        <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.collateral' | translate }} (BTS)</th>
+        <th>{{ 'block.trx.interest' | translate }} (%)</th>
+        <th>{{ 'block.trx.priceLimit' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+
+      </thead>
+      <tbody>
+        <tr ng-repeat="short in asset.shorts | orderBy:'price' | limitTo:10  track by $index">
+          <td>{{(short.collateral * medianFeed / 2) | number:3}}</td>
+          <td>{{short.collateral | number:3}}</td>
+          <td>{{short.interest | number:3}}</td>
+          <td ng-if="short.price_limit>0">{{(1/short.price_limit | number:3)}}</td>
+          <td ng-if="!(short.price_limit>0)">{{(short.price_limit)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div ng-if="showPriceHistory" class="col-md-6 col-sm-12 col-xs-12" style="clear:left;">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.priceH' | translate }} (BTS/{{prefix+asset.symbol}})</h3>
+    </div>
+    <highchart id="chart2" config="priceHistoryChart"></highchart>
+  </div>
+</div>
+
+
+<div ng-if="showSupply && showPriceHistory" class="col-md-6 col-sm-12 col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.supply' | translate }} ({{prefix+asset.symbol}}) {{ 'asset.supplyAnd' | translate }}</h3>
+    </div>
+    <highchart id="chart3" config="supplyChart"></highchart>
+  </div>
+</div>
+
+<div ng-if="showSupply && showPriceHistory===false" class="col-md-12 col-sm-12 col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.supply' | translate }} ({{prefix+asset.symbol}}) {{ 'asset.supplyAnd' | translate }}</h3>
+    </div>
+    <highchart id="chart3" config="supplyChart"></highchart>
+  </div>
+</div>
+
+<div ng-class="{'col-md-4':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6 votestable" style="clear:left;">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.assetInfo.title' | translate }}</h3>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">{{ 'assets.user.th1' | translate }}: <span class="badge">{{asset._id}}</span></li>
+      <li ng-if="issuerAccount!=='MARKET'" class="list-group-item">{{ 'block.trx.issuer' | translate }}: <span style="float:right;"><a ui-sref="account({ 'name' : issuerAccount })" >{{issuerAccount}}</a></span></li>
+      <li ng-if="issuerAccount==='MARKET'" class="list-group-item">{{ 'block.trx.issuer' | translate }}: <span class="badge">{{ 'asset.marketAsset' | translate }}</span></li>
+      <li class="list-group-item">{{ 'assets.market.th1' | translate }}: <span class="badge">{{asset.symbol}}</span></li>
+      <!-- <li class="list-group-item">{{ 'asset.assetInfo.base' | translate }}: <span class="badge">{{getAssetName(asset.status.base_id)}}</span></li> -->
+      <li class="list-group-item">{{ 'asset.assetInfo.name' | translate }}: <span class="badge">{{asset.name}}</span></li>
+      <li class="list-group-item">{{ 'asset.assetInfo.precision' | translate }}:<span class="badge">{{asset.precision | number:0}}</span></li>
+      <li class="list-group-item">{{ 'asset.assetInfo.regdate' | translate }}:<span class="badge">{{asset.registration_date | date:'medium'}}</span></li>
+
+      <div class="panel-body">{{asset.description}}
+      </div>
+    </ul>
+  </div>
+</div>
+
+<div ng-class="{'col-md-4':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6 votestable" >
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.market.title' | translate }}</h3>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">{{ 'asset.market.reserve' | translate }}: <span class="badge">{{((asset.collected_fees/asset.precision) | number:2) + ' '+asset.symbol}}</span></li>
+      <li class="list-group-item">{{ 'assets.user.th4' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"class="badge">{{(asset.current_share_supply | number:0) + ' '+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"class="badge">{{(asset.current_share_supply | number:2) + ' '+asset.symbol}}</span></li>
+      <li class="list-group-item">{{ 'assets.user.th5' | translate }} <span class="badge">{{asset.maximum_share_supply | number:0}}</span></li>
+      <li class="list-group-item">{{ 'asset.assetInfo.precision' | translate }}:<span class="badge">{{asset.precision | number:0}}</span></li>
+      <li class="list-group-item">{{ 'assets.market.th2' | translate }}:<span class="badge">{{asset.status.bid_depth | number:0}} BTS</span></li>
+      <li class="list-group-item">{{ 'assets.market.th3' | translate }}:<span class="badge">{{asset.status.ask_depth | number:0}} BTS</span></li>
+    </ul>
+  </div>
+</div>
+
+<div ng-if="asset.issuer_account_id ===-2" id="feedstable" class="col-md-4 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1 votestable">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'delegate.feeds.title' | translate }}</h3>
+    </div>
+    <ul class="list-group">
+      <!-- <li class="list-group-item">{{ 'delegate.feeds.total' | translate }}: <span class="badge">{{asset.numberFeeds}}</span></li> -->
+      <li class="list-group-item">{{ 'delegate.feeds.active' | translate }}: <span class="badge">{{asset.numberValidFeeds}}</span></li>
+      <li class="list-group-item">{{ 'asset.feeds.avg' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge">{{averagefeed | number:4}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge">{{averagefeed | number:7}}</span></li>
+      <li ng-if="enoughFeeds == true" class="list-group-item">{{ 'asset.feeds.med' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge alert-success">{{medianFeed | number:4}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge alert-success">{{medianFeed | number:7}}</span></li>
+      <li ng-if="enoughFeeds === false" class="list-group-item">{{ 'asset.feeds.med' | translate }}: <span class="badge alert-danger">{{ 'asset.feeds.null' | translate }}</span></li>
+
+      <li class="list-group-item"><div class="checkbox">
+        <label syle="margin-right:1em;">
+          <input ng-model="$root.showFeeds" type="checkbox">{{ 'delegate.feeds.show' | translate }}
+        </label>
+        <label>
+          <input ng-model="$root.activeBoolean" type="checkbox" ng-change="filterFeeds(activeBoolean)">{{ 'delegate.feeds.valid' | translate }}
+        </label>
+      </div>
+    </li>
+  </ul>
+
+  <table ng-if="$root.showFeeds" class="table table-condensed table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>{{ 'blocks.delegate' | translate }}</th>
+        <th ng-click="orderByField='last_update'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="last_update" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'asset.feeds.last' | translate }}</th>
+        <th ng-click="orderByField='price'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="price" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'home.price' | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in filteredFeeds | orderBy: orderByField:reverseSort track by feed.delegate_name" class="repeated-item">
+        <td><a ui-sref="delegate({ 'name' : feed.delegate_name })" once-text="feed.delegate_name"></a></td>
+        <td>{{feed.last_update | date:'medium'}}</td>
+        <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(feed.price | number:4)+' '+asset.symbol+'/BTS'}}</td>
+        <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(feed.price | number:7)+' '+asset.symbol+'/BTS'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

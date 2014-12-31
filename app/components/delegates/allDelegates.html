@@ -1,0 +1,25 @@
+<div class="col-md-12 col-xs-12" id="alerts-container-indexing" style="padding-top:0;"></div>
+
+<div class="form-group col-md-4 col-md-offset-4">
+	<form ng-submit="submitDelegate(selectedDelegate.name)">
+		<input type="text" class="form-control" ng-model="selectedDelegate" limit="15" data-min-length="0" ng-options="delegate.name for delegate in delegateNames" placeholder="{{ 'delegates.search' | translate }}" bs-typeahead analytics-on analytics-event="Delegate search" analytics-category="Search" analytics-label="Delegate" >
+	</form>
+</div>
+
+<div id="deltable" class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{ 'delegates.title' | translate }}</h3>
+		</div>
+
+		<div class="checkbox container" style="margin-left:0;">
+			<label>
+				<input ng-model="standbyBoolean" type="checkbox" ng-change="toggleStandby(standbyBoolean)">{{ 'delegates.standby' | translate }}
+			</label>
+		</div>
+
+		<div>
+			<fast-repeat component="'DelegatesTable'" data="delegates" headers="headers"></fast-repeat>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,377 @@
+{
+  "nav": {
+    "home": "主页",
+    "blocks": "区块",
+    "delegates": "受托人",
+    "accounts": "账户",
+    "assets": "资产",
+    "charts": "图表",
+    "general": "通用",
+    "supply": "BTS供应量和手续费",
+    "btsgenesis": "BTS创世块",
+    "btsxgenesis": "BTSX创世块",
+    "about": "关于"
+  },
+  "alerts": {
+    "del1": "我已经创建了一个新的受托人，请考虑更改你的投票来支持。",
+    "del2": "代替",
+    "del3": "更多信息",
+    "del4": "这里"
+  },
+  "footer": {
+    "vote": "请给我的受托人投票",
+    "donate": "捐赠",
+    "info": "信息/更新",
+    "thread": "BitsharesTalk论坛帖子",
+    "version": "客户端版本",
+    "language": "语言"
+  },
+  "home": {
+    "history": "BTS过去14天的价格历史",
+    "price": "价格",
+    "MA": "30天移动平均价",
+    "health": {
+      "title": "网络健康",
+      "alert": "网络警戒级别:",
+      "particip": "受托人参与度:",
+      "confirm": "平均确认时间:",
+      "forks": "过去24小时的分支:",
+      "forkBlock": "最近一次分支的区块高度:",
+      "signee": "分支签名的受托人:",
+      "latency": "受托人的延迟:"
+    },
+    "delegate": {
+      "title": "受托人统计",
+      "reg": "已经注册的受托人",
+      "votes": "有票数的受托人",
+      "payReg": "100%支付率受托人的注册费用",
+      "new24": "过去24小时的新受托人",
+      "new7d": "过去7天的新受托人",
+      "pay": "最大的支付率",
+      "averagePay": "Average pay rate"
+    },
+    "blockchain": {
+      "title": "区块链统计",
+      "supply": "股份供应量",
+      "unclaimed": "暂未领取的",
+      "collat": "在抵押中的",
+      "change": "24小时改变的供应量",
+      "current": "当前区块",
+      "trx": "包含交易的区块",
+      "missed": "缺失的区块总数"
+    },
+    "asset": {
+      "title": "资产统计",
+      "number": "资产种类数量",
+      "user": "用户自定义资产",
+      "shortReg": "短名称的注册费",
+      "longReg": "长名称的注册",
+      "new7d": "过去7天的新资产",
+      "new30d": "过去30天的新资产",
+      "trx": "资产交易记录"
+    },
+    "user": {
+      "title": "用户统计",
+      "number": "账户数量",
+      "sub": "子账户数量",
+      "new24": "过去24小时的新账户",
+      "new7d": "过去7天的新账号"
+    },
+    "missed": {
+      "title": "最近10个缺失的区块"
+    },
+    "blocks": {
+      "title": "最近10个区块"
+    },
+    "newUsers": {
+      "title": "新用户"
+    }
+  },
+  "blocks": {
+    "search1": "查找一个区块高度或者交易ID",
+    "search2": "转到一个区块高度",
+    "current": "当前",
+    "higher": "更高",
+    "lower": "更低",
+    "first": "第一个",
+    "last": "最后一个",
+    "blocks": "区块",
+    "showTrx": "只显示包含交易的区块",
+    "blockNum": "区块号码",
+    "timestamp": "时间戳",
+    "delegate": "受托人",
+    "trxCount": "交易数量",
+    "trxValue": "交易价值",
+    "fees": "手续费"
+  },
+  "block": {
+    "block": "区块",
+    "previous": "前一个区块",
+    "next": "下一个区块",
+    "details": {
+      "title": "区块详细情况",
+      "signee": "签名的受托人",
+      "size": "区块大小",
+      "latency": "延时",
+      "time": "处理时间",
+      "hash1": "上一个哈希值",
+      "hash2": "下一个秘密哈希值",
+      "hash3": "前一个秘密哈希值"
+    },
+    "trx": {
+      "title": "交易",
+      "type": "操作种类",
+      "id": "交易ID",
+      "fee": "交易费",
+      "public": "公开数据",
+      "delegate": "受托人名字",
+      "feedUpdates": "喂价更新",
+      "feedPrice": "喂价",
+      "votes": "交易中包含的投票",
+      "price": "价格比率",
+      "interest": "利率",
+      "priceLimit": "价格限制",
+      "collateral": "抵押品",
+      "assetName": "资产名称",
+      "assetAmount": "资产的数量",
+      "base": "基础资产的数量",
+      "amount": "数量",
+      "noVotes": "这个交易中不包含投票",
+      "account": "账户",
+      "message": "信息",
+      "key": "持有者的KEY",
+      "asset": "资产",
+      "description": "资产描述",
+      "issuer": "发行人账号",
+      "for": "给受托人",
+      "burn": "Burn",
+      "assetCreate": "Create asset"
+    }
+  },
+  "delegates": {
+    "search": "查找一个受托人",
+    "title": "受托人信息",
+    "standby": "包含待命受托人",
+    "rank": "等级",
+    "change24": "24小时改变",
+    "change7": "7天改变",
+    "votes": "投票的数目",
+    "produced": "产出",
+    "missed": "缺失",
+    "rate": "支付率",
+    "latency": "平均延时",
+    "feeds": "活跃的喂价种子数",
+    "feedFreq": "喂价频率",
+    "rel": "稳定率",
+    "version": "版本",
+    "filter": "筛选"
+  },
+  "delegate": {
+    "prevRank": "前一个等级",
+    "nextRank": "下一个等级",
+    "votesChart": "投票的演变",
+    "sumVotes": "投票的统计",
+    "payChart": {
+      "title": "新收入",
+      "name": "累计收入"
+    },
+    "rank": {
+      "title": "等级和投票",
+      "current": "当前等级",
+      "dayChange": "24小时改变的等级",
+      "weekChange": "7天改变的等级",
+      "votes": "投票的数量给",
+      "percentVotes": "投票数量的百分比给"
+    },
+    "data": {
+      "title": "公开数据",
+      "description": "描述",
+      "proposal": "受托人的目标",
+      "location": "服务器的位置",
+      "country": "代表国家",
+      "handle": "BitsharesTalk论坛用户名",
+      "ann": "公告",
+      "role": "角色",
+      "website": "网站",
+      "role_0": "核心开发",
+      "role_1": "核心市场推广",
+      "role_2": "水龙头（赠币）",
+      "role_3": "支柱",
+      "role_4": "慈善",
+      "role_5": "技术支持",
+      "role_6": "法律与监管",
+      "role_7": "媒体与公关"
+    },
+    "feeds": {
+      "title": "受托人喂价种子",
+      "total": "喂价种子的总数量",
+      "active": "活跃的喂价种子数",
+      "show": "显示喂价种子",
+      "valid": "只显示有效的喂价种子"
+    },
+    "info": {
+      "title": "受托人信息",
+      "earnings": "总收入",
+      "withdrawn": "已经提现的收入",
+      "fees": "已付的手续费总数"
+    },
+    "prod": {
+      "title": "区块生产",
+      "prod": "已经生产的区块",
+      "missed": "缺失的区块",
+      "last": "最近一个生产的区块",
+      "lat50": "过去50个区块的平均延时",
+      "lat100": "过去100个区块的平均延时",
+      "lat200": "过去200个区块的平均延时"
+    },
+    "votes": {
+      "title": "投票历史",
+      "total": "投票总数",
+      "net": "净票数 >= 10,000"
+    }
+  },
+  "accounts": {
+    "title": "账户",
+    "search1": "通过名字寻找账户",
+    "search2": "转到一个ID号码",
+    "recent": "最近",
+    "newer": "更新的",
+    "older": "更旧的",
+    "oldest": "最旧的",
+    "name": "帐户名",
+    "id": "ID",
+    "reg": "注册日期",
+    "update": "最后更新",
+    "yes": "是的",
+    "no": "没有",
+    "wall": "Wall total"
+  },
+  "account": {
+    "previous": "前一个账户",
+    "next": "下一个账户",
+    "title1": "账户信息",
+    "id": "账户ID",
+    "owner": "持有者",
+    "title2": "公钥活跃的历史",
+    "date": "日期",
+    "key": "公钥",
+    "website": "网站",
+    "burn": "BURN OPERATIONS"
+  },
+  "assets": {
+    "plot": {
+      "title": "过去7天所有的资产转账类型",
+      "type1": "卖单",
+      "type2": "买单",
+      "type3": "空单",
+      "type4": "平仓"
+    },
+    "market": {
+      "title": "市场资产",
+      "th1": "资产符号",
+      "th2": "买单深度",
+      "th3": "卖单深度",
+      "th4": "有效的喂价种子数",
+      "th5": "平均喂价",
+      "th6": "股份供应量",
+      "th7": "24小时交易量",
+      "th8": "市值"
+    },
+    "user": {
+      "show": "Show user issued assets",
+      "title": "用户自定义资产",
+      "th1": "资产ID",
+      "th4": "当前供应量",
+      "th5": "最大供应量",
+      "th6": "Initialized"
+    }
+  },
+  "asset": {
+    "orderbook": "下单记录本",
+    "bids": "买单",
+    "asks": "卖单",
+    "shorts": "空单",
+    "priceH": "价格历史",
+    "alert1": "市场不活跃：没有足够的活跃喂价种子数目",
+    "alert2": "市场不活跃：没有足够的市场深度",
+    "collateral": "抵押品",
+    "supply": "供应",
+    "supplyAnd": "以及抵押品（BTS）历史",
+    "sell": "卖",
+    "buy": "买",
+    "short": "做空",
+    "chartSupply": "供应量",
+    "ohlc": "价格: 开盘/最高/最低/收盘",
+    "external": "外部Coinmarketcap价格",
+    "volume": "交易量",
+    "marketAsset": "Market issued asset",
+    "assetInfo": {
+      "title": "资产信息",
+      "base": "基础资产",
+      "name": "全称",
+      "precision": "精度",
+      "regdate": "注册日期"
+    },
+    "market": {
+      "title": "市场信息",
+      "reserve": "保留资金"
+    },
+    "feeds": {
+      "avg": "喂价种子平均数",
+      "med": "喂价种子中位数",
+      "null": "过去24小时没有足够的种子数",
+      "last": "最后的更新(UTC时间)"
+    }
+  },
+  "charts": {
+    "titles": {
+      "new": "新账号",
+      "total": "账户的总数",
+      "assetTrx": "所有资产交易的种类",
+      "btsTrx": "BTS交易的种类",
+      "trxCount": "BTS 交易的数量",
+      "volume": "BTS 交易量",
+      "btcPrice": "BTS/BTC价格历史",
+      "usdPrice": "价格历史"
+    },
+    "value": "价值",
+    "reg": "账户注册",
+    "transfer": "转账",
+    "feed": "受托人喂价种子更新",
+    "update": "账号更新",
+    "new": "新账号",
+    "ma15": "15天移动平均价"
+  },
+  "supply": {
+    "title1": "INFO",
+    "title2": "在BTS硬分叉后供应量的改变",
+    "title3": "BTS供应总量",
+    "title4": "随着时间过去付出的BTS交易费",
+    "height": "BTSX转为BTS的硬分叉区块高度",
+    "supply": "分叉时供应量",
+    "change": "在硬分叉后改变的供应量",
+    "changeY": "BTS供应量改变",
+    "supplyY": "BTS供应量",
+    "feesY": "BTS交易费"
+  },
+  "genesis": {
+    "stats": "统计数据",
+    "biggest": "根据余额统计的地址",
+    "total": "地址的总数",
+    "supply": "初始供应量的总数",
+    "sharedrop": "AGS+PTS+DNS+VOTE股份空投的总数",
+    "market": "市场资产的总数",
+    "whale": "最大的余额",
+    "higher": "地址里面余额大于",
+    "percent": "根据地址数量统计的占总量的百分比",
+    "top": "最高的",
+    "addresses": "地址",
+    "address": "地址",
+    "balance": "余额",
+    "percentOf": "占总量",
+    "cumul": "与前面累计占总量",
+    "x": "账号的数目",
+    "y": "% 的供应总量",
+    "tooltip": "占供应总量的百分比"
+  }
+}
