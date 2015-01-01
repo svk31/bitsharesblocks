@@ -114,7 +114,6 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		return deferred.promise;
 	}
 
-
 	function delegates() {
 		var deferred = $q.defer();
 		var d = 'delegates.';

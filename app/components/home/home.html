@@ -75,8 +75,8 @@
           <h3 class="panel-title">{{ 'home.asset.title' | translate }}</h3>
         </div>
         <ul class="list-group">
-          <li class="list-group-item">{{ 'home.asset.number' | translate }}: <span class="badge">{{ assetCount }}</span></li>
-          <li class="list-group-item">{{ 'home.asset.user' | translate }}: <span class="badge">{{numberUserAssets}}</span></li>
+          <li class="list-group-item">{{ 'home.asset.number' | translate }}: <span class="badge">{{ home.assetCount }}</span></li>
+          <li class="list-group-item">{{ 'home.asset.user' | translate }}: <span class="badge">{{home.userAssets}}</span></li>
           <li class="list-group-item">{{ 'home.asset.shortReg' | translate }}: <span class="badge">{{home.assetReg | number:0}} BTS</span></li>
           <li class="list-group-item">{{ 'home.asset.longReg' | translate }}: <span class="badge">{{home.assetRegLong | number:0}} BTS</span></li>
           <li class="list-group-item">{{ 'home.asset.new7d' | translate }}: <span class="badge">{{home.newAssetsWeek | number:0}}</span></li>
@@ -169,7 +169,7 @@
             </tr>
           </thead>
           <tbody >
-            <tr ng-repeat="user in newUsers | limitTo: 10 track by user._id " class="repeated-item">
+            <tr ng-repeat="user in home.newUsers | limitTo: 10 track by user._id " class="repeated-item">
               <td>{{user.registration_date | date:'medium'}}</td>
               <td>{{user._id | number: 0}}</td>
               <td><a ui-sref="account({ 'name' : user.name })" >{{user.name}}</a></td>
