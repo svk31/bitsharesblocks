@@ -24,7 +24,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		value: "Italiano",
 		key: "it"
 	}, {
-		value: "한국의",
+		value: "한국어",
 		key: "ko"
 	}];
 
