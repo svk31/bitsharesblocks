@@ -34,7 +34,7 @@
       "title": "네트워크 상태",
       "alert": "네트워크 상태:",
       "particip": "대표자 참여율:",
-      "confirm": "평균 컨펌시간:",
+      "confirm": "평균 승인시간:",
       "forks": "24시간 내 포크:",
       "forkBlock": "마지막 포크 블럭:",
       "signee": "포크 생성 대표자:",
@@ -81,7 +81,7 @@
       "title": "마지막 10개 누락 블럭"
     },
     "blocks": {
-      "title": "마지막 10 블럭"
+      "title": "마지막 10개 블럭"
     },
     "newUsers": {
       "title": "신규 계정"
@@ -161,7 +161,7 @@
     "rate": "지급률",
     "latency": "평균 지연율",
     "feeds": "활성 피드",
-    "feedFreq": "피드 제공 빈도",
+    "feedFreq": "가격정보 제공 빈도",
     "rel": "신뢰도",
     "version": "버전",
     "filter": "필터"
@@ -188,14 +188,14 @@
       "description": "상세설명",
       "proposal": "대표자 공약",
       "location": "서버 위치",
-      "country": "Delegate country",
+      "country": "국가",
       "handle": "BitsharesTalk 계정",
       "ann": "공지",
       "role": "역할",
       "website": "웹사이트",
       "role_0": "개발자",
       "role_1": "마케팅",
-      "role_2": "Faucet",
+      "role_2": "수도꼭지",
       "role_3": "기간망",
       "role_4": "자선",
       "role_5": "기술지원",
@@ -203,11 +203,11 @@
       "role_7": "미디어/공공 홍보"
     },
     "feeds": {
-      "title": "대표자 피드",
-      "total": "총 제공 피드 수",
-      "active": "활성 피드",
-      "show": "피드 보기",
-      "valid": "유효한 피드만 보기"
+      "title": "대표자 가격정보",
+      "total": "총 제공 가격정보 수",
+      "active": "활성 가격정보",
+      "show": "가격정보 보기",
+      "valid": "유효한 가격정보만 보기"
     },
     "info": {
       "title": "대표자 정보",
@@ -278,7 +278,7 @@
       "th8": "시가총액"
     },
     "user": {
-      "show": "Show user issued assets",
+      "show": "사용자 발행 자산 보기",
       "title": "사용자 발행 자산",
       "th1": "자산 ID",
       "th4": "현재 공급량",
@@ -304,7 +304,7 @@
     "ohlc": "시세: OHLC",
     "external": "외부 Coinmarketcap 시세",
     "volume": "거래량",
-    "marketAsset": "Market issued asset",
+    "marketAsset": "시장 발행 자산",
     "assetInfo": {
       "title": "자산 정보",
       "base": "기준 자산",
@@ -335,11 +335,11 @@
       "usdPrice": "시세 추이"
     },
     "value": "Value",
-    "reg": "Account registration",
-    "transfer": "Transfer",
-    "feed": "Delegate feed update",
-    "update": "Account update",
-    "new": "New accounts",
+    "reg": "계정 등록",
+    "transfer": "전송",
+    "feed": "대표자 가격정보 업데이트",
+    "update": "계정 업데이트",
+    "new": "새 계정",
     "ma15": "15일 이동평균"
   },
   "supply": {
