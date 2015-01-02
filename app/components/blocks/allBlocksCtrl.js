@@ -45,7 +45,6 @@ angular.module('app')
     function pageChanger(lastblock) {
       stopUpdates();
       var pageDelta = $scope.currentPage - oldPage;
-
       Blocks.fetchPage(pageDelta, lastblock, $state.params.trx).then(function(result) {
         $scope.blocks = result.blocks;
         maxBlock = result.maxBlock;
