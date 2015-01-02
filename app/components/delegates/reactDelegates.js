@@ -78,6 +78,7 @@ var HeaderRow = React.createClass({displayName: 'HeaderRow',
 var DelegateRow = React.createClass({displayName: 'DelegateRow',
 	render: function() {
 		var delegate =this.props.data;
+		var no_version = this.props.version;
 		var tdLatency, tdActiveFeeds, tdUpdateFeeds, tdReliability, tdVersion;
 
 		if (delegate.delegate_info.blocks_produced < 1 || delegate.avgLatency === 'n/a') {
@@ -134,6 +135,9 @@ var DelegateRow = React.createClass({displayName: 'DelegateRow',
 		}
 		else if (delegate.version === 2) {
 			tdVersion = React.createElement("td", {className: "warning"}, delegate.public_data.version);
+		}
+		else if (delegate.version === 999) {
+			tdVersion = React.createElement("td", {className: "danger"}, no_version);
 		}
 		else {
 			tdVersion = React.createElement("td", {className: "danger"}, delegate.public_data.version);
@@ -225,7 +229,7 @@ var DelegatesTable = React.createClass({
 			.map(function(delegate) {
 
 				return (
-					React.createElement(DelegateRow, {key: delegate.rank, data: delegate})
+					React.createElement(DelegateRow, {key: delegate.rank, data: delegate, version: headers['delegates.no_version']})
 					);
 
 			});

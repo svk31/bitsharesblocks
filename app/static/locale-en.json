@@ -149,10 +149,10 @@
 			"issuer": "Issuer account",
 			"for": "For delegate",
 			"burn": "Burn",
-      "asset_create": "Create asset",
-      "asset_issue": "Issue asset",
-      "add_collateral": "Add collateral",
-      "withdraw_pay": "Delegate pay withdrawal"
+			"asset_create": "Create asset",
+			"asset_issue": "Issue asset",
+			"add_collateral": "Add collateral",
+			"withdraw_pay": "Delegate pay withdrawal"
 		}
 	},
 	"delegates": {
@@ -171,7 +171,8 @@
 		"feedFreq": "Feed frequency",
 		"rel": "Reliability",
 		"version": "Version",
-		"filter": "filter"
+		"filter": "filter",
+		"no_version": "Not set"
 	},
 	"delegate": {
 		"prevRank": "Previous rank",

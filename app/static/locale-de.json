@@ -170,7 +170,8 @@
     "feedFreq": "Häufigtkeit der Feeds",
     "rel": "Verfügbarkeit",
     "version": "Version",
-    "filter": "filter"
+    "filter": "filter",
+    "no_version": "Not set"
   },
   "delegate": {
     "prevRank": "Verheriger Rang",

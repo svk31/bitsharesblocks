@@ -170,7 +170,8 @@
     "feedFreq": "喂价频率",
     "rel": "稳定率",
     "version": "版本",
-    "filter": "筛选"
+    "filter": "筛选",
+    "no_version": "Not set"
   },
   "delegate": {
     "prevRank": "前一个等级",

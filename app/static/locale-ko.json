@@ -170,7 +170,8 @@
     "feedFreq": "가격정보 제공 빈도",
     "rel": "신뢰도",
     "version": "버전",
-    "filter": "필터"
+    "filter": "필터",
+    "no_version": "Not set"
   },
   "delegate": {
     "prevRank": "이전 순위",

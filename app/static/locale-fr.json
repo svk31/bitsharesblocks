@@ -171,7 +171,8 @@
     "feedFreq": "Frequence des flux",
     "rel": "Fiabilité",
     "version": "Vérsion",
-    "filter": "filtrer"
+    "filter": "filtrer",
+    "no_version": "Pas défini"
   },
   "delegate": {
     "prevRank": "Rang précedent",

@@ -27,7 +27,8 @@
     			<li ng-if="delegate.public_data.delegate.handle" class="list-group-item">{{ 'delegate.data.handle' | translate }}:<span class="badge">{{ delegate.public_data.delegate.handle }}</span></li>
                 <li ng-if="delegate.public_data.delegate.country"  class="list-group-item">{{ 'delegate.data.country' | translate }}:<span class="badge">{{ delegate.public_data.delegate.country }}</span></li>
     			<li ng-if="delegate.public_data.delegate.location"  class="list-group-item">{{ 'delegate.data.location' | translate }}:<span class="badge">{{ delegate.public_data.delegate.location }}</span></li>
-    			<li class="list-group-item">{{ 'footer.version' | translate }}:<span ng-class="{'badge':true, 'alert-success': (delegate.version === 1), 'alert-warning': (delegate.version === 2 ), 'alert-danger': (delegate.version > 2)}">{{delegate.public_data.version}}</span></li>
+    			<li ng-if="delegate.version !== 999" class="list-group-item">{{ 'footer.version' | translate }}:<span ng-class="{'badge':true, 'alert-success': (delegate.version === 1), 'alert-warning': (delegate.version === 2 ), 'alert-danger': (delegate.version > 2)}">{{delegate.public_data.version}}</span></li>
+                <li ng-if="delegate.version === 999" class="list-group-item">{{ 'footer.version' | translate }}:<span class="badge alert-danger">{{ 'delegates.no_version' | translate }}</span></li>
     			<li ng-if="website" class="list-group-item">{{ 'delegate.data.website' | translate }}:<a style="float:right;" ng-href="{{website}}" target="_blank">{{website}}</a></li>
     			<div ng-if="delegate.public_data.delegate.description" class="panel-body"><strong>{{ delegate.public_data.delegate.description }}</strong></div>
     		</ul>

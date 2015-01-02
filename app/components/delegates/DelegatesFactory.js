@@ -4,6 +4,7 @@ angular.module('app')
 	var _delegateNames = {};
 	var _delegateNamesArray = [];
 	var _versions = {};
+	var _versions_v2 = {};
 	var _standyBoolean = false;
 
 	var _activeTime = 0;
@@ -23,6 +24,11 @@ angular.module('app')
 	_versions = store.get('versions');
 	if (_versions === undefined) {
 		_versions = {};
+	}
+
+	_versions_v2 = store.get('_versions_v2');
+	if (_versions_v2 === undefined) {
+		_versions_v2 = {};
 	}
 
 	for (var id in _delegateNames) {
@@ -100,7 +106,9 @@ angular.module('app')
 		var deferred = $q.defer();
 		promise.then(function(result) {
 			_versions = result.versions;
+			_versions_v2 = result.versions_v2;
 			store.set('versions', _versions);
+			store.set('versions_v2', _versions_v2);
 
 			var delegates = _addInfo(result.delegates, result.ranks, result.latencies[0], result.activeFeeds);
 			deferred.resolve({
@@ -309,49 +317,52 @@ angular.module('app')
 	function checkVersion(delegate) {
 		delegate.version = 4;
 		delegate.versionIncrement = 0;
+
 		if (delegate.public_data !== null && delegate.public_data.version) {
 			var version = delegate.public_data.version.match(/\d+/g);
-			if (version !== null) {
-				delegate.versionIncrement = version[2] * 10;
-				if (version !== null) {
-					version[1] = parseInt(version[1], 10);
-					version[2] = parseInt(version[2], 10);
-					if (version[1] === _versions.main && version[2] >= _versions.increment.current) {
-						if (angular.isDefined(version[3])) {
-							version[3] = parseInt(version[3], 10);
+			var RC = delegate.public_data.version.indexOf('RC');
 
-							if (version[3] === _versions.RC.current) {
-								if (_versions.RC.current !== -999) {
-									delegate.version = 1;
-								} else {
-									delegate.version = 3;
-								}
-								delegate.versionIncrement += _versions.RC.current * _versions.RC.multiplier;
-							} else if (version[3] <= _versions.RC.previous) {
-								if (_versions.RC.current !== -999) {
-									delegate.version = 2;
-								} else {
-									delegate.version = 3;
-								}
-								delegate.versionIncrement += _versions.RC.previous * (-1) * _versions.RC.multiplier;
-							} else if (version[3] <= _versions.RC.old) {
-								delegate.version = 3;
-								delegate.versionIncrement += _versions.RC.old * (-1) * _versions.RC.multiplier;
+			if (version) {
+				var major = version[0];
+				var minor = (version[1]) ? parseInt(version[1], 10) : 0;
+				var patch = (version[2]) ? parseInt(version[2], 10) : 0;
+				var premajor = (version[3]) ? parseInt(version[3], 10) : 0;
+
+				delegate.versionIncrement = patch * 10;
+
+				var deltaMajor = major - _versions_v2.major;
+				var deltaMinor = minor - _versions_v2.minor;
+				var deltaPatch = patch - _versions_v2.patch;
+				var deltaPremajor = premajor - _versions_v2.premajor;
+
+				if (deltaMajor >= 0) {
+					if (deltaMinor >= 0) {
+						if (deltaPatch >= 0) {
+							if (deltaPremajor >= 0) {
+								delegate.version = 1;
+							} else {
+								delegate.version = 1 - deltaPremajor;
 							}
-						} else {
-							delegate.version = 1;
 						}
-					} else if (version[1] === _versions.main && version[2] === _versions.increment.previous) {
-						delegate.version = 2;
-					} else if (version[1] === _versions.main && version[2] <= _versions.increment.old) {
-						delegate.version = 3;
+					} else {
+						delegate.version = 1 - deltaMinor;
 					}
+				} else {
+					delegate.version = 999;
 				}
+				if (RC !== -1) {
+					delegate.versionIncrement -= 5;
+				}
+				delegate.versionIncrement += deltaPremajor * 1;
+
 			} else {
+				delegate.version = 999;
 				delegate.public_data = {};
-				delegate.public_data.version = 'Unknown!';
+				delegate.public_data.version = 'Not set!';
 			}
+
 		} else {
+			delegate.version = 999;
 			delegate.public_data = {};
 			delegate.public_data.version = 'Not set!';
 		}

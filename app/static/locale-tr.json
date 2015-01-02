@@ -170,7 +170,8 @@
     "feedFreq": "Feed Sıklığı",
     "rel": "Güvenilirlik",
     "version": "Versiyon",
-    "filter": "süzmek"
+    "filter": "süzmek",
+    "no_version": "Not set"
   },
   "delegate": {
     "prevRank": "Önceki sıra",

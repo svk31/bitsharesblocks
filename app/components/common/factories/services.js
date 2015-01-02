@@ -192,7 +192,8 @@ angular.module('app.services',[])
 			"feedFreq": "Feed frequency",
 			"rel": "Reliability",
 			"version": "Version",
-			"filter": "filter"
+			"filter": "filter",
+			"no_version": "Not set"
 		},
 		"delegate": {
 			"prevRank": "Previous rank",

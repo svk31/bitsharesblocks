@@ -170,7 +170,8 @@
     "feedFreq": "Feed frequency",
     "rel": "Confiabilidad",
     "version": "Versión",
-    "filter": "filtrar"
+    "filter": "filtrar",
+    "no_version": "Not set"
   },
   "delegate": {
     "prevRank": "Rango anterior",
