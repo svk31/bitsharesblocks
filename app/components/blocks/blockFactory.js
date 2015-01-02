@@ -170,6 +170,12 @@ angular.module('app')
 				trxInfo.amount = trx[1].amount / Assets.getPrecision(trx[1].asset);
 				break;
 			}
+			if (trx[1].trx.operations[j].type === 'withdraw_pay_op_type') {
+				trxInfo.trxCode = 11;
+				trxInfo.amount = (trx[1].trx.operations[j].data.amount - trx[1].balance[0][1]) / Assets.getPrecision(0);
+				trxInfo.delegate = Delegates.getName(trx[1].trx.operations[j].data.account_id);
+				break;
+			}
 			if (trx[1].trx.operations[j].type === 'create_asset_op_type') {
 				trxInfo.trxCode = 7;
 				trxInfo.issuer = trx[1].trx.operations[j].data.issuer_account_id;

@@ -96,7 +96,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		$translate.use(_currentKey).then(function(result) {
 			$translate(['charts.transfer', 'charts.reg', 'charts.feed', 'charts.update', 'assets.plot.type1',
 				'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'block.trx.burn', 'block.trx.asset_create',
-				'block.trx.asset_issue', 'block.trx.add_collateral'
+				'block.trx.asset_issue', 'block.trx.add_collateral', 'block.trx.withdraw_pay'
 			]).then(function(result) {
 				deferred.resolve({
 					transfer: result['charts.transfer'],
@@ -110,7 +110,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 					burn: result['block.trx.burn'],
 					asset_create: result['block.trx.asset_create'],
 					asset_issue: result['block.trx.asset_issue'],
-					add_collateral: result['block.trx.add_collateral']
+					add_collateral: result['block.trx.add_collateral'],
+					withdraw_pay: result['block.trx.withdraw_pay']
 				});
 			});
 		});

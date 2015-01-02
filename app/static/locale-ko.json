@@ -150,7 +150,8 @@
       "burn": "소각",
       "asset_create": "자산 발행",
       "asset_issue": "Issue asset",
-      "add_collateral": "Add collateral"
+      "add_collateral": "Add collateral",
+      "withdraw_pay": "Delegate pay withdrawal"
     }
   },
   "delegates": {

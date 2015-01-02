@@ -84,7 +84,7 @@
 					<td>{{ 'block.trx.key' | translate }}:</td>
 					<td>{{trx[$index][1].trx.operations[0].data.owner_key}} </td>
 				</tr>
-				<tr ng-if="trxInfo[$index].trxCode===8">
+				<tr ng-if="trxInfo[$index].trxCode===8 || trxInfo[$index].trxCode===11">
 					<td>{{ 'block.trx.delegate' | translate }}:</td>
 					<td><a ui-sref="delegate({ 'name' : trxInfo[$index].delegate })">{{trxInfo[$index].delegate}}</a></td>
 				</tr>
@@ -148,6 +148,10 @@
 				<tr ng-if="trxInfo[$index].trxCode===10">
 					<td>{{ 'block.trx.collateral' | translate }}:</td>
 					<td>{{trxInfo[$index].amountBase | number:3}} BTS</td>
+				</tr>
+				<tr ng-if="trxInfo[$index].trxCode===11">
+					<td>{{ 'delegate.info.withdrawn' | translate }}:</td>
+					<td>{{ trxInfo[$index].amount | number:2 }} BTS</td>
 				</tr>
 			</tbody>
 		</table>

@@ -151,7 +151,8 @@
       "burn": "Déstruction",
       "asset_create": "Creation d'actif",
       "asset_issue": "Publication d'actif",
-      "add_collateral": "Rajout de collateral"
+      "add_collateral": "Rajout de collateral",
+      "withdraw_pay": "Retrait de pay de délégué"
     }
   },
   "delegates": {
