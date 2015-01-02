@@ -1,5 +1,5 @@
 
-var InputBox = React.createClass({displayName: "InputBox",
+var InputBox = React.createClass({displayName: 'InputBox',
 	changeHandler: function(input) {
 		this.props.onFilterChange(					
 			this.refs.filterTextInput.getDOMNode().value
@@ -14,7 +14,7 @@ var InputBox = React.createClass({displayName: "InputBox",
 	}
 });
 
-var HeaderRow = React.createClass({displayName: "HeaderRow",
+var HeaderRow = React.createClass({displayName: 'HeaderRow',
 	render: function() {
 		var props = this.props;
 		var headers = this.props.headers;
@@ -75,13 +75,12 @@ var HeaderRow = React.createClass({displayName: "HeaderRow",
 	}
 });
 
-var DelegateRow = React.createClass({displayName: "DelegateRow",
+var DelegateRow = React.createClass({displayName: 'DelegateRow',
 	render: function() {
 		var delegate =this.props.data;
 		var tdLatency, tdActiveFeeds, tdUpdateFeeds, tdReliability, tdVersion;
 
 		if (delegate.delegate_info.blocks_produced < 1 || delegate.avgLatency === 'n/a') {
-			console.log('avg latency: '+delegate.avgLatency);
 			tdLatency = React.createElement("td", {className: "success"}, "n/a");
 		}
 		else if (delegate.avgLatency >=-1.5 && delegate.avgLatency <=1.5) {

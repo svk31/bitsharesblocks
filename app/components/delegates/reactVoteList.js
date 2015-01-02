@@ -1,4 +1,4 @@
-var VotesHeaderRow = React.createClass({displayName: "VotesHeaderRow",
+var VotesHeaderRow = React.createClass({displayName: 'VotesHeaderRow',
 	render: function() {
 		var props = this.props;
 		var headers = this.props.headers;
@@ -20,7 +20,7 @@ var VotesHeaderRow = React.createClass({displayName: "VotesHeaderRow",
 	}
 });
 
-var VoteRow = React.createClass({displayName: "VoteRow",
+var VoteRow = React.createClass({displayName: 'VoteRow',
 	render: function() {
 		var vote =this.props.data;
 		var tdLatency, tdActiveFeeds, tdUpdateFeeds, tdReliability;
