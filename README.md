@@ -1,3 +1,5 @@
+[![GPL License][license-image]][license-url]
+
 #Bitsharesblocks
 
 Repo for the source code of http://www.bitsharesblocks.com
@@ -65,3 +67,6 @@ Bounties for translations available here:
 https://bitsharestalk.org/index.php?topic=11695.0
 
 Translations accepted for bounties: Russian
+
+[license-image]: http://img.shields.io/badge/license-GPL3-blue.svg?style=flat
+[license-url]: LICENSE
