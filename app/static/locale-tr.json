@@ -116,7 +116,10 @@
       "time": "İşleme süresi",
       "hash1": "Önceki hash",
       "hash2": "Sonraki gizli hash",
-      "hash3": "Önceki gizli hash"
+      "hash3": "Önceki gizli hash",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "İŞLEM",
@@ -145,7 +148,9 @@
       "issuer": "Piyasaya süren hesap",
       "for": "delege için",
       "burn": "Burn",
-      "assetCreate": "Varlık yarat"
+      "asset_create": "Varlık yarat",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral"
     }
   },
   "delegates": {

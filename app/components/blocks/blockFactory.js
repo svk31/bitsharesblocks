@@ -7,8 +7,9 @@ angular.module('app')
 	var _cacheLength = 5;
 	var _lastBlockHeight;
 
-	$translate(['assets.plot.type1','assets.plot.type2','assets.plot.type3','assets.plot.type4','charts.transfer',
-		'charts.update','block.trx.burn','block.trx.assetCreate','charts.feed','charts.reg']).
+	$translate(['assets.plot.type1', 'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'charts.transfer',
+		'charts.update', 'block.trx.burn', 'block.trx.assetCreate', 'charts.feed', 'charts.reg'
+	]).
 	then(function(types) {
 		_trxTypes = types;
 	});
@@ -24,41 +25,45 @@ angular.module('app')
 		var trxInfo = [];
 
 		transactions.forEach(function(trx, i) {
-			var tempFees={};
-			var tempValues={};
+			var tempFees = {};
+			var tempValues = {};
 			var tempVotes = [];
 
 			// FEES
 			trx[1].balance.forEach(function(balance, j) {
-				assetId = parseInt(balance[0],10);
-				if (tempFees[assetId]===undefined) {
+				assetId = parseInt(balance[0], 10);
+				if (tempFees[assetId] === undefined) {
 					tempFees[assetId] = {};
-					tempFees[assetId].price =  0;
-					tempFees[assetId].asset =  Assets.getSymbol(assetId);
+					tempFees[assetId].price = 0;
+					tempFees[assetId].asset = Assets.getSymbol(assetId);
 				}
-				tempFees[assetId].price +=  balance[1]/Assets.getPrecision(assetId);
+				tempFees[assetId].price += balance[1] / Assets.getPrecision(assetId);
 			});
 
 			// TOTAL VALUE
-			trx[1].withdraws.forEach(function(withdrawal,j) {
-				trxAssetId = parseInt(withdrawal[0],10);
-				if (tempValues[trxAssetId]===undefined) {
+			trx[1].withdraws.forEach(function(withdrawal, j) {
+				trxAssetId = parseInt(withdrawal[0], 10);
+				if (tempValues[trxAssetId] === undefined) {
 					tempValues[trxAssetId] = {};
-					tempValues[trxAssetId].amount =  0;
-					tempValues[trxAssetId].asset =  Assets.getSymbol(trxAssetId);
+					tempValues[trxAssetId].amount = 0;
+					tempValues[trxAssetId].asset = Assets.getSymbol(trxAssetId);
 				}
-				tempValues[trxAssetId].amount +=  withdrawal[1].amount/Assets.getPrecision(trxAssetId);
+				tempValues[trxAssetId].amount += withdrawal[1].amount / Assets.getPrecision(trxAssetId);
 			});
 
 			// VOTES
 			var currentVotes = trx[1].net_delegate_votes;
 			var precision = Assets.getPrecision(0);
-			if(currentVotes.length===0) {
-				tempVotes={delegate:'None'};
-			}
-			else {
+			if (currentVotes.length === 0) {
+				tempVotes = {
+					delegate: 'None'
+				};
+			} else {
 				currentVotes.forEach(function(vote, j) {
-					tempVotes.push({delegate: Delegates.getName(vote[0]), amount: vote[1].votes_for / precision});
+					tempVotes.push({
+						delegate: Delegates.getName(vote[0]),
+						amount: vote[1].votes_for / precision
+					});
 				});
 
 			}
@@ -69,161 +74,171 @@ angular.module('app')
 			values.push(tempValues);
 			votes.push(tempVotes);
 
-			
+
 		});
 
-return {
-	fees: fees,
-	values: values,
-	votes: votes,
-	trxInfo: trxInfo
-};
-}
+		return {
+			fees: fees,
+			values: values,
+			votes: votes,
+			trxInfo: trxInfo
+		};
+	}
 
-function trxParser(trx) {
-	var trxInfo;
+	function trxParser(trx) {
+		var trxInfo;
 
-	trxInfo = {feeds:[],feedsCount:0,type:'',asset:'',baseAsset:'',ratio:'',amountBase:'',amountAsset:'',trxCode:''}; 
-	trxInfo.id = trx[0];
-	trxInfo.trxCode = 4;
-	trxInfo.type = _trxTypes['charts.transfer'];
-	for (j = 0; j < trx[1].trx.operations.length; j++) {
+		trxInfo = {
+			feeds: [],
+			feedsCount: 0,
+			type: '',
+			asset: '',
+			baseAsset: '',
+			ratio: '',
+			amountBase: '',
+			amountAsset: '',
+			trxCode: ''
+		};
+		trxInfo.id = trx[0];
+		trxInfo.trxCode = 4;
+		trxInfo.type = trx[1].type;
+		for (j = 0; j < trx[1].trx.operations.length; j++) {
 
-		if (trx[1].trx.operations[j].type === 'update_account_op_type') {
-			trxInfo.type = _trxTypes['charts.update'];
-			trxInfo.trxCode = 5;
-			trx[1].data = trx[1].trx.operations[j].data;
-			break;
-		}
-
-		if (trx[1].trx.operations[j].type === 'ask_op_type') {
-			trxInfo.type = _trxTypes['assets.plot.type1'];
-			trxInfo.trxCode = 0;
-			trxInfo.asset = trx[1].trx.operations[j].data.ask_index.order_price.quote_asset_id;
-			trxInfo.baseAsset = trx[1].trx.operations[j].data.ask_index.order_price.base_asset_id;
-			assetRatio=Assets.getPrecision(trxInfo.baseAsset) / Assets.getPrecision(trxInfo.asset);
-			trxInfo.ratio = trx[1].trx.operations[j].data.ask_index.order_price.ratio*assetRatio;
-			trxInfo.amountBase = Math.abs(trx[1].trx.operations[j].data.amount)/Assets.getPrecision(trxInfo.baseAsset);
-			trxInfo.amountAsset = Math.abs(trx[1].trx.operations[j].data.amount)/Assets.getPrecision(trxInfo.baseAsset)*trxInfo.ratio;
-			break;
-		}
-		if (trx[1].trx.operations[j].type === 'bid_op_type') {
-			trxInfo.type = _trxTypes['assets.plot.type2'];
-			trxInfo.trxCode = 1;
-			trxInfo.asset = trx[1].trx.operations[j].data.bid_index.order_price.quote_asset_id;
-			trxInfo.baseAsset = trx[1].trx.operations[j].data.bid_index.order_price.base_asset_id;
-			assetRatio=Assets.getPrecision(trxInfo.baseAsset) / Assets.getPrecision(trxInfo.asset);
-			trxInfo.ratio = trx[1].trx.operations[j].data.bid_index.order_price.ratio*assetRatio;
-			trxInfo.amountAsset = Math.abs(trx[1].trx.operations[j].data.amount)/Assets.getPrecision(trxInfo.asset);
-			trxInfo.amountBase = trxInfo.amountAsset/trxInfo.ratio;
-			break;
-		}
-		if (trx[1].trx.operations[j].type === 'short_op_type' || trx[1].trx.operations[j].type === 'short_op_v2_type') {
-			trxInfo.type = _trxTypes['assets.plot.type3'];
-			trxInfo.trxCode = 2;
-			trxInfo.asset = trx[1].trx.operations[j].data.short_index.order_price.quote_asset_id;
-			trxInfo.baseAsset = trx[1].trx.operations[j].data.short_index.order_price.base_asset_id;
-			assetRatio=Assets.getPrecision(trxInfo.baseAsset) / Assets.getPrecision(trxInfo.asset);
-			trxInfo.interest = trx[1].trx.operations[j].data.short_index.order_price.ratio*100;
-			if (trx[1].trx.operations[j].data.short_price_limit) {
-				trxInfo.ratio = trx[1].trx.operations[j].data.short_price_limit.ratio * assetRatio;  
-			}
-			else {
-				trxInfo.ratio = false;
+			if (trx[1].trx.operations[j].type === 'update_account_op_type') {
+				trxInfo.trxCode = 5;
+				trx[1].data = trx[1].trx.operations[j].data;
+				break;
 			}
 
-			trxInfo.amountBase = Math.abs(trx[1].trx.operations[j].data.amount)/Assets.getPrecision(trxInfo.baseAsset);
-			trxInfo.amountAsset = trxInfo.amountBase / 2;
-			break;
-		}
-		if (trx[1].trx.operations[j].type === 'cover_op_type') {
-			trxInfo.type = _trxTypes['assets.plot.type4'];
-			trxInfo.trxCode = 3;
-			trxInfo.asset = trx[1].trx.operations[j].data.cover_index.order_price.quote_asset_id;
-			trxInfo.baseAsset = trx[1].trx.operations[j].data.cover_index.order_price.base_asset_id;
-			assetRatio=Assets.getPrecision(trxInfo.baseAsset) / Assets.getPrecision(trxInfo.asset);
-			trxInfo.ratio = trx[1].trx.operations[j].data.cover_index.order_price.ratio*assetRatio;
-			trxInfo.amountAsset = Math.abs(trx[1].trx.operations[j].data.amount)/Assets.getPrecision(trxInfo.asset);
-			trxInfo.amountBase = trxInfo.amountAsset/trxInfo.ratio;
-			break;
-		}
-		if (trx[1].trx.operations[j].type === 'burn_op_type') {
-			trxInfo.type = _trxTypes['block.trx.burn'];
-			trxInfo.trxCode = 6;
-			trxInfo.amount = trx[1].amount/Assets.getPrecision(trx[1].asset);
-			break;
-		}
-		if (trx[1].trx.operations[j].type === 'create_asset_op_type') {
-			trxInfo.type = _trxTypes['block.trx.assetCreate'];
-			trxInfo.trxCode = 7;
-			trxInfo.issuer = trx[1].trx.operations[j].data.issuer_account_id;   
-			break;
-		}
-
-		if (trx[1].trx.operations[j].type === 'update_feed_op_type') {
-			trxInfo.type = _trxTypes['charts.feed'];
-			trxInfo.trxCode = 8;
-			trxInfo.delegate = Delegates.getName(trx[1].trx.operations[0].data.feed.delegate_id);
-			assetRatio=Assets.getPrecision(trx[1].trx.operations[j].data.value.base_asset_id) / Assets.getPrecision(trx[1].trx.operations[j].data.value.quote_asset_id);
-			trxInfo.feeds.push({asset:Assets.getSymbol(trx[1].trx.operations[j].data.feed.feed_id),
-				baseAsset:Assets.getSymbol(trx[1].trx.operations[j].data.value.base_asset_id),
-				price:trx[1].trx.operations[j].data.value.ratio*assetRatio});
-			trxInfo.feedsCount++;
-		}
-		if (trx[1].trx.operations[j].type === 'register_account_op_type') {
-			trxInfo.type = _trxTypes['charts.reg'];
-			trxInfo.trxCode = 9;
-			break;
-		}
-	}
-	if (trxInfo.asset >=0 && trxInfo.trxCode !== 8 && trxInfo.trxCode !== 4) {
-		trxInfo.assetName = Assets.getSymbol(trxInfo.asset);
-	}
-	if (trxInfo.baseAsset >=0 && trxInfo.trxCode !== 8 && trxInfo.trxCode !== 4) {
-		trxInfo.baseAssetName = Assets.getSymbol(trxInfo.baseAsset);
-	}
-	return trxInfo;
-}
-
-function _getBlock(id) {
-	var deferred = $q.defer();
-	api.getBlock(id).success(function(block) {
-		deferred.resolve(block);
-	});
-	return deferred.promise;
-}
-
-function fetchBlock(id) {
-	var deferred = $q.defer();
-	if (Math.abs(id-_lastBlockHeight) > _cacheLength) {
-		_blocksCache = {};
-	}
-
-	if (_blocksCache[id]) {
-		deferred.resolve(_blocksCache[id]);
-	}
-	else {
-		var promise = _getBlock(id);
-		promise.then(function(block) {		
-			var trxInfo = _updateFees(block.transactions);
-			trxInfo.block = block;
-			_blocksCache[id] = trxInfo;
-			if (_blocksCache[id-_cacheLength]) {
-				delete _blocksCache[id-_cacheLength];
+			if (trx[1].trx.operations[j].type === 'ask_op_type') {
+				trxInfo.trxCode = 0;
+				trxInfo.asset = trx[1].trx.operations[j].data.ask_index.order_price.quote_asset_id;
+				trxInfo.baseAsset = trx[1].trx.operations[j].data.ask_index.order_price.base_asset_id;
+				assetRatio = Assets.getPrecision(trxInfo.baseAsset) / Assets.getPrecision(trxInfo.asset);
+				trxInfo.ratio = trx[1].trx.operations[j].data.ask_index.order_price.ratio * assetRatio;
+				trxInfo.amountBase = Math.abs(trx[1].trx.operations[j].data.amount) / Assets.getPrecision(trxInfo.baseAsset);
+				trxInfo.amountAsset = Math.abs(trx[1].trx.operations[j].data.amount) / Assets.getPrecision(trxInfo.baseAsset) * trxInfo.ratio;
+				break;
 			}
-			if (_blocksCache[id+_cacheLength]) {
-				delete _blocksCache[id+_cacheLength];
+			if (trx[1].trx.operations[j].type === 'bid_op_type') {
+				trxInfo.trxCode = 1;
+				trxInfo.asset = trx[1].trx.operations[j].data.bid_index.order_price.quote_asset_id;
+				trxInfo.baseAsset = trx[1].trx.operations[j].data.bid_index.order_price.base_asset_id;
+				assetRatio = Assets.getPrecision(trxInfo.baseAsset) / Assets.getPrecision(trxInfo.asset);
+				trxInfo.ratio = trx[1].trx.operations[j].data.bid_index.order_price.ratio * assetRatio;
+				trxInfo.amountAsset = Math.abs(trx[1].trx.operations[j].data.amount) / Assets.getPrecision(trxInfo.asset);
+				trxInfo.amountBase = trxInfo.amountAsset / trxInfo.ratio;
+				break;
 			}
-			deferred.resolve(trxInfo);
+			if (trx[1].trx.operations[j].type === 'short_op_type' || trx[1].trx.operations[j].type === 'short_op_v2_type') {
+				trxInfo.trxCode = 2;
+				trxInfo.asset = trx[1].trx.operations[j].data.short_index.order_price.quote_asset_id;
+				trxInfo.baseAsset = trx[1].trx.operations[j].data.short_index.order_price.base_asset_id;
+				assetRatio = Assets.getPrecision(trxInfo.baseAsset) / Assets.getPrecision(trxInfo.asset);
+				trxInfo.interest = trx[1].trx.operations[j].data.short_index.order_price.ratio * 100;
+				if (trx[1].trx.operations[j].data.short_price_limit) {
+					trxInfo.ratio = trx[1].trx.operations[j].data.short_price_limit.ratio * assetRatio;
+				} else {
+					trxInfo.ratio = false;
+				}
+
+				trxInfo.amountBase = Math.abs(trx[1].trx.operations[j].data.amount) / Assets.getPrecision(trxInfo.baseAsset);
+				trxInfo.amountAsset = trxInfo.amountBase / 2;
+				break;
+			}
+			if (trx[1].trx.operations[j].type === 'cover_op_type') {
+				trxInfo.trxCode = 3;
+				trxInfo.asset = trx[1].trx.operations[j].data.cover_index.order_price.quote_asset_id;
+				trxInfo.baseAsset = trx[1].trx.operations[j].data.cover_index.order_price.base_asset_id;
+				assetRatio = Assets.getPrecision(trxInfo.baseAsset) / Assets.getPrecision(trxInfo.asset);
+				trxInfo.ratio = trx[1].trx.operations[j].data.cover_index.order_price.ratio * assetRatio;
+				trxInfo.amountAsset = Math.abs(trx[1].trx.operations[j].data.amount) / Assets.getPrecision(trxInfo.asset);
+				trxInfo.amountBase = trxInfo.amountAsset / trxInfo.ratio;
+				break;
+			}
+			if (trx[1].trx.operations[j].type === 'add_collateral_op_type') {
+				trxInfo.trxCode = 10;
+				trxInfo.asset = trx[1].trx.operations[j].data.cover_index.order_price.quote_asset_id;
+				trxInfo.baseAsset = trx[1].trx.operations[j].data.cover_index.order_price.base_asset_id;
+				assetRatio = Assets.getPrecision(trxInfo.baseAsset) / Assets.getPrecision(trxInfo.asset);
+				trxInfo.ratio = trx[1].trx.operations[j].data.cover_index.order_price.ratio * assetRatio;
+				trxInfo.amountBase = trx[1].trx.operations[j].data.amount / Assets.getPrecision(trxInfo.baseAsset);
+				break;
+			}
+			if (trx[1].trx.operations[j].type === 'burn_op_type') {
+				trxInfo.trxCode = 6;
+				trxInfo.amount = trx[1].amount / Assets.getPrecision(trx[1].asset);
+				break;
+			}
+			if (trx[1].trx.operations[j].type === 'create_asset_op_type') {
+				trxInfo.trxCode = 7;
+				trxInfo.issuer = trx[1].trx.operations[j].data.issuer_account_id;
+				break;
+			}
+
+			if (trx[1].trx.operations[j].type === 'update_feed_op_type') {
+				trxInfo.trxCode = 8;
+				trxInfo.delegate = Delegates.getName(trx[1].trx.operations[0].data.feed.delegate_id);
+				assetRatio = Assets.getPrecision(trx[1].trx.operations[j].data.value.base_asset_id) / Assets.getPrecision(trx[1].trx.operations[j].data.value.quote_asset_id);
+				trxInfo.feeds.push({
+					asset: Assets.getSymbol(trx[1].trx.operations[j].data.feed.feed_id),
+					baseAsset: Assets.getSymbol(trx[1].trx.operations[j].data.value.base_asset_id),
+					price: trx[1].trx.operations[j].data.value.ratio * assetRatio
+				});
+				trxInfo.feedsCount++;
+			}
+			if (trx[1].trx.operations[j].type === 'register_account_op_type') {
+				trxInfo.trxCode = 9;
+				break;
+			}
+		}
+		if (trxInfo.asset >= 0 && trxInfo.trxCode !== 8 && trxInfo.trxCode !== 4) {
+			trxInfo.assetName = Assets.getSymbol(trxInfo.asset);
+		}
+		if (trxInfo.baseAsset >= 0 && trxInfo.trxCode !== 8 && trxInfo.trxCode !== 4) {
+			trxInfo.baseAssetName = Assets.getSymbol(trxInfo.baseAsset);
+		}
+		return trxInfo;
+	}
+
+	function _getBlock(id) {
+		var deferred = $q.defer();
+		api.getBlock(id).success(function(block) {
+			deferred.resolve(block);
 		});
+		return deferred.promise;
 	}
-	_lastBlockHeight = id;
-	return deferred.promise;
-}
 
-return {
-	fetchBlock: fetchBlock,
-	_updateFees: _updateFees
-};
+	function fetchBlock(id) {
+		var deferred = $q.defer();
+		if (Math.abs(id - _lastBlockHeight) > _cacheLength) {
+			_blocksCache = {};
+		}
+
+		if (_blocksCache[id]) {
+			deferred.resolve(_blocksCache[id]);
+		} else {
+			var promise = _getBlock(id);
+			promise.then(function(block) {
+				var trxInfo = _updateFees(block.transactions);
+				trxInfo.block = block;
+				_blocksCache[id] = trxInfo;
+				if (_blocksCache[id - _cacheLength]) {
+					delete _blocksCache[id - _cacheLength];
+				}
+				if (_blocksCache[id + _cacheLength]) {
+					delete _blocksCache[id + _cacheLength];
+				}
+				deferred.resolve(trxInfo);
+			});
+		}
+		_lastBlockHeight = id;
+		return deferred.promise;
+	}
+
+	return {
+		fetchBlock: fetchBlock,
+		_updateFees: _updateFees
+	};
 
 }]);

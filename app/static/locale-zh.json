@@ -116,7 +116,10 @@
       "time": "处理时间",
       "hash1": "上一个哈希值",
       "hash2": "下一个秘密哈希值",
-      "hash3": "前一个秘密哈希值"
+      "hash3": "前一个秘密哈希值",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "交易",
@@ -145,7 +148,9 @@
       "issuer": "发行人账号",
       "for": "给受托人",
       "burn": "Burn",
-      "assetCreate": "Create asset"
+      "asset_create": "Create asset",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral"
     }
   },
   "delegates": {

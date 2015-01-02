@@ -116,7 +116,10 @@
       "time": "처리시간",
       "hash1": "이전 해쉬",
       "hash2": "다음 암호화 해쉬",
-      "hash3": "이전 암호화 해쉬"
+      "hash3": "이전 암호화 해쉬",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "거래",
@@ -145,7 +148,9 @@
       "issuer": "발행자 계정",
       "for": "For delegate",
       "burn": "소각",
-      "assetCreate": "자산 발행"
+      "asset_create": "자산 발행",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral"
     }
   },
   "delegates": {

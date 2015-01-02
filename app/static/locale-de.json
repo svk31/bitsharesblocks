@@ -116,7 +116,10 @@
       "time": "Bearbeitungszeit",
       "hash1": "Vorheriger Hash",
       "hash2": "Nächster geheimer Hash",
-      "hash3": "Vorheriger geheimer Hash"
+      "hash3": "Vorheriger geheimer Hash",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "TRANSAKTION",
@@ -145,7 +148,9 @@
       "issuer": "Issuerkonto",
       "for": "für Delegierten",
       "burn": "Burn",
-      "assetCreate": "Create asset"
+      "asset_create": "Create asset",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral"
     }
   },
   "delegates": {

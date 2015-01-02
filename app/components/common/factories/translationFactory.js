@@ -84,7 +84,6 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 					search2: result['blocks.search2'],
 					last: result['blocks.last'],
 					blocks: result['blocks.blocks'],
-
 				});
 			});
 		});
@@ -96,7 +95,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		var deferred = $q.defer();
 		$translate.use(_currentKey).then(function(result) {
 			$translate(['charts.transfer', 'charts.reg', 'charts.feed', 'charts.update', 'assets.plot.type1',
-				'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'block.trx.burn'
+				'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'block.trx.burn', 'block.trx.asset_create',
+				'block.trx.asset_issue', 'block.trx.add_collateral'
 			]).then(function(result) {
 				deferred.resolve({
 					transfer: result['charts.transfer'],
@@ -107,10 +107,14 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 					asset_bid: result['assets.plot.type2'],
 					asset_short: result['assets.plot.type3'],
 					asset_cover: result['assets.plot.type4'],
-					burn: result['block.trx.burn']
+					burn: result['block.trx.burn'],
+					asset_create: result['block.trx.asset_create'],
+					asset_issue: result['block.trx.asset_issue'],
+					add_collateral: result['block.trx.add_collateral']
 				});
 			});
 		});
+
 		return deferred.promise;
 	}
 

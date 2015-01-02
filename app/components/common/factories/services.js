@@ -170,7 +170,9 @@ angular.module('app.services',[])
 				"issuer": "Issuer account",
 				"for": "For delegate",
 				"burn": "Burn",
-				"assetCreate": "Create asset"
+				"asset_create": "Create asset",
+				"asset_issue": "Issue asset",
+				"add_collateral": "Add collateral"
 			}
 		},
 		"delegates": {

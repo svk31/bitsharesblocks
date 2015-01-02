@@ -116,7 +116,10 @@
       "time": "Procesando tiempo",
       "hash1": "Hash anterior",
       "hash2": "Hash secreto siguiente",
-      "hash3": "Hash secreto anterio"
+      "hash3": "Hash secreto anterio",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "TRANSACCION",
@@ -145,7 +148,9 @@
       "issuer": "Cuenta emisor",
       "for": "For delegate",
       "burn": "Quemar",
-      "assetCreate": "Crear activo"
+      "asset_create": "Crear activo",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral"
     }
   },
   "delegates": {
