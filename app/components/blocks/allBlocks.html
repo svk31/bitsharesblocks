@@ -8,13 +8,13 @@
 </div>
 
 <div id="blockstable" class="col-md-10 col-md-offset-1">
-  <div class="input-group col-sm-4 col-xs-10">
+
+  <pagination ng-change="toggleTrx()" total-items="bigTotalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" items-per-page="blockCount" next-text="{{'blocks.lower' | translate}}" previous-text="{{'blocks.higher' | translate}}" first-text="{{'blocks.current' | translate}}" last-text="{{'blocks.first' | translate}}" num-pages="numPages" style="margin-bottom:0; margin-top:10px;"></pagination>
+  <div style="display:inline-block;" class="input-group col-sm-3 col-xs-12">
     <form ng-submit="setOverview(lastBlock)">
       <input ng-model="lastBlock" class="form-control" type="text" placeholder="{{search2}}" analytics-on analytics-event="Block/trx search" analytics-category="Search" analytics-label="Block/trx search">
     </form>
   </div>
-  <pagination ng-change="toggleTrx()" total-items="bigTotalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" items-per-page="blockCount" next-text="{{'blocks.lower' | translate}}" previous-text="{{'blocks.higher' | translate}}" first-text="{{'blocks.current' | translate}}" last-text="{{'blocks.first' | translate}}" num-pages="numPages" style="margin-bottom:0; margin-top:10px;"></pagination>
-
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">{{last}} {{ blockCount }} {{ blocksText }}</h3>
