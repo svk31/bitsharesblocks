@@ -15,11 +15,11 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    api.getOperations = function(operation) {
+    api.getTransactions = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'operations/' + type + cb,
-            cache: true
+            url: 'http://' + url + 'transactions/' + query + cb,
+            cache: false
         });
     };
 

@@ -151,7 +151,9 @@
       "asset_create": "Crear activo",
       "asset_issue": "Issue asset",
       "add_collateral": "Add collateral",
-      "withdraw_pay": "Delegate pay withdrawal"
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types"
     }
   },
   "delegates": {

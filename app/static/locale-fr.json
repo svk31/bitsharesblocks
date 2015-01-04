@@ -152,7 +152,9 @@
       "asset_create": "Creation d'actif",
       "asset_issue": "Publication d'actif",
       "add_collateral": "Rajout de collateral",
-      "withdraw_pay": "Retrait de pay de délégué"
+      "withdraw_pay": "Retrait de pay de délégué",
+      "all": "Afficher toutes les transactions",
+      "placeholder": "Filtrer par type de transaction"
     }
   },
   "delegates": {
@@ -344,7 +346,7 @@
     },
     "value": "Valeur",
     "reg": "Inscription de compte",
-    "transfer": "Transfer",
+    "transfer": "Transfert",
     "feed": "Mise à jour de flux",
     "update": "Mise à jour de compte",
     "new": "Nouveaux comptes",

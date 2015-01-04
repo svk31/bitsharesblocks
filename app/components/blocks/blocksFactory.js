@@ -7,7 +7,6 @@ angular.module('app')
 	var _maxBlock;
 	var _blockCount = 20;
 	var _currentBlock;
-	var _trxCount;
 
 	function setBooleanTrx(boolean) {
 		_booleanTrx = boolean;
@@ -19,10 +18,6 @@ angular.module('app')
 
 	function getBlocks() {
 		return _blocksArray;
-	}
-
-	function getTrxCount() {
-		return _trxCount;
 	}
 
 	function _getNew() {
@@ -121,8 +116,9 @@ angular.module('app')
 		};
 	}
 
-	function _getBlocksPage(pageDelta, lastBlock, state) {
-		var deferred = $q.defer();
+	function _getBlocksPage(pageDelta, lastBlock, types, state) {
+		var deferred = $q.defer(),
+			query = {};
 
 		var maxBlock;
 
@@ -132,53 +128,46 @@ angular.module('app')
 			highestBlock = lastBlock;
 		}
 
-		highestBlock = Math.max(highestBlock, _blockCount);
+		console.log('pageDelta:', pageDelta);
 
 		if (_booleanTrx) {
-			if (pageDelta === 0) {
-				if (lastBlock) {
-					maxBlock = lastBlock;
-				} else {
-					maxBlock = _maxBlock;
-				}
 
-				api.getTrxBlocksPage(maxBlock).success(function(result) {
-					_trxCount = result.trxCount;
-					deferred.resolve(result.blocks);
-				});
-			}
-			else if (pageDelta < 0) {
-				if (lastBlock) {
-					maxBlock = lastBlock;
-				} else {
-					maxBlock = _maxBlock;
-				}
+			query.types = types;
 
-				api.getTrxBlocksPageInverse(maxBlock).success(function(result) {
-					_trxCount = result.trxCount;
-					deferred.resolve(result.blocks);
-				});
+			if (pageDelta >= 0 && pageDelta < 2) {
+				lastBlock = Math.max(highestBlock, _blockCount);
+				query.sort = -1;
+				query.block = lastBlock;
+				query.inverse = false;
+
+			} else if (pageDelta < 0) {
+				highestBlock = Math.max(_blocksArray[0]._id, _blocksArray[_blocksArray.length - 1]._id);
+				query.sort = 1;
+				query.block = highestBlock;
+				query.inverse = true;
 			} else {
-				var minBlock;
-				if (state && pageDelta === 0) {
-					minBlock = _maxBlock + 1;
-				} else {
-					minBlock = Math.min(_blocksArray[0]._id, _blocksArray[_blocksArray.length - 1]._id) - 1;
-				}
-				if (pageDelta > 1) {
-					minBlock = 20;
-				}
-				api.getTrxBlocksPage(minBlock).success(function(result) {
-					_trxCount = result.trxCount;
-					deferred.resolve(result.blocks);
-				});
+				query.sort = 1;
+				query.block = 0;
+				query.inverse = true;
 			}
+
+			_getTransactions(query)
+				.then(function(result) {
+					console.log('number of blocks found:', result.blocks.length);
+					if (pageDelta > 0 && result.blocks.length === 0) {
+						result.finalPage = true;
+					}
+					console.log(result);
+					deferred.resolve(result);
+				});
 		} else {
 			api.getBlocksPage(highestBlock).success(function(blocks) {
-				deferred.resolve(blocks);
+				deferred.resolve({
+					blocks: blocks
+				});
 			});
 		}
-		_blocksArray = [];
+		// _blocksArray = [];
 		return deferred.promise;
 	}
 
@@ -191,21 +180,28 @@ angular.module('app')
 		return deferred.promise;
 	}
 
-	function fetchPage(pageDelta, lastBlock, state) {
+	function fetchPage(pageDelta, lastBlock, types, state) {
 		var deferred = $q.defer();
 		$q.all([
-				_getBlocksPage(pageDelta, lastBlock, state),
+				_getBlocksPage(pageDelta, lastBlock, types, state),
 				_getCurrentBlock()
 			])
 			.then(function(results) {
-				var blocks = results[0];
-				var currentBlock = results[1];
+				var blocks = results[0].blocks;
+				var finalPage = results[0].finalPage || false;
+				var currentBlock;
+				if (_booleanTrx) {
+					currentBlock = results[0].maxBlock;
+				} else {
+					currentBlock = results[1];
+				}
 
 				var blocksArray = _updateFees(blocks);
 				deferred.resolve({
 					blocks: blocksArray.blocks,
 					maxBlock: blocksArray.maxBlock,
-					currentBlock: currentBlock
+					currentBlock: currentBlock,
+					finalPage: finalPage
 				});
 				// });
 
@@ -231,6 +227,24 @@ angular.module('app')
 		return deferred.promise;
 	}
 
+	function _getTransactions(query) {
+		query.sort = (query.sort) ? query.sort : -1;
+		var deferred = $q.defer();
+		api.getTransactions(JSON.stringify(query)).success(function(result) {
+			deferred.resolve(result);
+		});
+		return deferred.promise;
+	}
+
+	function fetchTransactions(query) {
+		var deferred = $q.defer();
+		_getTransactions(query).then(function(result) {
+			result.blocks = _updateFees(result.blocks);
+			deferred.resolve(result);
+		});
+		return deferred.promise;
+	}
+
 
 
 	return {
@@ -240,7 +254,7 @@ angular.module('app')
 		getBooleanTrx: getBooleanTrx,
 		setBooleanTrx: setBooleanTrx,
 		getBlocks: getBlocks,
-		getTrxCount: getTrxCount
+		fetchTransactions: fetchTransactions
 	};
 
 }]);

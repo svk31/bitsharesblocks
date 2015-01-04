@@ -77,13 +77,14 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		$translate.use(_currentKey).then(function(result) {
 			$translate(['blocks.search1', 'blocks.search2', 'blocks.last', 'blocks.blocks', 'charts.transfer',
 				'charts.reg', 'charts.feed', 'charts.update', 'charts.transfer', 'assets.plot.type1', 'assets.plot.type2',
-				'assets.plot.type3', 'assets.plot.type4',
+				'assets.plot.type3', 'assets.plot.type4', 'block.trx.placeholder'
 			]).then(function(result) {
 				deferred.resolve({
 					search1: result['blocks.search1'],
 					search2: result['blocks.search2'],
 					last: result['blocks.last'],
 					blocks: result['blocks.blocks'],
+					placeholder: result['block.trx.placeholder']
 				});
 			});
 		});
@@ -96,7 +97,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		$translate.use(_currentKey).then(function(result) {
 			$translate(['charts.transfer', 'charts.reg', 'charts.feed', 'charts.update', 'assets.plot.type1',
 				'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'block.trx.burn', 'block.trx.asset_create',
-				'block.trx.asset_issue', 'block.trx.add_collateral', 'block.trx.withdraw_pay'
+				'block.trx.asset_issue', 'block.trx.add_collateral', 'block.trx.withdraw_pay', 'block.trx.all'
 			]).then(function(result) {
 				deferred.resolve({
 					transfer: result['charts.transfer'],
@@ -111,7 +112,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 					asset_create: result['block.trx.asset_create'],
 					asset_issue: result['block.trx.asset_issue'],
 					add_collateral: result['block.trx.add_collateral'],
-					withdraw_pay: result['block.trx.withdraw_pay']
+					withdraw_pay: result['block.trx.withdraw_pay'],
+					all: result['block.trx.all']
 				});
 			});
 		});
