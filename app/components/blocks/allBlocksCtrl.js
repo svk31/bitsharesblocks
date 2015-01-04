@@ -16,22 +16,16 @@ angular.module('app')
     $scope.booleanTrx = Blocks.getBooleanTrx();
 
     function getRecent() {
-      console.log('get recent triggered');
-      console.log(stopUpdate);
       stopUpdates();
-      console.log(stopUpdate);
       Blocks.fetchRecent().then(function(result) {
         $scope.blocks = result.blocks;
         maxBlock = result.maxBlock;
         $scope.bigTotalItems = maxBlock;
-        console.log('setting a new interval to get new blocks');
         stopUpdate = $interval(getNew, 10000, 0, false);
       });
     }
 
     function getNew() {
-      console.log('getting new Blocks, booleanTrx:', $scope.booleanTrx);
-      console.log(stopUpdate);
       if ($scope.booleanTrx) {
         Blocks.fetchTransactions({
             types: $scope.selectedTypes,
@@ -67,7 +61,6 @@ angular.module('app')
 
     function pageChanger(lastblock) {
       stopUpdates();
-      console.log('page changer triggered');
       var pageDelta = $scope.currentPage - oldPage;
       Blocks.fetchPage(pageDelta, lastblock, $scope.selectedTypes, $state.params.trx).then(function(result) {
 
@@ -77,14 +70,11 @@ angular.module('app')
         if (Math.abs(pageDelta) <= 1) {
           $scope.currentPage = Math.floor(($scope.bigTotalItems - maxBlock) / $scope.blockCount + 1);
         } else {
-          console.log(pageDelta);
           $scope.currentPage = Math.ceil($scope.bigTotalItems / $scope.blockCount);
         }
-        console.log(result);
         if (result.finalPage) {
           $scope.currentPage = Math.ceil($scope.bigTotalItems / $scope.blockCount);
         }
-        console.log('currentPage', $scope.currentPage);
         oldPage = $scope.currentPage;
 
         updateLocation();
@@ -124,14 +114,12 @@ angular.module('app')
     };
 
     $scope.toggleTrx = function() {
-      console.log('trx toggle, $scope.currentPage:', $scope.currentPage, ', oldPage:', oldPage);
       Blocks.setBooleanTrx($scope.booleanTrx);
       if ($scope.currentPage === 1 || ($scope.currentPage - oldPage < -1)) {
         oldPage = 1;
         if ($scope.booleanTrx) {
           fetchTransactions();
         } else {
-          console.log('toggle trx, getting recent');
           getRecent();
         }
         updateLocation();
@@ -295,7 +283,6 @@ angular.module('app')
             $scope.bigTotalItems = result.maxBlock;
           });
         stopUpdates();
-        console.log('setting a new interval to get new blocks');
         stopUpdate = $interval(getNew, 10000, 0, false);
       } else {
         getRecent();
