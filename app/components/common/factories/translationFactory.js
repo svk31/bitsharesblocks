@@ -26,6 +26,9 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	}, {
 		value: "한국어",
 		key: "ko"
+	}, {
+		value: "日本語",
+		key: "ja"
 	}];
 
 	function setCurrent(key) {

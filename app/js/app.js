@@ -32,8 +32,8 @@ var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcr
 ])
 
 .run(
-    ['$rootScope', '$stateParams', 'api', '$translate',
-        function($rootScope, $stateParams, api, $translate) {
+    ['$rootScope', 'api',
+        function($rootScope, api) {
 
             api.getInfo().success(function(info) {
                 $rootScope.clientVersion = info.clientVersion;
