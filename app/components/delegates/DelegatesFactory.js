@@ -32,7 +32,6 @@ angular.module('app')
 	}
 
 	for (var id in _delegateNames) {
-		console.log(id);
 		_delegateNamesArray.push({
 			name: _delegateNames[id].name,
 			_id: id
@@ -78,10 +77,10 @@ angular.module('app')
 
 	function fetchDelegatesById(id) {
 		var deferred = $q.defer();
-		if (_delegateNames[id]!== null) {
+		if (_delegateNames[id]) {
 			deferred.resolve(_delegateNames[id]);
 		} else {
-			api.getDelegateById(id).success(function(result) {
+			api.getDelegateById(id).success(function(result) {				
 				_delegateNames[id] = {
 					'name': result.name
 				};

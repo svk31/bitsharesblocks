@@ -170,7 +170,6 @@ angular.module('app')
     }
 
     function forkInfo() {
-      // $scope.forkDelegateName = Delegates.getName($scope.home.forks.previous.forkInfo[1].signing_delegate);
       Delegates.fetchDelegatesById($scope.home.forks.previous.forkInfo[1].signing_delegate).then(function(result) {
         $scope.forkDelegateName = result.name;
       });
