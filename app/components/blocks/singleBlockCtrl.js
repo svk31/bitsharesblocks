@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('blockCtrl', ['$scope', '$rootScope', '$location', '$state', 'Assets', 'Accounts', 'Block',
-  function($scope, $rootScope, $location, $state, Assets, Accounts, Block) {
+.controller('blockCtrl', ['$scope', '$rootScope', '$location', '$state', 'Assets', 'Accounts', 'Block', 'Translate',
+  function($scope, $rootScope, $location, $state, Assets, Accounts, Block, Translate) {
 
     $scope.blockNumber = $state.params.id;
     $scope.votes = [];
@@ -62,6 +62,22 @@ angular.module('app')
     };
 
     fetchBlock($scope.blockNumber);
+
+    function getTranslations() {
+      Translate.trxTypes().then(function(result) {
+        $scope.trxTypes = result;
+      });
+    }
+
+    getTranslations();
+
+    $rootScope.$on('$translateLoadingSuccess', function() {
+      getTranslations();
+    });
+
+    $rootScope.$on('languageChange', function() {
+      getTranslations();
+    });
 
 
 

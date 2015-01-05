@@ -27,7 +27,8 @@
     			<li ng-if="delegate.public_data.delegate.handle" class="list-group-item">{{ 'delegate.data.handle' | translate }}:<span class="badge">{{ delegate.public_data.delegate.handle }}</span></li>
                 <li ng-if="delegate.public_data.delegate.country"  class="list-group-item">{{ 'delegate.data.country' | translate }}:<span class="badge">{{ delegate.public_data.delegate.country }}</span></li>
     			<li ng-if="delegate.public_data.delegate.location"  class="list-group-item">{{ 'delegate.data.location' | translate }}:<span class="badge">{{ delegate.public_data.delegate.location }}</span></li>
-    			<li class="list-group-item">{{ 'footer.version' | translate }}:<span ng-class="{'badge':true, 'alert-success': (delegate.version === 1), 'alert-warning': (delegate.version === 2 ), 'alert-danger': (delegate.version > 2)}">{{delegate.public_data.version}}</span></li>
+    			<li ng-if="delegate.version !== 999" class="list-group-item">{{ 'footer.version' | translate }}:<span ng-class="{'badge':true, 'alert-success': (delegate.version === 1), 'alert-warning': (delegate.version === 2 ), 'alert-danger': (delegate.version > 2)}">{{delegate.public_data.version}}</span></li>
+                <li ng-if="delegate.version === 999" class="list-group-item">{{ 'footer.version' | translate }}:<span class="badge alert-danger">{{ 'delegates.no_version' | translate }}</span></li>
     			<li ng-if="website" class="list-group-item">{{ 'delegate.data.website' | translate }}:<a style="float:right;" ng-href="{{website}}" target="_blank">{{website}}</a></li>
     			<div ng-if="delegate.public_data.delegate.description" class="panel-body"><strong>{{ delegate.public_data.delegate.description }}</strong></div>
     		</ul>
@@ -58,9 +59,6 @@
     	</div>
     </div>
 
-
-
-
     <div id="delinfo" class="col-md-5 col-sm-6 col-xs-12">
     	<div class="panel panel-default">
     		<div class="panel-heading">
@@ -73,7 +71,7 @@
     			<li class="list-group-item">{{ 'delegates.rate' | translate }}:<span class="badge">{{delegate.delegate_info.pay_rate}} %</span></li>
     			<li class="list-group-item">{{ 'delegate.info.earnings' | translate }}:<span class="badge">{{delegate.totalEarnings | number:2}} BTS</span></li>
     			<li class="list-group-item">{{ 'delegate.info.withdrawn' | translate }}:<span class="badge">{{ delegate.withdrawn | number:2 }} BTS</span></li>
-    			<li class="list-group-item">{{ 'delegate.info.fees' | translate }}:<span class="badge">{{ delegate.totalFees | number:2 }} BTS</span></li>
+    			<li ng-if="delegate.totalFees>0" class="list-group-item">{{ 'delegate.info.fees' | translate }}:<span class="badge">{{ delegate.totalFees | number:2 }} BTS</span></li>
     		</ul>
     	</div>
     </div>
@@ -94,16 +92,14 @@
     		</div>
     		<li class="list-group-item">{{ 'delegate.prod.prod' | translate }}:<span class="badge">{{delegate.delegate_info.blocks_produced}}</span></li>
     		<li class="list-group-item">{{ 'delegate.prod.missed' | translate }}:<span class="badge">{{delegate.delegate_info.blocks_missed}}</span></li>
-    		<!-- <li ng-if="delegate.delegate_info.last_block_num_produced!==0" class="list-group-item">Blocks missed last 50 slots:<span ng-class="{'badge':true, 'alert-success': (missedSum==0), 'alert-info': (missedSum<3 && missedSum>=1), 'alert-warning': (missedSum<6 && missedSum>=3), 'alert-danger': (missedSum>7)}">{{missedSum}}</span></li> -->
-    		<li class="list-group-item">{{ 'delegates.rel' | translate }}:<span ng-class="{'badge':true, 'alert-success': (delegate.reliability>=97.5), 'alert-info': (delegate.reliability<97.5 && delegate.reliability>=92.5), 'alert-warning': (delegate.reliability<92.5 && delegate.reliability>=80), 'alert-danger': (delegate.reliability<80)}">{{delegate.reliability | number:2}} %</span></li>
-    		<!-- <li ng-if="delegate.delegate_info.last_block_num_produced===0" class="list-group-item">{{ 'delegate.prod.prod' | translate }}:<span style="float:right;">No blocks produced</a></li> -->
-    		<li ng-if="delegate.delegate_info.last_block_num_produced!==0" class="list-group-item">{{ 'delegate.prod.last' | translate }}:<a style="float:right;" ui-sref="block({ 'id' : delegate.delegate_info.last_block_num_produced })" >{{delegate.delegate_info.last_block_num_produced}}</a></li>
-    		<!-- <li ng-if="delegate.delegate_info.last_block_num_produced===0" class="list-group-item">{{delegate.delegate_info.last_block_num_produced}}:<span class="badge">n/a</span></li> -->
-    		<li class="list-group-item">{{ 'delegate.prod.lat50' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg50<1.5 && latencies.avg50>=0), 'alert-warning': (latencies.avg50>1.5 && latencies.avg50<=3), 'alert-danger': (latencies.avg50<0 || latencies.avg50>3)}">{{latencies.avg50 | number:3}}s</span></li>
-    		<li ng-if="latencies.avg100!='n/a'" class="list-group-item">{{ 'delegate.prod.lat100' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg100<1.5 && latencies.avg100>=0), 'alert-warning': (latencies.avg100>1.5 && latencies.avg100<=3), 'alert-danger': (latencies.avg100<0 || latencies.avg100>3)}">{{latencies.avg100  | number:3}}s</span></li>
-    		<li ng-if="latencies.avg100=='n/a'" class="list-group-item">{{ 'delegate.prod.lat100' | translate }}:<span class="badge">{{latencies.avg100}}</span></li>
-    		<li ng-if="latencies.avg200!='n/a'" class="list-group-item">{{ 'delegate.prod.lat200' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg200<=1.5 && latencies.avg200>=0), 'alert-warning': (latencies.avg200>1.5 && latencies.avg200<=3), 'alert-danger': (latencies.avg200<0 || latencies.avg200>3)}">{{latencies.avg200  | number:3}}s</span></li>
-    		<li ng-if="latencies.avg200=='n/a'" class="list-group-item">{{ 'delegate.prod.lat200' | translate }}:<span class="badge">{{latencies.avg200}}</span></li>
+    		<li ng-if="delegate.delegate_info.blocks_produced>0" class="list-group-item">{{ 'delegates.rel' | translate }}:<span ng-class="{'badge':true, 'alert-success': (delegate.reliability>=97.5), 'alert-info': (delegate.reliability<97.5 && delegate.reliability>=92.5), 'alert-warning': (delegate.reliability<92.5 && delegate.reliability>=80), 'alert-danger': (delegate.reliability<80)}">{{delegate.reliability | number:2}} %</span></li>
+    		
+            <li ng-if="delegate.delegate_info.last_block_num_produced!==0" class="list-group-item">{{ 'delegate.prod.last' | translate }}:<a style="float:right;" ui-sref="block({ 'id' : delegate.delegate_info.last_block_num_produced })" >{{delegate.delegate_info.last_block_num_produced}}</a></li>
+    		
+            <li ng-if="latencies" class="list-group-item">{{ 'delegate.prod.lat50' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg50<1.5 && latencies.avg50>=0), 'alert-warning': (latencies.avg50>1.5 && latencies.avg50<=3), 'alert-danger': (latencies.avg50<0 || latencies.avg50>3)}">{{latencies.avg50 | number:3}}s</span></li>
+    		
+            <li ng-if="latencies" class="list-group-item">{{ 'delegate.prod.lat100' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg100<1.5 && latencies.avg100>=0), 'alert-warning': (latencies.avg100>1.5 && latencies.avg100<=3), 'alert-danger': (latencies.avg100<0 || latencies.avg100>3)}">{{latencies.avg100  | number:3}}s</span></li>
+    		<li ng-if="latencies" class="list-group-item">{{ 'delegate.prod.lat200' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg200<=1.5 && latencies.avg200>=0), 'alert-warning': (latencies.avg200>1.5 && latencies.avg200<=3), 'alert-danger': (latencies.avg200<0 || latencies.avg200>3)}">{{latencies.avg200  | number:3}}s</span></li>
     	</div>
     </div>
 
@@ -171,7 +167,7 @@
 <div class="col-md-4 col-sm-6 col-xs-12 votestable">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h3 class="panel-title">{{ 'delegate.votes.title' | translate }} ({{votes.votesCount | number:0}} {{ 'delegate.votes.total' | translate }})<span id="dropdown" ng-click="status.open= !status.open"><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></span></h3>
+			<h3 class="panel-title">{{ 'delegate.votes.title' | translate }} ({{votes.votesCount | number:0}} {{ 'delegate.votes.total' | translate }})<span id="dropdown" ng-click="status.open= !status.open"><i style="cursor: pointer;" class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></span></h3>
 		</div>
         <fast-repeat ng-if="status.open" component="'VotesTable'" data="votes.votes.votes" headers="headers"></fast-repeat>
 	</div>

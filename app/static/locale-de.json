@@ -116,7 +116,10 @@
       "time": "Bearbeitungszeit",
       "hash1": "Vorheriger Hash",
       "hash2": "Nächster geheimer Hash",
-      "hash3": "Vorheriger geheimer Hash"
+      "hash3": "Vorheriger geheimer Hash",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "TRANSAKTION",
@@ -145,13 +148,17 @@
       "issuer": "Issuerkonto",
       "for": "für Delegierten",
       "burn": "Burn",
-      "assetCreate": "Create asset"
+      "asset_create": "Create asset",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral",
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types"
     }
   },
   "delegates": {
     "search": "Finde einen Delegierten",
     "title": "DELEGIERTE INFOS",
-    "standby": "Auch Standy Delegierte anzeigen",
     "rank": "Rang",
     "change24": "24h Änderung",
     "change7": "7d Änderung",
@@ -164,7 +171,10 @@
     "feedFreq": "Häufigtkeit der Feeds",
     "rel": "Verfügbarkeit",
     "version": "Version",
-    "filter": "filter"
+    "filter": "filter",
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Standby Delegierte anzeigen"
   },
   "delegate": {
     "prevRank": "Verheriger Rang",

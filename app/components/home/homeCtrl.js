@@ -75,35 +75,6 @@ angular.module('app')
       }
     });
 
-    api.getHome().success(function(result) {
-      $scope.home = result;
-      $scope.security = result.security;
-      $scope.averageConfirm = result.security.estimated_confirmation_seconds / 2;
-      $scope.newUsers = result.newUsers;
-      $scope.numberUserAssets = result.userAssets;
-      $scope.assetCount = result.assetCount;
-      checkHardfork();
-      forkInfo();
-      checkMaintenance();
-      stopHome = $interval(updateHome, 60000);
-    });
-
-
-
-    function updateHome() {
-      api.getHome(false).success(function(result) {
-        $scope.home = result;
-        $scope.security = result.security;
-        $scope.averageConfirm = result.security.estimated_confirmation_seconds / 2;
-        $scope.newUsers = result.newUsers;
-        $scope.numberUserAssets = result.userAssets;
-        $scope.assetCount = result.assetCount;
-        checkMaintenance();
-        forkInfo();
-        checkHardfork();
-      });
-    }
-
     function fetchPrice() {
       Home.fetchPrice($scope.priceUnit.name).then(function(result) {
         price = result;
@@ -114,8 +85,19 @@ angular.module('app')
     fetchPrice();
 
     function fetchHomeData() {
+      Home.fetchData().then(function(result) {
+        $scope.home = result.home;
+        $scope.averageConfirm = result.averageConfirm;
+        $scope.security = $scope.home.security;
 
+        forkInfo();
+        checkMaintenance();
+        checkHardfork();
+      });
     }
+
+    fetchHomeData();
+    stopHome = $interval(fetchHomeData, 60000);
 
     function getRecent() {
       Blocks.setBooleanTrx(false);
@@ -188,7 +170,9 @@ angular.module('app')
     }
 
     function forkInfo() {
-      $scope.forkDelegateName = Delegates.getName($scope.home.forks.previous.forkInfo[1].signing_delegate);
+      Delegates.fetchDelegatesById($scope.home.forks.previous.forkInfo[1].signing_delegate).then(function(result) {
+        $scope.forkDelegateName = result.name;
+      });
       $scope.forkLatency = $scope.home.forks.previous.forkInfo[1].latency / 1000000;
       $scope.previousForkHeight = $scope.home.forks.previous._id + 1;
     }

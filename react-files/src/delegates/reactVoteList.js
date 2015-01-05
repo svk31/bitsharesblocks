@@ -1,4 +1,4 @@
-var VotesHeaderRow = React.createClass({displayName: 'VotesHeaderRow',
+var VotesHeaderRow = React.createClass({
 	render: function() {
 		var props = this.props;
 		var headers = this.props.headers;
@@ -12,24 +12,24 @@ var VotesHeaderRow = React.createClass({displayName: 'VotesHeaderRow',
 		};
 
 		return (
-			React.createElement("tr", {onClick: clickHandler}, 
-			React.createElement("th", {className: "bold sortable"}, headers['blocks.blockNum']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegate.votes.net'])
-			)
+			<tr onClick={clickHandler}>
+			<th className="bold sortable">{headers['blocks.blockNum']}</th>
+			<th className="bold sortable">{headers['delegate.votes.net']}</th>
+			</tr>
 			);
 	}
 });
 
-var VoteRow = React.createClass({displayName: 'VoteRow',
+var VoteRow = React.createClass({
 	render: function() {
 		var vote =this.props.data;
 		var tdLatency, tdActiveFeeds, tdUpdateFeeds, tdReliability;
 
 		return (
-			React.createElement("tr", null, 
-			React.createElement("td", null, React.createElement("a", {href: 'blocks/block?id='+vote.block}, vote.block)), 
-			React.createElement("td", null, vote.vote+' BTS')
-			)
+			<tr>
+			<td><a href={'blocks/block?id='+vote.block}>{vote.block}</a></td>
+			<td>{vote.vote+' BTS'}</td>
+			</tr>
 			);
 	}
 });
@@ -114,7 +114,7 @@ var VotesTable = React.createClass({
 			})
 			.map(function(vote) {
 				return (
-					React.createElement(VoteRow, {key: vote.block, data: vote})
+					<VoteRow key={vote.block} data={vote}/>
 					);
 
 			});
@@ -125,20 +125,20 @@ var VotesTable = React.createClass({
 			};
 
 			return (
-				React.createElement("div", null, 
-				React.createElement("table", {className: "table table-condensed"}, 
-				React.createElement("thead", null, 
-				React.createElement(VotesHeaderRow, {onSortClick: this.handleSortClick, headers: headers, sortIndex: sortIndex, inverse: inverse})
-				), 
-				React.createElement("tbody", null, 
-				bodyRows
-				)
-				)
-				)
+				<div>
+				<table className="table table-condensed">
+				<thead>
+				<VotesHeaderRow onSortClick={this.handleSortClick} headers={headers} sortIndex={sortIndex} inverse={inverse}/>
+				</thead>
+				<tbody>
+				{bodyRows}
+				</tbody>
+				</table>
+				</div>
 				);
 		}
 		else {
-			return React.createElement("div", null);
+			return <div></div>;
 		}
 	}
 });

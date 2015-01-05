@@ -116,7 +116,10 @@
       "time": "Procesando tiempo",
       "hash1": "Hash anterior",
       "hash2": "Hash secreto siguiente",
-      "hash3": "Hash secreto anterio"
+      "hash3": "Hash secreto anterio",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "TRANSACCION",
@@ -145,13 +148,17 @@
       "issuer": "Cuenta emisor",
       "for": "For delegate",
       "burn": "Quemar",
-      "assetCreate": "Crear activo"
+      "asset_create": "Crear activo",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral",
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types"
     }
   },
   "delegates": {
     "search": "Encontrar un delegado",
     "title": "INFORMACION DELEGADOS",
-    "standby": "Include standy delegates",
     "rank": "Rango",
     "change24": "Cambio 24h",
     "change7": "Cambio 7d",
@@ -164,7 +171,10 @@
     "feedFreq": "Feed frequency",
     "rel": "Confiabilidad",
     "version": "Versión",
-    "filter": "filtrar"
+    "filter": "filtrar",
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Show standby delegates"
   },
   "delegate": {
     "prevRank": "Rango anterior",

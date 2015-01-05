@@ -116,7 +116,10 @@
       "time": "Tempo di esecuzione",
       "hash1": "Hash precedente",
       "hash2": "Prossimo hash segreto",
-      "hash3": "Precedente hash segreto"
+      "hash3": "Precedente hash segreto",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "TRANSAZIONE",
@@ -145,13 +148,17 @@
       "issuer": "Issuer account",
       "for": "Per il delagato",
       "burn": "bruciato",
-      "assetCreate": "Mercato creato"
+      "asset_create": "Mercato creato",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral",
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types"
     }
   },
   "delegates": {
     "search": "Trova delegato",
     "title": "INFORMAZIONI DELEGATO",
-    "standby": "Includi delegati in attesa",
     "rank": "Classifica",
     "change24": "Modifica nelle 24h",
     "change7": "Modifica in 7g",
@@ -164,7 +171,10 @@
     "feedFreq": "Frequanza feed",
     "rel": "Affidabilità",
     "version": "Versione",
-    "filter": "filtrare"
+    "filter": "filtrare",
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Includi delegati in attesa"
   },
   "delegate": {
     "prevRank": "Precedente",

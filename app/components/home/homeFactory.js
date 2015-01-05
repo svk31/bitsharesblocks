@@ -16,7 +16,6 @@
 
 		function fetchPrice(asset) {
 			var deferred = $q.defer();
-
 			api.getHomePrice(asset).success(function(result) {
 				result = result.sort();
 				deferred.resolve(result);

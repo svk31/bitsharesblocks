@@ -56,7 +56,7 @@
 				</tr>
 				<tr>
 					<td>{{ 'block.trx.type' | translate }}:</td>
-					<td >{{ trxInfo[$index].type }} </td>
+					<td >{{ trxTypes[trxInfo[$index].type] }}</td>
 				</tr>
 
 				<tr>
@@ -84,7 +84,7 @@
 					<td>{{ 'block.trx.key' | translate }}:</td>
 					<td>{{trx[$index][1].trx.operations[0].data.owner_key}} </td>
 				</tr>
-				<tr ng-if="trxInfo[$index].trxCode===8">
+				<tr ng-if="trxInfo[$index].trxCode===8 || trxInfo[$index].trxCode===11">
 					<td>{{ 'block.trx.delegate' | translate }}:</td>
 					<td><a ui-sref="delegate({ 'name' : trxInfo[$index].delegate })">{{trxInfo[$index].delegate}}</a></td>
 				</tr>
@@ -98,7 +98,7 @@
 					<td>{{(trx[$index][1].trx.operations[0].data.value.ratio*ratioToPrice[trx[$index][1].trx.operations[0].data.feed.feed_id] | number:6)+' '+trxInfo[$index].feeds[0].asset}}/BTS </td>
 				</tr>
 
-				<tr ng-if="trxInfo[$index].trxCode<4 && trxInfo[$index].ratio && trxInfo[$index].trxCode!==2">
+				<tr ng-if="(trxInfo[$index].trxCode<4 || trxInfo[$index].trxCode===10)  && trxInfo[$index].ratio && trxInfo[$index].trxCode!==2">
 					<td>{{ 'block.trx.price' | translate }}:</td>
 					<td>{{trxInfo[$index].ratio | number:6}} <a ui-sref="asset({ 'id' : trxInfo[$index].assetName })"> {{trxInfo[$index].assetName}}</a>/{{trxInfo[$index].baseAssetName}}</td>
 				</tr>
@@ -144,6 +144,14 @@
 					<td>{{ 'block.trx.issuer' | translate }}:</td>
 					<td ng-if="issuerName[$index] === 'MARKET'">{{issuerName[$index]}}</td>
 					<td ng-if="issuerName[$index] !== 'MARKET'"><a ui-sref="account({ 'name' : issuerName[$index] })" >{{issuerName[$index]}}</a></td>
+				</tr>
+				<tr ng-if="trxInfo[$index].trxCode===10">
+					<td>{{ 'block.trx.collateral' | translate }}:</td>
+					<td>{{trxInfo[$index].amountBase | number:3}} BTS</td>
+				</tr>
+				<tr ng-if="trxInfo[$index].trxCode===11">
+					<td>{{ 'delegate.info.withdrawn' | translate }}:</td>
+					<td>{{ trxInfo[$index].amount | number:2 }} BTS</td>
 				</tr>
 			</tbody>
 		</table>

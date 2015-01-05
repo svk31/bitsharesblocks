@@ -53,7 +53,6 @@ angular.module('app')
 
     function fetchDelegate(name, rank) {
       Delegates.fetchDelegate(name, rank).then(function(result) {
-
         $scope.delegate = result.delegate;
         $scope.latencies = result.latencies;
         $scope.delegateName = result.delegate.name;

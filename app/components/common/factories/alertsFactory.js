@@ -27,11 +27,22 @@ angular.module("app").factory('Alerts', ['$alert', function($alert) {
 		});
 	}
 
+	function notFound() {
+		return $alert({
+			'title': 'Not found or not valid search term',
+			'content': '',
+			'container': '#alerts-container',
+			'type': 'danger',
+			'show': false,
+			'duration': 5
+		});
+	}
 
 	return {
 		hardFork: hardFork,
 		maintenance: maintenance,
-		upgrade: upgrade
+		upgrade: upgrade,
+		notFound: notFound
 	};
 
 

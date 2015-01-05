@@ -116,7 +116,10 @@
       "time": "처리시간",
       "hash1": "이전 해쉬",
       "hash2": "다음 암호화 해쉬",
-      "hash3": "이전 암호화 해쉬"
+      "hash3": "이전 암호화 해쉬",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "거래",
@@ -145,13 +148,17 @@
       "issuer": "발행자 계정",
       "for": "For delegate",
       "burn": "소각",
-      "assetCreate": "자산 발행"
+      "asset_create": "자산 발행",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral",
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types"
     }
   },
   "delegates": {
     "search": "대표자 찾기",
     "title": "대표자 정보",
-    "standby": "대기중인 대표자 포함",
     "rank": "순위",
     "change24": "24시간내 변동",
     "change7": "7일내 변동",
@@ -164,7 +171,10 @@
     "feedFreq": "가격정보 제공 빈도",
     "rel": "신뢰도",
     "version": "버전",
-    "filter": "필터"
+    "filter": "필터",
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "대기중인 대표자 포함"
   },
   "delegate": {
     "prevRank": "이전 순위",

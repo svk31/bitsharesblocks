@@ -1,20 +1,23 @@
 
-var InputBox = React.createClass({displayName: "InputBox",
+var InputBox = React.createClass({displayName: 'InputBox',
 	changeHandler: function(input) {
 		this.props.onFilterChange(					
 			this.refs.filterTextInput.getDOMNode().value
 			);
 	},
+	handleSubmit: function(event) {
+		event.preventDefault();
+	},
 	render: function() {
 		return (
-			React.createElement("form", null, 
+			React.createElement("form", {onSubmit: this.handleSubmit}, 
 			React.createElement("input", {ref: "filterTextInput", value: this.props.filterName, onChange: this.changeHandler, type: "text", className: "form-control", placeholder: this.props.placeHolder})
 			)
 			);
 	}
 });
 
-var HeaderRow = React.createClass({displayName: "HeaderRow",
+var HeaderRow = React.createClass({displayName: 'HeaderRow',
 	render: function() {
 		var props = this.props;
 		var headers = this.props.headers;
@@ -75,13 +78,13 @@ var HeaderRow = React.createClass({displayName: "HeaderRow",
 	}
 });
 
-var DelegateRow = React.createClass({displayName: "DelegateRow",
+var DelegateRow = React.createClass({displayName: 'DelegateRow',
 	render: function() {
 		var delegate =this.props.data;
+		var no_version = this.props.version;
 		var tdLatency, tdActiveFeeds, tdUpdateFeeds, tdReliability, tdVersion;
 
 		if (delegate.delegate_info.blocks_produced < 1 || delegate.avgLatency === 'n/a') {
-			console.log('avg latency: '+delegate.avgLatency);
 			tdLatency = React.createElement("td", {className: "success"}, "n/a");
 		}
 		else if (delegate.avgLatency >=-1.5 && delegate.avgLatency <=1.5) {
@@ -135,6 +138,9 @@ var DelegateRow = React.createClass({displayName: "DelegateRow",
 		}
 		else if (delegate.version === 2) {
 			tdVersion = React.createElement("td", {className: "warning"}, delegate.public_data.version);
+		}
+		else if (delegate.version === 999) {
+			tdVersion = React.createElement("td", {className: "danger"}, no_version);
 		}
 		else {
 			tdVersion = React.createElement("td", {className: "danger"}, delegate.public_data.version);
@@ -226,7 +232,7 @@ var DelegatesTable = React.createClass({
 			.map(function(delegate) {
 
 				return (
-					React.createElement(DelegateRow, {key: delegate.rank, data: delegate})
+					React.createElement(DelegateRow, {key: delegate.rank, data: delegate, version: headers['delegates.no_version']})
 					);
 
 			});

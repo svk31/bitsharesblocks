@@ -7,13 +7,13 @@
 
 
 <div id="blockstable" class="col-md-10 col-md-offset-1">
-  <div class="input-group">
+
+  <pagination ng-change="changePage()" total-items="accountsCount" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" items-per-page="pageCount" next-text="{{ 'accounts.older' | translate }}" previous-text="{{ 'accounts.newer' | translate }}" first-text="{{ 'accounts.recent' | translate }}" last-text="{{ 'accounts.oldest' | translate }}" num-pages="numPages" style="margin-bottom:0; margin-top:10px;"></pagination>
+  <div style="display:inline-block;" class="input-group">
     <form ng-submit="setOverview(lastBlock)">
       <input  class="form-control" type="text" ng-model="lastBlock" placeholder="{{ 'accounts.search2' | translate }}" analytics-on analytics-event="Account search" analytics-category="Search" analytics-label="Account search">
     </form>
   </div>
-  <pagination ng-change="changePage()" total-items="accountsCount" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" items-per-page="pageCount" next-text="{{ 'accounts.older' | translate }}" previous-text="{{ 'accounts.newer' | translate }}" first-text="{{ 'accounts.recent' | translate }}" last-text="{{ 'accounts.oldest' | translate }}" num-pages="numPages" style="margin-bottom:0; margin-top:10px;"></pagination>
-
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">{{ 'accounts.title' | translate }}</h3>

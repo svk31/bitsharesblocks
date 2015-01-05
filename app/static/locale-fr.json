@@ -117,7 +117,10 @@
       "time": "Temps de traitement",
       "hash1": "Hash précédent",
       "hash2": "Prochain hash secret",
-      "hash3": "Hash secret précédent"
+      "hash3": "Hash secret précédent",
+      "shares": "Parts créés",
+      "collected": "Frais gagnés",
+      "destroyed": "Frais détruis"
     },
     "trx": {
       "title": "TRANSACTION",
@@ -145,14 +148,18 @@
       "description": "Description de l'actif",
       "issuer": "Compte du créateur",
       "for": "Pour délégué",
-      "burn": "Burn",
-      "assetCreate": "Create asset"
+      "burn": "Déstruction",
+      "asset_create": "Creation d'actif",
+      "asset_issue": "Publication d'actif",
+      "add_collateral": "Rajout de collateral",
+      "withdraw_pay": "Retrait de pay de délégué",
+      "all": "Afficher toutes les transactions",
+      "placeholder": "Filtrer par type de transaction"
     }
   },
   "delegates": {
     "search": "Chercher un délégué",
     "title": "INFO SUR LES DÉLÉGUÉS",
-    "standby": "Inclure les délégués en standby ",
     "rank": "Rang",
     "change24": "Changement 24h",
     "change7": "Changement 7j",
@@ -165,7 +172,10 @@
     "feedFreq": "Frequence des flux",
     "rel": "Fiabilité",
     "version": "Vérsion",
-    "filter": "filtrer"
+    "filter": "filtrer",
+    "no_version": "Pas défini",
+    "active": "Afficher les délégués actifs",
+    "standby": "Afficher les délégués en standby"
   },
   "delegate": {
     "prevRank": "Rang précedent",
@@ -337,7 +347,7 @@
     },
     "value": "Valeur",
     "reg": "Inscription de compte",
-    "transfer": "Transfer",
+    "transfer": "Transfert",
     "feed": "Mise à jour de flux",
     "update": "Mise à jour de compte",
     "new": "Nouveaux comptes",

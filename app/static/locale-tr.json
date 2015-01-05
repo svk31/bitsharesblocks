@@ -116,7 +116,10 @@
       "time": "İşleme süresi",
       "hash1": "Önceki hash",
       "hash2": "Sonraki gizli hash",
-      "hash3": "Önceki gizli hash"
+      "hash3": "Önceki gizli hash",
+      "shares": "Shares issued",
+      "collected": "Fees collected",
+      "destroyed": "Fees destroyed"
     },
     "trx": {
       "title": "İŞLEM",
@@ -145,13 +148,17 @@
       "issuer": "Piyasaya süren hesap",
       "for": "delege için",
       "burn": "Burn",
-      "assetCreate": "Varlık yarat"
+      "asset_create": "Varlık yarat",
+      "asset_issue": "Issue asset",
+      "add_collateral": "Add collateral",
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types"
     }
   },
   "delegates": {
     "search": "Delege ara",
     "title": "DELEGE BİLGİLERİ",
-    "standby": "Beklemedeki delegeleri dahil et",
     "rank": "Sıra",
     "change24": "24s Değişim",
     "change7": "7g Değişim",
@@ -164,7 +171,10 @@
     "feedFreq": "Feed Sıklığı",
     "rel": "Güvenilirlik",
     "version": "Versiyon",
-    "filter": "süzmek"
+    "filter": "süzmek",
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Beklemedeki delegeleri dahil et"
   },
   "delegate": {
     "prevRank": "Önceki sıra",

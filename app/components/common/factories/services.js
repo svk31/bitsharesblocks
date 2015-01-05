@@ -170,13 +170,17 @@ angular.module('app.services',[])
 				"issuer": "Issuer account",
 				"for": "For delegate",
 				"burn": "Burn",
-				"assetCreate": "Create asset"
+				"asset_create": "Create asset",
+				"asset_issue": "Issue asset",
+				"add_collateral": "Add collateral",
+				"withdraw_pay": "Delegate pay withdrawal",
+				"all": "Show all transactions",
+				"placeholder": "Filter by transaction types"
 			}
 		},
 		"delegates": {
 			"search": "Find a delegate",
 			"title": "DELEGATES INFO",
-			"standby": "Include standy delegates",
 			"rank": "Rank",
 			"change24": "24h change",
 			"change7": "7d change",
@@ -189,7 +193,10 @@ angular.module('app.services',[])
 			"feedFreq": "Feed frequency",
 			"rel": "Reliability",
 			"version": "Version",
-			"filter": "filter"
+			"filter": "filter",
+			"no_version": "Not set",
+			"active":"Show active delegates",
+			"standby":"Show standby delegates"
 		},
 		"delegate": {
 			"prevRank": "Previous rank",
