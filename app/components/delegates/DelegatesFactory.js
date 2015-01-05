@@ -26,12 +26,13 @@ angular.module('app')
 		_versions = {};
 	}
 
-	_delegateNames = store.get('delegateNames');
+	_delegateNames = store.get('delegateNamesv2');
 	if (_delegateNames===undefined) {
 		_delegateNames = {};
 	}
 
 	for (var id in _delegateNames) {
+		console.log(id);
 		_delegateNamesArray.push({
 			name: _delegateNames[id].name,
 			_id: id
@@ -77,14 +78,14 @@ angular.module('app')
 
 	function fetchDelegatesById(id) {
 		var deferred = $q.defer();
-		if (_delegateNames[id]) {
+		if (_delegateNames[id]!== null) {
 			deferred.resolve(_delegateNames[id]);
 		} else {
 			api.getDelegateById(id).success(function(result) {
 				_delegateNames[id] = {
 					'name': result.name
 				};
-				store.set('delegateNames',_delegateNames);
+				store.set('delegateNamesv2',_delegateNames);
 				deferred.resolve(result);
 			});
 		}
