@@ -1,7 +1,7 @@
 <div class="col-md-12 col-xs-12" id="alerts-container-indexing" style="padding-top:0;"></div>
 
-<div class="input-group filters col-md-12">
-  <div class="col-md-6">
+<div style="clear:both;" class="input-group filters col-md-12">
+  <div class="col-md-6" >
 	<form ng-submit="submitDelegate(selectedDelegate)">
 		<input type="text" class="form-control" ng-model="selectedDelegate" limit="15" data-min-length="0" ng-options="delegate.name as delegate.name for delegate in getNames(selectedDelegate)" placeholder="{{ 'delegates.search' | translate }}" bs-typeahead analytics-on analytics-event="Delegate search" analytics-category="Search" analytics-label="Delegate" >
 	</form>
