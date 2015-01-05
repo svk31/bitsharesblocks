@@ -47,6 +47,15 @@ angular.module('app.services',[])
 			"version": "Client version",
 			"language": "Language"
 		},
+		"apiModal": {
+			"title": "Change API server",
+			"body": "You are automatically assigned an API server close to you, but if you are experiencing issues you may manually select a new API server here:",
+			"close": "Close",
+			"auto": "Automatic (default)",
+			"new_york": "New York, USA",
+			"singapore": "Singapore",
+			"api": "API"
+		},
 		"home": {
 			"history":"BTS PRICE HISTORY LAST 14 DAYS",
 			"price":"Price",

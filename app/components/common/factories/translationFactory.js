@@ -245,6 +245,25 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		return deferred.promise;
 	}
 
+	function apiModal() {
+		var deferred = $q.defer();
+		$translate.use(_currentKey)
+			.then(function(result) {
+				$translate(['apiModal.title', 'apiModal.body', 'apiModal.close','apiModal.auto','apiModal.new_york','apiModal.singapore'])
+					.then(function(result) {
+						deferred.resolve({
+							title: result["apiModal.title"],
+							body: result["apiModal.body"],
+							close: result["apiModal.close"],
+							auto: result["apiModal.auto"],
+							new_york: result["apiModal.new_york"],
+							singapore: result["apiModal.singapore"]
+						});
+					});
+			});
+		return deferred.promise;
+	}
+
 	return {
 		getCurrent: getCurrent,
 		setCurrent: setCurrent,
@@ -258,7 +277,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		assets: assets,
 		asset: asset,
 		charts: charts,
-		genesis: genesis
+		genesis: genesis,
+		apiModal: apiModal
 	};
 
 }]);
