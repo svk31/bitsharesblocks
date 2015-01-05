@@ -26,6 +26,11 @@ angular.module('app')
 		_versions = {};
 	}
 
+	_delegateNames = store.get('delegateNames');
+	if (_delegateNames===undefined) {
+		_delegateNames = {};
+	}
+
 	for (var id in _delegateNames) {
 		_delegateNamesArray.push({
 			name: _delegateNames[id].name,
@@ -44,18 +49,6 @@ angular.module('app')
 			});
 		}
 		return deferred.promise;
-	}
-
-	function getName(id) {
-		if (id >= 0) {
-			if (_delegateNames[id]) {
-				return _delegateNames[id].name;
-			} else {
-				return '';
-			}
-		} else {
-			return '';
-		}
 	}
 
 	function getDelegateNames() {
@@ -79,6 +72,22 @@ angular.module('app')
 		api.searchDelegatesByName(query).success(function(result) {
 			deferred.resolve(result);
 		});
+		return deferred.promise;
+	}
+
+	function fetchDelegatesById(id) {
+		var deferred = $q.defer();
+		if (_delegateNames[id]) {
+			deferred.resolve(_delegateNames[id]);
+		} else {
+			api.getDelegateById(id).success(function(result) {
+				_delegateNames[id] = {
+					'name': result.name
+				};
+				store.set('delegateNames',_delegateNames);
+				deferred.resolve(result);
+			});
+		}
 		return deferred.promise;
 	}
 
@@ -487,7 +496,6 @@ angular.module('app')
 
 	return {
 		initDelegateNames: initDelegateNames,
-		getName: getName,
 		getDelegateNames: getDelegateNames,
 		getDelegateNamesArray: getDelegateNamesArray,
 		fetchDelegates: fetchDelegates,
@@ -495,7 +503,8 @@ angular.module('app')
 		filterFeeds: filterFeeds,
 		fetchVotes: fetchVotes,
 		checkVersion: checkVersion,
-		fetchDelegatesByName: fetchDelegatesByName
+		fetchDelegatesByName: fetchDelegatesByName,
+		fetchDelegatesById: fetchDelegatesById
 	};
 
 }]);

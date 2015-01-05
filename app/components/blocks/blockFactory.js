@@ -60,10 +60,13 @@ angular.module('app')
 				};
 			} else {
 				currentVotes.forEach(function(vote, j) {
-					tempVotes.push({
-						delegate: Delegates.getName(vote[0]),
-						amount: vote[1].votes_for / precision
+					Delegates.fetchDelegatesById(vote[0]).then(function(result) {
+						tempVotes[j] = {
+							delegate: result.name,
+							amount: vote[1].votes_for / precision
+						};
 					});
+
 				});
 
 			}
@@ -102,6 +105,8 @@ angular.module('app')
 		trxInfo.id = trx[0];
 		trxInfo.trxCode = 4;
 		trxInfo.type = trx[1].type;
+		var fetchName = false,
+			delegateID;
 		for (j = 0; j < trx[1].trx.operations.length; j++) {
 
 			if (trx[1].trx.operations[j].type === 'update_account_op_type') {
@@ -173,7 +178,9 @@ angular.module('app')
 			if (trx[1].trx.operations[j].type === 'withdraw_pay_op_type') {
 				trxInfo.trxCode = 11;
 				trxInfo.amount = (trx[1].trx.operations[j].data.amount - trx[1].balance[0][1]) / Assets.getPrecision(0);
-				trxInfo.delegate = Delegates.getName(trx[1].trx.operations[j].data.account_id);
+
+				delegateID = trx[1].trx.operations[j].data.account_id;
+				fetchName = true;
 				break;
 			}
 			if (trx[1].trx.operations[j].type === 'create_asset_op_type') {
@@ -184,7 +191,9 @@ angular.module('app')
 
 			if (trx[1].trx.operations[j].type === 'update_feed_op_type') {
 				trxInfo.trxCode = 8;
-				trxInfo.delegate = Delegates.getName(trx[1].trx.operations[0].data.feed.delegate_id);
+				delegateID = trx[1].trx.operations[0].data.feed.delegate_id;
+				fetchName = true;
+
 				assetRatio = Assets.getPrecision(trx[1].trx.operations[j].data.value.base_asset_id) / Assets.getPrecision(trx[1].trx.operations[j].data.value.quote_asset_id);
 				trxInfo.feeds.push({
 					asset: Assets.getSymbol(trx[1].trx.operations[j].data.feed.feed_id),
@@ -198,6 +207,12 @@ angular.module('app')
 				break;
 			}
 		}
+		if (fetchName) {
+			Delegates.fetchDelegatesById(delegateID).then(function(result) {
+				trxInfo.delegate = result.name;
+			});
+		}
+
 		if (trxInfo.asset >= 0 && trxInfo.trxCode !== 8 && trxInfo.trxCode !== 4) {
 			trxInfo.assetName = Assets.getSymbol(trxInfo.asset);
 		}

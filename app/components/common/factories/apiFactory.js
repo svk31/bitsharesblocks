@@ -2,10 +2,10 @@ angular.module("app").factory('api', ['$http', function($http) {
     var api = {},
         url, url_v2;
 
-    url = '127.0.0.1:2095/v1/';
-    url_v2 = '127.0.0.1:2095/v2/';
-    // url = 'api.bitsharesblocks.com/v1/';
-    // url_v2 = 'api.bitsharesblocks.com/v2/';
+    // url = '127.0.0.1:2095/v1/';
+    // url_v2 = '127.0.0.1:2095/v2/';
+    url = 'api.bitsharesblocks.com/v1/';
+    url_v2 = 'api.bitsharesblocks.com/v2/';
 
     var cb = '?callback=JSON_CALLBACK';
 
