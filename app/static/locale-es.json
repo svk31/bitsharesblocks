@@ -159,7 +159,6 @@
   "delegates": {
     "search": "Encontrar un delegado",
     "title": "INFORMACION DELEGADOS",
-    "standby": "Include standy delegates",
     "rank": "Rango",
     "change24": "Cambio 24h",
     "change7": "Cambio 7d",
@@ -173,7 +172,9 @@
     "rel": "Confiabilidad",
     "version": "Versión",
     "filter": "filtrar",
-    "no_version": "Not set"
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Show standby delegates"
   },
   "delegate": {
     "prevRank": "Rango anterior",

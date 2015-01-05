@@ -160,7 +160,6 @@
   "delegates": {
     "search": "Chercher un délégué",
     "title": "INFO SUR LES DÉLÉGUÉS",
-    "standby": "Inclure les délégués en standby ",
     "rank": "Rang",
     "change24": "Changement 24h",
     "change7": "Changement 7j",
@@ -174,7 +173,9 @@
     "rel": "Fiabilité",
     "version": "Vérsion",
     "filter": "filtrer",
-    "no_version": "Pas défini"
+    "no_version": "Pas défini",
+    "active": "Afficher les délégués actifs",
+    "standby": "Afficher les délégués en standby"
   },
   "delegate": {
     "prevRank": "Rang précedent",

@@ -5,9 +5,12 @@ var InputBox = React.createClass({displayName: 'InputBox',
 			this.refs.filterTextInput.getDOMNode().value
 			);
 	},
+	handleSubmit: function(event) {
+		event.preventDefault();
+	},
 	render: function() {
 		return (
-			React.createElement("form", null, 
+			React.createElement("form", {onSubmit: this.handleSubmit}, 
 			React.createElement("input", {ref: "filterTextInput", value: this.props.filterName, onChange: this.changeHandler, type: "text", className: "form-control", placeholder: this.props.placeHolder})
 			)
 			);

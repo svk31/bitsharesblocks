@@ -159,7 +159,6 @@
   "delegates": {
     "search": "대표자 찾기",
     "title": "대표자 정보",
-    "standby": "대기중인 대표자 포함",
     "rank": "순위",
     "change24": "24시간내 변동",
     "change7": "7일내 변동",
@@ -173,7 +172,9 @@
     "rel": "신뢰도",
     "version": "버전",
     "filter": "필터",
-    "no_version": "Not set"
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "대기중인 대표자 포함"
   },
   "delegate": {
     "prevRank": "이전 순위",

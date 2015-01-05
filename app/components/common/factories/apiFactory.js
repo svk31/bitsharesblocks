@@ -1,9 +1,11 @@
 angular.module("app").factory('api', ['$http', function($http) {
     var api = {},
-        url;
+        url, url_v2;
 
-    // url = '127.0.0.1:2095/v1/';
-    url='api.bitsharesblocks.com/v1/';
+    url = '127.0.0.1:2095/v1/';
+    url_v2 = '127.0.0.1:2095/v2/';
+    // url = 'api.bitsharesblocks.com/v1/';
+    // url_v2 = 'api.bitsharesblocks.com/v2/';
 
     var cb = '?callback=JSON_CALLBACK';
 
@@ -127,11 +129,18 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    api.getDelegates = function(cacheBoolean) {
+    // api.getDelegates = function(cacheBoolean) {
+    //     return $http({
+    //         method: 'JSONP',
+    //         url: 'http://' + url + 'delegates' + cb,
+    //         cache: cacheBoolean
+    //     });
+    // };
+
+    api.getDelegates = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'delegates' + cb,
-            cache: cacheBoolean
+            url: 'http://' + url_v2 + 'delegates/' + JSON.stringify(query) + cb
         });
     };
 
@@ -141,6 +150,14 @@ angular.module("app").factory('api', ['$http', function($http) {
             url: 'http://' + url + 'activedelegates' + cb,
             cache: false
         });
+    };
+
+    api.searchDelegatesByName = function(query) {
+        return $http.jsonp('http://' + url + 'delegatebyname/' + query + cb);
+    };
+
+    api.getDelegateById = function(id) {
+        return $http.jsonp('http://' + url + 'delegatenamebyid/' + id + cb);
     };
 
     api.getNewBlocks = function(lastBlock) {

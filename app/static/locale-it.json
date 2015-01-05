@@ -159,7 +159,6 @@
   "delegates": {
     "search": "Trova delegato",
     "title": "INFORMAZIONI DELEGATO",
-    "standby": "Includi delegati in attesa",
     "rank": "Classifica",
     "change24": "Modifica nelle 24h",
     "change7": "Modifica in 7g",
@@ -173,7 +172,9 @@
     "rel": "Affidabilità",
     "version": "Versione",
     "filter": "filtrare",
-    "no_version": "Not set"
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Includi delegati in attesa"
   },
   "delegate": {
     "prevRank": "Precedente",

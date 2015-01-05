@@ -159,7 +159,6 @@
   "delegates": {
     "search": "查找一个受托人",
     "title": "受托人信息",
-    "standby": "包含待命受托人",
     "rank": "等级",
     "change24": "24小时改变",
     "change7": "7天改变",
@@ -173,7 +172,9 @@
     "rel": "稳定率",
     "version": "版本",
     "filter": "筛选",
-    "no_version": "Not set"
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "包含待命受托人"
   },
   "delegate": {
     "prevRank": "前一个等级",

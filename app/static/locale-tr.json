@@ -159,7 +159,6 @@
   "delegates": {
     "search": "Delege ara",
     "title": "DELEGE BİLGİLERİ",
-    "standby": "Beklemedeki delegeleri dahil et",
     "rank": "Sıra",
     "change24": "24s Değişim",
     "change7": "7g Değişim",
@@ -173,7 +172,9 @@
     "rel": "Güvenilirlik",
     "version": "Versiyon",
     "filter": "süzmek",
-    "no_version": "Not set"
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Beklemedeki delegeleri dahil et"
   },
   "delegate": {
     "prevRank": "Önceki sıra",

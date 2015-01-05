@@ -159,7 +159,6 @@
   "delegates": {
     "search": "Finde einen Delegierten",
     "title": "DELEGIERTE INFOS",
-    "standby": "Auch Standy Delegierte anzeigen",
     "rank": "Rang",
     "change24": "24h Änderung",
     "change7": "7d Änderung",
@@ -173,7 +172,9 @@
     "rel": "Verfügbarkeit",
     "version": "Version",
     "filter": "filter",
-    "no_version": "Not set"
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Standby Delegierte anzeigen"
   },
   "delegate": {
     "prevRank": "Verheriger Rang",

@@ -181,7 +181,6 @@ angular.module('app.services',[])
 		"delegates": {
 			"search": "Find a delegate",
 			"title": "DELEGATES INFO",
-			"standby": "Include standy delegates",
 			"rank": "Rank",
 			"change24": "24h change",
 			"change7": "7d change",
@@ -195,7 +194,9 @@ angular.module('app.services',[])
 			"rel": "Reliability",
 			"version": "Version",
 			"filter": "filter",
-			"no_version": "Not set"
+			"no_version": "Not set",
+			"active":"Show active delegates",
+			"standby":"Show standby delegates"
 		},
 		"delegate": {
 			"prevRank": "Previous rank",
