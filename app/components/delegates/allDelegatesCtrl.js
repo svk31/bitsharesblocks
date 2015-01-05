@@ -10,6 +10,9 @@ angular.module('app')
     $scope.delegateNames = Delegates.getDelegateNamesArray();
 
     $scope.selectedTypes = store.get('delegateChoice');
+    if ($scope.selectedTypes === undefined || $scope.selectedTypes.length === 0) {
+      $scope.selectedTypes = ['active'];
+    }
 
     $scope.query = {
       active: true,
@@ -116,11 +119,6 @@ angular.module('app')
     }, {
       type: 'standby'
     }];
-
-
-    if ($scope.selectedTypes === undefined || $scope.selectedTypes.length === 0) {
-      $scope.selectedTypes = ['active'];
-    }
 
     $scope.booleanTrx = ($scope.selectedTypes.length > 0);
     var listener;
