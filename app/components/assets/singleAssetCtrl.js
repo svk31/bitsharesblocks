@@ -217,6 +217,9 @@ angular.module('app')
         $scope.filteredFeeds = result.feeds;
         $scope.medianLine = result.medianLine;
         $scope.medianFeed = result.medianFeed;
+        $scope.collateral = result.collateral;
+        $scope.collateralAsset = result.collateralAsset;        
+
         if (!marketAsset && $scope.orderBookChart.series.length === 3) {
           $scope.orderBookChart.series.pop();
           prefix = '';

@@ -140,6 +140,7 @@
     <ul class="list-group">
       <li class="list-group-item">{{ 'asset.market.reserve' | translate }}: <span class="badge">{{((asset.collected_fees/asset.precision) | number:2) + ' '+asset.symbol}}</span></li>
       <li class="list-group-item">{{ 'assets.user.th4' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"class="badge">{{(asset.current_share_supply | number:0) + ' '+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"class="badge">{{(asset.current_share_supply | number:2) + ' '+asset.symbol}}</span></li>
+      <li ng-if="collateral" class="list-group-item">{{ 'block.trx.collateral' | translate }} <span class="badge">{{collateral | number:0}} BTS / {{ (collateralAsset | number:0) +' '+asset.symbol  }} </span></li>
       <li class="list-group-item">{{ 'assets.user.th5' | translate }} <span class="badge">{{asset.maximum_share_supply | number:0}}</span></li>
       <li class="list-group-item">{{ 'asset.assetInfo.precision' | translate }}:<span class="badge">{{asset.precision | number:0}}</span></li>
       <li class="list-group-item">{{ 'assets.market.th2' | translate }}:<span class="badge">{{asset.status.bid_depth | number:0}} BTS</span></li>

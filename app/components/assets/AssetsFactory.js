@@ -126,6 +126,7 @@ angular.module('app')
 				var assetPrice = (assets[i].status.last_valid_feed_price) ? parseFloat(assets[i].status.last_valid_feed_price / (100000 / precision)) : 0;
 
 				assets[i].collateral = supply[assets[i]._id];
+				assets[i].collateralRatio = (assets[i].current_share_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].averageValidFeeds / assets[i].current_share_supply : 0;
 
 				assets[i].cap = {};
 				assets[i].price = (assetPrice !== 0) ? assetPrice * (100000 / precision) : 0;
@@ -216,8 +217,7 @@ angular.module('app')
 		}
 		if (boolean) {
 			asset.feeds.forEach(function(feed, index) {
-				feed.assetName =
-					match = feed.last_update.match(appcst.R_ISO8601_STR);
+				var match = feed.last_update.match(appcst.R_ISO8601_STR);
 				var currentDate = new Date(Date.UTC(match[1], match[2] - 1, match[3], match[4], match[5], match[6]));
 				if (currentDate > yesterday) {
 					tempFeeds.push(feed);
@@ -247,13 +247,21 @@ angular.module('app')
 		} else {
 			medianLine = 0;
 		}
+		var collateral, collateralAsset;
+		if (asset.issuer_account_id === -2) {
+			collateral = asset.collateral[asset.collateral.length-1][1];
+			collateralAsset = asset.collateral[asset.collateral.length-1][1] * averageFeed;
+		}
+		console.log(collateralAsset);
 
-		return {
+			return {
 			feeds: tempFeeds,
 			enoughFeeds: enoughFeeds,
 			medianFeed: medianFeed,
 			medianLine: medianLine,
-			averageFeed: averageFeed
+			averageFeed: averageFeed,
+			collateral: collateral,
+			collateralAsset: collateralAsset
 		};
 	}
 
