@@ -252,7 +252,6 @@ angular.module('app')
 			collateral = asset.collateral[asset.collateral.length-1][1];
 			collateralAsset = asset.collateral[asset.collateral.length-1][1] * averageFeed;
 		}
-		console.log(collateralAsset);
 
 			return {
 			feeds: tempFeeds,
