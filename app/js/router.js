@@ -53,6 +53,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
     .state('about', {
       url: "/about",
       templateUrl: "about.html",
+      controller: "aboutCtrl"
     })
     .state('asset', {
       url: "/assets/asset?id",

@@ -2,12 +2,26 @@ angular.module("app").factory('api', ['$http', function($http) {
     var api = {},
         url, url_v2;
 
+    var cb = '?callback=JSON_CALLBACK';
+
+    var apis = [
+        'api.bitsharesblocks.com',
+        '104.236.93.62',
+        '128.199.123.149'
+    ];
+
+    url = apis[0] + '/v1/';
+    url_v2 = apis[0] + '/v2/';
+
     // url = '127.0.0.1:2095/v1/';
     // url_v2 = '127.0.0.1:2095/v2/';
-    url = 'api.bitsharesblocks.com/v1/';
-    url_v2 = 'api.bitsharesblocks.com/v2/';
 
-    var cb = '?callback=JSON_CALLBACK';
+    api.setAPI = function(index) {
+        // var location = ['North America - New York', 'Asia - Singapore'];
+        // console.log('changing API to:',location[index]);
+        url = apis[index] + '/v1/';
+        url_v2 = apis[index] + '/v2/';
+    };
 
     api.getInfo = function() {
         return $http({

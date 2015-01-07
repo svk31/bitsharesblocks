@@ -26,6 +26,15 @@
     "version": "Vérsion du client",
     "language": "Langue"
   },
+  "apiModal": {
+    "title": "Changer de serveur d'API",
+    "body": "Vous êtes automatiquement assigné au serveur le plus proche de votre position, mais si vous rencontriez des problèmes vous pouvez choisir un autre serveur ici:",
+    "close": "Fermer",
+    "auto": "Automatique (par défaut)",
+    "new_york": "New York, États Unis",
+    "singapore": "Singapore",
+    "api": "API"
+  },
   "home": {
     "history": "BTS EVOLUTION DU PRIX DERNIERS 14 JOURS",
     "price": "Prix",

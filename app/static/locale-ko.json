@@ -26,6 +26,15 @@
     "version": "클라이언트 버전",
     "language": "언어"
   },
+  "apiModal": {
+    "title": "Change API server",
+    "body": "You are automatically assigned an API server close to you, but if you are experiencing issues you may manually select a new API server here:",
+    "close": "Close",
+    "auto": "Automatic (default)",
+    "new_york": "New York, USA",
+    "singapore": "Singapore",
+    "api": "API"
+  },
   "home": {
     "history": "지난 14일 BTS 시세",
     "price": "가격",
