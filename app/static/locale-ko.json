@@ -27,10 +27,10 @@
     "language": "언어"
   },
   "apiModal": {
-    "title": "Change API server",
-    "body": "You are automatically assigned an API server close to you, but if you are experiencing issues you may manually select a new API server here:",
-    "close": "Close",
-    "auto": "Automatic (default)",
+    "title": "API 서버 변경",
+    "body": "가장 가까운 API 서버로 자동적으로 연결됩니다. 하지만 문제가 있을 경우 API 서버를 수동으로 선택할 수 있습니다:",
+    "close": "닫기",
+    "auto": "자동 (기본값)",
     "new_york": "New York, USA",
     "singapore": "Singapore",
     "api": "API"
@@ -126,9 +126,9 @@
       "hash1": "이전 해쉬",
       "hash2": "다음 암호화 해쉬",
       "hash3": "이전 암호화 해쉬",
-      "shares": "Shares issued",
-      "collected": "Fees collected",
-      "destroyed": "Fees destroyed"
+      "shares": "발행된 쉐어",
+      "collected": "수집된 수수료",
+      "destroyed": "소거된 수수료"
     },
     "trx": {
       "title": "거래",
@@ -157,12 +157,12 @@
       "issuer": "발행자 계정",
       "for": "For delegate",
       "burn": "소각",
-      "asset_create": "자산 발행",
-      "asset_issue": "Issue asset",
-      "add_collateral": "Add collateral",
-      "withdraw_pay": "Delegate pay withdrawal",
-      "all": "Show all transactions",
-      "placeholder": "Filter by transaction types"
+      "asset_create": "자산 생성",
+      "asset_issue": "자산 발행",
+      "add_collateral": "담보로 추가",
+      "withdraw_pay": "대표자 급여 인출",
+      "all": "모든 거래 보기",
+      "placeholder": "거래 유형에 따라 필터링"
     }
   },
   "delegates": {
