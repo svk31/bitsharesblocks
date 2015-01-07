@@ -26,6 +26,7 @@
         <th class="hidden-xs">{{ 'assets.market.th5' | translate }}</th>
         <!-- <th>1h average price</th> -->
         <th class="hidden-xs">{{ 'assets.market.th6' | translate }}</th>
+        <th class="hidden-xs sortable" ng-click="orderByField='yield'; reverseSort = !reverseSort"><ng-sort-arrows order-string="yield" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.yield' | translate }}</th>
         <th ng-click="orderByField='collateralRatio'; reverseSort = !reverseSort" class="sortable hidden-xs"><ng-sort-arrows order-string="collateralRatio" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.collateral' | translate }}</th>
         <th ng-click="orderByField='dailyVolume'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="dailyVolume" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th7' | translate }}</th>
         <th ng-click="orderByField='marketCap'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="marketCap" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th8' | translate }}</th>
@@ -42,6 +43,7 @@
         <!-- <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"><strong>{{(asset.status.center_price.ratio | number:4) +' '+asset.symbol}}/BTS</strong></td> -->
         <!-- <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"><strong>{{(asset.status.center_price.ratio | number:7) +' '+asset.symbol}}/BTS</strong></td> -->
         <td class="hidden-xs">{{ asset.current_share_supply }}</td>
+        <td class="hidden-xs">{{ asset.yield | number:2 }}%</td>
         <td>{{ ( asset.collateralRatio ) | number:0 }} %</td>
         <td ng-if="capUnit==='BTC'">{{ priceUnit.symbol + (asset.volume[capUnit] | number:2) }}</td>
         <td ng-if="capUnit!=='BTC'">{{ asset.volume[capUnit] | nfcurrency:priceUnit.symbol }}</td>

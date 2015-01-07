@@ -295,7 +295,8 @@
       "th5": "Flux moyen",
       "th6": "Réserve",
       "th7": "Volume 24h",
-      "th8": "Capitalisation"
+      "th8": "Capitalisation",
+      "yield": "Rendement"
     },
     "user": {
       "show": "Afficher les actifs des utilisateurs",

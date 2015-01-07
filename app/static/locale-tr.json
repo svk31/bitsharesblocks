@@ -294,7 +294,8 @@
       "th5": "Ortalama Feed Fiyatı",
       "th6": "Arz",
       "th7": "24s Hacim",
-      "th8": "Pazar Değeri"
+      "th8": "Pazar Değeri",
+      "yield": "Yield"
     },
     "user": {
       "show": "Kullanıcılar tarafından piyasaya sürülen varlıkları göster",

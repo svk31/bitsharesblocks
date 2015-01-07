@@ -294,7 +294,8 @@
       "th5": "平均喂价",
       "th6": "股份供应量",
       "th7": "24小时交易量",
-      "th8": "市值"
+      "th8": "市值",
+      "yield": "Yield"
     },
     "user": {
       "show": "Show user issued assets",

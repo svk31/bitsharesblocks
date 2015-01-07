@@ -294,7 +294,8 @@
       "th5": "Mittlerer Feedpreis",
       "th6": "Share Verfügbarkeit",
       "th7": "24h Volumen",
-      "th8": "Market Cap"
+      "th8": "Market Cap",
+      "yield": "Yield"
     },
     "user": {
       "show": "Show user issued assets",

@@ -128,6 +128,8 @@ angular.module('app')
 				assets[i].collateral = supply[assets[i]._id];
 				assets[i].collateralRatio = (assets[i].current_share_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].averageValidFeeds / assets[i].current_share_supply : 0;
 
+				assets[i].yield = (assets[i].current_share_supply>0) ? 100 * (assets[i].collected_fees / assets[i].precision) / assets[i].current_share_supply:0;
+
 				assets[i].cap = {};
 				assets[i].price = (assetPrice !== 0) ? assetPrice * (100000 / precision) : 0;
 				assets[i].marketCap = (assets[i].price !== 0) ? (assets[i].current_share_supply / assets[i].price) : 0;
@@ -151,6 +153,7 @@ angular.module('app')
 				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
 			}
 		}
+
 		return assets;
 	}
 
@@ -194,7 +197,7 @@ angular.module('app')
 			if (result.issuer_account_id === -2) {
 				assetInfo = filterFeeds(result, true);
 			}
-			assetInfo.asset = orderBook(result, assetInfo.medianFeed);
+			assetInfo.asset = orderBook(assetInfo.asset, assetInfo.medianFeed);
 			deferred.resolve(assetInfo);
 		});
 		return deferred.promise;
@@ -249,18 +252,21 @@ angular.module('app')
 		}
 		var collateral, collateralAsset;
 		if (asset.issuer_account_id === -2) {
-			collateral = asset.collateral[asset.collateral.length-1][1];
-			collateralAsset = asset.collateral[asset.collateral.length-1][1] * averageFeed;
+			collateral = asset.collateral[asset.collateral.length - 1][1];
+			collateralAsset = asset.collateral[asset.collateral.length - 1][1] * averageFeed;
+
+			asset.yield = (asset.current_share_supply>0) ? 100 * (asset.collected_fees / asset.precision) / asset.current_share_supply:0;
 		}
 
-			return {
+		return {
 			feeds: tempFeeds,
 			enoughFeeds: enoughFeeds,
 			medianFeed: medianFeed,
 			medianLine: medianLine,
 			averageFeed: averageFeed,
 			collateral: collateral,
-			collateralAsset: collateralAsset
+			collateralAsset: collateralAsset,
+			asset: asset
 		};
 	}
 

@@ -316,7 +316,8 @@ angular.module('app.services',[])
 				"th5": "Average Feed Price",
 				"th6": "Share Supply",
 				"th7": "24h Volume",
-				"th8": "Market Cap"
+				"th8": "Market Cap",
+				"yield": "Yield"
 			},
 			"user": {
 				"show": "Show user issued assets",

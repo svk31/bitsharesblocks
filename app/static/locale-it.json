@@ -294,7 +294,8 @@
       "th5": "Prezzo medio feed",
       "th6": "Disponibilità totale",
       "th7": "Volume 24h",
-      "th8": "Valore di Mercato"
+      "th8": "Valore di Mercato",
+      "yield": "Yield"
     },
     "user": {
       "show": "Mostra mercati creati dagli utenti",

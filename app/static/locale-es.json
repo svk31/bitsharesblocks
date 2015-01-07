@@ -294,7 +294,8 @@
       "th5": "Precio de Feed Medio",
       "th6": "Oferta de Acciones",
       "th7": "Volumen 24h",
-      "th8": "Capitalización Mercado"
+      "th8": "Capitalización Mercado",
+      "yield": "Rendimiento"
     },
     "user": {
       "show": "Mostrar activos emitidos por usuarios",
