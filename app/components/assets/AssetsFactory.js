@@ -194,6 +194,7 @@ angular.module('app')
 		_getAsset(id).then(function(result) {
 			var assetInfo = {};
 			assetInfo.medianFeed = false;
+			assetInfo.asset = result;
 			if (result.issuer_account_id === -2) {
 				assetInfo = filterFeeds(result, true);
 			}
