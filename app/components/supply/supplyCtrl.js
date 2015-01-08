@@ -4,7 +4,7 @@ angular.module('app')
 	function ($scope,$filter,$translate,api) {
 
 
-		$scope.data = {'hardFork':991700,'supply':2498764341.60685};
+		$scope.data = {'hardFork':1,'supply':2457464814.86};
 
 		var Size= {
 			height: 300

@@ -5,9 +5,7 @@ angular.module("app").factory('api', ['$http', function($http) {
     var cb = '?callback=JSON_CALLBACK';
 
     var apis = [
-        'api.bitsharesblocks.com',
-        '104.236.93.62',
-        '128.199.123.149'
+        'dvs.bitsharesblocks.com:2095',
     ];
 
     url = apis[0] + '/v1/';

@@ -289,8 +289,8 @@ angular.module('app')
 		delegates.forEach(function(delegate, i) {
 
 			// Add ranks
-			delegate.dayChange = (ranks.dayChange[delegate._id] !== undefined) ? ranks.dayChange[delegate._id] : 'n/a';
-			delegate.weekChange = (ranks.weekChange[delegate._id] !== undefined) ? ranks.dayChange[delegate._id] : 'n/a';
+			delegate.dayChange = (ranks && angular.isDefined(ranks.dayChange[delegate._id])) ? ranks.dayChange[delegate._id] : 'n/a';
+			delegate.weekChange = (ranks &&  angular.isDefined(ranks.weekChange[delegate._id])) ? ranks.dayChange[delegate._id] : 'n/a';
 
 			// Count active feeds
 			delegate.activeFeeds = 0;

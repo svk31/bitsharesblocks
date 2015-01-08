@@ -170,11 +170,13 @@ angular.module('app')
     }
 
     function forkInfo() {
-      Delegates.fetchDelegatesById($scope.home.forks.previous.forkInfo[1].signing_delegate).then(function(result) {
-        $scope.forkDelegateName = result.name;
-      });
-      $scope.forkLatency = $scope.home.forks.previous.forkInfo[1].latency / 1000000;
-      $scope.previousForkHeight = $scope.home.forks.previous._id + 1;
+      if ($scope.home.forks.previous) {
+        Delegates.fetchDelegatesById($scope.home.forks.previous.forkInfo[1].signing_delegate).then(function(result) {
+          $scope.forkDelegateName = result.name;
+        });
+        $scope.forkLatency = $scope.home.forks.previous.forkInfo[1].latency / 1000000;
+        $scope.previousForkHeight = $scope.home.forks.previous._id + 1;
+      }
     }
 
     var myAlert = Alerts.upgrade();
