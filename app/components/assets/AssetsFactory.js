@@ -120,6 +120,7 @@ angular.module('app')
 			prices.BTC = result.btsxprice.price.btc;
 			prices.USD = result.btsxprice.price.usd;
 			prices.CNY = result.btsxprice.price.cny;
+			prices.EUR = result.btsxprice.price.eur;
 
 			for (i = 0; i < assets.length; i++) {
 				var precision = assets[i].precision;
@@ -128,7 +129,7 @@ angular.module('app')
 				assets[i].collateral = supply[assets[i]._id];
 				assets[i].collateralRatio = (assets[i].current_share_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].averageValidFeeds / assets[i].current_share_supply : 0;
 
-				assets[i].yield = (assets[i].current_share_supply>0) ? 100 * (assets[i].collected_fees / assets[i].precision) / assets[i].current_share_supply:0;
+				assets[i].yield = (assets[i].current_share_supply > 0) ? 100 * (assets[i].collected_fees / assets[i].precision) / assets[i].current_share_supply : 0;
 
 				assets[i].cap = {};
 				assets[i].price = (assetPrice !== 0) ? assetPrice * (100000 / precision) : 0;
@@ -136,11 +137,13 @@ angular.module('app')
 				assets[i].cap.BTC = (assets[i].price !== 0) ? prices.BTC * (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.USD = (assets[i].price !== 0) ? prices.USD * (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.CNY = (assets[i].price !== 0) ? prices.CNY * (assets[i].current_share_supply / assets[i].price) : 0;
+				assets[i].cap.EUR = (assets[i].price !== 0) ? prices.EUR * (assets[i].current_share_supply / assets[i].price) : 0;
 
 				assets[i].volume = {};
 				assets[i].volume.BTC = (assets[i].dailyVolume !== 0) ? prices.BTC * (assets[i].dailyVolume) : 0;
 				assets[i].volume.USD = (assets[i].dailyVolume !== 0) ? prices.USD * (assets[i].dailyVolume) : 0;
 				assets[i].volume.CNY = (assets[i].dailyVolume !== 0) ? prices.CNY * (assets[i].dailyVolume) : 0;
+				assets[i].volume.EUR = (assets[i].dailyVolume !== 0) ? prices.EUR * (assets[i].dailyVolume) : 0;
 
 				decimals = (assets[i].symbol !== 'BTC' && assets[i].symbol !== 'GOLD') ? 0 : 3;
 				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
@@ -256,7 +259,7 @@ angular.module('app')
 			collateral = asset.collateral[asset.collateral.length - 1][1];
 			collateralAsset = asset.collateral[asset.collateral.length - 1][1] * averageFeed;
 
-			asset.yield = (asset.current_share_supply>0) ? 100 * (asset.collected_fees / asset.precision) / asset.current_share_supply:0;
+			asset.yield = (asset.current_share_supply > 0) ? 100 * (asset.collected_fees / asset.precision) / asset.current_share_supply : 0;
 		}
 
 		return {

@@ -25,6 +25,10 @@ angular.module('app')
       name: 'CNY',
       label: '¥ CNY',
       symbol: '¥'
+    }, {
+      name: 'EUR',
+      label: '€ EUR',
+      symbol: '€'
     }];
 
     $scope.capUnit = store.get('capUnit');
