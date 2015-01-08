@@ -15,6 +15,10 @@ angular.module('app')
       name: 'CNY',
       label: '¥ CNY',
       symbol: '¥'
+    }, {
+      name: 'EUR',
+      label: '€ EUR',
+      symbol: '€'
     }];
 
     $scope.currentUnit = store.get('chartsUnit');
@@ -209,11 +213,6 @@ angular.module('app')
       });
 
     function getPrice() {
-      // api.getPrice($scope.priceUnit.name).success(function(result) {
-      //   result.sort();
-      //   updateChart(result);
-      // });
-
       Assets.fetchPrice($scope.priceUnit.name).then(function(result) {
         updateChart(result);
       });
