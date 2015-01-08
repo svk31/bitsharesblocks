@@ -123,7 +123,14 @@ angular.module('app')
     getRecent();
     stopBlocks = $interval(getNew, 10000);
 
+    function fetchBurns() {
+      Blocks.fetchBurns().then(function(result) {
+        $scope.burns = result;
+      });
+    }
 
+    fetchBurns();
+    stopBurns = $interval(fetchBurns, 60000);
 
     function stopUpdate() {
       if (angular.isDefined(stopHome)) {
@@ -137,6 +144,10 @@ angular.module('app')
       if (angular.isDefined(stopPrice)) {
         $interval.cancel(stopPrice);
         stopPrice = undefined;
+      }
+      if (angular.isDefined(stopBurns)) {
+        $interval.cancel(stopBurns);
+        stopBurns = undefined;
       }
     }
 

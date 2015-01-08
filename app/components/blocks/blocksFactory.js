@@ -1,6 +1,6 @@
 angular.module('app')
 
-.factory('Blocks', ['api', '$q', 'Assets', function(api, $q, Assets) {
+.factory('Blocks', ['api', '$q', 'Assets', 'Accounts', function(api, $q, Assets, Accounts) {
 
 	var _booleanTrx = false;
 	var _blocksArray = [];
@@ -245,7 +245,33 @@ angular.module('app')
 		return deferred.promise;
 	}
 
-
+	function fetchBurns() {
+		var deferred = $q.defer();
+		api.getBurns().success(function(result) {
+			var burns = [],
+				accounts = [];
+			result.forEach(function(block) {
+				block.burn.operations.forEach(function(op) {
+					if (op.type === 'burn_op_type' && op.data.message.length > 0) {
+						burns.push({
+							block: block._id,
+							realAmount: op.data.amount.amount / Assets.getPrecision(op.data.amount.asset_id),
+							assetSymbol: Assets.getSymbol(op.data.amount.aset_id),
+							message: op.data.message
+						});
+						accounts.push(Accounts.getAccountName(op.data.account_id));
+					}
+				});
+			});
+			$q.all(accounts).then(function(names) {
+				names.forEach(function(name, index) {
+					burns[index].name = name;
+				});
+				deferred.resolve(burns);
+			});
+		});
+		return deferred.promise;
+	}
 
 	return {
 		fetchRecent: fetchRecent,
@@ -254,7 +280,8 @@ angular.module('app')
 		getBooleanTrx: getBooleanTrx,
 		setBooleanTrx: setBooleanTrx,
 		getBlocks: getBlocks,
-		fetchTransactions: fetchTransactions
+		fetchTransactions: fetchTransactions,
+		fetchBurns: fetchBurns
 	};
 
 }]);

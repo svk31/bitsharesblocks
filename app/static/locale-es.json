@@ -94,7 +94,8 @@
     },
     "newUsers": {
       "title": "NUEVOS USUARIOS"
-    }
+    },
+    "troll": "TROLLBOX"
   },
   "blocks": {
     "search1": "buscar por altura del bloque o el id de transacción",

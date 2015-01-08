@@ -94,7 +94,8 @@
     },
     "newUsers": {
       "title": "新用户"
-    }
+    },
+    "troll": "TROLLBOX"
   },
   "blocks": {
     "search1": "查找一个区块高度或者交易ID",

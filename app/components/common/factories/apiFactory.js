@@ -270,6 +270,10 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp('http://' + url + 'accounts' + cb);
     };
 
+    api.getBurns = function() {
+        return $http.jsonp('http://' + url + 'burns' + cb);
+    };
+
     api.getAccountsCount = function() {
         return $http.jsonp('http://' + url + 'accountscount' + cb);
     };

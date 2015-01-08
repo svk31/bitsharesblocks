@@ -94,7 +94,8 @@
     },
     "newUsers": {
       "title": "YENİ KULLANICILAR"
-    }
+    },
+    "troll": "TROLLBOX"
   },
   "blocks": {
     "search1": "blok yüksekliği ya da işlem ID'si arayın",
