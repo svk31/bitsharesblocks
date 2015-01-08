@@ -94,7 +94,8 @@
     },
     "newUsers": {
       "title": "NOUVELLES UTILISATEURS"
-    }
+    },
+    "troll": "MUR DES TROLLS"
   },
   "blocks": {
     "search1": "chercher une hauteur de bloc ou une transaction par id",

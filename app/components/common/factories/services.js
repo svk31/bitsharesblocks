@@ -115,7 +115,8 @@ angular.module('app.services',[])
 			},
 			"newUsers": {
 				"title": "NEW USERS"
-			}
+			},
+			"troll": "TROLLBOX"
 		},
 		"blocks": {
 			"search1": "search for a block height or transaction id",

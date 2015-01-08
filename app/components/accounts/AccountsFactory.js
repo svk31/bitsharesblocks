@@ -2,7 +2,12 @@ angular.module('app')
 
 .factory('Accounts', ['api', '$q', 'Assets', function(api, $q, Assets) {
 	var _accounts = {};
-	_accounts[0] = 'MARKET';
+
+	_accounts = store.get('accounts');
+	if (!_accounts) {
+		_accounts = {};
+		_accounts[0] = 'MARKET';
+	}
 
 	function getAccountName(id) {
 		var deferred = $q.defer();
@@ -11,6 +16,7 @@ angular.module('app')
 		} else {
 			api.getAccountByNr(id).success(function(account) {
 				_accounts[id] = account.name;
+				store.set('accounts', _accounts);
 				deferred.resolve(account.name);
 			});
 		}

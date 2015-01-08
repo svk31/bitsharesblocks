@@ -94,7 +94,8 @@
     },
     "newUsers": {
       "title": "ニューユーザー"
-    }
+    },
+    "troll": "TROLLBOX"
   },
   "blocks": {
     "search1": "ブロック番号, 取り引き番号(txid)検索",

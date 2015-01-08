@@ -94,7 +94,8 @@
     },
     "newUsers": {
       "title": "NEUE KONTEN"
-    }
+    },
+    "troll": "TROLLBOX"
   },
   "blocks": {
     "search1": "Suche nach Blockhöhe oder TransaktionsID",

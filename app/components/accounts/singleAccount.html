@@ -61,13 +61,13 @@
       <thead>
         <tr>
         <th>{{'blocks.blockNum' | translate }}</th>
-          <th>{{'block.trx.amount' | translate }}</th>
-          <th>{{'block.trx.message' | translate }}</th>
+        <th>{{'block.trx.amount' | translate }}</th>
+        <th>{{'block.trx.message' | translate }}</th>
         </tr>
       </thead>
       <tbody >
         <tr ng-repeat="burn in account.burn track by $index" class="repeated-item">
-        <td><a ui-sref="block({ 'id' : burnBlocks[$index] })" >{{ burnBlocks[$index] }}</a></td>
+          <td><a ui-sref="block({ 'id' : burnBlocks[$index] })" >{{ burnBlocks[$index] }}</a></td>
           <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</a></td>
           <td>{{ burn.message }}</td>
         </tr>

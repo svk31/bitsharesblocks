@@ -179,4 +179,30 @@
       </div>
     </div>
 
+        <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ 'home.troll' | translate }}</h3>
+        </div>
+        <table class="table table-condensed table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>{{'blocks.blockNum' | translate }}</th>
+              <th>{{'accounts.name' | translate }}</th>
+              <th>{{'block.trx.amount' | translate }}</th>
+              <th>{{'block.trx.message' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr ng-repeat="burn in burns | limitTo: 15 track by $index " class="repeated-item">
+              <td><a ui-sref="block({ 'id' : burn.block })" >{{ burn.block }}</a></td>
+              <td><a ui-sref="account({ 'name' : burn.name })" >{{burn.name}}</a></td>
+              <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</a></td>
+              <td>{{ burn.message }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <div class="container" id="endofhome"></div>

@@ -94,7 +94,8 @@
     },
     "newUsers": {
       "title": "NUOVI UTENTI"
-    }
+    },
+    "troll": "TROLLBOX"
   },
   "blocks": {
     "search1": "cerca per numero di blocco o di transazione",
