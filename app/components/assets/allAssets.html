@@ -35,13 +35,13 @@
     <tbody >
       <tr ng-repeat="asset in assets | filter:{issuer_account_id:-2}:true | orderBy: orderByField:reverseSort track by asset._id " class="repeated-item">
         <td><a ui-sref="asset({ 'id' : asset.symbol})">{{asset.symbol}}</a></td>
-        <td>{{asset.status.ask_depth | number:0}} BTS</td>
-        <td>{{asset.status.bid_depth | number:0}} BTS</td>
+        <td>{{asset.status.ask_depth | number:0}} DVS</td>
+        <td>{{asset.status.bid_depth | number:0}} DVS</td>
         <td ng-class="{'hidden-xs':true, 'alert-success': (asset.numberValidFeeds>50), 'alert-warning': (asset.numberValidFeeds<51 && asset.numberValidFeeds>=25), 'alert-danger': (asset.numberValidFeeds<25)}">{{asset.numberValidFeeds}}</td>
-        <td class="hidden-xs" ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(asset.averageValidFeeds | number:4) +' '+asset.symbol}}/BTS</td>
-        <td class="hidden-xs" ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(asset.averageValidFeeds | number:7) +' '+asset.symbol}}/BTS</td>
-        <!-- <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"><strong>{{(asset.status.center_price.ratio | number:4) +' '+asset.symbol}}/BTS</strong></td> -->
-        <!-- <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"><strong>{{(asset.status.center_price.ratio | number:7) +' '+asset.symbol}}/BTS</strong></td> -->
+        <td class="hidden-xs" ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(asset.averageValidFeeds | number:4) +' '+asset.symbol}}/DVS</td>
+        <td class="hidden-xs" ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(asset.averageValidFeeds | number:7) +' '+asset.symbol}}/DVS</td>
+        <!-- <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"><strong>{{(asset.status.center_price.ratio | number:4) +' '+asset.symbol}}/DVS</strong></td> -->
+        <!-- <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"><strong>{{(asset.status.center_price.ratio | number:7) +' '+asset.symbol}}/DVS</strong></td> -->
         <td class="hidden-xs">{{ asset.current_share_supply }}</td>
         <td class="hidden-xs">{{ asset.yield | number:2 }}%</td>
         <td>{{ ( asset.collateralRatio ) | number:0 }} %</td>

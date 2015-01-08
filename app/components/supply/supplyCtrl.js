@@ -25,7 +25,7 @@ angular.module('app')
 				},
 				tooltip: {
 					valueDecimals: 2,
-					valueSuffix: ' BTS'}
+					valueSuffix: ' DVS'}
 				}],
 				title: {
 					text: ''
@@ -44,7 +44,7 @@ angular.module('app')
 					title: {text: ''},
 					labels: {
 						formatter: function () {
-							return $filter('number')(this.value, 0) + ' BTS';
+							return $filter('number')(this.value, 0) + ' DVS';
 						},
 
 					},
@@ -81,7 +81,7 @@ angular.module('app')
 					},
 					tooltip: {
 						valueDecimals: 2,
-						valueSuffix: ' BTS'}
+						valueSuffix: ' DVS'}
 					}],
 					title: {
 						text: ''
@@ -102,7 +102,7 @@ angular.module('app')
 						labels: {
 							align:'left',
 							formatter: function () {
-								return $filter('currency')(this.value, '', 0) + ' BTS';
+								return $filter('currency')(this.value, '', 0) + ' DVS';
 							}
 						},
 						allowDecimals: false

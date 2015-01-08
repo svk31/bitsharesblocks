@@ -18,13 +18,13 @@ angular.module('app')
         },
         tooltip: {
           valueDecimals: 0,
-          valueSuffix: ' BTS',
+          valueSuffix: ' DVS',
           headerFormat: '<span style="font-size: 10px">Block: {point.key}</span><br/>'
         }
       })],
       yAxis: {
         title: {
-          text: 'BTS'
+          text: 'DVS'
         }
       },
       size: {

@@ -49,7 +49,7 @@ var UserAssetRow = React.createClass({displayName: "UserAssetRow",
 			React.createElement("tr", null, 
 			React.createElement("td", null, asset._id), 
 			React.createElement("td", null, React.createElement("a", {href: 'assets/asset?id='+asset.symbol}, asset.symbol)), 
-			React.createElement("td", null, asset.dailyVolume, " BTS"), 
+			React.createElement("td", null, asset.dailyVolume, " DVS"), 
 			React.createElement("td", null,  asset.current_share_supply), 
 			React.createElement("td", null,  asset.maximum_share_supply), 
 			tdInit

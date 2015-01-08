@@ -44,7 +44,7 @@
     			<li class="list-group-item"><strong>{{ 'delegate.rank.current' | translate }}:</strong><span class="badge">{{delegate.rank}}</span></li>
     			<li class="list-group-item">{{ 'delegate.rank.dayChange' | translate }}:<span class="badge">{{delegate.dayChange}}</span></li>
     			<li class="list-group-item">{{ 'delegate.rank.weekChange' | translate }}:<span class="badge">{{ delegate.weekChange }}</span></li>
-    			<li class="list-group-item">{{ 'delegate.rank.votes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for | number:0}} BTS</span></li>
+    			<li class="list-group-item">{{ 'delegate.rank.votes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for | number:0}} DVS</span></li>
     			<li class="list-group-item">{{ 'delegate.rank.percentVotes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for_percent}} %</span></li>
     		</ul>
     	</div>
@@ -69,9 +69,9 @@
     			<li class="list-group-item">{{ 'accounts.reg' | translate }}:<span class="badge">{{delegate.registration_date | date:'short'}}</span></li>
     			<li class="list-group-item">{{ 'accounts.update' | translate }}:<span class="badge">{{delegate.last_update | date:'short'}}</span></li>
     			<li class="list-group-item">{{ 'delegates.rate' | translate }}:<span class="badge">{{delegate.delegate_info.pay_rate}} %</span></li>
-    			<li class="list-group-item">{{ 'delegate.info.earnings' | translate }}:<span class="badge">{{delegate.totalEarnings | number:2}} BTS</span></li>
-    			<li class="list-group-item">{{ 'delegate.info.withdrawn' | translate }}:<span class="badge">{{ delegate.withdrawn | number:2 }} BTS</span></li>
-    			<li ng-if="delegate.totalFees>0" class="list-group-item">{{ 'delegate.info.fees' | translate }}:<span class="badge">{{ delegate.totalFees | number:2 }} BTS</span></li>
+    			<li class="list-group-item">{{ 'delegate.info.earnings' | translate }}:<span class="badge">{{delegate.totalEarnings | number:2}} DVS</span></li>
+    			<li class="list-group-item">{{ 'delegate.info.withdrawn' | translate }}:<span class="badge">{{ delegate.withdrawn | number:2 }} DVS</span></li>
+    			<li ng-if="delegate.totalFees>0" class="list-group-item">{{ 'delegate.info.fees' | translate }}:<span class="badge">{{ delegate.totalFees | number:2 }} DVS</span></li>
     		</ul>
     	</div>
     </div>
@@ -134,8 +134,8 @@
     			<tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in feeds | orderBy: orderByField:reverseSort track by feed.symbol" class="repeated-item">
     				<td><a ui-sref="asset({ 'id' : feed.symbol})">{{feed.symbol}}</td>
     				<td>{{feed.last_update | date:'medium'}}</td>
-    				<td ng-if="feed.symbol!='BTC' && feed.symbol!='GLD'">{{(feed.price | number:4)+' '+feed.symbol+'/'+'BTS'}}</td>
-    				<td ng-if="feed.symbol=='BTC' || feed.symbol=='GLD'">{{(feed.price | number:7)+' '+feed.symbol+'/'+'BTS'}}</td>
+    				<td ng-if="feed.symbol!='BTC' && feed.symbol!='GLD'">{{(feed.price | number:4)+' '+feed.symbol+'/'+'DVS'}}</td>
+    				<td ng-if="feed.symbol=='BTC' || feed.symbol=='GLD'">{{(feed.price | number:7)+' '+feed.symbol+'/'+'DVS'}}</td>
     			</tr>
     		</tbody>
     	</table>

@@ -9,7 +9,7 @@ angular.module('app')
 	if (_assets === undefined) {
 		_assets = {};
 		_assets['0'] = {
-			'symbol': 'BTS',
+			'symbol': 'DVS',
 			'precision>': basePrecision
 		};
 	}
@@ -42,7 +42,7 @@ angular.module('app')
 				});
 			}
 		} else {
-			return 'BTS';
+			return 'DVS';
 		}
 	}
 

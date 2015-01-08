@@ -5,10 +5,10 @@
 		</div>
 		<ul class="list-group">
 			<li class="list-group-item">{{ 'genesis.total' | translate }}: <span class="badge">{{genesis.balanceCount | number:0}}</span></li>
-			<li class="list-group-item">{{ 'genesis.supply' | translate }}:<span class="badge">{{genesis.initialSum | number:2}} BTS</span></li>
-			<li class="list-group-item">{{ 'genesis.sharedrop' | translate }}:<span class="badge">{{genesis.shareDrop | number:2}} BTS</span></li>
+			<li class="list-group-item">{{ 'genesis.supply' | translate }}:<span class="badge">{{genesis.initialSum | number:2}} DVS</span></li>
+			<li class="list-group-item">{{ 'genesis.sharedrop' | translate }}:<span class="badge">{{genesis.shareDrop | number:2}} DVS</span></li>
 			<li class="list-group-item">{{ 'genesis.market' | translate }}: <span class="badge">{{genesis.market_assets.length}}</span></li>
-			<li class="list-group-item">{{ 'genesis.whale' | translate }}: <span class="badge">{{genesis.maxBalance | number:2}} BTS</span></li>
+			<li class="list-group-item">{{ 'genesis.whale' | translate }}: <span class="badge">{{genesis.maxBalance | number:2}} DVS</span></li>
 		</ul>
 	</div>
 </div>
@@ -28,7 +28,7 @@
 			<h3 class="panel-title">{{ 'genesis.stats' | translate }}</h3>
 		</div>
 		<ul class="list-group">
-			<li ng-repeat="cutoff in genesis.cutOffs track by $index" class="list-group-item">{{ 'genesis.higher' | translate }} {{cutoff | number:0}} BTS: <span class="badge">{{genesis.counts[$index]}}</span></li>
+			<li ng-repeat="cutoff in genesis.cutOffs track by $index" class="list-group-item">{{ 'genesis.higher' | translate }} {{cutoff | number:0}} DVS: <span class="badge">{{genesis.counts[$index]}}</span></li>
 
 		</ul>
 	</div>
@@ -54,7 +54,7 @@
 				<tr ng-repeat="adress in genesis.topBalances | limitTo:balanceLimit track by $index">
 					<td>{{$index+1}}</td>
 					<td>{{adress[0]}}</td>
-					<td>{{adress[1] | number:2}} BTS</td>
+					<td>{{adress[1] | number:2}} DVS</td>
 					<td>{{adress[2] | number:2}} %</td>
 					<td>{{adress[3] | number:2}} %</td>
 				</tr>

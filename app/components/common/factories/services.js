@@ -28,8 +28,8 @@ angular.module('app.services',[])
 			"assets": "Assets",
 			"charts": "Charts",
 			"general": "General",
-			"supply": "BTS Supply and Fees",
-			"btsgenesis": "BTS Genesis",
+			"supply": "DVS Supply and Fees",
+			"btsgenesis": "DVS Genesis",
 			"btsxgenesis": "BTSX Genesis",
 			"about": "About"
 		},
@@ -57,7 +57,7 @@ angular.module('app.services',[])
 			"api": "API"
 		},
 		"home": {
-			"history":"BTS PRICE HISTORY LAST 14 DAYS",
+			"history":"DVS PRICE HISTORY LAST 14 DAYS",
 			"price":"Price",
 			"MA":"30-day Moving Average",
 			"health": {
@@ -338,7 +338,7 @@ angular.module('app.services',[])
 			"alert2": "Market inactive: Insufficient market depth",
 			"collateral": "Collateral",
 			"supply": "SUPPLY",
-			"supplyAnd": "AND COLLATERAL (BTS) HISTORY",
+			"supplyAnd": "AND COLLATERAL (DVS) HISTORY",
 			"sell": "Sell",
 			"buy": "Buy",
 			"short": "Short",
@@ -370,10 +370,10 @@ angular.module('app.services',[])
 				"new": "NEW ACCOUNTS",
 				"total": "TOTAL NUMBER OF ACCOUNTS",
 				"assetTrx": "ALL ASSET TRANSACTION TYPES",
-				"btsTrx": "BTS TRANSACTION TYPES",
-				"trxCount": "BTS NUMBER OF TRANSACTIONS",
-				"volume": "BTS TRANSACTION VOLUME",
-				"btcPrice": "BTS/BTC PRICE HISTORY",
+				"btsTrx": "DVS TRANSACTION TYPES",
+				"trxCount": "DVS NUMBER OF TRANSACTIONS",
+				"volume": "DVS TRANSACTION VOLUME",
+				"btcPrice": "DVS/BTC PRICE HISTORY",
 				"usdPrice": "PRICE HISTORY"
 			},
 			"value": "Value",
@@ -386,15 +386,15 @@ angular.module('app.services',[])
 		},
 		"supply": {
 			"title1": "INFO",
-			"title2": "SUPPLY CHANGE AFTER BTS HARDFORK",
-			"title3": "TOTAL SUPPLY OF BTS",
-			"title4": "BTS FEES PAID OVER TIME",
-			"height": "Height of BTSX => BTS hardfork block",
+			"title2": "SUPPLY CHANGE AFTER DVS HARDFORK",
+			"title3": "TOTAL SUPPLY OF DVS",
+			"title4": "DVS FEES PAID OVER TIME",
+			"height": "Height of BTSX => DVS hardfork block",
 			"supply": "Supply at fork",
 			"change": "Change in supply since the hardfork",
-			"changeY": "BTS supply change",
-			"supplyY":"BTS supply",
-			"feesY": "BTS fees"
+			"changeY": "DVS supply change",
+			"supplyY":"DVS supply",
+			"feesY": "DVS fees"
 		},
 		"genesis": {
 			"stats": "STATISTICS",

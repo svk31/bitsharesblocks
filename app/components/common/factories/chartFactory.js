@@ -74,7 +74,7 @@ angular.module("app").factory('Charts', [function() {
 			periods: periods,
 			tooltip: {
 				valueDecimals: 5,
-				valueSuffix: ' USD/BTS'
+				valueSuffix: ' USD/DVS'
 			}
 		};
 		return newSerie;

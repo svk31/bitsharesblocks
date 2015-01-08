@@ -23,8 +23,8 @@
     <table class="table table-condensed">
 
       <thead>
-        <th>{{ 'home.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.amount' | translate }} (BTS)</th>
+        <th>{{ 'home.price' | translate }} (DVS/{{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.amount' | translate }} (DVS)</th>
       </thead>
       <tbody>
         <tr ng-repeat="ask in asset.asks | limitTo:10  track by $index">
@@ -43,7 +43,7 @@
     </div>
     <table class="table table-condensed">
       <thead>
-        <th>{{ 'home.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+        <th>{{ 'home.price' | translate }} (DVS/{{prefix+asset.symbol}})</th>
         <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
       </thead>
       <tbody>
@@ -64,9 +64,9 @@
     <table class="table table-condensed">
       <thead>
         <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.collateral' | translate }} (BTS)</th>
+        <th>{{ 'block.trx.collateral' | translate }} (DVS)</th>
         <th>{{ 'block.trx.interest' | translate }} (%)</th>
-        <th>{{ 'block.trx.priceLimit' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.priceLimit' | translate }} (DVS/{{prefix+asset.symbol}})</th>
 
       </thead>
       <tbody>
@@ -86,7 +86,7 @@
 <div ng-if="showPriceHistory" class="col-md-6 col-sm-12 col-xs-12" style="clear:left;">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ 'asset.priceH' | translate }} (BTS/{{prefix+asset.symbol}})</h3>
+      <h3 class="panel-title">{{ 'asset.priceH' | translate }} (DVS/{{prefix+asset.symbol}})</h3>
     </div>
     <highchart id="chart2" config="priceHistoryChart"></highchart>
   </div>
@@ -140,11 +140,11 @@
     <ul class="list-group">
       <li class="list-group-item">{{ 'asset.market.reserve' | translate }}: <span class="badge">{{((asset.collected_fees/asset.precision) | number:2) + ' '+asset.symbol}}</span></li>
       <li class="list-group-item">{{ 'assets.user.th4' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"class="badge">{{(asset.current_share_supply | number:0) + ' '+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"class="badge">{{(asset.current_share_supply | number:2) + ' '+asset.symbol}}</span></li>
-      <li ng-if="collateral" class="list-group-item">{{ 'block.trx.collateral' | translate }} <span class="badge">{{collateral | number:0}} BTS / {{ (collateralAsset | number:0) +' '+asset.symbol  }} </span></li>
+      <li ng-if="collateral" class="list-group-item">{{ 'block.trx.collateral' | translate }} <span class="badge">{{collateral | number:0}} DVS / {{ (collateralAsset | number:0) +' '+asset.symbol  }} </span></li>
       <li class="list-group-item">{{ 'assets.market.yield' | translate }} <span class="badge">{{asset.yield | number:2}}%</span></li>
       <li class="list-group-item">{{ 'asset.assetInfo.precision' | translate }}:<span class="badge">{{asset.precision | number:0}}</span></li>
-      <li class="list-group-item">{{ 'assets.market.th2' | translate }}:<span class="badge">{{asset.status.bid_depth | number:0}} BTS</span></li>
-      <li class="list-group-item">{{ 'assets.market.th3' | translate }}:<span class="badge">{{asset.status.ask_depth | number:0}} BTS</span></li>
+      <li class="list-group-item">{{ 'assets.market.th2' | translate }}:<span class="badge">{{asset.status.bid_depth | number:0}} DVS</span></li>
+      <li class="list-group-item">{{ 'assets.market.th3' | translate }}:<span class="badge">{{asset.status.ask_depth | number:0}} DVS</span></li>
     </ul>
   </div>
 </div>
@@ -184,8 +184,8 @@
       <tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in filteredFeeds | orderBy: orderByField:reverseSort track by feed.delegate_name" class="repeated-item">
         <td><a ui-sref="delegate({ 'name' : feed.delegate_name })" once-text="feed.delegate_name"></a></td>
         <td>{{feed.last_update | date:'medium'}}</td>
-        <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(feed.price | number:4)+' '+asset.symbol+'/BTS'}}</td>
-        <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(feed.price | number:7)+' '+asset.symbol+'/BTS'}}</td>
+        <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(feed.price | number:4)+' '+asset.symbol+'/DVS'}}</td>
+        <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(feed.price | number:7)+' '+asset.symbol+'/DVS'}}</td>
       </tr>
     </tbody>
   </table>

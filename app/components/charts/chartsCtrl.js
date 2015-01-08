@@ -96,7 +96,7 @@ angular.module('app')
 
     var toolTip = {
       valueDecimals: 0,
-      valueSuffix: ' BTS'
+      valueSuffix: ' DVS'
     };
 
     var toolTip2 = {
@@ -131,7 +131,7 @@ angular.module('app')
         labels: {
           align: 'left',
           formatter: function() {
-            return $filter('currency')(this.value, '', 0) + ' BTS';
+            return $filter('currency')(this.value, '', 0) + ' DVS';
           }
         }
       }
@@ -231,7 +231,7 @@ angular.module('app')
       var toolTip = {
         valueDecimals: valueDecimals,
         valuePrefix: '',
-        valueSuffix: ' ' + $scope.priceUnit.name + '/BTS'
+        valueSuffix: ' ' + $scope.priceUnit.name + '/DVS'
       };
 
       $scope.priceChart.series[0].tooltip = toolTip;

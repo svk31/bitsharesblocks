@@ -144,7 +144,7 @@ angular.module('app')
       var toolTip = {
         valueDecimals: valueDecimals,
         valuePrefix: '',
-        valueSuffix: ' ' + $scope.priceUnit.name + '/BTS'
+        valueSuffix: ' ' + $scope.priceUnit.name + '/DVS'
       };
       $scope.priceChart.yAxis = {
         labels: {

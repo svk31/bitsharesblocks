@@ -14,9 +14,9 @@
 			<ul class="list-group">
 				<li class="list-group-item">{{ 'blocks.timestamp' | translate }}:<span class="badge">{{blk.timestamp | date:'medium'}}</span></li>
 				<li class="list-group-item">{{ 'block.details.signee' | translate }}:<span style="float:right;"><a ui-sref="delegate({ 'name' : blk.signee })">{{blk.signee}}</a></span></li>
-				<li class="list-group-item">{{ 'block.details.shares' | translate }}:<span class="badge">{{blk.signee_shares_issued / 100000}} BTS</span></li>
-				<li class="list-group-item">{{ 'block.details.collected' | translate }}:<span class="badge">{{blk.signee_fees_collected / 100000}} BTS</span></li>
-				<li class="list-group-item">{{ 'block.details.destroyed' | translate }}:<span class="badge">{{blk.signee_fees_destroyed / 100000}} BTS</a></span></li>
+				<li class="list-group-item">{{ 'block.details.shares' | translate }}:<span class="badge">{{blk.signee_shares_issued / 100000}} DVS</span></li>
+				<li class="list-group-item">{{ 'block.details.collected' | translate }}:<span class="badge">{{blk.signee_fees_collected / 100000}} DVS</span></li>
+				<li class="list-group-item">{{ 'block.details.destroyed' | translate }}:<span class="badge">{{blk.signee_fees_destroyed / 100000}} DVS</a></span></li>
 				<li class="list-group-item">{{ 'blocks.trxCount' | translate }}:<span class="badge">{{ nrTrx }}</span></li>
 			</ul>
 		</div>
@@ -52,7 +52,7 @@
 				</tr>
 				<tr>
 					<td>{{ 'blocks.trxValue' | translate }}:</td>
-					<td ng-if="blk.fees"><span ng-repeat="value in values[$index]"><p style="margin:0;padding:0;" ng-if="value.amount!==0"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:3}}</span> <span ng-if="value.asset==='BTS'">BTS</span> <a ng-if="value.asset!=='BTS'" ui-sref="asset({ 'id' : value.asset})">{{value.asset}}</a></p></span></td>
+					<td ng-if="blk.fees"><span ng-repeat="value in values[$index]"><p style="margin:0;padding:0;" ng-if="value.amount!==0"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:3}}</span> <span ng-if="value.asset==='DVS'">DVS</span> <a ng-if="value.asset!=='DVS'" ui-sref="asset({ 'id' : value.asset})">{{value.asset}}</a></p></span></td>
 				</tr>
 				<tr>
 					<td>{{ 'block.trx.type' | translate }}:</td>
@@ -61,7 +61,7 @@
 
 				<tr>
 					<td>{{ 'block.trx.fee' | translate }}:</td>
-					<td ng-if="blk.fees" ><span ng-repeat="fee in fees[$index]"><p style="margin:0;padding:0;" ng-if="fee.price!==0"><span ng-if="fee.asset=='BTC' || fee.asset=='GOLD'">{{fee.price | number:6}}</span><span ng-if="fee.asset!=='BTC' && fee.asset!=='GOLD'">{{fee.price | number:3}}</span> <span ng-if="fee.asset==='BTS'">BTS</span> <a ng-if="fee.asset!=='BTS'" ui-sref="asset({ 'id' : fee.asset})">{{fee.asset}}</a></p></span></td>
+					<td ng-if="blk.fees" ><span ng-repeat="fee in fees[$index]"><p style="margin:0;padding:0;" ng-if="fee.price!==0"><span ng-if="fee.asset=='BTC' || fee.asset=='GOLD'">{{fee.price | number:6}}</span><span ng-if="fee.asset!=='BTC' && fee.asset!=='GOLD'">{{fee.price | number:3}}</span> <span ng-if="fee.asset==='DVS'">DVS</span> <a ng-if="fee.asset!=='DVS'" ui-sref="asset({ 'id' : fee.asset})">{{fee.asset}}</a></p></span></td>
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode===5">
 					<td>{{ 'accounts.name' | translate }}:</td>
@@ -95,7 +95,7 @@
 
 				<tr ng-if="trxInfo[$index].trxCode===8 && trx[$index][1].trx.operations.length===2">
 					<td>{{ 'block.trx.feedPrice' | translate }}:</td>
-					<td>{{(trx[$index][1].trx.operations[0].data.value.ratio*ratioToPrice[trx[$index][1].trx.operations[0].data.feed.feed_id] | number:6)+' '+trxInfo[$index].feeds[0].asset}}/BTS </td>
+					<td>{{(trx[$index][1].trx.operations[0].data.value.ratio*ratioToPrice[trx[$index][1].trx.operations[0].data.feed.feed_id] | number:6)+' '+trxInfo[$index].feeds[0].asset}}/DVS </td>
 				</tr>
 
 				<tr ng-if="(trxInfo[$index].trxCode<4 || trxInfo[$index].trxCode===10)  && trxInfo[$index].ratio && trxInfo[$index].trxCode!==2">
@@ -147,11 +147,11 @@
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode===10">
 					<td>{{ 'block.trx.collateral' | translate }}:</td>
-					<td>{{trxInfo[$index].amountBase | number:3}} BTS</td>
+					<td>{{trxInfo[$index].amountBase | number:3}} DVS</td>
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode===11">
 					<td>{{ 'delegate.info.withdrawn' | translate }}:</td>
-					<td>{{ trxInfo[$index].amount | number:2 }} BTS</td>
+					<td>{{ trxInfo[$index].amount | number:2 }} DVS</td>
 				</tr>
 			</tbody>
 		</table>
