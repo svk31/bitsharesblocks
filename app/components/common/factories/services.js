@@ -1,4 +1,4 @@
-angular.module('app.services',[])
+angular.module('app.services', [])
 
 .factory('getAssetDetail', function($q, api) {
 
@@ -10,7 +10,7 @@ angular.module('app.services',[])
 				deferred.resolve({
 					symbol: result.symbol,
 					precision: result.precision
-				});				
+				});
 			});
 			return deferred.promise;
 		}
@@ -19,9 +19,9 @@ angular.module('app.services',[])
 
 .constant('appcst', {
 	R_ISO8601_STR: /^(\d{4})-?(\d\d)-?(\d\d)(?:T(\d\d)(?::?(\d\d)(?::?(\d\d)(?:\.(\d+))?)?)?(Z|([+-])(\d\d):?(\d\d))?)?$/,
-	translation : {
+	translation: {
 		"nav": {
-			"home":"Home",
+			"home": "Home",
 			"blocks": "Blocks",
 			"delegates": "Delegates",
 			"accounts": "Accounts",
@@ -85,7 +85,7 @@ angular.module('app.services',[])
 				"supply": "Share supply",
 				"unclaimed": "Unclaimed",
 				"collat": "Tied in collateral",
-				"change" :"24h supply change",
+				"change": "24h supply change",
 				"current": "Current block",
 				"trx": "Blocks with transactions",
 				"missed": "Total missed blocks"
@@ -116,7 +116,11 @@ angular.module('app.services',[])
 			"newUsers": {
 				"title": "NEW USERS"
 			},
-			"troll": "TROLLBOX"
+			"burns": {
+				"title": "BURN-BOX",
+				"recent": "Most recent burns",
+				"largest": "Largest burns"
+			}
 		},
 		"blocks": {
 			"search1": "search for a block height or transaction id",
@@ -205,8 +209,8 @@ angular.module('app.services',[])
 			"version": "Version",
 			"filter": "filter",
 			"no_version": "Not set",
-			"active":"Show active delegates",
-			"standby":"Show standby delegates"
+			"active": "Show active delegates",
+			"standby": "Show standby delegates"
 		},
 		"delegate": {
 			"prevRank": "Previous rank",
@@ -215,7 +219,7 @@ angular.module('app.services',[])
 			"sumVotes": "Sum of votes",
 			"payChart": {
 				"title": "NET EARNINGS",
-				"name" : "Cumulative earnings"
+				"name": "Cumulative earnings"
 			},
 			"rank": {
 				"title": "RANK AND VOTES",
@@ -367,7 +371,7 @@ angular.module('app.services',[])
 			}
 		},
 		"charts": {
-			"titles" : {
+			"titles": {
 				"new": "NEW ACCOUNTS",
 				"total": "TOTAL NUMBER OF ACCOUNTS",
 				"assetTrx": "ALL ASSET TRANSACTION TYPES",
@@ -419,4 +423,3 @@ angular.module('app.services',[])
 		}
 	}
 });
-

@@ -64,10 +64,12 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	function home() {
 		var deferred = $q.defer();
 		$translate.use(_currentKey).then(function(result) {
-			$translate(['home.price', 'home.MA']).then(function(result) {
+			$translate(['home.price', 'home.MA', 'home.burns.recent','home.burns.largest']).then(function(result) {
 				deferred.resolve({
 					price: result['home.price'],
-					ma: result['home.MA']
+					ma: result['home.MA'],
+					_id: result['home.burns.recent'],
+					'burns.0': result['home.burns.largest']
 				});
 			});
 		});

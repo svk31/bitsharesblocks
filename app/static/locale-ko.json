@@ -95,7 +95,11 @@
     "newUsers": {
       "title": "신규 계정"
     },
-    "troll": "TROLLBOX"
+    "burns": {
+      "title": "BURN-BOX",
+      "recent": "Most recent burns",
+      "largest": "Largest burns"
+    }
   },
   "blocks": {
     "search1": "블럭번호, 거래번호(txid) 검색",

@@ -268,8 +268,8 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp('http://' + url + 'accounts' + cb);
     };
 
-    api.getBurns = function() {
-        return $http.jsonp('http://' + url + 'burns' + cb);
+    api.getBurns = function(sort) {
+        return $http.jsonp('http://' + url + 'burns/' + sort + cb);
     };
 
     api.getAccountsCount = function() {

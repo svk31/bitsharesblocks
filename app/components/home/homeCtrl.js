@@ -53,6 +53,35 @@ angular.module('app')
       }
     });
 
+    $scope.sortBurns = [{
+      name: 'burns.0',
+      label: 'Largest burns',
+    }, {
+      name: '_id',
+      label: 'Most recent burns',
+    }];
+
+    $scope.currentSort = store.get('currentSort');
+    if ($scope.currentSort === undefined) {
+      $scope.currentSort = $scope.sortBurns[0].name;
+    }
+
+    $scope.$watch('currentSort', function(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        $scope.sortBurns.forEach(function(unit, i) {
+          if (unit.name === newValue) {
+            if (angular.isDefined(stopBurns)) {
+              $interval.cancel(stopBurns);
+              stopBurns = undefined;
+            }
+            store.set('currentSort', $scope.currentSort);
+            fetchBurns();
+            stopBurns = $interval(fetchBurns, 60000);
+          }
+        });
+      }
+    });
+
     var startDate = new Date(Date.now());
     startDate.setDate(startDate.getDate() - 14);
 
@@ -123,8 +152,9 @@ angular.module('app')
     getRecent();
     stopBlocks = $interval(getNew, 10000);
 
+
     function fetchBurns() {
-      Blocks.fetchBurns().then(function(result) {
+      Blocks.fetchBurns($scope.currentSort).then(function(result) {
         $scope.burns = result;
       });
     }
@@ -235,6 +265,10 @@ angular.module('app')
         if ($scope.priceChart.series.length === 2) {
           $scope.priceChart.series[1].name = movingAvg;
         }
+
+        $scope.sortBurns.forEach(function(burn) {
+          burn.label = result[burn.name];
+        });
       });
     }
 
