@@ -397,6 +397,9 @@
     "cumul": "Kumulative %",
     "x": "Anzahl an Konten",
     "y": "%",
-    "tooltip": "Prozent der Verfügbarkeit"
+    "tooltip": "Prozent der Verfügbarkeit",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

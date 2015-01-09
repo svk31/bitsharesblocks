@@ -397,6 +397,9 @@
     "cumul": "Kümülatif %",
     "x": "Hesap sayısı",
     "y": "toplam arzın yüzdesi",
-    "tooltip": "Toplam arzın yüzdesi"
+    "tooltip": "Toplam arzın yüzdesi",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

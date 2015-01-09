@@ -397,6 +397,9 @@
     "cumul": "% acumulado del total",
     "x": "Número de cuentas",
     "y": "% de la oferta total",
-    "tooltip": "Porcentaje de la oferta total"
+    "tooltip": "Porcentaje de la oferta total",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

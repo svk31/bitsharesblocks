@@ -397,6 +397,9 @@
     "cumul": "与前面累计占总量",
     "x": "账号的数目",
     "y": "% 的供应总量",
-    "tooltip": "占供应总量的百分比"
+    "tooltip": "占供应总量的百分比",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

@@ -391,13 +391,16 @@
     "higher": "Addresses avec un solde plus grand que",
     "percent": "POURCENTAGE DU RÉSERVE TOTAL PAR NOMBRE D'ADDRESSES",
     "top": "TOP",
-    "addresses": "DES ADDRESSES",
+    "addresses": "ADDRESSES",
     "address": "Addresse",
     "balance": "Solde",
     "percentOf": "% du total",
     "cumul": "% du total cumulatif",
     "x": "Nombre de comptes",
     "y": "% du réserve total",
-    "tooltip": "Pourcentage du réserve total"
+    "tooltip": "Pourcentage du réserve total",
+    "piechart": {
+      "title": "PARTS DU GATEAU"
+    }
   }
 }

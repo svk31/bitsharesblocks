@@ -397,6 +397,9 @@
     "cumul": "% cumulativo sul totale",
     "x": "Numero di conti",
     "y": "% sulla disponibilità totale",
-    "tooltip": "Percentule sulla disponibilità totale"
+    "tooltip": "Percentule sulla disponibilità totale",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

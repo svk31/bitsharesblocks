@@ -394,6 +394,9 @@
     "cumul": "供給量対比累積%",
     "x": "アカウントの数",
     "y": "供給量対比%",
-    "tooltip": "総供給量パーセント"
+    "tooltip": "総供給量パーセント",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }
