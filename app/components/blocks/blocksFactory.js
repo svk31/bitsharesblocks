@@ -245,9 +245,9 @@ angular.module('app')
 		return deferred.promise;
 	}
 
-	function fetchBurns() {
+	function fetchBurns(sort) {
 		var deferred = $q.defer();
-		api.getBurns().success(function(result) {
+		api.getBurns(sort).success(function(result) {
 			var burns = [],
 				accounts = [];
 			result.forEach(function(block) {

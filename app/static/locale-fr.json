@@ -95,7 +95,11 @@
     "newUsers": {
       "title": "NOUVELLES UTILISATEURS"
     },
-    "troll": "MUR DES TROLLS"
+    "burns": {
+      "title": "MUR DES MESSAGES",
+      "recent": "Messages le plus récent",
+      "largest": "Messages le plus couteux"
+    }
   },
   "blocks": {
     "search1": "chercher une hauteur de bloc ou une transaction par id",

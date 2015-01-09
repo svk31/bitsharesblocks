@@ -95,7 +95,11 @@
     "newUsers": {
       "title": "NUEVOS USUARIOS"
     },
-    "troll": "TROLLBOX"
+    "burns": {
+      "title": "BURN-BOX",
+      "recent": "Most recent burns",
+      "largest": "Largest burns"
+    }
   },
   "blocks": {
     "search1": "buscar por altura del bloque o el id de transacción",
