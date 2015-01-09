@@ -216,12 +216,13 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		var deferred = $q.defer();
 		$translate.use(_currentKey)
 			.then(function(result) {
-				$translate(['genesis.x', 'genesis.y', 'genesis.tooltip'])
+				$translate(['genesis.x', 'genesis.y', 'genesis.tooltip', 'genesis.addresses'])
 					.then(function(genesis) {
 						deferred.resolve({
 							tooltip: genesis["genesis.tooltip"],
 							xlabel: genesis["genesis.x"],
-							ylabel: genesis["genesis.y"]
+							ylabel: genesis["genesis.y"],
+							addresses: genesis["genesis.addresses"].toLowerCase()
 						});
 					});
 			});

@@ -397,6 +397,9 @@
     "cumul": "공급량 대비 누적 %",
     "x": "계정 수",
     "y": "공급량 대비 %",
-    "tooltip": "총 공급량 퍼센트"
+    "tooltip": "총 공급량 퍼센트",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

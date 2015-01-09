@@ -419,7 +419,10 @@ angular.module('app.services', [])
 			"cumul": "Cumulative % of total",
 			"x": "Number of accounts",
 			"y": "% of total supply",
-			"tooltip": "Percentage of total supply"
+			"tooltip": "Percentage of total supply",
+			"piechart": {
+				"title": "PIECES OF THE PIE"
+			}
 		}
 	}
 });
