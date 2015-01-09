@@ -412,6 +412,7 @@ angular.module('app.services', [])
 			"higher": "Addresses with balance higher than",
 			"percent": "PERCENT OF TOTAL SUPPLY BY NUMBER OF ADDRESSES",
 			"top": "TOP",
+			"sharedropTitle": "SHAREDROP",
 			"addresses": "ADDRESSES",
 			"address": "Address",
 			"balance": "Balance",
