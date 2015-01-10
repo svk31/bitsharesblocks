@@ -125,12 +125,12 @@ body { padding-top: 70px;
   }
 
 
-  .user-assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable, #about {
+  .assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable, #about {
     margin-bottom:5em;
   }
 
   @media(max-width: 767px) {
-    .user-assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable:nth-child(1), #about {
+    .assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable:nth-child(1), #about {
       margin-bottom:10em;
     }
 

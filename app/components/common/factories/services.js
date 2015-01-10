@@ -313,7 +313,7 @@ angular.module('app.services', [])
 				"type4": "Cover"
 			},
 			"market": {
-				"title": "MARKET ASSETS",
+				"title": "MARKET ISSUED ASSETS",
 				"th1": "Asset Symbol",
 				"th2": "Bid depth",
 				"th3": "Ask depth",

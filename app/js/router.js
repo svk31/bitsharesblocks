@@ -50,6 +50,24 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "allAssets.html",
       controller: 'assetsCtrl'
     })
+    .state('assets.market', {
+      url: "/market",
+      views: {
+        'market-assets': {
+          templateUrl: "marketAssets.html",
+          controller: 'marketAssetsCtrl'
+        }
+      }
+    })
+    .state('assets.user', {
+      url: "/user",
+      views: {
+        'user-assets': {
+          templateUrl: "userAssets.html",
+          controller: 'userAssetsCtrl'
+        }
+      }
+    })
     .state('about', {
       url: "/about",
       templateUrl: "about.html",
