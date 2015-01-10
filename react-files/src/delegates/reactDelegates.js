@@ -62,15 +62,15 @@ var HeaderRow = React.createClass({
 			<tr onClick={clickHandler}>
 			<th className="bold sortable">{headers['delegates.rank']}</th>
 			<th className="bold sortable">{headers['delegates.change24']}</th>
-			<th className="bold sortable">{headers['delegates.change7']}</th>
+			<th className="bold sortable hidden-xs">{headers['delegates.change7']}</th>
 			<th className="bold sortable">{headers['accounts.name']}</th>
 			<th className="bold sortable">{headers['delegates.votes']}</th>
-			<th className="bold sortable">{headers['delegates.produced']}</th>
-			<th className="bold sortable">{headers['delegates.missed']}</th>
+			<th className="bold sortable hidden-xs">{headers['delegates.produced']}</th>
+			<th className="bold sortable hidden-xs">{headers['delegates.missed']}</th>
 			<th className="bold sortable">{headers['delegates.rate']}</th>
 			<th className="bold sortable">{headers['delegates.latency']}</th>
 			<th className="bold sortable">{headers['delegates.feeds']}</th>
-			<th className="bold sortable">{headers['delegates.feedFreq']}</th>
+			<th className="bold sortable hidden-xs">{headers['delegates.feedFreq']}</th>
 			<th className="bold sortable">{headers['delegates.rel']}</th>
 			<th className="bold sortable">{headers['delegates.version']}</th>
 			</tr>
@@ -108,13 +108,13 @@ var DelegateRow = React.createClass({
 		}
 
 		if (delegate.updateFreq >=25) {
-			tdUpdateFeeds = <td className="success">{delegate.updateFreq}</td>;
+			tdUpdateFeeds = <td className="success hidden-xs">{delegate.updateFreq}</td>;
 		}
 		else if (delegate.updateFreq<25 && delegate.updateFreq>=12) {
-			tdUpdateFeeds = <td className="warning">{delegate.updateFreq}</td>;
+			tdUpdateFeeds = <td className="warning hidden-xs">{delegate.updateFreq}</td>;
 		}
 		else {
-			tdUpdateFeeds = <td className="danger">{delegate.updateFreq}</td>;
+			tdUpdateFeeds = <td className="danger hidden-xs">{delegate.updateFreq}</td>;
 		}
 
 		if (delegate.reliability >=98) {
@@ -152,11 +152,11 @@ var DelegateRow = React.createClass({
 			<tr>
 			<td>{delegate.rank}</td>
 			<td>{delegate.dayChange}</td>
-			<td>{delegate.weekChange}</td>
+			<td className="hidden-xs">{delegate.weekChange}</td>
 			<td className={delegate.rank <=101 ? 'bold':''}><a href={'delegates/delegate?name='+delegate.name}>{delegate.name}</a></td>
 			<td>{delegate.delegate_info.votes_for_percent+'%'}</td>
-			<td>{delegate.delegate_info.blocks_produced}</td>
-			<td>{delegate.delegate_info.blocks_missed}</td>
+			<td className="hidden-xs">{delegate.delegate_info.blocks_produced}</td>
+			<td className="hidden-xs">{delegate.delegate_info.blocks_missed}</td>
 			<td>{delegate.delegate_info.pay_rate+'%'}</td>
 			{tdLatency}
 			{tdActiveFeeds}

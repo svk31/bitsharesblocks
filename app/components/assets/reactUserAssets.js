@@ -1,4 +1,4 @@
-var UserAssetHeaderRow = React.createClass({displayName: "UserAssetHeaderRow",
+var UserAssetHeaderRow = React.createClass({displayName: 'UserAssetHeaderRow',
 	render: function() {
 		var props = this.props;
 		var headers = this.props.headers;
@@ -26,14 +26,14 @@ var UserAssetHeaderRow = React.createClass({displayName: "UserAssetHeaderRow",
 			React.createElement("th", {className: "bold sortable"}, headers['assets.market.th1']), 
 			React.createElement("th", {className: "bold sortable"}, headers['assets.market.th7']), 
 			React.createElement("th", null, headers['assets.user.th4']), 
-			React.createElement("th", null, headers['assets.user.th5']), 
+			React.createElement("th", {className: "hidden-xs"}, headers['assets.user.th5']), 
 			React.createElement("th", {className: "bold sortable"}, headers['assets.user.th6'])
 			)
 			);
 	}
 });
 
-var UserAssetRow = React.createClass({displayName: "UserAssetRow",
+var UserAssetRow = React.createClass({displayName: 'UserAssetRow',
 	render: function() {
 		var asset =this.props.data;
 		var tdInit;	
@@ -51,7 +51,7 @@ var UserAssetRow = React.createClass({displayName: "UserAssetRow",
 			React.createElement("td", null, React.createElement("a", {href: 'assets/asset?id='+asset.symbol}, asset.symbol)), 
 			React.createElement("td", null, asset.dailyVolume, " BTS"), 
 			React.createElement("td", null,  asset.current_share_supply), 
-			React.createElement("td", null,  asset.maximum_share_supply), 
+			React.createElement("td", {className: "hidden-xs"},  asset.maximum_share_supply), 
 			tdInit
 			)
 			);

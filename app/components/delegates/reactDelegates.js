@@ -62,15 +62,15 @@ var HeaderRow = React.createClass({displayName: 'HeaderRow',
 			React.createElement("tr", {onClick: clickHandler}, 
 			React.createElement("th", {className: "bold sortable"}, headers['delegates.rank']), 
 			React.createElement("th", {className: "bold sortable"}, headers['delegates.change24']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.change7']), 
+			React.createElement("th", {className: "bold sortable hidden-xs"}, headers['delegates.change7']), 
 			React.createElement("th", {className: "bold sortable"}, headers['accounts.name']), 
 			React.createElement("th", {className: "bold sortable"}, headers['delegates.votes']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.produced']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.missed']), 
+			React.createElement("th", {className: "bold sortable hidden-xs"}, headers['delegates.produced']), 
+			React.createElement("th", {className: "bold sortable hidden-xs"}, headers['delegates.missed']), 
 			React.createElement("th", {className: "bold sortable"}, headers['delegates.rate']), 
 			React.createElement("th", {className: "bold sortable"}, headers['delegates.latency']), 
 			React.createElement("th", {className: "bold sortable"}, headers['delegates.feeds']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.feedFreq']), 
+			React.createElement("th", {className: "bold sortable hidden-xs"}, headers['delegates.feedFreq']), 
 			React.createElement("th", {className: "bold sortable"}, headers['delegates.rel']), 
 			React.createElement("th", {className: "bold sortable"}, headers['delegates.version'])
 			)
@@ -108,13 +108,13 @@ var DelegateRow = React.createClass({displayName: 'DelegateRow',
 		}
 
 		if (delegate.updateFreq >=25) {
-			tdUpdateFeeds = React.createElement("td", {className: "success"}, delegate.updateFreq);
+			tdUpdateFeeds = React.createElement("td", {className: "success hidden-xs"}, delegate.updateFreq);
 		}
 		else if (delegate.updateFreq<25 && delegate.updateFreq>=12) {
-			tdUpdateFeeds = React.createElement("td", {className: "warning"}, delegate.updateFreq);
+			tdUpdateFeeds = React.createElement("td", {className: "warning hidden-xs"}, delegate.updateFreq);
 		}
 		else {
-			tdUpdateFeeds = React.createElement("td", {className: "danger"}, delegate.updateFreq);
+			tdUpdateFeeds = React.createElement("td", {className: "danger hidden-xs"}, delegate.updateFreq);
 		}
 
 		if (delegate.reliability >=98) {
@@ -152,11 +152,11 @@ var DelegateRow = React.createClass({displayName: 'DelegateRow',
 			React.createElement("tr", null, 
 			React.createElement("td", null, delegate.rank), 
 			React.createElement("td", null, delegate.dayChange), 
-			React.createElement("td", null, delegate.weekChange), 
+			React.createElement("td", {className: "hidden-xs"}, delegate.weekChange), 
 			React.createElement("td", {className: delegate.rank <=101 ? 'bold':''}, React.createElement("a", {href: 'delegates/delegate?name='+delegate.name}, delegate.name)), 
 			React.createElement("td", null, delegate.delegate_info.votes_for_percent+'%'), 
-			React.createElement("td", null, delegate.delegate_info.blocks_produced), 
-			React.createElement("td", null, delegate.delegate_info.blocks_missed), 
+			React.createElement("td", {className: "hidden-xs"}, delegate.delegate_info.blocks_produced), 
+			React.createElement("td", {className: "hidden-xs"}, delegate.delegate_info.blocks_missed), 
 			React.createElement("td", null, delegate.delegate_info.pay_rate+'%'), 
 			tdLatency, 
 			tdActiveFeeds, 

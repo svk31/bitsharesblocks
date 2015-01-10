@@ -26,7 +26,7 @@ var UserAssetHeaderRow = React.createClass({
 			<th className="bold sortable">{headers['assets.market.th1']}</th>
 			<th className="bold sortable">{headers['assets.market.th7']}</th>
 			<th >{headers['assets.user.th4']}</th>
-			<th >{headers['assets.user.th5']}</th>
+			<th className="hidden-xs">{headers['assets.user.th5']}</th>
 			<th className="bold sortable">{headers['assets.user.th6']}</th>
 			</tr>
 			);
@@ -51,7 +51,7 @@ var UserAssetRow = React.createClass({
 			<td><a href={'assets/asset?id='+asset.symbol}>{asset.symbol}</a></td>
 			<td>{asset.dailyVolume} BTS</td>
 			<td>{ asset.current_share_supply }</td>
-			<td>{ asset.maximum_share_supply }</td>
+			<td className="hidden-xs">{ asset.maximum_share_supply }</td>
 			{tdInit}
 			</tr>
 			);
