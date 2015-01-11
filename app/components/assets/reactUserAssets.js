@@ -13,21 +13,35 @@ var UserAssetHeaderRow = React.createClass({displayName: 'UserAssetHeaderRow',
 		}
 
 		var clickHandler = function(ev) {
+			var sortIndex = ev.target.cellIndex;
+			if (!sortIndex) {
+				var letters = ev.target.dataset.reactid.match(/[a-z]+/g);
+				var subIndices = ev.target.dataset.reactid.match(/\d+/g);
+				
+				sortIndex = parseInt(subIndices[4],10);
+
+				if (letters) {
+					sortIndex = letters[0].charCodeAt(0) - 87;
+				}
+			}
 			if (ev.target.cellIndex!==3 && ev.target.cellIndex!==4) {
 				props.onSortClick(					
-					ev.target.cellIndex	
+					sortIndex
 					);
 			}
 		};
 
+		var floatLeft = {float:'left', 'z-index': -1};
+		var sortGlyph = (inverse) ? React.createElement("span", {style: floatLeft, className: "glyphicon glyphicon-sort-by-attributes-alt"}) : React.createElement("span", {style: floatLeft, className: "glyphicon glyphicon-sort-by-attributes"});
+		
 		return (
 			React.createElement("tr", {onClick: clickHandler}, 
-			React.createElement("th", {className: "bold sortable"}, headers['assets.user.th1']), 
-			React.createElement("th", {className: "bold sortable"}, headers['assets.market.th1']), 
-			React.createElement("th", {className: "bold sortable"}, headers['assets.market.th7']), 
-			React.createElement("th", null, headers['assets.user.th4']), 
-			React.createElement("th", {className: "hidden-xs"}, headers['assets.user.th5']), 
-			React.createElement("th", {className: "bold sortable"}, headers['assets.user.th6'])
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 0 ? sortGlyph: null, " ", headers['assets.user.th1']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 1 ? sortGlyph: null, " ", headers['assets.market.th1']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 2 ? sortGlyph: null, " ", headers['assets.market.th7']), 
+				React.createElement("th", null, headers['assets.user.th4']), 
+				React.createElement("th", {className: "hidden-xs"}, headers['assets.user.th5']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 5 ? sortGlyph: null, " ", headers['assets.user.th6'])
 			)
 			);
 	}

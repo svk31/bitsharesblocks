@@ -32,47 +32,43 @@ var HeaderRow = React.createClass({displayName: 'HeaderRow',
 		}
 
 		var clickHandler = function(ev) {
-			if (ev.target.cellIndex>=0) {
+			var sortIndex = ev.target.cellIndex;
+			if (!sortIndex) {
+				var letters = ev.target.dataset.reactid.match(/[a-z]+/g);
+				var subIndices = ev.target.dataset.reactid.match(/\d+/g);
+				
+				sortIndex = parseInt(subIndices[4],10);
+
+				if (letters) {
+					sortIndex = letters[0].charCodeAt(0) - 87;
+				}
+
+			}
+			if (ev.target.cellIndex!==3 && ev.target.cellIndex!==4) {
 				props.onSortClick(					
-					ev.target.cellIndex	
+					sortIndex
 					);
 			}
 		};
 
-		/*var sort = [];
-		var spanStyle = {
-			float: 'left'
-		};
-
-		for (var i = 0; i < headerLength; i++) {
-			if (i===sortIndex) {
-				if (inverse) {
-					sort.push(<th className="bold sortable"><span style={spanStyle} key={i} className="glyphicon glyphicon-sort-by-attributes"></span>{headers['accounts.name']}</th>);
-				}
-				else {
-					sort.push(<th className="bold sortable"><span style={spanStyle} key={i} className="glyphicon glyphicon-sort-by-attributes-alt"></span>{headers['accounts.name']}</th>);
-				}
-			}			
-			else {
-				sort.push(<th></th>);
-			}
-		}
-		*/
+		var floatLeft = {float:'left', 'z-index': -1};
+		var sortGlyph = (inverse) ? React.createElement("span", {style: floatLeft, className: "glyphicon glyphicon-sort-by-attributes-alt"}) : React.createElement("span", {style: floatLeft, className: "glyphicon glyphicon-sort-by-attributes"});
+		
 		return (
 			React.createElement("tr", {onClick: clickHandler}, 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.rank']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.change24']), 
-			React.createElement("th", {className: "bold sortable hidden-xs"}, headers['delegates.change7']), 
-			React.createElement("th", {className: "bold sortable"}, headers['accounts.name']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.votes']), 
-			React.createElement("th", {className: "bold sortable hidden-xs"}, headers['delegates.produced']), 
-			React.createElement("th", {className: "bold sortable hidden-xs"}, headers['delegates.missed']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.rate']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.latency']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.feeds']), 
-			React.createElement("th", {className: "bold sortable hidden-xs"}, headers['delegates.feedFreq']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.rel']), 
-			React.createElement("th", {className: "bold sortable"}, headers['delegates.version'])
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 0 ? sortGlyph: null, " ", headers['delegates.rank']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 1 ? sortGlyph: null, " ", headers['delegates.change24']), 
+				React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 2 ? sortGlyph: null, " ", headers['delegates.change7']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 3 ? sortGlyph: null, " ", headers['accounts.name']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 4 ? sortGlyph: null, " ", headers['delegates.votes']), 
+				React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 5 ? sortGlyph: null, " ", headers['delegates.produced']), 
+				React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 6 ? sortGlyph: null, " ", headers['delegates.missed']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 7 ? sortGlyph: null, " ", headers['delegates.rate']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 8 ? sortGlyph: null, " ", headers['delegates.latency']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 9 ? sortGlyph: null, " ", headers['delegates.feeds']), 
+				React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 10 ? sortGlyph: null, " ", headers['delegates.feedFreq']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 11 ? sortGlyph: null, " ", headers['delegates.rel']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 12 ? sortGlyph: null, " ", headers['delegates.version'])
 			)
 			);
 	}

@@ -30,8 +30,8 @@
       <td class="hidden-xs" ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(asset.averageValidFeeds | number:4) +' '+asset.symbol}}/BTS</td>
       <td class="hidden-xs" ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(asset.averageValidFeeds | number:7) +' '+asset.symbol}}/BTS</td>
       <td class="hidden-xs">{{ asset.current_share_supply }}</td>
-      <td class="hidden-xs">{{ asset.yield | number:2 }}%</td>
-      <td>{{ ( asset.collateralRatio ) | number:0 }} %</td>
+      <td >{{ asset.yield | number:2 }}%</td>
+      <td class="hidden-xs">{{ ( asset.collateralRatio ) | number:0 }} %</td>
       <td ng-if="capUnit==='BTC'">{{ priceUnit.symbol + (asset.volume[capUnit] | number:2) }}</td>
       <td ng-if="capUnit!=='BTC'">{{ asset.volume[capUnit] | nfcurrency:priceUnit.symbol }}</td>
       <td>{{ asset.cap[capUnit] | nfcurrency:priceUnit.symbol }} {{price}}</td>
