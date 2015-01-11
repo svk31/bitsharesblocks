@@ -216,7 +216,7 @@ angular.module('app')
         $scope.averagefeed = result.averageFeed;
         $scope.filteredFeeds = result.feeds;
         $scope.medianLine = result.medianLine;
-        $scope.medianFeed = result.medianFeed;
+        // $scope.medianFeed = result.medianFeed;
         $scope.collateral = result.collateral;
         $scope.collateralAsset = result.collateralAsset;        
 
@@ -302,7 +302,7 @@ angular.module('app')
 
       $scope.supplyChart.series[0].data = $scope.asset.supply;
       for (var i = 0; i < $scope.asset.collateral.length; i++) {
-        $scope.asset.collateral[i][1] *= $scope.medianFeed;
+        $scope.asset.collateral[i][1] *= $scope.asset.medianFeed;
       }
       if (marketAsset) {
         $scope.supplyChart.series[1].data = $scope.asset.collateral;

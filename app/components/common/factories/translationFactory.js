@@ -154,7 +154,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	function assets() {
 		var deferred = $q.defer();
 		var translations = {};
-		var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'delegates.filter'];
+		var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th3','assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'assets.market.th8', 'delegates.filter'];
 
 		$translate.use(_currentKey).then(function(result) {
 			$translate(userHeaders).then(function(result) {

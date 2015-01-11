@@ -39,9 +39,10 @@ var UserAssetHeaderRow = React.createClass({
 				<th className="bold sortable">{sortIndex === 0 ? sortGlyph: null} {headers['assets.user.th1']}</th>
 				<th className="bold sortable">{sortIndex === 1 ? sortGlyph: null} {headers['assets.market.th1']}</th>
 				<th className="bold sortable">{sortIndex === 2 ? sortGlyph: null} {headers['assets.market.th7']}</th>
+				<th className="bold sortable">{sortIndex === 3 ? sortGlyph: null} {headers['assets.user.th3']}</th>
 				<th >{headers['assets.user.th4']}</th>
-				<th className="hidden-xs">{headers['assets.user.th5']}</th>
-				<th className="bold sortable">{sortIndex === 5 ? sortGlyph: null} {headers['assets.user.th6']}</th>
+				<th className="bold sortable">{sortIndex === 5 ? sortGlyph: null}{headers['assets.market.th8']}</th>
+				<th className="bold sortable">{sortIndex === 6 ? sortGlyph: null} {headers['assets.user.th6']}</th>
 			</tr>
 			);
 	}
@@ -63,9 +64,10 @@ var UserAssetRow = React.createClass({
 			<tr>
 			<td>{asset._id}</td>
 			<td><a href={'assets/asset?id='+asset.symbol}>{asset.symbol}</a></td>
-			<td>{asset.dailyVolume} BTS</td>
+			<td>{asset.dailyVolume}</td>
+			<td>{ asset.vwapText }/{asset.symbol} </td>
 			<td>{ asset.current_share_supply }</td>
-			<td className="hidden-xs">{ asset.maximum_share_supply }</td>
+			<td>{ asset.capText }</td>
 			{tdInit}
 			</tr>
 			);
@@ -94,7 +96,7 @@ var UserAssetsTable = React.createClass({
 	displayName: 'UserAssetsTable',
 	render: function() {
 		var headers = this.props.headers;
-		var filterFields = ['_id','symbol','dailyVolume','','','initialized'];
+		var filterFields = ['_id','symbol','dailyVolume', 'vwap','','cap', 'initialized'];
 		var inverse = this.state.inverse;
 		if (headers && this.props.data) {			
 			var data = JSON.parse(this.props.data);
@@ -114,7 +116,7 @@ var UserAssetsTable = React.createClass({
 					if (a[sortField] < b[sortField]) {
 						return -1;
 					}
-					return 0;	
+					return 0;
 				}
 				else {
 					if (a[sortField] > b[sortField]) {

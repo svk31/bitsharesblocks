@@ -39,9 +39,10 @@ var UserAssetHeaderRow = React.createClass({displayName: 'UserAssetHeaderRow',
 				React.createElement("th", {className: "bold sortable"}, sortIndex === 0 ? sortGlyph: null, " ", headers['assets.user.th1']), 
 				React.createElement("th", {className: "bold sortable"}, sortIndex === 1 ? sortGlyph: null, " ", headers['assets.market.th1']), 
 				React.createElement("th", {className: "bold sortable"}, sortIndex === 2 ? sortGlyph: null, " ", headers['assets.market.th7']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 3 ? sortGlyph: null, " ", headers['assets.user.th3']), 
 				React.createElement("th", null, headers['assets.user.th4']), 
-				React.createElement("th", {className: "hidden-xs"}, headers['assets.user.th5']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 5 ? sortGlyph: null, " ", headers['assets.user.th6'])
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 5 ? sortGlyph: null, headers['assets.market.th8']), 
+				React.createElement("th", {className: "bold sortable"}, sortIndex === 6 ? sortGlyph: null, " ", headers['assets.user.th6'])
 			)
 			);
 	}
@@ -63,9 +64,10 @@ var UserAssetRow = React.createClass({displayName: 'UserAssetRow',
 			React.createElement("tr", null, 
 			React.createElement("td", null, asset._id), 
 			React.createElement("td", null, React.createElement("a", {href: 'assets/asset?id='+asset.symbol}, asset.symbol)), 
-			React.createElement("td", null, asset.dailyVolume, " BTS"), 
+			React.createElement("td", null, asset.dailyVolume), 
+			React.createElement("td", null,  asset.vwapText, "/", asset.symbol, " "), 
 			React.createElement("td", null,  asset.current_share_supply), 
-			React.createElement("td", {className: "hidden-xs"},  asset.maximum_share_supply), 
+			React.createElement("td", null,  asset.capText), 
 			tdInit
 			)
 			);
@@ -94,7 +96,7 @@ var UserAssetsTable = React.createClass({
 	displayName: 'UserAssetsTable',
 	render: function() {
 		var headers = this.props.headers;
-		var filterFields = ['_id','symbol','dailyVolume','','','initialized'];
+		var filterFields = ['_id','symbol','dailyVolume', 'vwap','','cap', 'initialized'];
 		var inverse = this.state.inverse;
 		if (headers && this.props.data) {			
 			var data = JSON.parse(this.props.data);
@@ -114,7 +116,7 @@ var UserAssetsTable = React.createClass({
 					if (a[sortField] < b[sortField]) {
 						return -1;
 					}
-					return 0;	
+					return 0;
 				}
 				else {
 					if (a[sortField] > b[sortField]) {

@@ -306,6 +306,7 @@
       "show": "Mostrar activos emitidos por usuarios",
       "title": "ACTIVOS EMITIDOS POR USUARIOS",
       "th1": "ID Activo",
+      "th3": "24hr Average Price",
       "th4": "Oferta Actual",
       "th5": "Oferta Máxima",
       "th6": "Initialized"

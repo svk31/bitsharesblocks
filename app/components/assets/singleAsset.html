@@ -71,7 +71,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="short in asset.shorts | orderBy:'price' | limitTo:10  track by $index">
-          <td>{{(short.collateral * medianFeed / 2) | number:3}}</td>
+          <td>{{(short.collateral * asset.medianFeed / 2) | number:3}}</td>
           <td>{{short.collateral | number:3}}</td>
           <td>{{short.interest | number:3}}</td>
           <td ng-if="short.price_limit>0">{{(1/short.price_limit | number:3)}}</td>
@@ -157,8 +157,8 @@
     <ul class="list-group">
       <!-- <li class="list-group-item">{{ 'delegate.feeds.total' | translate }}: <span class="badge">{{asset.numberFeeds}}</span></li> -->
       <li class="list-group-item">{{ 'delegate.feeds.active' | translate }}: <span class="badge">{{asset.numberValidFeeds}}</span></li>
-      <li class="list-group-item">{{ 'asset.feeds.avg' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge">{{averagefeed | number:4}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge">{{averagefeed | number:7}}</span></li>
-      <li ng-if="enoughFeeds == true" class="list-group-item">{{ 'asset.feeds.med' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge alert-success">{{medianFeed | number:4}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge alert-success">{{medianFeed | number:7}}</span></li>
+      <li class="list-group-item">{{ 'asset.feeds.avg' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge">{{(1/averagefeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge">{{(averagefeed | number:0)+' BTS/'+asset.symbol}}</span></li>
+      <li ng-if="asset.medianFeed" class="list-group-item">{{ 'asset.feeds.med' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge alert-success">{{(1/asset.medianFeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge alert-success">{{(asset.medianFeed | number:0)+' BTS/'+asset.symbol}}</span></li>
       <li ng-if="enoughFeeds === false" class="list-group-item">{{ 'asset.feeds.med' | translate }}: <span class="badge alert-danger">{{ 'asset.feeds.null' | translate }}</span></li>
 
       <li class="list-group-item"><div class="checkbox">
@@ -184,8 +184,8 @@
       <tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in filteredFeeds | orderBy: orderByField:reverseSort track by feed.delegate_name" class="repeated-item">
         <td><a ui-sref="delegate({ 'name' : feed.delegate_name })" once-text="feed.delegate_name"></a></td>
         <td>{{feed.last_update | date:'medium'}}</td>
-        <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(feed.price | number:4)+' '+asset.symbol+'/BTS'}}</td>
-        <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(feed.price | number:7)+' '+asset.symbol+'/BTS'}}</td>
+        <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(1 / feed.price | number:2)+' '+asset.symbol+'/BTS'}}</td>
+        <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(1 / feed.price | number:0)+' '+asset.symbol+'/BTS'}}</td>
       </tr>
     </tbody>
   </table>

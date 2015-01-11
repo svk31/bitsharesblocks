@@ -306,6 +306,7 @@
       "show": "Mostra mercati creati dagli utenti",
       "title": "MERCATI CREATI DAGLI UTENTI",
       "th1": "ID",
+      "th3": "24hr Average Price",
       "th4": "Disponibilità attuale",
       "th5": "Disponibilità massima",
       "th6": "Initialized"

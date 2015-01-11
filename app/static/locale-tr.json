@@ -306,6 +306,7 @@
       "show": "Kullanıcılar tarafından piyasaya sürülen varlıkları göster",
       "title": "KULLANICILAR TARAFINDAN PİYASAYA SÜRÜLMÜŞ VARLIKLAR",
       "th1": "Varlık ID",
+      "th3": "24hr Average Price",
       "th4": "Şu anki Arz",
       "th5": "Maksimum Arz",
       "th6": "Initialized"

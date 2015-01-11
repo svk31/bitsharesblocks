@@ -297,7 +297,7 @@
       "th2": "Profondeur achat",
       "th3": "Profondeur vente",
       "th4": "Flux valides",
-      "th5": "Flux moyen",
+      "th5": "Flux median",
       "th6": "Réserve",
       "th7": "Volume 24h",
       "th8": "Capitalisation",
@@ -307,6 +307,7 @@
       "show": "Afficher les actifs des utilisateurs",
       "title": "ACTIFS DES UTILISATEURS",
       "th1": "ID de l'actif",
+      "th3": "24hr Prix Moyen",
       "th4": "Réserve courant",
       "th5": "Réserve maximal",
       "th6": "Initialized"

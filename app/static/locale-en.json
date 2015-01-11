@@ -307,6 +307,7 @@
 			"show": "Show user issued assets",
 			"title": "USER ISSUED ASSETS",
 			"th1": "Asset ID",
+			"th3": "24hr Average Price",
 			"th4": "Current Supply",
 			"th5": "Maximum Supply",
 			"th6": "Initialized"

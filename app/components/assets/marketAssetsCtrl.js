@@ -24,6 +24,10 @@ angular.module('app')
       name: 'EUR',
       label: '€ EUR',
       symbol: '€'
+    }, {
+      name: 'BTS',
+      label: 'BTS',
+      symbol: ''
     }];
 
     $scope.capUnit = store.get('capUnit');

@@ -318,7 +318,7 @@ angular.module('app.services', [])
 				"th2": "Bid depth",
 				"th3": "Ask depth",
 				"th4": "Valid Feeds",
-				"th5": "Average Feed Price",
+				"th5": "Median Feed Price",
 				"th6": "Share Supply",
 				"th7": "24h Volume",
 				"th8": "Market Cap",
@@ -328,6 +328,7 @@ angular.module('app.services', [])
 				"show": "Show user issued assets",
 				"title": "USER ISSUED ASSETS",
 				"th1": "Asset ID",
+				"th3": "24hr Average Price",
 				"th4": "Current Supply",
 				"th5": "Maximum Supply",
 				"th6": "Initialized"

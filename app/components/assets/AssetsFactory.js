@@ -127,33 +127,43 @@ angular.module('app')
 				var assetPrice = (assets[i].status.last_valid_feed_price) ? parseFloat(assets[i].status.last_valid_feed_price / (100000 / precision)) : 0;
 
 				assets[i].collateral = supply[assets[i]._id];
-				assets[i].collateralRatio = (assets[i].current_share_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].averageValidFeeds / assets[i].current_share_supply : 0;
+				assets[i].collateralRatio = (assets[i].current_share_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].medianFeed / assets[i].current_share_supply : 0;
 
 				assets[i].yield = (assets[i].current_share_supply > 0) ? 100 * (assets[i].collected_fees / assets[i].precision) / assets[i].current_share_supply : 0;
 
 				assets[i].cap = {};
 				assets[i].price = (assetPrice !== 0) ? assetPrice * (100000 / precision) : 0;
+
 				assets[i].marketCap = (assets[i].price !== 0) ? (assets[i].current_share_supply / assets[i].price) : 0;
+				assets[i].cap.BTS = (assets[i].price !== 0) ? (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.BTC = (assets[i].price !== 0) ? prices.BTC * (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.USD = (assets[i].price !== 0) ? prices.USD * (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.CNY = (assets[i].price !== 0) ? prices.CNY * (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.EUR = (assets[i].price !== 0) ? prices.EUR * (assets[i].current_share_supply / assets[i].price) : 0;
 
 				assets[i].volume = {};
+				assets[i].volume.BTS = assets[i].dailyVolume || 0;
 				assets[i].volume.BTC = (assets[i].dailyVolume !== 0) ? prices.BTC * (assets[i].dailyVolume) : 0;
 				assets[i].volume.USD = (assets[i].dailyVolume !== 0) ? prices.USD * (assets[i].dailyVolume) : 0;
 				assets[i].volume.CNY = (assets[i].dailyVolume !== 0) ? prices.CNY * (assets[i].dailyVolume) : 0;
 				assets[i].volume.EUR = (assets[i].dailyVolume !== 0) ? prices.EUR * (assets[i].dailyVolume) : 0;
 
-				decimals = (assets[i].symbol !== 'BTC' && assets[i].symbol !== 'GOLD') ? 0 : 3;
+				decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
 				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
 				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
 			}
 		} else {
 			for (i = 0; i < assets.length; i++) {
-				decimals = (assets[i].symbol !== 'BTC' && assets[i].symbol !== 'GOLD') ? 0 : 3;
-				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
+
+				decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
+
 				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
+				assets[i].dailyVolume = $filter('number')(assets[i].dailyVolume, 2) + ' BTS';
+
+				assets[i].cap = assets[i].vwap * assets[i].current_share_supply;
+				assets[i].capText = $filter('number')(assets[i].cap, 0) + ' BTS';
+				assets[i].vwapText = $filter('number')(assets[i].vwap, 2) + ' BTS';
+				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
 			}
 		}
 
@@ -201,7 +211,7 @@ angular.module('app')
 			if (result.issuer_account_id === -2) {
 				assetInfo = filterFeeds(result, true);
 			}
-			assetInfo.asset = orderBook(assetInfo.asset, assetInfo.medianFeed);
+			assetInfo.asset = orderBook(assetInfo.asset, assetInfo.asset.medianFeed);
 			deferred.resolve(assetInfo);
 		});
 		return deferred.promise;
@@ -240,17 +250,9 @@ angular.module('app')
 			tempFeeds = asset.feeds;
 			averageFeed = asset.averagefeed;
 		}
-		if (asset.shorts.length > 1 || asset.bids.length > 1 || asset.asks.length > 1) {
-			if (tempFeeds.length === 0 || tempFeeds[tempFeeds.length - 1].median_price === null) {
-				medianFeed = 0;
-			} else {
-				medianFeed = tempFeeds[tempFeeds.length - 1].median_price;
-			}
-		} else {
-			medianFeed = 0;
-		}
-		if (medianFeed !== 0) {
-			medianLine = 1 / medianFeed;
+
+		if (asset.medianFeed !== 0) {
+			medianLine = 1 / asset.medianFeed;
 		} else {
 			medianLine = 0;
 		}
@@ -265,7 +267,6 @@ angular.module('app')
 		return {
 			feeds: tempFeeds,
 			enoughFeeds: enoughFeeds,
-			medianFeed: medianFeed,
 			medianLine: medianLine,
 			averageFeed: averageFeed,
 			collateral: collateral,

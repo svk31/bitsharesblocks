@@ -306,6 +306,7 @@
       "show": "Show user issued assets",
       "title": "用户自定义资产",
       "th1": "资产ID",
+      "th3": "24hr Average Price",
       "th4": "当前供应量",
       "th5": "最大供应量",
       "th6": "Initialized"

@@ -306,6 +306,7 @@
       "show": "Show user issued assets",
       "title": "NUTZER-DEFINIERTE ASSETS",
       "th1": "Asset ID",
+      "th3": "24hr Average Price",
       "th4": "Aktuelle Verfügbarkeit",
       "th5": "Maximale Verfügbarkeit",
       "th6": "Initialized"
