@@ -290,7 +290,7 @@ angular.module('app')
 
 			// Add ranks
 			delegate.dayChange = (ranks.dayChange[delegate._id] !== undefined) ? ranks.dayChange[delegate._id] : 'n/a';
-			delegate.weekChange = (ranks.weekChange[delegate._id] !== undefined) ? ranks.dayChange[delegate._id] : 'n/a';
+			delegate.weekChange = (ranks.weekChange[delegate._id] !== undefined) ? ranks.weekChange[delegate._id] : 'n/a';
 
 			// Count active feeds
 			delegate.activeFeeds = 0;
