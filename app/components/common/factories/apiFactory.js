@@ -266,6 +266,10 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp('http://' + url + 'accounts/' + name + cb);
     };
 
+    api.getSubAccounts = function(name) {
+        return $http.jsonp('http://' + url + 'subaccounts/' + name + cb);
+    };
+
     api.getAccounts = function() {
         return $http.jsonp('http://' + url + 'accounts' + cb);
     };

@@ -277,7 +277,9 @@
     "date": "日付",
     "key": "キー",
     "website": "ウェブサイト",
-    "burn": "焼却活動"
+    "burn": "焼却活動",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {

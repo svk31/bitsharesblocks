@@ -302,7 +302,9 @@ angular.module('app.services', [])
 			"date": "Date",
 			"key": "Key",
 			"website": "Website",
-			"burn": "WALL BURNS"
+			"burn": "WALL BURNS",
+			"parent": "Parent account",
+			"subs": "Sub-accounts"
 		},
 		"assets": {
 			"plot": {

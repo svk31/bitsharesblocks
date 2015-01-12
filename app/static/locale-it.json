@@ -280,7 +280,9 @@
     "date": "Data",
     "key": "Chiave",
     "website": "Website",
-    "burn": "OPERAZIONI BURN"
+    "burn": "OPERAZIONI BURN",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {

@@ -281,7 +281,9 @@
     "date": "Date",
     "key": "Cléfs",
     "website": "Site web",
-    "burn": "OPERATIONS DE BRULURE"
+    "burn": "OPERATIONS DE BRULURE",
+    "parent": "Compte parent",
+    "subs": "Sous-comptes"
   },
   "assets": {
     "plot": {

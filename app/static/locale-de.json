@@ -280,7 +280,9 @@
     "date": "Datum",
     "key": "Schlüssel",
     "website": "Webseite",
-    "burn": "BURN OPERATIONS"
+    "burn": "BURN OPERATIONS",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {

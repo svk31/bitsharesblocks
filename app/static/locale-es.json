@@ -280,7 +280,9 @@
     "date": "Fecha",
     "key": "Llave",
     "website": "Sitio web",
-    "burn": "OPERACIONES DE QUEMADO"
+    "burn": "OPERACIONES DE QUEMADO",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {

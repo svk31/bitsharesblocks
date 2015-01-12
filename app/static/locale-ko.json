@@ -280,7 +280,9 @@
     "date": "일시",
     "key": "키",
     "website": "웹사이트",
-    "burn": "소각 활동"
+    "burn": "소각 활동",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {

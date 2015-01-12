@@ -280,7 +280,9 @@
     "date": "Tarih",
     "key": "Anahtar",
     "website": "Web sitesi",
-    "burn": "BURN İŞLEMLERİ"
+    "burn": "BURN İŞLEMLERİ",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {

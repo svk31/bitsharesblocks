@@ -280,7 +280,9 @@
     "date": "日期",
     "key": "公钥",
     "website": "网站",
-    "burn": "BURN OPERATIONS"
+    "burn": "BURN OPERATIONS",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {

@@ -27,7 +27,7 @@ angular.module('app')
 	function fetchAccounts(mostRecent, highestID, query) {
 		var deferred = $q.defer();
 		_getAccounts(mostRecent, highestID, query).then(function(result) {
-			result.accounts = wallOps(result.accounts);
+			result.accounts = accountInfo(result.accounts);
 			deferred.resolve(result);
 		});
 
@@ -89,7 +89,17 @@ angular.module('app')
 	function fetchAccount(name, id) {
 		var deferred = $q.defer();
 		_getAccount(name, id).then(function(result) {
-			deferred.resolve(wallOps(result));
+			if (result[0].hasSubs) {
+				var accounts = accountInfo(result);
+				api.getSubAccounts(accounts[0].name).success(function(subAccounts) {
+					accounts[0].subAccounts = subAccounts;
+					deferred.resolve(accounts);
+				});
+
+			} else {
+				deferred.resolve(accountInfo(result));
+			}
+
 		});
 		return deferred.promise;
 	}
@@ -102,7 +112,13 @@ angular.module('app')
 		return deferred.promise;
 	}
 
-	function wallOps(accounts) {
+	function accountInfo(accounts) {
+
+		if (accounts.length === 1) {
+			var parent = accounts[0].name.split('.');
+			accounts[0].parent = (parent.length > 1) ? parent[parent.length - 1] : undefined;
+		}
+
 		// Sum burn operations for each account
 		accounts.forEach(function(account, index) {
 			account.totalBurn = {};
@@ -136,7 +152,6 @@ angular.module('app')
 	function getBlockNumber(id) {
 		var deferred = $q.defer();
 		api.getBlockByTrx(id).success(function(result) {
-			console.log(result);
 			deferred.resolve(result._id);
 		});
 		return deferred.promise;
