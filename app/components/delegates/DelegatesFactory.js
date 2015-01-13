@@ -392,7 +392,7 @@ angular.module('app')
 			delegate.showWeekChange = true;
 		}
 		delegate.dayChange = (result.ranks.dayChange !== undefined) ? result.ranks.dayChange : 'n/a';
-		delegate.weekChange = (result.ranks.weekChange !== undefined) ? result.ranks.dayChange : 'n/a';
+		delegate.weekChange = (result.ranks.weekChange !== undefined) ? result.ranks.weekChange : 'n/a';
 
 		// Check version
 		delegate = checkVersion(delegate);
