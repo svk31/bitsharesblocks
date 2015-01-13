@@ -45,6 +45,33 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "charts.html",
       controller: 'chartsCtrl'
     })
+    .state('charts.prices', {
+      url: "/prices",
+      views: {
+        'charts-prices': {
+          templateUrl: "priceCharts.html",
+          controller: 'priceChartsCtrl'
+        }
+      }
+    })
+    .state('charts.transactions', {
+      url: "/transactions",
+      views: {
+        'charts-transactions': {
+          templateUrl: "transactionCharts.html",
+          controller: 'transactionChartsCtrl'
+        }
+      }
+    })
+    .state('charts.accounts', {
+      url: "/accounts",
+      views: {
+        'charts-accounts': {
+          templateUrl: "accountsCharts.html",
+          controller: 'accountsChartsCtrl'
+        }
+      }
+    })
     .state('assets', {
       url: "/assets",
       templateUrl: "allAssets.html",

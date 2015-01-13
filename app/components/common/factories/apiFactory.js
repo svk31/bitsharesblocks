@@ -143,14 +143,6 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    // api.getDelegates = function(cacheBoolean) {
-    //     return $http({
-    //         method: 'JSONP',
-    //         url: 'http://' + url + 'delegates' + cb,
-    //         cache: cacheBoolean
-    //     });
-    // };
-
     api.getDelegates = function(query) {
         return $http({
             method: 'JSONP',
@@ -235,11 +227,19 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp('http://' + url + 'blockstrx/new/' + lastBlock + cb);
     };
 
-    api.getVolume = function(cacheBoolean) {
+    // api.getVolume = function(cacheBoolean) {
+    //     return $http({
+    //         method: 'JSONP',
+    //         url: 'http://' + url + 'volume' + cb,
+    //         cache: cacheBoolean
+    //     });
+    // };
+
+    api.getCharts = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'volume' + cb,
-            cache: cacheBoolean
+            url: 'http://' + url + 'charts/' + JSON.stringify(query) + cb,
+            cache: true
         });
     };
 
