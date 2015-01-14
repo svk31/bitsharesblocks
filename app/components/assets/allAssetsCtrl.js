@@ -5,8 +5,10 @@ angular.module('app')
 
     $scope.tabs = [{
       active: true,
+      name: 'assets.market'
     }, {
-      active: false
+      active: false,
+      name: 'assets.user'
     }];
 
     var stopVolume;
@@ -44,7 +46,7 @@ angular.module('app')
     }
 
     fetchVolume();
-    stopVolume = $interval(fetchVolume, 2*60000);
+    stopVolume = $interval(fetchVolume, 2 * 60000);
 
     function getTranslations() {
       Translate.assets().then(function(result) {
@@ -81,12 +83,25 @@ angular.module('app')
       $state.go(route);
     };
 
-    if ($state.current.name === 'assets.user') {
-      $scope.tabs[0].active = false;
-      $scope.tabs[1].active = true;
-      $scope.goTo('assets.user');
-    } else {
-      $scope.goTo('assets.market');
+    $scope.$watch('$state.current.name', function(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        checkTabs();
+      }
+    });
+
+    function checkTabs() {
+      if ($state.current.name.split('.').length === 2) {
+        $scope.tabs.forEach(function(tab) {
+          if (tab.name === $state.current.name) {
+            tab.active = true;
+          } else {
+            tab.active = false;
+          }
+        });
+      }
     }
+
+    checkTabs();
+
   }
 ]);

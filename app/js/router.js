@@ -2,6 +2,8 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.when("/assets","/assets/market");
+  $urlRouterProvider.when("/charts","/charts/prices");
   //
   // Now set up the states
   $stateProvider
@@ -43,7 +45,8 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
     .state('charts', {
       url: "/charts",
       templateUrl: "charts.html",
-      controller: 'chartsCtrl'
+      controller: 'chartsCtrl',
+      abstract: true
     })
     .state('charts.prices', {
       url: "/prices",
@@ -75,7 +78,8 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
     .state('assets', {
       url: "/assets",
       templateUrl: "allAssets.html",
-      controller: 'assetsCtrl'
+      controller: 'assetsCtrl',
+      abstract: true
     })
     .state('assets.market', {
       url: "/market",

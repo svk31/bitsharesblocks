@@ -18,18 +18,25 @@ angular.module('app')
       $state.go(route);
     };
 
-    if ($state.current.name.split('.').length === 2) {
-      $scope.tabs.forEach(function(tab) {
-        if (tab.name === $state.current.name) {
-          tab.active = true;
-          $scope.goTo($state.current.name);
-        } else {
-          tab.active = false;
-        }
-      });
-    } else {
-      $scope.goTo('charts.prices');
+    $scope.$watch('$state.current.name', function(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        checkTabs();
+      }
+    });
+
+    function checkTabs() {
+      if ($state.current.name.split('.').length === 2) {
+        $scope.tabs.forEach(function(tab) {
+          if (tab.name === $state.current.name) {
+            tab.active = true;
+          } else {
+            tab.active = false;
+          }
+        });
+      }
     }
+
+    checkTabs();
 
 
   }
