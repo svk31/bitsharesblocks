@@ -317,13 +317,16 @@ angular.module('app')
 				}
 			}
 			asset.shortSum = temp;
+			if (asset.shortSum[0][1] === 0) {
+				asset.shortSum.splice(0, 1);
+			}
 			asset.shortSum = flattenArray(asset.shortSum, true);
+
 		}
 
 		// Asks and bids
-		asset.sum.asks = flattenArray(asset.sum.asks, false);
+		asset.sum.asks = flattenArray(asset.sum.asks, false, true);
 		asset.sum.bids = flattenArray(asset.sum.bids, false);
-
 		return asset;
 	}
 
@@ -332,18 +335,24 @@ angular.module('app')
 		var orderBookArray = [];
 		var maxStep;
 		if (inverse) {
-			if (array.length) {
+			array.sort(function(a,b) {
+				return a[0]-b[0];
+			});
+			if (array && array.length) {
 				var arrayLength = array.length - 1;
 				orderBookArray.unshift([array[arrayLength][0], array[arrayLength][1]]);
-				for (i = arrayLength; i > 0; i--) {
-					maxStep = Math.min((array[i][0] - array[i - 1][0]) / 2, 0.001);
-					orderBookArray.unshift([array[i][0] - maxStep, array[i - 1][1]]);
+				for (i = arrayLength - 1; i > 0; i--) {
+					maxStep = Math.min((array[i][0] - array[i - 1][0]) / 2, 0.00001);
+					orderBookArray.unshift([array[i][0] + maxStep, array[i + 1][1]]);
 					if (sumBoolean) {
 						array[i][1] += array[i - 1][1];
 					}
 					orderBookArray.unshift([array[i][0], array[i][1]]);
 				}
 
+				if (orderBookArray.length === 1) {
+					orderBookArray.unshift([0, orderBookArray[0][1]]);
+				}
 			}
 		} else {
 			if (array && array.length) {
@@ -357,6 +366,10 @@ angular.module('app')
 					}
 					orderBookArray.push([array[i][0], array[i][1]]);
 				}
+			}
+
+			if (orderBookArray.length === 1) {
+				orderBookArray.push([orderBookArray[0][0] * 2, orderBookArray[0][1]]);
 			}
 		}
 		return orderBookArray;
