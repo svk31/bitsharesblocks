@@ -349,6 +349,12 @@
       "med": "가격정보 중위값",
       "null": "지난 24시간동안 가격정보 불충분",
       "last": "최종 업데이트 (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {

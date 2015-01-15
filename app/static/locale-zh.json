@@ -349,6 +349,12 @@
       "med": "喂价种子中位数",
       "null": "过去24小时没有足够的种子数",
       "last": "最后的更新(UTC时间)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {

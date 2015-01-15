@@ -349,6 +349,12 @@
       "med": "Medyan Feed Fiyatı",
       "null": "Son 24 saatte yeterli feed yok",
       "last": "Son güncelleme (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {

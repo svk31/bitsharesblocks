@@ -14,6 +14,10 @@ angular.module('app')
 		};
 	}
 
+	function _getPriceRatio(asset, baseAsset) {
+		return getPrecision(baseAsset) / getPrecision(asset);
+	}
+
 	function getPrecision(id) {
 		if (id === 0) {
 			return basePrecision;
@@ -151,6 +155,7 @@ angular.module('app')
 				decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
 				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
 				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
+
 			}
 		} else {
 			for (i = 0; i < assets.length; i++) {
@@ -285,15 +290,22 @@ angular.module('app')
 			wall.price = medianFeed;
 			asset.shortSum = [];
 
+			// Split orders with and without price limit
 			for (i = 0; i < asset.shorts.length; i++) {
 				if (asset.shorts[i].price_limit === 'None' || asset.shorts[i].price_limit >= wall.price) {
 					wall.amount += asset.shorts[i].collateral * wall.price / 2;
+					// asset.shorts[i].amountAsset = asset.shorts[i].collateral * wall.price / 2;
 				} else if (i > 0) {
+					
 					if (asset.shorts[i - 1].price_limit === asset.shorts[i].price_limit) {
-						asset.shorts[i - 1][1] += asset.shorts[i].collateral / 2;
+						console.log(asset.shortSum[i-1]);
+						asset.shortSum[i - 1][1] += asset.shorts[i].collateral / 2;
+						console.log(asset.shortSum[i-1]);
 					} else {
 						asset.shortSum.push([1 / asset.shorts[i].price_limit, asset.shorts[i].collateral / 2]);
 					}
+					
+					// asset.shorts[i].amountAsset = asset.shorts[i].collateral * wall.price / 2;
 				} else {
 					asset.shortSum.push([1 / asset.shorts[i].price_limit, asset.shorts[i].collateral / 2]);
 				}
@@ -302,6 +314,7 @@ angular.module('app')
 			var temp = [];
 			asset.shortSum.push([1 / wall.price, wall.amount]);
 
+			// Sort in ascending order
 			asset.shortSum.sort(function(a, b) {
 				return a[0] - b[0];
 			});
@@ -309,6 +322,7 @@ angular.module('app')
 			temp.push([asset.shortSum[0][0], asset.shortSum[0][1]]);
 
 			var sum = 0;
+			// Sum orders at same price
 			for (i = 1; i < asset.shortSum.length; i++) {
 				if (asset.shortSum[i - 1][0] === asset.shortSum[i][0]) {
 					temp[temp.length - 1][1] += asset.shortSum[i][1];
@@ -327,6 +341,25 @@ angular.module('app')
 		// Asks and bids
 		asset.sum.asks = flattenArray(asset.sum.asks, false, true);
 		asset.sum.bids = flattenArray(asset.sum.bids, false);
+
+		// Sort and limit covers
+		if (asset.covers) {
+			asset.covers.sort(function(a, b) {
+				return (new Date(a.expiration)) - (new Date(b.expiration));
+			});
+
+			asset.covers = asset.covers.filter(function(entry, i) {
+				return i < 10;
+			});
+		}
+
+		asset.covers.forEach(function(cover) {
+			cover.callPrice = 1 / (cover.market_index.order_price.ratio * _getPriceRatio(cover.market_index.order_price.quote_asset_id, cover.market_index.order_price.base_asset_id));
+			cover.collateral = cover.collateral / getPrecision(0);
+			cover.owed = cover.state.balance / getPrecision(cover.market_index.order_price.quote_asset_id);
+			cover.interest = cover.interest_rate.ratio * 100;
+		});
+
 		return asset;
 	}
 
@@ -335,14 +368,14 @@ angular.module('app')
 		var orderBookArray = [];
 		var maxStep;
 		if (inverse) {
-			array.sort(function(a,b) {
-				return a[0]-b[0];
+			array.sort(function(a, b) {
+				return a[0] - b[0];
 			});
 			if (array && array.length) {
 				var arrayLength = array.length - 1;
 				orderBookArray.unshift([array[arrayLength][0], array[arrayLength][1]]);
 				for (i = arrayLength - 1; i > 0; i--) {
-					maxStep = Math.min((array[i][0] - array[i - 1][0]) / 2, 0.00001);
+					maxStep = Math.min((array[i][0] - array[i - 1][0]) / 2, 0.000001);
 					orderBookArray.unshift([array[i][0] + maxStep, array[i + 1][1]]);
 					if (sumBoolean) {
 						array[i][1] += array[i - 1][1];

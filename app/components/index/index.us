@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/app.css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.1/react.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="js/app.js"></script>
     

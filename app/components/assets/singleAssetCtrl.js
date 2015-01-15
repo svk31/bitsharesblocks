@@ -6,8 +6,8 @@ angular.module('app')
     $scope.orderByField = 'last_update';
     $scope.reverseSort = true;
     $scope.assetId = $state.params.id;
-    var prefix = 'bit',
-      marketAsset = true;
+    $scope.prefix = 'bit';
+    var marketAsset = true;
     var translations;
 
     $scope.filteredFeeds = [];
@@ -47,7 +47,7 @@ angular.module('app')
       useHighStocks: false,
       series: series,
       size: {
-        height: 300
+        height: 250
       },
       xAxis: {
         title: {
@@ -192,7 +192,7 @@ angular.module('app')
         },
         labels: {
           formatter: function() {
-            return $filter('currency')(this.value, '', 0) + ' ' + prefix + $scope.assetId;
+            return $filter('currency')(this.value, '', 0) + ' ' + $scope.prefix + $scope.assetId;
           },
           align: 'right',
           style: {
@@ -213,16 +213,22 @@ angular.module('app')
       Assets.fetchAsset($scope.assetId).then(function(result) {
         marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
         $scope.asset = result.asset;
+
+        if ($scope.asset.symbol.indexOf('BTC') !== -1 || $scope.asset.symbol.indexOf('GOLD') !== -1) {
+          $scope.assetDecimals = 6;
+        } else {
+          $scope.assetDecimals = 3;
+        }
+
         $scope.averagefeed = result.averageFeed;
         $scope.filteredFeeds = result.feeds;
         $scope.medianLine = result.medianLine;
-        // $scope.medianFeed = result.medianFeed;
         $scope.collateral = result.collateral;
-        $scope.collateralAsset = result.collateralAsset;        
+        $scope.collateralAsset = result.collateralAsset;
 
         if (!marketAsset && $scope.orderBookChart.series.length === 3) {
           $scope.orderBookChart.series.pop();
-          prefix = '';
+          $scope.prefix = '';
         }
         if (result.asset.asks.length === 0 && result.asset.bids.length === 0 && result.asset.shorts.length === 0) {
           $scope.showOrders = false;
@@ -321,22 +327,22 @@ angular.module('app')
 
     function chartText() {
 
-      $scope.orderBookChart.xAxis.title.text = 'BTS/' + prefix + $scope.assetId;
+      $scope.orderBookChart.xAxis.title.text = 'BTS/' + $scope.prefix + $scope.assetId;
 
 
       if ($scope.priceHistoryChart.series[2]) {
         $scope.priceHistoryChart.series[2].tooltip.valueSuffix = ' BTS/' + $scope.assetId;
       }
 
-      $scope.priceHistoryChart.series[0].tooltip.valueSuffix = ' BTS/' + prefix + $scope.assetId;
+      $scope.priceHistoryChart.series[0].tooltip.valueSuffix = ' BTS/' + $scope.prefix + $scope.assetId;
       $scope.priceHistoryChart.series[1].tooltip.valueSuffix = ' BTS';
 
 
       if (marketAsset) {
-        $scope.supplyChart.series[1].tooltip.valueSuffix = ' ' + prefix + $scope.assetId;
+        $scope.supplyChart.series[1].tooltip.valueSuffix = ' ' + $scope.prefix + $scope.assetId;
       }
 
-      $scope.supplyChart.series[0].tooltip.valueSuffix = ' ' + prefix + $scope.assetId;
+      $scope.supplyChart.series[0].tooltip.valueSuffix = ' ' + $scope.prefix + $scope.assetId;
 
       if ($scope.assetId === 'BTC' || $scope.assetId === 'GLD') {
         $scope.priceHistoryChart.series[0].tooltip.valueDecimals = 0;
@@ -371,8 +377,8 @@ angular.module('app')
     function getTranslations() {
       Translate.asset().then(function(result) {
         translations = result;
-        $scope.orderBookChart.series[0].name = result['asset.buy'] + ' ' + prefix + $scope.assetId;
-        $scope.orderBookChart.series[1].name = result['asset.sell'] + ' ' + prefix + $scope.assetId;
+        $scope.orderBookChart.series[0].name = result['asset.buy'] + ' ' + $scope.prefix + $scope.assetId;
+        $scope.orderBookChart.series[1].name = result['asset.sell'] + ' ' + $scope.prefix + $scope.assetId;
         $scope.orderBookChart.xAxis.plotLines[0].label.text = result['asset.feeds.med'];
         $scope.supplyChart.series[0].name = result['asset.chartSupply'];
         $scope.supplyChart.yAxis.title.text = result['asset.chartSupply'];
@@ -380,7 +386,7 @@ angular.module('app')
 
         $scope.priceHistoryChart.series[1].name = result['asset.volume'];
         if ($scope.asset.issuer_account_id === -2) {
-          $scope.orderBookChart.series[2].name = result['asset.short'] + ' ' + prefix + $scope.assetId;
+          $scope.orderBookChart.series[2].name = result['asset.short'] + ' ' + $scope.prefix + $scope.assetId;
           $scope.supplyChart.series[1].name = result['asset.collateral'];
         }
 

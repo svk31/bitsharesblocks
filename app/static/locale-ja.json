@@ -346,6 +346,12 @@
       "med": "中央値フィードプライス",
       "null": "最近２４時間の間フィード不十分",
       "last": "最終アップデート(UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {

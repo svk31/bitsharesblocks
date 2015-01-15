@@ -350,6 +350,12 @@
       "med": "Prix median dex flux",
       "null": "Pas assez de flux dans les derniers 24 heures",
       "last": "Dernier mise à jour (UTC)"
+    },
+    "covers": {
+      "title": "APPELS DE MARGE",
+      "price": "Prix d'appel",
+      "owed": "Dû",
+      "expiration": "Date d'expiration"
     }
   },
   "charts": {

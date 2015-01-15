@@ -349,6 +349,12 @@
       "med": "Mediana del Precio del Feed",
       "null": "Sin suficientes feeds en las últimas 24hrs",
       "last": "Última actualización (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {

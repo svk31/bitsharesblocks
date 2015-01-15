@@ -371,6 +371,12 @@ angular.module('app.services', [])
 				"med": "Median Feed Price",
 				"null": "Not enough feeds in the last 24hrs",
 				"last": "Last update (UTC)"
+			},
+			"covers": {
+				"title": "MARGIN CALL ORDERS",
+				"price": "Call price",
+				"owed": "Owed",
+				"expiration": "Expiration date"
 			}
 		},
 		"charts": {
