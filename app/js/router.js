@@ -2,8 +2,8 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/home");
-  $urlRouterProvider.when("/assets","/assets/market");
-  $urlRouterProvider.when("/charts","/charts/prices");
+  $urlRouterProvider.when("/assets", "/assets/market");
+  $urlRouterProvider.when("/charts", "/charts/prices");
   //
   // Now set up the states
   $stateProvider
@@ -75,6 +75,15 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('charts.supply', {
+      url: "/supply",
+      views: {
+        'charts-supply': {
+          templateUrl: "supplyCharts.html",
+          controller: 'supplyCtrl'
+        }
+      }
+    })
     .state('assets', {
       url: "/assets",
       templateUrl: "allAssets.html",
@@ -131,11 +140,6 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       url: "/genesis-btsx",
       templateUrl: "genesis-btsx.html",
       controller: 'genesisBTSXCtrl'
-    })
-    .state('supply', {
-      url: "/supply",
-      templateUrl: "supply.html",
-      controller: 'supplyCtrl'
     })
     .state('home', {
       url: "/home",

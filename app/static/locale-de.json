@@ -360,7 +360,11 @@
       "trxCount": "BTS ANZAHL AN TRANSAKTIONEN",
       "volume": "BTS TRANSAKTIONSVOLUMEN",
       "btcPrice": "BTS/BTC PREISVERLAUF",
-      "usdPrice": "PREISVERLAUF"
+      "usdPrice": "PREISVERLAUF",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS"
     },
     "value": "Wert",
     "reg": "Kontoregistrierung",
@@ -372,13 +376,13 @@
   },
   "supply": {
     "title1": "INFO",
-    "title2": "VERFÜGBARKEITSÄNDERUNG",
+    "title2": "ANNUALIZED DAILY INFLATION",
     "title3": "VERFÜGBARKEIT VON BTS",
     "title4": "BTS GEBPHREN ÜBER DER ZEIT",
     "height": "Blockhöhe BTSX => BTS Harte Aufspaltung",
     "supply": "Verfügbarkeit zur Aufspaltung",
     "change": "Änderung der Verfügbarkeit seit der harten Aufspaltung",
-    "changeY": "BTS VERFÜGBARKEITSÄNDERUNG",
+    "changeY": "BTS annualized inflation",
     "supplyY": "BTS VERFÜGBARKEIT",
     "feesY": "BTS Gebühren"
   },

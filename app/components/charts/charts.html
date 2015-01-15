@@ -1,18 +1,23 @@
 <div class="col-md-8 col-md-offset-2 assets">
   <tabset>
       <tab style="cursor:pointer;" ng-click="goTo('charts.prices')" active="tabs[0].active">
-        <tab-heading style="cursor:pointer;">PRICE CHARTS</tab-heading>
+        <tab-heading style="cursor:pointer;">{{ 'charts.titles.prices' | translate }}</tab-heading>
         <div ui-view="charts-prices"></div>
       </tab>
 
       <tab style="cursor:pointer;" ng-click="goTo('charts.transactions')" active="tabs[1].active">
-        <tab-heading style="cursor:pointer;">TRANSACTION CHARTS</tab-heading>
+        <tab-heading style="cursor:pointer;">{{ 'charts.titles.trx' | translate }}</tab-heading>
         <div ui-view="charts-transactions"></div>
       </tab>
 
       <tab style="cursor:pointer;" ng-click="goTo('charts.accounts')" active="tabs[2].active">
-        <tab-heading style="cursor:pointer;">ACCOUNTS CHARTS</tab-heading>
+        <tab-heading style="cursor:pointer;">{{ 'charts.titles.accounts' | translate }}</tab-heading>
         <div ui-view="charts-accounts"></div>
+      </tab>
+
+      <tab style="cursor:pointer;" ng-click="goTo('charts.supply')" active="tabs[3].active">
+        <tab-heading style="cursor:pointer;">{{ 'charts.titles.supply' | translate }}</tab-heading>
+        <div ui-view="charts-supply"></div>
       </tab>
   </tabset>
 </div>

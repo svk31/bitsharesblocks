@@ -54,7 +54,7 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
-                  <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li>
+                  <!-- <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li> -->
                   <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
                   <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li>
                 </ul>
@@ -91,7 +91,7 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
-                  <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li>
+                  <!-- <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li> -->
                   <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
                   <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li>
                 </ul>

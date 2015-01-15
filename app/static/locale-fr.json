@@ -361,7 +361,11 @@
       "trxCount": "NOMBRE DE TRANSACTION BTS",
       "volume": "VOLUME DES TRANSACTIONS BTS",
       "btcPrice": "HISTORIQUE DU PRIX BTS/BTC",
-      "usdPrice": "HISTORIQUE DU PRIX"
+      "usdPrice": "HISTORIQUE DU PRIX",
+      "prices": "TRACES DE PRIX",
+      "trx": "TRACÉS DES TRANSACTIONS",
+      "accounts": "TRACÉS DES COMPTES",
+      "supply": "TRACÉS DES RÉSERVES"
     },
     "value": "Valeur",
     "reg": "Inscription de compte",
@@ -373,13 +377,13 @@
   },
   "supply": {
     "title1": "INFO",
-    "title2": "CHANGEMENT DE RÉSERVE DEPUIS LE BRANCHEMENT BTS",
+    "title2": "INFLATION JOURNALIÈRE ANNUALISÉ DEPUIS LE BRANCHEMENT BTS",
     "title3": "RÉSERVE TOTAL DE BTS",
     "title4": "FRAIS DE BTS PAYÉS",
     "height": "Hauteur de block du branchement BTSX => BTS",
     "supply": "Réserve au moment du branchement",
     "change": "Changement de réserve depuis le branchement",
-    "changeY": "BTS changement de réserve",
+    "changeY": "BTS inflation annualisé",
     "supplyY": "BTS réserve",
     "feesY": "BTS frais"
   },

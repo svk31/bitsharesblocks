@@ -382,7 +382,11 @@ angular.module('app.services', [])
 				"trxCount": "BTS NUMBER OF TRANSACTIONS",
 				"volume": "BTS TRANSACTION VOLUME",
 				"btcPrice": "BTS/BTC PRICE HISTORY",
-				"usdPrice": "PRICE HISTORY"
+				"usdPrice": "PRICE HISTORY",
+				"prices": "PRICE CHARTS",
+				"trx": "TRANSACTION CHARTS",
+				"accounts": "ACCOUNTS CHARTS",
+				"supply": "SUPPLY CHARTS"
 			},
 			"value": "Value",
 			"reg": "Account registration",
@@ -394,13 +398,13 @@ angular.module('app.services', [])
 		},
 		"supply": {
 			"title1": "INFO",
-			"title2": "SUPPLY CHANGE AFTER BTS HARDFORK",
+			"title2": "ANNUALIZED DAILY INFLATION",
 			"title3": "TOTAL SUPPLY OF BTS",
 			"title4": "BTS FEES PAID OVER TIME",
 			"height": "Height of BTSX => BTS hardfork block",
 			"supply": "Supply at fork",
 			"change": "Change in supply since the hardfork",
-			"changeY": "BTS supply change",
+			"changeY": "BTS annualized inflation",
 			"supplyY": "BTS supply",
 			"feesY": "BTS fees"
 		},

@@ -64,7 +64,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	function home() {
 		var deferred = $q.defer();
 		$translate.use(_currentKey).then(function(result) {
-			$translate(['home.price', 'home.MA', 'home.burns.recent','home.burns.largest']).then(function(result) {
+			$translate(['home.price', 'home.MA', 'home.burns.recent', 'home.burns.largest']).then(function(result) {
 				deferred.resolve({
 					price: result['home.price'],
 					ma: result['home.MA'],
@@ -154,7 +154,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	function assets() {
 		var deferred = $q.defer();
 		var translations = {};
-		var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th3','assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'assets.market.th8', 'delegates.filter'];
+		var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th3', 'assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'assets.market.th8', 'delegates.filter'];
 
 		$translate.use(_currentKey).then(function(result) {
 			$translate(userHeaders).then(function(result) {
@@ -255,7 +255,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		var deferred = $q.defer();
 		$translate.use(_currentKey)
 			.then(function(result) {
-				$translate(['apiModal.title', 'apiModal.body', 'apiModal.close','apiModal.auto','apiModal.new_york','apiModal.singapore'])
+				$translate(['apiModal.title', 'apiModal.body', 'apiModal.close', 'apiModal.auto', 'apiModal.new_york', 'apiModal.singapore'])
 					.then(function(result) {
 						deferred.resolve({
 							title: result["apiModal.title"],
@@ -264,6 +264,22 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 							auto: result["apiModal.auto"],
 							new_york: result["apiModal.new_york"],
 							singapore: result["apiModal.singapore"]
+						});
+					});
+			});
+		return deferred.promise;
+	}
+
+	function supply() {
+		var deferred = $q.defer();
+		$translate.use(_currentKey)
+			.then(function(result) {
+				$translate(['supply.changeY', 'supply.supplyY', 'supply.feesY'])
+					.then(function(result) {
+						deferred.resolve({
+							inflationY: result["supply.changeY"],
+							supplyY: result["supply.supplyY"],
+							feesY: result["supply.feesY"],
 						});
 					});
 			});
@@ -284,7 +300,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		asset: asset,
 		charts: charts,
 		genesis: genesis,
-		apiModal: apiModal
+		apiModal: apiModal,
+		supply: supply
 	};
 
 }]);

@@ -360,7 +360,11 @@
       "trxCount": "BTS 거래 수",
       "volume": "BTS 거래량",
       "btcPrice": "BTS/BTC 시세 추이",
-      "usdPrice": "시세 추이"
+      "usdPrice": "시세 추이",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS"
     },
     "value": "Value",
     "reg": "계정 등록",
@@ -378,7 +382,7 @@
     "height": "BTSX => BTS 하드포크 블럭번호",
     "supply": "하드포크시 공급량",
     "change": "하드포크 이후 공급량 변화",
-    "changeY": "BTS 공급량 변화",
+    "changeY": "BTS annualized inflation",
     "supplyY": "BTS 공급량",
     "feesY": "BTS 수수료"
   },

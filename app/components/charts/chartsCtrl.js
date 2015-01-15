@@ -12,6 +12,9 @@ angular.module('app')
     }, {
       active: false,
       name: 'charts.accounts'
+    }, {
+      active: false,
+      name: 'charts.supply'
     }];
 
     $scope.goTo = function(route) {

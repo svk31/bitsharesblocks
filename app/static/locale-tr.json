@@ -360,7 +360,11 @@
       "trxCount": "BTS İŞLEM SAYISI",
       "volume": "BTS İŞLEM HACMİ",
       "btcPrice": "BTS/BTC FİYAT GEÇMİŞİ",
-      "usdPrice": "FİYAT GEÇMİŞİ"
+      "usdPrice": "FİYAT GEÇMİŞİ",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS"
     },
     "value": "Değer",
     "reg": "Hesap kaydı",
@@ -378,7 +382,7 @@
     "height": "BTSX yüksekliği => BTS hardfork bloğu",
     "supply": "Fork anındaki arz",
     "change": "Hardfork sonrası arz değişimi",
-    "changeY": "BTS arz değişimi",
+    "changeY": "BTS annualized inflation",
     "supplyY": "BTS arzı",
     "feesY": "BTS ücretleri"
   },

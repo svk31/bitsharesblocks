@@ -360,7 +360,11 @@
       "trxCount": "NUMEROS DE TRANSACCIONES BTS",
       "volume": "VOLUMEN TRANSACCIONES BTS",
       "btcPrice": "PRECIO HISTORICO BTS/BTC",
-      "usdPrice": "PRECIO HISTORICO"
+      "usdPrice": "PRECIO HISTORICO",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS"
     },
     "value": "Valor",
     "reg": "Registro de cuenta",
@@ -378,7 +382,7 @@
     "height": "Altura de BTSX => Bloque del hardfork de BTS",
     "supply": "Oferta en el fork",
     "change": "Cambio en la oferta desde el hardfork",
-    "changeY": "Cambio de oferta de BTS",
+    "changeY": "BTS annualized inflation",
     "supplyY": "Oferta BTS",
     "feesY": "Comisiones BTS"
   },
