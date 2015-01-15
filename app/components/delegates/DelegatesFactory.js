@@ -346,8 +346,12 @@ angular.module('app')
 				var deltaPatch = patch - _versions.patch;
 				var deltaPremajor = premajor - _versions.premajor;
 
-				if (deltaMajor >= 0) {
-					if (deltaMinor >= 0) {
+				if (deltaMajor > 0) {
+					delegate.version = 1;
+				} else if (deltaMajor === 0) {
+					if (deltaMinor > 0) {
+						delegate.version = 1;
+					} else if (deltaMinor === 0) {
 						if (deltaPatch >= 0) {
 							if (deltaPremajor >= 0) {
 								delegate.version = 1;
@@ -431,7 +435,7 @@ angular.module('app')
 		var startDate = new Date(delegate.reg_date_ISO).getTime();
 		if (result.withdrawals) {
 			withLength = result.withdrawals.length;
-			
+
 			if (withLength > 0) {
 				result.withdrawals.unshift([startDate, 0]);
 				result.withdrawals.push([currentDate.getTime(), result.withdrawals[result.withdrawals.length - 1][1] + delegate.delegate_info.pay_balance]);
