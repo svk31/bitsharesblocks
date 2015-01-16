@@ -7,6 +7,8 @@ angular.module('app')
     $scope.votes = [];
     $scope.issuerName = {};
     $scope.types = {};
+    $scope.orderByField = 'delegate';
+    $scope.reverseSort = false;
 
     var i, j;
 
@@ -39,9 +41,13 @@ angular.module('app')
             }
           }
         }
-
       });
     }
+
+    $scope.sort = function(input) {
+      $scope.orderByField = input;
+      $scope.reverseSort = !$scope.reverseSort;
+    };
 
     function identifyAccount(id, i) {
       Accounts.getAccountName(id).then(function(account) {

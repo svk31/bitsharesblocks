@@ -184,12 +184,12 @@
 					<td ng-if="transaction.length !== undefined" style="padding-top:0.75em;"><span ng-show="transaction.length>0" id="dropdown" ng-click="status.open[$index]= !status.open[$index]"><i style="cursor: pointer;" class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open[$index], 'glyphicon-chevron-right': !status.open[$index]}"></i></span></td>
 				</tr>
 				<tr ng-if="status.open[$index]">
-					<th>{{ 'block.trx.amount' | translate }}:</th>
-					<th ng-if="transaction.length !== undefined">{{ 'block.trx.for' | translate }}:</th>
+					<th ng-click="sort('amount')" class="sortable hidden-xs"><ng-sort-arrows order-string="amount" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.amount' | translate }}:</th>
+					<th ng-if="transaction.length !== undefined" ng-click="sort('delegate')" class="sortable hidden-xs"><ng-sort-arrows order-string="delegate" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.for' | translate }}:</th>
 				</tr>
 			</thead>
 			<tbody ng-if="status.open[$index] || (transaction.length===undefined)">
-				<tr ng-repeat="vote in transaction track by $index">
+				<tr ng-repeat="vote in transaction | orderBy: orderByField:reverseSort track by $index">
 					<td ng-if="vote !=='None'">{{(vote.amount)  | number:3}}: </td>
 					<td ng-if="vote ==='None'">{{ 'block.trx.noVotes' | translate }} </td>
 					<td ng-if="vote!=='None'"><a ui-sref="delegate({ 'name' : vote.delegate })">{{ vote.delegate }}</a></td>
