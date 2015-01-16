@@ -114,11 +114,10 @@
 					<td>{{ 'block.trx.assetName' | translate }}:</td>
 					<td><a ui-sref="asset({ 'id' : trxInfo[$index].assetName })"> {{trxInfo[$index].assetName}}</a></td>
 				</tr>
-				<tr ng-if="trxInfo[$index].trxCode<4">
+				<tr ng-if="trxInfo[$index].trxCode<4 && trxInfo[$index].trxCode!==2">
 					<td>{{ 'block.trx.base' | translate }}:</td>
 					<td>{{trxInfo[$index].amountBase | number:3}} {{trxInfo[$index].baseAssetName}}</td>
 				</tr>
-
 				<tr ng-if="trxInfo[$index].trxCode===6">
 					<td>{{ 'block.trx.amount' | translate }}:</td>
 					<td>{{trxInfo[$index].amount | number:2}} {{getAssetName(trx[$index][1].asset)}}</td>
@@ -145,9 +144,9 @@
 					<td ng-if="issuerName[$index] === 'MARKET'">{{issuerName[$index]}}</td>
 					<td ng-if="issuerName[$index] !== 'MARKET'"><a ui-sref="account({ 'name' : issuerName[$index] })" >{{issuerName[$index]}}</a></td>
 				</tr>
-				<tr ng-if="trxInfo[$index].trxCode===10">
+				<tr ng-if="trxInfo[$index].trxCode===10 || trxInfo[$index].trxCode===2">
 					<td>{{ 'block.trx.collateral' | translate }}:</td>
-					<td>{{trxInfo[$index].amountBase | number:3}} BTS</td>
+					<td>{{trxInfo[$index].amountBase | number:2}} BTS</td>
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode===11">
 					<td>{{ 'delegate.info.withdrawn' | translate }}:</td>
@@ -182,15 +181,15 @@
 			<thead >
 				<tr>
 					<td style="padding-top:0.75em;"><strong>{{ 'block.trx.votes' | translate }}: {{transaction.length}}</strong></td>
-					<td ng-if="transaction.length !== undefined" style="padding-top:0.75em;"><span ng-show="transaction.length>0" id="dropdown" ng-click="status.open[$index]= !status.open[$index]"><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open[$index], 'glyphicon-chevron-right': !status.open[$index]}"></i></span></td>
+					<td ng-if="transaction.length !== undefined" style="padding-top:0.75em;"><span ng-show="transaction.length>0" id="dropdown" ng-click="status.open[$index]= !status.open[$index]"><i style="cursor: pointer;" class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open[$index], 'glyphicon-chevron-right': !status.open[$index]}"></i></span></td>
 				</tr>
 				<tr ng-if="status.open[$index]">
-					<th>{{ 'block.trx.amount' | translate }}:</th>
-					<th ng-if="transaction.length !== undefined">{{ 'block.trx.for' | translate }}:</th>
+					<th ng-click="sort('amount')" class="sortable hidden-xs"><ng-sort-arrows order-string="amount" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.amount' | translate }}:</th>
+					<th ng-if="transaction.length !== undefined" ng-click="sort('delegate')" class="sortable hidden-xs"><ng-sort-arrows order-string="delegate" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.for' | translate }}:</th>
 				</tr>
 			</thead>
 			<tbody ng-if="status.open[$index] || (transaction.length===undefined)">
-				<tr ng-repeat="vote in transaction track by $index">
+				<tr ng-repeat="vote in transaction | orderBy: orderByField:reverseSort track by $index">
 					<td ng-if="vote !=='None'">{{(vote.amount)  | number:3}}: </td>
 					<td ng-if="vote ==='None'">{{ 'block.trx.noVotes' | translate }} </td>
 					<td ng-if="vote!=='None'"><a ui-sref="delegate({ 'name' : vote.delegate })">{{ vote.delegate }}</a></td>

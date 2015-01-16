@@ -26,6 +26,15 @@
     "version": "Client Version",
     "language": "Sprache"
   },
+  "apiModal": {
+    "title": "Change API server",
+    "body": "You are automatically assigned an API server close to you, but if you are experiencing issues you may manually select a new API server here:",
+    "close": "Close",
+    "auto": "Automatic (default)",
+    "new_york": "New York, USA",
+    "singapore": "Singapore",
+    "api": "API"
+  },
   "home": {
     "history": "BTS PREIS HISTORIE ZULETZT 14 TAGE",
     "price": "Preis",
@@ -85,6 +94,11 @@
     },
     "newUsers": {
       "title": "NEUE KONTEN"
+    },
+    "burns": {
+      "title": "BURN-BOX",
+      "recent": "Most recent burns",
+      "largest": "Largest burns"
     }
   },
   "blocks": {
@@ -151,13 +165,14 @@
       "asset_create": "Create asset",
       "asset_issue": "Issue asset",
       "add_collateral": "Add collateral",
-      "withdraw_pay": "Delegate pay withdrawal"
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types"
     }
   },
   "delegates": {
     "search": "Finde einen Delegierten",
     "title": "DELEGIERTE INFOS",
-    "standby": "Auch Standy Delegierte anzeigen",
     "rank": "Rang",
     "change24": "24h Änderung",
     "change7": "7d Änderung",
@@ -170,7 +185,10 @@
     "feedFreq": "Häufigtkeit der Feeds",
     "rel": "Verfügbarkeit",
     "version": "Version",
-    "filter": "filter"
+    "filter": "filter",
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Standby Delegierte anzeigen"
   },
   "delegate": {
     "prevRank": "Verheriger Rang",
@@ -262,7 +280,9 @@
     "date": "Datum",
     "key": "Schlüssel",
     "website": "Webseite",
-    "burn": "BURN OPERATIONS"
+    "burn": "BURN OPERATIONS",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {
@@ -281,12 +301,14 @@
       "th5": "Mittlerer Feedpreis",
       "th6": "Share Verfügbarkeit",
       "th7": "24h Volumen",
-      "th8": "Market Cap"
+      "th8": "Market Cap",
+      "yield": "Yield"
     },
     "user": {
       "show": "Show user issued assets",
       "title": "NUTZER-DEFINIERTE ASSETS",
       "th1": "Asset ID",
+      "th3": "24hr Average Price",
       "th4": "Aktuelle Verfügbarkeit",
       "th5": "Maximale Verfügbarkeit",
       "th6": "Initialized"
@@ -327,6 +349,12 @@
       "med": "Median Feed Preis",
       "null": "Ungenügend Feeds in den letzten 24h",
       "last": "Letzte Aktualisierung  (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {
@@ -338,7 +366,11 @@
       "trxCount": "BTS ANZAHL AN TRANSAKTIONEN",
       "volume": "BTS TRANSAKTIONSVOLUMEN",
       "btcPrice": "BTS/BTC PREISVERLAUF",
-      "usdPrice": "PREISVERLAUF"
+      "usdPrice": "PREISVERLAUF",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS"
     },
     "value": "Wert",
     "reg": "Kontoregistrierung",
@@ -350,13 +382,13 @@
   },
   "supply": {
     "title1": "INFO",
-    "title2": "VERFÜGBARKEITSÄNDERUNG",
+    "title2": "ANNUALIZED DAILY INFLATION",
     "title3": "VERFÜGBARKEIT VON BTS",
     "title4": "BTS GEBPHREN ÜBER DER ZEIT",
     "height": "Blockhöhe BTSX => BTS Harte Aufspaltung",
     "supply": "Verfügbarkeit zur Aufspaltung",
     "change": "Änderung der Verfügbarkeit seit der harten Aufspaltung",
-    "changeY": "BTS VERFÜGBARKEITSÄNDERUNG",
+    "changeY": "BTS annualized inflation",
     "supplyY": "BTS VERFÜGBARKEIT",
     "feesY": "BTS Gebühren"
   },
@@ -371,6 +403,7 @@
     "higher": "Adressen mit Beträgen größer als",
     "percent": "PROZENT DER VERFÜGBARKEIT PRO ANZAHL ADRESSEN",
     "top": "TOP",
+    "sharedropTitle": "SHAREDROP",
     "addresses": "ADRESSEN",
     "address": "Adresse",
     "balance": "Betrag",
@@ -378,6 +411,9 @@
     "cumul": "Kumulative %",
     "x": "Anzahl an Konten",
     "y": "%",
-    "tooltip": "Prozent der Verfügbarkeit"
+    "tooltip": "Prozent der Verfügbarkeit",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

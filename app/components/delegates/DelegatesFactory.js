@@ -4,12 +4,13 @@ angular.module('app')
 	var _delegateNames = {};
 	var _delegateNamesArray = [];
 	var _versions = {};
-	var _standyBoolean = false;
 
 	var _activeTime = 0;
 	var _standbyTime = 0;
+	var _allTime = 0;
 	var _activeDelegates;
 	var _standbyDelegates;
+	var _allDelegates;
 
 	var _currentDelegate;
 
@@ -25,6 +26,11 @@ angular.module('app')
 		_versions = {};
 	}
 
+	_delegateNames = store.get('delegateNamesv2');
+	if (_delegateNames === undefined) {
+		_delegateNames = {};
+	}
+
 	for (var id in _delegateNames) {
 		_delegateNamesArray.push({
 			name: _delegateNames[id].name,
@@ -36,37 +42,17 @@ angular.module('app')
 	function initDelegateNames() {
 		var deferred = $q.defer();
 		if (Object.keys(_delegateNames).length > 0) {
-			deferred.resolve('done');
+			deferred.resolve(_delegateNames);
 		} else {
-			refreshDelegateNames().then(function(done) {
-				deferred.resolve('done');
+			refreshDelegateNames().then(function(delegateNames) {
+				deferred.resolve(delegateNames);
 			});
 		}
 		return deferred.promise;
 	}
 
-	function getName(id) {
-		if (id >= 0) {
-			if (_delegateNames[id]) {
-				return _delegateNames[id].name;
-			} else {
-				return '';
-			}
-		} else {
-			return '';
-		}
-	}
-
 	function getDelegateNames() {
 		return _delegateNames;
-	}
-
-	function setStandbyBoolean(boolean) {
-		_standyBoolean = boolean;
-	}
-
-	function getStandbyBoolean(boolean) {
-		return _standyBoolean;
 	}
 
 	function getDelegateNamesArray() {
@@ -81,6 +67,31 @@ angular.module('app')
 		return _delegateNamesArray;
 	}
 
+	function fetchDelegatesByName(query) {
+		var deferred = $q.defer();
+		api.searchDelegatesByName(query).success(function(result) {
+			deferred.resolve(result);
+		});
+		return deferred.promise;
+	}
+
+	function fetchDelegatesById(id) {
+		var deferred = $q.defer();
+		if (_delegateNames[id]) {
+			deferred.resolve(_delegateNames[id]);
+		} else {
+			api.getDelegateById(id).success(function(result) {
+				_delegateNames[id] = {
+					'name': result.name
+				};
+				store.set('delegateNamesv2', _delegateNames);
+				deferred.resolve(result);
+			});
+		}
+		return deferred.promise;
+	}
+
+
 	function refreshDelegateNames() {
 		var deferred = $q.defer();
 		api.getDelegateNames().success(function(result) {
@@ -90,16 +101,15 @@ angular.module('app')
 					'name': result[i].name
 				};
 			}
-			deferred.resolve('done');
+			deferred.resolve(_delegateNames);
 		});
 		return deferred.promise;
 	}
 
-	function fetchDelegates(cacheBoolean) {
-		var promise = _getDelegates(cacheBoolean);
+	function fetchDelegates(query) {
 		var deferred = $q.defer();
-		promise.then(function(result) {
-			_versions = result.versions;
+		_getDelegates(query).then(function(result) {
+			_versions = result.versions_v2;
 			store.set('versions', _versions);
 
 			var delegates = _addInfo(result.delegates, result.ranks, result.latencies[0], result.activeFeeds);
@@ -111,11 +121,11 @@ angular.module('app')
 		return deferred.promise;
 	}
 
-	function _getDelegates(cacheBoolean) {
+	function _getDelegates(query) {
 		var deferred = $q.defer();
-		if (_standyBoolean) {
+		if (query.active === false && query.standby === true) {
 			if (Date.now() - _standbyTime > 1000 * 60) {
-				api.getDelegates(cacheBoolean).success(function(result) {
+				api.getDelegates(query).success(function(result) {
 					_standbyDelegates = result;
 					_standbyTime = Date.now();
 					deferred.resolve(result);
@@ -123,9 +133,9 @@ angular.module('app')
 			} else {
 				deferred.resolve(_standbyDelegates);
 			}
-		} else {
+		} else if (query.active === true && query.standby === false) {
 			if (Date.now() - _activeTime > 1000 * 60) {
-				api.getActiveDelegates(cacheBoolean).success(function(result) {
+				api.getDelegates(query).success(function(result) {
 					_activeDelegates = result;
 					_activeTime = Date.now();
 					deferred.resolve(result);
@@ -133,7 +143,16 @@ angular.module('app')
 			} else {
 				deferred.resolve(_activeDelegates);
 			}
-
+		} else if (query.active === true && query.standby === true) {
+			if (Date.now() - _allTime > 1000 * 60) {
+				api.getDelegates(query).success(function(result) {
+					_allDelegates = result;
+					_allTime = Date.now();
+					deferred.resolve(result);
+				});
+			} else {
+				deferred.resolve(_allDelegates);
+			}
 		}
 		return deferred.promise;
 	}
@@ -271,7 +290,7 @@ angular.module('app')
 
 			// Add ranks
 			delegate.dayChange = (ranks.dayChange[delegate._id] !== undefined) ? ranks.dayChange[delegate._id] : 'n/a';
-			delegate.weekChange = (ranks.weekChange[delegate._id] !== undefined) ? ranks.dayChange[delegate._id] : 'n/a';
+			delegate.weekChange = (ranks.weekChange[delegate._id] !== undefined) ? ranks.weekChange[delegate._id] : 'n/a';
 
 			// Count active feeds
 			delegate.activeFeeds = 0;
@@ -309,49 +328,56 @@ angular.module('app')
 	function checkVersion(delegate) {
 		delegate.version = 4;
 		delegate.versionIncrement = 0;
+
 		if (delegate.public_data !== null && delegate.public_data.version) {
 			var version = delegate.public_data.version.match(/\d+/g);
-			if (version !== null) {
-				delegate.versionIncrement = version[2] * 10;
-				if (version !== null) {
-					version[1] = parseInt(version[1], 10);
-					version[2] = parseInt(version[2], 10);
-					if (version[1] === _versions.main && version[2] >= _versions.increment.current) {
-						if (angular.isDefined(version[3])) {
-							version[3] = parseInt(version[3], 10);
+			var RC = delegate.public_data.version.indexOf('RC');
 
-							if (version[3] === _versions.RC.current) {
-								if (_versions.RC.current !== -999) {
-									delegate.version = 1;
-								} else {
-									delegate.version = 3;
-								}
-								delegate.versionIncrement += _versions.RC.current * _versions.RC.multiplier;
-							} else if (version[3] <= _versions.RC.previous) {
-								if (_versions.RC.current !== -999) {
-									delegate.version = 2;
-								} else {
-									delegate.version = 3;
-								}
-								delegate.versionIncrement += _versions.RC.previous * (-1) * _versions.RC.multiplier;
-							} else if (version[3] <= _versions.RC.old) {
-								delegate.version = 3;
-								delegate.versionIncrement += _versions.RC.old * (-1) * _versions.RC.multiplier;
+			if (version) {
+				var major = version[0];
+				var minor = (version[1]) ? parseInt(version[1], 10) : 0;
+				var patch = (version[2]) ? parseInt(version[2], 10) : 0;
+				var premajor = (version[3]) ? parseInt(version[3], 10) : 0;
+
+				delegate.versionIncrement = patch * 10;
+
+				var deltaMajor = major - _versions.major;
+				var deltaMinor = minor - _versions.minor;
+				var deltaPatch = patch - _versions.patch;
+				var deltaPremajor = premajor - _versions.premajor;
+
+				if (deltaMajor > 0) {
+					delegate.version = 1;
+				} else if (deltaMajor === 0) {
+					if (deltaMinor > 0) {
+						delegate.version = 1;
+					} else if (deltaMinor === 0) {
+						if (deltaPatch >= 0) {
+							if (deltaPremajor >= 0) {
+								delegate.version = 1;
+							} else {
+								delegate.version = 1 - deltaPremajor;
 							}
-						} else {
-							delegate.version = 1;
 						}
-					} else if (version[1] === _versions.main && version[2] === _versions.increment.previous) {
-						delegate.version = 2;
-					} else if (version[1] === _versions.main && version[2] <= _versions.increment.old) {
-						delegate.version = 3;
+					} else {
+						delegate.version = 1 - deltaMinor;
 					}
+				} else {
+					delegate.version = 999;
 				}
+				if (RC !== -1) {
+					delegate.versionIncrement -= 5;
+				}
+				delegate.versionIncrement += deltaPremajor * 1;
+
 			} else {
+				delegate.version = 999;
 				delegate.public_data = {};
-				delegate.public_data.version = 'Unknown!';
+				delegate.public_data.version = 'Not set!';
 			}
+
 		} else {
+			delegate.version = 999;
 			delegate.public_data = {};
 			delegate.public_data.version = 'Not set!';
 		}
@@ -370,7 +396,7 @@ angular.module('app')
 			delegate.showWeekChange = true;
 		}
 		delegate.dayChange = (result.ranks.dayChange !== undefined) ? result.ranks.dayChange : 'n/a';
-		delegate.weekChange = (result.ranks.weekChange !== undefined) ? result.ranks.dayChange : 'n/a';
+		delegate.weekChange = (result.ranks.weekChange !== undefined) ? result.ranks.weekChange : 'n/a';
 
 		// Check version
 		delegate = checkVersion(delegate);
@@ -405,18 +431,24 @@ angular.module('app')
 		delegate.totalEarnings = 0;
 
 		var withLength;
+		var currentDate = new Date();
+		var startDate = new Date(delegate.reg_date_ISO).getTime();
 		if (result.withdrawals) {
 			withLength = result.withdrawals.length;
-			var currentDate = new Date();
 
 			if (withLength > 0) {
-				result.withdrawals.unshift([result.initialFee, 0]);
+				result.withdrawals.unshift([startDate, 0]);
 				result.withdrawals.push([currentDate.getTime(), result.withdrawals[result.withdrawals.length - 1][1] + delegate.delegate_info.pay_balance]);
 			} else {
-				result.withdrawals.push([result.initialFee, 0]);
+				result.withdrawals.push([startDate, 0]);
 				result.withdrawals.push([currentDate.getTime(), delegate.delegate_info.pay_balance]);
 			}
 			delegate.totalEarnings = result.withdrawals[result.withdrawals.length - 1][1] + result.totalFees;
+		} else {
+			result.withdrawals = [];
+			result.withdrawals.push([startDate, 0]);
+			result.withdrawals.push([currentDate.getTime(), delegate.delegate_info.pay_balance]);
+			delegate.totalEarnings = delegate.delegate_info.pay_balance;
 		}
 
 		return {
@@ -474,16 +506,15 @@ angular.module('app')
 
 	return {
 		initDelegateNames: initDelegateNames,
-		getName: getName,
 		getDelegateNames: getDelegateNames,
 		getDelegateNamesArray: getDelegateNamesArray,
 		fetchDelegates: fetchDelegates,
-		setStandbyBoolean: setStandbyBoolean,
-		getStandbyBoolean: getStandbyBoolean,
 		fetchDelegate: fetchDelegate,
 		filterFeeds: filterFeeds,
 		fetchVotes: fetchVotes,
-		checkVersion: checkVersion
+		checkVersion: checkVersion,
+		fetchDelegatesByName: fetchDelegatesByName,
+		fetchDelegatesById: fetchDelegatesById
 	};
 
 }]);

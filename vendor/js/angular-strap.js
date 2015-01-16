@@ -3265,6 +3265,12 @@ angular.module('mgcrea.ngStrap.select', ['mgcrea.ngStrap.tooltip', 'mgcrea.ngStr
           inputEl.after(element);
         }
 
+        // SVK - Enable interpolated placeholder value
+        attr.$observe('placeholder',function(newValue) {
+          options.placeholder = newValue;
+        });
+        // /SVK
+
         // Build proper ngOptions
         var parsedOptions = $parseOptions(attr.ngOptions);
 

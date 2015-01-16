@@ -26,6 +26,15 @@
     "version": "Vérsion du client",
     "language": "Langue"
   },
+  "apiModal": {
+    "title": "Changer de serveur d'API",
+    "body": "Vous êtes automatiquement assigné au serveur le plus proche de votre position, mais si vous rencontriez des problèmes vous pouvez choisir un autre serveur ici:",
+    "close": "Fermer",
+    "auto": "Automatique (par défaut)",
+    "new_york": "New York, États Unis",
+    "singapore": "Singapore",
+    "api": "API"
+  },
   "home": {
     "history": "BTS EVOLUTION DU PRIX DERNIERS 14 JOURS",
     "price": "Prix",
@@ -85,6 +94,11 @@
     },
     "newUsers": {
       "title": "NOUVELLES UTILISATEURS"
+    },
+    "burns": {
+      "title": "MUR DES MESSAGES",
+      "recent": "Messages le plus récent",
+      "largest": "Messages le plus couteux"
     }
   },
   "blocks": {
@@ -152,13 +166,14 @@
       "asset_create": "Creation d'actif",
       "asset_issue": "Publication d'actif",
       "add_collateral": "Rajout de collateral",
-      "withdraw_pay": "Retrait de pay de délégué"
+      "withdraw_pay": "Retrait de pay de délégué",
+      "all": "Afficher toutes les transactions",
+      "placeholder": "Filtrer par type de transaction"
     }
   },
   "delegates": {
     "search": "Chercher un délégué",
     "title": "INFO SUR LES DÉLÉGUÉS",
-    "standby": "Inclure les délégués en standby ",
     "rank": "Rang",
     "change24": "Changement 24h",
     "change7": "Changement 7j",
@@ -171,7 +186,10 @@
     "feedFreq": "Frequence des flux",
     "rel": "Fiabilité",
     "version": "Vérsion",
-    "filter": "filtrer"
+    "filter": "filtrer",
+    "no_version": "Pas défini",
+    "active": "Afficher les délégués actifs",
+    "standby": "Afficher les délégués en standby"
   },
   "delegate": {
     "prevRank": "Rang précedent",
@@ -263,7 +281,9 @@
     "date": "Date",
     "key": "Cléfs",
     "website": "Site web",
-    "burn": "OPERATIONS DE BRULURE"
+    "burn": "OPERATIONS DE BRULURE",
+    "parent": "Compte parent",
+    "subs": "Sous-comptes"
   },
   "assets": {
     "plot": {
@@ -279,15 +299,17 @@
       "th2": "Profondeur achat",
       "th3": "Profondeur vente",
       "th4": "Flux valides",
-      "th5": "Flux moyen",
+      "th5": "Flux median",
       "th6": "Réserve",
       "th7": "Volume 24h",
-      "th8": "Capitalisation"
+      "th8": "Capitalisation",
+      "yield": "Rendement"
     },
     "user": {
       "show": "Afficher les actifs des utilisateurs",
       "title": "ACTIFS DES UTILISATEURS",
       "th1": "ID de l'actif",
+      "th3": "24hr Prix Moyen",
       "th4": "Réserve courant",
       "th5": "Réserve maximal",
       "th6": "Initialized"
@@ -328,6 +350,12 @@
       "med": "Prix median dex flux",
       "null": "Pas assez de flux dans les derniers 24 heures",
       "last": "Dernier mise à jour (UTC)"
+    },
+    "covers": {
+      "title": "APPELS DE MARGE",
+      "price": "Prix d'appel",
+      "owed": "Dû",
+      "expiration": "Date d'expiration"
     }
   },
   "charts": {
@@ -339,11 +367,15 @@
       "trxCount": "NOMBRE DE TRANSACTION BTS",
       "volume": "VOLUME DES TRANSACTIONS BTS",
       "btcPrice": "HISTORIQUE DU PRIX BTS/BTC",
-      "usdPrice": "HISTORIQUE DU PRIX"
+      "usdPrice": "HISTORIQUE DU PRIX",
+      "prices": "TRACES DE PRIX",
+      "trx": "TRACÉS DES TRANSACTIONS",
+      "accounts": "TRACÉS DES COMPTES",
+      "supply": "TRACÉS DES RÉSERVES"
     },
     "value": "Valeur",
     "reg": "Inscription de compte",
-    "transfer": "Transfer",
+    "transfer": "Transfert",
     "feed": "Mise à jour de flux",
     "update": "Mise à jour de compte",
     "new": "Nouveaux comptes",
@@ -351,13 +383,13 @@
   },
   "supply": {
     "title1": "INFO",
-    "title2": "CHANGEMENT DE RÉSERVE DEPUIS LE BRANCHEMENT BTS",
+    "title2": "INFLATION JOURNALIÈRE ANNUALISÉ DEPUIS LE BRANCHEMENT BTS",
     "title3": "RÉSERVE TOTAL DE BTS",
     "title4": "FRAIS DE BTS PAYÉS",
     "height": "Hauteur de block du branchement BTSX => BTS",
     "supply": "Réserve au moment du branchement",
     "change": "Changement de réserve depuis le branchement",
-    "changeY": "BTS changement de réserve",
+    "changeY": "BTS inflation annualisé",
     "supplyY": "BTS réserve",
     "feesY": "BTS frais"
   },
@@ -372,13 +404,17 @@
     "higher": "Addresses avec un solde plus grand que",
     "percent": "POURCENTAGE DU RÉSERVE TOTAL PAR NOMBRE D'ADDRESSES",
     "top": "TOP",
-    "addresses": "DES ADDRESSES",
+    "sharedropTitle": "SHAREDROP",
+    "addresses": "ADDRESSES",
     "address": "Addresse",
     "balance": "Solde",
     "percentOf": "% du total",
     "cumul": "% du total cumulatif",
     "x": "Nombre de comptes",
     "y": "% du réserve total",
-    "tooltip": "Pourcentage du réserve total"
+    "tooltip": "Pourcentage du réserve total",
+    "piechart": {
+      "title": "PARTS DU GATEAU"
+    }
   }
 }

@@ -125,12 +125,12 @@ body { padding-top: 70px;
   }
 
 
-  .user-assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable, #about {
+  .assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable, #about {
     margin-bottom:5em;
   }
 
   @media(max-width: 767px) {
-    .user-assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable:nth-child(1), #about {
+    .assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable:nth-child(1), #about {
       margin-bottom:10em;
     }
 
@@ -255,3 +255,36 @@ body { padding-top: 70px;
   .example-enter.example-enter-active {
     opacity: 1;
   }
+
+ .modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: .5;
+    }
+  }
+  &.ng-leave {
+    opacity: .5;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+.modal-open { 
+    overflow: scroll;
+}
+
+/* bootstrap hack: fix content width inside hidden tabs */
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: block;     /* undo display:none          */
+    height: 0;          /* height:0 is also invisible */ 
+    overflow-y: hidden; /* no-overflow                */
+}
+.tab-content > .active,
+.pill-content > .active {
+    height: auto;       /* let the content decide it  */
+} /* bootstrap hack end */

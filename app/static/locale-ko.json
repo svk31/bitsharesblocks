@@ -26,6 +26,15 @@
     "version": "클라이언트 버전",
     "language": "언어"
   },
+  "apiModal": {
+    "title": "API 서버 변경",
+    "body": "가장 가까운 API 서버로 자동적으로 연결됩니다. 하지만 문제가 있을 경우 API 서버를 수동으로 선택할 수 있습니다:",
+    "close": "닫기",
+    "auto": "자동 (기본값)",
+    "new_york": "New York, USA",
+    "singapore": "Singapore",
+    "api": "API"
+  },
   "home": {
     "history": "지난 14일 BTS 시세",
     "price": "가격",
@@ -85,6 +94,11 @@
     },
     "newUsers": {
       "title": "신규 계정"
+    },
+    "burns": {
+      "title": "BURN-BOX",
+      "recent": "Most recent burns",
+      "largest": "Largest burns"
     }
   },
   "blocks": {
@@ -117,9 +131,9 @@
       "hash1": "이전 해쉬",
       "hash2": "다음 암호화 해쉬",
       "hash3": "이전 암호화 해쉬",
-      "shares": "Shares issued",
-      "collected": "Fees collected",
-      "destroyed": "Fees destroyed"
+      "shares": "발행된 쉐어",
+      "collected": "수집된 수수료",
+      "destroyed": "소거된 수수료"
     },
     "trx": {
       "title": "거래",
@@ -128,8 +142,8 @@
       "fee": "거래 수수료",
       "public": "공개 정보",
       "delegate": "대표자 이름",
-      "feedUpdates": "피드 업데이트",
-      "feedPrice": "피드 가격",
+      "feedUpdates": "가격정보 업데이트",
+      "feedPrice": "가격정보 값",
       "votes": "거래 내 투표",
       "price": "가격 비율",
       "interest": "이자율",
@@ -148,16 +162,17 @@
       "issuer": "발행자 계정",
       "for": "For delegate",
       "burn": "소각",
-      "asset_create": "자산 발행",
-      "asset_issue": "Issue asset",
-      "add_collateral": "Add collateral",
-      "withdraw_pay": "Delegate pay withdrawal"
+      "asset_create": "자산 생성",
+      "asset_issue": "자산 발행",
+      "add_collateral": "담보로 추가",
+      "withdraw_pay": "대표자 급여 인출",
+      "all": "모든 거래 보기",
+      "placeholder": "거래 유형에 따라 필터링"
     }
   },
   "delegates": {
     "search": "대표자 찾기",
     "title": "대표자 정보",
-    "standby": "대기중인 대표자 포함",
     "rank": "순위",
     "change24": "24시간내 변동",
     "change7": "7일내 변동",
@@ -166,11 +181,14 @@
     "missed": "누락",
     "rate": "지급률",
     "latency": "평균 지연율",
-    "feeds": "활성 피드",
+    "feeds": "활성 가격정보",
     "feedFreq": "가격정보 제공 빈도",
     "rel": "신뢰도",
     "version": "버전",
-    "filter": "필터"
+    "filter": "필터",
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "대기중인 대표자 포함"
   },
   "delegate": {
     "prevRank": "이전 순위",
@@ -262,7 +280,9 @@
     "date": "일시",
     "key": "키",
     "website": "웹사이트",
-    "burn": "소각 활동"
+    "burn": "소각 활동",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {
@@ -277,16 +297,18 @@
       "th1": "자산 이름",
       "th2": "매수대기물량",
       "th3": "매도대기물량",
-      "th4": "유효 피드",
-      "th5": "평균 피드가격",
+      "th4": "유효 가격정보",
+      "th5": "가격정보 평균",
       "th6": "총공급량",
       "th7": "24시간 거래량",
-      "th8": "시가총액"
+      "th8": "시가총액",
+      "yield": "Yield"
     },
     "user": {
       "show": "사용자 발행 자산 보기",
       "title": "사용자 발행 자산",
       "th1": "자산 ID",
+      "th3": "24hr Average Price",
       "th4": "현재 공급량",
       "th5": "최대 공급량",
       "th6": "활성화"
@@ -298,7 +320,7 @@
     "asks": "매도",
     "shorts": "공매도",
     "priceH": "시세 추이",
-    "alert1": "시장 비활성: 피드 수가 불충분함",
+    "alert1": "시장 비활성: 가격정보 수가 불충분함",
     "alert2": "시장 비활성: 시장 깊이가 불충분함",
     "collateral": "담보",
     "supply": "공급량",
@@ -315,7 +337,7 @@
       "title": "자산 정보",
       "base": "기준 자산",
       "name": "자산명",
-      "precision": "소수자리수",
+      "precision": "정밀도",
       "regdate": "등록일시"
     },
     "market": {
@@ -323,10 +345,16 @@
       "reserve": "예비비"
     },
     "feeds": {
-      "avg": "평균 피드값",
-      "med": "중위 피드값",
-      "null": "지난 24시간동안 피드 불충분",
+      "avg": "가격정보 평균값",
+      "med": "가격정보 중위값",
+      "null": "지난 24시간동안 가격정보 불충분",
       "last": "최종 업데이트 (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {
@@ -338,7 +366,11 @@
       "trxCount": "BTS 거래 수",
       "volume": "BTS 거래량",
       "btcPrice": "BTS/BTC 시세 추이",
-      "usdPrice": "시세 추이"
+      "usdPrice": "시세 추이",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS"
     },
     "value": "Value",
     "reg": "계정 등록",
@@ -356,7 +388,7 @@
     "height": "BTSX => BTS 하드포크 블럭번호",
     "supply": "하드포크시 공급량",
     "change": "하드포크 이후 공급량 변화",
-    "changeY": "BTS 공급량 변화",
+    "changeY": "BTS annualized inflation",
     "supplyY": "BTS 공급량",
     "feesY": "BTS 수수료"
   },
@@ -371,6 +403,7 @@
     "higher": "다음 잔액 이상 주소 개수",
     "percent": "계정 수에 따른 총 공급량 비율",
     "top": "상위",
+    "sharedropTitle": "SHAREDROP",
     "addresses": "주소",
     "address": "주소",
     "balance": "잔액",
@@ -378,6 +411,9 @@
     "cumul": "공급량 대비 누적 %",
     "x": "계정 수",
     "y": "공급량 대비 %",
-    "tooltip": "총 공급량 퍼센트"
+    "tooltip": "총 공급량 퍼센트",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

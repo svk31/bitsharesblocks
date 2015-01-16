@@ -26,6 +26,15 @@
     "version": "Versione Client",
     "language": "Lingua"
   },
+  "apiModal": {
+    "title": "Change API server",
+    "body": "You are automatically assigned an API server close to you, but if you are experiencing issues you may manually select a new API server here:",
+    "close": "Close",
+    "auto": "Automatic (default)",
+    "new_york": "New York, USA",
+    "singapore": "Singapore",
+    "api": "API"
+  },
   "home": {
     "history": "VALORE BTS, ULTIMI 14 GIORNI",
     "price": "VALORE",
@@ -85,6 +94,11 @@
     },
     "newUsers": {
       "title": "NUOVI UTENTI"
+    },
+    "burns": {
+      "title": "BURN-BOX",
+      "recent": "Most recent burns",
+      "largest": "Largest burns"
     }
   },
   "blocks": {
@@ -151,13 +165,14 @@
       "asset_create": "Mercato creato",
       "asset_issue": "Issue asset",
       "add_collateral": "Add collateral",
-      "withdraw_pay": "Delegate pay withdrawal"
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types"
     }
   },
   "delegates": {
     "search": "Trova delegato",
     "title": "INFORMAZIONI DELEGATO",
-    "standby": "Includi delegati in attesa",
     "rank": "Classifica",
     "change24": "Modifica nelle 24h",
     "change7": "Modifica in 7g",
@@ -170,7 +185,10 @@
     "feedFreq": "Frequanza feed",
     "rel": "Affidabilità",
     "version": "Versione",
-    "filter": "filtrare"
+    "filter": "filtrare",
+    "no_version": "Not set",
+    "active": "Show active delegates",
+    "standby": "Includi delegati in attesa"
   },
   "delegate": {
     "prevRank": "Precedente",
@@ -262,7 +280,9 @@
     "date": "Data",
     "key": "Chiave",
     "website": "Website",
-    "burn": "OPERAZIONI BURN"
+    "burn": "OPERAZIONI BURN",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {
@@ -281,12 +301,14 @@
       "th5": "Prezzo medio feed",
       "th6": "Disponibilità totale",
       "th7": "Volume 24h",
-      "th8": "Valore di Mercato"
+      "th8": "Valore di Mercato",
+      "yield": "Yield"
     },
     "user": {
       "show": "Mostra mercati creati dagli utenti",
       "title": "MERCATI CREATI DAGLI UTENTI",
       "th1": "ID",
+      "th3": "24hr Average Price",
       "th4": "Disponibilità attuale",
       "th5": "Disponibilità massima",
       "th6": "Initialized"
@@ -327,6 +349,12 @@
       "med": "Prezzo mediano feed",
       "null": "Feed insufficienti nelle ultime",
       "last": "Ultimo aggiornamento (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {
@@ -338,7 +366,11 @@
       "trxCount": "NUMERO DI TRANSAZIONI BTS",
       "volume": "VOLUME TRANSAZIONI BTS",
       "btcPrice": "STORICO PREZZO BTS/BTC",
-      "usdPrice": "STORICO PREZZO"
+      "usdPrice": "STORICO PREZZO",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS"
     },
     "value": "Valore",
     "reg": "Registrazione utente",
@@ -356,7 +388,7 @@
     "height": "Numero del blocco al momento dell'hardfork BTSX => BTS",
     "supply": "Disponibilità al fork",
     "change": "Modifica disponibilità dall'hardfork",
-    "changeY": "Modifica disponibilità BTS",
+    "changeY": "BTS annualized inflation",
     "supplyY": "Disponibilità BTS",
     "feesY": "Commissioni BTS"
   },
@@ -371,6 +403,7 @@
     "higher": "Indirizzi con saldo superiore a",
     "percent": "PERCENTUALE SULLA DISPONIBILITA' TOTALE RISPETTO AL NUMERO DI INDIRIZZI",
     "top": "TOP",
+    "sharedropTitle": "SHAREDROP",
     "addresses": "INDIRIZZI",
     "address": "Indirizzi",
     "balance": "Saldo",
@@ -378,6 +411,9 @@
     "cumul": "% cumulativo sul totale",
     "x": "Numero di conti",
     "y": "% sulla disponibilità totale",
-    "tooltip": "Percentule sulla disponibilità totale"
+    "tooltip": "Percentule sulla disponibilità totale",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

@@ -1,11 +1,27 @@
 angular.module("app").factory('api', ['$http', function($http) {
     var api = {},
-        url;
-
-    // url = '127.0.0.1:2095/v1/';
-    url='api.bitsharesblocks.com/v1/';
+        url, url_v2;
 
     var cb = '?callback=JSON_CALLBACK';
+
+    var apis = [
+        'api.bitsharesblocks.com',
+        '104.236.93.62',
+        '128.199.123.149'
+    ];
+
+    url = apis[0] + '/v1/';
+    url_v2 = apis[0] + '/v2/';
+
+    // url = '127.0.0.1:2095/v1/';
+    // url_v2 = '127.0.0.1:2095/v2/';
+
+    api.setAPI = function(index) {
+        // var location = ['North America - New York', 'Asia - Singapore'];
+        // console.log('changing API to:',location[index]);
+        url = apis[index] + '/v1/';
+        url_v2 = apis[index] + '/v2/';
+    };
 
     api.getInfo = function() {
         return $http({
@@ -15,11 +31,11 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    api.getOperations = function(operation) {
+    api.getTransactions = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'operations/' + type + cb,
-            cache: true
+            url: 'http://' + url + 'transactions/' + query + cb,
+            cache: false
         });
     };
 
@@ -127,11 +143,10 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    api.getDelegates = function(cacheBoolean) {
+    api.getDelegates = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'delegates' + cb,
-            cache: cacheBoolean
+            url: 'http://' + url_v2 + 'delegates/' + JSON.stringify(query) + cb
         });
     };
 
@@ -141,6 +156,14 @@ angular.module("app").factory('api', ['$http', function($http) {
             url: 'http://' + url + 'activedelegates' + cb,
             cache: false
         });
+    };
+
+    api.searchDelegatesByName = function(query) {
+        return $http.jsonp('http://' + url + 'delegatebyname/' + query + cb);
+    };
+
+    api.getDelegateById = function(id) {
+        return $http.jsonp('http://' + url + 'delegatenamebyid/' + id + cb);
     };
 
     api.getNewBlocks = function(lastBlock) {
@@ -204,11 +227,19 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp('http://' + url + 'blockstrx/new/' + lastBlock + cb);
     };
 
-    api.getVolume = function(cacheBoolean) {
+    // api.getVolume = function(cacheBoolean) {
+    //     return $http({
+    //         method: 'JSONP',
+    //         url: 'http://' + url + 'volume' + cb,
+    //         cache: cacheBoolean
+    //     });
+    // };
+
+    api.getCharts = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'volume' + cb,
-            cache: cacheBoolean
+            url: 'http://' + url + 'charts/' + JSON.stringify(query) + cb,
+            cache: true
         });
     };
 
@@ -235,8 +266,16 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp('http://' + url + 'accounts/' + name + cb);
     };
 
+    api.getSubAccounts = function(name) {
+        return $http.jsonp('http://' + url + 'subaccounts/' + name + cb);
+    };
+
     api.getAccounts = function() {
         return $http.jsonp('http://' + url + 'accounts' + cb);
+    };
+
+    api.getBurns = function(sort) {
+        return $http.jsonp('http://' + url + 'burns/' + sort + cb);
     };
 
     api.getAccountsCount = function() {

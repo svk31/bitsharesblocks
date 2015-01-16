@@ -1,78 +1,30 @@
-<div class="col-md-8 col-md-offset-2">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 style="display: inline-block;" class="panel-title">{{ 'charts.titles.usdPrice' | translate }}</h3><button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentUnit" data-html="1" ng-options="unit.name as unit.label for unit in priceUnits" bs-select>
-          Action <span class="caret"></span>
-        </button>
-    </div>
-    <highchart id="priceChart" config="priceChart" ></highchart>
-  </div>
+<div class="col-md-8 col-md-offset-2 assets">
+  <tabset>
+      <tab style="cursor:pointer;" ng-click="goTo('charts.prices')" active="tabs[0].active">
+        <tab-heading style="cursor:pointer;">{{ 'charts.titles.prices' | translate }}</tab-heading>
+        <div ui-view="charts-prices"></div>
+      </tab>
+
+      <tab style="cursor:pointer;" ng-click="goTo('charts.transactions')" active="tabs[1].active">
+        <tab-heading style="cursor:pointer;">{{ 'charts.titles.trx' | translate }}</tab-heading>
+        <div ui-view="charts-transactions"></div>
+      </tab>
+
+      <tab style="cursor:pointer;" ng-click="goTo('charts.accounts')" active="tabs[2].active">
+        <tab-heading style="cursor:pointer;">{{ 'charts.titles.accounts' | translate }}</tab-heading>
+        <div ui-view="charts-accounts"></div>
+      </tab>
+
+      <tab style="cursor:pointer;" ng-click="goTo('charts.supply')" active="tabs[3].active">
+        <tab-heading style="cursor:pointer;">{{ 'charts.titles.supply' | translate }}</tab-heading>
+        <div ui-view="charts-supply"></div>
+      </tab>
+  </tabset>
 </div>
 
-<!-- <div class="col-md-8 col-md-offset-2">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ 'charts.titles.btcPrice' | translate }}</h3>
-    </div>
-    <highchart id="priceChart" config="priceChartBTC" ></highchart>
-  </div>
-</div>
+
+<!-- 
+
+
+
  -->
-
-<div class="col-md-8 col-md-offset-2">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ 'charts.titles.volume' | translate }}</h3>
-    </div>
-    <highchart id="chart1" config="valueChartConfig" ></highchart>
-  </div>
-</div>
-
-
-<div class="col-md-8 col-md-offset-2">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ 'charts.titles.trxCount' | translate }}</h3>
-    </div>
-    <highchart id="chart1" config="trxCountChart" ></highchart>
-  </div>
-</div>
-
-<div class="col-md-8 col-md-offset-2">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ 'charts.titles.btsTrx' | translate }}</h3>
-    </div>
-    <highchart id="chart2" config="trxBreakdownChart" ></highchart>
-  </div>
-</div>
-
-<div class="col-md-8 col-md-offset-2">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ 'charts.titles.assetTrx' | translate }}</h3>
-    </div>
-    <highchart id="chart1" config="assetCountChart" ></highchart>
-  </div>
-</div>
-
-<div class="col-md-8 col-md-offset-2">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ 'charts.titles.total' | translate }}</h3>
-    </div>
-    <highchart id="chart3" config="accountsChart" ></highchart>
-  </div>
-</div>
-
-<div class="col-md-8 col-md-offset-2" style="margin-bottom:5em">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ 'charts.titles.new' | translate }}</h3>
-    </div>
-    <highchart id="chart4" config="newAccountsChart" ></highchart>
-  </div>
-</div>
-
-
-

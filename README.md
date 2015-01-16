@@ -1,3 +1,4 @@
+[![GPL License][license-image]][license-url]
 #Bitsharesblocks
 
 Repo for the source code of http://www.bitsharesblocks.com
@@ -5,7 +6,7 @@ Repo for the source code of http://www.bitsharesblocks.com
 ##Setup
 Clone into your directory of choice, then do "npm install" (sudo might be necessary).
 
-The website uses a component file structure, see https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/mobilebasic?pli=1. 
+The website uses a component file structure, see [Angular Best Practice for App Structure](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/mobilebasic?pli=1). 
 
 In order to use lineman with this layout it is necessary to modify the grunt configuration file in: 
 
@@ -65,3 +66,6 @@ Bounties for translations available here:
 https://bitsharestalk.org/index.php?topic=11695.0
 
 Translations accepted for bounties: Russian
+
+[license-image]: http://img.shields.io/badge/license-GPL3-blue.svg?style=flat
+[license-url]: LICENSE

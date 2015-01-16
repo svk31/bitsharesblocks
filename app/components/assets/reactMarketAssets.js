@@ -1,4 +1,4 @@
-var MarketAssetHeaderRow = React.createClass({displayName: "MarketAssetHeaderRow",
+var MarketAssetHeaderRow = React.createClass({displayName: 'MarketAssetHeaderRow',
 	render: function() {
 		var props = this.props;
 		var headers = this.props.headers;
@@ -34,7 +34,7 @@ var MarketAssetHeaderRow = React.createClass({displayName: "MarketAssetHeaderRow
 	}
 });
 
-var MarketAssetRow = React.createClass({displayName: "MarketAssetRow",
+var MarketAssetRow = React.createClass({displayName: 'MarketAssetRow',
 	render: function() {
 		var asset =this.props.data;
 		var tdInit;	

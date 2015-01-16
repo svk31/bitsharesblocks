@@ -23,6 +23,34 @@ angular.module("app").factory('Charts', [function() {
 
 	var defaultType = 'line';
 
+	var rangeselector = {
+		selected: 5,
+		buttons: [{
+			type: 'week',
+			count: 1,
+			text: '1w'
+		}, {
+			type: 'week',
+			count: 2,
+			text: '2w'
+		}, {
+			type: 'month',
+			count: 1,
+			text: '1m'
+		}, {
+			type: 'month',
+			count: 3,
+			text: '3m'
+		}, {
+			type: 'year',
+			count: 1,
+			text: '1y'
+		}, {
+			type: 'all',
+			text: 'All'
+		}]
+	};
+
 	function serie(options) {
 		var newSerie = {};
 		if (options.type) {
@@ -150,7 +178,8 @@ angular.module("app").factory('Charts', [function() {
 	return {
 		chartConfig: chartConfig,
 		serie: serie,
-		serieTA: serieTA
+		serieTA: serieTA,
+		rangeselector: rangeselector
 	};
 
 

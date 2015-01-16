@@ -42,13 +42,15 @@ angular.module('app')
 
 			// TOTAL VALUE
 			trx[1].withdraws.forEach(function(withdrawal, j) {
+				var value;
 				trxAssetId = parseInt(withdrawal[0], 10);
 				if (tempValues[trxAssetId] === undefined) {
 					tempValues[trxAssetId] = {};
 					tempValues[trxAssetId].amount = 0;
 					tempValues[trxAssetId].asset = Assets.getSymbol(trxAssetId);
 				}
-				tempValues[trxAssetId].amount += withdrawal[1].amount / Assets.getPrecision(trxAssetId);
+				value = (withdrawal[1].amount) ? withdrawal[1].amount : withdrawal[1];
+				tempValues[trxAssetId].amount += value / Assets.getPrecision(trxAssetId);
 			});
 
 			// VOTES
@@ -59,11 +61,17 @@ angular.module('app')
 					delegate: 'None'
 				};
 			} else {
+				var votesFor;
 				currentVotes.forEach(function(vote, j) {
-					tempVotes.push({
-						delegate: Delegates.getName(vote[0]),
-						amount: vote[1].votes_for / precision
+
+					Delegates.fetchDelegatesById(vote[0]).then(function(result) {
+						votesFor = (vote[1].votes_for) ? vote[1].votes_for : vote[1];
+						tempVotes[j] = {
+							delegate: result.name,
+							amount: votesFor / precision
+						};
 					});
+
 				});
 
 			}
@@ -102,6 +110,8 @@ angular.module('app')
 		trxInfo.id = trx[0];
 		trxInfo.trxCode = 4;
 		trxInfo.type = trx[1].type;
+		var fetchName = false,
+			delegateID;
 		for (j = 0; j < trx[1].trx.operations.length; j++) {
 
 			if (trx[1].trx.operations[j].type === 'update_account_op_type') {
@@ -170,10 +180,12 @@ angular.module('app')
 				trxInfo.amount = trx[1].amount / Assets.getPrecision(trx[1].asset);
 				break;
 			}
-			if (trx[1].trx.operations[j].type === 'withdraw_pay_op_type') {
+			if (trx[1].trx.operations[j].type === 'withdraw_pay_op_type' && trxInfo.trxCode !== 8) {
 				trxInfo.trxCode = 11;
 				trxInfo.amount = (trx[1].trx.operations[j].data.amount - trx[1].balance[0][1]) / Assets.getPrecision(0);
-				trxInfo.delegate = Delegates.getName(trx[1].trx.operations[j].data.account_id);
+
+				delegateID = trx[1].trx.operations[j].data.account_id;
+				fetchName = true;
 				break;
 			}
 			if (trx[1].trx.operations[j].type === 'create_asset_op_type') {
@@ -184,10 +196,20 @@ angular.module('app')
 
 			if (trx[1].trx.operations[j].type === 'update_feed_op_type') {
 				trxInfo.trxCode = 8;
-				trxInfo.delegate = Delegates.getName(trx[1].trx.operations[0].data.feed.delegate_id);
+				var feedId;
+				if (trx[1].trx.operations[0].data.feed) {
+					delegateID = trx[1].trx.operations[0].data.feed.delegate_id;
+					feedId = trx[1].trx.operations[j].data.feed.feed_id;
+				} else {
+					delegateID = trx[1].trx.operations[0].data.index.delegate_id;
+					feedId = trx[1].trx.operations[j].data.index.quote_id;
+				}
+
+				fetchName = true;
+
 				assetRatio = Assets.getPrecision(trx[1].trx.operations[j].data.value.base_asset_id) / Assets.getPrecision(trx[1].trx.operations[j].data.value.quote_asset_id);
 				trxInfo.feeds.push({
-					asset: Assets.getSymbol(trx[1].trx.operations[j].data.feed.feed_id),
+					asset: Assets.getSymbol(feedId),
 					baseAsset: Assets.getSymbol(trx[1].trx.operations[j].data.value.base_asset_id),
 					price: trx[1].trx.operations[j].data.value.ratio * assetRatio
 				});
@@ -198,6 +220,12 @@ angular.module('app')
 				break;
 			}
 		}
+		if (fetchName) {
+			Delegates.fetchDelegatesById(delegateID).then(function(result) {
+				trxInfo.delegate = result.name;
+			});
+		}
+
 		if (trxInfo.asset >= 0 && trxInfo.trxCode !== 8 && trxInfo.trxCode !== 4) {
 			trxInfo.assetName = Assets.getSymbol(trxInfo.asset);
 		}

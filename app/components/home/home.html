@@ -9,7 +9,8 @@
     <div class="col-md-7 col-sm-7">
       <div class="panel panel-default">
         <div class="panel-heading" style="overflow: hidden;">
-          <h3 style="display: inline-block;" class="panel-title">{{ 'home.history' | translate }} </h3><button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentUnit" data-html="1" ng-options="unit.name as unit.label for unit in priceUnits" bs-select>
+          <h3 style="display: inline-block;" class="panel-title">{{ 'home.history' | translate }} </h3>
+          <button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentUnit" data-html="1" ng-options="unit.name as unit.label for unit in priceUnits" bs-select>
           Action <span class="caret"></span>
         </button>
         </div>
@@ -179,4 +180,33 @@
       </div>
     </div>
 
-    <div class="container" id="endofhome"></div>
+<div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 style="display: inline-block;" class="panel-title">{{ 'home.burns.title' | translate }}</h3>
+      <button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentSort" data-html="1" ng-options="unit.name as unit.label for unit in sortBurns" bs-select>
+          Action <span class="caret"></span>
+        </button>
+    </div>
+    <table class="table table-condensed table-hover table-bordered">
+      <thead>
+        <tr>
+          <th class="hidden-xs">{{'blocks.blockNum' | translate }}</th>
+          <th>{{'accounts.name' | translate }}</th>
+          <th>{{'block.trx.amount' | translate }}</th>
+          <th>{{'block.trx.message' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr ng-repeat="burn in burns | limitTo: 15 track by $index " class="repeated-item">
+          <td class="hidden-xs"><a ui-sref="block({ 'id' : burn.block })" >{{ burn.block }}</a></td>
+          <td><a ui-sref="account({ 'name' : burn.name })" >{{burn.name}}</a></td>
+          <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</a></td>
+          <td>{{ burn.message }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container" id="endofhome"></div>
