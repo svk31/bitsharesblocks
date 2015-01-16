@@ -27,6 +27,7 @@
             <th class="hidden-xs">{{ 'accounts.update' | translate }}</th>
             <th> {{ 'accounts.wall' | translate }} </th>
             <th>{{ 'blocks.delegate' | translate }}</th>
+            <th>{{ 'account.subs' | translate }}</th>
           </tr>
         </thead>
         <tbody >
@@ -38,6 +39,8 @@
             <td><span ng-repeat="value in account.burnArray"><p style="margin:0;padding:0;"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:2}}</span> <span ng-if="value.asset==='DVS'"> {{ value.asset }}</span> <a ng-if="value.asset!=='DVS'" ui-sref="asset({ 'id' : value.asset})">{{value.asset}}</a></p></span></td>
             <td class="success" ng-if="account.isDelegate===true">{{'accounts.yes' | translate}}</td>
             <td ng-if="account.isDelegate===false">{{'accounts.no' | translate}}</td>
+            <td class="success" ng-if="account.hasSubs">{{'accounts.yes' | translate}}</td>
+            <td ng-if="!account.hasSubs">{{'accounts.no' | translate}}</td>
           </tr>
         </tbody>
       </table>

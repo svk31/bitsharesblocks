@@ -5,11 +5,11 @@ angular.module('app')
 
     $scope.accountName = $state.params.name;
 
-    function fetchAccount(name, id) {
+    function fetchAccount(name, id, goTo) {
       Accounts.fetchAccount(name, id).then(function(result) {
         $scope.account = result[0];
 
-        if (id) {
+        if (id || goTo) {
           $location.search('name',$scope.account.name);
         }
 
@@ -29,6 +29,10 @@ angular.module('app')
     $scope.getNextAccount = function(id) {
       id = Math.max(1,id);
       fetchAccount(false, id);
+    };
+
+    $scope.goTo =function(name) {
+      fetchAccount(name, false, true);
     };
 
   }]);

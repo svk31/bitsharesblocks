@@ -57,9 +57,9 @@ angular.module('app.services', [])
 			"api": "API"
 		},
 		"home": {
-			"history":"DVS PRICE HISTORY LAST 14 DAYS",
-			"price":"Price",
-			"MA":"30-day Moving Average",
+			"history": "BTS PRICE HISTORY LAST 14 DAYS",
+			"price": "Price",
+			"MA": "30-day Moving Average",
 			"health": {
 				"title": "NETWORK HEALTH",
 				"alert": "Network Alert Level:",
@@ -302,7 +302,9 @@ angular.module('app.services', [])
 			"date": "Date",
 			"key": "Key",
 			"website": "Website",
-			"burn": "WALL BURNS"
+			"burn": "WALL BURNS",
+			"parent": "Parent account",
+			"subs": "Sub-accounts"
 		},
 		"assets": {
 			"plot": {
@@ -313,12 +315,12 @@ angular.module('app.services', [])
 				"type4": "Cover"
 			},
 			"market": {
-				"title": "MARKET ASSETS",
+				"title": "MARKET ISSUED ASSETS",
 				"th1": "Asset Symbol",
 				"th2": "Bid depth",
 				"th3": "Ask depth",
 				"th4": "Valid Feeds",
-				"th5": "Average Feed Price",
+				"th5": "Median Feed Price",
 				"th6": "Share Supply",
 				"th7": "24h Volume",
 				"th8": "Market Cap",
@@ -328,6 +330,7 @@ angular.module('app.services', [])
 				"show": "Show user issued assets",
 				"title": "USER ISSUED ASSETS",
 				"th1": "Asset ID",
+				"th3": "24hr Average Price",
 				"th4": "Current Supply",
 				"th5": "Maximum Supply",
 				"th6": "Initialized"
@@ -368,6 +371,12 @@ angular.module('app.services', [])
 				"med": "Median Feed Price",
 				"null": "Not enough feeds in the last 24hrs",
 				"last": "Last update (UTC)"
+			},
+			"covers": {
+				"title": "MARGIN CALL ORDERS",
+				"price": "Call price",
+				"owed": "Owed",
+				"expiration": "Expiration date"
 			}
 		},
 		"charts": {
@@ -379,7 +388,11 @@ angular.module('app.services', [])
 				"trxCount": "DVS NUMBER OF TRANSACTIONS",
 				"volume": "DVS TRANSACTION VOLUME",
 				"btcPrice": "DVS/BTC PRICE HISTORY",
-				"usdPrice": "PRICE HISTORY"
+				"usdPrice": "PRICE HISTORY",
+				"prices": "PRICE CHARTS",
+				"trx": "TRANSACTION CHARTS",
+				"accounts": "ACCOUNTS CHARTS",
+				"supply": "SUPPLY CHARTS"
 			},
 			"value": "Value",
 			"reg": "Account registration",
@@ -391,13 +404,13 @@ angular.module('app.services', [])
 		},
 		"supply": {
 			"title1": "INFO",
-			"title2": "SUPPLY CHANGE AFTER DVS HARDFORK",
+			"title2": "ANNUALIZED DAILY INFLATION",
 			"title3": "TOTAL SUPPLY OF DVS",
 			"title4": "DVS FEES PAID OVER TIME",
 			"height": "Height of BTSX => DVS hardfork block",
 			"supply": "Supply at fork",
 			"change": "Change in supply since the hardfork",
-			"changeY": "DVS supply change",
+			"changeY": "BTS annualized inflation",
 			"supplyY":"DVS supply",
 			"feesY": "DVS fees"
 		},
@@ -412,6 +425,7 @@ angular.module('app.services', [])
 			"higher": "Addresses with balance higher than",
 			"percent": "PERCENT OF TOTAL SUPPLY BY NUMBER OF ADDRESSES",
 			"top": "TOP",
+			"sharedropTitle": "SHAREDROP",
 			"addresses": "ADDRESSES",
 			"address": "Address",
 			"balance": "Balance",

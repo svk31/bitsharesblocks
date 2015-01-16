@@ -14,6 +14,10 @@ angular.module('app')
 		};
 	}
 
+	function _getPriceRatio(asset, baseAsset) {
+		return getPrecision(baseAsset) / getPrecision(asset);
+	}
+
 	function getPrecision(id) {
 		if (id === 0) {
 			return basePrecision;
@@ -127,33 +131,44 @@ angular.module('app')
 				var assetPrice = (assets[i].status.last_valid_feed_price) ? parseFloat(assets[i].status.last_valid_feed_price / (100000 / precision)) : 0;
 
 				assets[i].collateral = supply[assets[i]._id];
-				assets[i].collateralRatio = (assets[i].current_share_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].averageValidFeeds / assets[i].current_share_supply : 0;
+				assets[i].collateralRatio = (assets[i].current_share_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].medianFeed / assets[i].current_share_supply : 0;
 
 				assets[i].yield = (assets[i].current_share_supply > 0) ? 100 * (assets[i].collected_fees / assets[i].precision) / assets[i].current_share_supply : 0;
 
 				assets[i].cap = {};
 				assets[i].price = (assetPrice !== 0) ? assetPrice * (100000 / precision) : 0;
+
 				assets[i].marketCap = (assets[i].price !== 0) ? (assets[i].current_share_supply / assets[i].price) : 0;
+				assets[i].cap.BTS = (assets[i].price !== 0) ? (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.BTC = (assets[i].price !== 0) ? prices.BTC * (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.USD = (assets[i].price !== 0) ? prices.USD * (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.CNY = (assets[i].price !== 0) ? prices.CNY * (assets[i].current_share_supply / assets[i].price) : 0;
 				assets[i].cap.EUR = (assets[i].price !== 0) ? prices.EUR * (assets[i].current_share_supply / assets[i].price) : 0;
 
 				assets[i].volume = {};
+				assets[i].volume.BTS = assets[i].dailyVolume || 0;
 				assets[i].volume.BTC = (assets[i].dailyVolume !== 0) ? prices.BTC * (assets[i].dailyVolume) : 0;
 				assets[i].volume.USD = (assets[i].dailyVolume !== 0) ? prices.USD * (assets[i].dailyVolume) : 0;
 				assets[i].volume.CNY = (assets[i].dailyVolume !== 0) ? prices.CNY * (assets[i].dailyVolume) : 0;
 				assets[i].volume.EUR = (assets[i].dailyVolume !== 0) ? prices.EUR * (assets[i].dailyVolume) : 0;
 
-				decimals = (assets[i].symbol !== 'BTC' && assets[i].symbol !== 'GOLD') ? 0 : 3;
+				decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
 				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
 				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
+
 			}
 		} else {
 			for (i = 0; i < assets.length; i++) {
-				decimals = (assets[i].symbol !== 'BTC' && assets[i].symbol !== 'GOLD') ? 0 : 3;
-				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
+
+				decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
+
 				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
+				assets[i].dailyVolume = $filter('number')(assets[i].dailyVolume, 2) + ' BTS';
+
+				assets[i].cap = assets[i].vwap * assets[i].current_share_supply;
+				assets[i].capText = $filter('number')(assets[i].cap, 0) + ' BTS';
+				assets[i].vwapText = $filter('number')(assets[i].vwap, 2) + ' BTS';
+				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
 			}
 		}
 
@@ -201,7 +216,7 @@ angular.module('app')
 			if (result.issuer_account_id === -2) {
 				assetInfo = filterFeeds(result, true);
 			}
-			assetInfo.asset = orderBook(assetInfo.asset, assetInfo.medianFeed);
+			assetInfo.asset = orderBook(assetInfo.asset, assetInfo.asset.medianFeed);
 			deferred.resolve(assetInfo);
 		});
 		return deferred.promise;
@@ -240,17 +255,9 @@ angular.module('app')
 			tempFeeds = asset.feeds;
 			averageFeed = asset.averagefeed;
 		}
-		if (asset.shorts.length > 1 || asset.bids.length > 1 || asset.asks.length > 1) {
-			if (tempFeeds.length === 0 || tempFeeds[tempFeeds.length - 1].median_price === null) {
-				medianFeed = 0;
-			} else {
-				medianFeed = tempFeeds[tempFeeds.length - 1].median_price;
-			}
-		} else {
-			medianFeed = 0;
-		}
-		if (medianFeed !== 0) {
-			medianLine = 1 / medianFeed;
+
+		if (asset.medianFeed !== 0) {
+			medianLine = 1 / asset.medianFeed;
 		} else {
 			medianLine = 0;
 		}
@@ -265,7 +272,6 @@ angular.module('app')
 		return {
 			feeds: tempFeeds,
 			enoughFeeds: enoughFeeds,
-			medianFeed: medianFeed,
 			medianLine: medianLine,
 			averageFeed: averageFeed,
 			collateral: collateral,
@@ -284,15 +290,22 @@ angular.module('app')
 			wall.price = medianFeed;
 			asset.shortSum = [];
 
+			// Split orders with and without price limit
 			for (i = 0; i < asset.shorts.length; i++) {
 				if (asset.shorts[i].price_limit === 'None' || asset.shorts[i].price_limit >= wall.price) {
 					wall.amount += asset.shorts[i].collateral * wall.price / 2;
+					// asset.shorts[i].amountAsset = asset.shorts[i].collateral * wall.price / 2;
 				} else if (i > 0) {
+					
 					if (asset.shorts[i - 1].price_limit === asset.shorts[i].price_limit) {
-						asset.shorts[i - 1][1] += asset.shorts[i].collateral / 2;
+						console.log(asset.shortSum[i-1]);
+						asset.shortSum[i - 1][1] += asset.shorts[i].collateral / 2;
+						console.log(asset.shortSum[i-1]);
 					} else {
 						asset.shortSum.push([1 / asset.shorts[i].price_limit, asset.shorts[i].collateral / 2]);
 					}
+					
+					// asset.shorts[i].amountAsset = asset.shorts[i].collateral * wall.price / 2;
 				} else {
 					asset.shortSum.push([1 / asset.shorts[i].price_limit, asset.shorts[i].collateral / 2]);
 				}
@@ -301,6 +314,7 @@ angular.module('app')
 			var temp = [];
 			asset.shortSum.push([1 / wall.price, wall.amount]);
 
+			// Sort in ascending order
 			asset.shortSum.sort(function(a, b) {
 				return a[0] - b[0];
 			});
@@ -308,6 +322,7 @@ angular.module('app')
 			temp.push([asset.shortSum[0][0], asset.shortSum[0][1]]);
 
 			var sum = 0;
+			// Sum orders at same price
 			for (i = 1; i < asset.shortSum.length; i++) {
 				if (asset.shortSum[i - 1][0] === asset.shortSum[i][0]) {
 					temp[temp.length - 1][1] += asset.shortSum[i][1];
@@ -316,12 +331,34 @@ angular.module('app')
 				}
 			}
 			asset.shortSum = temp;
+			if (asset.shortSum[0][1] === 0) {
+				asset.shortSum.splice(0, 1);
+			}
 			asset.shortSum = flattenArray(asset.shortSum, true);
+
 		}
 
 		// Asks and bids
-		asset.sum.asks = flattenArray(asset.sum.asks, false);
+		asset.sum.asks = flattenArray(asset.sum.asks, false, true);
 		asset.sum.bids = flattenArray(asset.sum.bids, false);
+
+		// Sort and limit covers
+		if (asset.covers) {
+			asset.covers.sort(function(a, b) {
+				return (new Date(a.expiration)) - (new Date(b.expiration));
+			});
+
+			asset.covers = asset.covers.filter(function(entry, i) {
+				return i < 10;
+			});
+		}
+
+		asset.covers.forEach(function(cover) {
+			cover.callPrice = 1 / (cover.market_index.order_price.ratio * _getPriceRatio(cover.market_index.order_price.quote_asset_id, cover.market_index.order_price.base_asset_id));
+			cover.collateral = cover.collateral / getPrecision(0);
+			cover.owed = cover.state.balance / getPrecision(cover.market_index.order_price.quote_asset_id);
+			cover.interest = cover.interest_rate.ratio * 100;
+		});
 
 		return asset;
 	}
@@ -331,18 +368,24 @@ angular.module('app')
 		var orderBookArray = [];
 		var maxStep;
 		if (inverse) {
-			if (array.length) {
+			array.sort(function(a, b) {
+				return a[0] - b[0];
+			});
+			if (array && array.length) {
 				var arrayLength = array.length - 1;
 				orderBookArray.unshift([array[arrayLength][0], array[arrayLength][1]]);
-				for (i = arrayLength; i > 0; i--) {
-					maxStep = Math.min((array[i][0] - array[i - 1][0]) / 2, 0.001);
-					orderBookArray.unshift([array[i][0] - maxStep, array[i - 1][1]]);
+				for (i = arrayLength - 1; i > 0; i--) {
+					maxStep = Math.min((array[i][0] - array[i - 1][0]) / 2, 0.000001);
+					orderBookArray.unshift([array[i][0] + maxStep, array[i + 1][1]]);
 					if (sumBoolean) {
 						array[i][1] += array[i - 1][1];
 					}
 					orderBookArray.unshift([array[i][0], array[i][1]]);
 				}
 
+				if (orderBookArray.length === 1) {
+					orderBookArray.unshift([0, orderBookArray[0][1]]);
+				}
 			}
 		} else {
 			if (array && array.length) {
@@ -356,6 +399,10 @@ angular.module('app')
 					}
 					orderBookArray.push([array[i][0], array[i][1]]);
 				}
+			}
+
+			if (orderBookArray.length === 1) {
+				orderBookArray.push([orderBookArray[0][0] * 2, orderBookArray[0][1]]);
 			}
 		}
 		return orderBookArray;

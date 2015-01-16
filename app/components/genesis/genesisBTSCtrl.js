@@ -60,7 +60,9 @@ angular.module('app')
 			type: 'pie',
 			useHighStocks: false,
 			series: pieSeries,
-			size: Size,
+			size: {
+				height: 300
+			},
 			yAxis: {
 				min: 0,
 				title: {

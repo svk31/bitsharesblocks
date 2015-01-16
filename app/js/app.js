@@ -32,8 +32,8 @@ var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcr
 ])
 
 .run(
-    ['$rootScope', 'api',
-        function($rootScope, api) {
+    ['$rootScope', 'api', '$state','$stateParams',
+        function($rootScope, api, $state, $stateParams) {
 
             api.getInfo().success(function(info) {
                 $rootScope.clientVersion = info.clientVersion;
@@ -47,6 +47,9 @@ var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcr
             $rootScope.activeBoolean = true;
 
             $rootScope.showDelegateAlert = true;
+
+            $rootScope.$state = $state;
+            $rootScope.$stateParams = $stateParams;
 
 
 

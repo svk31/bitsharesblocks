@@ -280,7 +280,9 @@
     "date": "Tarih",
     "key": "Anahtar",
     "website": "Web sitesi",
-    "burn": "BURN İŞLEMLERİ"
+    "burn": "BURN İŞLEMLERİ",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {
@@ -306,6 +308,7 @@
       "show": "Kullanıcılar tarafından piyasaya sürülen varlıkları göster",
       "title": "KULLANICILAR TARAFINDAN PİYASAYA SÜRÜLMÜŞ VARLIKLAR",
       "th1": "Varlık ID",
+      "th3": "24hr Average Price",
       "th4": "Şu anki Arz",
       "th5": "Maksimum Arz",
       "th6": "Initialized"
@@ -346,6 +349,12 @@
       "med": "Medyan Feed Fiyatı",
       "null": "Son 24 saatte yeterli feed yok",
       "last": "Son güncelleme (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {
@@ -357,7 +366,11 @@
       "trxCount": "BTS İŞLEM SAYISI",
       "volume": "BTS İŞLEM HACMİ",
       "btcPrice": "BTS/BTC FİYAT GEÇMİŞİ",
-      "usdPrice": "FİYAT GEÇMİŞİ"
+      "usdPrice": "FİYAT GEÇMİŞİ",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS"
     },
     "value": "Değer",
     "reg": "Hesap kaydı",
@@ -375,7 +388,7 @@
     "height": "BTSX yüksekliği => BTS hardfork bloğu",
     "supply": "Fork anındaki arz",
     "change": "Hardfork sonrası arz değişimi",
-    "changeY": "BTS arz değişimi",
+    "changeY": "BTS annualized inflation",
     "supplyY": "BTS arzı",
     "feesY": "BTS ücretleri"
   },
@@ -390,6 +403,7 @@
     "higher": "Şu miktardan daha büyük bakiyeye sahip adres sayısı:",
     "percent": "ADRESLERE GÖRE TOPLAM ARZ YÜZDESİ",
     "top": "TOP",
+    "sharedropTitle": "SHAREDROP",
     "addresses": "ADRES",
     "address": "Adres",
     "balance": "Bakiye",

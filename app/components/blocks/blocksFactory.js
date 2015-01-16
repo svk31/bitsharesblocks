@@ -128,8 +128,6 @@ angular.module('app')
 			highestBlock = lastBlock;
 		}
 
-		console.log('pageDelta:', pageDelta);
-
 		if (_booleanTrx) {
 
 			query.types = types;

@@ -280,7 +280,9 @@
     "date": "Fecha",
     "key": "Llave",
     "website": "Sitio web",
-    "burn": "OPERACIONES DE QUEMADO"
+    "burn": "OPERACIONES DE QUEMADO",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {
@@ -306,6 +308,7 @@
       "show": "Mostrar activos emitidos por usuarios",
       "title": "ACTIVOS EMITIDOS POR USUARIOS",
       "th1": "ID Activo",
+      "th3": "24hr Average Price",
       "th4": "Oferta Actual",
       "th5": "Oferta Máxima",
       "th6": "Initialized"
@@ -346,6 +349,12 @@
       "med": "Mediana del Precio del Feed",
       "null": "Sin suficientes feeds en las últimas 24hrs",
       "last": "Última actualización (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {
@@ -357,7 +366,11 @@
       "trxCount": "NUMEROS DE TRANSACCIONES BTS",
       "volume": "VOLUMEN TRANSACCIONES BTS",
       "btcPrice": "PRECIO HISTORICO BTS/BTC",
-      "usdPrice": "PRECIO HISTORICO"
+      "usdPrice": "PRECIO HISTORICO",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS"
     },
     "value": "Valor",
     "reg": "Registro de cuenta",
@@ -375,7 +388,7 @@
     "height": "Altura de BTSX => Bloque del hardfork de BTS",
     "supply": "Oferta en el fork",
     "change": "Cambio en la oferta desde el hardfork",
-    "changeY": "Cambio de oferta de BTS",
+    "changeY": "BTS annualized inflation",
     "supplyY": "Oferta BTS",
     "feesY": "Comisiones BTS"
   },
@@ -390,6 +403,7 @@
     "higher": "Direcciones con balance mayor que",
     "percent": "PORCENTAJE DE LA OFERTA TOTAL SEGUN NUMERO DE DIRECCIONES",
     "top": "ARRIBA",
+    "sharedropTitle": "SHAREDROP",
     "addresses": "DIRECCIONES",
     "address": "Dirección",
     "balance": "Balance",

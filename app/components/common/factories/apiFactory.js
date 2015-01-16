@@ -17,8 +17,8 @@ angular.module("app").factory('api', ['$http', function($http) {
     api.setAPI = function(index) {
         // var location = ['North America - New York', 'Asia - Singapore'];
         // console.log('changing API to:',location[index]);
-        url = apis[index] + '/v1/';
-        url_v2 = apis[index] + '/v2/';
+        // url = apis[index] + '/v1/';
+        // url_v2 = apis[index] + '/v2/';
     };
 
     api.getInfo = function() {
@@ -141,14 +141,6 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    // api.getDelegates = function(cacheBoolean) {
-    //     return $http({
-    //         method: 'JSONP',
-    //         url: 'http://' + url + 'delegates' + cb,
-    //         cache: cacheBoolean
-    //     });
-    // };
-
     api.getDelegates = function(query) {
         return $http({
             method: 'JSONP',
@@ -233,11 +225,19 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp('http://' + url + 'blockstrx/new/' + lastBlock + cb);
     };
 
-    api.getVolume = function(cacheBoolean) {
+    // api.getVolume = function(cacheBoolean) {
+    //     return $http({
+    //         method: 'JSONP',
+    //         url: 'http://' + url + 'volume' + cb,
+    //         cache: cacheBoolean
+    //     });
+    // };
+
+    api.getCharts = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'volume' + cb,
-            cache: cacheBoolean
+            url: 'http://' + url + 'charts/' + JSON.stringify(query) + cb,
+            cache: true
         });
     };
 
@@ -262,6 +262,10 @@ angular.module("app").factory('api', ['$http', function($http) {
 
     api.getAccount = function(name) {
         return $http.jsonp('http://' + url + 'accounts/' + name + cb);
+    };
+
+    api.getSubAccounts = function(name) {
+        return $http.jsonp('http://' + url + 'subaccounts/' + name + cb);
     };
 
     api.getAccounts = function() {

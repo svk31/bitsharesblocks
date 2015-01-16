@@ -191,7 +191,7 @@
     <table class="table table-condensed table-hover table-bordered">
       <thead>
         <tr>
-          <th>{{'blocks.blockNum' | translate }}</th>
+          <th class="hidden-xs">{{'blocks.blockNum' | translate }}</th>
           <th>{{'accounts.name' | translate }}</th>
           <th>{{'block.trx.amount' | translate }}</th>
           <th>{{'block.trx.message' | translate }}</th>
@@ -199,7 +199,7 @@
       </thead>
       <tbody >
         <tr ng-repeat="burn in burns | limitTo: 15 track by $index " class="repeated-item">
-          <td><a ui-sref="block({ 'id' : burn.block })" >{{ burn.block }}</a></td>
+          <td class="hidden-xs"><a ui-sref="block({ 'id' : burn.block })" >{{ burn.block }}</a></td>
           <td><a ui-sref="account({ 'name' : burn.name })" >{{burn.name}}</a></td>
           <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</a></td>
           <td>{{ burn.message }}</td>

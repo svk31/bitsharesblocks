@@ -43,7 +43,7 @@
 	</div>
 </div>
 
-<div class="col-md-7" style="margin-bottom:5em">
+<div class="col-md-6" style="margin-bottom:5em">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title">{{ 'genesis.top' | translate }} {{balanceLimit}} {{ 'genesis.addresses' | translate }}</h3>
@@ -62,8 +62,8 @@
 			<tbody>
 				<tr ng-repeat="adress in genesis.topBalances | limitTo:balanceLimit track by $index">
 					<td>{{$index+1}}</td>
-					<td>{{adress[0]}}</td>
-					<td>{{adress[1] | number:2}} DVS</td>
+					<td><small>{{adress[0]}}</small></td>
+					<td>{{adress[1] | number:2}} BTS</td>
 					<td>{{adress[2] | number:2}} %</td>
 					<td>{{adress[3] | number:2}} %</td>
 				</tr>

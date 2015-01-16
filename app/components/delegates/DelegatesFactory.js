@@ -289,8 +289,8 @@ angular.module('app')
 		delegates.forEach(function(delegate, i) {
 
 			// Add ranks
-			delegate.dayChange = (ranks && angular.isDefined(ranks.dayChange[delegate._id])) ? ranks.dayChange[delegate._id] : 'n/a';
-			delegate.weekChange = (ranks &&  angular.isDefined(ranks.weekChange[delegate._id])) ? ranks.dayChange[delegate._id] : 'n/a';
+			delegate.dayChange = (ranks.dayChange[delegate._id] !== undefined) ? ranks.dayChange[delegate._id] : 'n/a';
+			delegate.weekChange = (ranks.weekChange[delegate._id] !== undefined) ? ranks.weekChange[delegate._id] : 'n/a';
 
 			// Count active feeds
 			delegate.activeFeeds = 0;
@@ -346,8 +346,12 @@ angular.module('app')
 				var deltaPatch = patch - _versions.patch;
 				var deltaPremajor = premajor - _versions.premajor;
 
-				if (deltaMajor >= 0) {
-					if (deltaMinor >= 0) {
+				if (deltaMajor > 0) {
+					delegate.version = 1;
+				} else if (deltaMajor === 0) {
+					if (deltaMinor > 0) {
+						delegate.version = 1;
+					} else if (deltaMinor === 0) {
 						if (deltaPatch >= 0) {
 							if (deltaPremajor >= 0) {
 								delegate.version = 1;
@@ -392,7 +396,7 @@ angular.module('app')
 			delegate.showWeekChange = true;
 		}
 		delegate.dayChange = (result.ranks.dayChange !== undefined) ? result.ranks.dayChange : 'n/a';
-		delegate.weekChange = (result.ranks.weekChange !== undefined) ? result.ranks.dayChange : 'n/a';
+		delegate.weekChange = (result.ranks.weekChange !== undefined) ? result.ranks.weekChange : 'n/a';
 
 		// Check version
 		delegate = checkVersion(delegate);
@@ -431,7 +435,7 @@ angular.module('app')
 		var startDate = new Date(delegate.reg_date_ISO).getTime();
 		if (result.withdrawals) {
 			withLength = result.withdrawals.length;
-			
+
 			if (withLength > 0) {
 				result.withdrawals.unshift([startDate, 0]);
 				result.withdrawals.push([currentDate.getTime(), result.withdrawals[result.withdrawals.length - 1][1] + delegate.delegate_info.pay_balance]);

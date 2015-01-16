@@ -7,68 +7,16 @@
   </div>
 </div>
 
-<div class="container col-md-10 col-md-offset-1">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 style="display: inline-block;" class="panel-title">{{ 'assets.market.title' | translate }}</h3>
-      <button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="capUnit" data-html="1" ng-options="unit.name as unit.label for unit in capUnits" bs-select>
-          Action <span class="caret"></span>
-        </button>
-    </div>
+<div class="col-md-10 col-md-offset-1 assets">
+  <tabset>
+      <tab style="cursor:pointer;" ng-click="goTo('assets.market')" active="tabs[0].active">
+        <tab-heading style="cursor:pointer;">{{'assets.market.title' | translate }}</tab-heading>
+        <div ui-view="market-assets"></div>
+      </tab>
 
-    <table class="table table-condensed table-bordered">
-      <thead>
-       <tr>
-        <th ng-click="orderByField='symbol'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="symbol" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th1' | translate }}</th>
-        <th ng-click="orderByField='status.ask_depth'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="status.ask_depth" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th2' | translate }}</th>
-        <th ng-click="orderByField='status.bid_depth'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="status.bid_depth" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th3' | translate }}</th>
-        <th class="hidden-xs sortable" ng-click="orderByField='numberValidFeeds'; reverseSort = !reverseSort" ><ng-sort-arrows order-string="numberFeeds" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th4' | translate }}</th>
-        <th class="hidden-xs">{{ 'assets.market.th5' | translate }}</th>
-        <!-- <th>1h average price</th> -->
-        <th class="hidden-xs">{{ 'assets.market.th6' | translate }}</th>
-        <th class="hidden-xs sortable" ng-click="orderByField='yield'; reverseSort = !reverseSort"><ng-sort-arrows order-string="yield" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.yield' | translate }}</th>
-        <th ng-click="orderByField='collateralRatio'; reverseSort = !reverseSort" class="sortable hidden-xs"><ng-sort-arrows order-string="collateralRatio" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.collateral' | translate }}</th>
-        <th ng-click="orderByField='dailyVolume'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="dailyVolume" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th7' | translate }}</th>
-        <th ng-click="orderByField='marketCap'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="marketCap" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th8' | translate }}</th>
-      </tr>
-    </thead>
-    <tbody >
-      <tr ng-repeat="asset in assets | filter:{issuer_account_id:-2}:true | orderBy: orderByField:reverseSort track by asset._id " class="repeated-item">
-        <td><a ui-sref="asset({ 'id' : asset.symbol})">{{asset.symbol}}</a></td>
-        <td>{{asset.status.ask_depth | number:0}} DVS</td>
-        <td>{{asset.status.bid_depth | number:0}} DVS</td>
-        <td ng-class="{'hidden-xs':true, 'alert-success': (asset.numberValidFeeds>50), 'alert-warning': (asset.numberValidFeeds<51 && asset.numberValidFeeds>=25), 'alert-danger': (asset.numberValidFeeds<25)}">{{asset.numberValidFeeds}}</td>
-        <td class="hidden-xs" ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(asset.averageValidFeeds | number:4) +' '+asset.symbol}}/DVS</td>
-        <td class="hidden-xs" ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(asset.averageValidFeeds | number:7) +' '+asset.symbol}}/DVS</td>
-        <!-- <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"><strong>{{(asset.status.center_price.ratio | number:4) +' '+asset.symbol}}/DVS</strong></td> -->
-        <!-- <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"><strong>{{(asset.status.center_price.ratio | number:7) +' '+asset.symbol}}/DVS</strong></td> -->
-        <td class="hidden-xs">{{ asset.current_share_supply }}</td>
-        <td class="hidden-xs">{{ asset.yield | number:2 }}%</td>
-        <td>{{ ( asset.collateralRatio ) | number:0 }} %</td>
-        <td ng-if="capUnit==='BTC'">{{ priceUnit.symbol + (asset.volume[capUnit] | number:2) }}</td>
-        <td ng-if="capUnit!=='BTC'">{{ asset.volume[capUnit] | nfcurrency:priceUnit.symbol }}</td>
-        <td>{{ asset.cap[capUnit] | nfcurrency:priceUnit.symbol }} {{price}}</td>
-      </tr>
-    </tbody>
-  </table>
+      <tab style="cursor:pointer;" ng-click="goTo('assets.user')" active="tabs[1].active">
+        <tab-heading style="cursor:pointer;">{{ 'assets.user.title' | translate }}</tab-heading>
+        <div ui-view="user-assets"></div>
+      </tab>
+  </tabset>
 </div>
-</div>
-
-
-<div class="col-md-8 col-md-offset-2 user-assets">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ 'assets.user.title' | translate }}</h3>
-    </div>
-    <!-- <div class="checkbox container" style="margin-left:0;">
-      <label>
-        <input ng-model="$root.showUserAssets" type="checkbox">{{ 'assets.user.show' | translate }}
-      </label>
-    </div> -->
-    <div>
-      <fast-repeat component="'UserAssetsTable'" data="userAssets" headers="userHeaders"></fast-repeat>
-    </div>
-  </div>
-</div>
-
-
