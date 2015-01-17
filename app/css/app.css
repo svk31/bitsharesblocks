@@ -288,3 +288,7 @@ body { padding-top: 70px;
 .pill-content > .active {
     height: auto;       /* let the content decide it  */
 } /* bootstrap hack end */
+
+.clickable {
+  cursor: pointer;
+}

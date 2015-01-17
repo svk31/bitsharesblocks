@@ -159,7 +159,7 @@
 				<thead >
 					<tr>
 						<td style="padding-top:0.75em;"><strong>{{ 'block.trx.feedUpdates' | translate }}: {{trxInfo[$index].feedsCount}}</strong></td>
-						<td style="padding-top:0.75em;"><span id="dropdown" ng-click="feedStatus.open= !feedStatus.open"><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': feedStatus.open, 'glyphicon-chevron-right': !feedStatus.open}"></i></span></td>
+						<td style="padding-top:0.75em;"><span id="dropdown" ng-click="feedStatus.open= !feedStatus.open"><i class="pull-right glyphicon clickable" ng-class="{'glyphicon-chevron-down': feedStatus.open, 'glyphicon-chevron-right': !feedStatus.open}"></i></span></td>
 					</tr>
 					<tr ng-if="feedStatus.open">
 						<th>{{ 'block.trx.asset' | translate }}:</th>
@@ -181,7 +181,7 @@
 			<thead >
 				<tr>
 					<td style="padding-top:0.75em;"><strong>{{ 'block.trx.votes' | translate }}: {{transaction.length}}</strong></td>
-					<td ng-if="transaction.length !== undefined" style="padding-top:0.75em;"><span ng-show="transaction.length>0" id="dropdown" ng-click="status.open[$index]= !status.open[$index]"><i style="cursor: pointer;" class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open[$index], 'glyphicon-chevron-right': !status.open[$index]}"></i></span></td>
+					<td ng-if="transaction.length !== undefined" style="padding-top:0.75em;"><span ng-show="transaction.length>0" id="dropdown" ng-click="status.open[$index]= !status.open[$index]"><i class="pull-right glyphicon clickable" ng-class="{'glyphicon-chevron-down': status.open[$index], 'glyphicon-chevron-right': !status.open[$index]}"></i></span></td>
 				</tr>
 				<tr ng-if="status.open[$index]">
 					<th ng-click="sort('amount')" class="sortable hidden-xs"><ng-sort-arrows order-string="amount" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.amount' | translate }}:</th>
