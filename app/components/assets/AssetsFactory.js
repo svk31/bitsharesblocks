@@ -175,9 +175,9 @@ angular.module('app')
 		return assets;
 	}
 
-	function fetchVolume(chartDays) {
+	function fetchVolume(query) {
 		var deferred = $q.defer();
-		api.getAssetVolume2(chartDays).success(function(volume) {
+		api.getAssetVolume2(query).success(function(volume) {
 			volume.transactions = volume.transactions.sort();
 			deferred.resolve({
 				asks: _reduceArray(volume.transactions, 0, 1),

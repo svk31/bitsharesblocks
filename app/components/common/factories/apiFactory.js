@@ -71,10 +71,10 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    api.getFees = function() {
+    api.getFees = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'fees' + cb,
+            url: 'http://' + url_v2 + 'fees/' + JSON.stringify(query) + cb,
             cache: false
         });
     };
@@ -238,7 +238,7 @@ angular.module("app").factory('api', ['$http', function($http) {
     api.getCharts = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'charts/' + JSON.stringify(query) + cb,
+            url: 'http://' + url_v2 + 'charts/' + JSON.stringify(query) + cb,
             cache: true
         });
     };
@@ -251,10 +251,10 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    api.getAssetVolume2 = function(days) {
+    api.getAssetVolume2 = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'assetvolume2/' + days + cb
+            url: 'http://' + url_v2 + 'assetvolume/' + JSON.stringify(query) + cb
         });
     };
 

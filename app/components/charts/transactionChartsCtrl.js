@@ -4,7 +4,7 @@ angular.module('app')
   function($scope, $rootScope, $filter, $state, api, Assets, Charts, Translate) {
     var toolTip = {
       valueDecimals: 0,
-      valueSuffix: ' BTS'
+      valueSuffix: ''
     };
 
     var rangeSelector = Charts.rangeSelector;
@@ -51,7 +51,10 @@ angular.module('app')
       type: 'column',
       useHighStocks: true,
       series: [new Charts.serie({
-        tooltip: toolTip,
+        tooltip: {
+          valueDecimals: 0,
+          valueSuffix: ' BTS'
+        }
       })],
       size: Size,
       noLegend: true,
@@ -69,6 +72,7 @@ angular.module('app')
     $scope.trxCountChart = angular.copy($scope.valueChartConfig);
     $scope.trxCountChart.yAxis.type = 'linear';
 
+    $scope.trxCountChart.series[0].tooltip = toolTip;
     $scope.trxCountChart.yAxis.labels.formatter = function() {
       return $filter('currency')(this.value, '', 0);
     };
@@ -128,7 +132,6 @@ angular.module('app')
           array[i][3]
         ]);
       }
-
       $scope.trxCountChart.series[0].data = tempArrays[0];
       $scope.valueChartConfig.series[0].data = tempArrays[1];
 
