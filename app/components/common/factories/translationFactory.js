@@ -30,7 +30,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		value: "日本語",
 		key: "ja"
 	}, {
-		value: "русский",
+		value: "Pусский",
 		key: "ru"
 	}];
 
