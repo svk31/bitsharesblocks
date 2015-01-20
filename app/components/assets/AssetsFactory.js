@@ -10,7 +10,7 @@ angular.module('app')
 		_assets = {};
 		_assets['0'] = {
 			'symbol': 'BTS',
-			'precision>': basePrecision
+			'precision': basePrecision
 		};
 	}
 
