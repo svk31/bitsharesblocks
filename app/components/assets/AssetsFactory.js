@@ -296,15 +296,15 @@ angular.module('app')
 					wall.amount += asset.shorts[i].collateral * wall.price / 2;
 					// asset.shorts[i].amountAsset = asset.shorts[i].collateral * wall.price / 2;
 				} else if (i > 0) {
-					
+
 					if (asset.shorts[i - 1].price_limit === asset.shorts[i].price_limit) {
-						console.log(asset.shortSum[i-1]);
+						console.log(asset.shortSum[i - 1]);
 						asset.shortSum[i - 1][1] += asset.shorts[i].collateral / 2;
-						console.log(asset.shortSum[i-1]);
+						console.log(asset.shortSum[i - 1]);
 					} else {
 						asset.shortSum.push([1 / asset.shorts[i].price_limit, asset.shorts[i].collateral / 2]);
 					}
-					
+
 					// asset.shorts[i].amountAsset = asset.shorts[i].collateral * wall.price / 2;
 				} else {
 					asset.shortSum.push([1 / asset.shorts[i].price_limit, asset.shorts[i].collateral / 2]);
@@ -351,14 +351,15 @@ angular.module('app')
 			asset.covers = asset.covers.filter(function(entry, i) {
 				return i < 10;
 			});
-		}
 
-		asset.covers.forEach(function(cover) {
-			cover.callPrice = 1 / (cover.market_index.order_price.ratio * _getPriceRatio(cover.market_index.order_price.quote_asset_id, cover.market_index.order_price.base_asset_id));
-			cover.collateral = cover.collateral / getPrecision(0);
-			cover.owed = cover.state.balance / getPrecision(cover.market_index.order_price.quote_asset_id);
-			cover.interest = cover.interest_rate.ratio * 100;
-		});
+			asset.covers.forEach(function(cover) {
+				cover.callPrice = 1 / (cover.market_index.order_price.ratio * _getPriceRatio(cover.market_index.order_price.quote_asset_id, cover.market_index.order_price.base_asset_id));
+				cover.collateral = cover.collateral / getPrecision(0);
+				cover.owed = cover.state.balance / getPrecision(cover.market_index.order_price.quote_asset_id);
+				cover.interest = cover.interest_rate.ratio * 100;
+			});
+
+		}
 
 		return asset;
 	}
