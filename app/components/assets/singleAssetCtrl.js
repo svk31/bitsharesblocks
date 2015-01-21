@@ -307,10 +307,8 @@ angular.module('app')
       }
 
       $scope.supplyChart.series[0].data = $scope.asset.supply;
-      for (var i = 0; i < $scope.asset.collateral.length; i++) {
-        $scope.asset.collateral[i][1] *= $scope.asset.medianFeed;
-      }
-      if (marketAsset) {
+
+      if (marketAsset && $scope.asset.collateral.length > 0) {
         $scope.supplyChart.series[1].data = $scope.asset.collateral;
       } else if ($scope.supplyChart.series.length === 2) {
         $scope.supplyChart.series.pop();
