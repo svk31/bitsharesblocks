@@ -282,8 +282,8 @@
 		"key": "Key",
 		"website": "Website",
 		"burn": "WALL BURNS",
-    "parent": "Parent account",
-    "subs": "Sub-accounts"
+		"parent": "Parent account",
+		"subs": "Sub-accounts"
 	},
 	"assets": {
 		"plot": {
@@ -351,12 +351,12 @@
 			"null": "Not enough feeds in the last 24hrs",
 			"last": "Last update (UTC)"
 		},
-    "covers": {
-      "title": "MARGIN CALL ORDERS",
-      "price": "Call price",
-      "owed": "Owed",
-      "expiration": "Expiration date"
-    }
+		"covers": {
+			"title": "MARGIN CALL ORDERS",
+			"price": "Call price",
+			"owed": "Owed",
+			"expiration": "Expiration date"
+		}
 	},
 	"charts": {
 		"titles": {
@@ -368,10 +368,11 @@
 			"volume": "BTS TRANSACTION VOLUME",
 			"btcPrice": "BTS/BTC PRICE HISTORY",
 			"usdPrice": "PRICE HISTORY",
-      "prices": "PRICE CHARTS",
-      "trx": "TRANSACTION CHARTS",
-      "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+			"prices": "PRICE CHARTS",
+			"trx": "TRANSACTION CHARTS",
+			"accounts": "ACCOUNTS CHARTS",
+			"supply": "SUPPLY CHARTS",
+			"feeds": "FEEDS CHARTS"
 		},
 		"value": "Value",
 		"reg": "Account registration",
@@ -379,7 +380,13 @@
 		"feed": "Delegate feed update",
 		"update": "Account update",
 		"new": "New accounts",
-		"ma15": "15-day Moving Average"
+		"ma15": "15-day Moving Average",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
 	},
 	"supply": {
 		"title1": "INFO",

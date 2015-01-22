@@ -151,11 +151,9 @@ angular.module('app')
 
 			_getTransactions(query)
 				.then(function(result) {
-					console.log('number of blocks found:', result.blocks.length);
 					if (pageDelta > 0 && result.blocks.length === 0) {
 						result.finalPage = true;
 					}
-					console.log(result);
 					deferred.resolve(result);
 				});
 		} else {

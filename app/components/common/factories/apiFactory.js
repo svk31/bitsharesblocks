@@ -243,6 +243,14 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
+    api.getFeedCharts= function(id) {
+        return $http({
+            method: 'JSONP',
+            url: 'http://' + url + 'feedstats/' + id + cb,
+            cache: true
+        });
+    };
+
     api.getAssetVolume = function(cacheBoolean) {
         return $http({
             method: 'JSONP',

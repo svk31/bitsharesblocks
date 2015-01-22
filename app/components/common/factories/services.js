@@ -392,7 +392,8 @@ angular.module('app.services', [])
 				"prices": "PRICE CHARTS",
 				"trx": "TRANSACTION CHARTS",
 				"accounts": "ACCOUNTS CHARTS",
-				"supply": "SUPPLY CHARTS"
+				"supply": "SUPPLY CHARTS",
+				"feeds": "FEEDS CHARTS"
 			},
 			"value": "Value",
 			"reg": "Account registration",
@@ -400,7 +401,13 @@ angular.module('app.services', [])
 			"feed": "Delegate feed update",
 			"update": "Account update",
 			"new": "New accounts",
-			"ma15": "15-day Moving Average"
+			"ma15": "15-day Moving Average",
+			"feeds": {
+				"title": "FEED TRACKING",
+				"latest": "Latest price",
+				"vwap": "24hr weighted average price",
+				"deviation": "Deviation from feed"
+			}
 		},
 		"supply": {
 			"title1": "INFO",

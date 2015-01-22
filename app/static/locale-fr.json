@@ -371,7 +371,8 @@
       "prices": "TRACES DE PRIX",
       "trx": "TRACÉS DES TRANSACTIONS",
       "accounts": "TRACÉS DES COMPTES",
-      "supply": "TRACÉS DES RÉSERVES"
+      "supply": "TRACÉS DES RÉSERVES",
+      "feeds": "TRACÉS DES FLUX"
     },
     "value": "Valeur",
     "reg": "Inscription de compte",
@@ -379,7 +380,13 @@
     "feed": "Mise à jour de flux",
     "update": "Mise à jour de compte",
     "new": "Nouveaux comptes",
-    "ma15": "Moyenne mobile 15 jours"
+    "ma15": "Moyenne mobile 15 jours",
+    "feeds": {
+      "title": "SUIVI DE FLUX",
+      "latest": "Dernier prix",
+      "vwap": "Prix moyen ponderé en volume",
+      "deviation": "Deviation du flux"
+    }
   },
   "supply": {
     "title1": "INFO",

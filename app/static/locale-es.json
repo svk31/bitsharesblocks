@@ -370,7 +370,8 @@
       "prices": "PRICE CHARTS",
       "trx": "TRANSACTION CHARTS",
       "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Valor",
     "reg": "Registro de cuenta",
@@ -378,7 +379,13 @@
     "feed": "Actualización feed delegado",
     "update": "Actualización cuenta",
     "new": "Nuevas cuentas",
-    "ma15": "Media móvil 15 dias"
+    "ma15": "Media móvil 15 dias",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "INFO",

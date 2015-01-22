@@ -367,7 +367,8 @@
       "prices": "PRICE CHARTS",
       "trx": "TRANSACTION CHARTS",
       "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Value",
     "reg": "アカウント登録",
@@ -375,7 +376,13 @@
     "feed": "代表者フィードアップデート",
     "update": "アカウントアップデート",
     "new": "ニューアカウント",
-    "ma15": "１５日移動平均"
+    "ma15": "１５日移動平均",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "情報",

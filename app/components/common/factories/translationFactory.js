@@ -282,7 +282,24 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 						deferred.resolve({
 							inflationY: result["supply.changeY"],
 							supplyY: result["supply.supplyY"],
-							feesY: result["supply.feesY"],
+							feesY: result["supply.feesY"]
+						});
+					});
+			});
+		return deferred.promise;
+	}
+
+	function feeds() {
+		var deferred = $q.defer();
+		$translate.use(_currentKey)
+			.then(function(result) {
+				$translate(['asset.feeds.med', 'charts.feeds.latest', 'charts.feeds.vwap', 'charts.feeds.deviation'])
+					.then(function(result) {
+						deferred.resolve({
+							med: result["asset.feeds.med"],
+							latest: result["charts.feeds.latest"],
+							vwap: result["charts.feeds.vwap"],
+							deviation: result["charts.feeds.deviation"]
 						});
 					});
 			});
@@ -304,7 +321,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		charts: charts,
 		genesis: genesis,
 		apiModal: apiModal,
-		supply: supply
+		supply: supply,
+		feeds: feeds
 	};
 
 }]);

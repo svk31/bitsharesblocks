@@ -370,7 +370,8 @@
       "prices": "PRICE CHARTS",
       "trx": "TRANSACTION CHARTS",
       "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Value",
     "reg": "계정 등록",
@@ -378,7 +379,13 @@
     "feed": "대표자 가격정보 업데이트",
     "update": "계정 업데이트",
     "new": "새 계정",
-    "ma15": "15일 이동평균"
+    "ma15": "15일 이동평균",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "정보",

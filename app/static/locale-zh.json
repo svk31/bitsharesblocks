@@ -370,7 +370,8 @@
       "prices": "PRICE CHARTS",
       "trx": "TRANSACTION CHARTS",
       "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "价值",
     "reg": "账户注册",
@@ -378,7 +379,13 @@
     "feed": "受托人喂价种子更新",
     "update": "账号更新",
     "new": "新账号",
-    "ma15": "15天移动平均价"
+    "ma15": "15天移动平均价",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "INFO",

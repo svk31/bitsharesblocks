@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-offset-2 assets">
+<div class="col-md-10 col-md-offset-1 assets">
   <tabset>
       <tab style="cursor:pointer;" ng-click="goTo('charts.prices')" active="tabs[0].active">
         <tab-heading style="cursor:pointer;">{{ 'charts.titles.prices' | translate }}</tab-heading>
@@ -18,6 +18,11 @@
       <tab style="cursor:pointer;" ng-click="goTo('charts.supply')" active="tabs[3].active">
         <tab-heading style="cursor:pointer;">{{ 'charts.titles.supply' | translate }}</tab-heading>
         <div ui-view="charts-supply"></div>
+      </tab>
+
+      <tab style="cursor:pointer;" ng-click="goTo('charts.feeds')" active="tabs[4].active">
+        <tab-heading style="cursor:pointer;">{{ 'charts.titles.feeds' | translate }}</tab-heading>
+        <div ui-view="charts-feeds"></div>
       </tab>
   </tabset>
 </div>

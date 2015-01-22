@@ -84,6 +84,16 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('charts.feeds', {
+      url: "/feeds?asset",
+      reloadOnSearch: false,
+      views: {
+        'charts-feeds': {
+          templateUrl: "feedsCharts.html",
+          controller: 'feedsChartsCtrl'
+        }
+      }
+    })
     .state('assets', {
       url: "/assets",
       templateUrl: "allAssets.html",

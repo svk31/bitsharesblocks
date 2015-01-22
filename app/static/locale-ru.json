@@ -371,7 +371,8 @@
       "prices": "ГРАФИКИ ЦЕН",
       "trx": "ГРАФИКИ ТРАНЗАКЦИЙ",
       "accounts": "ГРАФИКИ АККАУНТОВ",
-      "supply": "ГРАФИКИ ПРЕДЛОЖЕНИЙ"
+      "supply": "ГРАФИКИ ПРЕДЛОЖЕНИЙ",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Объем",
     "reg": "Регистрация аккаунта",
@@ -379,7 +380,13 @@
     "feed": "Обновление канала делегата",
     "update": "Обновление аккаунта",
     "new": "Новый аккаунт",
-    "ma15": "15-дневное скользящее среднее"
+    "ma15": "15-дневное скользящее среднее",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "ИНФОРМАЦИЯ",

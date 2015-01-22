@@ -42,7 +42,7 @@ angular.module('app')
 				labels: {
 					formatter: function() {
 						return $filter('number')(this.value, 0) + '%';
-					},
+					}
 				},
 				allowDecimals: false
 			}
