@@ -360,7 +360,7 @@ angular.module('app')
 							}
 						}
 					} else {
-						delegate.version = 1 - deltaMinor;
+						delegate.version = 1 - 2 * deltaMinor;
 					}
 				} else {
 					delegate.version = 999;
