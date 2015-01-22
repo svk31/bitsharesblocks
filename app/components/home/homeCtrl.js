@@ -119,7 +119,6 @@ angular.module('app')
 
     function fetchHomeData() {
       Home.fetchData().then(function(result) {
-        console.log(result);
         $scope.home = result.home;
         $scope.averageConfirm = result.averageConfirm;
         $scope.security = $scope.home.security;

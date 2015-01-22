@@ -12,12 +12,12 @@
 				<h3 class="panel-title">{{ 'block.details.title' | translate }}</h3>
 			</div>
 			<ul class="list-group">
-				<li class="list-group-item">{{ 'blocks.timestamp' | translate }}:<span class="badge">{{blk.timestamp | date:'medium'}}</span></li>
-				<li class="list-group-item">{{ 'block.details.signee' | translate }}:<span style="float:right;"><a ui-sref="delegate({ 'name' : blk.signee })">{{blk.signee}}</a></span></li>
-				<li class="list-group-item">{{ 'block.details.shares' | translate }}:<span class="badge">{{blk.signee_shares_issued / 100000}} BTS</span></li>
-				<li class="list-group-item">{{ 'block.details.collected' | translate }}:<span class="badge">{{blk.signee_fees_collected / 100000}} BTS</span></li>
-				<li class="list-group-item">{{ 'block.details.destroyed' | translate }}:<span class="badge">{{blk.signee_fees_destroyed / 100000}} BTS</a></span></li>
-				<li class="list-group-item">{{ 'blocks.trxCount' | translate }}:<span class="badge">{{ nrTrx }}</span></li>
+				<li class="clearfix list-group-item">{{ 'blocks.timestamp' | translate }}:<span class="badge">{{blk.timestamp | date:'medium'}}</span></li>
+				<li class="clearfix list-group-item">{{ 'block.details.signee' | translate }}:<span style="float:right;"><a ui-sref="delegate({ 'name' : blk.signee })">{{blk.signee}}</a></span></li>
+				<li class="clearfix list-group-item">{{ 'block.details.shares' | translate }}:<span class="badge">{{blk.signee_shares_issued / 100000}} BTS</span></li>
+				<li class="clearfix list-group-item">{{ 'block.details.collected' | translate }}:<span class="badge">{{blk.signee_fees_collected / 100000}} BTS</span></li>
+				<li class="clearfix list-group-item">{{ 'block.details.destroyed' | translate }}:<span class="badge">{{blk.signee_fees_destroyed / 100000}} BTS</a></span></li>
+				<li class="clearfix list-group-item">{{ 'blocks.trxCount' | translate }}:<span class="badge">{{ nrTrx }}</span></li>
 			</ul>
 		</div>
 	</div>
@@ -27,12 +27,12 @@
 				<h3 class="panel-title">{{ 'block.details.title' | translate }}</h3>
 			</div>
 			<ul class="list-group">
-				<li class="list-group-item">{{ 'block.details.size' | translate }}:<span class="badge">{{blk.block_size}} bytes</span></li>
-				<li ng-if="blk.latency/1000000<1000" class="list-group-item">Latency:<span class="badge">{{blk.latency/1000000 | number:2}}s</span></li>
-				<li class="list-group-item">{{ 'block.details.time' | translate }}:<span class="badge">{{blk.processing_time /1000000}}</span></li>
-				<li class="list-group-item hidden-xs">{{ 'block.details.hash1' | translate }}:<span class="badge">{{blk.previous}}</span></li>
-				<li class="list-group-item hidden-xs">{{ 'block.details.hash2' | translate }}:<span class="badge">{{blk.next_secret_hash}}</span></li>
-				<li class="list-group-item hidden-xs">{{ 'block.details.hash3' | translate }}:<span class="badge">{{blk.previous_secret}}</span></li>
+				<li class="clearfix list-group-item">{{ 'block.details.size' | translate }}:<span class="badge">{{blk.block_size}} bytes</span></li>
+				<li ng-if="blk.latency/1000000<1000" class="clearfix list-group-item">Latency:<span class="badge">{{blk.latency/1000000 | number:2}}s</span></li>
+				<li class="clearfix list-group-item">{{ 'block.details.time' | translate }}:<span class="badge">{{blk.processing_time /1000000}}</span></li>
+				<li class="clearfix list-group-item hidden-xs">{{ 'block.details.hash1' | translate }}:<span class="badge">{{blk.previous}}</span></li>
+				<li class="clearfix list-group-item hidden-xs">{{ 'block.details.hash2' | translate }}:<span class="badge">{{blk.next_secret_hash}}</span></li>
+				<li class="clearfix list-group-item hidden-xs">{{ 'block.details.hash3' | translate }}:<span class="badge">{{blk.previous_secret}}</span></li>
 			</ul>
 		</div>
 	</div>

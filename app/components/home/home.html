@@ -24,13 +24,13 @@
         <h3 class="panel-title">{{ 'home.health.title' | translate }}</h3>
         </div>
         <ul class="list-group">
-          <li class="list-group-item">{{ 'home.health.alert' | translate }}<span ng-class="{'badge':true,'alert-success': (security.alert_level=='green'), 'alert-warning': (security.alert_level=='yellow'), 'alert-danger': (security.alert_level=='red')}">{{security.alert_level}}</span></li>
-          <li class="list-group-item">{{ 'home.health.particip' | translate }}<span ng-class="{'badge':true,'alert-success': (security.participation_rate>=95), 'alert-warning': (security.participation_rate<95 && security.participation_rate>=90), 'alert-danger': (security.participation_rate<90)}">{{security.participation_rate | number:2}}%</span></li>
-          <li class="list-group-item">{{ 'home.health.confirm' | translate }} <span ng-class="{'badge':true,'alert-success': (averageConfirm<=5), 'alert-warning': (averageConfirm>5 && averageConfirm<=10), 'alert-danger': (averageConfirm>10)}">{{averageConfirm}}s</span></li>
-          <li class="list-group-item">{{ 'home.health.forks' | translate }} <span ng-class="{'badge':true,'alert-success': (home.forks.count24hrs<=3), 'alert-warning': (home.forks.count24hrs>3 && home.forks.count24hrs<=15), 'alert-danger': (home.forks.count24hrs>15)}">{{home.forks.count24hrs}}</span></li>
-          <li class="list-group-item">{{ 'home.health.forkBlock' | translate }} <span style='float:right;'><a ui-sref="block({ 'id' : (home.forks.previous._id+1) })">{{previousForkHeight}}</a></span></li>
-          <li class="list-group-item">{{ 'home.health.signee' | translate }} <span style='float:right;'><a ui-sref="delegate({ 'name' : forkDelegateName})">{{forkDelegateName}}</a></span></li>
-          <li ng-if="home.forks.previous" class="list-group-item">{{ 'home.health.latency' | translate }} <span ng-class="{'badge':true, 'alert-success': (forkLatency<1 && forkLatency>=0), 'alert-info': (forkLatency>1 && forkLatency<=2), 'alert-warning': (forkLatency>2 && forkLatency<3), 'alert-danger': (forkLatency<0 || forkLatency>3)}">{{forkLatency}}s</span></li>
+          <li class="clearfix list-group-item">{{ 'home.health.alert' | translate }}<span ng-class="{'badge':true,'alert-success': (security.alert_level=='green'), 'alert-warning': (security.alert_level=='yellow'), 'alert-danger': (security.alert_level=='red')}">{{security.alert_level}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.health.particip' | translate }}<span ng-class="{'badge':true,'alert-success': (security.participation_rate>=95), 'alert-warning': (security.participation_rate<95 && security.participation_rate>=90), 'alert-danger': (security.participation_rate<90)}">{{security.participation_rate | number:2}}%</span></li>
+          <li class="clearfix list-group-item">{{ 'home.health.confirm' | translate }} <span ng-class="{'badge':true,'alert-success': (averageConfirm<=5), 'alert-warning': (averageConfirm>5 && averageConfirm<=10), 'alert-danger': (averageConfirm>10)}">{{averageConfirm}}s</span></li>
+          <li class="clearfix list-group-item">{{ 'home.health.forks' | translate }} <span ng-class="{'badge':true,'alert-success': (home.forks.count24hrs<=3), 'alert-warning': (home.forks.count24hrs>3 && home.forks.count24hrs<=15), 'alert-danger': (home.forks.count24hrs>15)}">{{home.forks.count24hrs}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.health.forkBlock' | translate }} <span style='float:right;'><a ui-sref="block({ 'id' : (home.forks.previous._id+1) })">{{previousForkHeight}}</a></span></li>
+          <li class="clearfix list-group-item">{{ 'home.health.signee' | translate }} <span style='float:right;'><a ui-sref="delegate({ 'name' : forkDelegateName})">{{forkDelegateName}}</a></span></li>
+          <li ng-if="home.forks.previous" class="clearfix list-group-item">{{ 'home.health.latency' | translate }} <span ng-class="{'badge':true, 'alert-success': (forkLatency<1 && forkLatency>=0), 'alert-info': (forkLatency>1 && forkLatency<=2), 'alert-warning': (forkLatency>2 && forkLatency<3), 'alert-danger': (forkLatency<0 || forkLatency>3)}">{{forkLatency}}s</span></li>
         </ul>
       </div>
     </div>
@@ -41,13 +41,13 @@
           <h3 class="panel-title">{{ 'home.delegate.title' | translate }}</h3>
         </div>
         <ul class="list-group">
-          <li class="list-group-item">{{ 'home.delegate.reg' | translate }}: <span class="badge">{{home.numberOfDelegates | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.delegate.votes' | translate }}:<span class="badge">{{home.numberOfVotedDelegates | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.delegate.payReg' | translate }}: <span class="badge">{{home.delegateReg | number:2}} BTS</span></li>
-          <li class="list-group-item">{{ 'home.delegate.new24' | translate }}: <span class="badge">{{home.newDelegatesDay | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.delegate.new7d' | translate }}: <span class="badge">{{home.newDelegatesWeek | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.delegate.pay' | translate }}: <span class="badge">{{home.delegatePayRate | number:2}} BTS/{{ 'block.block' | translate }}</span></li>
-          <li class="list-group-item">{{ 'home.delegate.averagePay' | translate }}: <span class="badge">{{home.averagePay | number:2}} BTS/{{ 'block.block' | translate }}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.reg' | translate }}: <span class="badge">{{home.numberOfDelegates | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.votes' | translate }}:<span class="badge">{{home.numberOfVotedDelegates | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.payReg' | translate }}: <span class="badge">{{home.delegateReg | number:2}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.new24' | translate }}: <span class="badge">{{home.newDelegatesDay | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.new7d' | translate }}: <span class="badge">{{home.newDelegatesWeek | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.pay' | translate }}: <span class="badge">{{home.delegatePayRate | number:2}} BTS/{{ 'block.block' | translate }}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.averagePay' | translate }}: <span class="badge">{{home.averagePay | number:2}} BTS/{{ 'block.block' | translate }}</span></li>
 
         </ul>
       </div>
@@ -59,13 +59,13 @@
           <h3 class="panel-title">{{ 'home.blockchain.title' | translate }}</h3>
         </div>
         <ul class="list-group">
-          <li class="list-group-item">{{ 'home.blockchain.supply' | translate }}: <span class="badge">{{home.btsxSupply | number:0}} BTS</span></li>
-          <li class="list-group-item">{{ 'home.blockchain.unclaimed' | translate }}:<span class="badge">{{home.unclaimed | number:0}} BTS</span></li>
-          <li class="list-group-item">{{ 'home.blockchain.collat' | translate }}:<span class="badge">{{home.totalCollateral | number:0}} BTS</span></li>
-          <li class="list-group-item">{{ 'home.blockchain.change' | translate }}:<span class="badge">{{home.dailyInflation | number:0}} BTS</span></li>
-          <li class="list-group-item">{{ 'home.blockchain.current' | translate }}: <span class="badge bold">{{maxBlock | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.blockchain.trx' | translate }}:<span class="badge">{{home.transactionCount | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.blockchain.missed' | translate }}:<span class="badge">{{home.missedCount | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.supply' | translate }}: <span class="badge">{{home.btsxSupply | number:0}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.unclaimed' | translate }}:<span class="badge">{{home.unclaimed | number:0}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.collat' | translate }}:<span class="badge">{{home.totalCollateral | number:0}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.change' | translate }}:<span class="badge">{{home.dailyInflation | number:0}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.current' | translate }}: <span class="badge bold">{{maxBlock | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.trx' | translate }}:<span class="badge">{{home.transactionCount | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.missed' | translate }}:<span class="badge">{{home.missedCount | number:0}}</span></li>
         </ul>
       </div>
     </div>
@@ -76,13 +76,13 @@
           <h3 class="panel-title">{{ 'home.asset.title' | translate }}</h3>
         </div>
         <ul class="list-group">
-          <li class="list-group-item">{{ 'home.asset.number' | translate }}: <span class="badge">{{ home.assetCount }}</span></li>
-          <li class="list-group-item">{{ 'home.asset.user' | translate }}: <span class="badge">{{home.userAssets}}</span></li>
-          <li class="list-group-item">{{ 'home.asset.shortReg' | translate }}: <span class="badge">{{home.assetReg | number:0}} BTS</span></li>
-          <li class="list-group-item">{{ 'home.asset.longReg' | translate }}: <span class="badge">{{home.assetRegLong | number:0}} BTS</span></li>
-          <li class="list-group-item">{{ 'home.asset.new7d' | translate }}: <span class="badge">{{home.newAssetsWeek | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.asset.new30d' | translate }}: <span class="badge">{{home.newAssetsMonth | number:0}}</span></li>      
-          <li class="list-group-item">{{ 'home.asset.trx' | translate }}: <span class="badge">{{home.nrAssetTrx | number:0}}</span></li>      
+          <li class="clearfix list-group-item">{{ 'home.asset.number' | translate }}: <span class="badge">{{ home.assetCount }}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.asset.user' | translate }}: <span class="badge">{{home.userAssets}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.asset.shortReg' | translate }}: <span class="badge">{{home.assetReg | number:0}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.asset.longReg' | translate }}: <span class="badge">{{home.assetRegLong | number:0}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.asset.new7d' | translate }}: <span class="badge">{{home.newAssetsWeek | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.asset.new30d' | translate }}: <span class="badge">{{home.newAssetsMonth | number:0}}</span></li>      
+          <li class="clearfix list-group-item">{{ 'home.asset.trx' | translate }}: <span class="badge">{{home.nrAssetTrx | number:0}}</span></li>      
         </ul>
       </div>
     </div>
@@ -93,10 +93,10 @@
           <h3 class="panel-title">{{ 'home.user.title' | translate }}</h3>
         </div>
         <ul class="list-group">
-          <li class="list-group-item">{{ 'home.user.number' | translate }}: <span class="badge">{{home.numberOfUsers | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.user.sub' | translate }}: <span class="badge">{{home.subaccounts | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.user.new24' | translate }}: <span class="badge">{{home.newAccountsDay | number:0}}</span></li>
-          <li class="list-group-item">{{ 'home.user.new7d' | translate }}: <span class="badge">{{home.newAccountsWeek | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.user.number' | translate }}: <span class="badge">{{home.numberOfUsers | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.user.sub' | translate }}: <span class="badge">{{home.subaccounts | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.user.new24' | translate }}: <span class="badge">{{home.newAccountsDay | number:0}}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.user.new7d' | translate }}: <span class="badge">{{home.newAccountsWeek | number:0}}</span></li>
         </ul>
       </div>
     </div>

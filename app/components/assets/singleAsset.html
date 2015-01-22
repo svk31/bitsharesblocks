@@ -151,14 +151,14 @@
       <h3 class="panel-title">{{ 'asset.assetInfo.title' | translate }}</h3>
     </div>
     <ul class="list-group">
-      <li class="list-group-item">{{ 'assets.user.th1' | translate }}: <span class="badge">{{asset._id}}</span></li>
-      <li ng-if="issuerAccount!=='MARKET'" class="list-group-item">{{ 'block.trx.issuer' | translate }}: <span style="float:right;"><a ui-sref="account({ 'name' : issuerAccount })" >{{issuerAccount}}</a></span></li>
-      <li ng-if="issuerAccount==='MARKET'" class="list-group-item">{{ 'block.trx.issuer' | translate }}: <span class="badge">{{ 'asset.marketAsset' | translate }}</span></li>
-      <li class="list-group-item">{{ 'assets.market.th1' | translate }}: <span class="badge">{{asset.symbol}}</span></li>
-      <!-- <li class="list-group-item">{{ 'asset.assetInfo.base' | translate }}: <span class="badge">{{getAssetName(asset.status.base_id)}}</span></li> -->
-      <li class="list-group-item">{{ 'asset.assetInfo.name' | translate }}: <span class="badge">{{asset.name}}</span></li>
-      <li class="list-group-item">{{ 'asset.assetInfo.precision' | translate }}:<span class="badge">{{asset.precision | number:0}}</span></li>
-      <li class="list-group-item">{{ 'asset.assetInfo.regdate' | translate }}:<span class="badge">{{asset.registration_date | date:'medium'}}</span></li>
+      <li class="clearfix list-group-item">{{ 'assets.user.th1' | translate }}: <span class="badge">{{asset._id}}</span></li>
+      <li ng-if="issuerAccount!=='MARKET'" class="clearfix list-group-item">{{ 'block.trx.issuer' | translate }}: <span style="float:right;"><a ui-sref="account({ 'name' : issuerAccount })" >{{issuerAccount}}</a></span></li>
+      <li ng-if="issuerAccount==='MARKET'" class="clearfix list-group-item">{{ 'block.trx.issuer' | translate }}: <span class="badge">{{ 'asset.marketAsset' | translate }}</span></li>
+      <li class="clearfix list-group-item">{{ 'assets.market.th1' | translate }}: <span class="badge">{{asset.symbol}}</span></li>
+      <!-- <li class="clearfix list-group-item">{{ 'asset.assetInfo.base' | translate }}: <span class="badge">{{getAssetName(asset.status.base_id)}}</span></li> -->
+      <li class="clearfix list-group-item">{{ 'asset.assetInfo.name' | translate }}: <span class="badge">{{asset.name}}</span></li>
+      <li class="clearfix list-group-item">{{ 'asset.assetInfo.precision' | translate }}:<span class="badge">{{asset.precision | number:0}}</span></li>
+      <li class="clearfix list-group-item">{{ 'asset.assetInfo.regdate' | translate }}:<span class="badge">{{asset.registration_date | date:'medium'}}</span></li>
 
       <div class="panel-body">{{asset.description}}
       </div>
@@ -172,13 +172,13 @@
       <h3 class="panel-title">{{ 'asset.market.title' | translate }}</h3>
     </div>
     <ul class="list-group">
-      <li class="list-group-item">{{ 'asset.market.reserve' | translate }}: <span class="badge">{{((asset.collected_fees/asset.precision) | number:2) + ' '+asset.symbol}}</span></li>
-      <li class="list-group-item">{{ 'assets.user.th4' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"class="badge">{{(asset.current_share_supply | number:0) + ' '+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"class="badge">{{(asset.current_share_supply | number:2) + ' '+asset.symbol}}</span></li>
-      <li ng-if="collateral" class="list-group-item">{{ 'block.trx.collateral' | translate }} <span class="badge">{{collateral | number:0}} BTS / {{ (collateralAsset | number:0) +' '+asset.symbol  }} </span></li>
-      <li class="list-group-item">{{ 'assets.market.yield' | translate }} <span class="badge">{{asset.yield | number:2}}%</span></li>
-      <li class="list-group-item">{{ 'asset.assetInfo.precision' | translate }}:<span class="badge">{{asset.precision | number:0}}</span></li>
-      <li class="list-group-item">{{ 'assets.market.th2' | translate }}:<span class="badge">{{asset.status.bid_depth | number:0}} BTS</span></li>
-      <li class="list-group-item">{{ 'assets.market.th3' | translate }}:<span class="badge">{{asset.status.ask_depth | number:0}} BTS</span></li>
+      <li class="clearfix list-group-item">{{ 'asset.market.reserve' | translate }}: <span class="badge">{{((asset.collected_fees/asset.precision) | number:2) + ' '+asset.symbol}}</span></li>
+      <li class="clearfix list-group-item">{{ 'assets.user.th4' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"class="badge">{{(asset.current_share_supply | number:0) + ' '+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"class="badge">{{(asset.current_share_supply | number:2) + ' '+asset.symbol}}</span></li>
+      <li ng-if="collateral" class="clearfix list-group-item">{{ 'block.trx.collateral' | translate }} <span class="badge">{{collateral | number:0}} BTS / {{ (collateralAsset | number:0) +' '+asset.symbol  }} </span></li>
+      <li class="clearfix list-group-item">{{ 'assets.market.yield' | translate }} <span class="badge">{{asset.yield | number:2}}%</span></li>
+      <li class="clearfix list-group-item">{{ 'asset.assetInfo.precision' | translate }}:<span class="badge">{{asset.precision | number:0}}</span></li>
+      <li class="clearfix list-group-item">{{ 'assets.market.th2' | translate }}:<span class="badge">{{asset.status.bid_depth | number:0}} BTS</span></li>
+      <li class="clearfix list-group-item">{{ 'assets.market.th3' | translate }}:<span class="badge">{{asset.status.ask_depth | number:0}} BTS</span></li>
     </ul>
   </div>
 </div>
@@ -189,13 +189,13 @@
       <h3 class="panel-title">{{ 'delegate.feeds.title' | translate }}</h3>
     </div>
     <ul class="list-group">
-      <!-- <li class="list-group-item">{{ 'delegate.feeds.total' | translate }}: <span class="badge">{{asset.numberFeeds}}</span></li> -->
-      <li class="list-group-item">{{ 'delegate.feeds.active' | translate }}: <span class="badge">{{asset.numberValidFeeds}}</span></li>
-      <li class="list-group-item">{{ 'asset.feeds.avg' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge">{{(1/averagefeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge">{{(1/averagefeed | number:0)+' BTS/'+asset.symbol}}</span></li>
-      <li ng-if="asset.medianFeed" class="list-group-item">{{ 'asset.feeds.med' | translate }}: <span ng-if="asset.symbol.indexOf('BTC') === -1 && asset.symbol!='GOLD'" class="badge alert-success">{{(1/asset.medianFeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol.indexOf('BTC') !== -1 || asset.symbol=='GOLD'" class="badge alert-success">{{(1/asset.medianFeed | number:0)+' BTS/'+asset.symbol}}</span></li>
-      <li ng-if="enoughFeeds === false" class="list-group-item">{{ 'asset.feeds.med' | translate }}: <span class="badge alert-danger">{{ 'asset.feeds.null' | translate }}</span></li>
+      <!-- <li class="clearfix list-group-item">{{ 'delegate.feeds.total' | translate }}: <span class="badge">{{asset.numberFeeds}}</span></li> -->
+      <li class="clearfix list-group-item">{{ 'delegate.feeds.active' | translate }}: <span class="badge">{{asset.numberValidFeeds}}</span></li>
+      <li class="clearfix list-group-item">{{ 'asset.feeds.avg' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge">{{(1/averagefeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge">{{(1/averagefeed | number:0)+' BTS/'+asset.symbol}}</span></li>
+      <li ng-if="asset.medianFeed" class="clearfix list-group-item">{{ 'asset.feeds.med' | translate }}: <span ng-if="asset.symbol.indexOf('BTC') === -1 && asset.symbol!='GOLD'" class="badge alert-success">{{(1/asset.medianFeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol.indexOf('BTC') !== -1 || asset.symbol=='GOLD'" class="badge alert-success">{{(1/asset.medianFeed | number:0)+' BTS/'+asset.symbol}}</span></li>
+      <li ng-if="enoughFeeds === false" class="clearfix list-group-item">{{ 'asset.feeds.med' | translate }}: <span class="badge alert-danger">{{ 'asset.feeds.null' | translate }}</span></li>
 
-      <li class="list-group-item"><div class="checkbox">
+      <li class="clearfix list-group-item"><div class="checkbox">
         <label syle="margin-right:1em;">
           <input ng-model="$root.showFeeds" type="checkbox">{{ 'delegate.feeds.show' | translate }}
         </label>
