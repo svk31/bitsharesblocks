@@ -10,7 +10,7 @@ angular.module('app')
       label: unit
     }];
 
-    $location.search('asset='+unit);
+    $location.search('asset=' + unit);
 
     $scope.priceUnit = $scope.priceUnits[0];
     $scope.currentUnit = $scope.priceUnit.name;
@@ -21,7 +21,7 @@ angular.module('app')
           if (unit.name === newValue) {
             $scope.priceUnit = $scope.priceUnits[i];
             getFeedsData($scope.priceUnit.symbol);
-            $location.search('asset='+$scope.priceUnit.symbol);
+            $location.search('asset=' + $scope.priceUnit.symbol);
           }
         });
       }
@@ -135,7 +135,7 @@ angular.module('app')
 
         var deviation = [];
         for (i = 0; i < result.stats.feed.length; i++) {
-          deviation.push([result.stats.feed[i][0], (1 - result.stats.currentPrice[i][1] / result.stats.feed[i][1]) / 100]);
+          deviation.push([result.stats.feed[i][0], 100 * (result.stats.currentPrice[i][1] - result.stats.feed[i][1]) / (result.stats.feed[i][1])]);
         }
         $scope.feedsChart.series[0].data = result.stats.feed;
         $scope.feedsChart.series[1].data = result.stats.currentPrice;
