@@ -265,6 +265,7 @@
     "name": "계정 이름",
     "id": "ID",
     "reg": "등록일시",
+    "regBlock": "Registration block",
     "update": "마지막 업데이트",
     "yes": "예",
     "no": "아니오",

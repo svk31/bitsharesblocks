@@ -265,6 +265,7 @@
     "name": "Kontoname",
     "id": "Id",
     "reg": "Registrierungsdatum",
+    "regBlock": "Registrierungsblock",
     "update": "Letztes Update",
     "yes": "Ja",
     "no": "Nein",

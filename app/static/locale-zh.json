@@ -265,6 +265,7 @@
     "name": "帐户名",
     "id": "ID",
     "reg": "注册日期",
+    "regBlock": "Registration block",
     "update": "最后更新",
     "yes": "是的",
     "no": "没有",

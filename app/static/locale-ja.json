@@ -262,6 +262,7 @@
     "name": "アカウントネーム",
     "id": "ID",
     "reg": "登録日付",
+    "regBlock": "Registration block",
     "update": "ラストアップデート",
     "yes": "はい",
     "no": "いいえ",

@@ -265,6 +265,7 @@
     "name": "Hesap Adı",
     "id": "ID",
     "reg": "Kayıt Tarihi",
+    "regBlock": "Registration block",
     "update": "Son güncelleme",
     "yes": "Evet",
     "no": "Hayır",

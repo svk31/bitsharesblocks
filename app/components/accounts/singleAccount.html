@@ -17,6 +17,7 @@
     <ul class="list-group">
       <li class="list-group-item">{{'account.id' | translate }}:<span class="badge">{{account._id}}</span></li>
       <li class="list-group-item">{{'accounts.reg' | translate }}:<span class="badge">{{account.registration_date | date:'short'}}</span></li>
+      <li class="list-group-item">{{'accounts.regBlock' | translate }}:<a ng-if="account.reg_block !== 0" style="float:right;"ui-sref="block({ 'id' : account.reg_block })" >{{account.reg_block | number:0}}</a><span class="badge" ng-if="account.reg_block === 0">{{ 'nav.btsxgenesis' | translate }}</span></li>
       <li class="list-group-item">{{'accounts.update' | translate }}:<span class="badge">{{account.last_update | date:'short'}}</span></li>
 
       <li ng-if="account.public_data.version" class="list-group-item">{{'footer.version' | translate }}:<span ng-class="{'badge':true, 'alert-success': (account.version === 1), 'alert-warning': (account.version === 2 ), 'alert-danger': (account.version > 2)}">{{account.public_data.version}}</span></li>

@@ -164,14 +164,14 @@
         <table class="table table-condensed table-hover table-bordered">
           <thead>
             <tr>
-              <th>{{ 'accounts.reg' | translate }}</th>
+              <th>{{ 'accounts.regBlock' | translate }}</th>
               <th>{{ 'accounts.id' | translate }}</th>
               <th>{{ 'accounts.name' | translate }}</th>
             </tr>
           </thead>
           <tbody >
             <tr ng-repeat="user in home.newUsers | limitTo: 10 track by user._id " class="repeated-item">
-              <td>{{user.registration_date | date:'medium'}}</td>
+              <td><a ui-sref="block({ 'id' : user.reg_block })" >{{ user.reg_block | number:0}}</a></td>
               <td>{{user._id | number: 0}}</td>
               <td><a ui-sref="account({ 'name' : user.name })" >{{user.name}}</a></td>
             </tr>

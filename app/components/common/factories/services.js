@@ -287,6 +287,7 @@ angular.module('app.services', [])
 			"name": "Account Name",
 			"id": "Id",
 			"reg": "Registration date",
+			"regBlock": "Registration block",
 			"update": "Last update",
 			"yes": "Yes",
 			"no": "No",

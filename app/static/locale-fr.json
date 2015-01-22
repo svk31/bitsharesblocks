@@ -266,6 +266,7 @@
     "name": "Nom du compte",
     "id": "ID",
     "reg": "Date d'inscription",
+    "regBlock": "Bloc d'inscription",
     "update": "Dernier mise à jour",
     "yes": "Oui",
     "no": "Non",

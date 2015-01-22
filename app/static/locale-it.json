@@ -265,6 +265,7 @@
     "name": "Nome utente",
     "id": "Id",
     "reg": "Data registrazione",
+    "regBlock": "Blocco registrazione",
     "update": "Ultimo aggiornamento",
     "yes": "Sì",
     "no": "No",
