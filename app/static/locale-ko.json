@@ -383,9 +383,9 @@
     "ma15": "15일 이동평균",
     "feeds": {
       "title": "FEED TRACKING",
-      "latest": "최근 가격",
+      "latest": "최종 가격",
       "vwap": "24시간 가중평균가",
-      "deviation": "Deviation from feed"
+      "deviation": "가격정보와의 차이"
     }
   },
   "supply": {
