@@ -292,3 +292,15 @@ body { padding-top: 70px;
 .clickable {
   cursor: pointer;
 }
+
+.no-padding {
+  padding: 0;
+}
+
+.no-left-padding {
+  padding-left: 0;
+}
+
+.no-right-padding {
+  padding-right: 0;
+}

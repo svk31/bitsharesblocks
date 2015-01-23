@@ -23,7 +23,7 @@
   </thead>
   <tbody >
     <tr ng-repeat="asset in assets | orderBy: orderByField:reverseSort track by asset._id " class="repeated-item">
-      <td><a ui-sref="asset({ 'id' : asset.symbol})">{{asset.symbol}}</a></td>
+      <td><a ui-sref="asset.orderbook({ 'asset' : asset.symbol})">{{asset.symbol}}</a></td>
       <td>{{asset.status.ask_depth | number:0}} BTS</td>
       <td>{{asset.status.bid_depth | number:0}} BTS</td>
       <td ng-class="{'hidden-xs':true, 'alert-success': (asset.numberValidFeeds>50), 'alert-warning': (asset.numberValidFeeds<51 && asset.numberValidFeeds>=25), 'alert-danger': (asset.numberValidFeeds<25)}">{{asset.numberValidFeeds}}</td>

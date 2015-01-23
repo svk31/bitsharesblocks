@@ -124,10 +124,28 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       controller: "aboutCtrl"
     })
     .state('asset', {
-      url: "/assets/asset?id",
-      reloadOnSearch: false,
+      url: "/asset",
       templateUrl: "singleAsset.html",
-      controller: 'assetCtrl'
+      controller: 'assetCtrl',
+      abstract: true
+    })
+    .state('asset.orderbook', {
+      url: "/orderbook?asset",
+      views: {
+        'asset-orderbook': {
+          templateUrl: "orderBook.html",
+          controller: 'orderBookCtrl'
+        }
+      }
+    })
+    .state('asset.info', {
+      url: "/info?asset",
+      views: {
+        'asset-info': {
+          templateUrl: "assetInfo.html",
+          controller: 'assetInfoCtrl'
+        }
+      }
     })
     .state('accounts', {
       url: "/accounts?top&query",

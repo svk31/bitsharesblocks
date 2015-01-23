@@ -63,7 +63,7 @@ var UserAssetRow = React.createClass({displayName: 'UserAssetRow',
 		return (
 			React.createElement("tr", null, 
 			React.createElement("td", null, asset._id), 
-			React.createElement("td", null, React.createElement("a", {href: 'assets/asset?id='+asset.symbol}, asset.symbol)), 
+			React.createElement("td", null, React.createElement("a", {href: 'asset/orderbook?asset='+asset.symbol}, asset.symbol)), 
 			React.createElement("td", null, asset.dailyVolume), 
 			React.createElement("td", null,  asset.vwapText, "/", asset.symbol, " "), 
 			React.createElement("td", null,  asset.current_share_supply), 

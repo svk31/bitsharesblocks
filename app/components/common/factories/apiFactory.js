@@ -188,7 +188,11 @@ angular.module("app").factory('api', ['$http', function($http) {
     };
 
     api.getAsset = function(assetId) {
-        return $http.jsonp('http://' + url + 'assets/' + assetId + cb);
+        return $http.jsonp('http://' + url_v2 + 'assets/' + assetId + cb);
+    };
+
+    api.getOrderBook = function(assetId) {
+        return $http.jsonp('http://' + url + 'orderbook/' + assetId + cb);
     };
 
     api.getPriceHistory = function(assetId) {
@@ -243,7 +247,7 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    api.getFeedCharts= function(id) {
+    api.getFeedCharts = function(id) {
         return $http({
             method: 'JSONP',
             url: 'http://' + url + 'feedstats/' + id + cb,

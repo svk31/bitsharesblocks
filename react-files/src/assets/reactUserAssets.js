@@ -63,7 +63,7 @@ var UserAssetRow = React.createClass({
 		return (
 			<tr>
 			<td>{asset._id}</td>
-			<td><a href={'assets/asset?id='+asset.symbol}>{asset.symbol}</a></td>
+			<td><a href={'asset/orderbook?asset='+asset.symbol}>{asset.symbol}</a></td>
 			<td>{asset.dailyVolume}</td>
 			<td>{ asset.vwapText }/{asset.symbol} </td>
 			<td>{ asset.current_share_supply }</td>
