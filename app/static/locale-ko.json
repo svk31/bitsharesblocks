@@ -53,7 +53,7 @@
       "title": "대표자 통계",
       "reg": "등록된 대표자",
       "votes": "투표받은 대표자",
-      "payReg": "100% 지급시 수수료",
+      "payReg": "100% 지급율 등록수수료",
       "new24": "지난 24시간 새 대표자",
       "new7d": "지난 7일 새 대표자",
       "pay": "최대 지급률",
@@ -97,8 +97,8 @@
     },
     "burns": {
       "title": "BURN-BOX",
-      "recent": "Most recent burns",
-      "largest": "Largest burns"
+      "recent": "최근순",
+      "largest": "수량순"
     }
   },
   "blocks": {
@@ -111,7 +111,7 @@
     "last": "최근",
     "blocks": "블럭",
     "showTrx": "거래를 포함한 블럭만 표시",
-    "blockNum": "블럭높이",
+    "blockNum": "블럭번호",
     "timestamp": "생성시각",
     "delegate": "대표자",
     "trxCount": "거래수",
@@ -186,9 +186,9 @@
     "rel": "신뢰도",
     "version": "버전",
     "filter": "필터",
-    "no_version": "Not set",
-    "active": "Show active delegates",
-    "standby": "대기중인 대표자 포함"
+    "no_version": "정보 없음",
+    "active": "활동중인 대표자",
+    "standby": "대기중인 대표자"
   },
   "delegate": {
     "prevRank": "이전 순위",
@@ -265,11 +265,11 @@
     "name": "계정 이름",
     "id": "ID",
     "reg": "등록일시",
-    "regBlock": "Registration block",
+    "regBlock": "등록블럭",
     "update": "마지막 업데이트",
     "yes": "예",
     "no": "아니오",
-    "wall": "Wall total"
+    "wall": "담벼락 총액"
   },
   "account": {
     "previous": "이전 계정",
@@ -282,8 +282,8 @@
     "key": "키",
     "website": "웹사이트",
     "burn": "소각 활동",
-    "parent": "Parent account",
-    "subs": "Sub-accounts"
+    "parent": "주 계정",
+    "subs": "보조계정"
   },
   "assets": {
     "plot": {
@@ -303,13 +303,13 @@
       "th6": "총공급량",
       "th7": "24시간 거래량",
       "th8": "시가총액",
-      "yield": "Yield"
+      "yield": "이자율"
     },
     "user": {
       "show": "사용자 발행 자산 보기",
       "title": "사용자 발행 자산",
       "th1": "자산 ID",
-      "th3": "24hr Average Price",
+      "th3": "24시간 평균가격",
       "th4": "현재 공급량",
       "th5": "최대 공급량",
       "th6": "활성화"
@@ -317,8 +317,8 @@
   },
   "asset": {
     "orderbook": "호가창",
-    "bids": "매수",
-    "asks": "매도",
+    "bids": "구입",
+    "asks": "판매",
     "shorts": "공매도",
     "priceH": "시세 추이",
     "alert1": "시장 비활성: 가격정보 수가 불충분함",
@@ -326,8 +326,8 @@
     "collateral": "담보",
     "supply": "공급량",
     "supplyAnd": "및 담보(BTS) 추이",
-    "sell": "판매",
-    "buy": "구입",
+    "sell": "매도",
+    "buy": "매수",
     "short": "공매도",
     "chartSupply": "공급량",
     "ohlc": "시세: OHLC",
@@ -352,10 +352,10 @@
       "last": "최종 업데이트 (UTC)"
     },
     "covers": {
-      "title": "MARGIN CALL ORDERS",
-      "price": "Call price",
-      "owed": "Owed",
-      "expiration": "Expiration date"
+      "title": "마진콜 주문",
+      "price": "반대매매 가격",
+      "owed": "수량",
+      "expiration": "만료일"
     }
   },
   "charts": {
@@ -368,13 +368,13 @@
       "volume": "BTS 거래량",
       "btcPrice": "BTS/BTC 시세 추이",
       "usdPrice": "시세 추이",
-      "prices": "PRICE CHARTS",
-      "trx": "TRANSACTION CHARTS",
-      "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS",
-      "feeds": "FEEDS CHARTS"
+      "prices": "가격 차트",
+      "trx": "거래 차트",
+      "accounts": "계정 차트",
+      "supply": "공급량 차트",
+      "feeds": "가격정보 차트"
     },
-    "value": "Value",
+    "value": "값",
     "reg": "계정 등록",
     "transfer": "전송",
     "feed": "대표자 가격정보 업데이트",
@@ -383,9 +383,9 @@
     "ma15": "15일 이동평균",
     "feeds": {
       "title": "FEED TRACKING",
-      "latest": "Latest price",
-      "vwap": "24hr weighted average price",
-      "deviation": "Deviation from feed"
+      "latest": "최종 가격",
+      "vwap": "24시간 가중평균가",
+      "deviation": "가격정보와의 차이"
     }
   },
   "supply": {
@@ -396,7 +396,7 @@
     "height": "BTSX => BTS 하드포크 블럭번호",
     "supply": "하드포크시 공급량",
     "change": "하드포크 이후 공급량 변화",
-    "changeY": "BTS annualized inflation",
+    "changeY": "BTS 연간 인플레이션",
     "supplyY": "BTS 공급량",
     "feesY": "BTS 수수료"
   },
@@ -411,7 +411,7 @@
     "higher": "다음 잔액 이상 주소 개수",
     "percent": "계정 수에 따른 총 공급량 비율",
     "top": "상위",
-    "sharedropTitle": "SHAREDROP",
+    "sharedropTitle": "쉐어 배분",
     "addresses": "주소",
     "address": "주소",
     "balance": "잔액",
@@ -421,7 +421,7 @@
     "y": "공급량 대비 %",
     "tooltip": "총 공급량 퍼센트",
     "piechart": {
-      "title": "PIECES OF THE PIE"
+      "title": "분배현황 파이차트"
     }
   }
 }
