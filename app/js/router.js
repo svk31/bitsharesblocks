@@ -2,6 +2,8 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.when("/assets", "/assets/market");
+  $urlRouterProvider.when("/charts", "/charts/prices");
   //
   // Now set up the states
   $stateProvider
@@ -43,12 +45,78 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
     .state('charts', {
       url: "/charts",
       templateUrl: "charts.html",
-      controller: 'chartsCtrl'
+      controller: 'chartsCtrl',
+      abstract: true
+    })
+    .state('charts.prices', {
+      url: "/prices",
+      views: {
+        'charts-prices': {
+          templateUrl: "priceCharts.html",
+          controller: 'priceChartsCtrl'
+        }
+      }
+    })
+    .state('charts.transactions', {
+      url: "/transactions",
+      views: {
+        'charts-transactions': {
+          templateUrl: "transactionCharts.html",
+          controller: 'transactionChartsCtrl'
+        }
+      }
+    })
+    .state('charts.accounts', {
+      url: "/accounts",
+      views: {
+        'charts-accounts': {
+          templateUrl: "accountsCharts.html",
+          controller: 'accountsChartsCtrl'
+        }
+      }
+    })
+    .state('charts.supply', {
+      url: "/supply",
+      views: {
+        'charts-supply': {
+          templateUrl: "supplyCharts.html",
+          controller: 'supplyCtrl'
+        }
+      }
+    })
+    .state('charts.feeds', {
+      url: "/feeds?asset",
+      reloadOnSearch: false,
+      views: {
+        'charts-feeds': {
+          templateUrl: "feedsCharts.html",
+          controller: 'feedsChartsCtrl'
+        }
+      }
     })
     .state('assets', {
       url: "/assets",
       templateUrl: "allAssets.html",
-      controller: 'assetsCtrl'
+      controller: 'assetsCtrl',
+      abstract: true
+    })
+    .state('assets.market', {
+      url: "/market",
+      views: {
+        'market-assets': {
+          templateUrl: "marketAssets.html",
+          controller: 'marketAssetsCtrl'
+        }
+      }
+    })
+    .state('assets.user', {
+      url: "/user",
+      views: {
+        'user-assets': {
+          templateUrl: "userAssets.html",
+          controller: 'userAssetsCtrl'
+        }
+      }
     })
     .state('about', {
       url: "/about",
@@ -82,11 +150,6 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       url: "/genesis-btsx",
       templateUrl: "genesis-btsx.html",
       controller: 'genesisBTSXCtrl'
-    })
-    .state('supply', {
-      url: "/supply",
-      templateUrl: "supply.html",
-      controller: 'supplyCtrl'
     })
     .state('home', {
       url: "/home",

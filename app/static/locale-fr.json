@@ -94,6 +94,11 @@
     },
     "newUsers": {
       "title": "NOUVELLES UTILISATEURS"
+    },
+    "burns": {
+      "title": "MUR DES MESSAGES",
+      "recent": "Messages le plus récent",
+      "largest": "Messages le plus couteux"
     }
   },
   "blocks": {
@@ -261,6 +266,7 @@
     "name": "Nom du compte",
     "id": "ID",
     "reg": "Date d'inscription",
+    "regBlock": "Bloc d'inscription",
     "update": "Dernier mise à jour",
     "yes": "Oui",
     "no": "Non",
@@ -276,7 +282,9 @@
     "date": "Date",
     "key": "Cléfs",
     "website": "Site web",
-    "burn": "OPERATIONS DE BRULURE"
+    "burn": "OPERATIONS DE BRULURE",
+    "parent": "Compte parent",
+    "subs": "Sous-comptes"
   },
   "assets": {
     "plot": {
@@ -292,15 +300,17 @@
       "th2": "Profondeur achat",
       "th3": "Profondeur vente",
       "th4": "Flux valides",
-      "th5": "Flux moyen",
+      "th5": "Flux median",
       "th6": "Réserve",
       "th7": "Volume 24h",
-      "th8": "Capitalisation"
+      "th8": "Capitalisation",
+      "yield": "Rendement"
     },
     "user": {
       "show": "Afficher les actifs des utilisateurs",
       "title": "ACTIFS DES UTILISATEURS",
       "th1": "ID de l'actif",
+      "th3": "24hr Prix Moyen",
       "th4": "Réserve courant",
       "th5": "Réserve maximal",
       "th6": "Initialized"
@@ -341,6 +351,12 @@
       "med": "Prix median dex flux",
       "null": "Pas assez de flux dans les derniers 24 heures",
       "last": "Dernier mise à jour (UTC)"
+    },
+    "covers": {
+      "title": "APPELS DE MARGE",
+      "price": "Prix d'appel",
+      "owed": "Dû",
+      "expiration": "Date d'expiration"
     }
   },
   "charts": {
@@ -352,7 +368,12 @@
       "trxCount": "NOMBRE DE TRANSACTION BTS",
       "volume": "VOLUME DES TRANSACTIONS BTS",
       "btcPrice": "HISTORIQUE DU PRIX BTS/BTC",
-      "usdPrice": "HISTORIQUE DU PRIX"
+      "usdPrice": "HISTORIQUE DU PRIX",
+      "prices": "TRACES DE PRIX",
+      "trx": "TRACÉS DES TRANSACTIONS",
+      "accounts": "TRACÉS DES COMPTES",
+      "supply": "TRACÉS DES RÉSERVES",
+      "feeds": "TRACÉS DES FLUX"
     },
     "value": "Valeur",
     "reg": "Inscription de compte",
@@ -360,17 +381,23 @@
     "feed": "Mise à jour de flux",
     "update": "Mise à jour de compte",
     "new": "Nouveaux comptes",
-    "ma15": "Moyenne mobile 15 jours"
+    "ma15": "Moyenne mobile 15 jours",
+    "feeds": {
+      "title": "SUIVI DE FLUX",
+      "latest": "Dernier prix",
+      "vwap": "Prix moyen ponderé en volume",
+      "deviation": "Deviation du flux"
+    }
   },
   "supply": {
     "title1": "INFO",
-    "title2": "CHANGEMENT DE RÉSERVE DEPUIS LE BRANCHEMENT BTS",
+    "title2": "INFLATION JOURNALIÈRE ANNUALISÉ DEPUIS LE BRANCHEMENT BTS",
     "title3": "RÉSERVE TOTAL DE BTS",
     "title4": "FRAIS DE BTS PAYÉS",
     "height": "Hauteur de block du branchement BTSX => BTS",
     "supply": "Réserve au moment du branchement",
     "change": "Changement de réserve depuis le branchement",
-    "changeY": "BTS changement de réserve",
+    "changeY": "BTS inflation annualisé",
     "supplyY": "BTS réserve",
     "feesY": "BTS frais"
   },
@@ -385,13 +412,17 @@
     "higher": "Addresses avec un solde plus grand que",
     "percent": "POURCENTAGE DU RÉSERVE TOTAL PAR NOMBRE D'ADDRESSES",
     "top": "TOP",
-    "addresses": "DES ADDRESSES",
+    "sharedropTitle": "SHAREDROP",
+    "addresses": "ADDRESSES",
     "address": "Addresse",
     "balance": "Solde",
     "percentOf": "% du total",
     "cumul": "% du total cumulatif",
     "x": "Nombre de comptes",
     "y": "% du réserve total",
-    "tooltip": "Pourcentage du réserve total"
+    "tooltip": "Pourcentage du réserve total",
+    "piechart": {
+      "title": "PARTS DU GATEAU"
+    }
   }
 }

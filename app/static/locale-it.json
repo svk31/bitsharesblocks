@@ -94,6 +94,11 @@
     },
     "newUsers": {
       "title": "NUOVI UTENTI"
+    },
+    "burns": {
+      "title": "BURN-BOX",
+      "recent": "Most recent burns",
+      "largest": "Largest burns"
     }
   },
   "blocks": {
@@ -260,6 +265,7 @@
     "name": "Nome utente",
     "id": "Id",
     "reg": "Data registrazione",
+    "regBlock": "Blocco registrazione",
     "update": "Ultimo aggiornamento",
     "yes": "Sì",
     "no": "No",
@@ -275,7 +281,9 @@
     "date": "Data",
     "key": "Chiave",
     "website": "Website",
-    "burn": "OPERAZIONI BURN"
+    "burn": "OPERAZIONI BURN",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {
@@ -294,12 +302,14 @@
       "th5": "Prezzo medio feed",
       "th6": "Disponibilità totale",
       "th7": "Volume 24h",
-      "th8": "Valore di Mercato"
+      "th8": "Valore di Mercato",
+      "yield": "Yield"
     },
     "user": {
       "show": "Mostra mercati creati dagli utenti",
       "title": "MERCATI CREATI DAGLI UTENTI",
       "th1": "ID",
+      "th3": "24hr Average Price",
       "th4": "Disponibilità attuale",
       "th5": "Disponibilità massima",
       "th6": "Initialized"
@@ -340,6 +350,12 @@
       "med": "Prezzo mediano feed",
       "null": "Feed insufficienti nelle ultime",
       "last": "Ultimo aggiornamento (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {
@@ -351,7 +367,12 @@
       "trxCount": "NUMERO DI TRANSAZIONI BTS",
       "volume": "VOLUME TRANSAZIONI BTS",
       "btcPrice": "STORICO PREZZO BTS/BTC",
-      "usdPrice": "STORICO PREZZO"
+      "usdPrice": "STORICO PREZZO",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Valore",
     "reg": "Registrazione utente",
@@ -359,7 +380,13 @@
     "feed": "Aggiornamento feed delegato",
     "update": "Aggiornamento utente",
     "new": "Nuovi utenti",
-    "ma15": "Media mobile a 15 giorni"
+    "ma15": "Media mobile a 15 giorni",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "INFORMAZIONI",
@@ -369,7 +396,7 @@
     "height": "Numero del blocco al momento dell'hardfork BTSX => BTS",
     "supply": "Disponibilità al fork",
     "change": "Modifica disponibilità dall'hardfork",
-    "changeY": "Modifica disponibilità BTS",
+    "changeY": "BTS annualized inflation",
     "supplyY": "Disponibilità BTS",
     "feesY": "Commissioni BTS"
   },
@@ -384,6 +411,7 @@
     "higher": "Indirizzi con saldo superiore a",
     "percent": "PERCENTUALE SULLA DISPONIBILITA' TOTALE RISPETTO AL NUMERO DI INDIRIZZI",
     "top": "TOP",
+    "sharedropTitle": "SHAREDROP",
     "addresses": "INDIRIZZI",
     "address": "Indirizzi",
     "balance": "Saldo",
@@ -391,6 +419,9 @@
     "cumul": "% cumulativo sul totale",
     "x": "Numero di conti",
     "y": "% sulla disponibilità totale",
-    "tooltip": "Percentule sulla disponibilità totale"
+    "tooltip": "Percentule sulla disponibilità totale",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

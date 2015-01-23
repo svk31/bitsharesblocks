@@ -125,12 +125,12 @@ body { padding-top: 70px;
   }
 
 
-  .user-assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable, #about {
+  .assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable, #about {
     margin-bottom:5em;
   }
 
   @media(max-width: 767px) {
-    .user-assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable:nth-child(1), #about {
+    .assets, #feedstable, #endofhome, #deltable, .transactiondiv:nth-last-child(1), #blockstable , div.votestable:nth-child(1), #about {
       margin-bottom:10em;
     }
 
@@ -275,4 +275,20 @@ body { padding-top: 70px;
 
 .modal-open { 
     overflow: scroll;
+}
+
+/* bootstrap hack: fix content width inside hidden tabs */
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: block;     /* undo display:none          */
+    height: 0;          /* height:0 is also invisible */ 
+    overflow-y: hidden; /* no-overflow                */
+}
+.tab-content > .active,
+.pill-content > .active {
+    height: auto;       /* let the content decide it  */
+} /* bootstrap hack end */
+
+.clickable {
+  cursor: pointer;
 }

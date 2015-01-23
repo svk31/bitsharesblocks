@@ -94,6 +94,11 @@
     },
     "newUsers": {
       "title": "ニューユーザー"
+    },
+    "burns": {
+      "title": "BURN-BOX",
+      "recent": "Most recent burns",
+      "largest": "Largest burns"
     }
   },
   "blocks": {
@@ -257,6 +262,7 @@
     "name": "アカウントネーム",
     "id": "ID",
     "reg": "登録日付",
+    "regBlock": "Registration block",
     "update": "ラストアップデート",
     "yes": "はい",
     "no": "いいえ",
@@ -272,7 +278,9 @@
     "date": "日付",
     "key": "キー",
     "website": "ウェブサイト",
-    "burn": "焼却活動"
+    "burn": "焼却活動",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {
@@ -291,12 +299,14 @@
       "th5": "平均フィード価格",
       "th6": "総供給量",
       "th7": "２４時間取引き量",
-      "th8": "時価総額"
+      "th8": "時価総額",
+      "yield": "Yield"
     },
     "user": {
       "show": "ユーザー発行資産を示す",
       "title": "ユーザー発行資産",
       "th1": "資産ID",
+      "th3": "24hr Average Price",
       "th4": "現在供給量",
       "th5": "最大供給量",
       "th6": "活性化"
@@ -337,6 +347,12 @@
       "med": "中央値フィードプライス",
       "null": "最近２４時間の間フィード不十分",
       "last": "最終アップデート(UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {
@@ -348,7 +364,12 @@
       "trxCount": "BTS取引き数",
       "volume": "BTS取引き量",
       "btcPrice": "BTS/BTCプライス推移",
-      "usdPrice": "プライス推移"
+      "usdPrice": "プライス推移",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Value",
     "reg": "アカウント登録",
@@ -356,7 +377,13 @@
     "feed": "代表者フィードアップデート",
     "update": "アカウントアップデート",
     "new": "ニューアカウント",
-    "ma15": "１５日移動平均"
+    "ma15": "１５日移動平均",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "情報",
@@ -366,7 +393,7 @@
     "height": "BTSX => BTSハードフォークブロック番号",
     "supply": "ハードフォーク時の供給量",
     "change": "ハードフォーク以来供給量変化",
-    "changeY": "BTS供給量変化",
+    "changeY": "BTS annualized inflation",
     "supplyY": "BTS供給量",
     "feesY": "BTS手数料"
   },
@@ -381,6 +408,7 @@
     "higher": "このバランス以上のアドレスの数",
     "percent": "アドレス数による総供給量の比率",
     "top": "上位",
+    "sharedropTitle": "SHAREDROP",
     "addresses": "アドレス",
     "address": "アドレス",
     "balance": "バランス",
@@ -388,6 +416,9 @@
     "cumul": "供給量対比累積%",
     "x": "アカウントの数",
     "y": "供給量対比%",
-    "tooltip": "総供給量パーセント"
+    "tooltip": "総供給量パーセント",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

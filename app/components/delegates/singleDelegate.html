@@ -96,10 +96,10 @@
     		
             <li ng-if="delegate.delegate_info.last_block_num_produced!==0" class="list-group-item">{{ 'delegate.prod.last' | translate }}:<a style="float:right;" ui-sref="block({ 'id' : delegate.delegate_info.last_block_num_produced })" >{{delegate.delegate_info.last_block_num_produced}}</a></li>
     		
-            <li ng-if="latencies" class="list-group-item">{{ 'delegate.prod.lat50' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg50<1.5 && latencies.avg50>=0), 'alert-warning': (latencies.avg50>1.5 && latencies.avg50<=3), 'alert-danger': (latencies.avg50<0 || latencies.avg50>3)}">{{latencies.avg50 | number:3}}s</span></li>
+            <li ng-if="latencies && latencies.avg50 !== 'n/a'" class="list-group-item">{{ 'delegate.prod.lat50' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg50<1.5 && latencies.avg50>=0), 'alert-warning': (latencies.avg50>1.5 && latencies.avg50<=3), 'alert-danger': (latencies.avg50<0 || latencies.avg50>3)}">{{latencies.avg50 | number:3}}s</span></li>
     		
-            <li ng-if="latencies" class="list-group-item">{{ 'delegate.prod.lat100' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg100<1.5 && latencies.avg100>=0), 'alert-warning': (latencies.avg100>1.5 && latencies.avg100<=3), 'alert-danger': (latencies.avg100<0 || latencies.avg100>3)}">{{latencies.avg100  | number:3}}s</span></li>
-    		<li ng-if="latencies" class="list-group-item">{{ 'delegate.prod.lat200' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg200<=1.5 && latencies.avg200>=0), 'alert-warning': (latencies.avg200>1.5 && latencies.avg200<=3), 'alert-danger': (latencies.avg200<0 || latencies.avg200>3)}">{{latencies.avg200  | number:3}}s</span></li>
+            <li ng-if="latencies && latencies.avg100 !== 'n/a'" class="list-group-item">{{ 'delegate.prod.lat100' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg100<1.5 && latencies.avg100>=0), 'alert-warning': (latencies.avg100>1.5 && latencies.avg100<=3), 'alert-danger': (latencies.avg100<0 || latencies.avg100>3)}">{{latencies.avg100  | number:3}}s</span></li>
+    		<li ng-if="latencies &&  latencies.avg200 !== 'n/a'" class="list-group-item">{{ 'delegate.prod.lat200' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg200<=1.5 && latencies.avg200>=0), 'alert-warning': (latencies.avg200>1.5 && latencies.avg200<=3), 'alert-danger': (latencies.avg200<0 || latencies.avg200>3)}">{{latencies.avg200  | number:3}}s</span></li>
     	</div>
     </div>
 
@@ -167,7 +167,7 @@
 <div class="col-md-4 col-sm-6 col-xs-12 votestable">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h3 class="panel-title">{{ 'delegate.votes.title' | translate }} ({{votes.votesCount | number:0}} {{ 'delegate.votes.total' | translate }})<span id="dropdown" ng-click="status.open= !status.open"><i style="cursor: pointer;" class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></span></h3>
+			<h3 class="panel-title">{{ 'delegate.votes.title' | translate }} ({{votes.votesCount | number:0}} {{ 'delegate.votes.total' | translate }})<span id="dropdown" ng-click="status.open= !status.open"><i class="pull-right glyphicon clickable" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></span></h3>
 		</div>
         <fast-repeat ng-if="status.open" component="'VotesTable'" data="votes.votes.votes" headers="headers"></fast-repeat>
 	</div>

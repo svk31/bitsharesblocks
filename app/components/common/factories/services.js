@@ -1,4 +1,4 @@
-angular.module('app.services',[])
+angular.module('app.services', [])
 
 .factory('getAssetDetail', function($q, api) {
 
@@ -10,7 +10,7 @@ angular.module('app.services',[])
 				deferred.resolve({
 					symbol: result.symbol,
 					precision: result.precision
-				});				
+				});
 			});
 			return deferred.promise;
 		}
@@ -19,9 +19,9 @@ angular.module('app.services',[])
 
 .constant('appcst', {
 	R_ISO8601_STR: /^(\d{4})-?(\d\d)-?(\d\d)(?:T(\d\d)(?::?(\d\d)(?::?(\d\d)(?:\.(\d+))?)?)?(Z|([+-])(\d\d):?(\d\d))?)?$/,
-	translation : {
+	translation: {
 		"nav": {
-			"home":"Home",
+			"home": "Home",
 			"blocks": "Blocks",
 			"delegates": "Delegates",
 			"accounts": "Accounts",
@@ -57,9 +57,9 @@ angular.module('app.services',[])
 			"api": "API"
 		},
 		"home": {
-			"history":"BTS PRICE HISTORY LAST 14 DAYS",
-			"price":"Price",
-			"MA":"30-day Moving Average",
+			"history": "BTS PRICE HISTORY LAST 14 DAYS",
+			"price": "Price",
+			"MA": "30-day Moving Average",
 			"health": {
 				"title": "NETWORK HEALTH",
 				"alert": "Network Alert Level:",
@@ -85,7 +85,7 @@ angular.module('app.services',[])
 				"supply": "Share supply",
 				"unclaimed": "Unclaimed",
 				"collat": "Tied in collateral",
-				"change" :"24h supply change",
+				"change": "24h supply change",
 				"current": "Current block",
 				"trx": "Blocks with transactions",
 				"missed": "Total missed blocks"
@@ -115,6 +115,11 @@ angular.module('app.services',[])
 			},
 			"newUsers": {
 				"title": "NEW USERS"
+			},
+			"burns": {
+				"title": "BURN-BOX",
+				"recent": "Most recent burns",
+				"largest": "Largest burns"
 			}
 		},
 		"blocks": {
@@ -204,8 +209,8 @@ angular.module('app.services',[])
 			"version": "Version",
 			"filter": "filter",
 			"no_version": "Not set",
-			"active":"Show active delegates",
-			"standby":"Show standby delegates"
+			"active": "Show active delegates",
+			"standby": "Show standby delegates"
 		},
 		"delegate": {
 			"prevRank": "Previous rank",
@@ -214,7 +219,7 @@ angular.module('app.services',[])
 			"sumVotes": "Sum of votes",
 			"payChart": {
 				"title": "NET EARNINGS",
-				"name" : "Cumulative earnings"
+				"name": "Cumulative earnings"
 			},
 			"rank": {
 				"title": "RANK AND VOTES",
@@ -282,6 +287,7 @@ angular.module('app.services',[])
 			"name": "Account Name",
 			"id": "Id",
 			"reg": "Registration date",
+			"regBlock": "Registration block",
 			"update": "Last update",
 			"yes": "Yes",
 			"no": "No",
@@ -297,7 +303,9 @@ angular.module('app.services',[])
 			"date": "Date",
 			"key": "Key",
 			"website": "Website",
-			"burn": "WALL BURNS"
+			"burn": "WALL BURNS",
+			"parent": "Parent account",
+			"subs": "Sub-accounts"
 		},
 		"assets": {
 			"plot": {
@@ -308,20 +316,22 @@ angular.module('app.services',[])
 				"type4": "Cover"
 			},
 			"market": {
-				"title": "MARKET ASSETS",
+				"title": "MARKET ISSUED ASSETS",
 				"th1": "Asset Symbol",
 				"th2": "Bid depth",
 				"th3": "Ask depth",
 				"th4": "Valid Feeds",
-				"th5": "Average Feed Price",
+				"th5": "Median Feed Price",
 				"th6": "Share Supply",
 				"th7": "24h Volume",
-				"th8": "Market Cap"
+				"th8": "Market Cap",
+				"yield": "Yield"
 			},
 			"user": {
 				"show": "Show user issued assets",
 				"title": "USER ISSUED ASSETS",
 				"th1": "Asset ID",
+				"th3": "24hr Average Price",
 				"th4": "Current Supply",
 				"th5": "Maximum Supply",
 				"th6": "Initialized"
@@ -362,10 +372,16 @@ angular.module('app.services',[])
 				"med": "Median Feed Price",
 				"null": "Not enough feeds in the last 24hrs",
 				"last": "Last update (UTC)"
+			},
+			"covers": {
+				"title": "MARGIN CALL ORDERS",
+				"price": "Call price",
+				"owed": "Owed",
+				"expiration": "Expiration date"
 			}
 		},
 		"charts": {
-			"titles" : {
+			"titles": {
 				"new": "NEW ACCOUNTS",
 				"total": "TOTAL NUMBER OF ACCOUNTS",
 				"assetTrx": "ALL ASSET TRANSACTION TYPES",
@@ -373,7 +389,12 @@ angular.module('app.services',[])
 				"trxCount": "BTS NUMBER OF TRANSACTIONS",
 				"volume": "BTS TRANSACTION VOLUME",
 				"btcPrice": "BTS/BTC PRICE HISTORY",
-				"usdPrice": "PRICE HISTORY"
+				"usdPrice": "PRICE HISTORY",
+				"prices": "PRICE CHARTS",
+				"trx": "TRANSACTION CHARTS",
+				"accounts": "ACCOUNTS CHARTS",
+				"supply": "SUPPLY CHARTS",
+				"feeds": "FEEDS CHARTS"
 			},
 			"value": "Value",
 			"reg": "Account registration",
@@ -381,18 +402,24 @@ angular.module('app.services',[])
 			"feed": "Delegate feed update",
 			"update": "Account update",
 			"new": "New accounts",
-			"ma15": "15-day Moving Average"
+			"ma15": "15-day Moving Average",
+			"feeds": {
+				"title": "FEED TRACKING",
+				"latest": "Latest price",
+				"vwap": "24hr weighted average price",
+				"deviation": "Deviation from feed"
+			}
 		},
 		"supply": {
 			"title1": "INFO",
-			"title2": "SUPPLY CHANGE AFTER BTS HARDFORK",
+			"title2": "ANNUALIZED DAILY INFLATION",
 			"title3": "TOTAL SUPPLY OF BTS",
 			"title4": "BTS FEES PAID OVER TIME",
 			"height": "Height of BTSX => BTS hardfork block",
 			"supply": "Supply at fork",
 			"change": "Change in supply since the hardfork",
-			"changeY": "BTS supply change",
-			"supplyY":"BTS supply",
+			"changeY": "BTS annualized inflation",
+			"supplyY": "BTS supply",
 			"feesY": "BTS fees"
 		},
 		"genesis": {
@@ -406,6 +433,7 @@ angular.module('app.services',[])
 			"higher": "Addresses with balance higher than",
 			"percent": "PERCENT OF TOTAL SUPPLY BY NUMBER OF ADDRESSES",
 			"top": "TOP",
+			"sharedropTitle": "SHAREDROP",
 			"addresses": "ADDRESSES",
 			"address": "Address",
 			"balance": "Balance",
@@ -413,8 +441,10 @@ angular.module('app.services',[])
 			"cumul": "Cumulative % of total",
 			"x": "Number of accounts",
 			"y": "% of total supply",
-			"tooltip": "Percentage of total supply"
+			"tooltip": "Percentage of total supply",
+			"piechart": {
+				"title": "PIECES OF THE PIE"
+			}
 		}
 	}
 });
-

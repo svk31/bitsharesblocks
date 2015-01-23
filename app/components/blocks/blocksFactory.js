@@ -1,6 +1,6 @@
 angular.module('app')
 
-.factory('Blocks', ['api', '$q', 'Assets', function(api, $q, Assets) {
+.factory('Blocks', ['api', '$q', 'Assets', 'Accounts', function(api, $q, Assets, Accounts) {
 
 	var _booleanTrx = false;
 	var _blocksArray = [];
@@ -128,8 +128,6 @@ angular.module('app')
 			highestBlock = lastBlock;
 		}
 
-		console.log('pageDelta:', pageDelta);
-
 		if (_booleanTrx) {
 
 			query.types = types;
@@ -153,11 +151,9 @@ angular.module('app')
 
 			_getTransactions(query)
 				.then(function(result) {
-					console.log('number of blocks found:', result.blocks.length);
 					if (pageDelta > 0 && result.blocks.length === 0) {
 						result.finalPage = true;
 					}
-					console.log(result);
 					deferred.resolve(result);
 				});
 		} else {
@@ -245,7 +241,33 @@ angular.module('app')
 		return deferred.promise;
 	}
 
-
+	function fetchBurns(sort) {
+		var deferred = $q.defer();
+		api.getBurns(sort).success(function(result) {
+			var burns = [],
+				accounts = [];
+			result.forEach(function(block) {
+				block.burn.operations.forEach(function(op) {
+					if (op.type === 'burn_op_type' && op.data.message.length > 0) {
+						burns.push({
+							block: block._id,
+							realAmount: op.data.amount.amount / Assets.getPrecision(op.data.amount.asset_id),
+							assetSymbol: Assets.getSymbol(op.data.amount.aset_id),
+							message: op.data.message
+						});
+						accounts.push(Accounts.getAccountName(op.data.account_id));
+					}
+				});
+			});
+			$q.all(accounts).then(function(names) {
+				names.forEach(function(name, index) {
+					burns[index].name = name;
+				});
+				deferred.resolve(burns);
+			});
+		});
+		return deferred.promise;
+	}
 
 	return {
 		fetchRecent: fetchRecent,
@@ -254,7 +276,8 @@ angular.module('app')
 		getBooleanTrx: getBooleanTrx,
 		setBooleanTrx: setBooleanTrx,
 		getBlocks: getBlocks,
-		fetchTransactions: fetchTransactions
+		fetchTransactions: fetchTransactions,
+		fetchBurns: fetchBurns
 	};
 
 }]);

@@ -71,10 +71,10 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    api.getFees = function() {
+    api.getFees = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'fees' + cb,
+            url: 'http://' + url_v2 + 'fees/' + JSON.stringify(query) + cb,
             cache: false
         });
     };
@@ -142,14 +142,6 @@ angular.module("app").factory('api', ['$http', function($http) {
             cache: false
         });
     };
-
-    // api.getDelegates = function(cacheBoolean) {
-    //     return $http({
-    //         method: 'JSONP',
-    //         url: 'http://' + url + 'delegates' + cb,
-    //         cache: cacheBoolean
-    //     });
-    // };
 
     api.getDelegates = function(query) {
         return $http({
@@ -235,11 +227,27 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp('http://' + url + 'blockstrx/new/' + lastBlock + cb);
     };
 
-    api.getVolume = function(cacheBoolean) {
+    // api.getVolume = function(cacheBoolean) {
+    //     return $http({
+    //         method: 'JSONP',
+    //         url: 'http://' + url + 'volume' + cb,
+    //         cache: cacheBoolean
+    //     });
+    // };
+
+    api.getCharts = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'volume' + cb,
-            cache: cacheBoolean
+            url: 'http://' + url_v2 + 'charts/' + JSON.stringify(query) + cb,
+            cache: true
+        });
+    };
+
+    api.getFeedCharts= function(id) {
+        return $http({
+            method: 'JSONP',
+            url: 'http://' + url + 'feedstats/' + id + cb,
+            cache: true
         });
     };
 
@@ -251,10 +259,10 @@ angular.module("app").factory('api', ['$http', function($http) {
         });
     };
 
-    api.getAssetVolume2 = function(days) {
+    api.getAssetVolume2 = function(query) {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'assetvolume2/' + days + cb
+            url: 'http://' + url_v2 + 'assetvolume/' + JSON.stringify(query) + cb
         });
     };
 
@@ -266,8 +274,16 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp('http://' + url + 'accounts/' + name + cb);
     };
 
+    api.getSubAccounts = function(name) {
+        return $http.jsonp('http://' + url + 'subaccounts/' + name + cb);
+    };
+
     api.getAccounts = function() {
         return $http.jsonp('http://' + url + 'accounts' + cb);
+    };
+
+    api.getBurns = function(sort) {
+        return $http.jsonp('http://' + url + 'burns/' + sort + cb);
     };
 
     api.getAccountsCount = function() {

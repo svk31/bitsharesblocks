@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/app.css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.1/react.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="js/app.js"></script>
     
@@ -46,15 +46,15 @@
                 <a ui-sref="accounts">{{ 'nav.accounts' | translate }}</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="assets">{{ 'nav.assets' | translate }}</a>
+                <a ui-sref="assets.market">{{ 'nav.assets' | translate }}</a>
               </li>
               <li ui-sref-active='active' dropdown is-open="status.isopen" style="cursor:pointer;">
                 <a class="dropdown-toggle" ng-disabled="disabled">
                   {{ 'nav.charts' | translate }}<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a ui-sref="charts">{{ 'nav.general' | translate }}</a></li>
-                  <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li>
+                  <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
+                  <!-- <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li> -->
                   <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
                   <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li>
                 </ul>
@@ -83,15 +83,15 @@
                 <a ui-sref="accounts">{{ 'nav.accounts' | translate }}</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="assets">{{ 'nav.assets' | translate }}</a>
+                <a ui-sref="assets.market">{{ 'nav.assets' | translate }}</a>
               </li>
               <li ui-sref-active='active' dropdown is-open="status.isopenmobile">
                 <a class="dropdown-toggle" ng-disabled="disabled">
                   {{ 'nav.charts' | translate }}<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a ui-sref="charts">{{ 'nav.general' | translate }}</a></li>
-                  <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li>
+                  <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
+                  <!-- <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li> -->
                   <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
                   <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li>
                 </ul>

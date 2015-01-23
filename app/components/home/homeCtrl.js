@@ -17,6 +17,10 @@ angular.module('app')
       name: 'CNY',
       label: '¥ CNY',
       symbol: '¥'
+    }, {
+      name: 'EUR',
+      label: '€ EUR',
+      symbol: '€'
     }];
 
     $scope.currentUnit = store.get('currentUnit');
@@ -44,6 +48,35 @@ angular.module('app')
             store.set('currentUnit', $scope.currentUnit);
             fetchPrice();
             stopPrice = $interval(fetchPrice, 60000 * 20);
+          }
+        });
+      }
+    });
+
+    $scope.sortBurns = [{
+      name: 'burns.0',
+      label: 'Largest burns',
+    }, {
+      name: '_id',
+      label: 'Most recent burns',
+    }];
+
+    $scope.currentSort = store.get('currentSort');
+    if ($scope.currentSort === undefined) {
+      $scope.currentSort = $scope.sortBurns[0].name;
+    }
+
+    $scope.$watch('currentSort', function(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        $scope.sortBurns.forEach(function(unit, i) {
+          if (unit.name === newValue) {
+            if (angular.isDefined(stopBurns)) {
+              $interval.cancel(stopBurns);
+              stopBurns = undefined;
+            }
+            store.set('currentSort', $scope.currentSort);
+            fetchBurns();
+            stopBurns = $interval(fetchBurns, 60000);
           }
         });
       }
@@ -120,6 +153,14 @@ angular.module('app')
     stopBlocks = $interval(getNew, 10000);
 
 
+    function fetchBurns() {
+      Blocks.fetchBurns($scope.currentSort).then(function(result) {
+        $scope.burns = result;
+      });
+    }
+
+    fetchBurns();
+    stopBurns = $interval(fetchBurns, 60000);
 
     function stopUpdate() {
       if (angular.isDefined(stopHome)) {
@@ -133,6 +174,10 @@ angular.module('app')
       if (angular.isDefined(stopPrice)) {
         $interval.cancel(stopPrice);
         stopPrice = undefined;
+      }
+      if (angular.isDefined(stopBurns)) {
+        $interval.cancel(stopBurns);
+        stopBurns = undefined;
       }
     }
 
@@ -218,6 +263,10 @@ angular.module('app')
         if ($scope.priceChart.series.length === 2) {
           $scope.priceChart.series[1].name = movingAvg;
         }
+
+        $scope.sortBurns.forEach(function(burn) {
+          burn.label = result[burn.name];
+        });
       });
     }
 

@@ -6,15 +6,32 @@ var VotesHeaderRow = React.createClass({
 		var inverse = this.props.inverse;
 
 		var clickHandler = function(ev) {
-			props.onSortClick(					
-				ev.target.cellIndex	
-				);
+			var sortIndex = ev.target.cellIndex;
+			if (!sortIndex) {
+				var letters = ev.target.dataset.reactid.match(/[a-z]+/g);
+				var subIndices = ev.target.dataset.reactid.match(/\d+/g);
+				
+				sortIndex = parseInt(subIndices[4],10);
+
+				if (letters) {
+					sortIndex = letters[0].charCodeAt(0) - 87;
+				}
+
+			}
+			if (ev.target.cellIndex!==3 && ev.target.cellIndex!==4) {
+				props.onSortClick(					
+					sortIndex
+					);
+			}
 		};
 
+		var floatLeft = {float:'left', 'z-index': -1};
+		var sortGlyph = (inverse) ? <span style={floatLeft} className="glyphicon glyphicon-sort-by-attributes-alt"></span> : <span style={floatLeft} className="glyphicon glyphicon-sort-by-attributes"></span>;
+		
 		return (
 			<tr onClick={clickHandler}>
-			<th className="bold sortable">{headers['blocks.blockNum']}</th>
-			<th className="bold sortable">{headers['delegate.votes.net']}</th>
+			<th className="bold sortable">{sortIndex === 0 ? sortGlyph: null} {headers['blocks.blockNum']}</th>
+			<th className="bold sortable">{sortIndex === 1 ? sortGlyph: null} {headers['delegate.votes.net']}</th>
 			</tr>
 			);
 	}

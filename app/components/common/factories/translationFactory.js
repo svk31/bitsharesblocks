@@ -29,6 +29,9 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	}, {
 		value: "日本語",
 		key: "ja"
+	}, {
+		value: "Pусский",
+		key: "ru"
 	}];
 
 	function setCurrent(key) {
@@ -64,10 +67,12 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	function home() {
 		var deferred = $q.defer();
 		$translate.use(_currentKey).then(function(result) {
-			$translate(['home.price', 'home.MA']).then(function(result) {
+			$translate(['home.price', 'home.MA', 'home.burns.recent', 'home.burns.largest']).then(function(result) {
 				deferred.resolve({
 					price: result['home.price'],
-					ma: result['home.MA']
+					ma: result['home.MA'],
+					_id: result['home.burns.recent'],
+					'burns.0': result['home.burns.largest']
 				});
 			});
 		});
@@ -152,7 +157,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	function assets() {
 		var deferred = $q.defer();
 		var translations = {};
-		var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'delegates.filter'];
+		var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th3', 'assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'assets.market.th8', 'delegates.filter'];
 
 		$translate.use(_currentKey).then(function(result) {
 			$translate(userHeaders).then(function(result) {
@@ -214,12 +219,13 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		var deferred = $q.defer();
 		$translate.use(_currentKey)
 			.then(function(result) {
-				$translate(['genesis.x', 'genesis.y', 'genesis.tooltip'])
+				$translate(['genesis.x', 'genesis.y', 'genesis.tooltip', 'genesis.addresses'])
 					.then(function(genesis) {
 						deferred.resolve({
 							tooltip: genesis["genesis.tooltip"],
 							xlabel: genesis["genesis.x"],
-							ylabel: genesis["genesis.y"]
+							ylabel: genesis["genesis.y"],
+							addresses: genesis["genesis.addresses"].toLowerCase()
 						});
 					});
 			});
@@ -252,7 +258,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		var deferred = $q.defer();
 		$translate.use(_currentKey)
 			.then(function(result) {
-				$translate(['apiModal.title', 'apiModal.body', 'apiModal.close','apiModal.auto','apiModal.new_york','apiModal.singapore'])
+				$translate(['apiModal.title', 'apiModal.body', 'apiModal.close', 'apiModal.auto', 'apiModal.new_york', 'apiModal.singapore'])
 					.then(function(result) {
 						deferred.resolve({
 							title: result["apiModal.title"],
@@ -261,6 +267,39 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 							auto: result["apiModal.auto"],
 							new_york: result["apiModal.new_york"],
 							singapore: result["apiModal.singapore"]
+						});
+					});
+			});
+		return deferred.promise;
+	}
+
+	function supply() {
+		var deferred = $q.defer();
+		$translate.use(_currentKey)
+			.then(function(result) {
+				$translate(['supply.changeY', 'supply.supplyY', 'supply.feesY'])
+					.then(function(result) {
+						deferred.resolve({
+							inflationY: result["supply.changeY"],
+							supplyY: result["supply.supplyY"],
+							feesY: result["supply.feesY"]
+						});
+					});
+			});
+		return deferred.promise;
+	}
+
+	function feeds() {
+		var deferred = $q.defer();
+		$translate.use(_currentKey)
+			.then(function(result) {
+				$translate(['asset.feeds.med', 'charts.feeds.latest', 'charts.feeds.vwap', 'charts.feeds.deviation'])
+					.then(function(result) {
+						deferred.resolve({
+							med: result["asset.feeds.med"],
+							latest: result["charts.feeds.latest"],
+							vwap: result["charts.feeds.vwap"],
+							deviation: result["charts.feeds.deviation"]
 						});
 					});
 			});
@@ -281,7 +320,9 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		asset: asset,
 		charts: charts,
 		genesis: genesis,
-		apiModal: apiModal
+		apiModal: apiModal,
+		supply: supply,
+		feeds: feeds
 	};
 
 }]);

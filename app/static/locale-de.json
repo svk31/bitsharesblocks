@@ -94,6 +94,11 @@
     },
     "newUsers": {
       "title": "NEUE KONTEN"
+    },
+    "burns": {
+      "title": "BURN-BOX",
+      "recent": "Most recent burns",
+      "largest": "Largest burns"
     }
   },
   "blocks": {
@@ -260,6 +265,7 @@
     "name": "Kontoname",
     "id": "Id",
     "reg": "Registrierungsdatum",
+    "regBlock": "Registrierungsblock",
     "update": "Letztes Update",
     "yes": "Ja",
     "no": "Nein",
@@ -275,7 +281,9 @@
     "date": "Datum",
     "key": "Schlüssel",
     "website": "Webseite",
-    "burn": "BURN OPERATIONS"
+    "burn": "BURN OPERATIONS",
+    "parent": "Parent account",
+    "subs": "Sub-accounts"
   },
   "assets": {
     "plot": {
@@ -294,12 +302,14 @@
       "th5": "Mittlerer Feedpreis",
       "th6": "Share Verfügbarkeit",
       "th7": "24h Volumen",
-      "th8": "Market Cap"
+      "th8": "Market Cap",
+      "yield": "Yield"
     },
     "user": {
       "show": "Show user issued assets",
       "title": "NUTZER-DEFINIERTE ASSETS",
       "th1": "Asset ID",
+      "th3": "24hr Average Price",
       "th4": "Aktuelle Verfügbarkeit",
       "th5": "Maximale Verfügbarkeit",
       "th6": "Initialized"
@@ -340,6 +350,12 @@
       "med": "Median Feed Preis",
       "null": "Ungenügend Feeds in den letzten 24h",
       "last": "Letzte Aktualisierung  (UTC)"
+    },
+    "covers": {
+      "title": "MARGIN CALL ORDERS",
+      "price": "Call price",
+      "owed": "Owed",
+      "expiration": "Expiration date"
     }
   },
   "charts": {
@@ -351,7 +367,12 @@
       "trxCount": "BTS ANZAHL AN TRANSAKTIONEN",
       "volume": "BTS TRANSAKTIONSVOLUMEN",
       "btcPrice": "BTS/BTC PREISVERLAUF",
-      "usdPrice": "PREISVERLAUF"
+      "usdPrice": "PREISVERLAUF",
+      "prices": "PRICE CHARTS",
+      "trx": "TRANSACTION CHARTS",
+      "accounts": "ACCOUNTS CHARTS",
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Wert",
     "reg": "Kontoregistrierung",
@@ -359,17 +380,23 @@
     "feed": "Feedaktualisierung durch Delegierten",
     "update": "Kontoaktualisierung",
     "new": "Neues Konto",
-    "ma15": "15-Tage Moving Average"
+    "ma15": "15-Tage Moving Average",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "INFO",
-    "title2": "VERFÜGBARKEITSÄNDERUNG",
+    "title2": "ANNUALIZED DAILY INFLATION",
     "title3": "VERFÜGBARKEIT VON BTS",
     "title4": "BTS GEBPHREN ÜBER DER ZEIT",
     "height": "Blockhöhe BTSX => BTS Harte Aufspaltung",
     "supply": "Verfügbarkeit zur Aufspaltung",
     "change": "Änderung der Verfügbarkeit seit der harten Aufspaltung",
-    "changeY": "BTS VERFÜGBARKEITSÄNDERUNG",
+    "changeY": "BTS annualized inflation",
     "supplyY": "BTS VERFÜGBARKEIT",
     "feesY": "BTS Gebühren"
   },
@@ -384,6 +411,7 @@
     "higher": "Adressen mit Beträgen größer als",
     "percent": "PROZENT DER VERFÜGBARKEIT PRO ANZAHL ADRESSEN",
     "top": "TOP",
+    "sharedropTitle": "SHAREDROP",
     "addresses": "ADRESSEN",
     "address": "Adresse",
     "balance": "Betrag",
@@ -391,6 +419,9 @@
     "cumul": "Kumulative %",
     "x": "Anzahl an Konten",
     "y": "%",
-    "tooltip": "Prozent der Verfügbarkeit"
+    "tooltip": "Prozent der Verfügbarkeit",
+    "piechart": {
+      "title": "PIECES OF THE PIE"
+    }
   }
 }

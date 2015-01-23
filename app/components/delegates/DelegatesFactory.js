@@ -27,7 +27,7 @@ angular.module('app')
 	}
 
 	_delegateNames = store.get('delegateNamesv2');
-	if (_delegateNames===undefined) {
+	if (_delegateNames === undefined) {
 		_delegateNames = {};
 	}
 
@@ -80,11 +80,11 @@ angular.module('app')
 		if (_delegateNames[id]) {
 			deferred.resolve(_delegateNames[id]);
 		} else {
-			api.getDelegateById(id).success(function(result) {				
+			api.getDelegateById(id).success(function(result) {
 				_delegateNames[id] = {
 					'name': result.name
 				};
-				store.set('delegateNamesv2',_delegateNames);
+				store.set('delegateNamesv2', _delegateNames);
 				deferred.resolve(result);
 			});
 		}
@@ -290,7 +290,7 @@ angular.module('app')
 
 			// Add ranks
 			delegate.dayChange = (ranks.dayChange[delegate._id] !== undefined) ? ranks.dayChange[delegate._id] : 'n/a';
-			delegate.weekChange = (ranks.weekChange[delegate._id] !== undefined) ? ranks.dayChange[delegate._id] : 'n/a';
+			delegate.weekChange = (ranks.weekChange[delegate._id] !== undefined) ? ranks.weekChange[delegate._id] : 'n/a';
 
 			// Count active feeds
 			delegate.activeFeeds = 0;
@@ -346,8 +346,12 @@ angular.module('app')
 				var deltaPatch = patch - _versions.patch;
 				var deltaPremajor = premajor - _versions.premajor;
 
-				if (deltaMajor >= 0) {
-					if (deltaMinor >= 0) {
+				if (deltaMajor > 0) {
+					delegate.version = 1;
+				} else if (deltaMajor === 0) {
+					if (deltaMinor > 0) {
+						delegate.version = 1;
+					} else if (deltaMinor === 0) {
 						if (deltaPatch >= 0) {
 							if (deltaPremajor >= 0) {
 								delegate.version = 1;
@@ -356,7 +360,7 @@ angular.module('app')
 							}
 						}
 					} else {
-						delegate.version = 1 - deltaMinor;
+						delegate.version = 1 - 2 * deltaMinor;
 					}
 				} else {
 					delegate.version = 999;
@@ -392,7 +396,7 @@ angular.module('app')
 			delegate.showWeekChange = true;
 		}
 		delegate.dayChange = (result.ranks.dayChange !== undefined) ? result.ranks.dayChange : 'n/a';
-		delegate.weekChange = (result.ranks.weekChange !== undefined) ? result.ranks.dayChange : 'n/a';
+		delegate.weekChange = (result.ranks.weekChange !== undefined) ? result.ranks.weekChange : 'n/a';
 
 		// Check version
 		delegate = checkVersion(delegate);
@@ -427,18 +431,24 @@ angular.module('app')
 		delegate.totalEarnings = 0;
 
 		var withLength;
+		var currentDate = new Date();
+		var startDate = new Date(delegate.reg_date_ISO).getTime();
 		if (result.withdrawals) {
 			withLength = result.withdrawals.length;
-			var currentDate = new Date();
 
 			if (withLength > 0) {
-				result.withdrawals.unshift([result.initialFee, 0]);
+				result.withdrawals.unshift([startDate, 0]);
 				result.withdrawals.push([currentDate.getTime(), result.withdrawals[result.withdrawals.length - 1][1] + delegate.delegate_info.pay_balance]);
 			} else {
-				result.withdrawals.push([result.initialFee, 0]);
+				result.withdrawals.push([startDate, 0]);
 				result.withdrawals.push([currentDate.getTime(), delegate.delegate_info.pay_balance]);
 			}
 			delegate.totalEarnings = result.withdrawals[result.withdrawals.length - 1][1] + result.totalFees;
+		} else {
+			result.withdrawals = [];
+			result.withdrawals.push([startDate, 0]);
+			result.withdrawals.push([currentDate.getTime(), delegate.delegate_info.pay_balance]);
+			delegate.totalEarnings = delegate.delegate_info.pay_balance;
 		}
 
 		return {
