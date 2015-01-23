@@ -32,7 +32,7 @@ var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcr
 ])
 
 .run(
-    ['$rootScope', 'api', '$state','$stateParams',
+    ['$rootScope', 'api', '$state', '$stateParams',
         function($rootScope, api, $state, $stateParams) {
 
             api.getInfo().success(function(info) {
@@ -50,6 +50,12 @@ var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcr
 
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
+
+            Highcharts.setOptions({
+                global: {
+                    useUTC: false
+                }
+            });
 
 
 
