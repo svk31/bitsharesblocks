@@ -1,0 +1,425 @@
+{
+	"nav": {
+		"home": "Página Inicial",
+		"blocks": "Blocos",
+		"delegates": "Delegados",
+		"accounts": "Contas",
+		"assets": "Ativos",
+		"charts": "Gráficos",
+		"general": "Geral",
+		"supply": "Quantidade e Taxas de BTS",
+		"btsgenesis": "Bloco de Origem BTS",
+		"btsxgenesis": "Bloco de Origem BTSX",
+		"about": "Sobre"
+	},
+	"alerts": {
+		"del1": "Eu criei um novo delegado, por favor considere votar ",
+		"del2": "Em vez de",
+		"del3": "Mais Informações",
+		"del4": "Aqui"
+	},
+	"footer": {
+		"vote": "Por favor vote no meu delegado",
+		"donate": "Faça uma doação",
+		"info": "Informações/Atualizações",
+		"thread": "Tópico de BitsharesTalk",
+		"version": "Versão do Cliente",
+		"language": "Linguagem"
+	},
+	"apiModal": {
+		"title": "Alterar Servidor API",
+		"body": "É-lhe automaticamente atribuido um servidor API perto de si, mas se estiver a experienciar dificuldades, pode escolher manualmente um novo servidor aqui:",
+		"close": "Fecha",
+		"auto": "Automático (default)",
+		"new_york": "Nova York, EUA",
+		"singapore": "Singapura",
+		"api": "API"
+	},
+	"home": {
+		"history": "HISTÓRICO DO PREÇO DE BTS NOS ULTIMOS 14 DIAS",
+		"price": "Preço",
+		"MA": "Variação Média em 30 dias",
+		"health": {
+			"title": "STATUS DA REDE",
+			"alert": "Nivel de Alerta de Rede:",
+			"particip": "Taxa de Participação dos Delegados:",
+			"confirm": "Tempo e Confirmação Médio:",
+			"forks": "Bifurcações nas Ultimas 24h:",
+			"forkBlock": "Altura de Bloco na Ultima Bifurcação:",
+			"signee": "Sinal de Bifurcação de Delegado:",
+			"latency": "Latencia de Delegado:"
+		},
+		"delegate": {
+			"title": "STATUS DE DELEGATE",
+			"reg": "Delegados Registados",
+			"votes": "Delegados com Votos",
+			"payReg": "Taxa de Registo Máxima",
+			"new24": "Novos Delegados nas Ultimas 24h",
+			"new7d": "Novos Delegados nos Últimos 7d",
+			"pay": "Taxa de Pagamento Máxima",
+			"averagePay": "Taxa de Pagamento Média"
+		},
+		"blockchain": {
+			"title": "STATUS DA BLOCKCHAIN",
+			"supply": "Quantidade de Ações",
+			"unclaimed": "Não Reclamadas",
+			"collat": "Preso à Garantia",
+			"change": "Mudança da Quantidade nas Ultimas 24h",
+			"current": "Bloco Actual",
+			"trx": "Blocos com Transacções",
+			"missed": "Total de Blocos Perdidos"
+		},
+		"asset": {
+			"title": "STATUS DOS ATIVOS",
+			"number": "Numero de Ativos",
+			"user": "Ativos Criados Pelos Utilizadores",
+			"shortReg": "Registo do Nome Short",
+			"longReg": "Registo do Nome Long",
+			"new7d": "Novos Activos nos Últimos 7d",
+			"new30d": "Novos Activos nos Últimos 30d",
+			"trx": "Transacções de Activos"
+		},
+		"user": {
+			"title": "STATUS DO UTILIZADOR",
+			"number": "Numero de Contas",
+			"sub": "Numero de Sub-Contas",
+			"new24": "Novas Contas nas Ultimas 24h",
+			"new7d": "Novas Contas nos Ultimos 7d"
+		},
+		"missed": {
+			"title": "ULTIMOS 10 BLOCOS PERDIDOS"
+		},
+		"blocks": {
+			"title": "ULTIMOS 10 BLOCOS"
+		},
+		"newUsers": {
+			"title": "NOVOS UTILIZADORES"
+		},
+		"burns": {
+			"title": "BURN-BOX",
+			"recent": "Burns mais recentes",
+			"largest": "Maiores burns"
+		}
+	},
+	"blocks": {
+		"search1": "pesquisar pela altura de um bloco ou pelo seu id de transacção",
+		"search2": "ir para altura do bloco",
+		"current": "ATUAL",
+		"higher": "SUPERIOR",
+		"lower": "INFERIOR",
+		"first": "PRIMEIRO",
+		"last": "ULTIMO",
+		"blocks": "BLOCOS",
+		"showTrx": "mostrar apenas blocos com transacções",
+		"blockNum": "Numero do Bloco",
+		"timestamp": "Timestamp",
+		"delegate": "Delegado",
+		"trxCount": "Contagem de Transacção",
+		"trxValue": "Valor da Transacção",
+		"fees": "Tazas",
+		"types": "Tipos de Transacção"
+	},
+	"block": {
+		"block": "Bloco",
+		"previous": "Bloco Anterior",
+		"next": "Próximo Bloco",
+		"details": {
+			"title": "DETALHES DE BLOCO",
+			"signee": "Assinature do Delegado",
+			"size": "Tamanho do Bloco",
+			"latency": "Latencia",
+			"time": "Tempo de Processo",
+			"hash1": "Hash Anterior",
+			"hash2": "Proximo Hash Secreto",
+			"hash3": "Hash Secreto Anterior",
+			"shares": "Ações Lançadas",
+			"collected": "Taxas Recolhidas",
+			"destroyed": "Taxas Destruidas"
+		},
+		"trx": {
+			"title": "TRANSAÇÃO",
+			"type": "Tipo de Operação",
+			"id": "ID da Transação",
+			"fee": "Taxa da Transaçao",
+			"public": "Dados Publicos",
+			"delegate": "Nome do Delegado",
+			"feedUpdates": "Actualizações do Feed",
+			"feedPrice": "Preço do Feed",
+			"votes": "Votos na Transaçao",
+			"price": "Rácio do Preço",
+			"interest": "Taxa de Juro",
+			"priceLimit": "Limite de Preço",
+			"collateral": "Coleteral",
+			"assetName": "Nome do Ativo",
+			"assetAmount": "Quantidade do Ativo",
+			"base": "Quantidade Base do Ativo",
+			"amount": "Quantidade",
+			"noVotes": "Sem votos nesta transaçao",
+			"account": "Conta",
+			"message": "Mensagem",
+			"key": "Chave do Utilizador",
+			"asset": "Activo",
+			"description": "Descriçao do Ativo",
+			"issuer": "Conta do Publicador do Ativo",
+			"for": "Para Delegado",
+			"burn": "Burn",
+			"asset_create": "Criar Activo",
+			"asset_issue": "Publicar Activo",
+			"add_collateral": "Adicionar Colateral",
+			"withdraw_pay": "Levantamento do Pagamento do Delegado",
+			"all": "Mostrar Todas as Transacçoes",
+			"placeholder": "Filtrar por Tipo de Transaçao"
+		}
+	},
+	"delegates": {
+		"search": "Procurar um Delegado",
+		"title": "INFORMAÇAO DO DELEGADO",
+		"rank": "Rank",
+		"change24": "Mudança nas ultimas 24h",
+		"change7": "Mudança nos últimos 7d",
+		"votes": "Numero de votos",
+		"produced": "Produzidos",
+		"missed": "Perdidos",
+		"rate": "Taxa de Pagamento",
+		"latency": "Latência Media",
+		"feeds": "Feeds Activos",
+		"feedFreq": "Frequência do Feed",
+		"rel": "Confiança",
+		"version": "Versão",
+		"filter": "filtro",
+		"no_version": "Not set",
+		"active": "Mostrar Delegados Activos",
+		"standby": "Mostrar Delegados em Standby"
+	},
+	"delegate": {
+		"prevRank": "Rank anterior",
+		"nextRank": "Próximo rank",
+		"votesChart": "EVOLUÇÃO DOS VOTOS",
+		"sumVotes": "Soma dos votos",
+		"payChart": {
+			"title": "RECEITA LIQUIDA",
+			"name": "Receitas Comulativas"
+		},
+		"rank": {
+			"title": "RANK E VOTOS",
+			"current": "Rank Atual",
+			"dayChange": "Mudanças no Rank nas ultimas 24h",
+			"weekChange": "Mudanças no Rank nos últimos 7d",
+			"votes": "Numero de votos para",
+			"percentVotes": "Percentagem de votos para"
+		},
+		"data": {
+			"title": "DADOS PUBLICOS",
+			"description": "Descriçao",
+			"proposal": "Oferta do Delegado",
+			"location": "Localizaçao do Servidor",
+			"country": "País do Delegado",
+			"handle": "Nome de Utilizador BitsharesTalk",
+			"ann": "Anuncios",
+			"role": "Cargo",
+			"website": "Website",
+			"role_0": "Desenvolvimento",
+			"role_1": "Marketing",
+			"role_2": "Faucet",
+			"role_3": "Backbone",
+			"role_4": "Caridade",
+			"role_5": "Suporte Tecnico",
+			"role_6": "Leis/Regulações",
+			"role_7": "Media/Relações Publicas"
+		},
+		"feeds": {
+			"title": "FEEDS DOS DELEGADOS",
+			"total": "Numero Total de Feeds",
+			"active": "Feeds Activos",
+			"show": "Mostrar Feeds",
+			"valid": "Mostrar Apenas Feeds Validos"
+		},
+		"info": {
+			"title": "DELEGATE INFO",
+			"earnings": "Total em Receitas",
+			"withdrawn": "Receitas em Levantamentos",
+			"fees": "Total taxas pagas"
+		},
+		"prod": {
+			"title": "PRODUÇÃO DE BLOCOS",
+			"prod": "Blocos Produzidos",
+			"missed": "Blocos Perdidos",
+			"last": "Ultimo Bloco Produzido",
+			"lat50": "Latencia media nos ultimos 50 blocos",
+			"lat100": "Latencia media nos ultimos 100 blocos",
+			"lat200": "Latencia media nos ultimos 200 blocos"
+		},
+		"votes": {
+			"title": "HISTORICO DE VOTAÇAO",
+			"total": "TOTAL DE VOTOS",
+			"net": "Votos Liquidos >= 10,000"
+		}
+	},
+	"accounts": {
+		"title": "CONTAS",
+		"search1": "Encontrar conta por nome",
+		"search2": "Ir para id numero",
+		"recent": "MAIS RECENTE",
+		"newer": "MAIS NOVO",
+		"older": "MAIS VELHO",
+		"oldest": "ULTIMO",
+		"name": "nome da conta",
+		"id": "Id",
+		"reg": "Data de registo",
+		"regBlock": "Bloco de registo",
+		"update": "Ultima atualizaçao",
+		"yes": "Sim",
+		"no": "Não",
+        "wall": "Barreira Total"
+	},
+	"account": {
+		"previous": "Conta anterior",
+		"next": "Proxima conta",
+		"title1": "INFORMAÇÃO DE CONTA",
+		"id": "ID da Conta",
+		"owner": "Utilizador",
+		"title2": "HISTORICO DE CHAVES ATIVAS",
+		"date": "Data",
+		"key": "Chave",
+		"website": "Website",
+		"burn": "BARREIRA DE BURNS",
+		"parent": "Conta Pai",
+		"subs": "Sub-contas"
+	},
+	"assets": {
+		"plot": {
+			"title": "TODOS OS TIPOS DE TRANSAÇAO DE ATIVOS NOS ULTIMOS 7 DIAS",
+			"type1": "Compra",
+			"type2": "Venda",
+			"type3": "Short",
+			"type4": "Cover"
+		},
+		"market": {
+			"title": "ATICOS PUBLICADOS PELO MERCADO",
+			"th1": "Símbolo do Activo",
+			"th2": "Profundidade de Venda",
+			"th3": "Profundidade de Compra",
+			"th4": "Feeds Validos",
+			"th5": "Preço médio do feed",
+			"th6": "Quantidade de Ações",
+			"th7": "Volume 24h",
+			"th8": "Capitalização de Mercado",
+			"yield": "Rendimento"
+		},
+		"user": {
+			"show": "Mostrar activos publicados por utilizador",
+			"title": "ATIVOS PUBLICADOS POR UTILIZADOR",
+			"th1": "ID do Activo",
+			"th3": "Preço médio ultimas 24h",
+			"th4": "Quantidade Actual",
+			"th5": "Quantidade Máxima",
+			"th6": "Inicializado"
+		}
+	},
+	"asset": {
+		"orderbook": "LIVRO DE REGISTOS",
+		"bids": "VENDAS",
+		"asks": "COMPRAS",
+		"shorts": "SHORTS",
+		"priceH": "HISTORICO DE PREÇO",
+		"alert1": "Mercado Inativo: Numero de feeds ativos insuficiente",
+		"alert2": "Mercado Inativo: Profundidade de mercado insuficiente",
+		"collateral": "Colateral",
+		"supply": "QUANTIDADE",
+		"supplyAnd": "E HISTORICO DE COLATERAL (BTS) ",
+		"sell": "Vender",
+		"buy": "Comprar",
+		"short": "Short",
+		"chartSupply": "Quantidade",
+		"ohlc": "Preço: OHLC",
+		"external": "Preço externo de Coinmarketcap",
+		"volume": "Volume",
+		"marketAsset": "Ativo publicado pelo mercado",
+		"assetInfo": {
+			"title": "INFORMAÇAO DOS ATIVOS",
+			"base": "Ativo Base",
+			"name": "Nome Completo",
+			"precision": "Precisão",
+			"regdate": "Data de Registo"
+		},
+		"market": {
+			"title": "INFORMAÇÃO DE MERCADO",
+			"reserve": "Fundo de Reserva"
+		},
+		"feeds": {
+			"avg": "Preço Medio do Feed",
+			"med": "Preço Mediano do Feed",
+			"null": "Feeds Insuficientes nas Ultimas 24h",
+			"last": "Last update (UTC)"
+		},
+		"covers": {
+			"title": "ORDENS DE MARGEM",
+			"price": "Preço pedido",
+			"owed": "Devido",
+			"expiration": "Data de Expiração"
+		}
+	},
+	"charts": {
+		"titles": {
+			"new": "CONTAS NOVAS",
+			"total": "NUMERO TOTAL DE CONTAS",
+			"assetTrx": "TODOS OS TIPOS DE TRANSAÇOES DE ATIVOS",
+			"btsTrx": "TIPOS DE TRANSAÇOES BTS",
+			"trxCount": "NUMERO DE TRANSAÇOES BTS",
+			"volume": "VOLUME DE TRANSAÇAO BTS",
+			"btcPrice": "HISTORICO DE PREÇO BTS/BTC",
+			"usdPrice": "HISTORICO DE PREÇO",
+			"prices": "GRAFICOS DE PREÇO",
+			"trx": "GRAFICOS DE TRANSAÇOES",
+			"accounts": "GRAFICOS DE CONTAS",
+			"supply": "GRAFICOS DE QUANTIDADE",
+			"feeds": "GRAFICOS DE FEEDS"
+		},
+		"value": "Valor",
+		"reg": "Registo de Conta",
+		"transfer": "Transferir",
+		"feed": "Actualização de feed de delegado",
+		"update": "Actualização de conta",
+		"new": "Contas novas",
+		"ma15": "Movimento Medio 15 dias",
+		"feeds": {
+			"title": "SEGUIMENTO DO FEED",
+			"latest": "Preço Recente",
+			"vwap": "Pesagem Preço Medio Ultimas 24hr",
+			"deviation": "Desvio do Feed"
+		}
+	},
+	"supply": {
+		"title1": "INFORMAÇÃO",
+		"title2": "INFLAÇÃO DIARIA ANUALIZADA",
+		"title3": "QUANTIDADE TOTAL DE BTS",
+		"title4": "TAXAS BTS PAGAS COM O TEMPO",
+		"height": "Altura de BTSX => bloco de bifurcação BTS",
+		"supply": "Quantidade na Bifurcação",
+		"change": "Mudança na quantidade desde a bifurcação",
+		"changeY": "Inflação anualizada BTS",
+		"supplyY": "Quantidade de BTS",
+		"feesY": "Taxas de BTS"
+	},
+	"genesis": {
+		"stats": "ESTATISTICAS",
+		"biggest": "CONTAGEM DE ENDEREÇO POR BALANÇO",
+		"total": "Numero total de endereços",
+		"supply": "Quantidade total inicial",
+		"sharedrop": "AGS+PTS+DNS+VOTE quantidade distribuição",
+		"market": "Numero de ativos do mercado",
+		"whale": "Maior balanço",
+		"higher": "Endereços com balanço superior a",
+		"percent": "PERCENTAGEM TOTAL DE QUANTIDADE POR NUMERO DE ENDEREÇOS",
+		"top": "TOP",
+		"sharedropTitle": "DISTRIBUIÇÃO",
+		"addresses": "ENDEREÇOS",
+		"address": "endereço",
+		"balance": "Balanço",
+		"percentOf": "% do total",
+		"cumul": "% comulativa do total",
+		"x": "Numero de contas",
+		"y": "% da quantidade total",
+		"tooltip": "Percentagem da quantidade total"
+	}
+}
