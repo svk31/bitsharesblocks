@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('orderBookCtrl', ['$scope', '$rootScope', '$state', '$interval', 'api', '$filter', 'Translate', 'Assets', 'Charts',
-  function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts) {
+.controller('orderBookCtrl', ['$scope', '$rootScope', '$state', '$interval', 'api', '$filter', 'Translate', 'Assets', 'Charts', 'Meta',
+  function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts, Meta) {
 
     $scope.orderByField = 'last_update';
     $scope.reverseSort = true;
@@ -75,6 +75,9 @@ angular.module('app')
 
     function fetchOrderBook() {
       Assets.fetchOrderBook($scope.assetId).then(function(result) {
+        Meta.add('/asset/orderbook', {
+          title: 'Bitshares '+result.asset.symbol + ' orderbook: asks, bids, shorts and covers'
+        });
         marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
         $scope.asset = result.asset;
 

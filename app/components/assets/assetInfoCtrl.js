@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('assetInfoCtrl', ['$scope', '$rootScope', '$state', '$interval', 'api', '$filter', 'Translate', 'Assets', 'Charts',
-  function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts) {
+.controller('assetInfoCtrl', ['$scope', '$rootScope', '$state', '$interval', 'api', '$filter', 'Translate', 'Assets', 'Charts', 'Meta',
+  function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts, Meta) {
 
     $scope.assetId = $state.params.asset;
     $scope.prefix = 'bit';
@@ -156,6 +156,9 @@ angular.module('app')
 
     function fetchAsset() {
       Assets.fetchAsset($scope.assetId).then(function(result) {
+        Meta.add('/asset/info', {
+          title: 'Bitshares '+result.asset.symbol + ' info: supply, price, registration data'
+        });
         marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
         $scope.asset = result.asset;
 

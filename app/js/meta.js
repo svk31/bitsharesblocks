@@ -1,49 +1,47 @@
 angular.module('app').config(['MetaProvider', function(MetaProvider) {
-	var title = 'Bitsharesblocks - Bitshares Blockchain Explorer and Delegates Info';
+
 	MetaProvider.when('/', {
-		title: title,
-		description: 'Bitshares Block Explorer, Delegates Listing, Assets Overview. Realtime updates, block search, asset information for the next-gen 2.0 crypto Bitshares'
+		title: 'Bitshares Block Explorer, Delegates Info, Market Data | Bitsharesblocks.com',
+		description: 'Bitsharesblocks.com: an advanced block explorer for Bitshares. Find information on the Bitshares delegates, market data, realtime block updates and more'
 	});
 	MetaProvider.when('/blocks', {
-		title: 'Bitsharesblocks: Blocks Overview',
-		description: 'Bitshares block explorer: live and historical blockchain data'
+		title: 'Bitshares Blocks Overview: Live blockchain data',
+		description: 'Bitshares block explorer: live and historical blockchain data, block search and transaction filtering'
 	});
 	MetaProvider.when('/blocks/block', {
-		title: 'Bitsharesblocks: Individual Block',
-		description: 'Bitshares blockchain info: live and historical blockchain data with automatic updates'
+		title: 'Bitshares Block #',
+		description: 'Bitshares block data: transaction info, delegate votes and more'
 	});
 	MetaProvider.when('/delegates', {
-		title: 'Bitsharesblocks: Delegates Overview',
-		description: 'Bitshares delegates info: rankings, rank changes, reliability, version ++'
+		title: 'Bitshares Delegates Overview: Ranks and rank changes, reliability, pay rate ++',
+		description: 'Bitshares delegates info: rankings, rank changes, reliability, version info. Filter and search for delegates'
 	});
-		MetaProvider.when('/accounts', {
-		title: 'Bitsharesblocks: Accounts Overview',
-		description: 'Bitshares accounts info: registration dates, sub-accounts, delegates ++'
+	MetaProvider.when('/accounts', {
+		title: 'Bitshares Accounts Overview: Registration date, wall burns ++',
+		description: 'Bitshares accounts info: search accounts by registration date and name'
 	});
-
 	MetaProvider.when('/assets/market', {
-		title: 'Bitsharesblocks: Market Issued Assets Overview',
-		description: 'Bitshares market issued assets overview: ask and bid depth, yield, supply, price, marketcap ++'
+		title: 'Bitshares Market Issued Assets Overview: Price and Volume, Yield, Collateral, Marketcap ++',
+		description: 'Bitshares market issued assets overview: discover the ask and bid depth, yield, supply and collateral chart, price, marketcap for all assets'
 	});
 	MetaProvider.when('/assets/user', {
-		title: 'Bitsharesblocks: User Issued Assets Overview',
-		description: 'Bitshares user issued assets overview: supply, price, marketcap ++'
+		title: 'Bitshares User Issued Assets Overview: Price and Volume, Supply, Marketcap ++',
+		description: 'Bitshares user issued assets overview: supply chart, price history, marketcap ++'
 	});
-	MetaProvider.when('/charts', { 
-		title: 'Bitsharesblocks: Charts and stats',
-		description: 'Bitshares historical charts: price, inflation, transaction counts, accounts, genesis ++'
+	MetaProvider.when('/charts/*', {
+		title: 'Bitshares Price History and Supply Charts ++',
+		description: 'Bitshares historical charts: price, inflation tracking, transaction counts, new accounts over time ++'
 	});
-	// Home
-	// 
-	// Bitshares Block Explorer, Delegates Listing, Assets Overview. Realtime updates, block search, asset information for the next-gen 2.0 crypto Bitshares
-	// Blocks
-	// BitsharesBlocks - Bitshares block explorer: live and historicals blockchain data
-	// Delegates 
-	// Bitsharesblocks - Delegate listings: Rankings, rank changes, reliability and more
-	// Assets 
-	// Bitsharesblocks - Assets overview: Price, volume, marketcap of Market Pegged and User Issued Assets
-	// Charts
-	// Historical charts: Price, inflation, genesis stats, transaction value and more
-	// About
-	// What is Bitshares? Useful links, donation info.
+	MetaProvider.when('/genesis-bts', {
+		title: 'Bitshares Genesis Data',
+		description: 'Bitshares BTS genesis block analysis: charts, rich list, distribution ++'
+	});
+	MetaProvider.when('/genesis-btsx', {
+		title: 'BitsharesX Genesis Data',
+		description: 'BitsharesX genesis block analysis: charts, rich list, distribution ++'
+	});
+	MetaProvider.when('/about', {
+		title: 'About Bitsharesblocks and Bitshares',
+		description: 'Useful links, donation info, dev.bitsharesblocks delegate bid'
+	});
 }]);
