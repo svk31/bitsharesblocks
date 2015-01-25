@@ -1,7 +1,7 @@
 angular.module("app").config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.otherwise("/");
   $urlRouterProvider.when("/assets", "/assets/market");
   $urlRouterProvider.when("/charts", "/charts/prices");
   //
@@ -170,7 +170,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       controller: 'genesisBTSXCtrl'
     })
     .state('home', {
-      url: "/home",
+      url: "/",
       templateUrl: "home.html",
       resolve: {
         Assets: 'Assets',

@@ -15,8 +15,10 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
     
-    <title>BitsharesBlocks - Bitshares Blockchain Explorer and Delegates Info</title>
-  <meta name="description" content="Bitshares Block Explorer, Delegates Listing, Assets Overview. Realtime updates, block search, asset information for the next-gen 2.0 crypto Bitshares"></head>
+    <title data-ng-bind="meta.title"></title>
+    <meta name="description" content="{{meta.description}}">
+
+  </head>
   <body>
     <header class="navbar navbar-default navbar-fixed-top" role="navigation" bs-navbar>
       <div class="navbar-inner">

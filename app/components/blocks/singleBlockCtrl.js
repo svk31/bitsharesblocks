@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('blockCtrl', ['$scope', '$rootScope', '$location', '$state', 'Assets', 'Accounts', 'Block', 'Translate',
-  function($scope, $rootScope, $location, $state, Assets, Accounts, Block, Translate) {
+.controller('blockCtrl', ['$scope', '$rootScope', '$location', '$state', 'Assets', 'Accounts', 'Block', 'Translate', 'Meta',
+  function($scope, $rootScope, $location, $state, Assets, Accounts, Block, Translate, Meta) {
 
     $scope.blockNumber = $state.params.id;
     $scope.votes = [];
@@ -14,6 +14,9 @@ angular.module('app')
 
     function fetchBlock(blockNumber) {
       Block.fetchBlock(blockNumber).then(function(result) {
+        Meta.add('/blocks/block', {
+          title: 'Bitshares Block #' + result.block._id
+        });
         $scope.status.open = [];
         for (i = 0; i < result.block.trxLength; i++) {
           $scope.status.open.push(false);

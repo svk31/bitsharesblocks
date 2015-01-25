@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('singleDelegateCtrl', ['$scope', '$rootScope', '$state', '$location', '$translate', 'api', 'Assets', 'Delegates', 'Translate', 'Charts',
-  function($scope, $rootScope, $state, $location, $translate, api, Assets, Delegates, Translate, Charts) {
+.controller('singleDelegateCtrl', ['$scope', '$rootScope', '$state', '$location', '$translate', 'api', 'Assets', 'Delegates', 'Translate', 'Charts', 'Meta',
+  function($scope, $rootScope, $state, $location, $translate, api, Assets, Delegates, Translate, Charts, Meta) {
     $scope.delegateName = $state.params.name;
     $scope.status = {};
     $scope.status.open = false;
@@ -53,6 +53,9 @@ angular.module('app')
 
     function fetchDelegate(name, rank) {
       Delegates.fetchDelegate(name, rank).then(function(result) {
+        Meta.add('/delegates/delegate', {
+          title: 'Bitshares Delegate ' + result.delegate.name+' info: votes history, salary and feeds'
+        });
         $scope.delegate = result.delegate;
         $scope.latencies = result.latencies;
         $scope.delegateName = result.delegate.name;
