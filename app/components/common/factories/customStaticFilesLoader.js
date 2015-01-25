@@ -9,6 +9,7 @@ angular.module('app')
       if (!options || (!angular.isString(options.prefix) || !angular.isString(options.suffix))) {
         throw new Error('Couldn\'t load static files, no prefix or suffix specified!');
       }
+      options.key = options.key.substring(0,2);
       var deferred = $q.defer();
       if (options.key === 'en') {
         deferred.resolve(appcst.translation);

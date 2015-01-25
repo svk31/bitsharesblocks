@@ -32,6 +32,9 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	}, {
 		value: "Pусский",
 		key: "ru"
+	}, {
+		value: "Português",
+		key: "pt"
 	}];
 
 	function setCurrent(key) {
