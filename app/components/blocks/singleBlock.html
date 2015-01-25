@@ -52,7 +52,7 @@
 				</tr>
 				<tr>
 					<td>{{ 'blocks.trxValue' | translate }}:</td>
-					<td ng-if="blk.fees"><span ng-repeat="value in values[$index]"><p style="margin:0;padding:0;" ng-if="value.amount!==0"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:3}}</span> <span ng-if="value.asset==='BTS'">BTS</span> <a ng-if="value.asset!=='BTS'" ui-sref="asset({ 'id' : value.asset})">{{value.asset}}</a></p></span></td>
+					<td ng-if="blk.fees"><span ng-repeat="value in values[$index]"><p style="margin:0;padding:0;" ng-if="value.amount!==0"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:3}}</span> <span ng-if="value.asset==='BTS'">BTS</span> <a ng-if="value.asset!=='BTS'" ui-sref="asset.orderbook({ 'asset' : value.asset})">{{value.asset}}</a></p></span></td>
 				</tr>
 				<tr>
 					<td>{{ 'block.trx.type' | translate }}:</td>
@@ -61,7 +61,7 @@
 
 				<tr>
 					<td>{{ 'block.trx.fee' | translate }}:</td>
-					<td ng-if="blk.fees" ><span ng-repeat="fee in fees[$index]"><p style="margin:0;padding:0;" ng-if="fee.price!==0"><span ng-if="fee.asset=='BTC' || fee.asset=='GOLD'">{{fee.price | number:6}}</span><span ng-if="fee.asset!=='BTC' && fee.asset!=='GOLD'">{{fee.price | number:3}}</span> <span ng-if="fee.asset==='BTS'">BTS</span> <a ng-if="fee.asset!=='BTS'" ui-sref="asset({ 'id' : fee.asset})">{{fee.asset}}</a></p></span></td>
+					<td ng-if="blk.fees" ><span ng-repeat="fee in fees[$index]"><p style="margin:0;padding:0;" ng-if="fee.price!==0"><span ng-if="fee.asset=='BTC' || fee.asset=='GOLD'">{{fee.price | number:6}}</span><span ng-if="fee.asset!=='BTC' && fee.asset!=='GOLD'">{{fee.price | number:3}}</span> <span ng-if="fee.asset==='BTS'">BTS</span> <a ng-if="fee.asset!=='BTS'" ui-sref="asset.orderbook({ 'asset' : fee.asset})">{{fee.asset}}</a></p></span></td>
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode===5">
 					<td>{{ 'accounts.name' | translate }}:</td>
@@ -90,7 +90,7 @@
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode===8 && trx[$index][1].trx.operations.length===2">
 					<td>{{ 'block.trx.assetName' | translate }}:</td>
-					<td><a ui-sref="asset({ 'id' : trxInfo[$index].feeds[0].asset})">{{trxInfo[$index].feeds[0].asset}}</a></td>
+					<td><a ui-sref="asset.orderbook({ 'asset' : trxInfo[$index].feeds[0].asset})">{{trxInfo[$index].feeds[0].asset}}</a></td>
 				</tr>
 
 				<tr ng-if="trxInfo[$index].trxCode===8 && trx[$index][1].trx.operations.length===2">
@@ -100,7 +100,7 @@
 
 				<tr ng-if="(trxInfo[$index].trxCode<4 || trxInfo[$index].trxCode===10)  && trxInfo[$index].ratio && trxInfo[$index].trxCode!==2">
 					<td>{{ 'block.trx.price' | translate }}:</td>
-					<td>{{trxInfo[$index].ratio | number:6}} <a ui-sref="asset({ 'id' : trxInfo[$index].assetName })"> {{trxInfo[$index].assetName}}</a>/{{trxInfo[$index].baseAssetName}}</td>
+					<td>{{trxInfo[$index].ratio | number:6}} <a ui-sref="asset.orderbook({ 'asset' : trxInfo[$index].assetName })"> {{trxInfo[$index].assetName}}</a>/{{trxInfo[$index].baseAssetName}}</td>
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode===2 && trxInfo[$index].interest">
 					<td>{{ 'block.trx.interest' | translate }}:</td>
@@ -108,11 +108,11 @@
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode<4 && trxInfo[$index].trxCode!==2">
 					<td>{{ 'block.trx.assetAmount' | translate }}:</td>
-					<td>{{trxInfo[$index].amountAsset | number:3}} <a ui-sref="asset({ 'id' : trxInfo[$index].assetName })"> {{trxInfo[$index].assetName}}</a></td>
+					<td>{{trxInfo[$index].amountAsset | number:3}} <a ui-sref="asset.orderbook({ 'asset' : trxInfo[$index].assetName })"> {{trxInfo[$index].assetName}}</a></td>
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode===2">
 					<td>{{ 'block.trx.assetName' | translate }}:</td>
-					<td><a ui-sref="asset({ 'id' : trxInfo[$index].assetName })"> {{trxInfo[$index].assetName}}</a></td>
+					<td><a ui-sref="asset.orderbook({ 'asset' : trxInfo[$index].assetName })"> {{trxInfo[$index].assetName}}</a></td>
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode<4 && trxInfo[$index].trxCode!==2">
 					<td>{{ 'block.trx.base' | translate }}:</td>
@@ -133,7 +133,7 @@
 
 				<tr ng-if="trxInfo[$index].trxCode===7">
 					<td>{{ 'block.trx.asset' | translate }}:</td>
-					<td><a ui-sref="asset({ 'id' : trx[$index][1].assetSymbol })"> {{trx[$index][1].assetSymbol}}</a></td>
+					<td><a ui-sref="asset.orderbook({ 'asset' : trx[$index][1].assetSymbol })"> {{trx[$index][1].assetSymbol}}</a></td>
 				</tr>
 				<tr ng-if="trxInfo[$index].trxCode===7">
 					<td>{{ 'block.trx.description' | translate }}:</td>
@@ -168,7 +168,7 @@
 				</thead>
 				<tbody ng-if="feedStatus.open">
 					<tr ng-repeat="feed in trxInfo[$index].feeds track by $index">
-						<td><a ui-sref="asset({ 'id' : feed.asset })">{{feed.asset}}</a></td>
+						<td><a ui-sref="asset.orderbook({ 'asset' : feed.asset })">{{feed.asset}}</a></td>
 						<td>{{feed.price | number:6}} {{feed.asset+'/'+feed.baseAsset}}</td>
 					</tr>
 				</tbody>

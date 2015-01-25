@@ -132,7 +132,7 @@
     		</thead>
     		<tbody>
     			<tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in feeds | orderBy: orderByField:reverseSort track by feed.symbol" class="repeated-item">
-    				<td><a ui-sref="asset({ 'id' : feed.symbol})">{{feed.symbol}}</td>
+    				<td><a ui-sref="asset.orderbook({ 'asset' : feed.symbol})">{{feed.symbol}}</td>
     				<td>{{feed.last_update | date:'medium'}}</td>
     				<td ng-if="feed.symbol!='BTC' && feed.symbol!='GLD'">{{(feed.price | number:4)+' '+feed.symbol+'/'+'BTS'}}</td>
     				<td ng-if="feed.symbol=='BTC' || feed.symbol=='GLD'">{{(feed.price | number:7)+' '+feed.symbol+'/'+'BTS'}}</td>
