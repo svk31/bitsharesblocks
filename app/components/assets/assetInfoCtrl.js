@@ -159,9 +159,9 @@ angular.module('app')
         marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
         $scope.asset = result.asset;
 
-        $scope.averagefeed = result.averageFeed;
-        $scope.filteredFeeds = result.feeds;
-        $scope.enoughFeeds = result.enoughFeeds;
+        $scope.averagefeed = result.asset.feedInfo.averageFeed;
+        $scope.filteredFeeds = result.asset.feedInfo.feeds;
+        $scope.enoughFeeds = result.asset.feedInfo.enoughFeeds;
         $scope.collateral = result.collateral;
         $scope.collateralAsset = result.collateralAsset;
 
@@ -205,7 +205,10 @@ angular.module('app')
     stopHistory = $interval(getPriceHistory, 5 * 60000);
 
     $scope.filterFeeds = function(boolean) {
-      $scope.filteredFeeds = Assets.assetInfo($scope.asset, boolean).feeds;
+      var temp = Assets.filterFeeds($scope.asset.feeds, boolean);
+      $scope.averagefeed = temp.averageFeed;
+      $scope.filteredFeeds = temp.feeds;
+      $scope.enoughFeeds = temp.enoughFeeds;
     };
 
     function updatePlots() {

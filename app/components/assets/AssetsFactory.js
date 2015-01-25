@@ -213,7 +213,7 @@ angular.module('app')
 			var returnArray = {};
 			returnArray.asset = result;
 			if (result.issuer_account_id === -2) {
-				returnArray = assetInfo(result, true);
+				returnArray = assetInfo(result);
 			}
 			deferred.resolve(returnArray);
 		});
@@ -239,13 +239,6 @@ angular.module('app')
 	}
 
 	function assetInfo(asset, boolean) {
-		var yesterday = new Date(Date.now());
-		var tempFeeds = [],
-			averageFeed = 0,
-			enoughFeeds = false;
-
-		yesterday.setDate(yesterday.getDate() - 1);
-		var total = 0;
 		if (!asset.shorts) {
 			asset.shorts = [];
 		}
@@ -255,51 +248,66 @@ angular.module('app')
 		if (!asset.asks) {
 			asset.asks = [];
 		}
-		if (boolean) {
-			if (asset.feeds.length > 0) {
-				asset.feeds.forEach(function(feed, index) {
+
+		var collateral, collateralAsset;
+		if (asset.issuer_account_id === -2) {
+			var feedPrice = (asset.medianFeed) ? asset.medianFeed : 0;
+
+			collateral = asset.collateral[asset.collateral.length - 1][1];
+			collateralAsset = asset.collateral[asset.collateral.length - 1][1] * feedPrice;
+
+			asset.yield = (asset.current_share_supply > 0) ? 100 * (asset.collected_fees / asset.precision) / asset.current_share_supply : 0;
+
+			// Convert collateral to asset unit
+			for (i = 0; i < asset.collateral.length; i++) {
+				asset.collateral[i][1] *= feedPrice;
+			}
+
+			// Get filtered feeds
+			asset.feedInfo = filterFeeds(asset.feeds, true);
+		}
+
+		return {
+			collateral: collateral,
+			collateralAsset: collateralAsset,
+			asset: asset
+		};
+	}
+
+	function filterFeeds(feeds, boolean) {
+		var tempFeeds = [],
+			enoughFeeds = false,
+			total = 0,
+			averageFeed = 0;
+
+		var yesterday = new Date(Date.now());
+		yesterday.setDate(yesterday.getDate() - 1);
+
+
+		if (feeds.length > 0) {
+			feeds.forEach(function(feed, index) {
+				if (boolean) {
 					var match = feed.last_update.match(appcst.R_ISO8601_STR);
 					var currentDate = new Date(Date.UTC(match[1], match[2] - 1, match[3], match[4], match[5], match[6]));
 					if (currentDate > yesterday) {
 						tempFeeds.push(feed);
 						total += feed.price;
 					}
-				});
-				averageFeed = total / tempFeeds.length;
-				enoughFeeds = (tempFeeds.length > 50) ? true : false;
-				if (asset.issuer_account_id !== 0 && asset.issuer_account_id !== -2) {
-					enoughFeeds = true;
+				} else {
+					tempFeeds.push(feed);
+					total += feed.price;
 				}
-			}
-		} else {
-			tempFeeds = asset.feeds;
-			averageFeed = asset.averagefeed;
+			});
+			averageFeed = total / tempFeeds.length;
+			enoughFeeds = (tempFeeds.length > 50) ? true : false;
+
+			averageFeed = (averageFeed === 0) ? 0 : 1 / averageFeed;
 		}
-
-		var collateral, collateralAsset;
-		if (asset.issuer_account_id === -2) {
-			collateral = asset.collateral[asset.collateral.length - 1][1];
-			collateralAsset = asset.collateral[asset.collateral.length - 1][1] * averageFeed;
-
-			asset.yield = (asset.current_share_supply > 0) ? 100 * (asset.collected_fees / asset.precision) / asset.current_share_supply : 0;
-
-			// Convert collateral unit to asset 
-			var feedPrice = (asset.medianFeed) ? asset.medianFeed : 0;
-			for (i = 0; i < asset.collateral.length; i++) {
-				asset.collateral[i][1] *= feedPrice;
-			}
-		}
-
-		averageFeed = (averageFeed === 0) ? 0 : 1 / averageFeed;
-		asset.medianFeed = (asset.medianFeed === 0) ? 0 : 1 / asset.medianFeed;
 
 		return {
-			feeds: tempFeeds,
 			enoughFeeds: enoughFeeds,
-			averageFeed: averageFeed,
-			collateral: collateral,
-			collateralAsset: collateralAsset,
-			asset: asset
+			feeds: tempFeeds,
+			averageFeed: averageFeed
 		};
 	}
 
@@ -331,9 +339,7 @@ angular.module('app')
 						wall.amount += asset.shorts[i].collateral * wall.price / 2;
 					} else if (i > 0) {
 						if (asset.shorts[i - 1].price_limit === asset.shorts[i].price_limit) {
-							console.log(asset.shortSum[i - 1]);
 							asset.shortSum[i - 1][1] += asset.shorts[i].collateral / 2;
-							console.log(asset.shortSum[i - 1]);
 						} else {
 							asset.shortSum.push([1 / asset.shorts[i].price_limit, asset.shorts[i].collateral / 2]);
 						}
@@ -494,7 +500,8 @@ angular.module('app')
 		assetInfo: assetInfo,
 		fetchPrice: fetchPrice,
 		fetchPriceHistory: fetchPriceHistory,
-		fetchOrderBook: fetchOrderBook
+		fetchOrderBook: fetchOrderBook,
+		filterFeeds: filterFeeds
 	};
 
 }]);

@@ -46,7 +46,7 @@
       <!-- <li class="clearfix list-group-item">{{ 'delegate.feeds.total' | translate }}: <span class="badge">{{asset.numberFeeds}}</span></li> -->
       <li class="clearfix list-group-item">{{ 'delegate.feeds.active' | translate }}: <span class="badge">{{asset.numberValidFeeds}}</span></li>
       <li class="clearfix list-group-item">{{ 'asset.feeds.avg' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge">{{(averagefeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge">{{(averagefeed | number:0)+' BTS/'+asset.symbol}}</span></li>
-      <li ng-if="asset.medianFeed" class="clearfix list-group-item">{{ 'asset.feeds.med' | translate }}: <span ng-if="asset.symbol.indexOf('BTC') === -1 && asset.symbol!='GOLD'" class="badge alert-success">{{(asset.medianFeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol.indexOf('BTC') !== -1 || asset.symbol=='GOLD'" class="badge alert-success">{{(asset.medianFeed | number:0)+' BTS/'+asset.symbol}}</span></li>
+      <li ng-if="asset.medianFeed" class="clearfix list-group-item">{{ 'asset.feeds.med' | translate }}: <span ng-if="asset.symbol.indexOf('BTC') === -1 && asset.symbol!='GOLD'" class="badge alert-success">{{(1/asset.medianFeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol.indexOf('BTC') !== -1 || asset.symbol=='GOLD'" class="badge alert-success">{{( 1/asset.medianFeed | number:0)+' BTS/'+asset.symbol}}</span></li>
       <li ng-if="enoughFeeds === false" class="clearfix list-group-item">{{ 'asset.feeds.med' | translate }}: <span class="badge alert-danger">{{ 'asset.feeds.null' | translate }}</span></li>
 
       <li class="clearfix list-group-item"><div class="checkbox">
