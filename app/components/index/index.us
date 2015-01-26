@@ -2,21 +2,20 @@
 <html ng-app="app">
   <head>
     <base href="/">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title data-ng-bind="meta.title"></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="fragment" content="!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="shortcut icon" href="http://www.bitsharesblocks.com/favicon.ico?v=2" />
+    <meta name="description" content="{{meta.description}}">
+    <meta name="author" content="Sigve Kvalsvik">
+    <link rel="shortcut icon" href="http://bitsharesblocks.com/favicon.ico?v=2" />
     <link rel="stylesheet" href="css/app.css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="js/app.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
-    
-    <title data-ng-bind="meta.title"></title>
-    <meta name="description" content="{{meta.description}}">
 
   </head>
   <body>
@@ -56,7 +55,6 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
-                  <!-- <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li> -->
                   <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
                   <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li>
                 </ul>
@@ -93,7 +91,6 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
-                  <!-- <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li> -->
                   <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
                   <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li>
                 </ul>
@@ -134,5 +131,8 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-47309945-4', 'auto');
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
+
   </body>
 </html>
