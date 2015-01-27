@@ -16,7 +16,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="js/app.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
   </head>
   <body>
     <header class="navbar navbar-default navbar-fixed-top" role="navigation" bs-navbar>
@@ -130,9 +130,7 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-47309945-4', 'auto');
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
+    </script>   
 
   </body>
 </html>

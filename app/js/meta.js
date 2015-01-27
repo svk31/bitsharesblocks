@@ -21,11 +21,11 @@ angular.module('app').config(['MetaProvider', function(MetaProvider) {
 		description: 'Bitshares accounts info: search accounts by registration date and name'
 	});
 	MetaProvider.when('/assets/market', {
-		title: 'Bitshares Market Issued Assets Overview: Price and Volume, Yield, Collateral, Marketcap ++',
+		title: 'Bitshares Market Assets Overview: Price and Volume, Yield, Collateral, Marketcap',
 		description: 'Bitshares market issued assets overview: discover the ask and bid depth, yield, supply and collateral chart, price, marketcap for all assets'
 	});
 	MetaProvider.when('/assets/user', {
-		title: 'Bitshares User Issued Assets Overview: Price and Volume, Supply, Marketcap ++',
+		title: 'Bitshares User Assets Overview: Price and Volume, Supply, Marketcap ++',
 		description: 'Bitshares user issued assets overview: supply chart, price history, marketcap ++'
 	});
 	MetaProvider.when('/charts/*', {
@@ -33,11 +33,11 @@ angular.module('app').config(['MetaProvider', function(MetaProvider) {
 		description: 'Bitshares historical charts: price, inflation tracking, transaction counts, new accounts over time ++'
 	});
 	MetaProvider.when('/genesis-bts', {
-		title: 'Bitshares Genesis Data',
+		title: 'Bitshares Genesis Data | Rich list and distribution statistics',
 		description: 'Bitshares BTS genesis block analysis: charts, rich list, distribution ++'
 	});
 	MetaProvider.when('/genesis-btsx', {
-		title: 'BitsharesX Genesis Data',
+		title: 'BitsharesX Genesis Data | Rich list and distribution statistics',
 		description: 'BitsharesX genesis block analysis: charts, rich list, distribution ++'
 	});
 	MetaProvider.when('/about', {
