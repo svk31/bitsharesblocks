@@ -82,6 +82,8 @@
     "user": {
       "title": "STATS DES UTILISATEURS",
       "number": "Nombre de comptes",
+      "unique": "Nombre de comptes uniques",
+      "uniqueNew": "Nouveaux comptes uniques",
       "sub": "Nombre de sous-comptes",
       "new24": "Nouveaux comptes derniers 24h",
       "new7d": "Nouveaux comptes derniers 7j"

@@ -82,6 +82,8 @@
     "user": {
       "title": "用户统计",
       "number": "账户数量",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "子账户数量",
       "new24": "过去24小时的新账户",
       "new7d": "过去7天的新账号"

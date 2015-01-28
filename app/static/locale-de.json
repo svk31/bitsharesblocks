@@ -82,6 +82,8 @@
     "user": {
       "title": "BENUTZER STATISTIK",
       "number": "Anzahl reg. Konten",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "Anzahl reg. Unter-konten",
       "new24": "Neue Konten der letzten 24h",
       "new7d": "Neue Konten der letzten 7d"

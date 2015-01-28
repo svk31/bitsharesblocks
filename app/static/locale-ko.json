@@ -82,6 +82,8 @@
     "user": {
       "title": "사용자 통계",
       "number": "총 계정수",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "총 하위계정 수",
       "new24": "지난 24시간 새 계정",
       "new7d": "지난 7일 새 계정"

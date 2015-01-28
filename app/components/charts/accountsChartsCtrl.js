@@ -57,17 +57,47 @@ angular.module('app')
 
     var toolTip = {
       valueDecimals: 0,
-      valueSuffix: ''
+      valueSuffix: '',
+      shared: true
     };
 
     $scope.accountsChart = new Charts.chartConfig({
       useHighStocks: true,
+      tooltip: {
+        shared: true
+      },
       rangeSelector: rangeselector,
-      series: [new Charts.serie({
-        tooltip: toolTip,
-      })],
+      series: [
+        new Charts.serie({
+          tooltip: toolTip
+        }),
+        new Charts.serie({
+          tooltip: toolTip
+        }),
+        new Charts.serie({
+          tooltip: toolTip,
+          yAxis: 1
+        })
+      ],
       size: Size,
-      yAxis: yAxis
+      yAxis: [{
+        id: 'primary',
+        min: 0,
+        labels: {
+          align: 'left',
+          formatter: function() {
+            return $filter('currency')(this.value, '', 0);
+          }
+        }
+      }, {
+        min: 0,
+        opposite: false,
+        labels: {
+          formatter: function() {
+            return $filter('currency')(this.value, '', 0);
+          }
+        }
+      }]
     });
 
     $scope.newAccountsChart = new Charts.chartConfig({
@@ -94,6 +124,9 @@ angular.module('app')
       trx: false
     }).success(function(result) {
       $scope.accountsChart.series[0].data = reduceArray(result.accounts, 0, 1);
+      $scope.accountsChart.series[1].data = reduceArray(result.uniqueAccounts, 0, 2);
+      $scope.accountsChart.series[2].data = reduceArray(result.uniqueAccounts, 0, 1);
+
 
       $scope.newAccountsChart.series[0].data = reduceArray(result.accounts, 0, 2);
 
@@ -104,6 +137,8 @@ angular.module('app')
     function getTranslations() {
       Translate.charts().then(function(result) {
         $scope.accountsChart.series[0].name = result.nr;
+        $scope.accountsChart.series[1].name = result.unique;
+        $scope.accountsChart.series[2].name = result.uniqueNew;
 
         $scope.newAccountsChart.series[0].name = result.acc;
       });

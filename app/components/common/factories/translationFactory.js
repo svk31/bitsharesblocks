@@ -193,7 +193,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		$translate.use(_currentKey).then(function(result) {
 			$translate(['home.price', 'home.MA', 'charts.ma15', 'assets.plot.type1', 'assets.plot.type2',
 				'assets.plot.type3', 'assets.plot.type4', 'charts.reg', 'charts.transfer', 'charts.feed',
-				'charts.update', 'home.user.number', 'blocks.trxValue', 'blocks.trxCount', 'charts.new'
+				'charts.update', 'home.user.number', 'blocks.trxValue', 'blocks.trxCount', 'charts.new',
+				'home.user.unique', 'home.user.uniqueNew'
 			]).then(function(result) {
 				deferred.resolve({
 					price: result['home.price'],
@@ -210,7 +211,9 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 					value: result['blocks.trxValue'],
 					count: result['blocks.trxCount'],
 					nr: result['home.user.number'],
-					acc: result['charts.new']
+					acc: result['charts.new'], 
+					unique: result['home.user.unique'],
+					uniqueNew: result['home.user.uniqueNew']
 				});
 			});
 		});

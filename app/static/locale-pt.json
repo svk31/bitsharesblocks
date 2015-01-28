@@ -82,6 +82,8 @@
 		"user": {
 			"title": "STATUS DO UTILIZADOR",
 			"number": "Numero de Contas",
+			"unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
 			"sub": "Numero de Sub-Contas",
 			"new24": "Novas Contas nas Ultimas 24h",
 			"new7d": "Novas Contas nos Ultimos 7d"

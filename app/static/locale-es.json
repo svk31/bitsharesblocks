@@ -82,7 +82,9 @@
     "user": {
       "title": "ESTADISTICAS DE USUARIO",
       "number": "Número de cuentas",
-      "sub": "Número de sub-cuentas",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
+      "sub": "Número de sub-cuentas",      
       "new24": "Nuevas cuentas últimas 24h",
       "new7d": "Nuevas cuentas últimos 7d"
     },

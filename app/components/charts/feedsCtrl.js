@@ -91,7 +91,8 @@ angular.module('app')
     $scope.feedsChart = new Charts.chartConfig({
       useHighStocks: true,
       rangeSelector: rangeselector,
-      series: [new Charts.serie({
+      series: [
+        new Charts.serie({
           tooltip: toolTip,
         }),
         new Charts.serie({

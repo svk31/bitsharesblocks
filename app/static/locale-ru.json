@@ -82,6 +82,8 @@
     "user": {
       "title": "СТАТИСТИКА ПО АККАУНТАМ",
       "number": "Количество аккаунтов",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "Количество суб-аккаунтов",
       "new24": "Новых аккаунтов за 24 часа",
       "new7d": "Новых аккаунтов за 7 дней"

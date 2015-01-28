@@ -83,6 +83,8 @@
       "title": "ユーザー統計",
       "number": "総アカウントの数",
       "sub": "総下位アカウントの数",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "new24": "最近２４時間内の新しいアカウント",
       "new7d": " 最近七日間の新しいアカウント"
     },

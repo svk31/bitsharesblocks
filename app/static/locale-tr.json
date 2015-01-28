@@ -82,6 +82,8 @@
     "user": {
       "title": "KULLANICI BİLGİLERİ",
       "number": "Hesap sayısı",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "Alt-hesap sayısı",
       "new24": "Son 24 saatte kaydolan kullanıcılar",
       "new7d": "Son 7 günde kaydolan kullanıcılar"

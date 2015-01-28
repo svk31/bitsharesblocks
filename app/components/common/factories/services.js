@@ -103,6 +103,8 @@ angular.module('app.services', [])
 			"user": {
 				"title": "USER STATS",
 				"number": "Number of accounts",
+				"unique": "Number of unique accounts",
+				"uniqueNew": "New unique accounts",
 				"sub": "Number of sub-accounts",
 				"new24": "New accounts last 24h",
 				"new7d": "New accounts last 7d"

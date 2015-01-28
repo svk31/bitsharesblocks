@@ -82,6 +82,8 @@
     "user": {
       "title": "STATISTICHE UTENTI",
       "number": "Numero di utenti",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "Numero di sotto-utenti",
       "new24": "Nuovi utenti ultime 24h",
       "new7d": "Nuovi utenti ultimi 7g"
