@@ -191,7 +191,10 @@ angular.module('app.services', [])
 				"add_collateral": "Add collateral",
 				"withdraw_pay": "Delegate pay withdrawal",
 				"all": "Show all transactions",
-				"placeholder": "Filter by transaction types"
+				"placeholder": "Filter by transaction types",
+				"withdrawal": "Withdrawal",
+				"deposit": "Deposit",
+				"slate": "Define delegate slate"
 			}
 		},
 		"delegates": {

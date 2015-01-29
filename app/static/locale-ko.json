@@ -169,7 +169,10 @@
       "add_collateral": "담보로 추가",
       "withdraw_pay": "대표자 급여 인출",
       "all": "모든 거래 보기",
-      "placeholder": "거래 유형에 따라 필터링"
+      "placeholder": "거래 유형에 따라 필터링",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate"
     }
   },
   "delegates": {

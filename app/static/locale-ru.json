@@ -170,7 +170,10 @@
       "add_collateral": "Добавить обеспечение",
       "withdraw_pay": "Оплата вывода делегатом",
       "all": "Показать все  транзакции",
-      "placeholder": "Фильтр по типу транзакций"
+      "placeholder": "Фильтр по типу транзакций",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate"
     }
   },
   "delegates": {

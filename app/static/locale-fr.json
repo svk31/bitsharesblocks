@@ -170,7 +170,10 @@
       "add_collateral": "Rajout de collateral",
       "withdraw_pay": "Retrait de pay de délégué",
       "all": "Afficher toutes les transactions",
-      "placeholder": "Filtrer par type de transaction"
+      "placeholder": "Filtrer par type de transaction",
+      "withdrawal": "Retrait",
+      "deposit": "Versement",
+      "slate": "Definir liste de délégués"
     }
   },
   "delegates": {

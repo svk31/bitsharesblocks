@@ -170,7 +170,10 @@
 			"add_collateral": "Adicionar Colateral",
 			"withdraw_pay": "Levantamento do Pagamento do Delegado",
 			"all": "Mostrar Todas as Transacçoes",
-			"placeholder": "Filtrar por Tipo de Transaçao"
+			"placeholder": "Filtrar por Tipo de Transaçao",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate"
 		}
 	},
 	"delegates": {
