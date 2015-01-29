@@ -157,16 +157,18 @@ angular.module('app')
     function fetchAsset() {
       Assets.fetchAsset($scope.assetId).then(function(result) {
         Meta.add('/asset/info', {
-          title: 'Bitshares '+result.asset.symbol + ' info: supply, price, registration data'
+          title: 'Bitshares ' + result.asset.symbol + ' info: supply, price, registration data'
         });
         marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
         $scope.asset = result.asset;
 
-        $scope.averagefeed = result.asset.feedInfo.averageFeed;
-        $scope.filteredFeeds = result.asset.feedInfo.feeds;
-        $scope.enoughFeeds = result.asset.feedInfo.enoughFeeds;
-        $scope.collateral = result.collateral;
-        $scope.collateralAsset = result.collateralAsset;
+        if (marketAsset) {
+          $scope.averagefeed = result.asset.feedInfo.averageFeed;
+          $scope.filteredFeeds = result.asset.feedInfo.feeds;
+          $scope.enoughFeeds = result.asset.feedInfo.enoughFeeds;
+          $scope.collateral = result.collateral;
+          $scope.collateralAsset = result.collateralAsset;
+        }
 
         if (!result.asset.supply || result.asset.supply.length === 0) {
           $scope.showSupply = false;
