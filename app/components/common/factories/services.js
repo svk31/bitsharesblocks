@@ -194,7 +194,8 @@ angular.module('app.services', [])
 				"placeholder": "Filter by transaction types",
 				"withdrawal": "Withdrawal",
 				"deposit": "Deposit",
-				"slate": "Define delegate slate"
+				"slate": "Define delegate slate",
+				"slateID": "Delegate slate ID"
 			}
 		},
 		"delegates": {

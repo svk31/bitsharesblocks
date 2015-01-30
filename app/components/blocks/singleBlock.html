@@ -47,6 +47,7 @@
 			<li class="clearfix list-group-item" >{{ 'block.trx.fee' | translate }}:<span style="float:right;clear:right;" ng-repeat="fee in fees[$index]"><p style="margin:0;padding:0;" ng-if="fee.price!==0"><span ng-if="fee.asset=='BTC' || fee.asset=='GOLD'">{{fee.price | number:6}}</span><span ng-if="fee.asset!=='BTC' && fee.asset!=='GOLD'">{{fee.price | number:3}}</span> <span ng-if="fee.asset==='BTS'">BTS</span> <a ng-if="fee.asset!=='BTS'" ui-sref="asset.orderbook({ 'asset' : fee.asset})">{{fee.asset}}</a></p></span></li>
 			<li ng-if="trxInfo[$index].delegate" class="clearfix list-group-item" >{{ 'block.trx.delegate' | translate }}:<span style="float:right;"><a ui-sref="delegate({ 'name' : trxInfo[$index].delegate })">{{trxInfo[$index].delegate}}</a></span></li>
 			<li ng-if="issuerName[$index]" class="clearfix list-group-item" >{{ 'block.trx.issuer' | translate }}:<span ng-if="issuerName[$index] !== 'MARKET'"style="float:right;"><a ui-sref="account({ 'name' : issuerName[$index] })" >{{issuerName[$index]}}</a></span><span ng-if="issuerName[$index] === 'MARKET'">{{issuerName[$index]}}</span></li>
+			<li ng-if="trxInfo[$index].slate" class="clearfix list-group-item hidden-xs">{{ 'block.trx.slateID' | translate }}:<span class="badge">{{trxInfo[$index].slate | number:0}}</span></li>
 			<div class="panel panel-default">
 				<li class="clearfix list-group-item"><strong>{{ 'block.trx.votes' | translate }}: {{votes[$index].length || 0}}</strong><span ng-if="votes[$index].length>0" id="dropdown" ng-click="status.open[$index]= !status.open[$index]"><i class="pull-right glyphicon clickable" ng-class="{'glyphicon-chevron-down': status.open[$index], 'glyphicon-chevron-right': !status.open[$index]}"></i></span></li>
 				<table class="table table-condensed table-striped transactiontable" style="margin-bottom:0;">
@@ -85,7 +86,8 @@
 					</tr>
 				</thead>
 				<tbody> 
-					<tr ng-repeat="op in trxInfo[$index].ops track by $index">					
+
+					<tr ng-repeat="op in trxInfo[$index].ops track by $index">	
 						<td>{{$index}}</td>
 						<td><span ng-if="trxTypes[op.type]">{{ trxTypes[op.type] }}</span> <span ng-if="!trxTypes[op.type]">{{op.type}}</span></td>
 						<td ng-if="trxInfo[$parent.$index].public_data"><pre ng-if="op.public_data">{{op.public_data| json }}</pre></td>

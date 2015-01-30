@@ -173,7 +173,8 @@
       "placeholder": "Filtrer par type de transaction",
       "withdrawal": "Retrait",
       "deposit": "Versement",
-      "slate": "Definir liste de délégués"
+      "slate": "Definir liste de délégués",
+      "slateID": "ID de la liste de délégués"
     }
   },
   "delegates": {

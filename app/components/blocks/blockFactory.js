@@ -268,6 +268,7 @@ angular.module('app')
 
 			if (trx[1].trx.operations[j].type === 'deposit_op_type') {
 				trxInfo.balance = true;
+				trxInfo.slate = trx[1].trx.operations[j].data.condition.slate_id;
 				trxInfo.ops[j].balance_id = trx[1].trx.operations[j].data.condition.data.owner;
 
 				depositAsset.push(trx[1].trx.operations[j].data.condition.asset_id);
