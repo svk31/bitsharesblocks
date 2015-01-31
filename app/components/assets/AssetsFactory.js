@@ -331,6 +331,10 @@ angular.module('app')
 			wall.amount = 0;
 			wall.price = asset.medianFeed;
 			asset.shortSum = [];
+			
+			asset.shorts.sort(function(a,b) {
+				return b.price_limit - a.price_limit;
+			});
 
 			if (asset.shorts.length > 0) {
 				// Split orders with and without price limit
@@ -339,7 +343,7 @@ angular.module('app')
 						wall.amount += asset.shorts[i].collateral * wall.price / 2;
 					} else if (i > 0) {
 						if (asset.shorts[i - 1].price_limit === asset.shorts[i].price_limit) {
-							asset.shortSum[i - 1][1] += asset.shorts[i].collateral / 2;
+							asset.shortSum[asset.shortSum.length - 1][1] += asset.shorts[i].collateral / 2;
 						} else {
 							asset.shortSum.push([1 / asset.shorts[i].price_limit, asset.shorts[i].collateral / 2]);
 						}
