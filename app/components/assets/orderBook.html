@@ -9,32 +9,47 @@
 <div ng-if="showOrders===true" class="col-md-12 no-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title"></h3>
+      <h3 class="panel-title">
+        <ul ng-show="asset.dailyLow" class="list-inline market-data">
+          <li >
+            <span style="display:block;">{{ 'charts.feeds.latest' | translate }}:</span>
+            <span style="display:block;">{{asset.order_history[0].bid_price.ratio}}</span>
+          </li>
+          <li>
+            <span style="display:block;">{{ 'asset.range' | translate }}:</span>
+            <span style="display:block;">{{ asset.dailyLow }} - {{ asset.dailyHigh }}</span>
+          </li>
+          <li>
+            <span style="display:block;">{{ 'assets.market.th7' | translate }}:</span>
+            <span style="display:block;">{{ asset.dailyVolume | number:2 }} BTS</span>
+          </li>
+        </ul>
+      </h3>
     </div>
     <highchart id="chart1" config="orderBookChart"></highchart>
   </div>
 </div>
 
-<div  ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6 no-padding">
+<div ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6 no-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">{{ 'asset.bids' | translate }} ({{ 'asset.buy' | translate }} {{prefix+asset.symbol}})</h3>
     </div>
-    <table class="table table-condensed">
-    
-        <th>{{ 'home.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.amount' | translate }} (BTS)</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="ask in asset.asks | limitTo:10  track by $index">
-          <td>{{ask.price | number:2}}</td>
-          <td>{{(ask.amount / ask.price) | number:assetDecimals}}</td>
-          <td>{{ask.amount | number:2}}</td>
-        </tr>
-      </tbody>      
-    </table>
-  </div>
+    <table class="table table-condensed table-hover">
+
+      <th>{{ 'home.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+      <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
+      <th>{{ 'block.trx.amount' | translate }} (BTS)</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="ask in asset.asks | limitTo:10  track by $index">
+        <td>{{ask.price | number:2}}</td>
+        <td>{{(ask.amount / ask.price) | number:assetDecimals}}</td>
+        <td>{{ask.amount | number:2}}</td>
+      </tr>
+    </tbody>      
+  </table>
+</div>
 </div>
 
 <div ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6 no-right-padding">
@@ -42,7 +57,7 @@
     <div class="panel-heading">
       <h3 class="panel-title">{{ 'asset.asks' | translate }} ({{ 'asset.sell' | translate }} {{prefix+asset.symbol}})</h3>
     </div>
-    <table class="table table-condensed">
+    <table class="table table-condensed table-hover">
       <thead>
         <th>{{ 'home.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
         <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
@@ -64,7 +79,7 @@
     <div class="panel-heading">
       <h3 class="panel-title">{{ 'asset.shorts' | translate }} ({{ 'assets.plot.type3' | translate }} {{prefix+asset.symbol}})</h3>
     </div>
-    <table class="table table-condensed">
+    <table class="table table-condensed table-hover">
       <thead>
         <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
         <th>{{ 'block.trx.amount' | translate }} (BTS)</th>
@@ -86,12 +101,49 @@
   </div>
 </div>
 
+<div ng-if="asset.order_history.length > 0" class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 no-padding">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ 'asset.order_history.title' | translate }}</h3>
+    </div>
+    <table id="order_history" class="table table-condensed table-orderhistory">
+      <thead>
+        <th>{{ 'block.trx.type' | translate }}</th>
+        <th>{{ 'block.trx.price' | translate }}</th>
+        <th>{{ 'asset.order_history.paid' | translate }}</th>
+        <th>{{ 'asset.order_history.received' | translate }}</th>   
+        <th>{{ 'blocks.fees' | translate }}</th>     
+        <th>{{ 'blocks.timestamp' | translate }}</th>
+
+      </thead>
+      <tbody>
+        <tr ng-repeat-start="order in asset.order_history | limitTo:10  track by $index">
+          <td>{{ orderTypes[order.ask_type] | translate }}</td>          
+          <td>{{ order.ask_price.ratio }}</td>
+          <td>{{ order.ask_paid.amount }}</td>
+          <td>{{ order.ask_received.amount }}</td>
+          <td>{{ order.fees_collected.amount }}</td>
+          <td>{{ order.timestamp | date:'medium'}}</td>
+        </tr>
+        <tr ng-repeat-end>
+          <td>{{ orderTypes[order.bid_type] | translate  }}</td>          
+          <td>{{ order.bid_price.ratio}}</td>
+          <td>{{ order.bid_paid.amount }}</td>
+          <td>{{ order.bid_received.amount }}</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <div ng-if="asset.covers.length > 0 && asset.issuer_account_id ===-2" class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 no-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">{{ 'asset.covers.title' | translate }} ({{ 'assets.plot.type4' | translate }} {{prefix+asset.symbol}})</h3>
     </div>
-    <table class="table table-condensed">
+    <table class="table table-condensed table-hover">
       <thead>
         <th>{{ 'asset.covers.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
         <th>{{ 'block.trx.interest' | translate }} (%)</th>
@@ -113,7 +165,9 @@
     </table>
   </div>
 </div>
-</small>
+
+
+
 
 
 

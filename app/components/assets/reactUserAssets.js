@@ -24,7 +24,7 @@ var UserAssetHeaderRow = React.createClass({displayName: 'UserAssetHeaderRow',
 					sortIndex = letters[0].charCodeAt(0) - 87;
 				}
 			}
-			if (ev.target.cellIndex!==3 && ev.target.cellIndex!==4) {
+			if (ev.target.cellIndex!==5) {
 				props.onSortClick(					
 					sortIndex
 					);
@@ -36,13 +36,14 @@ var UserAssetHeaderRow = React.createClass({displayName: 'UserAssetHeaderRow',
 		
 		return (
 			React.createElement("tr", {onClick: clickHandler}, 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 0 ? sortGlyph: null, " ", headers['assets.user.th1']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 1 ? sortGlyph: null, " ", headers['assets.market.th1']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 2 ? sortGlyph: null, " ", headers['assets.market.th7']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 3 ? sortGlyph: null, " ", headers['assets.user.th3']), 
-				React.createElement("th", null, headers['assets.user.th4']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 5 ? sortGlyph: null, headers['assets.market.th8']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 6 ? sortGlyph: null, " ", headers['assets.user.th6'])
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 0 ? sortGlyph: null, " ", headers['assets.user.th1']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 1 ? sortGlyph: null, " ", headers['assets.market.th1']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 2 ? sortGlyph: null, " ", headers['assets.market.th7']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 3 ? sortGlyph: null, " ", headers['assets.user.th3']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 4 ? sortGlyph: null, " ", headers['charts.feeds.latest']), 
+			React.createElement("th", null, headers['assets.user.th4']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 6 ? sortGlyph: null, headers['assets.market.th8']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 7 ? sortGlyph: null, " ", headers['assets.user.th6'])
 			)
 			);
 	}
@@ -66,6 +67,7 @@ var UserAssetRow = React.createClass({displayName: 'UserAssetRow',
 			React.createElement("td", null, React.createElement("a", {href: 'asset/orderbook?asset='+asset.symbol}, asset.symbol)), 
 			React.createElement("td", null, asset.dailyVolume), 
 			React.createElement("td", null,  asset.vwapText, "/", asset.symbol, " "), 
+			React.createElement("td", null,  asset.lastPriceText, "/", asset.symbol, " "), 
 			React.createElement("td", null,  asset.current_share_supply), 
 			React.createElement("td", null,  asset.capText), 
 			tdInit
@@ -77,7 +79,7 @@ var UserAssetRow = React.createClass({displayName: 'UserAssetRow',
 var UserAssetsTable = React.createClass({
 	getInitialState: function() {
 		return {
-			sortIndex: 5,
+			sortIndex: 6,
 			inverse: true,
 			filterName: ''
 		};
@@ -96,7 +98,7 @@ var UserAssetsTable = React.createClass({
 	displayName: 'UserAssetsTable',
 	render: function() {
 		var headers = this.props.headers;
-		var filterFields = ['_id','symbol','dailyVolume', 'vwap','','cap', 'initialized'];
+		var filterFields = ['_id','symbol','dailyVolume', 'vwap', 'lastPrice','','cap', 'initialized'];
 		var inverse = this.state.inverse;
 		if (headers && this.props.data) {			
 			var data = JSON.parse(this.props.data);
@@ -112,21 +114,37 @@ var UserAssetsTable = React.createClass({
 				if (inverse===false) {
 					if (a[sortField] > b[sortField]) {
 						return 1;
-					}
-					if (a[sortField] < b[sortField]) {
+					} else if (a[sortField] < b[sortField]) {
 						return -1;
-					}
-					return 0;
-				}
-				else {
+					} else {
+						if (a.initialized > b.initialized) {
+							return 1;
+						} else if (a.initialized < b.initialized) {
+							return -1;
+						}
+					}					
+				} else {
 					if (a[sortField] > b[sortField]) {
 						return -1;
-					}
-					if (a[sortField] < b[sortField]) {
+					} else if (a[sortField] < b[sortField]) {
 						return 1;
-					}
-					return 0;	
+					} else {
+						if (b.initialized > a.initialized) {
+							return 1;
+						} else if (b.initialized < a.initialized) {
+							return -1;
+						}
+					}	
 				}
+				if (a.symbol > b.symbol) {
+					return 1;
+				} else if (a.symbol < b.symbol) {
+					return -1;
+				} else {
+					return 0;
+				}
+
+
 
 			})
 			.map(function(asset) {

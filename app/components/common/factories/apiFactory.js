@@ -106,7 +106,7 @@ angular.module("app").factory('api', ['$http', function($http) {
     api.getAssets = function() {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'assets' + cb,
+            url: 'http://' + url_v2 + 'assets' + cb,
             cache: false
         });
     };
@@ -114,7 +114,7 @@ angular.module("app").factory('api', ['$http', function($http) {
     api.getUserAssets = function() {
         return $http({
             method: 'JSONP',
-            url: 'http://' + url + 'userassets' + cb,
+            url: 'http://' + url_v2 + 'userassets' + cb,
             cache: false
         });
     };
@@ -192,11 +192,11 @@ angular.module("app").factory('api', ['$http', function($http) {
     };
 
     api.getOrderBook = function(assetId) {
-        return $http.jsonp('http://' + url + 'orderbook/' + assetId + cb);
+        return $http.jsonp('http://' + url_v2 + 'orderbook/' + assetId + cb);
     };
 
     api.getPriceHistory = function(assetId) {
-        return $http.jsonp('http://' + url + 'pricehistory/' + assetId + cb);
+        return $http.jsonp('http://' + url_v2 + 'pricehistory/' + assetId + cb);
     };
 
     api.getPrice = function(unit) {

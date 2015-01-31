@@ -246,51 +246,70 @@ body { padding-top: 70px;
     opacity: 1;
   }
 
- .modal-backdrop.am-fade {
-  opacity: .5;
-  transition: opacity .15s linear;
-  &.ng-enter {
-    opacity: 0;
-    &.ng-enter-active {
-      opacity: .5;
-    }
-  }
-  &.ng-leave {
+  .modal-backdrop.am-fade {
     opacity: .5;
-    &.ng-leave-active {
+    transition: opacity .15s linear;
+    &.ng-enter {
       opacity: 0;
+      &.ng-enter-active {
+        opacity: .5;
+      }
+    }
+    &.ng-leave {
+      opacity: .5;
+      &.ng-leave-active {
+        opacity: 0;
+      }
     }
   }
-}
 
-.modal-open { 
+  .modal-open { 
     overflow: scroll;
-}
+  }
 
-/* bootstrap hack: fix content width inside hidden tabs */
-.tab-content > .tab-pane,
-.pill-content > .pill-pane {
+  /* bootstrap hack: fix content width inside hidden tabs */
+  .tab-content > .tab-pane,
+  .pill-content > .pill-pane {
     display: block;     /* undo display:none          */
     height: 0;          /* height:0 is also invisible */ 
     overflow-y: hidden; /* no-overflow                */
-}
-.tab-content > .active,
-.pill-content > .active {
+  }
+  .tab-content > .active,
+  .pill-content > .active {
     height: auto;       /* let the content decide it  */
-} /* bootstrap hack end */
+    } /* bootstrap hack end */
 
-.clickable {
-  cursor: pointer;
-}
+    .clickable {
+      cursor: pointer;
+    }
 
-.no-padding {
-  padding: 0;
-}
+    .no-padding {
+      padding: 0;
+    }
 
-.no-left-padding {
-  padding-left: 0;
-}
+    .no-left-padding {
+      padding-left: 0;
+    }
 
-.no-right-padding {
-  padding-right: 0;
-}
+    .no-right-padding {
+      padding-right: 0;
+    }
+
+    .table-orderhistory>tbody>tr:nth-child(4n-1)>td,.table-orderhistory>tbody>tr:nth-child(4n-1)>th,.table-orderhistory>tbody>tr:nth-child(4n)>td,.table-orderhistory>tbody>tr:nth-child(4n)>th {
+      background-color:#f9f9f9
+    }
+
+    .market-data>li:first-child {
+      margin-left:2%;
+    }
+
+    .market-data>li {
+      margin-top:0.75em;
+      margin-right:1.0em;
+    }
+
+    .market-data>li>span:nth-child(odd) {
+      color:grey;
+      text-transform:capitalize;
+      font-size:0.85em;
+    }

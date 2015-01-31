@@ -340,6 +340,7 @@
     "external": "Externer Coinmarketcap Preis",
     "volume": "Volumen",
     "marketAsset": "Market issued asset",
+    "range": "Tagesintervall",
     "assetInfo": {
       "title": "ASSET INFO",
       "base": "Base Asset",

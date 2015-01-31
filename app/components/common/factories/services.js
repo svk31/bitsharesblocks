@@ -362,6 +362,7 @@ angular.module('app.services', [])
 			"external": "External Coinmarketcap price",
 			"volume": "Volume",
 			"marketAsset": "Market issued asset",
+			"range": "Today's range",
 			"assetInfo": {
 				"title": "ASSET INFO",
 				"base": "Base Asset",
@@ -384,6 +385,11 @@ angular.module('app.services', [])
 				"price": "Call price",
 				"owed": "Owed",
 				"expiration": "Expiration date"
+			},
+			"order_history": {
+				"title": "ORDER HISTORY",
+				"paid": "Paid",
+				"received": "Received"
 			}
 		},
 		"charts": {

@@ -340,6 +340,7 @@
     "external": "외부 Coinmarketcap 시세",
     "volume": "거래량",
     "marketAsset": "시장 발행 자산",
+    "range": "Today's range",
     "assetInfo": {
       "title": "자산 정보",
       "base": "기준 자산",

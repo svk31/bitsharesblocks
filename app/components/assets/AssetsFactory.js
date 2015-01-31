@@ -113,10 +113,22 @@ angular.module('app')
 	function _assetsInfo(result, marketBoolean) {
 		var i, supply = {},
 			assets = result.assets,
+			feeds = result.feeds,
 			prices = {},
 			decimals;
 
 		if (marketBoolean) {
+
+			// Get feed info
+			assets.forEach(function(asset) {
+				for (var i = 0; i < feeds.length; i++) {
+					if (asset._id === feeds[i]._id) {
+						asset.medianFeed = feeds[i].medianFeed;
+						asset.numberValidFeeds = feeds[i].numberValidFeeds;
+					}
+				}
+			});
+
 			for (i = 0; i < result.supply.length; i++) {
 				supply[result.supply[i]._id] = (result.supply[i].currentCollateral) ? result.supply[i].currentCollateral : 0;
 			}
@@ -165,10 +177,13 @@ angular.module('app')
 				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
 				assets[i].dailyVolume = $filter('number')(assets[i].dailyVolume, 2) + ' BTS';
 
-				assets[i].cap = assets[i].vwap * assets[i].current_share_supply;
+				assets[i].lastPrice = (assets[i].lastPrice !== 0) ? (1 / assets[i].lastPrice) : 0;
+				assets[i].cap = (assets[i].lastPrice) * assets[i].current_share_supply;
 				assets[i].capText = $filter('number')(assets[i].cap, 0) + ' BTS';
-				assets[i].vwapText = $filter('number')(assets[i].vwap, 2) + ' BTS';
+				assets[i].vwapText = $filter('number')(assets[i].vwap, 3) + ' BTS';
+				assets[i].lastPriceText = $filter('number')(assets[i].lastPrice, 3) + ' BTS';
 				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
+
 			}
 		}
 
@@ -313,6 +328,8 @@ angular.module('app')
 
 	function orderBook(asset) {
 
+		var priceRatio = _getPriceRatio(asset._id, 0);
+
 		if (asset.issuer_account_id === -2) {
 			if (!asset.medianFeed) {
 				asset.medianFeed = 0;
@@ -330,9 +347,10 @@ angular.module('app')
 
 			wall.amount = 0;
 			wall.price = asset.medianFeed;
+
 			asset.shortSum = [];
-			
-			asset.shorts.sort(function(a,b) {
+
+			asset.shorts.sort(function(a, b) {
 				return b.price_limit - a.price_limit;
 			});
 
@@ -390,6 +408,7 @@ angular.module('app')
 				asset.shorts.sort(function(a, b) {
 					return (a.price_limit !== b.price_limit) ? b.price_limit - a.price_limit : b.interest - a.interest;
 				});
+
 			}
 
 			// Sort and limit covers
@@ -408,6 +427,43 @@ angular.module('app')
 					cover.owed = cover.state.balance / getPrecision(cover.market_index.order_price.quote_asset_id);
 					cover.interest = cover.interest_rate.ratio * 100;
 				});
+			}
+		}
+
+		// Apply price ratio to order history
+		var decimals = (asset.symbol.indexOf('BTC') === -1 && asset.symbol !== 'GOLD') ? 4 : 8;
+		var now = new Date();
+		var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+		var tradesFound = false;
+		if (asset.order_history.length > 0) {
+			asset.dailyLow = 1 / (asset.order_history[0].ask_price.ratio * priceRatio);
+			asset.dailyHigh = 0;
+			asset.order_history.forEach(function(order) {
+
+				if (today < new Date(order.timestamp)) {
+					tradesFound = true;
+					asset.dailyHigh = Math.max(asset.dailyHigh, 1 / (order.ask_price.ratio * priceRatio));
+					asset.dailyLow = Math.min(asset.dailyLow, 1 / (order.ask_price.ratio * priceRatio));
+				}
+
+
+				order.ask_paid.amount = $filter('number')(order.ask_paid.amount / basePrecision, 2) + ' BTS';
+				order.ask_received.amount = $filter('number')(order.ask_received.amount / asset.precision, 3) + ' ' + asset.symbol;
+				order.ask_price.ratio = $filter('number')(1 / (order.ask_price.ratio * priceRatio), 3) + ' BTS/' + asset.symbol;
+
+				order.bid_paid.amount = $filter('number')(order.bid_paid.amount / asset.precision, 3) + ' ' + asset.symbol;
+				order.bid_received.amount = $filter('number')(order.bid_received.amount / basePrecision, 2) + ' BTS';
+				order.bid_price.ratio = $filter('number')(1 / (order.bid_price.ratio * priceRatio), 3) + ' BTS/' + asset.symbol;
+
+				order.fees_collected.amount = $filter('number')(order.fees_collected.amount / asset.precision, decimals) + ' ' + asset.symbol;
+			});
+
+			if (tradesFound) {
+				asset.dailyLow = $filter('number')(asset.dailyLow, 2) + ' BTS/' + asset.symbol;
+				asset.dailyHigh = $filter('number')(asset.dailyHigh, 2) + ' BTS/' + asset.symbol;
+			} else {
+				asset.dailyLow = '0';
+				asset.dailyHigh = '0';
 			}
 		}
 

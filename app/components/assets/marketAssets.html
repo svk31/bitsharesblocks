@@ -22,7 +22,7 @@
     </tr>
   </thead>
   <tbody >
-    <tr ng-repeat="asset in assets | orderBy: orderByField:reverseSort track by asset._id " class="repeated-item">
+    <tr ng-repeat="asset in assets | orderBy: [orderByField,'numberValidFeeds','-symbol']:reverseSort track by asset._id " class="repeated-item">
       <td><a ui-sref="asset.orderbook({ 'asset' : asset.symbol})">{{asset.symbol}}</a></td>
       <td>{{asset.status.ask_depth | number:0}} BTS</td>
       <td>{{asset.status.bid_depth | number:0}} BTS</td>

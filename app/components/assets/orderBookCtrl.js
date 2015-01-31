@@ -12,6 +12,13 @@ angular.module('app')
     $scope.asset = {};
     $scope.showOrders = true;
 
+    $scope.orderTypes = {
+      ask_order: 'asset.buy',
+      bid_order: 'asset.sell',
+      short_order: 'asset.short',
+      cover_order: 'assets.plot.type4'
+    };
+
     var stopAsset, stopPrice, stopHistory;
 
     var toolTip = {
@@ -78,6 +85,7 @@ angular.module('app')
         Meta.add('/asset/orderbook', {
           title: 'Bitshares '+result.asset.symbol + ' orderbook: asks, bids, shorts and covers'
         });
+
         marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
         $scope.asset = result.asset;
 

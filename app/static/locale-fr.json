@@ -341,6 +341,7 @@
     "external": "Prix externe Coinmarketcap",
     "volume": "Volume",
     "marketAsset": "Actif créé par le marché",
+    "range": "Gamme de prix aujourd'hui",
     "assetInfo": {
       "title": "INFO SUR L'ACTIF",
       "base": "Actif de base",
