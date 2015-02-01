@@ -119,7 +119,7 @@ angular.module('app')
       });
     }
     fetchOrderBook();
-    stopAsset = $interval(fetchOrderBook, 30000);
+    stopAsset = $interval(fetchOrderBook, 20000);
 
     $scope.filterFeeds = function(boolean) {
       $scope.filteredFeeds = Assets.filterFeeds($scope.asset, boolean).feeds;

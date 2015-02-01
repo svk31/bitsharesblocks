@@ -93,7 +93,7 @@
 						<td ng-if="trxInfo[$parent.$index].public_data"><pre ng-if="op.public_data">{{op.public_data| json }}</pre></td>
 						<td ng-if="trxInfo[$parent.$index].ratio"><span ng-if="op.ratio === 'block.trx.feedPrice'">{{op.ratio | translate }}</span><span ng-if="op.ratio >=0">{{op.ratio | number:op.decimals}} {{op.asset+'/'+op.baseAsset}}</span></td>
 						<td ng-if="trxInfo[$parent.$index].cover"><span ng-if="op.ratio >=0">{{op.ratio | number:op.decimals}} {{op.asset+'/'+op.baseAsset}}</span></td>
-						<td ng-if="trxInfo[$parent.$index].interest"><span ng-if="op.interest">{{op.interest}}%</span></td>
+						<td ng-if="trxInfo[$parent.$index].interest"><span ng-if="op.interest>= 0">{{op.interest}}%</span></td>
 						<td ng-if="trxInfo[$parent.$index].ratio">{{op.baseAsset}}</td>
 						<td ng-if="trxInfo[$parent.$index].name"><a ui-sref="account({ 'name' : op.name })" >{{op.name}}</a></td>
 						<td><a ng-if="op.asset !== 'BTS'" ui-sref="asset.orderbook({ 'asset' : op.asset })"> {{op.asset}}</a><span ng-if="op.asset === 'BTS'">{{op.asset }}</span> </td>
