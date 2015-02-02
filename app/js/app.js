@@ -1,5 +1,8 @@
-var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcrea.ngStrap', 'app.services', 'ngAnimate', 'once', 'angulartics', 'angulartics.google.analytics', 'highcharts-ng', 'ui.bootstrap.tpls', 'ui.bootstrap.collapse', 'ui.bootstrap.pagination', 'ui.bootstrap.dropdown', 'ui.bootstrap.alert', 'ui.bootstrap.tabs', 'pascalprecht.translate', 'ngCookies', 'meta']).config(['$locationProvider', '$compileProvider', '$translateProvider', '$modalProvider', 'MetaProvider',
-    function($locationProvider, $compileProvider, $translateProvider, $modalProvider, MetaProvider) {
+var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcrea.ngStrap', 'app.services', 'ngAnimate', 'once',
+ 'angulartics', 'angulartics.google.analytics', 'highcharts-ng', 'ui.bootstrap.tpls', 'ui.bootstrap.collapse', 'ui.bootstrap.pagination',
+  'ui.bootstrap.dropdown', 'ui.bootstrap.alert', 'ui.bootstrap.tabs', 'pascalprecht.translate', 'ngCookies', 'meta'])
+.config(['$locationProvider', '$compileProvider', '$translateProvider', '$modalProvider', 'MetaProvider', '$urlMatcherFactoryProvider',
+    function($locationProvider, $compileProvider, $translateProvider, $modalProvider, MetaProvider, $urlMatcherFactoryProvider) {
         $locationProvider.hashPrefix('!');
         $locationProvider.html5Mode(true);
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(http|https|ftp|mailto|bts):/);
@@ -12,6 +15,8 @@ var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcr
         angular.extend($modalProvider.defaults, {
             html: true
         });
+
+        $urlMatcherFactoryProvider.strictMode(false);
             }
 ]).run(
     ['$rootScope', 'api', '$state', '$stateParams', 'Meta',
