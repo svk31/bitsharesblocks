@@ -184,10 +184,10 @@ var DelegateRow = React.createClass({
 				padding: '0px 5px 5px 5px',
 				backgroundColor: "white",
 				fontWeight:'bold'
-			}}>{delegate.delegate_info.votes_for} BTS</p>
+			}}>{delegate.votesFor} BTS</p>
 			</Tooltip></td>
-			<td className="hidden-xs">{delegate.delegate_info.blocks_produced}</td>
-			<td className="hidden-xs">{delegate.delegate_info.blocks_missed}</td>
+			<td className="hidden-xs">{delegate.blocksProduced}</td>
+			<td className="hidden-xs">{delegate.blocksMissed}</td>
 			<td>{delegate.delegate_info.pay_rate+'%'}</td>
 			{tdLatency}
 			{tdActiveFeeds}
