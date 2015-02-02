@@ -465,6 +465,8 @@ angular.module('app')
 				asset.dailyLow = '0';
 				asset.dailyHigh = '0';
 			}
+
+			asset.feedText = $filter('number')(1/asset.medianFeed, 2) + ' BTS/' + asset.symbol;
 		}
 
 		// Asks and bids
