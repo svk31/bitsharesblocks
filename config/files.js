@@ -19,6 +19,8 @@ module.exports = function(lineman) {
         "vendor/js/angular-translate-storage-cookie.min.js",
         "vendor/js/angular-translate-storage-local.min.js",
         "vendor/js/temp/angular-ui-router.js",
+        "vendor/js/underscore.js",
+        "vendor/js/tooltip.js",
         "vendor/js/**/*.js",
         "!vendor/js/temp/jquery.js",
         "!vendor/js/temp/react.js",

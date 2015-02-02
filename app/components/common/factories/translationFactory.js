@@ -152,7 +152,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		var deferred = $q.defer();
 		var d = 'delegates.';
 		var dTranslations = [d + 'rank', d + 'change24', d + 'change7', 'accounts.name', d + 'votes', d + 'produced', d + 'missed',
-			d + 'rate', d + 'latency', d + 'feeds', d + 'feedFreq', d + 'rel', d + 'version', d + 'filter', d + 'no_version'
+			d + 'rate', d + 'latency', d + 'feeds', d + 'feedFreq', d + 'rel', d + 'version', d + 'filter', d + 'no_version', 'delegate.rank.votes'
 		];
 		$translate.use(_currentKey).then(function(result) {
 			$q.all([
