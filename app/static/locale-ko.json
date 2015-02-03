@@ -75,18 +75,18 @@
       "user": "사용자 발행 자산",
       "shortReg": "3-5글자 자산등록",
       "longReg": "6-8글자 자산등록",
-      "new7d": "지난 7일 새 자산",
-      "new30d": "지난 30일 새 자산",
+      "new7d": "지난 7일간 신규 자산",
+      "new30d": "지난 30일간 신규 자산",
       "trx": "자산 거래"
     },
     "user": {
       "title": "사용자 통계",
-      "number": "총 계정수",
-      "unique": "Number of unique accounts",
-      "uniqueNew": "New unique accounts",
+      "number": "총 계정 수",
+      "unique": "고유계정 수",
+      "uniqueNew": "신규 고유계정",
       "sub": "총 하위계정 수",
-      "new24": "지난 24시간 새 계정",
-      "new7d": "지난 7일 새 계정"
+      "new24": "지난 24시간 신규 계정",
+      "new7d": "지난 7일 신규 계정"
     },
     "missed": {
       "title": "마지막 10개 누락 블럭"
@@ -114,7 +114,7 @@
     "blocks": "블럭",
     "showTrx": "거래를 포함한 블럭만 표시",
     "blockNum": "블럭번호",
-    "timestamp": "생성시각",
+    "timestamp": "일시",
     "delegate": "대표자",
     "trxCount": "거래수",
     "trxValue": "거래량",
@@ -154,7 +154,7 @@
       "assetName": "자산 이름",
       "assetAmount": "자산 거래량",
       "base": "기준자산 총량",
-      "amount": "거래량",
+      "amount": "수량",
       "noVotes": "이 거래와 관련된 투표가 없음",
       "account": "계정",
       "message": "메시지",
@@ -170,10 +170,10 @@
       "withdraw_pay": "대표자 급여 인출",
       "all": "모든 거래 보기",
       "placeholder": "거래 유형에 따라 필터링",
-      "withdrawal": "Withdrawal",
-      "deposit": "Deposit",
-      "slate": "Define delegate slate",
-      "slateID": "Delegate slate ID"
+      "withdrawal": "출금",
+      "deposit": "입금",
+      "slate": "대표자 슬레이트 정의",
+      "slateID": "대표자 슬레이트 ID"
     }
   },
   "delegates": {
@@ -338,9 +338,9 @@
     "chartSupply": "공급량",
     "ohlc": "시세: OHLC",
     "external": "외부 Coinmarketcap 시세",
-    "volume": "거래량",
+    "volume": "수량",
     "marketAsset": "시장 발행 자산",
-    "range": "Today's range",
+    "range": "금일 변동폭",
     "assetInfo": {
       "title": "자산 정보",
       "base": "기준 자산",
@@ -389,7 +389,7 @@
     "new": "새 계정",
     "ma15": "15일 이동평균",
     "feeds": {
-      "title": "FEED TRACKING",
+      "title": "가격정보 트래킹",
       "latest": "최종 가격",
       "vwap": "24시간 가중평균가",
       "deviation": "가격정보와의 차이"
