@@ -32,6 +32,9 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	}, {
 		value: "Pусский",
 		key: "ru"
+	}, {
+		value: "Português",
+		key: "pt"
 	}];
 
 	function setCurrent(key) {
@@ -105,22 +108,38 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		$translate.use(_currentKey).then(function(result) {
 			$translate(['charts.transfer', 'charts.reg', 'charts.feed', 'charts.update', 'assets.plot.type1',
 				'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'block.trx.burn', 'block.trx.asset_create',
-				'block.trx.asset_issue', 'block.trx.add_collateral', 'block.trx.withdraw_pay', 'block.trx.all'
+				'block.trx.asset_issue', 'block.trx.add_collateral', 'block.trx.withdraw_pay', 'block.trx.all', 'block.trx.withdrawal',
+				'block.trx.deposit','block.trx.slate'
 			]).then(function(result) {
 				deferred.resolve({
 					transfer: result['charts.transfer'],
 					account_register: result['charts.reg'],
+					register_account_op_type: result['charts.reg'],
 					update_feed: result['charts.feed'],
+					update_feed_op_type: result['charts.feed'],
 					account_update: result['charts.update'],
+					update_account_op_type: result['charts.update'],
 					asset_ask: result['assets.plot.type1'],
+					ask_op_type: result['assets.plot.type1'],
 					asset_bid: result['assets.plot.type2'],
+					bid_op_type: result['assets.plot.type2'],
 					asset_short: result['assets.plot.type3'],
+					short_op_type: result['assets.plot.type3'],
 					asset_cover: result['assets.plot.type4'],
+					cover_op_type: result['assets.plot.type4'],
 					burn: result['block.trx.burn'],
+					burn_op_type: result['block.trx.burn'],
 					asset_create: result['block.trx.asset_create'],
+					create_asset_op_type: result['block.trx.asset_create'],
 					asset_issue: result['block.trx.asset_issue'],
+					issue_asset_op_type: result['block.trx.asset_issue'],
 					add_collateral: result['block.trx.add_collateral'],
+					add_collateral_op_type: result['block.trx.add_collateral'],
 					withdraw_pay: result['block.trx.withdraw_pay'],
+					withdraw_pay_op_type: result['block.trx.withdraw_pay'],
+					withdraw_op_type: result['block.trx.withdrawal'],
+					deposit_op_type: result['block.trx.deposit'],
+					define_delegate_slate_op_type: result['block.trx.slate'],
 					all: result['block.trx.all']
 				});
 			});
@@ -133,7 +152,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		var deferred = $q.defer();
 		var d = 'delegates.';
 		var dTranslations = [d + 'rank', d + 'change24', d + 'change7', 'accounts.name', d + 'votes', d + 'produced', d + 'missed',
-			d + 'rate', d + 'latency', d + 'feeds', d + 'feedFreq', d + 'rel', d + 'version', d + 'filter', d + 'no_version'
+			d + 'rate', d + 'latency', d + 'feeds', d + 'feedFreq', d + 'rel', d + 'version', d + 'filter', d + 'no_version', 'delegate.rank.votes'
 		];
 		$translate.use(_currentKey).then(function(result) {
 			$q.all([
@@ -157,7 +176,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 	function assets() {
 		var deferred = $q.defer();
 		var translations = {};
-		var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th3', 'assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'assets.market.th8', 'delegates.filter'];
+		var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th3',
+		'assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'assets.market.th8', 'delegates.filter', 'charts.feeds.latest'];
 
 		$translate.use(_currentKey).then(function(result) {
 			$translate(userHeaders).then(function(result) {
@@ -177,7 +197,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		var translations = {};
 
 		$translate.use(_currentKey).then(function(result) {
-			$translate(['asset.buy', 'asset.sell', 'asset.short', 'asset.feeds.med', 'asset.chartSupply', 'asset.collateral', 'asset.ohlc', 'asset.external', 'asset.volume']).then(function(result) {
+			$translate(['asset.buy', 'asset.sell', 'asset.short', 'asset.feeds.med', 'asset.chartSupply', 'asset.collateral', 'asset.ohlc', 
+				'asset.external', 'asset.volume']).then(function(result) {
 				deferred.resolve(result);
 			});
 		});
@@ -190,7 +211,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		$translate.use(_currentKey).then(function(result) {
 			$translate(['home.price', 'home.MA', 'charts.ma15', 'assets.plot.type1', 'assets.plot.type2',
 				'assets.plot.type3', 'assets.plot.type4', 'charts.reg', 'charts.transfer', 'charts.feed',
-				'charts.update', 'home.user.number', 'blocks.trxValue', 'blocks.trxCount', 'charts.new'
+				'charts.update', 'home.user.number', 'blocks.trxValue', 'blocks.trxCount', 'charts.new',
+				'home.user.unique', 'home.user.uniqueNew'
 			]).then(function(result) {
 				deferred.resolve({
 					price: result['home.price'],
@@ -207,7 +229,9 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 					value: result['blocks.trxValue'],
 					count: result['blocks.trxCount'],
 					nr: result['home.user.number'],
-					acc: result['charts.new']
+					acc: result['charts.new'], 
+					unique: result['home.user.unique'],
+					uniqueNew: result['home.user.uniqueNew']
 				});
 			});
 		});

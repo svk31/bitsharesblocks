@@ -82,6 +82,8 @@
     "user": {
       "title": "STATS DES UTILISATEURS",
       "number": "Nombre de comptes",
+      "unique": "Nombre de comptes uniques",
+      "uniqueNew": "Nouveaux comptes uniques",
       "sub": "Nombre de sous-comptes",
       "new24": "Nouveaux comptes derniers 24h",
       "new7d": "Nouveaux comptes derniers 7j"
@@ -168,7 +170,11 @@
       "add_collateral": "Rajout de collateral",
       "withdraw_pay": "Retrait de pay de délégué",
       "all": "Afficher toutes les transactions",
-      "placeholder": "Filtrer par type de transaction"
+      "placeholder": "Filtrer par type de transaction",
+      "withdrawal": "Retrait",
+      "deposit": "Versement",
+      "slate": "Definir liste de délégués",
+      "slateID": "ID de la liste de délégués"
     }
   },
   "delegates": {
@@ -335,6 +341,7 @@
     "external": "Prix externe Coinmarketcap",
     "volume": "Volume",
     "marketAsset": "Actif créé par le marché",
+    "range": "Gamme de prix aujourd'hui",
     "assetInfo": {
       "title": "INFO SUR L'ACTIF",
       "base": "Actif de base",

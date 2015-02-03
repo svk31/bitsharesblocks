@@ -82,6 +82,8 @@
     "user": {
       "title": "BENUTZER STATISTIK",
       "number": "Anzahl reg. Konten",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "Anzahl reg. Unter-konten",
       "new24": "Neue Konten der letzten 24h",
       "new7d": "Neue Konten der letzten 7d"
@@ -167,7 +169,11 @@
       "add_collateral": "Add collateral",
       "withdraw_pay": "Delegate pay withdrawal",
       "all": "Show all transactions",
-      "placeholder": "Filter by transaction types"
+      "placeholder": "Filter by transaction types",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -334,6 +340,7 @@
     "external": "Externer Coinmarketcap Preis",
     "volume": "Volumen",
     "marketAsset": "Market issued asset",
+    "range": "Tagesintervall",
     "assetInfo": {
       "title": "ASSET INFO",
       "base": "Base Asset",

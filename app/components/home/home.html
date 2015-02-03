@@ -145,7 +145,7 @@
               <td ng-if="block.trxLength>0">
                 <span ng-repeat="value in block.totalValue">
                   <p style="margin:0;padding:0;" ng-if="value.value!==0"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.value | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.value | number:2}}</span> <span ng-if="value.asset==='BTS'">BTS</span> 
-                    <a ng-if="value.asset!=='BTS'" ui-sref="asset({ 'id' : value.asset})">{{value.asset}}</a>
+                    <a ng-if="value.asset!=='BTS'" ui-sref="asset.orderbook({ 'asset' : value.asset})">{{value.asset}}</a>
                   </p>
                 </span>
               </td>

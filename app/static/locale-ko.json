@@ -82,6 +82,8 @@
     "user": {
       "title": "사용자 통계",
       "number": "총 계정수",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "총 하위계정 수",
       "new24": "지난 24시간 새 계정",
       "new7d": "지난 7일 새 계정"
@@ -167,7 +169,11 @@
       "add_collateral": "담보로 추가",
       "withdraw_pay": "대표자 급여 인출",
       "all": "모든 거래 보기",
-      "placeholder": "거래 유형에 따라 필터링"
+      "placeholder": "거래 유형에 따라 필터링",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -334,6 +340,7 @@
     "external": "외부 Coinmarketcap 시세",
     "volume": "거래량",
     "marketAsset": "시장 발행 자산",
+    "range": "Today's range",
     "assetInfo": {
       "title": "자산 정보",
       "base": "기준 자산",

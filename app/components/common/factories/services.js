@@ -103,6 +103,8 @@ angular.module('app.services', [])
 			"user": {
 				"title": "USER STATS",
 				"number": "Number of accounts",
+				"unique": "Number of unique accounts",
+				"uniqueNew": "New unique accounts",
 				"sub": "Number of sub-accounts",
 				"new24": "New accounts last 24h",
 				"new7d": "New accounts last 7d"
@@ -189,7 +191,11 @@ angular.module('app.services', [])
 				"add_collateral": "Add collateral",
 				"withdraw_pay": "Delegate pay withdrawal",
 				"all": "Show all transactions",
-				"placeholder": "Filter by transaction types"
+				"placeholder": "Filter by transaction types",
+				"withdrawal": "Withdrawal",
+				"deposit": "Deposit",
+				"slate": "Define delegate slate",
+				"slateID": "Delegate slate ID"
 			}
 		},
 		"delegates": {
@@ -356,6 +362,7 @@ angular.module('app.services', [])
 			"external": "External Coinmarketcap price",
 			"volume": "Volume",
 			"marketAsset": "Market issued asset",
+			"range": "Today's range",
 			"assetInfo": {
 				"title": "ASSET INFO",
 				"base": "Base Asset",
@@ -378,6 +385,11 @@ angular.module('app.services', [])
 				"price": "Call price",
 				"owed": "Owed",
 				"expiration": "Expiration date"
+			},
+			"order_history": {
+				"title": "ORDER HISTORY",
+				"paid": "Paid",
+				"received": "Received"
 			}
 		},
 		"charts": {

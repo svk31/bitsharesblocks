@@ -83,6 +83,8 @@
       "title": "ユーザー統計",
       "number": "総アカウントの数",
       "sub": "総下位アカウントの数",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "new24": "最近２４時間内の新しいアカウント",
       "new7d": " 最近七日間の新しいアカウント"
     },
@@ -165,7 +167,13 @@
       "asset_create": "資産発行",
       "asset_issue": "Issue asset",
       "add_collateral": "Add collateral",
-      "withdraw_pay": "Delegate pay withdrawal"
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -331,6 +339,7 @@
     "external": "外部Coinmarketcapプライス",
     "volume": "取引き量",
     "marketAsset": "マーケット発行資産",
+    "range": "Today's range",
     "assetInfo": {
       "title": "資産情報",
       "base": "基準資産",

@@ -82,6 +82,8 @@
     "user": {
       "title": "KULLANICI BİLGİLERİ",
       "number": "Hesap sayısı",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "Alt-hesap sayısı",
       "new24": "Son 24 saatte kaydolan kullanıcılar",
       "new7d": "Son 7 günde kaydolan kullanıcılar"
@@ -167,7 +169,11 @@
       "add_collateral": "Add collateral",
       "withdraw_pay": "Delegate pay withdrawal",
       "all": "Show all transactions",
-      "placeholder": "Filter by transaction types"
+      "placeholder": "Filter by transaction types",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -334,6 +340,7 @@
     "external": "Harici Coinmarketcap fiyatı",
     "volume": "Hacim",
     "marketAsset": "Market issued asset",
+    "range": "Today's range",
     "assetInfo": {
       "title": "VARLIK BİLGİSİ",
       "base": "Baz Varlık",

@@ -56,28 +56,40 @@ var HeaderRow = React.createClass({
 		
 		return (
 			<tr onClick={clickHandler}>
-				<th className="bold sortable">{sortIndex === 0 ? sortGlyph: null} {headers['delegates.rank']}</th>
-				<th className="bold sortable">{sortIndex === 1 ? sortGlyph: null} {headers['delegates.change24']}</th>
-				<th className="bold sortable hidden-xs">{sortIndex === 2 ? sortGlyph: null} {headers['delegates.change7']}</th>
-				<th className="bold sortable">{sortIndex === 3 ? sortGlyph: null} {headers['accounts.name']}</th>
-				<th className="bold sortable">{sortIndex === 4 ? sortGlyph: null} {headers['delegates.votes']}</th>
-				<th className="bold sortable hidden-xs">{sortIndex === 5 ? sortGlyph: null} {headers['delegates.produced']}</th>
-				<th className="bold sortable hidden-xs">{sortIndex === 6 ? sortGlyph: null} {headers['delegates.missed']}</th>
-				<th className="bold sortable">{sortIndex === 7 ? sortGlyph: null} {headers['delegates.rate']}</th>
-				<th className="bold sortable">{sortIndex === 8 ? sortGlyph: null} {headers['delegates.latency']}</th>
-				<th className="bold sortable">{sortIndex === 9 ? sortGlyph: null} {headers['delegates.feeds']}</th>
-				<th className="bold sortable hidden-xs">{sortIndex === 10 ? sortGlyph: null} {headers['delegates.feedFreq']}</th>
-				<th className="bold sortable">{sortIndex === 11 ? sortGlyph: null} {headers['delegates.rel']}</th>
-				<th className="bold sortable">{sortIndex === 12 ? sortGlyph: null} {headers['delegates.version']}</th>
+			<th className="bold sortable">{sortIndex === 0 ? sortGlyph: null} {headers['delegates.rank']}</th>
+			<th className="bold sortable">{sortIndex === 1 ? sortGlyph: null} {headers['delegates.change24']}</th>
+			<th className="bold sortable hidden-xs">{sortIndex === 2 ? sortGlyph: null} {headers['delegates.change7']}</th>
+			<th className="bold sortable">{sortIndex === 3 ? sortGlyph: null} {headers['accounts.name']}</th>
+			<th className="bold sortable">{sortIndex === 4 ? sortGlyph: null} {headers['delegates.votes']}</th>
+			<th className="bold sortable hidden-xs">{sortIndex === 5 ? sortGlyph: null} {headers['delegates.produced']}</th>
+			<th className="bold sortable hidden-xs">{sortIndex === 6 ? sortGlyph: null} {headers['delegates.missed']}</th>
+			<th className="bold sortable">{sortIndex === 7 ? sortGlyph: null} {headers['delegates.rate']}</th>
+			<th className="bold sortable">{sortIndex === 8 ? sortGlyph: null} {headers['delegates.latency']}</th>
+			<th className="bold sortable">{sortIndex === 9 ? sortGlyph: null} {headers['delegates.feeds']}</th>
+			<th className="bold sortable hidden-xs">{sortIndex === 10 ? sortGlyph: null} {headers['delegates.feedFreq']}</th>
+			<th className="bold sortable">{sortIndex === 11 ? sortGlyph: null} {headers['delegates.rel']}</th>
+			<th className="bold sortable">{sortIndex === 12 ? sortGlyph: null} {headers['delegates.version']}</th>
 			</tr>
 			);
-	}
+}
 });
 
 var DelegateRow = React.createClass({
+	getInitialState: function() {
+		return {hover:false};
+	},
+	handleMouseEnter: function() {
+		this.setState({hover: true});
+	},
+
+	handleMouseLeave: function() {
+		this.setState({hover: false});
+	},
 	render: function() {
+		var headers = this.props.headers;
 		var delegate =this.props.data;
-		var no_version = this.props.version;
+		var no_version = headers['delegates.no_version'];
+		var votesFor = headers['delegate.rank.votes'];
 		var tdLatency, tdActiveFeeds, tdUpdateFeeds, tdReliability, tdVersion;
 
 		if (delegate.delegate_info.blocks_produced < 1 || delegate.avgLatency === 'n/a') {
@@ -141,8 +153,6 @@ var DelegateRow = React.createClass({
 		else {
 			tdVersion = <td className="danger">{delegate.public_data.version}</td>;
 		}
-		
-
 
 		return (
 			<tr>
@@ -150,9 +160,34 @@ var DelegateRow = React.createClass({
 			<td>{delegate.dayChange}</td>
 			<td className="hidden-xs">{delegate.weekChange}</td>
 			<td className={delegate.rank <=101 ? 'bold':''}><a href={'delegates/delegate?name='+delegate.name}>{delegate.name}</a></td>
-			<td>{delegate.delegate_info.votes_for_percent+'%'}</td>
-			<td className="hidden-xs">{delegate.delegate_info.blocks_produced}</td>
-			<td className="hidden-xs">{delegate.delegate_info.blocks_missed}</td>
+			<td>
+			<Tooltip className="tooltipContainer"
+			horizontalPosition="right"
+			horizontalAlign="left"
+			verticalPosition="bottom"
+			arrowSize={10}
+			borderColor="#ccc"
+			show={this.state.hover}>
+			<div 
+			onMouseEnter={this.handleMouseEnter}
+			onMouseLeave={this.handleMouseLeave}>
+			{delegate.delegate_info.votes_for_percent+'%'}</div>
+			
+			<p style={{
+				margin: 0,
+				padding: '5px 5px 0px 5px',
+				backgroundColor: "white",
+				fontSize:'0.90em'
+			}}>{votesFor}:</p>
+			<p style={{
+				margin: 0,
+				padding: '0px 5px 5px 5px',
+				backgroundColor: "white",
+				fontWeight:'bold'
+			}}>{delegate.votesFor} BTS</p>
+			</Tooltip></td>
+			<td className="hidden-xs">{delegate.blocksProduced}</td>
+			<td className="hidden-xs">{delegate.blocksMissed}</td>
 			<td>{delegate.delegate_info.pay_rate+'%'}</td>
 			{tdLatency}
 			{tdActiveFeeds}
@@ -161,7 +196,7 @@ var DelegateRow = React.createClass({
 			{tdVersion}
 			</tr>
 			);
-	}
+}
 });
 
 var DelegatesTable = React.createClass({
@@ -228,7 +263,7 @@ var DelegatesTable = React.createClass({
 			.map(function(delegate) {
 
 				return (
-					<DelegateRow key={delegate.rank} data={delegate} version={headers['delegates.no_version']} />
+					<DelegateRow key={delegate.rank} data={delegate} headers={headers}  />
 					);
 
 			});

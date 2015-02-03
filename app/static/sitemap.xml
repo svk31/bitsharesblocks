@@ -6,30 +6,34 @@
   http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>http://www.bitsharesblocks.com/</loc>
-    <lastmod>2014-10-16T00:37:47+00:00</lastmod>
+    <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
     <loc>http://www.bitsharesblocks.com/blocks</loc>
-    <lastmod>2014-10-16T00:37:47+00:00</lastmod>
+    <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
     <loc>http://www.bitsharesblocks.com/delegates</loc>
-    <lastmod>2014-10-16T00:37:47+00:00</lastmod>
+    <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-    <loc>http://www.bitsharesblocks.com/assets</loc>
-    <lastmod>2014-10-16T00:37:47+00:00</lastmod>
+  <loc>http://www.bitsharesblocks.com/accounts</loc>
+    <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-    <loc>http://www.bitsharesblocks.com/accounts</loc>
-    <lastmod>2014-10-16T00:37:47+00:00</lastmod>
+    <loc>http://www.bitsharesblocks.com/assets/market</loc>
+    <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-    <loc>http://www.bitsharesblocks.com/charts</loc>
-    <lastmod>2014-10-16T00:37:47+00:00</lastmod>
+  <loc>http://www.bitsharesblocks.com/assets/user</loc>
+    <lastmod>2015-01-25T16:37:47+00:00</lastmod>
+  </url>
+  <url>
+  <loc>http://www.bitsharesblocks.com/charts</loc>
+    <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
     <loc>http://www.bitsharesblocks.com/about</loc>
-    <lastmod>2014-10-16T00:37:47+00:00</lastmod>
+    <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
 </urlset>

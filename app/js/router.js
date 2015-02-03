@@ -1,7 +1,7 @@
 angular.module("app").config(function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.otherwise("/");
   $urlRouterProvider.when("/assets", "/assets/market");
   $urlRouterProvider.when("/charts", "/charts/prices");
   //
@@ -124,10 +124,28 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       controller: "aboutCtrl"
     })
     .state('asset', {
-      url: "/assets/asset?id",
-      reloadOnSearch: false,
+      url: "/asset",
       templateUrl: "singleAsset.html",
-      controller: 'assetCtrl'
+      controller: 'assetCtrl',
+      abstract: true
+    })
+    .state('asset.orderbook', {
+      url: "/orderbook?asset",
+      views: {
+        'asset-orderbook': {
+          templateUrl: "orderBook.html",
+          controller: 'orderBookCtrl'
+        }
+      }
+    })
+    .state('asset.info', {
+      url: "/info?asset",
+      views: {
+        'asset-info': {
+          templateUrl: "assetInfo.html",
+          controller: 'assetInfoCtrl'
+        }
+      }
     })
     .state('accounts', {
       url: "/accounts?top&query",
@@ -152,7 +170,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       controller: 'genesisBTSXCtrl'
     })
     .state('home', {
-      url: "/home",
+      url: "/",
       templateUrl: "home.html",
       resolve: {
         Assets: 'Assets',

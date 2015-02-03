@@ -56,28 +56,40 @@ var HeaderRow = React.createClass({displayName: 'HeaderRow',
 		
 		return (
 			React.createElement("tr", {onClick: clickHandler}, 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 0 ? sortGlyph: null, " ", headers['delegates.rank']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 1 ? sortGlyph: null, " ", headers['delegates.change24']), 
-				React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 2 ? sortGlyph: null, " ", headers['delegates.change7']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 3 ? sortGlyph: null, " ", headers['accounts.name']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 4 ? sortGlyph: null, " ", headers['delegates.votes']), 
-				React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 5 ? sortGlyph: null, " ", headers['delegates.produced']), 
-				React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 6 ? sortGlyph: null, " ", headers['delegates.missed']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 7 ? sortGlyph: null, " ", headers['delegates.rate']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 8 ? sortGlyph: null, " ", headers['delegates.latency']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 9 ? sortGlyph: null, " ", headers['delegates.feeds']), 
-				React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 10 ? sortGlyph: null, " ", headers['delegates.feedFreq']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 11 ? sortGlyph: null, " ", headers['delegates.rel']), 
-				React.createElement("th", {className: "bold sortable"}, sortIndex === 12 ? sortGlyph: null, " ", headers['delegates.version'])
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 0 ? sortGlyph: null, " ", headers['delegates.rank']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 1 ? sortGlyph: null, " ", headers['delegates.change24']), 
+			React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 2 ? sortGlyph: null, " ", headers['delegates.change7']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 3 ? sortGlyph: null, " ", headers['accounts.name']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 4 ? sortGlyph: null, " ", headers['delegates.votes']), 
+			React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 5 ? sortGlyph: null, " ", headers['delegates.produced']), 
+			React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 6 ? sortGlyph: null, " ", headers['delegates.missed']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 7 ? sortGlyph: null, " ", headers['delegates.rate']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 8 ? sortGlyph: null, " ", headers['delegates.latency']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 9 ? sortGlyph: null, " ", headers['delegates.feeds']), 
+			React.createElement("th", {className: "bold sortable hidden-xs"}, sortIndex === 10 ? sortGlyph: null, " ", headers['delegates.feedFreq']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 11 ? sortGlyph: null, " ", headers['delegates.rel']), 
+			React.createElement("th", {className: "bold sortable"}, sortIndex === 12 ? sortGlyph: null, " ", headers['delegates.version'])
 			)
 			);
-	}
+}
 });
 
 var DelegateRow = React.createClass({displayName: 'DelegateRow',
+	getInitialState: function() {
+		return {hover:false};
+	},
+	handleMouseEnter: function() {
+		this.setState({hover: true});
+	},
+
+	handleMouseLeave: function() {
+		this.setState({hover: false});
+	},
 	render: function() {
+		var headers = this.props.headers;
 		var delegate =this.props.data;
-		var no_version = this.props.version;
+		var no_version = headers['delegates.no_version'];
+		var votesFor = headers['delegate.rank.votes'];
 		var tdLatency, tdActiveFeeds, tdUpdateFeeds, tdReliability, tdVersion;
 
 		if (delegate.delegate_info.blocks_produced < 1 || delegate.avgLatency === 'n/a') {
@@ -141,8 +153,6 @@ var DelegateRow = React.createClass({displayName: 'DelegateRow',
 		else {
 			tdVersion = React.createElement("td", {className: "danger"}, delegate.public_data.version);
 		}
-		
-
 
 		return (
 			React.createElement("tr", null, 
@@ -150,9 +160,34 @@ var DelegateRow = React.createClass({displayName: 'DelegateRow',
 			React.createElement("td", null, delegate.dayChange), 
 			React.createElement("td", {className: "hidden-xs"}, delegate.weekChange), 
 			React.createElement("td", {className: delegate.rank <=101 ? 'bold':''}, React.createElement("a", {href: 'delegates/delegate?name='+delegate.name}, delegate.name)), 
-			React.createElement("td", null, delegate.delegate_info.votes_for_percent+'%'), 
-			React.createElement("td", {className: "hidden-xs"}, delegate.delegate_info.blocks_produced), 
-			React.createElement("td", {className: "hidden-xs"}, delegate.delegate_info.blocks_missed), 
+			React.createElement("td", null, 
+			React.createElement(Tooltip, {className: "tooltipContainer", 
+			horizontalPosition: "right", 
+			horizontalAlign: "left", 
+			verticalPosition: "bottom", 
+			arrowSize: 10, 
+			borderColor: "#ccc", 
+			show: this.state.hover}, 
+			React.createElement("div", {
+			onMouseEnter: this.handleMouseEnter, 
+			onMouseLeave: this.handleMouseLeave}, 
+			delegate.delegate_info.votes_for_percent+'%'), 
+			
+			React.createElement("p", {style: {
+				margin: 0,
+				padding: '5px 5px 0px 5px',
+				backgroundColor: "white",
+				fontSize:'0.90em'
+			}}, votesFor, ":"), 
+			React.createElement("p", {style: {
+				margin: 0,
+				padding: '0px 5px 5px 5px',
+				backgroundColor: "white",
+				fontWeight:'bold'
+			}}, delegate.votesFor, " BTS")
+			)), 
+			React.createElement("td", {className: "hidden-xs"}, delegate.blocksProduced), 
+			React.createElement("td", {className: "hidden-xs"}, delegate.blocksMissed), 
 			React.createElement("td", null, delegate.delegate_info.pay_rate+'%'), 
 			tdLatency, 
 			tdActiveFeeds, 
@@ -161,7 +196,7 @@ var DelegateRow = React.createClass({displayName: 'DelegateRow',
 			tdVersion
 			)
 			);
-	}
+}
 });
 
 var DelegatesTable = React.createClass({
@@ -228,7 +263,7 @@ var DelegatesTable = React.createClass({
 			.map(function(delegate) {
 
 				return (
-					React.createElement(DelegateRow, {key: delegate.rank, data: delegate, version: headers['delegates.no_version']})
+					React.createElement(DelegateRow, {key: delegate.rank, data: delegate, headers: headers})
 					);
 
 			});

@@ -320,6 +320,11 @@ angular.module('app')
 
 			// Check version
 			delegate = checkVersion(delegate);
+
+			// Format values
+			delegate.votesFor = $filter('number')(delegate.delegate_info.votes_for, 0);
+			delegate.blocksProduced = $filter('number')(delegate.delegate_info.blocks_produced, 0);
+			delegate.blocksMissed = $filter('number')(delegate.delegate_info.blocks_missed, 0);
 		});
 
 		return delegates;

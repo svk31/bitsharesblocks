@@ -38,7 +38,7 @@
             <td>{{account.registration_date | date:'medium'}}</td>
             <td><a ng-if="account.reg_block!==0" ui-sref="block({ 'id' : account.reg_block })" >{{account.reg_block | number:0}}</a><span ng-if="account.reg_block === 0">{{ 'nav.btsxgenesis' | translate }}</span></td>
             <td class="hidden-xs">{{account.last_update | date:'medium'}}</td>
-            <td><span ng-repeat="value in account.burnArray"><p style="margin:0;padding:0;"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:2}}</span> <span ng-if="value.asset==='BTS'"> {{ value.asset }}</span> <a ng-if="value.asset!=='BTS'" ui-sref="asset({ 'id' : value.asset})">{{value.asset}}</a></p></span></td>
+            <td><span ng-repeat="value in account.burnArray"><p style="margin:0;padding:0;"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:2}}</span> <span ng-if="value.asset==='BTS'"> {{ value.asset }}</span> <a ng-if="value.asset!=='BTS'" ui-sref="asset.orderbook({ 'asset' : value.asset})">{{value.asset}}</a></p></span></td>
             <td class="success" ng-if="account.isDelegate===true">{{'accounts.yes' | translate}}</td>
             <td ng-if="account.isDelegate===false">{{'accounts.no' | translate}}</td>
             <td class="success" ng-if="account.hasSubs">{{'accounts.yes' | translate}}</td>

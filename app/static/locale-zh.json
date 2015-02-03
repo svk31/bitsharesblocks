@@ -82,6 +82,8 @@
     "user": {
       "title": "用户统计",
       "number": "账户数量",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "子账户数量",
       "new24": "过去24小时的新账户",
       "new7d": "过去7天的新账号"
@@ -167,7 +169,11 @@
       "add_collateral": "Add collateral",
       "withdraw_pay": "Delegate pay withdrawal",
       "all": "Show all transactions",
-      "placeholder": "Filter by transaction types"
+      "placeholder": "Filter by transaction types",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -334,6 +340,7 @@
     "external": "外部Coinmarketcap价格",
     "volume": "交易量",
     "marketAsset": "Market issued asset",
+    "range": "Today's range",
     "assetInfo": {
       "title": "资产信息",
       "base": "基础资产",
