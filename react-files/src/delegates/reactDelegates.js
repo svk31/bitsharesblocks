@@ -233,7 +233,7 @@ var DelegatesTable = React.createClass({
 
 			var bodyRows = data
 			.filter(function(delegate) {
-				return (delegate.name.toLowerCase().indexOf(filterName) > -1);
+				return (delegate.name.toLowerCase().indexOf(filterName.toLowerCase()) > -1);
 			})
 			.sort(function(a,b) {
 				if (sortIndex > 3 && sortIndex < 8) {

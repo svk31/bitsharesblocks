@@ -108,7 +108,7 @@ var UserAssetsTable = React.createClass({
 
 			var bodyRows = data
 			.filter(function(asset) {
-				return (asset.symbol.toLowerCase().indexOf(filterName) > -1 && asset._id!==0);
+				return (asset.symbol.toLowerCase().indexOf(filterName.toLowerCase()) > -1 && asset._id!==0);
 			})
 			.sort(function(a,b) {
 				if (inverse===false) {
