@@ -4,7 +4,7 @@ angular.module('app')
   function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts, Meta) {
 
     $scope.assetId = $state.params.asset;
-    $scope.prefix = 'bit';
+    $scope.prefix = '';
     var marketAsset = true;
 
     $scope.filteredFeeds = [];
@@ -168,6 +168,7 @@ angular.module('app')
           $scope.enoughFeeds = result.asset.feedInfo.enoughFeeds;
           $scope.collateral = result.collateral;
           $scope.collateralAsset = result.collateralAsset;
+          $scope.prefix = 'bit';
         }
 
         if (!result.asset.supply || result.asset.supply.length === 0) {

@@ -13,13 +13,13 @@
         <ul ng-show="asset.dailyLow" class="list-inline market-data">
           <li >
             <span style="display:block;">{{ 'charts.feeds.latest' | translate }}:</span>
-            <span style="display:block;">{{asset.order_history[0].bid_price.ratio}}</span>
+            <span style="display:block;">{{asset.lastPrice}}</span>
           </li>
           <li>
             <span style="display:block;">{{ 'asset.range' | translate }}:</span>
             <span style="display:block;">{{ asset.dailyLow }} - {{ asset.dailyHigh }}</span>
           </li>
-          <li >
+          <li ng-if="asset.issuer_account_id ===-2">
             <span style="display:block;">{{ 'asset.feeds.med' | translate }}:</span>
             <span style="display:block;">{{ asset.feedText }}</span>
           </li>

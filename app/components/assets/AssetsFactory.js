@@ -329,8 +329,9 @@ angular.module('app')
 	function orderBook(asset) {
 
 		var priceRatio = _getPriceRatio(asset._id, 0);
-
+		var prefix = '';
 		if (asset.issuer_account_id === -2) {
+			prefix = 'bit';
 			if (!asset.medianFeed) {
 				asset.medianFeed = 0;
 			}
@@ -435,11 +436,14 @@ angular.module('app')
 		var now = new Date();
 		var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 		var tradesFound = false;
+		asset.lastPrice = 0;
+
 		if (asset.order_history.length > 0) {
+			asset.lastPrice = 1 / (asset.order_history[0].bid_price.ratio * priceRatio);
 			asset.dailyLow = 1 / (asset.order_history[0].ask_price.ratio * priceRatio);
 			asset.dailyHigh = 0;
+			
 			asset.order_history.forEach(function(order) {
-
 				if (today < new Date(order.timestamp)) {
 					tradesFound = true;
 					asset.dailyHigh = Math.max(asset.dailyHigh, 1 / (order.ask_price.ratio * priceRatio));
@@ -456,17 +460,18 @@ angular.module('app')
 				order.bid_price.ratio = $filter('number')(1 / (order.bid_price.ratio * priceRatio), 3) + ' BTS/' + asset.symbol;
 
 				order.fees_collected.amount = $filter('number')(order.fees_collected.amount / asset.precision, decimals) + ' ' + asset.symbol;
+
 			});
 
 			if (tradesFound) {
-				asset.dailyLow = $filter('number')(asset.dailyLow, 2) + ' BTS/' + asset.symbol;
-				asset.dailyHigh = $filter('number')(asset.dailyHigh, 2) + ' BTS/' + asset.symbol;
+				asset.dailyLow = $filter('number')(asset.dailyLow, 2) + ' BTS/' + prefix + asset.symbol;
+				asset.dailyHigh = $filter('number')(asset.dailyHigh, 2) + ' BTS/' + prefix + asset.symbol;
 			} else {
 				asset.dailyLow = '0';
 				asset.dailyHigh = '0';
 			}
-
-			asset.feedText = $filter('number')(1/asset.medianFeed, 2) + ' BTS/' + asset.symbol;
+			asset.lastPrice = $filter('number')(asset.lastPrice, 3) + ' BTS/' + prefix + asset.symbol;
+			asset.feedText = $filter('number')(1 / asset.medianFeed, 2) + ' BTS/' + prefix + asset.symbol;
 		}
 
 		// Asks and bids
