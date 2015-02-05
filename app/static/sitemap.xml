@@ -5,35 +5,35 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
   http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>http://www.bitsharesblocks.com/</loc>
+    <loc>https://bitsharesblocks.com/</loc>
     <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-    <loc>http://www.bitsharesblocks.com/blocks</loc>
+    <loc>https://bitsharesblocks.com/blocks</loc>
     <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-    <loc>http://www.bitsharesblocks.com/delegates</loc>
+    <loc>https://bitsharesblocks.com/delegates</loc>
     <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-  <loc>http://www.bitsharesblocks.com/accounts</loc>
+  <loc>https://bitsharesblocks.com/accounts</loc>
     <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-    <loc>http://www.bitsharesblocks.com/assets/market</loc>
+    <loc>https://bitsharesblocks.com/assets/market</loc>
     <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-  <loc>http://www.bitsharesblocks.com/assets/user</loc>
+  <loc>https://bitsharesblocks.com/assets/user</loc>
     <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-  <loc>http://www.bitsharesblocks.com/charts</loc>
+  <loc>https://bitsharesblocks.com/charts</loc>
     <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
   <url>
-    <loc>http://www.bitsharesblocks.com/about</loc>
+    <loc>https://bitsharesblocks.com/about</loc>
     <lastmod>2015-01-25T16:37:47+00:00</lastmod>
   </url>
 </urlset>
