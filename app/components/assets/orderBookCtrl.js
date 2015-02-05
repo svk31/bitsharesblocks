@@ -116,6 +116,10 @@ angular.module('app')
         updatePlots();
         getTranslations();
         chartText();
+
+        if ($scope.showOrders === false && $scope.asset.covers.length === 0 && $scope.asset.order_history.length === 0) {
+          $rootScope.$emit('noOrderbook');
+        }
       });
     }
     fetchOrderBook();

@@ -329,6 +329,7 @@
     "priceH": "시세 추이",
     "alert1": "시장 비활성: 가격정보 수가 불충분함",
     "alert2": "시장 비활성: 시장 깊이가 불충분함",
+    "alert3": "The orderbook is empty",
     "collateral": "담보",
     "supply": "공급량",
     "supplyAnd": "및 담보(BTS) 추이",

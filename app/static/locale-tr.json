@@ -329,6 +329,7 @@
     "priceH": "FİYAT GEÇMİŞİ",
     "alert1": "Tahta kapalı: Yeterli sayıda aktif feed yok",
     "alert2": "Tahta kapalı: Yetersiz piyasa derinliği",
+    "alert3": "The orderbook is empty",
     "collateral": "Teminat",
     "supply": "ARZ",
     "supplyAnd": "VE TEMİNAT (BTS) GEÇMİŞİ",

@@ -330,6 +330,7 @@
     "priceH": "HISTORIQUE DE PRIX",
     "alert1": "Marché inactif: Nombre de prix exterieur insufficent",
     "alert2": "Marché inactif: Profondeur du marché insufficent",
+    "alert3": "Le carnet d'ordres est vide",
     "collateral": "Collateral",
     "supply": "RÉSERVES",
     "supplyAnd": "ET COLLATERAL (BTS) HISTORIQUE",

@@ -329,6 +329,7 @@
     "priceH": "HISTORIA PRECIO",
     "alert1": "Mercado inactivo: Insuficiente número de feeds activos",
     "alert2": "Mercado inactivo: Insuficiente profundidad de mercado",
+    "alert3": "The orderbook is empty",
     "collateral": "Colateral",
     "supply": "OFERTA",
     "supplyAnd": "E HISTORIA COLATERALES (BTS)",

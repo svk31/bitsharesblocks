@@ -2,6 +2,7 @@ angular.module('app')
 
 .controller('assetCtrl', ['$scope', '$rootScope', '$state', '$interval', 'api', '$filter', 'Translate', 'Assets', 'Charts',
   function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts) {
+    $scope.noOrderbook = false;
 
     $scope.tabs = [{
       active: true,
@@ -36,5 +37,10 @@ angular.module('app')
     }
 
     checkTabs();
+
+    $rootScope.$on('noOrderbook', function() {
+      $scope.noOrderbook = true;
+      $scope.goTo('asset.info');
+    });
   }
 ]);

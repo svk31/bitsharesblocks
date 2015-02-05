@@ -329,6 +329,7 @@
     "priceH": "STORICO PREZZO",
     "alert1": "Mercato inattivo: Numero di feed insufficiente",
     "alert2": "Mercato inattivo: Profondità di mercato insufficiente",
+    "alert3": "The orderbook is empty",
     "collateral": "Garanzia",
     "supply": "STORICO DISPONIBILITA'",
     "supplyAnd": "E GARANZIE (BTS)",

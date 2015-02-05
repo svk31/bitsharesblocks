@@ -329,6 +329,7 @@
     "priceH": "价格历史",
     "alert1": "市场不活跃：没有足够的活跃喂价种子数目",
     "alert2": "市场不活跃：没有足够的市场深度",
+    "alert3": "The orderbook is empty",
     "collateral": "抵押品",
     "supply": "供应",
     "supplyAnd": "以及抵押品（BTS）历史",

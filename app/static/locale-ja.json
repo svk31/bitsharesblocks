@@ -328,6 +328,7 @@
     "priceH": "プライス推移",
     "alert1": "マーケット不活性:フィード数不十分",
     "alert2": "マーケット不活性:マーケットの深さ不十分",
+    "alert3": "The orderbook is empty",
     "collateral": "担保",
     "supply": "供給量",
     "supplyAnd": "及び担保(BTS)推移",

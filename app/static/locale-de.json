@@ -329,6 +329,7 @@
     "priceH": "PREISVERLAUF",
     "alert1": "Markt inaktiv: Ungenügend gültige Feeds",
     "alert2": "Markt inaktiv: Ungenügend Markttiefe",
+    "alert3": "The orderbook is empty",
     "collateral": "Collateral",
     "supply": "VERFÜGBARKEIT",
     "supplyAnd": "UND COLLATERAL (BTS) VERLAUF",

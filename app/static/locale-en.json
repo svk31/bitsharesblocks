@@ -330,6 +330,7 @@
 		"priceH": "PRICE HISTORY",
 		"alert1": "Market inactive: Insufficient number of active feeds",
 		"alert2": "Market inactive: Insufficient market depth",
+		"alert3": "The orderbook is empty",
 		"collateral": "Collateral",
 		"supply": "SUPPLY",
 		"supplyAnd": "AND COLLATERAL (BTS) HISTORY",

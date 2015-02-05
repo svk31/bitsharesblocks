@@ -330,6 +330,7 @@
 		"priceH": "HISTORICO DE PREÇO",
 		"alert1": "Mercado Inativo: Numero de feeds ativos insuficiente",
 		"alert2": "Mercado Inativo: Profundidade de mercado insuficiente",
+		"alert3": "The orderbook is empty",
 		"collateral": "Colateral",
 		"supply": "QUANTIDADE",
 		"supplyAnd": "E HISTORICO DE COLATERAL (BTS) ",
