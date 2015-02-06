@@ -99,9 +99,6 @@ angular.module('app')
           tooltip: toolTip,
         }),
         new Charts.serie({
-          tooltip: toolTip,
-        }),
-        new Charts.serie({
           tooltip: {
             valueDecimals: 2,
             valueSuffix: '%'
@@ -140,8 +137,7 @@ angular.module('app')
         }
         $scope.feedsChart.series[0].data = result.stats.feed;
         $scope.feedsChart.series[1].data = result.stats.currentPrice;
-        $scope.feedsChart.series[2].data = result.stats.vwap24hrs;
-        $scope.feedsChart.series[3].data = deviation;
+        $scope.feedsChart.series[2].data = deviation;
 
         var valueDecimals = (asset === 'BTC' || asset === 'SILVER') ? 6 : 4;
 
@@ -167,8 +163,7 @@ angular.module('app')
       Translate.feeds().then(function(result) {
         $scope.feedsChart.series[0].name = result.med;
         $scope.feedsChart.series[1].name = result.latest;
-        $scope.feedsChart.series[2].name = result.vwap;
-        $scope.feedsChart.series[3].name = result.deviation;
+        $scope.feedsChart.series[2].name = result.deviation;
       });
     }
 
