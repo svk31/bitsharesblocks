@@ -90,7 +90,7 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       controller: 'blocksCtrl'
     })
     .state('block', {
-      url: "/blocks/block?id",
+      url: "/blocks/block?id?trxid",
       reloadOnSearch: false,
       templateUrl: "singleBlock.html",
       resolve: {
