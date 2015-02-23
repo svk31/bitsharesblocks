@@ -83,7 +83,7 @@
 			"title": "USER STATS",
 			"number": "Number of accounts",
 			"unique": "Number of unique accounts",
-      "uniqueNew": "New unique accounts",
+			"uniqueNew": "New unique accounts",
 			"sub": "Number of sub-accounts",
 			"new24": "New accounts last 24h",
 			"new7d": "New accounts last 7d"
@@ -171,10 +171,10 @@
 			"withdraw_pay": "Delegate pay withdrawal",
 			"all": "Show all transactions",
 			"placeholder": "Filter by transaction types",
-      "withdrawal": "Withdrawal",
-      "deposit": "Deposit",
-      "slate": "Define delegate slate",
-      "slateID": "Delegate slate ID"
+			"withdrawal": "Withdrawal",
+			"deposit": "Deposit",
+			"slate": "Define delegate slate",
+			"slateID": "Delegate slate ID"
 		}
 	},
 	"delegates": {
@@ -390,12 +390,12 @@
 		"update": "Account update",
 		"new": "New accounts",
 		"ma15": "15-day Moving Average",
-    "feeds": {
-      "title": "FEED TRACKING",
-      "latest": "Latest price",
-      "vwap": "24hr weighted average price",
-      "deviation": "Deviation from feed"
-    }
+		"feeds": {
+			"title": "FEED TRACKING",
+			"latest": "Latest price",
+			"vwap": "24hr weighted average price",
+			"deviation": "Deviation from feed"
+		}
 	},
 	"supply": {
 		"title1": "INFO",
