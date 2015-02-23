@@ -159,7 +159,7 @@ var DelegateRow = React.createClass({
 			<td>{delegate.rank}</td>
 			<td>{delegate.dayChange}</td>
 			<td className="hidden-xs">{delegate.weekChange}</td>
-			<td className={delegate.rank <=101 ? 'bold':''}><a href={'delegates/delegate?name='+delegate.name}>{delegate.name}</a></td>
+			<td className={delegate.rank <=101 ? 'bold':''}><a href={'delegate/info?name='+delegate.name}>{delegate.name}</a></td>
 			<td>
 			<Tooltip className="tooltipContainer"
 			horizontalPosition="right"

@@ -1,0 +1,33 @@
+
+<div class="col-md-5 col-sm-6 col-xs-12 no-left-padding">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title"></h3>
+		</div>
+		<ul class="list-group">
+			<li class="list-group-item"><strong>{{ 'delegate.rank.current' | translate }}:</strong><span class="badge">{{delegate.rank}}</span></li>
+			<li class="list-group-item">{{ 'delegate.rank.dayChange' | translate }}:<span class="badge">{{delegate.dayChange}}</span></li>
+			<li class="list-group-item">{{ 'delegate.rank.weekChange' | translate }}:<span class="badge">{{ delegate.weekChange }}</span></li>
+			<li class="list-group-item">{{ 'delegate.rank.votes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for | number:0}} BTS</span></li>
+			<li class="list-group-item">{{ 'delegate.rank.percentVotes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for_percent}} %</span></li>
+		</ul>
+	</div>
+</div>
+
+<div class="col-md-7 col-sm-6 col-xs-12 no-right-padding">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{ 'delegate.votesChart' | translate }}</h3>
+		</div>
+		<highchart id="chart1" config="highchartsVotes"></highchart>
+	</div>
+</div>
+
+<div class="col-md-7 col-md-offset-5 col-sm-6 col-sm-offset-6 col-xs-12 votestable no-right-padding">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{ 'delegate.votes.title' | translate }} ({{votes.votesCount | number:0}} {{ 'delegate.votes.total' | translate }})<span id="dropdown" ng-click="status.open= !status.open"><i class="pull-right glyphicon clickable" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></span></h3>
+		</div>
+		<fast-repeat ng-if="status.open" component="'VotesTable'" data="votes.votes.votes" headers="headers"></fast-repeat>
+	</div>
+</div>

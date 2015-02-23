@@ -258,6 +258,9 @@
       "title": "득표 내역",
       "total": "투표",
       "net": "총득표 >= 10000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {

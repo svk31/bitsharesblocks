@@ -13,8 +13,8 @@ angular.module("app").factory('api', ['$http', function($http) {
     url = apis[0] + '/v1/';
     url_v2 = apis[0] + '/v2/';
 
-    // url = '127.0.0.1:2095/v1/';
-    // url_v2 = '127.0.0.1:2095/v2/';
+    // url = 'http://127.0.0.1:2095/v1/';
+    // url_v2 = 'http://127.0.0.1:2095/v2/';
 
     api.setAPI = function(index) {
         // var location = ['North America - New York', 'Asia - Singapore'];
@@ -301,6 +301,11 @@ angular.module("app").factory('api', ['$http', function($http) {
     api.searchAccounts = function(query) {
         return $http.jsonp(url + 'accountssearch/' + query + cb);
     };
+
+    api.getSlate = function(accountName) {
+        return $http.jsonp(url + 'slate/' + accountName + cb);
+    };
+
 
     return api;
 

@@ -12,11 +12,70 @@ angular.module("app").config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "allDelegates.html",
       controller: 'delegatesCtrl'
     })
-    .state('delegate', {
+    .state('delegate-redirect', {
       url: "/delegates/delegate?name",
-      reloadOnSearch: false,
       templateUrl: "singleDelegate.html",
-      controller: 'singleDelegateCtrl'
+      controller: function($scope, $state) {
+        $state.go('delegate.info', {
+          'name': $state.params.name
+        });
+      }
+    })
+    .state('delegate', {
+      url: "/delegate?name",
+      templateUrl: "singleDelegate.html",
+      controller: 'singleDelegateCtrl',
+      abstract: true
+    })
+    .state('delegate.info', {
+      url: "/info",
+      reloadOnSearch: false,
+      views: {
+        'delegate-info': {
+          templateUrl: "delegateInfo.html",
+          controller: 'delegateInfoCtrl'
+        }
+      }
+    })
+    .state('delegate.votes', {
+      url: "/votes",
+      reloadOnSearch: false,
+      views: {
+        'delegate-votes': {
+          templateUrl: "delegateVotes.html",
+          controller: 'delegateVotesCtrl'
+        }
+      }
+    })
+    .state('delegate.feeds', {
+      url: "/feeds",
+      reloadOnSearch: false,
+      views: {
+        'delegate-feeds': {
+          templateUrl: "delegateFeeds.html",
+          controller: 'delegateFeedsCtrl'
+        }
+      }
+    })
+    .state('delegate.earnings', {
+      url: "/earnings",
+      reloadOnSearch: false,
+      views: {
+        'delegate-earnings': {
+          templateUrl: "delegateEarnings.html",
+          controller: 'delegateEarningsCtrl'
+        }
+      }
+    })
+    .state('delegate.slate', {
+      url: "/slate",
+      reloadOnSearch: false,
+      views: {
+        'delegate-slate': {
+          templateUrl: "delegateSlate.html",
+          controller: 'delegateSlateCtrl'
+        }
+      }
     })
     .state('blocks', {
       url: "/blocks?top&trx",

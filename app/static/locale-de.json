@@ -118,7 +118,7 @@
 		"delegate": "Delegierter",
 		"trxCount": "Transaktionszähler",
 		"trxValue": "Transaktionswert",
-		"fees": "Gebühren"
+		"fees": "Gebühren",
 		"types": "Transaktionstyp"
 	},
 	"block": {
@@ -259,6 +259,9 @@
 			"title": "STIMMEN VERLAUF",
 			"total": "GESAMTSTIMMEN",
 			"net": "Netto Stimmen >= 10,000"
+		},
+		"slate": {
+			"title": "SLATE"
 		}
 	},
 	"accounts": {

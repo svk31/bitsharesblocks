@@ -280,6 +280,9 @@ angular.module('app.services', [])
 				"title": "VOTES HISTORY",
 				"total": "TOTAL VOTES",
 				"net": "Net votes >= 10,000"
+			},
+			"slate": {
+				"title": "SLATE"
 			}
 		},
 		"accounts": {

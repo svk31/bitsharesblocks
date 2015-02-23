@@ -1,0 +1,41 @@
+<div class="col-md-12 col-md-offset-0 col-xs-12 votestable no-left-padding">
+ <div class="panel panel-default">
+  <div class="panel-heading">
+   <h3 class="panel-title"></h3>
+ </div>
+ <div class="col-md-4 no-left-padding">
+   <ul class="list-group">
+     <li class="list-group-item">{{ 'delegate.feeds.total' | translate }}: <span ng-class="{'badge':true,'alert-success': (feeds[0].totalFeeds>=3), 'alert-warning': (feeds[0].totalFeeds < 3 && feeds[0].totalFeeds>=1), 'alert-danger': (feeds[0].totalFeeds<1)}">{{ feedInfo.totalFeeds}}</span></li>
+     <li class="list-group-item">{{ 'delegate.feeds.active' | translate }}: <span ng-class="{'badge':true,'alert-success': (feeds[0].activeFeeds>=3), 'alert-warning': (feeds[0].activeFeeds < 3 && feeds[0].activeFeeds>=1), 'alert-danger': (feeds[0].activeFeeds<1)}">{{ feedInfo.activeFeeds}}</span></li>
+     <li class="list-group-item"><div class="checkbox">
+       <label>
+         <input ng-model="activeBoolean" type="checkbox" ng-change="filterFeeds(activeBoolean)">{{ 'delegate.feeds.valid' | translate }}
+       </label>
+     </div>
+   </li>
+ </ul>
+</div>
+
+<div ng-if="feeds.length > 0" class="col-md-8 panel panel-default no-right-padding">
+
+  <table class="table table-condensed table-hover table-bordered">
+    <thead>
+     <tr>
+      <th ng-click="orderByField='symbol'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="symbol" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.asset' | translate }}</th>
+      <th ng-click="orderByField='last_update'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="last_update" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'asset.feeds.last' | translate }}</th>
+      <th>{{ 'home.price' | translate }}</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in feeds | orderBy: [orderByField,'-symbol']:reverseSort track by feed.symbol" class="repeated-item">
+    <td><a ui-sref="asset.orderbook({ 'asset' : feed.symbol})">{{feed.symbol}}</a></td>
+    <td>{{feed.last_update | date:'medium'}}</td>
+    <td ng-if="feed.symbol!='BTC' && feed.symbol!='GLD'">{{(feed.price | number:4)+' '+feed.symbol+'/'+'BTS'}}</td>
+    <td ng-if="feed.symbol=='BTC' || feed.symbol=='GLD'">{{(feed.price | number:7)+' '+feed.symbol+'/'+'BTS'}}</td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+

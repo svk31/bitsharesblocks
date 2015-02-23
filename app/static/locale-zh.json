@@ -258,6 +258,9 @@
       "title": "投票历史",
       "total": "投票总数",
       "net": "净票数 >= 10,000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {

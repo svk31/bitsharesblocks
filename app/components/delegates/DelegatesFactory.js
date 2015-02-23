@@ -271,6 +271,7 @@ angular.module('app')
 		var isCached = _isCached(name, rank);
 
 		if (isCached.isCached) {
+			_currentDelegate = _delegateArray[isCached.index];
 			deferred.resolve(_delegateArray[isCached.index]);
 		} else {
 			var promise = _getDelegate(name, rank, isCached);
@@ -508,6 +509,16 @@ angular.module('app')
 		};
 	}
 
+	function fetchSlate(accountName) {
+		var deferred = $q.defer();
+		api.getSlate(accountName).success(function(slate) {
+			deferred.resolve(slate);
+		})
+		.error(function(err) {
+			deferred.reject(err);
+		});
+		return deferred.promise;
+	}
 
 	return {
 		initDelegateNames: initDelegateNames,
@@ -519,7 +530,8 @@ angular.module('app')
 		fetchVotes: fetchVotes,
 		checkVersion: checkVersion,
 		fetchDelegatesByName: fetchDelegatesByName,
-		fetchDelegatesById: fetchDelegatesById
+		fetchDelegatesById: fetchDelegatesById,
+		fetchSlate: fetchSlate
 	};
 
 }]);

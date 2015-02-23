@@ -313,4 +313,11 @@ body { padding-top: 70px;
       text-transform:capitalize;
       font-size:0.85em;
     }
- 
+
+    .nav-tabs>li.active>a {
+      background-color: #EBEBEB
+    }
+
+    .nav-tabs>li.disabled>a {
+      background-color: #EBEBEB
+    }

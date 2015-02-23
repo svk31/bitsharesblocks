@@ -25,7 +25,7 @@
       <li ng-if="account.parent" class="list-group-item">{{'account.parent' | translate }}:<span style="float:right;cursor:pointer;"><a ng-click="goTo(account.parent)" >{{account.parent}}</a></span></li>
       <li ng-if="account.public_data.gui_data.website" class="list-group-item">{{'account.website' | translate }}:<a style="float:right;" ng-href="{{account.public_data.gui_data.website}}" target="_blank">{{account.public_data.gui_data.website}}</a></li>
       <li class="list-group-item">{{'account.owner' | translate }}:<span class="badge">{{account.owner_key}}</span></li>
-      <li ng-if="account.isDelegate===true" class="list-group-item">{{'blocks.delegate' | translate }}:<span style="float:right;"><a ui-sref="delegate({ 'name' : account.name })" >{{ account.name }} </a></span></li>
+      <li ng-if="account.isDelegate===true" class="list-group-item">{{'blocks.delegate' | translate }}:<span style="float:right;"><a ui-sref="delegate.info({ 'name' : account.name })" >{{ account.name }} </a></span></li>
     </ul>
   </div>
 </div>

@@ -258,6 +258,9 @@
       "title": "STORICO VOTI",
       "total": "Voti totali",
       "net": "Voti netti >= 10000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {

@@ -258,6 +258,9 @@
       "title": "OY GEÇMİŞİ",
       "total": "TOPLAM OY",
       "net": "Net Oy >= 10,000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {

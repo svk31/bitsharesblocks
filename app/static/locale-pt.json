@@ -259,6 +259,9 @@
 			"title": "HISTORICO DE VOTAÇAO",
 			"total": "TOTAL DE VOTOS",
 			"net": "Votos Liquidos >= 10,000"
+		},
+		"slate": {
+			"title": "SLATE"
 		}
 	},
 	"accounts": {

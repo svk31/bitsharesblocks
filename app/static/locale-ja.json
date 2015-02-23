@@ -257,6 +257,9 @@
       "title": "得票の内訳",
       "total": "投票",
       "net": "総得票 >= 10000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {

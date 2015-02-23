@@ -29,7 +29,7 @@
           <li class="clearfix list-group-item">{{ 'home.health.confirm' | translate }} <span ng-class="{'badge':true,'alert-success': (averageConfirm<=5), 'alert-warning': (averageConfirm>5 && averageConfirm<=10), 'alert-danger': (averageConfirm>10)}">{{averageConfirm}}s</span></li>
           <li class="clearfix list-group-item">{{ 'home.health.forks' | translate }} <span ng-class="{'badge':true,'alert-success': (home.forks.count24hrs<=3), 'alert-warning': (home.forks.count24hrs>3 && home.forks.count24hrs<=15), 'alert-danger': (home.forks.count24hrs>15)}">{{home.forks.count24hrs}}</span></li>
           <li class="clearfix list-group-item">{{ 'home.health.forkBlock' | translate }} <span style='float:right;'><a ui-sref="block({ 'id' : (home.forks.previous._id+1) })">{{previousForkHeight}}</a></span></li>
-          <li class="clearfix list-group-item">{{ 'home.health.signee' | translate }} <span style='float:right;'><a ui-sref="delegate({ 'name' : forkDelegateName})">{{forkDelegateName}}</a></span></li>
+          <li class="clearfix list-group-item">{{ 'home.health.signee' | translate }} <span style='float:right;'><a ui-sref="delegate.info({ 'name' : forkDelegateName})">{{forkDelegateName}}</a></span></li>
           <li ng-if="home.forks.previous" class="clearfix list-group-item">{{ 'home.health.latency' | translate }} <span ng-class="{'badge':true, 'alert-success': (forkLatency<1 && forkLatency>=0), 'alert-info': (forkLatency>1 && forkLatency<=2), 'alert-warning': (forkLatency>2 && forkLatency<3), 'alert-danger': (forkLatency<0 || forkLatency>3)}">{{forkLatency}}s</span></li>
         </ul>
       </div>
@@ -116,7 +116,7 @@
           <tbody >
             <tr ng-repeat="block in home.missed track by block._id " class="repeated-item">
               <td><a ui-sref="block({ 'id' : block._id })" >{{block._id  | number:0}}</a></td>
-              <td><div ng-repeat="delegate in block.delegates"><a ui-sref="delegate({ 'name' : delegate })" once-text="delegate"></a></div></td>
+              <td><div ng-repeat="delegate in block.delegates"><a ui-sref="delegate.info({ 'name' : delegate })" once-text="delegate"></a></div></td>
             </tr>
           </tbody>
         </table>
@@ -140,7 +140,7 @@
           <tbody>
             <tr ng-repeat="block in blocks | limitTo: 10 track by block._id" class="repeated-item">
               <td><a ui-sref="block({ 'id' : block._id })" >{{block._id  | number:0}}</a></td>
-              <td><a ui-sref="delegate({ 'name' : block.signee })">{{block.signee}}</td>
+              <td><a ui-sref="delegate.info({ 'name' : block.signee })">{{block.signee}}</td>
               <td class="hidden-xs">{{block.trxLength}}</td>
               <td ng-if="block.trxLength>0">
                 <span ng-repeat="value in block.totalValue">

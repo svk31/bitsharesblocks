@@ -12,7 +12,7 @@
 		</div>
 		<ul class="list-group">
 			<li class="clearfix list-group-item">{{ 'blocks.timestamp' | translate }}:<span class="badge">{{blk.timestamp | date:'medium'}}</span></li>
-			<li class="clearfix list-group-item">{{ 'block.details.signee' | translate }}:<span style="float:right;"><a ui-sref="delegate({ 'name' : blk.signee })">{{blk.signee}}</a></span></li>
+			<li class="clearfix list-group-item">{{ 'block.details.signee' | translate }}:<span style="float:right;"><a ui-sref="delegate.info({ 'name' : blk.signee })">{{blk.signee}}</a></span></li>
 			<li class="clearfix list-group-item">{{ 'block.details.shares' | translate }}:<span class="badge">{{blk.signee_shares_issued / 100000}} BTS</span></li>
 			<li class="clearfix list-group-item">{{ 'block.details.collected' | translate }}:<span class="badge">{{blk.signee_fees_collected / 100000}} BTS</span></li>
 			<li class="clearfix list-group-item">{{ 'block.details.destroyed' | translate }}:<span class="badge">{{blk.signee_fees_destroyed / 100000}} BTS</a></span></li>
@@ -45,7 +45,7 @@
 			<li class="clearfix list-group-item" >{{ 'block.trx.id' | translate }}:<span class="badge">{{ trxInfo[$index].id }}</span></li>
 			<li class="clearfix list-group-item" >{{ 'blocks.trxValue' | translate }}:<span style="float:right;clear:right;" ng-repeat="value in values[$index]"><p style="margin:0;padding:0;" ng-if="value.amount!==0"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:3}}</span> <span ng-if="value.asset==='BTS'">BTS</span> <a ng-if="value.asset!=='BTS'" ui-sref="asset.orderbook({ 'asset' : value.asset})">{{value.asset}}</a></p></span></li>
 			<li class="clearfix list-group-item" >{{ 'block.trx.fee' | translate }}:<span style="float:right;clear:right;" ng-repeat="fee in fees[$index]"><p style="margin:0;padding:0;" ng-if="fee.price!==0"><span ng-if="fee.asset=='BTC' || fee.asset=='GOLD'">{{fee.price | number:6}}</span><span ng-if="fee.asset!=='BTC' && fee.asset!=='GOLD'">{{fee.price | number:3}}</span> <span ng-if="fee.asset==='BTS'">BTS</span> <a ng-if="fee.asset!=='BTS'" ui-sref="asset.orderbook({ 'asset' : fee.asset})">{{fee.asset}}</a></p></span></li>
-			<li ng-if="trxInfo[$index].delegate" class="clearfix list-group-item" >{{ 'block.trx.delegate' | translate }}:<span style="float:right;"><a ui-sref="delegate({ 'name' : trxInfo[$index].delegate })">{{trxInfo[$index].delegate}}</a></span></li>
+			<li ng-if="trxInfo[$index].delegate" class="clearfix list-group-item" >{{ 'block.trx.delegate' | translate }}:<span style="float:right;"><a ui-sref="delegate.info({ 'name' : trxInfo[$index].delegate })">{{trxInfo[$index].delegate}}</a></span></li>
 			<li ng-if="issuerName[$index]" class="clearfix list-group-item" >{{ 'block.trx.issuer' | translate }}:<span ng-if="issuerName[$index] !== 'MARKET'"style="float:right;"><a ui-sref="account({ 'name' : issuerName[$index] })" >{{issuerName[$index]}}</a></span><span ng-if="issuerName[$index] === 'MARKET'">{{issuerName[$index]}}</span></li>
 			<li ng-if="trxInfo[$index].slate" class="clearfix list-group-item hidden-xs">{{ 'block.trx.slateID' | translate }}:<span class="badge">{{trxInfo[$index].slate | number:0}}</span></li>
 			<div class="panel panel-default">
@@ -61,7 +61,7 @@
 						<tr ng-repeat="vote in votes[$parent.$index] | orderBy: orderByField:reverseSort track by $index">
 							<td ng-if="vote !=='None'">{{(vote.amount)  | number:3}}: </td>
 							<td ng-if="vote ==='None'">{{ 'block.trx.noVotes' | translate }} </td>
-							<td ng-if="vote!=='None'"><a ui-sref="delegate({ 'name' : vote.delegate })">{{ vote.delegate }}</a></td>
+							<td ng-if="vote!=='None'"><a ui-sref="delegate.votes({ 'name' : vote.delegate })">{{ vote.delegate }}</a></td>
 						</tr>
 					</tbody>
 				</table>
