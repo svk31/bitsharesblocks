@@ -82,6 +82,8 @@
     "user": {
       "title": "STATS DES UTILISATEURS",
       "number": "Nombre de comptes",
+      "unique": "Nombre de comptes uniques",
+      "uniqueNew": "Nouveaux comptes uniques",
       "sub": "Nombre de sous-comptes",
       "new24": "Nouveaux comptes derniers 24h",
       "new7d": "Nouveaux comptes derniers 7j"
@@ -168,7 +170,11 @@
       "add_collateral": "Rajout de collateral",
       "withdraw_pay": "Retrait de pay de délégué",
       "all": "Afficher toutes les transactions",
-      "placeholder": "Filtrer par type de transaction"
+      "placeholder": "Filtrer par type de transaction",
+      "withdrawal": "Retrait",
+      "deposit": "Versement",
+      "slate": "Definir liste de délégués",
+      "slateID": "ID de la liste de délégués"
     }
   },
   "delegates": {
@@ -253,6 +259,9 @@
       "title": "HISTORIQUE DES VOTES",
       "total": "VOTES TOTALS",
       "net": "Votes nets >= 10,000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {
@@ -266,6 +275,7 @@
     "name": "Nom du compte",
     "id": "ID",
     "reg": "Date d'inscription",
+    "regBlock": "Bloc d'inscription",
     "update": "Dernier mise à jour",
     "yes": "Oui",
     "no": "Non",
@@ -323,6 +333,7 @@
     "priceH": "HISTORIQUE DE PRIX",
     "alert1": "Marché inactif: Nombre de prix exterieur insufficent",
     "alert2": "Marché inactif: Profondeur du marché insufficent",
+    "alert3": "Le carnet d'ordres est vide",
     "collateral": "Collateral",
     "supply": "RÉSERVES",
     "supplyAnd": "ET COLLATERAL (BTS) HISTORIQUE",
@@ -334,6 +345,7 @@
     "external": "Prix externe Coinmarketcap",
     "volume": "Volume",
     "marketAsset": "Actif créé par le marché",
+    "range": "Gamme de prix aujourd'hui",
     "assetInfo": {
       "title": "INFO SUR L'ACTIF",
       "base": "Actif de base",
@@ -371,7 +383,8 @@
       "prices": "TRACES DE PRIX",
       "trx": "TRACÉS DES TRANSACTIONS",
       "accounts": "TRACÉS DES COMPTES",
-      "supply": "TRACÉS DES RÉSERVES"
+      "supply": "TRACÉS DES RÉSERVES",
+      "feeds": "TRACÉS DES FLUX"
     },
     "value": "Valeur",
     "reg": "Inscription de compte",
@@ -379,7 +392,13 @@
     "feed": "Mise à jour de flux",
     "update": "Mise à jour de compte",
     "new": "Nouveaux comptes",
-    "ma15": "Moyenne mobile 15 jours"
+    "ma15": "Moyenne mobile 15 jours",
+    "feeds": {
+      "title": "SUIVI DE FLUX",
+      "latest": "Dernier prix",
+      "vwap": "Prix moyen ponderé en volume",
+      "deviation": "Deviation du flux"
+    }
   },
   "supply": {
     "title1": "INFO",

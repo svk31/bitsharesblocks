@@ -1,0 +1,22 @@
+<div class="col-md-8 col-md-offset-2 no-padding">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{ slate.slate.length }} {{('nav.delegates' | translate).toUpperCase()}}</h3>
+		</div>
+
+		<table class="table table-condensed table-hover table-bordered">
+			<thead>
+				<tr>
+					<th ng-click="orderByField='0'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="0" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'account.id' | translate }}</th>
+					<th ng-click="orderByField='1'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="1" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.delegate' | translate }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="delegate in slate.slate | orderBy: [orderByField,'0']:reverseSort track by $index" class="repeated-item">
+					<td>{{ delegate[0] }}</td>
+					<td><a ui-sref="delegate.info({ 'name' : delegate[1]})">{{ delegate[1] }}</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

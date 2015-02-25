@@ -11,8 +11,8 @@ angular.module('app')
       symbol: "$"
     }, {
       name: 'BTC',
-      label: 'BTC',
-      symbol: 'B⃦'
+      label: '\u0243 BTC',
+      symbol: '\u0243'
     }, {
       name: 'CNY',
       label: '¥ CNY',

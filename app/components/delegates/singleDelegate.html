@@ -1,145 +1,48 @@
-    <div ng-if="delegate.public_data.delegate.ann" class="col-md-12">
-    	<alert  type="warning">{{ delegate.public_data.delegate.ann }}</alert>
-    </div>
 
+<div ng-if="delegate.public_data.delegate.ann" class="col-md-12">
+	<alert  type="warning">{{ delegate.public_data.delegate.ann }}</alert>
+</div>
 
-    <div class="text-center col-md-5 col-sm-12 col-xs-12">
-    	<h1 id="delegateH">{{delegate.name}}</h1>
+  <div class="text-center col-md-12 col-sm-12 col-xs-12">
+   <h1 id="delegateH">{{delegate.name}}</h1>
 
-    	<a href="bts:{{delegate.name}}/disapprove"><span style="font-size:2em; color:red;" class="glyphicon glyphicon glyphicon-thumbs-down"></span></a>
-    	<img alt="Delegate Robo Avatar" height="100" width="100" ng-src="http://robohash.org/{{delegate.name}}.png?size=100x100" class="delegate-robo">
-    	<a ng-href="bts:{{delegate.name}}/approve"><span style="font-size:2em; color:green;" class="glyphicon glyphicon glyphicon-thumbs-up"></span></a>
+   <a href="bts:{{delegate.name}}/disapprove"><span style="font-size:2em; color:red;" class="glyphicon glyphicon glyphicon-thumbs-down"></span></a>
+   <img alt="Delegate Robo Avatar" height="150" width="150" ng-src="https://robohash.org/set_1/{{delegate.name}}?size=200x200"/>
+   <a ng-href="bts:{{delegate.name}}/approve"><span style="font-size:2em; color:green;" class="glyphicon glyphicon glyphicon-thumbs-up"></span></a>
 
-    	<div id="next-delegate">
-    		<a ng-if="delegate.rank>1" href="" ng-click="getNextDelegate(delegate.rank-1)"><span class="glyphicon glyphicon-arrow-left"></span> {{ 'delegate.prevRank' | translate }}</a>
-    		<a href="" ng-click="getNextDelegate(delegate.rank+1)">{{ 'delegate.nextRank' | translate }} <span class="glyphicon glyphicon-arrow-right"></span></a>
-    	</div>
-    </div>
+   <div id="next-delegate">
+    <a ng-show="delegate.rank > 1" href="" ng-click="getNextDelegate(delegate.rank-1)"><span class="glyphicon glyphicon-arrow-left"></span> {{ 'delegate.prevRank' | translate }}</a>
+    <a href="" ng-click="getNextDelegate(delegate.rank+1)">{{ 'delegate.nextRank' | translate }} <span class="glyphicon glyphicon-arrow-right"></span></a>
+  </div>
+</div>
 
-    <div id="delinfo" class="col-md-7 col-sm-12 col-xs-12">
-    	<div class="panel panel-default">
-    		<div class="panel-heading">
-    			<h3 class="panel-title">{{ 'delegate.data.title' | translate }}</h3>
-    		</div>
-    		<ul class="list-group">
-    			<li ng-if="role" class="list-group-item">{{ 'delegate.data.role' | translate }}:<span class="badge">{{role}}</span></li>
-                <li ng-if="delegate.public_data.delegate.proposal"  class="list-group-item">{{ 'delegate.data.proposal' | translate }}:<a style="float:right;" ng-href="{{ delegate.public_data.delegate.proposal }}" target="_blank">{{ delegate.public_data.delegate.proposal }}</a></li>
-    			<li ng-if="delegate.public_data.delegate.handle" class="list-group-item">{{ 'delegate.data.handle' | translate }}:<span class="badge">{{ delegate.public_data.delegate.handle }}</span></li>
-                <li ng-if="delegate.public_data.delegate.country"  class="list-group-item">{{ 'delegate.data.country' | translate }}:<span class="badge">{{ delegate.public_data.delegate.country }}</span></li>
-    			<li ng-if="delegate.public_data.delegate.location"  class="list-group-item">{{ 'delegate.data.location' | translate }}:<span class="badge">{{ delegate.public_data.delegate.location }}</span></li>
-    			<li ng-if="delegate.version !== 999" class="list-group-item">{{ 'footer.version' | translate }}:<span ng-class="{'badge':true, 'alert-success': (delegate.version === 1), 'alert-warning': (delegate.version === 2 ), 'alert-danger': (delegate.version > 2)}">{{delegate.public_data.version}}</span></li>
-                <li ng-if="delegate.version === 999" class="list-group-item">{{ 'footer.version' | translate }}:<span class="badge alert-danger">{{ 'delegates.no_version' | translate }}</span></li>
-    			<li ng-if="website" class="list-group-item">{{ 'delegate.data.website' | translate }}:<a style="float:right;" ng-href="{{website}}" target="_blank">{{website}}</a></li>
-    			<div ng-if="delegate.public_data.delegate.description" class="panel-body"><strong>{{ delegate.public_data.delegate.description }}</strong></div>
-    		</ul>
-    	</div>
-    </div>
+<div class="col-md-12 assets">
+  <tabset>
+    <tab style="cursor:pointer;" ng-click="goTo('delegate.votes')" active="tabs[0].active">
+      <tab-heading style="cursor:pointer;">{{ 'delegate.rank.title' | translate }}</tab-heading>
+      <div ui-view="delegate-votes"></div>
+    </tab>
 
-    <div class="col-md-5 col-sm-6 col-xs-12" style="clear:left;">
-    	<div class="panel panel-default">
-    		<div class="panel-heading">
-    			<h3 class="panel-title">{{ 'delegate.rank.title' | translate }}</h3>
-    		</div>
-    		<ul class="list-group">
-    			<li class="list-group-item"><strong>{{ 'delegate.rank.current' | translate }}:</strong><span class="badge">{{delegate.rank}}</span></li>
-    			<li class="list-group-item">{{ 'delegate.rank.dayChange' | translate }}:<span class="badge">{{delegate.dayChange}}</span></li>
-    			<li class="list-group-item">{{ 'delegate.rank.weekChange' | translate }}:<span class="badge">{{ delegate.weekChange }}</span></li>
-    			<li class="list-group-item">{{ 'delegate.rank.votes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for | number:0}} DVS</span></li>
-    			<li class="list-group-item">{{ 'delegate.rank.percentVotes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for_percent}} %</span></li>
-    		</ul>
-    	</div>
-    </div>
+    <tab style="cursor:pointer;" ng-click="goTo('delegate.info')" active="tabs[1].active">
+      <tab-heading style="cursor:pointer;">{{'delegate.info.title' | translate }}</tab-heading>
+      <div ui-view="delegate-info"></div>
+    </tab>
 
-    <div class="col-md-7 col-sm-6 col-xs-12">
-    	<div class="panel panel-default">
-    		<div class="panel-heading">
-    			<h3 class="panel-title">{{ 'delegate.votesChart' | translate }}</h3>
-    		</div>
-    		<highchart id="chart1" config="highchartsVotes"></highchart>
-    	</div>
-    </div>
+    <tab style="cursor:pointer;" ng-click="goTo('delegate.feeds')" active="tabs[2].active">
+      <tab-heading style="cursor:pointer;">{{ 'delegate.feeds.title' | translate }}</tab-heading>
+      <div ui-view="delegate-feeds"></div>
+    </tab>
 
-    <div id="delinfo" class="col-md-5 col-sm-6 col-xs-12">
-    	<div class="panel panel-default">
-    		<div class="panel-heading">
-    			<h3 class="panel-title">{{ 'delegate.info.title' | translate }}</h3>
-    		</div>
-    		<ul class="list-group">
-    			<li class="list-group-item">{{ 'account.id' | translate }}:<span class="badge">{{delegate.id}}</span></li>
-    			<li class="list-group-item">{{ 'accounts.reg' | translate }}:<span class="badge">{{delegate.registration_date | date:'short'}}</span></li>
-    			<li class="list-group-item">{{ 'accounts.update' | translate }}:<span class="badge">{{delegate.last_update | date:'short'}}</span></li>
-    			<li class="list-group-item">{{ 'delegates.rate' | translate }}:<span class="badge">{{delegate.delegate_info.pay_rate}} %</span></li>
-    			<li class="list-group-item">{{ 'delegate.info.earnings' | translate }}:<span class="badge">{{delegate.totalEarnings | number:2}} DVS</span></li>
-    			<li class="list-group-item">{{ 'delegate.info.withdrawn' | translate }}:<span class="badge">{{ delegate.withdrawn | number:2 }} DVS</span></li>
-    			<li ng-if="delegate.totalFees>0" class="list-group-item">{{ 'delegate.info.fees' | translate }}:<span class="badge">{{ delegate.totalFees | number:2 }} DVS</span></li>
-    		</ul>
-    	</div>
-    </div>
+    <tab style="cursor:pointer;" ng-click="goTo('delegate.slate')" active="tabs[3].active">
+      <tab-heading style="cursor:pointer;">{{ 'delegate.slate.title' | translate }}</tab-heading>
+      <div ui-view="delegate-slate"></div>
+    </tab>
 
-    <div ng-if="delegate.delegate_info.blocks_produced > 0" class="col-md-7 col-sm-6 col-xs-12">
-    	<div class="panel panel-default">
-    		<div class="panel-heading">
-    			<h3 class="panel-title">{{ 'delegate.payChart.title' | translate }}</h3>
-    		</div>
-    		<highchart id="chart1" config="chartPay"></highchart>
-    	</div>
-    </div>
-
-    <div class="col-md-4 col-sm-6 col-xs-12 votestable" style="clear:left;">
-    	<div class="panel panel-default">
-    		<div class="panel-heading">
-    			<h3 class="panel-title">{{ 'delegate.prod.title' | translate }}</h3>
-    		</div>
-    		<li class="list-group-item">{{ 'delegate.prod.prod' | translate }}:<span class="badge">{{delegate.delegate_info.blocks_produced}}</span></li>
-    		<li class="list-group-item">{{ 'delegate.prod.missed' | translate }}:<span class="badge">{{delegate.delegate_info.blocks_missed}}</span></li>
-    		<li ng-if="delegate.delegate_info.blocks_produced>0" class="list-group-item">{{ 'delegates.rel' | translate }}:<span ng-class="{'badge':true, 'alert-success': (delegate.reliability>=97.5), 'alert-info': (delegate.reliability<97.5 && delegate.reliability>=92.5), 'alert-warning': (delegate.reliability<92.5 && delegate.reliability>=80), 'alert-danger': (delegate.reliability<80)}">{{delegate.reliability | number:2}} %</span></li>
-    		
-            <li ng-if="delegate.delegate_info.last_block_num_produced!==0" class="list-group-item">{{ 'delegate.prod.last' | translate }}:<a style="float:right;" ui-sref="block({ 'id' : delegate.delegate_info.last_block_num_produced })" >{{delegate.delegate_info.last_block_num_produced}}</a></li>
-    		
-            <li ng-if="latencies && latencies.avg50 !== 'n/a'" class="list-group-item">{{ 'delegate.prod.lat50' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg50<1.5 && latencies.avg50>=0), 'alert-warning': (latencies.avg50>1.5 && latencies.avg50<=3), 'alert-danger': (latencies.avg50<0 || latencies.avg50>3)}">{{latencies.avg50 | number:3}}s</span></li>
-    		
-            <li ng-if="latencies && latencies.avg100 !== 'n/a'" class="list-group-item">{{ 'delegate.prod.lat100' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg100<1.5 && latencies.avg100>=0), 'alert-warning': (latencies.avg100>1.5 && latencies.avg100<=3), 'alert-danger': (latencies.avg100<0 || latencies.avg100>3)}">{{latencies.avg100  | number:3}}s</span></li>
-    		<li ng-if="latencies &&  latencies.avg200 !== 'n/a'" class="list-group-item">{{ 'delegate.prod.lat200' | translate }}:<span ng-class="{'badge':true, 'alert-success': (latencies.avg200<=1.5 && latencies.avg200>=0), 'alert-warning': (latencies.avg200>1.5 && latencies.avg200<=3), 'alert-danger': (latencies.avg200<0 || latencies.avg200>3)}">{{latencies.avg200  | number:3}}s</span></li>
-    	</div>
-    </div>
-
-    <div ng-if="delegate.rank<102" class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-12 votestable">
-    	<div class="panel panel-default">
-    		<div class="panel-heading">
-    			<h3 class="panel-title">{{ 'delegate.feeds.title' | translate }}</h3>
-    		</div>
-    		<ul class="list-group">
-    			<li class="list-group-item">{{ 'delegate.feeds.total' | translate }}: <span ng-class="{'badge':true,'alert-success': (feeds[0].totalFeeds>=3), 'alert-warning': (feeds[0].totalFeeds<3 && feeds[0].totalFeeds>=1), 'alert-danger': (feeds[0].totalFeeds<1)}">{{ feedInfo.totalFeeds}}</span></li>
-    			<li class="list-group-item">{{ 'delegate.feeds.active' | translate }}: <span ng-class="{'badge':true,'alert-success': (feeds[0].activeFeeds>=3), 'alert-warning': (feeds[0].activeFeeds<3 && feeds[0].activeFeeds>=1), 'alert-danger': (feeds[0].activeFeeds<1)}">{{ feedInfo.activeFeeds}}</span></li>
-    			<li class="list-group-item"><div class="checkbox">
-    				<label syle="margin-right:1em;">
-    					<input ng-model="$root.showFeeds" type="checkbox">{{ 'delegate.feeds.show' | translate }}
-    				</label>
-    				<label>
-    					<input ng-model="activeBoolean" type="checkbox" ng-change="filterFeeds(activeBoolean)">{{ 'delegate.feeds.valid' | translate }}
-    				</label>
-    			</div>
-    		</li>
-    	</ul>
-
-    	<table ng-if="$root.showFeeds" class="table table-condensed table-hover table-bordered">
-    		<thead>
-    			<tr>
-    				<th ng-click="orderByField='symbol'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="symbol" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.asset' | translate }}</th>
-    				<th ng-click="orderByField='last_update'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="last_update" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'asset.feeds.last' | translate }}</th>
-    				<th>{{ 'home.price' | translate }}</th>
-    			</tr>
-    		</thead>
-    		<tbody>
-    			<tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in feeds | orderBy: orderByField:reverseSort track by feed.symbol" class="repeated-item">
-    				<td><a ui-sref="asset({ 'id' : feed.symbol})">{{feed.symbol}}</td>
-    				<td>{{feed.last_update | date:'medium'}}</td>
-    				<td ng-if="feed.symbol!='BTC' && feed.symbol!='GLD'">{{(feed.price | number:4)+' '+feed.symbol+'/'+'DVS'}}</td>
-    				<td ng-if="feed.symbol=='BTC' || feed.symbol=='GLD'">{{(feed.price | number:7)+' '+feed.symbol+'/'+'DVS'}}</td>
-    			</tr>
-    		</tbody>
-    	</table>
-    </div>
+    <tab style="cursor:pointer;" ng-click="goTo('delegate.earnings')" active="tabs[4].active">
+      <tab-heading style="cursor:pointer;">{{ ('delegate.info.earnings' | translate).toUpperCase() }}</tab-heading>
+      <div ui-view="delegate-earnings"></div>
+    </tab>
+  </tabset>
 </div>
 
 <!-- <div class="col-md-5 col-md-offset-1 col-sm-6 votestable" style="clear:left">
@@ -163,15 +66,6 @@
 	</div>
 </div> -->
 
-
-<div class="col-md-4 col-sm-6 col-xs-12 votestable">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">{{ 'delegate.votes.title' | translate }} ({{votes.votesCount | number:0}} {{ 'delegate.votes.total' | translate }})<span id="dropdown" ng-click="status.open= !status.open"><i style="cursor: pointer;" class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i></span></h3>
-		</div>
-        <fast-repeat ng-if="status.open" component="'VotesTable'" data="votes.votes.votes" headers="headers"></fast-repeat>
-	</div>
-</div>
 
 
 

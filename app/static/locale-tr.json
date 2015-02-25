@@ -82,6 +82,8 @@
     "user": {
       "title": "KULLANICI BİLGİLERİ",
       "number": "Hesap sayısı",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "Alt-hesap sayısı",
       "new24": "Son 24 saatte kaydolan kullanıcılar",
       "new7d": "Son 7 günde kaydolan kullanıcılar"
@@ -167,7 +169,11 @@
       "add_collateral": "Add collateral",
       "withdraw_pay": "Delegate pay withdrawal",
       "all": "Show all transactions",
-      "placeholder": "Filter by transaction types"
+      "placeholder": "Filter by transaction types",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -252,6 +258,9 @@
       "title": "OY GEÇMİŞİ",
       "total": "TOPLAM OY",
       "net": "Net Oy >= 10,000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {
@@ -265,6 +274,7 @@
     "name": "Hesap Adı",
     "id": "ID",
     "reg": "Kayıt Tarihi",
+    "regBlock": "Registration block",
     "update": "Son güncelleme",
     "yes": "Evet",
     "no": "Hayır",
@@ -322,6 +332,7 @@
     "priceH": "FİYAT GEÇMİŞİ",
     "alert1": "Tahta kapalı: Yeterli sayıda aktif feed yok",
     "alert2": "Tahta kapalı: Yetersiz piyasa derinliği",
+    "alert3": "The orderbook is empty",
     "collateral": "Teminat",
     "supply": "ARZ",
     "supplyAnd": "VE TEMİNAT (BTS) GEÇMİŞİ",
@@ -333,6 +344,7 @@
     "external": "Harici Coinmarketcap fiyatı",
     "volume": "Hacim",
     "marketAsset": "Market issued asset",
+    "range": "Today's range",
     "assetInfo": {
       "title": "VARLIK BİLGİSİ",
       "base": "Baz Varlık",
@@ -370,7 +382,8 @@
       "prices": "PRICE CHARTS",
       "trx": "TRANSACTION CHARTS",
       "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Değer",
     "reg": "Hesap kaydı",
@@ -378,7 +391,13 @@
     "feed": "Delege feed güncellemesi",
     "update": "Hesap güncellemesi",
     "new": "Yeni hesaplar",
-    "ma15": "15-günlük Hareketli Ortalama"
+    "ma15": "15-günlük Hareketli Ortalama",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "BİLGİ",

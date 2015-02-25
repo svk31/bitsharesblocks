@@ -82,7 +82,9 @@
     "user": {
       "title": "ESTADISTICAS DE USUARIO",
       "number": "Número de cuentas",
-      "sub": "Número de sub-cuentas",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
+      "sub": "Número de sub-cuentas",      
       "new24": "Nuevas cuentas últimas 24h",
       "new7d": "Nuevas cuentas últimos 7d"
     },
@@ -167,7 +169,11 @@
       "add_collateral": "Add collateral",
       "withdraw_pay": "Delegate pay withdrawal",
       "all": "Show all transactions",
-      "placeholder": "Filter by transaction types"
+      "placeholder": "Filter by transaction types",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -252,6 +258,9 @@
       "title": "HISTORIA VOTOS",
       "total": "VOTOS TOTALES",
       "net": "Votos netos >= 10,000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {
@@ -265,6 +274,7 @@
     "name": "Nombre de Cuenta",
     "id": "Id",
     "reg": "Fecha de registración",
+    "regBlock": "Bloque de registración",
     "update": "Última actualización",
     "yes": "Sí",
     "no": "No",
@@ -322,6 +332,7 @@
     "priceH": "HISTORIA PRECIO",
     "alert1": "Mercado inactivo: Insuficiente número de feeds activos",
     "alert2": "Mercado inactivo: Insuficiente profundidad de mercado",
+    "alert3": "The orderbook is empty",
     "collateral": "Colateral",
     "supply": "OFERTA",
     "supplyAnd": "E HISTORIA COLATERALES (BTS)",
@@ -333,6 +344,7 @@
     "external": "Precio Externo de Coinmarketcap",
     "volume": "Volumen",
     "marketAsset": "Market issued asset",
+    "range": "Today's range",
     "assetInfo": {
       "title": "INFO ACTIVO",
       "base": "Activo Base",
@@ -370,7 +382,8 @@
       "prices": "PRICE CHARTS",
       "trx": "TRANSACTION CHARTS",
       "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Valor",
     "reg": "Registro de cuenta",
@@ -378,7 +391,13 @@
     "feed": "Actualización feed delegado",
     "update": "Actualización cuenta",
     "new": "Nuevas cuentas",
-    "ma15": "Media móvil 15 dias"
+    "ma15": "Media móvil 15 dias",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "INFO",

@@ -37,7 +37,14 @@ angular.module('app')
     });
 
     function fetchVolume() {
-      Assets.fetchVolume(chartDays).then(function(volume) {
+      var end = new Date();
+      var start = new Date();
+      start.setDate(start.getDate() - 7);
+
+      Assets.fetchVolume({
+        end: end,
+        start: start
+      }).then(function(volume) {
         $scope.assetCountChart.series[0].data = volume.asks;
         $scope.assetCountChart.series[1].data = volume.bids;
         $scope.assetCountChart.series[2].data = volume.shorts;

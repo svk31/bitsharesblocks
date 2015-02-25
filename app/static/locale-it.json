@@ -82,6 +82,8 @@
     "user": {
       "title": "STATISTICHE UTENTI",
       "number": "Numero di utenti",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "Numero di sotto-utenti",
       "new24": "Nuovi utenti ultime 24h",
       "new7d": "Nuovi utenti ultimi 7g"
@@ -167,7 +169,11 @@
       "add_collateral": "Add collateral",
       "withdraw_pay": "Delegate pay withdrawal",
       "all": "Show all transactions",
-      "placeholder": "Filter by transaction types"
+      "placeholder": "Filter by transaction types",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -252,6 +258,9 @@
       "title": "STORICO VOTI",
       "total": "Voti totali",
       "net": "Voti netti >= 10000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {
@@ -265,6 +274,7 @@
     "name": "Nome utente",
     "id": "Id",
     "reg": "Data registrazione",
+    "regBlock": "Blocco registrazione",
     "update": "Ultimo aggiornamento",
     "yes": "Sì",
     "no": "No",
@@ -322,6 +332,7 @@
     "priceH": "STORICO PREZZO",
     "alert1": "Mercato inattivo: Numero di feed insufficiente",
     "alert2": "Mercato inattivo: Profondità di mercato insufficiente",
+    "alert3": "The orderbook is empty",
     "collateral": "Garanzia",
     "supply": "STORICO DISPONIBILITA'",
     "supplyAnd": "E GARANZIE (BTS)",
@@ -333,6 +344,7 @@
     "external": "Prezzo su mercato esterno",
     "volume": "Volume",
     "marketAsset": "Market issued asset",
+    "range": "Today's range",
     "assetInfo": {
       "title": "INFORMAZIONI VALORE",
       "base": "Valore base",
@@ -370,7 +382,8 @@
       "prices": "PRICE CHARTS",
       "trx": "TRANSACTION CHARTS",
       "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Valore",
     "reg": "Registrazione utente",
@@ -378,7 +391,13 @@
     "feed": "Aggiornamento feed delegato",
     "update": "Aggiornamento utente",
     "new": "Nuovi utenti",
-    "ma15": "Media mobile a 15 giorni"
+    "ma15": "Media mobile a 15 giorni",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "INFORMAZIONI",

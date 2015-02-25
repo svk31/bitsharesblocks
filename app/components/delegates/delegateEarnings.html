@@ -1,0 +1,23 @@
+<div id="delinfo" class="col-md-5 col-sm-6 col-xs-12 no-left-padding">
+ <div class="panel panel-default">
+  <div class="panel-heading">
+   <h3 class="panel-title"></h3>
+ </div>
+ <ul class="list-group">
+   <li class="list-group-item">{{ 'delegates.rate' | translate }}:<span class="badge">{{delegate.delegate_info.pay_rate}} %</span></li>
+   <li class="list-group-item">{{ 'delegate.info.earnings' | translate }}:<span class="badge">{{delegate.totalEarnings | number:2}} BTS</span></li>
+   <li class="list-group-item">{{ 'delegate.info.withdrawn' | translate }}:<span class="badge">{{ delegate.withdrawn | number:2 }} BTS</span></li>
+   <li ng-if="delegate.totalFees>0" class="list-group-item">{{ 'delegate.info.fees' | translate }}:<span class="badge">{{ delegate.totalFees | number:2 }} BTS</span></li>
+   <li class="list-group-item">{{ 'genesis.balance' | translate }}:<span class="badge">{{ delegate.delegate_info.pay_balance  | number:2}} BTS</span></li>
+ </ul>
+</div>
+</div>
+
+<div ng-if="delegate.delegate_info.blocks_produced > 0" class="col-md-7 col-sm-6 col-xs-12">
+ <div class="panel panel-default">
+  <div class="panel-heading">
+   <h3 class="panel-title">{{ 'delegate.payChart.title' | translate }}</h3>
+ </div>
+ <highchart id="chart1" config="chartPay"></highchart>
+</div>
+</div>

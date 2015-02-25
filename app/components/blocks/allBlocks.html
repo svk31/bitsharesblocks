@@ -39,13 +39,13 @@
           <tr ng-repeat="block in blocks track by block._id" class="repeated-item">
             <td><a ui-sref="block({ 'id' : block._id })" >{{block._id | number:0}}</a></td>
             <td class="hidden-xs">{{block.timestamp | date:'medium'}}</td>
-            <td><a ui-sref="delegate({ 'name' : block.signee })" >{{block.signee}}</a></td>
+            <td><a ui-sref="delegate.info({ 'name' : block.signee })" >{{block.signee}}</a></td>
             <td class="hidden-xs">{{block.trxLength}}</td>
             <!-- <td>{{block.transactions.totalvalue | number:2}} DVS</td> -->
-            <td ng-if="block.trxLength>0"><span ng-repeat="value in block.totalValue"><p style="margin:0;padding:0;"><span ng-if="value.asset.indexOf('BTC') !== -1 || value.asset=='GOLD'">{{value.value | number:6}}</span><span ng-if="value.asset.indexOf('BTC') === -1 && value.asset!=='GOLD'">{{value.value | number:2}}</span> <span ng-if="value.asset==='DVS'">DVS</span> <a ng-if="value.asset!=='DVS'" ui-sref="asset({ 'id' : value.asset})">{{value.asset}}</a></p></span></td>
+            <td ng-if="block.trxLength>0"><span ng-repeat="value in block.totalValue"><p style="margin:0;padding:0;"><span ng-if="value.asset.indexOf('BTC') !== -1 || value.asset=='GOLD'">{{value.value | number:6}}</span><span ng-if="value.asset.indexOf('BTC') === -1 && value.asset!=='GOLD'">{{value.value | number:2}}</span> <span ng-if="value.asset==='DVS'">DVS</span> <a ng-if="value.asset!=='DVS'" ui-sref="asset.orderbook({ 'asset' : value.asset})">{{value.asset}}</a></p></span></td>
             <td ng-if="block.trxLength===0">0</td>
             <td><span ng-if="block.trxLength > 0" ng-repeat="type in block.uniqueTypes"><p style="margin:0;padding:0;">{{ trxTypes[type.type] }} ({{ type.count }})</p> </span><span ng-if="block.trxLength === 0">0</span></td>
-            <td ng-if="block.trxLength>0" class="hidden-xs"><span ng-repeat="fee in block.formFees"><p style="margin:0;padding:0;" ng-if="fee.price!==0"><span ng-if="fee.asset=='BTC' || fee.asset=='GOLD'">{{fee.price | number:6}}</span><span ng-if="fee.asset!=='BTC' && fee.asset!=='GOLD'">{{fee.price | number:2}}</span> <span ng-if="fee.asset==='DVS'">DVS</span> <a ng-if="fee.asset!=='DVS'" ui-sref="asset({ 'id' : fee.asset})">{{fee.asset}}</a></p></span></td>
+            <td ng-if="block.trxLength>0" class="hidden-xs"><span ng-repeat="fee in block.formFees"><p style="margin:0;padding:0;" ng-if="fee.price!==0"><span ng-if="fee.asset=='BTC' || fee.asset=='GOLD'">{{fee.price | number:6}}</span><span ng-if="fee.asset!=='BTC' && fee.asset!=='GOLD'">{{fee.price | number:2}}</span> <span ng-if="fee.asset==='DVS'">DVS</span> <a ng-if="fee.asset!=='DVS'" ui-sref="asset.orderbook({ 'asset' : fee.asset})">{{fee.asset}}</a></p></span></td>
             <td ng-if="block.trxLength===0" class="hidden-xs">0</td>
           </tr>
         </tbody>

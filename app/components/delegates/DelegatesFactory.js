@@ -271,6 +271,7 @@ angular.module('app')
 		var isCached = _isCached(name, rank);
 
 		if (isCached.isCached) {
+			_currentDelegate = _delegateArray[isCached.index];
 			deferred.resolve(_delegateArray[isCached.index]);
 		} else {
 			var promise = _getDelegate(name, rank, isCached);
@@ -320,6 +321,11 @@ angular.module('app')
 
 			// Check version
 			delegate = checkVersion(delegate);
+
+			// Format values
+			delegate.votesFor = $filter('number')(delegate.delegate_info.votes_for, 0);
+			delegate.blocksProduced = $filter('number')(delegate.delegate_info.blocks_produced, 0);
+			delegate.blocksMissed = $filter('number')(delegate.delegate_info.blocks_missed, 0);
 		});
 
 		return delegates;
@@ -360,7 +366,7 @@ angular.module('app')
 							}
 						}
 					} else {
-						delegate.version = 1 - deltaMinor;
+						delegate.version = 1 - 2 * deltaMinor;
 					}
 				} else {
 					delegate.version = 999;
@@ -503,6 +509,16 @@ angular.module('app')
 		};
 	}
 
+	function fetchSlate(accountName) {
+		var deferred = $q.defer();
+		api.getSlate(accountName).success(function(slate) {
+			deferred.resolve(slate);
+		})
+		.error(function(err) {
+			deferred.reject(err);
+		});
+		return deferred.promise;
+	}
 
 	return {
 		initDelegateNames: initDelegateNames,
@@ -514,7 +530,8 @@ angular.module('app')
 		fetchVotes: fetchVotes,
 		checkVersion: checkVersion,
 		fetchDelegatesByName: fetchDelegatesByName,
-		fetchDelegatesById: fetchDelegatesById
+		fetchDelegatesById: fetchDelegatesById,
+		fetchSlate: fetchSlate
 	};
 
 }]);

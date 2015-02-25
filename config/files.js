@@ -14,16 +14,17 @@ module.exports = function(lineman) {
         "vendor/js/temp/react.js",
         "vendor/js/temp/highstock.src.js",
         "vendor/js/angular.js",
+        "vendor/js/angular-ui-router.min.js",
         "vendor/js/angular-translate.js",
         "vendor/js/angular-translate-loader-static-files.min.js",
         "vendor/js/angular-translate-storage-cookie.min.js",
-        "vendor/js/angular-translate-storage-local.min.js",
-        "vendor/js/temp/angular-ui-router.js",
+        "vendor/js/angular-translate-storage-local.min.js",        
+        "vendor/js/underscore.js",
+        "vendor/js/tooltip.js",
         "vendor/js/**/*.js",
         "!vendor/js/temp/jquery.js",
         "!vendor/js/temp/react.js",
-        "!vendor/js/temp/highstock.src.js",
-        "!vendor/js/temp/angular-ui-router.js"
+        "!vendor/js/temp/highstock.src.js"
       ],
       app: [
         "app/js/app.js",

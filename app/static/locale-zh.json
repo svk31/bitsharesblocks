@@ -82,6 +82,8 @@
     "user": {
       "title": "用户统计",
       "number": "账户数量",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "sub": "子账户数量",
       "new24": "过去24小时的新账户",
       "new7d": "过去7天的新账号"
@@ -167,7 +169,11 @@
       "add_collateral": "Add collateral",
       "withdraw_pay": "Delegate pay withdrawal",
       "all": "Show all transactions",
-      "placeholder": "Filter by transaction types"
+      "placeholder": "Filter by transaction types",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -252,6 +258,9 @@
       "title": "投票历史",
       "total": "投票总数",
       "net": "净票数 >= 10,000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {
@@ -265,6 +274,7 @@
     "name": "帐户名",
     "id": "ID",
     "reg": "注册日期",
+    "regBlock": "Registration block",
     "update": "最后更新",
     "yes": "是的",
     "no": "没有",
@@ -322,6 +332,7 @@
     "priceH": "价格历史",
     "alert1": "市场不活跃：没有足够的活跃喂价种子数目",
     "alert2": "市场不活跃：没有足够的市场深度",
+    "alert3": "The orderbook is empty",
     "collateral": "抵押品",
     "supply": "供应",
     "supplyAnd": "以及抵押品（BTS）历史",
@@ -333,6 +344,7 @@
     "external": "外部Coinmarketcap价格",
     "volume": "交易量",
     "marketAsset": "Market issued asset",
+    "range": "Today's range",
     "assetInfo": {
       "title": "资产信息",
       "base": "基础资产",
@@ -370,7 +382,8 @@
       "prices": "PRICE CHARTS",
       "trx": "TRANSACTION CHARTS",
       "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "价值",
     "reg": "账户注册",
@@ -378,7 +391,13 @@
     "feed": "受托人喂价种子更新",
     "update": "账号更新",
     "new": "新账号",
-    "ma15": "15天移动平均价"
+    "ma15": "15天移动平均价",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "INFO",

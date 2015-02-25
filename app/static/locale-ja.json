@@ -83,6 +83,8 @@
       "title": "ユーザー統計",
       "number": "総アカウントの数",
       "sub": "総下位アカウントの数",
+      "unique": "Number of unique accounts",
+      "uniqueNew": "New unique accounts",
       "new24": "最近２４時間内の新しいアカウント",
       "new7d": " 最近七日間の新しいアカウント"
     },
@@ -165,7 +167,13 @@
       "asset_create": "資産発行",
       "asset_issue": "Issue asset",
       "add_collateral": "Add collateral",
-      "withdraw_pay": "Delegate pay withdrawal"
+      "withdraw_pay": "Delegate pay withdrawal",
+      "all": "Show all transactions",
+      "placeholder": "Filter by transaction types",
+      "withdrawal": "Withdrawal",
+      "deposit": "Deposit",
+      "slate": "Define delegate slate",
+      "slateID": "Delegate slate ID"
     }
   },
   "delegates": {
@@ -249,6 +257,9 @@
       "title": "得票の内訳",
       "total": "投票",
       "net": "総得票 >= 10000"
+    },
+    "slate": {
+      "title": "SLATE"
     }
   },
   "accounts": {
@@ -262,6 +273,7 @@
     "name": "アカウントネーム",
     "id": "ID",
     "reg": "登録日付",
+    "regBlock": "Registration block",
     "update": "ラストアップデート",
     "yes": "はい",
     "no": "いいえ",
@@ -319,6 +331,7 @@
     "priceH": "プライス推移",
     "alert1": "マーケット不活性:フィード数不十分",
     "alert2": "マーケット不活性:マーケットの深さ不十分",
+    "alert3": "The orderbook is empty",
     "collateral": "担保",
     "supply": "供給量",
     "supplyAnd": "及び担保(BTS)推移",
@@ -330,6 +343,7 @@
     "external": "外部Coinmarketcapプライス",
     "volume": "取引き量",
     "marketAsset": "マーケット発行資産",
+    "range": "Today's range",
     "assetInfo": {
       "title": "資産情報",
       "base": "基準資産",
@@ -367,7 +381,8 @@
       "prices": "PRICE CHARTS",
       "trx": "TRANSACTION CHARTS",
       "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+      "supply": "SUPPLY CHARTS",
+      "feeds": "FEEDS CHARTS"
     },
     "value": "Value",
     "reg": "アカウント登録",
@@ -375,7 +390,13 @@
     "feed": "代表者フィードアップデート",
     "update": "アカウントアップデート",
     "new": "ニューアカウント",
-    "ma15": "１５日移動平均"
+    "ma15": "１５日移動平均",
+    "feeds": {
+      "title": "FEED TRACKING",
+      "latest": "Latest price",
+      "vwap": "24hr weighted average price",
+      "deviation": "Deviation from feed"
+    }
   },
   "supply": {
     "title1": "情報",

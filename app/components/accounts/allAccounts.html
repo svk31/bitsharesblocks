@@ -24,6 +24,7 @@
             <th>{{ 'accounts.name' | translate }}</th>
             <th>{{ 'accounts.id' | translate }}</th>
             <th>{{ 'accounts.reg' | translate }}</th>
+            <th>{{ 'accounts.regBlock' | translate }}</th>
             <th class="hidden-xs">{{ 'accounts.update' | translate }}</th>
             <th> {{ 'accounts.wall' | translate }} </th>
             <th>{{ 'blocks.delegate' | translate }}</th>
@@ -35,6 +36,7 @@
             <td><a ui-sref="account({ 'name' : account.name })" >{{account.name}}</a></td>
             <td>{{account._id}}</td>
             <td>{{account.registration_date | date:'medium'}}</td>
+            <td><a ng-if="account.reg_block!==0" ui-sref="block({ 'id' : account.reg_block })" >{{account.reg_block | number:0}}</a><span ng-if="account.reg_block === 0">{{ 'nav.btsxgenesis' | translate }}</span></td>
             <td class="hidden-xs">{{account.last_update | date:'medium'}}</td>
             <td><span ng-repeat="value in account.burnArray"><p style="margin:0;padding:0;"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:2}}</span> <span ng-if="value.asset==='DVS'"> {{ value.asset }}</span> <a ng-if="value.asset!=='DVS'" ui-sref="asset({ 'id' : value.asset})">{{value.asset}}</a></p></span></td>
             <td class="success" ng-if="account.isDelegate===true">{{'accounts.yes' | translate}}</td>

@@ -24,7 +24,6 @@ angular.module('app')
     function fetchAccounts(mostRecent, highestId, query) {
 
       Accounts.fetchAccounts(mostRecent, highestId, query).then(function(result) {
-
         $scope.accounts = result.accounts;
         $scope.accountsCount = result.accountsCount;
 

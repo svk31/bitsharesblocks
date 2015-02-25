@@ -82,6 +82,8 @@
 		"user": {
 			"title": "USER STATS",
 			"number": "Number of accounts",
+			"unique": "Number of unique accounts",
+			"uniqueNew": "New unique accounts",
 			"sub": "Number of sub-accounts",
 			"new24": "New accounts last 24h",
 			"new7d": "New accounts last 7d"
@@ -168,7 +170,11 @@
 			"add_collateral": "Add collateral",
 			"withdraw_pay": "Delegate pay withdrawal",
 			"all": "Show all transactions",
-			"placeholder": "Filter by transaction types"
+			"placeholder": "Filter by transaction types",
+			"withdrawal": "Withdrawal",
+			"deposit": "Deposit",
+			"slate": "Define delegate slate",
+			"slateID": "Delegate slate ID"
 		}
 	},
 	"delegates": {
@@ -253,6 +259,9 @@
 			"title": "VOTES HISTORY",
 			"total": "TOTAL VOTES",
 			"net": "Net votes >= 10,000"
+		},
+		"slate": {
+			"title": "SLATE"
 		}
 	},
 	"accounts": {
@@ -266,6 +275,7 @@
 		"name": "Account Name",
 		"id": "Id",
 		"reg": "Registration date",
+		"regBlock": "Registration block",
 		"update": "Last update",
 		"yes": "Yes",
 		"no": "No",
@@ -282,8 +292,8 @@
 		"key": "Key",
 		"website": "Website",
 		"burn": "WALL BURNS",
-    "parent": "Parent account",
-    "subs": "Sub-accounts"
+		"parent": "Parent account",
+		"subs": "Sub-accounts"
 	},
 	"assets": {
 		"plot": {
@@ -323,6 +333,7 @@
 		"priceH": "PRICE HISTORY",
 		"alert1": "Market inactive: Insufficient number of active feeds",
 		"alert2": "Market inactive: Insufficient market depth",
+		"alert3": "The orderbook is empty",
 		"collateral": "Collateral",
 		"supply": "SUPPLY",
 		"supplyAnd": "AND COLLATERAL (BTS) HISTORY",
@@ -334,6 +345,7 @@
 		"external": "External Coinmarketcap price",
 		"volume": "Volume",
 		"marketAsset": "Market issued asset",
+		"range": "Today's range",
 		"assetInfo": {
 			"title": "ASSET INFO",
 			"base": "Base Asset",
@@ -351,12 +363,12 @@
 			"null": "Not enough feeds in the last 24hrs",
 			"last": "Last update (UTC)"
 		},
-    "covers": {
-      "title": "MARGIN CALL ORDERS",
-      "price": "Call price",
-      "owed": "Owed",
-      "expiration": "Expiration date"
-    }
+		"covers": {
+			"title": "MARGIN CALL ORDERS",
+			"price": "Call price",
+			"owed": "Owed",
+			"expiration": "Expiration date"
+		}
 	},
 	"charts": {
 		"titles": {
@@ -368,10 +380,11 @@
 			"volume": "BTS TRANSACTION VOLUME",
 			"btcPrice": "BTS/BTC PRICE HISTORY",
 			"usdPrice": "PRICE HISTORY",
-      "prices": "PRICE CHARTS",
-      "trx": "TRANSACTION CHARTS",
-      "accounts": "ACCOUNTS CHARTS",
-      "supply": "SUPPLY CHARTS"
+			"prices": "PRICE CHARTS",
+			"trx": "TRANSACTION CHARTS",
+			"accounts": "ACCOUNTS CHARTS",
+			"supply": "SUPPLY CHARTS",
+			"feeds": "FEEDS CHARTS"
 		},
 		"value": "Value",
 		"reg": "Account registration",
@@ -379,7 +392,13 @@
 		"feed": "Delegate feed update",
 		"update": "Account update",
 		"new": "New accounts",
-		"ma15": "15-day Moving Average"
+		"ma15": "15-day Moving Average",
+		"feeds": {
+			"title": "FEED TRACKING",
+			"latest": "Latest price",
+			"vwap": "24hr weighted average price",
+			"deviation": "Deviation from feed"
+		}
 	},
 	"supply": {
 		"title1": "INFO",

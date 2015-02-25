@@ -2,22 +2,22 @@
 <html ng-app="app">
   <head>
     <base href="/">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title data-ng-bind="meta.title"></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="fragment" content="!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="shortcut icon" href="http://www.bitsharesblocks.com/favicon.ico?v=2" />
+    <meta name="description" content="{{meta.description}}">
+    <meta name="author" content="Sigve Kvalsvik">
+    <link rel="shortcut icon" href="http://bitsharesblocks.com/favicon.ico?v=2" />
     <link rel="stylesheet" href="css/app.css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="js/app.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js"></script>
-    
-    <title>BitsharesBlocks - Devshares Blockchain Explorer and Delegates Info</title>
-  <meta name="description" content="Devshares Block Explorer, Delegates Listing, Assets Overview. Realtime updates, block search, asset information for the next-gen 2.0 crypto Bitshares"></head>
-  <body>
+     <script src="js/app.js"></script>
+  </head>
+  <body ng-cloak>
     <header class="navbar navbar-default navbar-fixed-top" role="navigation" bs-navbar>
       <div class="navbar-inner">
         <div style="margin:0 1em;" >
@@ -28,11 +28,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a style="padding-top:5px" class="navbar-brand visible-xs" ui-sref="home"><img class="visible-xs" src="img/bitsharesbocks-weblogo-small.png"/><img class="hidden-xs" src="img/bitsharesbocks-weblogo-medium.png"/></a>
+            <a style="padding-top:5px" class="navbar-brand visible-sm visible-xs" ui-sref="home"><img class="visible-sm visible-xs" src="img/bitsharesbocks-weblogo-small.png"/><img class="hidden-sm hidden-xs" src="img/bitsharesbocks-weblogo-medium.png"/></a>
           </div>
-          <nav class="hidden-xs">
+          <nav class="hidden-sm hidden-xs">
             <ul class="nav navbar-nav">
-              <a ui-sref="home" role="button" class="navbar-brand" style="padding-top:5px;"><img class="visible-xs" src="img/bitsharesbocks-weblogo-small.png"/><img class="hidden-xs" src="img/bitsharesbocks-weblogo-medium.png"/></a>
+              <a ui-sref="home" role="button" class="navbar-brand" style="padding-top:5px;"><img class="visible-sm visible-xs" src="img/bitsharesbocks-weblogo-small.png"/><img class="hidden-sm hidden-xs" src="img/bitsharesbocks-weblogo-medium.png"/></a>
               <li ui-sref-active='active'>
                 <a ui-sref="home">{{ 'nav.home' | translate }}</a>
               </li>
@@ -54,21 +54,20 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
-                  <!-- <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li> -->
                   <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
                   <!-- <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li> -->
                 </ul>
               </li>
             </ul>
           </nav>
-          <nav class="hidden-xs">
+          <nav class="hidden-sm hidden-xs">
             <ul class="nav navbar-nav navbar-right">
               <li ui-sref-active='active'>
                 <a ui-sref="about">{{ 'nav.about' | translate }}</a>
               </li>
             </ul>
           </nav>
-          <nav class="visible-xs " collapse="!isCollapsed" ng-mouseleave="isCollapsed = false">
+          <nav class="visible-sm visible-xs " collapse="!isCollapsed" ng-mouseleave="isCollapsed = false">
             <ul class="nav navbar-nav">
               <li ui-sref-active='active'>
                 <a ui-sref="home">{{ 'nav.home' | translate }}</a>
@@ -91,7 +90,6 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
-                  <!-- <li><a ui-sref="supply">{{ 'nav.supply' | translate }}</a></li> -->
                   <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
                   <!-- <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li> -->
                 </ul>
@@ -118,8 +116,9 @@
         <label style="display:inline-block; margin-left:1.5em;">{{ 'footer.language' | translate }}:&nbsp;</label><i class="fa fa-globe fa-lg"></i>
         <button style="border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="top" ng-model="language" ng-options="language.value for language in languages" bs-select>
         Action <span class="caret"></span>
-        <!-- </button>
-        <button type="button" style="margin-left:1.5em" class="btn btn-default" placement="bottom" data-animation="am-fade-and-slide-top" data-template="apiModal.html" container="body" bs-modal="modal">{{ 'apiModal.api' | translate }}
+        </button>
+        <!-- <button type="button" style="margin-left:1.5em" class="btn btn-default" placement="bottom" data-animation="am-fade-and-slide-top" data-template="apiModal.html" container="body" bs-modal="modal">{{ 'apiModal.api' | translate }}
+>>>>>>> master
         <br>
         </button> -->
         </small>
@@ -131,6 +130,7 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-47309945-4', 'auto');
-    </script>
+    </script>   
+
   </body>
 </html>

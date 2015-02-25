@@ -1,7 +1,7 @@
 <div class="text-center col-xs-12">
   <h1 id="delegateH">{{account.name}}</h1>
 
-  <img alt="Account Robo Avatar" height="100" width="100" ng-src="http://robohash.org/{{account.name}}.png?size=100x100" class="delegate-robo">
+  <img alt="Account Robo Avatar" height="150" width="150" ng-src="https://robohash.org/set_1/{{account.name}}?size=200x200">
 
   <div class="container" id="next-delegate">
     <a ng-if="account._id>1" href="" ng-click="getNextAccount(account._id-1)" analytics-on analytics-event="Previous Account" analytics-category="Navigation" analytics-label="Previous Account"><span class="glyphicon glyphicon-arrow-left"></span> {{'account.previous' | translate }}</a>
@@ -17,6 +17,7 @@
     <ul class="list-group">
       <li class="list-group-item">{{'account.id' | translate }}:<span class="badge">{{account._id}}</span></li>
       <li class="list-group-item">{{'accounts.reg' | translate }}:<span class="badge">{{account.registration_date | date:'short'}}</span></li>
+      <li class="list-group-item">{{'accounts.regBlock' | translate }}:<a ng-if="account.reg_block !== 0" style="float:right;"ui-sref="block({ 'id' : account.reg_block })" >{{account.reg_block | number:0}}</a><span class="badge" ng-if="account.reg_block === 0">{{ 'nav.btsxgenesis' | translate }}</span></li>
       <li class="list-group-item">{{'accounts.update' | translate }}:<span class="badge">{{account.last_update | date:'short'}}</span></li>
 
       <li ng-if="account.public_data.version" class="list-group-item">{{'footer.version' | translate }}:<span ng-class="{'badge':true, 'alert-success': (account.version === 1), 'alert-warning': (account.version === 2 ), 'alert-danger': (account.version > 2)}">{{account.public_data.version}}</span></li>
@@ -24,7 +25,7 @@
       <li ng-if="account.parent" class="list-group-item">{{'account.parent' | translate }}:<span style="float:right;cursor:pointer;"><a ng-click="goTo(account.parent)" >{{account.parent}}</a></span></li>
       <li ng-if="account.public_data.gui_data.website" class="list-group-item">{{'account.website' | translate }}:<a style="float:right;" ng-href="{{account.public_data.gui_data.website}}" target="_blank">{{account.public_data.gui_data.website}}</a></li>
       <li class="list-group-item">{{'account.owner' | translate }}:<span class="badge">{{account.owner_key}}</span></li>
-      <li ng-if="account.isDelegate===true" class="list-group-item">{{'blocks.delegate' | translate }}:<span style="float:right;"><a ui-sref="delegate({ 'name' : account.name })" >{{ account.name }} </a></span></li>
+      <li ng-if="account.isDelegate===true" class="list-group-item">{{'blocks.delegate' | translate }}:<span style="float:right;"><a ui-sref="delegate.info({ 'name' : account.name })" >{{ account.name }} </a></span></li>
     </ul>
   </div>
 </div>

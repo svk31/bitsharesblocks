@@ -103,6 +103,8 @@ angular.module('app.services', [])
 			"user": {
 				"title": "USER STATS",
 				"number": "Number of accounts",
+				"unique": "Number of unique accounts",
+				"uniqueNew": "New unique accounts",
 				"sub": "Number of sub-accounts",
 				"new24": "New accounts last 24h",
 				"new7d": "New accounts last 7d"
@@ -189,7 +191,11 @@ angular.module('app.services', [])
 				"add_collateral": "Add collateral",
 				"withdraw_pay": "Delegate pay withdrawal",
 				"all": "Show all transactions",
-				"placeholder": "Filter by transaction types"
+				"placeholder": "Filter by transaction types",
+				"withdrawal": "Withdrawal",
+				"deposit": "Deposit",
+				"slate": "Define delegate slate",
+				"slateID": "Delegate slate ID"
 			}
 		},
 		"delegates": {
@@ -274,6 +280,9 @@ angular.module('app.services', [])
 				"title": "VOTES HISTORY",
 				"total": "TOTAL VOTES",
 				"net": "Net votes >= 10,000"
+			},
+			"slate": {
+				"title": "SLATE"
 			}
 		},
 		"accounts": {
@@ -287,6 +296,7 @@ angular.module('app.services', [])
 			"name": "Account Name",
 			"id": "Id",
 			"reg": "Registration date",
+			"regBlock": "Registration block",
 			"update": "Last update",
 			"yes": "Yes",
 			"no": "No",
@@ -344,6 +354,7 @@ angular.module('app.services', [])
 			"priceH": "PRICE HISTORY",
 			"alert1": "Market inactive: Insufficient number of active feeds",
 			"alert2": "Market inactive: Insufficient market depth",
+			"alert3": "The orderbook is empty",
 			"collateral": "Collateral",
 			"supply": "SUPPLY",
 			"supplyAnd": "AND COLLATERAL (DVS) HISTORY",
@@ -355,6 +366,7 @@ angular.module('app.services', [])
 			"external": "External Coinmarketcap price",
 			"volume": "Volume",
 			"marketAsset": "Market issued asset",
+			"range": "Today's range",
 			"assetInfo": {
 				"title": "ASSET INFO",
 				"base": "Base Asset",
@@ -377,6 +389,11 @@ angular.module('app.services', [])
 				"price": "Call price",
 				"owed": "Owed",
 				"expiration": "Expiration date"
+			},
+			"order_history": {
+				"title": "ORDER HISTORY",
+				"paid": "Paid",
+				"received": "Received"
 			}
 		},
 		"charts": {
@@ -392,7 +409,8 @@ angular.module('app.services', [])
 				"prices": "PRICE CHARTS",
 				"trx": "TRANSACTION CHARTS",
 				"accounts": "ACCOUNTS CHARTS",
-				"supply": "SUPPLY CHARTS"
+				"supply": "SUPPLY CHARTS",
+				"feeds": "FEEDS CHARTS"
 			},
 			"value": "Value",
 			"reg": "Account registration",
@@ -400,7 +418,13 @@ angular.module('app.services', [])
 			"feed": "Delegate feed update",
 			"update": "Account update",
 			"new": "New accounts",
-			"ma15": "15-day Moving Average"
+			"ma15": "15-day Moving Average",
+			"feeds": {
+				"title": "FEED TRACKING",
+				"latest": "Latest price",
+				"vwap": "24hr weighted average price",
+				"deviation": "Deviation from feed"
+			}
 		},
 		"supply": {
 			"title1": "INFO",
