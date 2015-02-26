@@ -54,7 +54,8 @@ angular.module('app')
 			});
 
 			// VOTES
-			var currentVotes = (trx[1].net_delegate_votes) ? trx[1].net_delegate_votes : trx[1].delegate_vote_deltas;
+			var currentVotes = (trx[1].net_delegate_votes) ? trx[1].net_delegate_votes : 
+			(trx[1].delegate_vote_deltas) ? trx[1].delegate_vote_deltas : trx[1].delta_votes;
 			var precision = Assets.getPrecision(0);
 			if (currentVotes.length === 0) {
 				tempVotes = {
