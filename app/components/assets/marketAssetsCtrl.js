@@ -26,7 +26,7 @@ angular.module('app')
       symbol: '€'
     }, {
       name: 'BTS',
-      label: 'BTS',
+      label: 'DVS',
       symbol: ''
     }];
 

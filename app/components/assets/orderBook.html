@@ -25,7 +25,7 @@
           </li>
           <li>
             <span style="display:block;">{{ 'assets.market.th7' | translate }}:</span>
-            <span style="display:block;">{{ asset.dailyVolume | number:2 }} BTS</span>
+            <span style="display:block;">{{ asset.dailyVolume | number:2 }} DVS</span>
           </li>
         </ul>
       </h3>
@@ -41,9 +41,9 @@
     </div>
     <table class="table table-condensed table-hover">
 
-      <th>{{ 'home.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+      <th>{{ 'home.price' | translate }} (DVS/{{prefix+asset.symbol}})</th>
       <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
-      <th>{{ 'block.trx.amount' | translate }} (BTS)</th>
+      <th>{{ 'block.trx.amount' | translate }} (DVS)</th>
     </thead>
     <tbody>
       <tr ng-repeat="ask in asset.asks | limitTo:10  track by $index">
@@ -63,9 +63,9 @@
     </div>
     <table class="table table-condensed table-hover">
       <thead>
-        <th>{{ 'home.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+        <th>{{ 'home.price' | translate }} (DVS/{{prefix+asset.symbol}})</th>
         <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.amount' | translate }} (BTS)</th>
+        <th>{{ 'block.trx.amount' | translate }} (DVS)</th>
       </thead>
       <tbody>
         <tr ng-repeat="bid in asset.bids | orderBy:'price' | limitTo:10 track by $index">
@@ -86,10 +86,10 @@
     <table class="table table-condensed table-hover">
       <thead>
         <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.amount' | translate }} (BTS)</th>
-        <th>{{ 'block.trx.collateral' | translate }} (BTS)</th>
+        <th>{{ 'block.trx.amount' | translate }} (DVS)</th>
+        <th>{{ 'block.trx.collateral' | translate }} (DVS)</th>
         <th>{{ 'block.trx.interest' | translate }} (%)</th>
-        <th>{{ 'block.trx.priceLimit' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.priceLimit' | translate }} (DVS/{{prefix+asset.symbol}})</th>
       </thead>
       <tbody>
         <tr ng-repeat="short in asset.shorts | limitTo:10  track by $index">
@@ -149,10 +149,10 @@
     </div>
     <table class="table table-condensed table-hover">
       <thead>
-        <th>{{ 'asset.covers.price' | translate }} (BTS/{{prefix+asset.symbol}})</th>
+        <th>{{ 'asset.covers.price' | translate }} (DVS/{{prefix+asset.symbol}})</th>
         <th>{{ 'block.trx.interest' | translate }} (%)</th>
         <th>{{ 'asset.covers.owed' | translate }} ({{ prefix+asset.symbol }})</th>
-        <th>{{ 'block.trx.collateral' | translate }} (BTS)</th>        
+        <th>{{ 'block.trx.collateral' | translate }} (DVS)</th>        
         <th>{{ 'asset.covers.expiration' | translate }}</th>
 
       </thead>

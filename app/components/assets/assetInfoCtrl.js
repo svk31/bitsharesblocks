@@ -17,7 +17,7 @@ angular.module('app')
     var toolTip = {
       enabled: true,
       shared: false,
-      valueSuffix: ' BTS',
+      valueSuffix: ' DVS',
       valueDecimals: 0,
       headerFormat: '<span style="font-size: 10px">Price: {point.key:.3f}</span><br/>',
     };
@@ -48,7 +48,7 @@ angular.module('app')
       yAxis: 1,
       tooltip: {
         valueDecimals: 0,
-        valueSuffix: ' BTS'
+        valueSuffix: ' DVS'
       }
     }));
 
@@ -223,7 +223,7 @@ angular.module('app')
           id: 1,
           tooltip: {
             valueDecimals: 2,
-            valueSuffix: ' BTS'
+            valueSuffix: ' DVS'
           },
           marker: {
             enabled: false
@@ -250,11 +250,11 @@ angular.module('app')
 
     function chartText() {
       if ($scope.priceHistoryChart.series[2]) {
-        $scope.priceHistoryChart.series[2].tooltip.valueSuffix = ' BTS/' + $scope.assetId;
+        $scope.priceHistoryChart.series[2].tooltip.valueSuffix = ' DVS/' + $scope.assetId;
       }
 
-      $scope.priceHistoryChart.series[0].tooltip.valueSuffix = ' BTS/' + $scope.prefix + $scope.assetId;
-      $scope.priceHistoryChart.series[1].tooltip.valueSuffix = ' BTS';
+      $scope.priceHistoryChart.series[0].tooltip.valueSuffix = ' DVS/' + $scope.prefix + $scope.assetId;
+      $scope.priceHistoryChart.series[1].tooltip.valueSuffix = ' DVS';
 
 
       if (marketAsset) {

@@ -217,8 +217,8 @@ angular.module('app')
 				trxInfo.burn = true;
 			}
 			if (trx[1].trx.operations[j].type === 'withdraw_pay_op_type' && trxInfo.trxCode !== 8) {
-				trxInfo.ops[j].amount = $filter('number')((trx[1].trx.operations[j].data.amount) / Assets.getPrecision(0), 4) + ' BTS';
-				trxInfo.ops[j].asset = 'BTS';
+				trxInfo.ops[j].amount = $filter('number')((trx[1].trx.operations[j].data.amount) / Assets.getPrecision(0), 4) + ' DVS';
+				trxInfo.ops[j].asset = 'DVS';
 				delegateID = trx[1].trx.operations[j].data.account_id;
 				fetchName = true;
 			}

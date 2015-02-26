@@ -74,7 +74,7 @@ angular.module('app')
       id: 'primary',
       labels: {
         align: 'left',
-        format: '{value}' + ' USD/BTS',
+        format: '{value}' + ' USD/DVS',
       }
     }, { // Secondary yAxis
       opposite: false,
@@ -85,7 +85,7 @@ angular.module('app')
 
     var toolTip = {
       valueDecimals: 5,
-      valueSuffix: ' USD/BTS'
+      valueSuffix: ' USD/DVS'
     };
 
     $scope.feedsChart = new Charts.chartConfig({
@@ -144,7 +144,7 @@ angular.module('app')
         for (i = 0; i < 3; i++) {
           $scope.feedsChart.series[i].tooltip = {
             valueDecimals: valueDecimals,
-            valueSuffix: ' ' + asset + '/BTS'
+            valueSuffix: ' ' + asset + '/DVS'
           };
         }
 
@@ -152,7 +152,7 @@ angular.module('app')
           id: 'primary',
           labels: {
             align: 'left',
-            format: '{value}' + ' ' + asset + '/BTS',
+            format: '{value}' + ' ' + asset + '/DVS',
           }
         };
       });

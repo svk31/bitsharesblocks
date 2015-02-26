@@ -28,11 +28,11 @@
     <ul class="list-group">
       <li class="clearfix list-group-item">{{ 'asset.market.reserve' | translate }}: <span class="badge">{{((asset.collected_fees/asset.precision) | number:2) + ' '+asset.symbol}}</span></li>
       <li class="clearfix list-group-item">{{ 'assets.user.th4' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'"class="badge">{{(asset.current_share_supply | number:0) + ' '+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'"class="badge">{{(asset.current_share_supply | number:2) + ' '+asset.symbol}}</span></li>
-      <li ng-if="collateral" class="clearfix list-group-item">{{ 'block.trx.collateral' | translate }} <span class="badge">{{collateral | number:0}} BTS / {{ (collateralAsset | number:0) +' '+asset.symbol  }} </span></li>
+      <li ng-if="collateral" class="clearfix list-group-item">{{ 'block.trx.collateral' | translate }} <span class="badge">{{collateral | number:0}} DVS / {{ (collateralAsset | number:0) +' '+asset.symbol  }} </span></li>
       <li ng-if="marketAsset"class="clearfix list-group-item">{{ 'assets.market.yield' | translate }} <span class="badge">{{asset.yield | number:2}}%</span></li>
       <li class="clearfix list-group-item">{{ 'asset.assetInfo.precision' | translate }}:<span class="badge">{{asset.precision | number:0}}</span></li>
-      <li class="clearfix list-group-item">{{ 'assets.market.th2' | translate }}:<span class="badge">{{asset.status.bid_depth | number:0}} BTS</span></li>
-      <li class="clearfix list-group-item">{{ 'assets.market.th3' | translate }}:<span class="badge">{{asset.status.ask_depth | number:0}} BTS</span></li>
+      <li class="clearfix list-group-item">{{ 'assets.market.th2' | translate }}:<span class="badge">{{asset.status.bid_depth | number:0}} DVS</span></li>
+      <li class="clearfix list-group-item">{{ 'assets.market.th3' | translate }}:<span class="badge">{{asset.status.ask_depth | number:0}} DVS</span></li>
     </ul>
   </div>
 </div>
@@ -45,8 +45,8 @@
     <ul class="list-group">
       <!-- <li class="clearfix list-group-item">{{ 'delegate.feeds.total' | translate }}: <span class="badge">{{asset.numberFeeds}}</span></li> -->
       <li class="clearfix list-group-item">{{ 'delegate.feeds.active' | translate }}: <span class="badge">{{asset.numberValidFeeds}}</span></li>
-      <li class="clearfix list-group-item">{{ 'asset.feeds.avg' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge">{{(averagefeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge">{{(averagefeed | number:0)+' BTS/'+asset.symbol}}</span></li>
-      <li ng-if="asset.medianFeed" class="clearfix list-group-item">{{ 'asset.feeds.med' | translate }}: <span ng-if="asset.symbol.indexOf('BTC') === -1 && asset.symbol!='GOLD'" class="badge alert-success">{{(1/asset.medianFeed | number:2)+' BTS/'+asset.symbol}}</span><span ng-if="asset.symbol.indexOf('BTC') !== -1 || asset.symbol=='GOLD'" class="badge alert-success">{{( 1/asset.medianFeed | number:0)+' BTS/'+asset.symbol}}</span></li>
+      <li class="clearfix list-group-item">{{ 'asset.feeds.avg' | translate }}: <span ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'" class="badge">{{(averagefeed | number:2)+' DVS/'+asset.symbol}}</span><span ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'" class="badge">{{(averagefeed | number:0)+' DVS/'+asset.symbol}}</span></li>
+      <li ng-if="asset.medianFeed" class="clearfix list-group-item">{{ 'asset.feeds.med' | translate }}: <span ng-if="asset.symbol.indexOf('BTC') === -1 && asset.symbol!='GOLD'" class="badge alert-success">{{(1/asset.medianFeed | number:2)+' DVS/'+asset.symbol}}</span><span ng-if="asset.symbol.indexOf('BTC') !== -1 || asset.symbol=='GOLD'" class="badge alert-success">{{( 1/asset.medianFeed | number:0)+' DVS/'+asset.symbol}}</span></li>
       <li ng-if="enoughFeeds === false" class="clearfix list-group-item">{{ 'asset.feeds.med' | translate }}: <span class="badge alert-danger">{{ 'asset.feeds.null' | translate }}</span></li>
 
       <li class="clearfix list-group-item"><div class="checkbox">
@@ -72,8 +72,8 @@
       <tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in filteredFeeds | orderBy: orderByField:reverseSort track by feed.delegate_name" class="repeated-item">
         <td><a ui-sref="delegate.feeds({ 'name' : feed.delegate_name })" once-text="feed.delegate_name"></a></td>
         <td>{{feed.last_update | date:'medium'}}</td>
-        <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(1 / feed.price | number:2)+' '+asset.symbol+'/BTS'}}</td>
-        <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(1 / feed.price | number:0)+' '+asset.symbol+'/BTS'}}</td>
+        <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(1 / feed.price | number:2)+' '+asset.symbol+'/DVS'}}</td>
+        <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(1 / feed.price | number:0)+' '+asset.symbol+'/DVS'}}</td>
       </tr>
     </tbody>
   </table>
@@ -83,7 +83,7 @@
 <div ng-if="showPriceHistory" class="col-md-12 col-sm-12 col-xs-12 no-padding" style="clear:left;">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ 'asset.priceH' | translate }} (BTS/{{prefix+asset.symbol}})</h3>
+      <h3 class="panel-title">{{ 'asset.priceH' | translate }} (DVS/{{prefix+asset.symbol}})</h3>
     </div>
     <highchart id="chart2" config="priceHistoryChart"></highchart>
   </div>
