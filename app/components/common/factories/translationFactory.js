@@ -278,6 +278,19 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		return deferred.promise;
 	}
 
+	function delegateRole(role) {
+		var deferred = $q.defer();
+		$translate.use(_currentKey).then(function(result) {
+			$translate(['delegate.data.role_' + role])
+				.then(function(result) {
+					deferred.resolve({
+						role: result['delegate.data.role_' + role]
+					});
+				});
+		});
+		return deferred.promise;
+	}
+
 	function apiModal() {
 		var deferred = $q.defer();
 		$translate.use(_currentKey)
@@ -346,7 +359,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', function($transl
 		genesis: genesis,
 		apiModal: apiModal,
 		supply: supply,
-		feeds: feeds
+		feeds: feeds,
+		delegateRole: delegateRole
 	};
 
 }]);

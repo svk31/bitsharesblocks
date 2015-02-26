@@ -3,16 +3,22 @@
 	<alert  type="warning">{{ delegate.public_data.delegate.ann }}</alert>
 </div>
 
-  <div class="text-center col-md-12 col-sm-12 col-xs-12">
-   <h1 id="delegateH">{{delegate.name}}</h1>
+<div class="delegate-band">
+<div class="text-center col-md-4 col-md-offset-1 col-xs-6">
+    <a class="hidden-xs" href="bts:{{delegate.name}}/disapprove"><span style="font-size:2em; color:red;" class="glyphicon glyphicon glyphicon-thumbs-down"></span></a>
+    <img alt="Delegate Robo Avatar" height="135" width="135" ng-src="https://robohash.org/set_1/{{delegate.name}}?size=200x200"/>
+    <a class="hidden-xs" ng-href="bts:{{delegate.name}}/approve"><span style="font-size:2em; color:green;" class="glyphicon glyphicon glyphicon-thumbs-up"></span></a>
 
-   <a href="bts:{{delegate.name}}/disapprove"><span style="font-size:2em; color:red;" class="glyphicon glyphicon glyphicon-thumbs-down"></span></a>
-   <img alt="Delegate Robo Avatar" height="150" width="150" ng-src="https://robohash.org/set_1/{{delegate.name}}?size=200x200"/>
-   <a ng-href="bts:{{delegate.name}}/approve"><span style="font-size:2em; color:green;" class="glyphicon glyphicon glyphicon-thumbs-up"></span></a>
-
-   <div id="next-delegate">
-    <a ng-show="delegate.rank > 1" href="" ng-click="getNextDelegate(delegate.rank-1)"><span class="glyphicon glyphicon-arrow-left"></span> {{ 'delegate.prevRank' | translate }}</a>
-    <a href="" ng-click="getNextDelegate(delegate.rank+1)">{{ 'delegate.nextRank' | translate }} <span class="glyphicon glyphicon-arrow-right"></span></a>
+    <div id="next-delegate">
+      <a ng-show="delegate.rank > 1" href="" ng-click="getNextDelegate(delegate.rank-1)"><span class="glyphicon glyphicon-arrow-left"></span> <span class="hidden-xs">{{ 'delegate.prevRank' | translate }}</span></a>
+      <a href="" ng-click="getNextDelegate(delegate.rank+1)"><span class="hidden-xs">{{ 'delegate.nextRank' | translate }} </span><span class="glyphicon glyphicon-arrow-right"></span></a>
+    </div>
+  </div>
+  <div class="col-md-7 col-xs-6">
+    <h2 id="delegateH">{{ delegate.name }}</h2>
+    <h5>{{ 'delegate.rank.current' | translate }}: {{ delegate.rank }}</h5>
+    <h5 ng-if="website"><em><a ng-href="{{website}}" target="_blank">{{website}}</a></em></h5>
+    <h5 ng-if="delegate.role">{{ 'delegate.data.role' | translate }}: <strong><em>{{ delegate.role }}</em></strong></h5>
   </div>
 </div>
 

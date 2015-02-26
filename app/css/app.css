@@ -321,3 +321,9 @@ body { padding-top: 70px;
     .nav-tabs>li.disabled>a {
       background-color: #EBEBEB
     }
+
+    .delegate-band {
+      background: #FFFFFF;
+      background-size: cover;
+      height:200px;
+    }
