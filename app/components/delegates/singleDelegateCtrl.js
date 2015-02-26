@@ -41,6 +41,8 @@ angular.module('app')
 
         $scope.withdrawals = result.withdrawals;
 
+        $scope.website = result.delegate.website;
+
         $scope.delegate.withdrawn = $scope.delegate.totalEarnings - $scope.delegate.delegate_info.pay_balance;
 
         if (name === false) {
@@ -73,6 +75,26 @@ angular.module('app')
     };
 
     checkTabs();
+
+    function getTranslations() {
+      if ($scope.delegate) {
+        if ($scope.delegate.public_data.delegate.role >= 0) {
+          Translate.delegateRole($scope.delegate.public_data.delegate.role).then(function(result) {
+            $scope.delegate.role = result.role;
+          });
+        }
+      }
+    }
+
+    getTranslations();
+
+    $rootScope.$on('$translateLoadingSuccess', function() {
+      getTranslations();
+    });
+
+    $rootScope.$on('languageChange', function() {
+      getTranslations();
+    });
 
 
   }
