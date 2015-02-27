@@ -436,7 +436,10 @@ angular.module('app.services', [])
 			"change": "Change in supply since the hardfork",
 			"changeY": "BTS annualized inflation",
 			"supplyY": "BTS supply",
-			"feesY": "BTS fees"
+			"feesY": "BTS fees",
+			"inflation": "Current annualized inflation",
+			"final": "Estimated final supply",
+			"max": "Theoretical maximum supply"
 		},
 		"genesis": {
 			"stats": "STATISTICS",

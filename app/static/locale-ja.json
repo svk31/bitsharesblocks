@@ -408,7 +408,10 @@
     "change": "ハードフォーク以来供給量変化",
     "changeY": "BTS annualized inflation",
     "supplyY": "BTS供給量",
-    "feesY": "BTS手数料"
+    "feesY": "BTS手数料",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "統計",

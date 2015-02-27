@@ -410,7 +410,10 @@
 		"change": "Änderung der Verfügbarkeit seit der harten Aufspaltung",
 		"changeY": "BTS Inflation",
 		"supplyY": "BTS VERFÜGBARKEIT",
-		"feesY": "BTS Gebühren"
+		"feesY": "BTS Gebühren",
+		"inflation": "Current annualized inflation",
+		"final": "Estimated final supply",
+		"max": "Theoretical maximum supply"
 	},
 	"genesis": {
 		"stats": "STATISTIKEN",

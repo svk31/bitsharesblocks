@@ -410,7 +410,10 @@
 		"change": "Mudança na quantidade desde a bifurcação",
 		"changeY": "Inflação anualizada BTS",
 		"supplyY": "Quantidade de BTS",
-		"feesY": "Taxas de BTS"
+		"feesY": "Taxas de BTS",
+		"inflation": "Current annualized inflation",
+		"final": "Estimated final supply",
+		"max": "Theoretical maximum supply"
 	},
 	"genesis": {
 		"stats": "ESTATISTICAS",

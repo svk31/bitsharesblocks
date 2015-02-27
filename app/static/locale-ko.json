@@ -409,7 +409,10 @@
     "change": "하드포크 이후 공급량 변화",
     "changeY": "BTS 연간 인플레이션",
     "supplyY": "BTS 공급량",
-    "feesY": "BTS 수수료"
+    "feesY": "BTS 수수료",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "통계",

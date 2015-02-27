@@ -409,7 +409,10 @@
     "change": "Cambio en la oferta desde el hardfork",
     "changeY": "BTS annualized inflation",
     "supplyY": "Oferta BTS",
-    "feesY": "Comisiones BTS"
+    "feesY": "Comisiones BTS",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "ESTADISTICAS",

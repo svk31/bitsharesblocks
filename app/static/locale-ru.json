@@ -410,7 +410,10 @@
     "change": "Изменение в предложении с форка",
     "changeY": "Годовая инфляция в BTS",
     "supplyY": "Предложение BTS",
-    "feesY": "Комиссии BTS"
+    "feesY": "Комиссии BTS",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "СТАТИСТИКА",

@@ -410,7 +410,10 @@
     "change": "Changement de réserve depuis le branchement",
     "changeY": "BTS inflation annualisé",
     "supplyY": "BTS réserve",
-    "feesY": "BTS frais"
+    "feesY": "BTS frais",
+    "inflation": "Inflation annualisée actuelle",
+    "final": "Estimation de réserve finale",
+    "max": "Réserve maximale theorique"
   },
   "genesis": {
     "stats": "STATISTIQUES",

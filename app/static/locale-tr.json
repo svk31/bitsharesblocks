@@ -409,7 +409,10 @@
     "change": "Hardfork sonrası arz değişimi",
     "changeY": "BTS annualized inflation",
     "supplyY": "BTS arzı",
-    "feesY": "BTS ücretleri"
+    "feesY": "BTS ücretleri",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "İSTATİSTİKLER",
