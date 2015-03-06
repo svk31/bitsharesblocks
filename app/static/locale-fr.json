@@ -36,7 +36,7 @@
     "api": "API"
   },
   "home": {
-    "history": "BTS EVOLUTION DU PRIX DERNIERS 14 JOURS",
+    "history": "{{ value }} EVOLUTION DU PRIX DERNIERS 14 JOURS",
     "price": "Prix",
     "MA": "Moyenne Mobile 30 jours",
     "health": {
@@ -336,7 +336,7 @@
     "alert3": "Le carnet d'ordres est vide",
     "collateral": "Collateral",
     "supply": "RÉSERVES",
-    "supplyAnd": "ET COLLATERAL (BTS) HISTORIQUE",
+    "supplyAnd": "ET COLLATERAL ({{ value }}) HISTORIQUE",
     "sell": "Vendre",
     "buy": "Acheter",
     "short": "Vendre à découvert",
@@ -361,7 +361,9 @@
       "avg": "Prix moyen des flux",
       "med": "Prix median dex flux",
       "null": "Pas assez de flux dans les derniers 24 heures",
-      "last": "Dernier mise à jour (UTC)"
+      "last": "Dernier mise à jour (UTC)",
+      "dev": "Deviation du median",
+      "dev_avg": "Deviation moyenne du median"
     },
     "covers": {
       "title": "APPELS DE MARGE",
@@ -403,14 +405,14 @@
   "supply": {
     "title1": "INFO",
     "title2": "INFLATION JOURNALIÈRE ANNUALISÉ DEPUIS LE BRANCHEMENT BTS",
-    "title3": "RÉSERVE TOTAL DE BTS",
-    "title4": "FRAIS DE BTS PAYÉS",
+    "title3": "RÉSERVE TOTAL DE {{ value }}",
+    "title4": "FRAIS DE {{ value }} PAYÉS",
     "height": "Hauteur de block du branchement BTSX => BTS",
     "supply": "Réserve au moment du branchement",
     "change": "Changement de réserve depuis le branchement",
-    "changeY": "BTS inflation annualisé",
-    "supplyY": "BTS réserve",
-    "feesY": "BTS frais",
+    "changeY": "{{ value }} inflation annualisé",
+    "supplyY": "{{ value }} réserve",
+    "feesY": "{{ value }} frais",
     "inflation": "Inflation annualisée actuelle",
     "final": "Estimation de réserve finale",
     "max": "Réserve maximale theorique"

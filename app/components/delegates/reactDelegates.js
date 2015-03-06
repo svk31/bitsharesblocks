@@ -184,7 +184,7 @@ var DelegateRow = React.createClass({displayName: 'DelegateRow',
 				padding: '0px 5px 5px 5px',
 				backgroundColor: "white",
 				fontWeight:'bold'
-			}}, delegate.votesFor, " BTS")
+			}}, delegate.votesFor, " ",  headers.baseAsset)
 			)), 
 			React.createElement("td", {className: "hidden-xs"}, delegate.blocksProduced), 
 			React.createElement("td", {className: "hidden-xs"}, delegate.blocksMissed), 

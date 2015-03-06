@@ -1,4 +1,4 @@
-angular.module("app").factory('Charts', [function() {
+angular.module("app").factory('Charts', ['appcst', function(appcst) {
 
 	var defaultSize = {
 		height: 300
@@ -102,7 +102,7 @@ angular.module("app").factory('Charts', [function() {
 			periods: periods,
 			tooltip: {
 				valueDecimals: 5,
-				valueSuffix: ' USD/BTS'
+				valueSuffix: ' USD/'+appcst.baseAsset
 			}
 		};
 		return newSerie;

@@ -1,366 +1,377 @@
-angular.module("app").factory('Translate', ['$translate', '$q', function($translate, $q) {
+angular.module("app").factory('Translate', ['$translate', '$q', 'appcst',
+	function($translate, $q, appcst) {
 
-	var _currentKey = $translate.proposedLanguage().substr(0, 2);
-	var _language;
-	var _languages = [{
-		value: "English",
-		key: "en"
-	}, {
-		value: "Francais",
-		key: "fr"
-	}, {
-		value: "Deutsch",
-		key: "de"
-	}, {
-		value: "中文",
-		key: "zh"
-	}, {
-		value: "Türk",
-		key: "tr"
-	}, {
-		value: "Español",
-		key: "es"
-	}, {
-		value: "Italiano",
-		key: "it"
-	}, {
-		value: "한국어",
-		key: "ko"
-	}, {
-		value: "日本語",
-		key: "ja"
-	}, {
-		value: "Pусский",
-		key: "ru"
-	}, {
-		value: "Português",
-		key: "pt"
-	}];
+		var _currentKey = $translate.proposedLanguage().substr(0, 2);
+		var _language;
+		var _languages = [{
+			value: "English",
+			key: "en"
+		}, {
+			value: "Francais",
+			key: "fr"
+		}, {
+			value: "Deutsch",
+			key: "de"
+		}, {
+			value: "中文",
+			key: "zh"
+		}, {
+			value: "Türk",
+			key: "tr"
+		}, {
+			value: "Español",
+			key: "es"
+		}, {
+			value: "Italiano",
+			key: "it"
+		}, {
+			value: "한국어",
+			key: "ko"
+		}, {
+			value: "日本語",
+			key: "ja"
+		}, {
+			value: "Pусский",
+			key: "ru"
+		}, {
+			value: "Português",
+			key: "pt"
+		}];
 
-	function setCurrent(key) {
-		var deferred = $q.defer();
-		_currentKey = key;
-		$translate.use(key).then(function(result) {
-			deferred.resolve(result);
-		});
-		return deferred.promise;
-	}
-
-	function getLanguage() {
-		return _language;
-	}
-
-	function getLanguages() {
-		return _languages;
-	}
-
-	function getCurrent() {
-		var deferred = $q.defer();
-		_languages.forEach(function(language, index) {
-			if (language.key === _currentKey) {
-				_language = _languages[index];
-				deferred.resolve(_language);
-			}
-		});
-		return deferred.promise;
-	}
-
-	_language = getCurrent();
-
-	function home() {
-		var deferred = $q.defer();
-		$translate.use(_currentKey).then(function(result) {
-			$translate(['home.price', 'home.MA', 'home.burns.recent', 'home.burns.largest']).then(function(result) {
-				deferred.resolve({
-					price: result['home.price'],
-					ma: result['home.MA'],
-					_id: result['home.burns.recent'],
-					'burns.0': result['home.burns.largest']
-				});
-			});
-		});
-
-		return deferred.promise;
-	}
-
-	function blocks() {
-		var deferred = $q.defer();
-		$translate.use(_currentKey).then(function(result) {
-			$translate(['blocks.search1', 'blocks.search2', 'blocks.last', 'blocks.blocks', 'charts.transfer',
-				'charts.reg', 'charts.feed', 'charts.update', 'charts.transfer', 'assets.plot.type1', 'assets.plot.type2',
-				'assets.plot.type3', 'assets.plot.type4', 'block.trx.placeholder'
-			]).then(function(result) {
-				deferred.resolve({
-					search1: result['blocks.search1'],
-					search2: result['blocks.search2'],
-					last: result['blocks.last'],
-					blocks: result['blocks.blocks'],
-					placeholder: result['block.trx.placeholder']
-				});
-			});
-		});
-
-		return deferred.promise;
-	}
-
-	function trxTypes() {
-		var deferred = $q.defer();
-		$translate.use(_currentKey).then(function(result) {
-			$translate(['charts.transfer', 'charts.reg', 'charts.feed', 'charts.update', 'assets.plot.type1',
-				'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'block.trx.burn', 'block.trx.asset_create',
-				'block.trx.asset_issue', 'block.trx.add_collateral', 'block.trx.withdraw_pay', 'block.trx.all', 'block.trx.withdrawal',
-				'block.trx.deposit','block.trx.slate'
-			]).then(function(result) {
-				deferred.resolve({
-					transfer: result['charts.transfer'],
-					account_register: result['charts.reg'],
-					register_account_op_type: result['charts.reg'],
-					update_feed: result['charts.feed'],
-					update_feed_op_type: result['charts.feed'],
-					account_update: result['charts.update'],
-					update_account_op_type: result['charts.update'],
-					asset_ask: result['assets.plot.type1'],
-					ask_op_type: result['assets.plot.type1'],
-					asset_bid: result['assets.plot.type2'],
-					bid_op_type: result['assets.plot.type2'],
-					asset_short: result['assets.plot.type3'],
-					short_op_type: result['assets.plot.type3'],
-					asset_cover: result['assets.plot.type4'],
-					cover_op_type: result['assets.plot.type4'],
-					burn: result['block.trx.burn'],
-					burn_op_type: result['block.trx.burn'],
-					asset_create: result['block.trx.asset_create'],
-					create_asset_op_type: result['block.trx.asset_create'],
-					asset_issue: result['block.trx.asset_issue'],
-					issue_asset_op_type: result['block.trx.asset_issue'],
-					add_collateral: result['block.trx.add_collateral'],
-					add_collateral_op_type: result['block.trx.add_collateral'],
-					withdraw_pay: result['block.trx.withdraw_pay'],
-					withdraw_pay_op_type: result['block.trx.withdraw_pay'],
-					withdraw_op_type: result['block.trx.withdrawal'],
-					deposit_op_type: result['block.trx.deposit'],
-					define_delegate_slate_op_type: result['block.trx.slate'],
-					all: result['block.trx.all']
-				});
-			});
-		});
-
-		return deferred.promise;
-	}
-
-	function delegates() {
-		var deferred = $q.defer();
-		var d = 'delegates.';
-		var dTranslations = [d + 'rank', d + 'change24', d + 'change7', 'accounts.name', d + 'votes', d + 'produced', d + 'missed',
-			d + 'rate', d + 'latency', d + 'feeds', d + 'feedFreq', d + 'rel', d + 'version', d + 'filter', d + 'no_version', 'delegate.rank.votes'
-		];
-		$translate.use(_currentKey).then(function(result) {
-			$q.all([
-					$translate(dTranslations),
-					$translate([d + 'active', d + 'standby'])
-				])
-				.then(function(results) {
-					deferred.resolve({
-						headers: results[0],
-						selections: {
-							active: results[1][d + 'active'],
-							standby: results[1][d + 'standby']
-						}
-					});
-				});
-		});
-
-		return deferred.promise;
-	}
-
-	function assets() {
-		var deferred = $q.defer();
-		var translations = {};
-		var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th3',
-		'assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'assets.market.th8', 'delegates.filter', 'charts.feeds.latest'];
-
-		$translate.use(_currentKey).then(function(result) {
-			$translate(userHeaders).then(function(result) {
-				translations.userHeaders = result;
-				$translate(['assets.plot.type1', 'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4']).then(function(result) {
-					translations.plotTypes = result;
-					deferred.resolve(translations);
-				});
-			});
-		});
-
-		return deferred.promise;
-	}
-
-	function asset() {
-		var deferred = $q.defer();
-		var translations = {};
-
-		$translate.use(_currentKey).then(function(result) {
-			$translate(['asset.buy', 'asset.sell', 'asset.short', 'asset.feeds.med', 'asset.chartSupply', 'asset.collateral', 'asset.ohlc', 
-				'asset.external', 'asset.volume']).then(function(result) {
+		function setCurrent(key) {
+			var deferred = $q.defer();
+			_currentKey = key;
+			$translate.use(key).then(function(result) {
 				deferred.resolve(result);
 			});
-		});
+			return deferred.promise;
+		}
 
-		return deferred.promise;
-	}
+		function getLanguage() {
+			return _language;
+		}
 
-	function charts() {
-		var deferred = $q.defer();
-		$translate.use(_currentKey).then(function(result) {
-			$translate(['home.price', 'home.MA', 'charts.ma15', 'assets.plot.type1', 'assets.plot.type2',
-				'assets.plot.type3', 'assets.plot.type4', 'charts.reg', 'charts.transfer', 'charts.feed',
-				'charts.update', 'home.user.number', 'blocks.trxValue', 'blocks.trxCount', 'charts.new',
-				'home.user.unique', 'home.user.uniqueNew'
-			]).then(function(result) {
-				deferred.resolve({
-					price: result['home.price'],
-					ma: result['home.MA'],
-					ma15: result['charts.ma15'],
-					asset_ask: result['assets.plot.type1'],
-					asset_bid: result['assets.plot.type2'],
-					asset_short: result['assets.plot.type3'],
-					asset_cover: result['assets.plot.type4'],
-					reg: result["charts.reg"],
-					transfer: result["charts.transfer"],
-					feed: result["charts.feed"],
-					update: result["charts.update"],
-					value: result['blocks.trxValue'],
-					count: result['blocks.trxCount'],
-					nr: result['home.user.number'],
-					acc: result['charts.new'], 
-					unique: result['home.user.unique'],
-					uniqueNew: result['home.user.uniqueNew']
-				});
+		function getLanguages() {
+			return _languages;
+		}
+
+		function getCurrent() {
+			var deferred = $q.defer();
+			_languages.forEach(function(language, index) {
+				if (language.key === _currentKey) {
+					_language = _languages[index];
+					deferred.resolve(_language);
+				}
 			});
-		});
+			return deferred.promise;
+		}
 
-		return deferred.promise;
-	}
+		_language = getCurrent();
 
-	function genesis() {
-		var deferred = $q.defer();
-		$translate.use(_currentKey)
-			.then(function(result) {
-				$translate(['genesis.x', 'genesis.y', 'genesis.tooltip', 'genesis.addresses'])
-					.then(function(genesis) {
-						deferred.resolve({
-							tooltip: genesis["genesis.tooltip"],
-							xlabel: genesis["genesis.x"],
-							ylabel: genesis["genesis.y"],
-							addresses: genesis["genesis.addresses"].toLowerCase()
-						});
-					});
-			});
-		return deferred.promise;
-	}
-
-	function delegate() {
-		var deferred = $q.defer();
-		$translate.use(_currentKey).then(function(result) {
-			$q.all([$translate(['delegate.sumVotes', 'blocks.blockNum', 'block.block', 'delegate.payChart.name',
-						'account.date'
-					]),
-					$translate(['blocks.blockNum', 'delegate.votes.net'])
-				])
-				.then(function(result) {
+		function home() {
+			var deferred = $q.defer();
+			$translate.use(_currentKey).then(function(result) {
+				$translate(['home.price', 'home.MA', 'home.burns.recent', 'home.burns.largest']).then(function(result) {
 					deferred.resolve({
-						sumVotes: result[0]['delegate.sumVotes'],
-						blocknum: result[0]['blocks.blockNum'],
-						block: result[0]['block.block'],
-						payChart: result[0]['delegate.payChart.name'],
-						date: result[0]['account.date'],
-						headers: result[1]
+						price: result['home.price'],
+						ma: result['home.MA'],
+						_id: result['home.burns.recent'],
+						'burns.0': result['home.burns.largest']
 					});
 				});
-		});
-		return deferred.promise;
-	}
+			});
 
-	function delegateRole(role) {
-		var deferred = $q.defer();
-		$translate.use(_currentKey).then(function(result) {
-			$translate(['delegate.data.role_' + role])
-				.then(function(result) {
+			return deferred.promise;
+		}
+
+		function blocks() {
+			var deferred = $q.defer();
+			$translate.use(_currentKey).then(function(result) {
+				$translate(['blocks.search1', 'blocks.search2', 'blocks.last', 'blocks.blocks', 'charts.transfer',
+					'charts.reg', 'charts.feed', 'charts.update', 'charts.transfer', 'assets.plot.type1', 'assets.plot.type2',
+					'assets.plot.type3', 'assets.plot.type4', 'block.trx.placeholder'
+				]).then(function(result) {
 					deferred.resolve({
-						role: result['delegate.data.role_' + role]
+						search1: result['blocks.search1'],
+						search2: result['blocks.search2'],
+						last: result['blocks.last'],
+						blocks: result['blocks.blocks'],
+						placeholder: result['block.trx.placeholder']
 					});
 				});
-		});
-		return deferred.promise;
-	}
+			});
 
-	function apiModal() {
-		var deferred = $q.defer();
-		$translate.use(_currentKey)
-			.then(function(result) {
-				$translate(['apiModal.title', 'apiModal.body', 'apiModal.close', 'apiModal.auto', 'apiModal.new_york', 'apiModal.singapore'])
-					.then(function(result) {
+			return deferred.promise;
+		}
+
+		function trxTypes() {
+			var deferred = $q.defer();
+			$translate.use(_currentKey).then(function(result) {
+				$translate(['charts.transfer', 'charts.reg', 'charts.feed', 'charts.update', 'assets.plot.type1',
+					'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'block.trx.burn', 'block.trx.asset_create',
+					'block.trx.asset_issue', 'block.trx.add_collateral', 'block.trx.withdraw_pay', 'block.trx.all', 'block.trx.withdrawal',
+					'block.trx.deposit', 'block.trx.slate'
+				]).then(function(result) {
+					deferred.resolve({
+						transfer: result['charts.transfer'],
+						account_register: result['charts.reg'],
+						register_account_op_type: result['charts.reg'],
+						update_feed: result['charts.feed'],
+						update_feed_op_type: result['charts.feed'],
+						account_update: result['charts.update'],
+						update_account_op_type: result['charts.update'],
+						asset_ask: result['assets.plot.type1'],
+						ask_op_type: result['assets.plot.type1'],
+						asset_bid: result['assets.plot.type2'],
+						bid_op_type: result['assets.plot.type2'],
+						asset_short: result['assets.plot.type3'],
+						short_op_type: result['assets.plot.type3'],
+						asset_cover: result['assets.plot.type4'],
+						cover_op_type: result['assets.plot.type4'],
+						burn: result['block.trx.burn'],
+						burn_op_type: result['block.trx.burn'],
+						asset_create: result['block.trx.asset_create'],
+						create_asset_op_type: result['block.trx.asset_create'],
+						asset_issue: result['block.trx.asset_issue'],
+						issue_asset_op_type: result['block.trx.asset_issue'],
+						add_collateral: result['block.trx.add_collateral'],
+						add_collateral_op_type: result['block.trx.add_collateral'],
+						withdraw_pay: result['block.trx.withdraw_pay'],
+						withdraw_pay_op_type: result['block.trx.withdraw_pay'],
+						withdraw_op_type: result['block.trx.withdrawal'],
+						deposit_op_type: result['block.trx.deposit'],
+						define_delegate_slate_op_type: result['block.trx.slate'],
+						all: result['block.trx.all']
+					});
+				});
+			});
+
+			return deferred.promise;
+		}
+
+		function delegates() {
+			var deferred = $q.defer();
+			var d = 'delegates.';
+			var dTranslations = [d + 'rank', d + 'change24', d + 'change7', 'accounts.name', d + 'votes', d + 'produced', d + 'missed',
+				d + 'rate', d + 'latency', d + 'feeds', d + 'feedFreq', d + 'rel', d + 'version', d + 'filter', d + 'no_version', 'delegate.rank.votes'
+			];
+			$translate.use(_currentKey).then(function(result) {
+				$q.all([
+						$translate(dTranslations),
+						$translate([d + 'active', d + 'standby'])
+					])
+					.then(function(results) {
+						results[0].baseAsset = appcst.baseAsset;
 						deferred.resolve({
-							title: result["apiModal.title"],
-							body: result["apiModal.body"],
-							close: result["apiModal.close"],
-							auto: result["apiModal.auto"],
-							new_york: result["apiModal.new_york"],
-							singapore: result["apiModal.singapore"]
+							headers: results[0],
+							selections: {
+								active: results[1][d + 'active'],
+								standby: results[1][d + 'standby']
+							}
 						});
 					});
 			});
-		return deferred.promise;
-	}
 
-	function supply() {
-		var deferred = $q.defer();
-		$translate.use(_currentKey)
-			.then(function(result) {
-				$translate(['supply.changeY', 'supply.supplyY', 'supply.feesY'])
+			return deferred.promise;
+		}
+
+		function assets() {
+			var deferred = $q.defer();
+			var translations = {};
+			var userHeaders = ['assets.user.th1', 'assets.market.th1', 'assets.market.th7', 'assets.market.th1', 'assets.user.th3',
+				'assets.user.th4', 'assets.user.th5', 'assets.user.th6', 'assets.market.th8', 'delegates.filter', 'charts.feeds.latest'
+			];
+
+			$translate.use(_currentKey).then(function(result) {
+				$translate(userHeaders).then(function(result) {
+					translations.userHeaders = result;
+					translations.userHeaders.baseAsset = appcst.baseAsset;
+					$translate(['assets.plot.type1', 'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4']).then(function(result) {
+						translations.plotTypes = result;
+						deferred.resolve(translations);
+					});
+				});
+			});
+
+			return deferred.promise;
+		}
+
+		function asset() {
+			var deferred = $q.defer();
+			var translations = {};
+
+			$translate.use(_currentKey).then(function(result) {
+				$translate(['asset.buy', 'asset.sell', 'asset.short', 'asset.feeds.med', 'asset.chartSupply', 'asset.collateral', 'asset.ohlc',
+					'asset.external', 'asset.volume'
+				]).then(function(result) {
+					deferred.resolve(result);
+				});
+			});
+
+			return deferred.promise;
+		}
+
+		function charts() {
+			var deferred = $q.defer();
+			$translate.use(_currentKey).then(function(result) {
+				$translate(['home.price', 'home.MA', 'charts.ma15', 'assets.plot.type1', 'assets.plot.type2',
+					'assets.plot.type3', 'assets.plot.type4', 'charts.reg', 'charts.transfer', 'charts.feed',
+					'charts.update', 'home.user.number', 'blocks.trxValue', 'blocks.trxCount', 'charts.new',
+					'home.user.unique', 'home.user.uniqueNew'
+				]).then(function(result) {
+					deferred.resolve({
+						price: result['home.price'],
+						ma: result['home.MA'],
+						ma15: result['charts.ma15'],
+						asset_ask: result['assets.plot.type1'],
+						asset_bid: result['assets.plot.type2'],
+						asset_short: result['assets.plot.type3'],
+						asset_cover: result['assets.plot.type4'],
+						reg: result["charts.reg"],
+						transfer: result["charts.transfer"],
+						feed: result["charts.feed"],
+						update: result["charts.update"],
+						value: result['blocks.trxValue'],
+						count: result['blocks.trxCount'],
+						nr: result['home.user.number'],
+						acc: result['charts.new'],
+						unique: result['home.user.unique'],
+						uniqueNew: result['home.user.uniqueNew']
+					});
+				});
+			});
+
+			return deferred.promise;
+		}
+
+		function genesis() {
+			var deferred = $q.defer();
+			$translate.use(_currentKey)
+				.then(function(result) {
+					$translate(['genesis.x', 'genesis.y', 'genesis.tooltip', 'genesis.addresses'])
+						.then(function(genesis) {
+							deferred.resolve({
+								tooltip: genesis["genesis.tooltip"],
+								xlabel: genesis["genesis.x"],
+								ylabel: genesis["genesis.y"],
+								addresses: genesis["genesis.addresses"].toLowerCase()
+							});
+						});
+				});
+			return deferred.promise;
+		}
+
+		function delegate() {
+			var deferred = $q.defer();
+			$translate.use(_currentKey).then(function(result) {
+				$q.all([$translate(['delegate.sumVotes', 'blocks.blockNum', 'block.block', 'delegate.payChart.name',
+							'account.date'
+						]),
+						$translate(['blocks.blockNum', 'delegate.votes.net'])
+					])
 					.then(function(result) {
+						result[1].baseAsset = appcst.baseAsset;
 						deferred.resolve({
-							inflationY: result["supply.changeY"],
-							supplyY: result["supply.supplyY"],
-							feesY: result["supply.feesY"]
+							sumVotes: result[0]['delegate.sumVotes'],
+							blocknum: result[0]['blocks.blockNum'],
+							block: result[0]['block.block'],
+							payChart: result[0]['delegate.payChart.name'],
+							date: result[0]['account.date'],
+							headers: result[1]
 						});
 					});
 			});
-		return deferred.promise;
-	}
+			return deferred.promise;
+		}
 
-	function feeds() {
-		var deferred = $q.defer();
-		$translate.use(_currentKey)
-			.then(function(result) {
-				$translate(['asset.feeds.med', 'charts.feeds.latest', 'charts.feeds.vwap', 'charts.feeds.deviation'])
+		function delegateRole(role) {
+			var deferred = $q.defer();
+			$translate.use(_currentKey).then(function(result) {
+				$translate(['delegate.data.role_' + role])
 					.then(function(result) {
 						deferred.resolve({
-							med: result["asset.feeds.med"],
-							latest: result["charts.feeds.latest"],
-							vwap: result["charts.feeds.vwap"],
-							deviation: result["charts.feeds.deviation"]
+							role: result['delegate.data.role_' + role]
 						});
 					});
 			});
-		return deferred.promise;
+			return deferred.promise;
+		}
+
+		function apiModal() {
+			var deferred = $q.defer();
+			$translate.use(_currentKey)
+				.then(function(result) {
+					$translate(['apiModal.title', 'apiModal.body', 'apiModal.close', 'apiModal.auto', 'apiModal.new_york', 'apiModal.singapore'])
+						.then(function(result) {
+							deferred.resolve({
+								title: result["apiModal.title"],
+								body: result["apiModal.body"],
+								close: result["apiModal.close"],
+								auto: result["apiModal.auto"],
+								new_york: result["apiModal.new_york"],
+								singapore: result["apiModal.singapore"]
+							});
+						});
+				});
+			return deferred.promise;
+		}
+
+		function supply() {
+			var deferred = $q.defer();
+			$translate.use(_currentKey)
+				.then(function(result) {
+					$q.all([
+						$translate('supply.changeY',{value:appcst.baseAsset}),
+						$translate('supply.supplyY',{value:appcst.baseAsset}),
+						$translate('supply.feesY',{value:appcst.baseAsset})
+						])
+						.then(function(result) {
+							deferred.resolve({
+								inflationY: result[0],
+								supplyY: result[1],
+								feesY: result[2]
+							});
+						});
+				});
+			return deferred.promise;
+		}
+
+		function feeds() {
+			var deferred = $q.defer();
+			$translate.use(_currentKey)
+				.then(function(result) {
+					$translate(['asset.feeds.med', 'charts.feeds.latest', 'charts.feeds.vwap', 'charts.feeds.deviation'])
+						.then(function(result) {
+							deferred.resolve({
+								med: result["asset.feeds.med"],
+								latest: result["charts.feeds.latest"],
+								vwap: result["charts.feeds.vwap"],
+								deviation: result["charts.feeds.deviation"]
+							});
+						});
+				});
+			return deferred.promise;
+		}
+
+		return {
+			getCurrent: getCurrent,
+			setCurrent: setCurrent,
+			getLanguage: getLanguage,
+			getLanguages: getLanguages,
+			home: home,
+			blocks: blocks,
+			trxTypes: trxTypes,
+			delegates: delegates,
+			delegate: delegate,
+			assets: assets,
+			asset: asset,
+			charts: charts,
+			genesis: genesis,
+			apiModal: apiModal,
+			supply: supply,
+			feeds: feeds,
+			delegateRole: delegateRole
+		};
+
 	}
-
-	return {
-		getCurrent: getCurrent,
-		setCurrent: setCurrent,
-		getLanguage: getLanguage,
-		getLanguages: getLanguages,
-		home: home,
-		blocks: blocks,
-		trxTypes: trxTypes,
-		delegates: delegates,
-		delegate: delegate,
-		assets: assets,
-		asset: asset,
-		charts: charts,
-		genesis: genesis,
-		apiModal: apiModal,
-		supply: supply,
-		feeds: feeds,
-		delegateRole: delegateRole
-	};
-
-}]);
+]);

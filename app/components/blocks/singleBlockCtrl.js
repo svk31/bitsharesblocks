@@ -1,8 +1,9 @@
 angular.module('app')
 
-.controller('blockCtrl', ['$scope', '$rootScope', '$location', '$state', 'Assets', 'Accounts', 'Block', 'Translate', 'Meta', 'api',
-  function($scope, $rootScope, $location, $state, Assets, Accounts, Block, Translate, Meta, api) {
+.controller('blockCtrl', ['$scope', '$rootScope', '$location', '$state', 'Assets', 'Accounts', 'Block', 'Translate', 'Meta', 'api', 'appcst',
+  function($scope, $rootScope, $location, $state, Assets, Accounts, Block, Translate, Meta, api, appcst) {
 
+    $scope.baseAsset = appcst.baseAsset;
     if ($state.params.id) {
       $scope.blockNumber = $state.params.id;
     } else if ($state.params.trxid) {

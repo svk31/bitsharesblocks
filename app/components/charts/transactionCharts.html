@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">{{ 'charts.titles.volume' | translate }}</h3>
+    <h3 class="panel-title">{{ 'charts.titles.volume' | translate:baseAsset }}</h3>
   </div>
   <highchart id="chart1" config="valueChartConfig" ></highchart>
 </div>
@@ -8,14 +8,14 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">{{ 'charts.titles.trxCount' | translate }}</h3>
+    <h3 class="panel-title">{{ 'charts.titles.trxCount' | translate:baseAsset }}</h3>
   </div>
   <highchart id="chart1" config="trxCountChart" ></highchart>
 </div>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">{{ 'charts.titles.btsTrx' | translate }}</h3>
+    <h3 class="panel-title">{{ 'charts.titles.btsTrx' | translate:baseAsset }}</h3>
   </div>
   <highchart id="chart2" config="trxBreakdownChart" ></highchart>
 </div>

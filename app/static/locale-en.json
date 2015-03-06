@@ -36,7 +36,7 @@
 		"api": "API"
 	},
 	"home": {
-		"history": "BTS PRICE HISTORY LAST 14 DAYS",
+		"history": "{{ value }} PRICE HISTORY LAST 14 DAYS",
 		"price": "Price",
 		"MA": "30-day Moving Average",
 		"health": {
@@ -336,7 +336,7 @@
 		"alert3": "The orderbook is empty",
 		"collateral": "Collateral",
 		"supply": "SUPPLY",
-		"supplyAnd": "AND COLLATERAL (BTS) HISTORY",
+		"supplyAnd": "AND COLLATERAL ({{ value }}) HISTORY",
 		"sell": "Sell",
 		"buy": "Buy",
 		"short": "Short",
@@ -361,7 +361,9 @@
 			"avg": "Average Feed Price",
 			"med": "Median Feed Price",
 			"null": "Not enough feeds in the last 24hrs",
-			"last": "Last update (UTC)"
+			"last": "Last update (UTC)",
+			"dev": "Deviation from median",
+			"dev_avg": "Average deviation from median"
 		},
 		"covers": {
 			"title": "MARGIN CALL ORDERS",
@@ -375,9 +377,9 @@
 			"new": "NEW ACCOUNTS",
 			"total": "TOTAL NUMBER OF ACCOUNTS",
 			"assetTrx": "ALL ASSET TRANSACTION TYPES",
-			"btsTrx": "BTS TRANSACTION TYPES",
-			"trxCount": "BTS NUMBER OF TRANSACTIONS",
-			"volume": "BTS TRANSACTION VOLUME",
+			"btsTrx": "{{ value }} TRANSACTION TYPES",
+			"trxCount": "{{ value }} NUMBER OF TRANSACTIONS",
+			"volume": "{{ value }} TRANSACTION VOLUME",
 			"btcPrice": "BTS/BTC PRICE HISTORY",
 			"usdPrice": "PRICE HISTORY",
 			"prices": "PRICE CHARTS",
@@ -403,14 +405,14 @@
 	"supply": {
 		"title1": "INFO",
 		"title2": "ANNUALIZED DAILY INFLATION",
-		"title3": "TOTAL SUPPLY OF BTS",
-		"title4": "BTS FEES PAID OVER TIME",
+		"title3": "TOTAL SUPPLY OF {{ value }}",
+		"title4": "{{ value }} FEES PAID OVER TIME",
 		"height": "Height of BTSX => BTS hardfork block",
 		"supply": "Supply at fork",
 		"change": "Change in supply since the hardfork",
-		"changeY": "BTS annualized inflation",
-		"supplyY": "BTS supply",
-		"feesY": "BTS fees",
+		"changeY": "{{ value }} annualized inflation",
+		"supplyY": "{{ value }} supply",
+		"feesY": "{{ value }} fees",
 		"inflation": "Current annualized inflation",
 		"final": "Estimated final supply",
 		"max": "Theoretical maximum supply"

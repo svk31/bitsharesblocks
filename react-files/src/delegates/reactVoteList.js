@@ -45,7 +45,7 @@ var VoteRow = React.createClass({
 		return (
 			<tr>
 			<td><a href={'blocks/block?id='+vote.block}>{vote.block}</a></td>
-			<td>{vote.vote+' BTS'}</td>
+			<td>{ vote.vote+' '+this.props.base }</td>
 			</tr>
 			);
 	}
@@ -131,7 +131,7 @@ var VotesTable = React.createClass({
 			})
 			.map(function(vote) {
 				return (
-					<VoteRow key={vote.block} data={vote}/>
+					<VoteRow key={vote.block} data={vote} base={headers.baseAsset}/>
 					);
 
 			});

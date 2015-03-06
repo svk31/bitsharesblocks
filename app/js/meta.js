@@ -1,4 +1,4 @@
-angular.module('app').config(['MetaProvider', function(MetaProvider) {
+angular.module('app').config(['MetaProvider', 'appcst', function(MetaProvider, appcst) {
 
 	MetaProvider.when('/', {
 		title: 'Bitshares Block Explorer, Delegates Info, Market Data | Bitsharesblocks.com',
@@ -34,7 +34,7 @@ angular.module('app').config(['MetaProvider', function(MetaProvider) {
 	});
 	MetaProvider.when('/genesis-bts', {
 		title: 'Bitshares Genesis Data | Rich list and distribution statistics',
-		description: 'Bitshares BTS genesis block analysis: charts, rich list, distribution ++'
+		description: 'Bitshares '+appcst.baseAsset+' genesis block analysis: charts, rich list, distribution ++'
 	});
 	MetaProvider.when('/genesis-btsx', {
 		title: 'BitsharesX Genesis Data | Rich list and distribution statistics',

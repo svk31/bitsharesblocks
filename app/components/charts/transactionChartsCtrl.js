@@ -1,7 +1,11 @@
 angular.module('app')
 
-.controller('transactionChartsCtrl', ['$scope', '$rootScope', '$filter', '$state', 'api', 'Assets', 'Charts', 'Translate',
-  function($scope, $rootScope, $filter, $state, api, Assets, Charts, Translate) {
+.controller('transactionChartsCtrl', ['$scope', '$rootScope', '$filter', '$state', 'api', 'Assets', 'Charts', 'Translate', 'appcst',
+  function($scope, $rootScope, $filter, $state, api, Assets, Charts, Translate, appcst) {
+
+    $scope.baseAsset = {
+      value: appcst.baseAsset
+    };
     var toolTip = {
       valueDecimals: 0,
       valueSuffix: ''
@@ -53,7 +57,7 @@ angular.module('app')
       series: [new Charts.serie({
         tooltip: {
           valueDecimals: 0,
-          valueSuffix: ' BTS'
+          valueSuffix: ' ' + appcst.baseAsset
         }
       })],
       size: Size,
@@ -63,7 +67,7 @@ angular.module('app')
         labels: {
           align: 'left',
           formatter: function() {
-            return $filter('currency')(this.value, '', 0) + ' BTS';
+            return $filter('currency')(this.value, '', 0) + ' ' + appcst.baseAsset;
           }
         }
       }

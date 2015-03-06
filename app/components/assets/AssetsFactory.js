@@ -1,15 +1,16 @@
 angular.module('app')
 
 .factory('Assets', ['api', '$q', '$filter', 'appcst', function(api, $q, $filter, appcst) {
+	var baseAsset = appcst.baseAsset;
 	var iniatilized = true;
 	var myFunction = {};
-	var basePrecision = 100000;
+	var basePrecision = appcst.basePrecision;
 	var _assets = {};
 	_assets = store.get('assets');
 	if (_assets === undefined) {
 		_assets = {};
 		_assets['0'] = {
-			'symbol': 'BTS',
+			'symbol': baseAsset,
 			'precision': basePrecision
 		};
 	}
@@ -46,7 +47,7 @@ angular.module('app')
 				});
 			}
 		} else {
-			return 'BTS';
+			return baseAsset;
 		}
 	}
 
@@ -175,13 +176,13 @@ angular.module('app')
 				decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
 
 				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
-				assets[i].dailyVolume = $filter('number')(assets[i].dailyVolume, 2) + ' BTS';
+				assets[i].dailyVolume = $filter('number')(assets[i].dailyVolume, 2) + ' ' + baseAsset;
 
 				assets[i].lastPrice = (assets[i].lastPrice !== 0) ? (1 / assets[i].lastPrice) : 0;
 				assets[i].cap = (assets[i].lastPrice) * assets[i].current_share_supply;
-				assets[i].capText = $filter('number')(assets[i].cap, 0) + ' BTS';
-				assets[i].vwapText = $filter('number')(assets[i].vwap, 3) + ' BTS';
-				assets[i].lastPriceText = $filter('number')(assets[i].lastPrice, 3) + ' BTS';
+				assets[i].capText = $filter('number')(assets[i].cap, 0) + ' ' + baseAsset;
+				assets[i].vwapText = $filter('number')(assets[i].vwap, 3) + ' ' + baseAsset;
+				assets[i].lastPriceText = $filter('number')(assets[i].lastPrice, 3) + ' ' + baseAsset;
 				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
 
 			}
@@ -442,7 +443,7 @@ angular.module('app')
 			asset.lastPrice = 1 / (asset.order_history[0].bid_price.ratio * priceRatio);
 			asset.dailyLow = 1 / (asset.order_history[0].ask_price.ratio * priceRatio);
 			asset.dailyHigh = 0;
-			
+
 			asset.order_history.forEach(function(order) {
 				if (today < new Date(order.timestamp)) {
 					tradesFound = true;
@@ -451,27 +452,27 @@ angular.module('app')
 				}
 
 
-				order.ask_paid.amount = $filter('number')(order.ask_paid.amount / basePrecision, 2) + ' BTS';
+				order.ask_paid.amount = $filter('number')(order.ask_paid.amount / basePrecision, 2) + ' ' + baseAsset;
 				order.ask_received.amount = $filter('number')(order.ask_received.amount / asset.precision, 3) + ' ' + asset.symbol;
-				order.ask_price.ratio = $filter('number')(1 / (order.ask_price.ratio * priceRatio), 3) + ' BTS/' + asset.symbol;
+				order.ask_price.ratio = $filter('number')(1 / (order.ask_price.ratio * priceRatio), 3) + ' ' + baseAsset + '/' + asset.symbol;
 
 				order.bid_paid.amount = $filter('number')(order.bid_paid.amount / asset.precision, 3) + ' ' + asset.symbol;
-				order.bid_received.amount = $filter('number')(order.bid_received.amount / basePrecision, 2) + ' BTS';
-				order.bid_price.ratio = $filter('number')(1 / (order.bid_price.ratio * priceRatio), 3) + ' BTS/' + asset.symbol;
+				order.bid_received.amount = $filter('number')(order.bid_received.amount / basePrecision, 2) + ' ' + baseAsset;
+				order.bid_price.ratio = $filter('number')(1 / (order.bid_price.ratio * priceRatio), 3) + ' ' + baseAsset + '/' + asset.symbol;
 
 				order.fees_collected.amount = $filter('number')(order.fees_collected.amount / asset.precision, decimals) + ' ' + asset.symbol;
 
 			});
 
 			if (tradesFound) {
-				asset.dailyLow = $filter('number')(asset.dailyLow, 2) + ' BTS/' + prefix + asset.symbol;
-				asset.dailyHigh = $filter('number')(asset.dailyHigh, 2) + ' BTS/' + prefix + asset.symbol;
+				asset.dailyLow = $filter('number')(asset.dailyLow, 2) + ' ' + baseAsset + '/' + prefix + asset.symbol;
+				asset.dailyHigh = $filter('number')(asset.dailyHigh, 2) + ' ' + baseAsset + '/' + prefix + asset.symbol;
 			} else {
 				asset.dailyLow = '0';
 				asset.dailyHigh = '0';
 			}
-			asset.lastPrice = $filter('number')(asset.lastPrice, 3) + ' BTS/' + prefix + asset.symbol;
-			asset.feedText = $filter('number')(1 / asset.medianFeed, 2) + ' BTS/' + prefix + asset.symbol;
+			asset.lastPrice = $filter('number')(asset.lastPrice, 3) + ' ' + baseAsset + '/' + prefix + asset.symbol;
+			asset.feedText = $filter('number')(1 / asset.medianFeed, 2) + ' ' + baseAsset + '/' + prefix + asset.symbol;
 		}
 
 		// Asks and bids

@@ -1,9 +1,9 @@
 angular.module('app')
 
-.controller('allAccountsCtrl', ['$scope', '$rootScope', '$state', '$location', '$alert', 'api', 'Accounts',
-  function($scope, $rootScope, $state, $location, $alert, api, Accounts) {
+.controller('allAccountsCtrl', ['$scope', '$rootScope', '$state', '$location', '$alert', 'api', 'Accounts', 'appcst',
+  function($scope, $rootScope, $state, $location, $alert, api, Accounts, appcst) {
     var _top = parseInt($state.params.top, 10);
-
+    $scope.baseAsset = appcst.baseAsset;
     var myAlert = $alert({
       'title': 'Not found or not valid search term',
       'content': '',

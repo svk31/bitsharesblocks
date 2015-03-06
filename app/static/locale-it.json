@@ -36,7 +36,7 @@
     "api": "API"
   },
   "home": {
-    "history": "VALORE BTS, ULTIMI 14 GIORNI",
+    "history": "VALORE {{ value }}, ULTIMI 14 GIORNI",
     "price": "VALORE",
     "MA": "Media Mobile a 30 giorni",
     "health": {
@@ -335,7 +335,7 @@
     "alert3": "The orderbook is empty",
     "collateral": "Garanzia",
     "supply": "STORICO DISPONIBILITA'",
-    "supplyAnd": "E GARANZIE (BTS)",
+    "supplyAnd": "E GARANZIE ({{ value }})",
     "sell": "Vendita",
     "buy": "Acquisto",
     "short": "Short",
@@ -360,7 +360,9 @@
       "avg": "Prezzo medio feed",
       "med": "Prezzo mediano feed",
       "null": "Feed insufficienti nelle ultime",
-      "last": "Ultimo aggiornamento (UTC)"
+      "last": "Ultimo aggiornamento (UTC)",
+      "dev": "Deviation from median",
+      "dev_avg": "Average deviation from median"
     },
     "covers": {
       "title": "MARGIN CALL ORDERS",
@@ -402,14 +404,14 @@
   "supply": {
     "title1": "INFORMAZIONI",
     "title2": "MODIFICA DISPONIBILITA' DOPO BTS HARDFORK",
-    "title3": "DISPONIBILITA' TOTALE BTS",
-    "title4": "COMMISSIONI BTS PAGATE NEL TEMPO",
+    "title3": "DISPONIBILITA' TOTALE {{ value }}",
+    "title4": "COMMISSIONI {{ value }} PAGATE NEL TEMPO",
     "height": "Numero del blocco al momento dell'hardfork BTSX => BTS",
     "supply": "Disponibilità al fork",
     "change": "Modifica disponibilità dall'hardfork",
-    "changeY": "BTS annualized inflation",
-    "supplyY": "Disponibilità BTS",
-    "feesY": "Commissioni BTS",
+    "changeY": "{{ value }} annualized inflation",
+    "supplyY": "Disponibilità {{ value }}",
+    "feesY": "Commissioni {{ value }}",
     "inflation": "Current annualized inflation",
     "final": "Estimated final supply",
     "max": "Theoretical maximum supply"

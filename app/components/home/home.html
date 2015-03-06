@@ -9,7 +9,7 @@
     <div class="col-md-7 col-sm-7">
       <div class="panel panel-default">
         <div class="panel-heading" style="overflow: hidden;">
-          <h3 style="display: inline-block;" class="panel-title">{{ 'home.history' | translate }} </h3>
+          <h3 style="display: inline-block;" class="panel-title">{{ 'home.history' | translate:translateBase }} </h3>
           <button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentUnit" data-html="1" ng-options="unit.name as unit.label for unit in priceUnits" bs-select>
           Action <span class="caret"></span>
         </button>
@@ -43,11 +43,11 @@
         <ul class="list-group">
           <li class="clearfix list-group-item">{{ 'home.delegate.reg' | translate }}: <span class="badge">{{home.numberOfDelegates | number:0}}</span></li>
           <li class="clearfix list-group-item">{{ 'home.delegate.votes' | translate }}:<span class="badge">{{home.numberOfVotedDelegates | number:0}}</span></li>
-          <li class="clearfix list-group-item">{{ 'home.delegate.payReg' | translate }}: <span class="badge">{{home.delegateReg | number:2}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.payReg' | translate }}: <span class="badge">{{home.delegateReg | number:2}} {{ ::baseAsset }}</span></li>
           <li class="clearfix list-group-item">{{ 'home.delegate.new24' | translate }}: <span class="badge">{{home.newDelegatesDay | number:0}}</span></li>
           <li class="clearfix list-group-item">{{ 'home.delegate.new7d' | translate }}: <span class="badge">{{home.newDelegatesWeek | number:0}}</span></li>
-          <li class="clearfix list-group-item">{{ 'home.delegate.pay' | translate }}: <span class="badge">{{home.delegatePayRate | number:2}} BTS/{{ 'block.block' | translate }}</span></li>
-          <li class="clearfix list-group-item">{{ 'home.delegate.averagePay' | translate }}: <span class="badge">{{home.averagePay | number:2}} BTS/{{ 'block.block' | translate }}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.pay' | translate }}: <span class="badge">{{home.delegatePayRate | number:2}} {{ ::baseAsset }}/{{ 'block.block' | translate }}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.delegate.averagePay' | translate }}: <span class="badge">{{home.averagePay | number:2}} {{ ::baseAsset }}/{{ 'block.block' | translate }}</span></li>
 
         </ul>
       </div>
@@ -59,10 +59,10 @@
           <h3 class="panel-title">{{ 'home.blockchain.title' | translate }}</h3>
         </div>
         <ul class="list-group">
-          <li class="clearfix list-group-item">{{ 'home.blockchain.supply' | translate }}: <span class="badge">{{home.btsxSupply | number:0}} BTS</span></li>
-          <li class="clearfix list-group-item">{{ 'home.blockchain.unclaimed' | translate }}:<span class="badge">{{home.unclaimed | number:0}} BTS</span></li>
-          <li class="clearfix list-group-item">{{ 'home.blockchain.collat' | translate }}:<span class="badge">{{home.totalCollateral | number:0}} BTS</span></li>
-          <li class="clearfix list-group-item">{{ 'home.blockchain.change' | translate }}:<span class="badge">{{home.dailyInflation | number:0}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.supply' | translate }}: <span class="badge">{{home.btsxSupply | number:0}} {{ ::baseAsset }}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.unclaimed' | translate }}:<span class="badge">{{home.unclaimed | number:0}} {{ ::baseAsset }}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.collat' | translate }}:<span class="badge">{{home.totalCollateral | number:0}} {{ ::baseAsset }}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.blockchain.change' | translate }}:<span class="badge">{{home.dailyInflation | number:0}} {{ ::baseAsset }}</span></li>
           <li class="clearfix list-group-item">{{ 'home.blockchain.current' | translate }}: <span class="badge bold">{{maxBlock | number:0}}</span></li>
           <li class="clearfix list-group-item">{{ 'home.blockchain.trx' | translate }}:<span class="badge">{{home.transactionCount | number:0}}</span></li>
           <li class="clearfix list-group-item">{{ 'home.blockchain.missed' | translate }}:<span class="badge">{{home.missedCount | number:0}}</span></li>
@@ -78,8 +78,8 @@
         <ul class="list-group">
           <li class="clearfix list-group-item">{{ 'home.asset.number' | translate }}: <span class="badge">{{ home.assetCount }}</span></li>
           <li class="clearfix list-group-item">{{ 'home.asset.user' | translate }}: <span class="badge">{{home.userAssets}}</span></li>
-          <li class="clearfix list-group-item">{{ 'home.asset.shortReg' | translate }}: <span class="badge">{{home.assetReg | number:0}} BTS</span></li>
-          <li class="clearfix list-group-item">{{ 'home.asset.longReg' | translate }}: <span class="badge">{{home.assetRegLong | number:0}} BTS</span></li>
+          <li class="clearfix list-group-item">{{ 'home.asset.shortReg' | translate }}: <span class="badge">{{home.assetReg | number:0}} {{ ::baseAsset }}</span></li>
+          <li class="clearfix list-group-item">{{ 'home.asset.longReg' | translate }}: <span class="badge">{{home.assetRegLong | number:0}} {{ ::baseAsset }}</span></li>
           <li class="clearfix list-group-item">{{ 'home.asset.new7d' | translate }}: <span class="badge">{{home.newAssetsWeek | number:0}}</span></li>
           <li class="clearfix list-group-item">{{ 'home.asset.new30d' | translate }}: <span class="badge">{{home.newAssetsMonth | number:0}}</span></li>      
           <li class="clearfix list-group-item">{{ 'home.asset.trx' | translate }}: <span class="badge">{{home.nrAssetTrx | number:0}}</span></li>      
@@ -144,8 +144,8 @@
               <td class="hidden-xs">{{block.trxLength}}</td>
               <td ng-if="block.trxLength>0">
                 <span ng-repeat="value in block.totalValue">
-                  <p style="margin:0;padding:0;" ng-if="value.value!==0"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.value | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.value | number:2}}</span> <span ng-if="value.asset==='BTS'">BTS</span> 
-                    <a ng-if="value.asset!=='BTS'" ui-sref="asset.orderbook({ 'asset' : value.asset})">{{value.asset}}</a>
+                  <p style="margin:0;padding:0;" ng-if="value.value!==0"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.value | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.value | number:2}}</span> <span ng-if="value.asset===baseAsset">{{ ::baseAsset }}</span> 
+                    <a ng-if="value.asset!==baseAsset" ui-sref="asset.orderbook({ 'asset' : value.asset})">{{value.asset}}</a>
                   </p>
                 </span>
               </td>

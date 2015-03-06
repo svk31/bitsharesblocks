@@ -36,7 +36,7 @@
 		"api": "API"
 	},
 	"home": {
-		"history": "BTS PREIS HISTORIE ZULETZT 14 TAGE",
+		"history": "{{ value }} PREIS HISTORIE ZULETZT 14 TAGE",
 		"price": "Preis",
 		"MA": "30-Tage Moving Average",
 		"health": {
@@ -336,7 +336,7 @@
 		"alert3": "Das Orderbuch ist leer",
 		"collateral": "Kollateral",
 		"supply": "VERFÜGBARKEIT",
-		"supplyAnd": "UND COLLATERAL (BTS) VERLAUF",
+		"supplyAnd": "UND COLLATERAL ({{ value }}) VERLAUF",
 		"sell": "Verkaufen",
 		"buy": "Kaufen",
 		"short": "Shorten",
@@ -361,7 +361,9 @@
 			"avg": "Mittlerer Feed Preis",
 			"med": "Median Feed Preis",
 			"null": "Ungenügend Feeds in den letzten 24h",
-			"last": "Letzte Aktualisierung  (UTC)"
+			"last": "Letzte Aktualisierung  (UTC)",
+			"dev": "Deviation from median",
+			"dev_avg": "Average deviation from median"
 		},
 		"covers": {
 			"title": "MARGIN CALL ORDER",
@@ -375,9 +377,9 @@
 			"new": "NEUE KONTEN",
 			"total": "ANZAHL KONTEN",
 			"assetTrx": "ASSET TRANSAKTIONEN",
-			"btsTrx": "BTS TRANSAKTIONSTYPEN",
-			"trxCount": "BTS ANZAHL AN TRANSAKTIONEN",
-			"volume": "BTS TRANSAKTIONSVOLUMEN",
+			"btsTrx": "{{ value }} TRANSAKTIONSTYPEN",
+			"trxCount": "{{ value }} ANZAHL AN TRANSAKTIONEN",
+			"volume": "{{ value }} TRANSAKTIONSVOLUMEN",
 			"btcPrice": "BTS/BTC PREISVERLAUF",
 			"usdPrice": "PREISVERLAUF",
 			"prices": "PPREIS CHARTS",
@@ -403,14 +405,14 @@
 	"supply": {
 		"title1": "INFO",
 		"title2": "JAHRESINFLATION",
-		"title3": "VERFÜGBARKEIT VON BTS",
-		"title4": "BTS GEBPHREN ÜBER DER ZEIT",
+		"title3": "VERFÜGBARKEIT VON {{ value }}",
+		"title4": "{{ value }} GEBPHREN ÜBER DER ZEIT",
 		"height": "Blockhöhe BTSX => BTS Harte Aufspaltung",
 		"supply": "Verfügbarkeit zur Aufspaltung",
 		"change": "Änderung der Verfügbarkeit seit der harten Aufspaltung",
-		"changeY": "BTS Inflation",
-		"supplyY": "BTS VERFÜGBARKEIT",
-		"feesY": "BTS Gebühren",
+		"changeY": "{{ value }} Inflation",
+		"supplyY": "{{ value }} VERFÜGBARKEIT",
+		"feesY": "{{ value }} Gebühren",
 		"inflation": "Current annualized inflation",
 		"final": "Estimated final supply",
 		"max": "Theoretical maximum supply"

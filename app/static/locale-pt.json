@@ -36,7 +36,7 @@
 		"api": "API"
 	},
 	"home": {
-		"history": "HISTÓRICO DO PREÇO DE BTS NOS ULTIMOS 14 DIAS",
+		"history": "HISTÓRICO DO PREÇO DE {{ value }} NOS ULTIMOS 14 DIAS",
 		"price": "Preço",
 		"MA": "Variação Média em 30 dias",
 		"health": {
@@ -336,7 +336,7 @@
 		"alert3": "The orderbook is empty",
 		"collateral": "Colateral",
 		"supply": "QUANTIDADE",
-		"supplyAnd": "E HISTORICO DE COLATERAL (BTS) ",
+		"supplyAnd": "E HISTORICO DE COLATERAL ({{ value }}) ",
 		"sell": "Vender",
 		"buy": "Comprar",
 		"short": "Short",
@@ -361,7 +361,9 @@
 			"avg": "Preço Medio do Feed",
 			"med": "Preço Mediano do Feed",
 			"null": "Feeds Insuficientes nas Ultimas 24h",
-			"last": "Last update (UTC)"
+			"last": "Last update (UTC)",
+			"dev": "Deviation from median",
+			"dev_avg": "Average deviation from median"
 		},
 		"covers": {
 			"title": "ORDENS DE MARGEM",
@@ -403,14 +405,14 @@
 	"supply": {
 		"title1": "INFORMAÇÃO",
 		"title2": "INFLAÇÃO DIARIA ANUALIZADA",
-		"title3": "QUANTIDADE TOTAL DE BTS",
-		"title4": "TAXAS BTS PAGAS COM O TEMPO",
+		"title3": "QUANTIDADE TOTAL DE {{ value }}",
+		"title4": "TAXAS {{ value }} PAGAS COM O TEMPO",
 		"height": "Altura de BTSX => bloco de bifurcação BTS",
 		"supply": "Quantidade na Bifurcação",
 		"change": "Mudança na quantidade desde a bifurcação",
-		"changeY": "Inflação anualizada BTS",
-		"supplyY": "Quantidade de BTS",
-		"feesY": "Taxas de BTS",
+		"changeY": "Inflação anualizada {{ value }}",
+		"supplyY": "Quantidade de {{ value }}",
+		"feesY": "Taxas de {{ value }}",
 		"inflation": "Current annualized inflation",
 		"final": "Estimated final supply",
 		"max": "Theoretical maximum supply"

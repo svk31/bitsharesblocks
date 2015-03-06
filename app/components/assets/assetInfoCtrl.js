@@ -1,7 +1,8 @@
 angular.module('app')
 
-.controller('assetInfoCtrl', ['$scope', '$rootScope', '$state', '$interval', 'api', '$filter', 'Translate', 'Assets', 'Charts', 'Meta',
-  function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts, Meta) {
+.controller('assetInfoCtrl', ['$scope', '$rootScope', '$state', '$interval', 'api', '$filter', 'Translate', 'Assets', 'Charts', 'Meta', 'appcst',
+  function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts, Meta, appcst) {
+    $scope.baseAsset = appcst.baseAsset;
 
     $scope.assetId = $state.params.asset;
     $scope.prefix = '';
@@ -17,7 +18,7 @@ angular.module('app')
     var toolTip = {
       enabled: true,
       shared: false,
-      valueSuffix: ' BTS',
+      valueSuffix: ' ' + $scope.baseAsset,
       valueDecimals: 0,
       headerFormat: '<span style="font-size: 10px">Price: {point.key:.3f}</span><br/>',
     };
@@ -48,7 +49,7 @@ angular.module('app')
       yAxis: 1,
       tooltip: {
         valueDecimals: 0,
-        valueSuffix: ' BTS'
+        valueSuffix: ' ' + $scope.baseAsset
       }
     }));
 
@@ -169,6 +170,9 @@ angular.module('app')
           $scope.collateral = result.collateral;
           $scope.collateralAsset = result.collateralAsset;
           $scope.prefix = 'bit';
+          $scope.translateBase = {
+            value: $scope.prefix + $scope.asset.symbol
+          };
         }
 
         if (!result.asset.supply || result.asset.supply.length === 0) {
@@ -223,7 +227,7 @@ angular.module('app')
           id: 1,
           tooltip: {
             valueDecimals: 2,
-            valueSuffix: ' BTS'
+            valueSuffix: ' ' + $scope.baseAsset
           },
           marker: {
             enabled: false
@@ -250,11 +254,11 @@ angular.module('app')
 
     function chartText() {
       if ($scope.priceHistoryChart.series[2]) {
-        $scope.priceHistoryChart.series[2].tooltip.valueSuffix = ' BTS/' + $scope.assetId;
+        $scope.priceHistoryChart.series[2].tooltip.valueSuffix = ' ' + $scope.baseAsset + '/' + $scope.assetId;
       }
 
-      $scope.priceHistoryChart.series[0].tooltip.valueSuffix = ' BTS/' + $scope.prefix + $scope.assetId;
-      $scope.priceHistoryChart.series[1].tooltip.valueSuffix = ' BTS';
+      $scope.priceHistoryChart.series[0].tooltip.valueSuffix = ' ' + $scope.baseAsset + '/' + $scope.prefix + $scope.assetId;
+      $scope.priceHistoryChart.series[1].tooltip.valueSuffix = ' ' + $scope.baseAsset;
 
 
       if (marketAsset) {

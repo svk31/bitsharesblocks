@@ -1,9 +1,12 @@
 angular.module('app')
 
-.controller('supplyCtrl', ['$rootScope', '$scope', '$filter', '$translate', 'api', 'Charts', 'Translate', 'Home',
-	function($rootScope, $scope, $filter, $translate, api, Charts, Translate, Home) {
+.controller('supplyCtrl', ['$rootScope', '$scope', '$filter', '$translate', 'api', 'Charts', 'Translate', 'Home', 'appcst',
+	function($rootScope, $scope, $filter, $translate, api, Charts, Translate, Home, appcst) {
 
-
+		$scope.baseAsset = appcst.baseAsset;
+		$scope.translateBase = {
+			value: appcst.baseAsset
+		};
 		$scope.data = {
 			'hardFork': 991700,
 			'supply': 2498764341.60685
@@ -51,12 +54,12 @@ angular.module('app')
 
 		var tooltip = {
 			valueDecimals: 2,
-			valueSuffix: ' BTS'
+			valueSuffix: ' ' + $scope.baseAsset
 		};
 		$scope.supplyChart = angular.copy($scope.inflationChart);
 		$scope.supplyChart.series[0].tooltip = tooltip;
 		$scope.supplyChart.yAxis.labels.formatter = function() {
-			return $filter('number')(this.value, 0) + ' BTS';
+			return $filter('number')(this.value, 0) + ' ' + $scope.baseAsset;
 		};
 
 		$scope.feesChart = new Charts.chartConfig({
@@ -76,7 +79,7 @@ angular.module('app')
 				labels: {
 					align: 'left',
 					formatter: function() {
-						return $filter('currency')(this.value, '', 0) + ' BTS';
+						return $filter('currency')(this.value, '', 0) + ' ' + $scope.baseAsset;
 					}
 				},
 				allowDecimals: false
@@ -134,7 +137,7 @@ angular.module('app')
 				}
 			}
 
-			$scope.currentInflation = derivativeArray[derivativeArray.length-1][1];
+			$scope.currentInflation = derivativeArray[derivativeArray.length - 1][1];
 			$scope.inflationChart.series[0].data = derivativeArray;
 			$scope.supplyChart.series[0].data = supplyArray;
 
