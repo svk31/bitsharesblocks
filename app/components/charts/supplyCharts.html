@@ -3,8 +3,8 @@
 		<h3 class="panel-title">{{ 'supply.title1' | translate }}</h3>
 	</div>
 	<ul class="list-group">
-		<li class="list-group-item">{{ 'supply.height' | translate }}: <span class="badge">{{data.hardFork | number:0}}</span></li>
-		<li class="list-group-item">{{ 'supply.supply' | translate }}:<span class="badge">{{data.supply | number:0}} {{ ::baseAsset }}</span></li>
+		<li ng-if="baseAsset==='BTS'" class="list-group-item">{{ 'supply.height' | translate }}: <span class="badge">{{data.hardFork | number:0}}</span></li>
+		<li ng-if="baseAsset==='BTS'" class="list-group-item">{{ 'supply.supply' | translate }}:<span class="badge">{{data.supply | number:0}} {{ ::baseAsset }}</span></li>
 		<li class="list-group-item">{{ 'assets.user.th4' | translate }}:<span class="badge">{{data.currentSupply | number:0}} {{ ::baseAsset }}</span></li>
 		<li class="list-group-item">{{ 'supply.change' | translate }}:<span ng-class="{badge:true, 'alert-success':data.deltaSupply > 0, 'alert-danger':data.deltaSupply < 0}">{{data.deltaSupply | number:0}} {{ ::baseAsset }}</span></li>
 		<li class="list-group-item">{{ 'supply.change' | translate }} (%):<span ng-class="{badge:true, 'alert-success':data.percentChange > 0, 'alert-danger':data.percentChange < 0}">{{ data.percentChange | number:3}}%</span></li>
