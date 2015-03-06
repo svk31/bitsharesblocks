@@ -1,9 +1,9 @@
 angular.module('app')
 
-.controller('marketAssetsCtrl', ['$scope', '$rootScope', '$interval', 'Translate', 'Assets',
-  function($scope, $rootScope, $interval, Translate, Assets) {
+.controller('marketAssetsCtrl', ['$scope', '$rootScope', '$interval', 'Translate', 'Assets', 'appcst',
+  function($scope, $rootScope, $interval, Translate, Assets, appcst) {
     $scope.orderByField = 'marketCap';
-
+    $scope.baseAsset = appcst.baseAsset;
     $scope.reverseSort = true;
 
     var stopAssets;
@@ -25,8 +25,8 @@ angular.module('app')
       label: '€ EUR',
       symbol: '€'
     }, {
-      name: 'BTS',
-      label: 'DVS',
+      name: $scope.baseAsset,
+      label: $scope.baseAsset,
       symbol: ''
     }];
 

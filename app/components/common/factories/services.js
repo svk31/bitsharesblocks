@@ -1,8 +1,6 @@
 angular.module('app.services', [])
 
 .factory('getAssetDetail', function($q, api) {
-
-
 	return {
 		fetch: function(assetId) {
 			var deferred = $q.defer();
@@ -19,6 +17,8 @@ angular.module('app.services', [])
 
 .constant('appcst', {
 	R_ISO8601_STR: /^(\d{4})-?(\d\d)-?(\d\d)(?:T(\d\d)(?::?(\d\d)(?::?(\d\d)(?:\.(\d+))?)?)?(Z|([+-])(\d\d):?(\d\d))?)?$/,
+	baseAsset: 'DVS',
+	basePrecision: 100000,
 	translation: {
 		"nav": {
 			"home": "Home",
@@ -28,8 +28,8 @@ angular.module('app.services', [])
 			"assets": "Assets",
 			"charts": "Charts",
 			"general": "General",
-			"supply": "DVS Supply and Fees",
-			"btsgenesis": "DVS Genesis",
+			"supply": "BTS Supply and Fees",
+			"btsgenesis": "{{ value }} Genesis",
 			"btsxgenesis": "BTSX Genesis",
 			"about": "About"
 		},
@@ -57,7 +57,7 @@ angular.module('app.services', [])
 			"api": "API"
 		},
 		"home": {
-			"history": "BTS PRICE HISTORY LAST 14 DAYS",
+			"history": "{{ value }} PRICE HISTORY LAST 14 DAYS",
 			"price": "Price",
 			"MA": "30-day Moving Average",
 			"health": {
@@ -357,7 +357,7 @@ angular.module('app.services', [])
 			"alert3": "The orderbook is empty",
 			"collateral": "Collateral",
 			"supply": "SUPPLY",
-			"supplyAnd": "AND COLLATERAL (DVS) HISTORY",
+			"supplyAnd": "AND COLLATERAL ({{ value }}) HISTORY",
 			"sell": "Sell",
 			"buy": "Buy",
 			"short": "Short",
@@ -382,7 +382,9 @@ angular.module('app.services', [])
 				"avg": "Average Feed Price",
 				"med": "Median Feed Price",
 				"null": "Not enough feeds in the last 24hrs",
-				"last": "Last update (UTC)"
+				"last": "Last update (UTC)",
+				"dev": "Deviation from median",
+				"dev_avg": "Average deviation from median"
 			},
 			"covers": {
 				"title": "MARGIN CALL ORDERS",
@@ -401,10 +403,10 @@ angular.module('app.services', [])
 				"new": "NEW ACCOUNTS",
 				"total": "TOTAL NUMBER OF ACCOUNTS",
 				"assetTrx": "ALL ASSET TRANSACTION TYPES",
-				"btsTrx": "DVS TRANSACTION TYPES",
-				"trxCount": "DVS NUMBER OF TRANSACTIONS",
-				"volume": "DVS TRANSACTION VOLUME",
-				"btcPrice": "DVS/BTC PRICE HISTORY",
+				"btsTrx": "{{ value }} TRANSACTION TYPES",
+				"trxCount": "{{ value }} NUMBER OF TRANSACTIONS",
+				"volume": "{{ value }} TRANSACTION VOLUME",
+				"btcPrice": "BTS/BTC PRICE HISTORY",
 				"usdPrice": "PRICE HISTORY",
 				"prices": "PRICE CHARTS",
 				"trx": "TRANSACTION CHARTS",
@@ -429,14 +431,17 @@ angular.module('app.services', [])
 		"supply": {
 			"title1": "INFO",
 			"title2": "ANNUALIZED DAILY INFLATION",
-			"title3": "TOTAL SUPPLY OF DVS",
-			"title4": "DVS FEES PAID OVER TIME",
-			"height": "Height of BTSX => DVS hardfork block",
+			"title3": "TOTAL SUPPLY OF {{ value }}",
+			"title4": "{{ value }} FEES PAID OVER TIME",
+			"height": "Height of BTSX => BTS hardfork block",
 			"supply": "Supply at fork",
 			"change": "Change in supply since the hardfork",
-			"changeY": "BTS annualized inflation",
-			"supplyY":"DVS supply",
-			"feesY": "DVS fees"
+			"changeY": "{{ value }} annualized inflation",
+			"supplyY": "{{ value }} supply",
+			"feesY": "{{ value }} fees",
+			"inflation": "Current annualized inflation",
+			"final": "Estimated final supply",
+			"max": "Theoretical maximum supply"
 		},
 		"genesis": {
 			"stats": "STATISTICS",

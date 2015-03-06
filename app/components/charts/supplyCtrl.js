@@ -1,9 +1,12 @@
 angular.module('app')
 
-.controller('supplyCtrl', ['$rootScope', '$scope', '$filter', '$translate', 'api', 'Charts', 'Translate',
-	function($rootScope, $scope, $filter, $translate, api, Charts, Translate) {
+.controller('supplyCtrl', ['$rootScope', '$scope', '$filter', '$translate', 'api', 'Charts', 'Translate', 'Home', 'appcst',
+	function($rootScope, $scope, $filter, $translate, api, Charts, Translate, Home, appcst) {
 
-
+		$scope.baseAsset = appcst.baseAsset;
+		$scope.translateBase = {
+			value: appcst.baseAsset
+		};
 		$scope.data = {
 			'hardFork': 991700,
 			'supply': 2498764341.60685
@@ -51,12 +54,12 @@ angular.module('app')
 
 		var tooltip = {
 			valueDecimals: 2,
-			valueSuffix: ' BTS'
+			valueSuffix: ' ' + $scope.baseAsset
 		};
 		$scope.supplyChart = angular.copy($scope.inflationChart);
 		$scope.supplyChart.series[0].tooltip = tooltip;
 		$scope.supplyChart.yAxis.labels.formatter = function() {
-			return $filter('number')(this.value, 0) + ' BTS';
+			return $filter('number')(this.value, 0) + ' ' + $scope.baseAsset;
 		};
 
 		$scope.feesChart = new Charts.chartConfig({
@@ -76,7 +79,7 @@ angular.module('app')
 				labels: {
 					align: 'left',
 					formatter: function() {
-						return $filter('currency')(this.value, '', 0) + ' BTS';
+						return $filter('currency')(this.value, '', 0) + ' ' + $scope.baseAsset;
 					}
 				},
 				allowDecimals: false
@@ -106,6 +109,7 @@ angular.module('app')
 			getTranslations();
 		});
 
+
 		api.getInflation().success(function(result) {
 			$scope.data.currentSupply = result.supply[result.supply.length - 1][1];
 			$scope.data.deltaSupply = $scope.data.currentSupply - $scope.data.supply;
@@ -133,8 +137,50 @@ angular.module('app')
 				}
 			}
 
+			$scope.currentInflation = derivativeArray[derivativeArray.length - 1][1];
 			$scope.inflationChart.series[0].data = derivativeArray;
 			$scope.supplyChart.series[0].data = supplyArray;
+
+			// Future supply estimations
+			var currentDate = new Date();
+			var halvings = [];
+			for (i = 1; i < 20; i++) {
+				halvings.push(new Date(2014 + 4 * i, 10)); // Halvings occur every 4 years in november
+			}
+
+			function getMaxInflation(date) {
+				var maxInflation = 50;
+				for (i = 0; i < halvings.length; i++) {
+					if (currentDate > halvings[i]) {
+						maxInflation /= 2;
+					} else {
+						break;
+					}
+				}
+				return maxInflation;
+			}
+
+			var finalSupply = $scope.data.currentSupply;
+			var maxSupply = $scope.data.currentSupply;
+
+			var maxInflation = getMaxInflation(currentDate);
+			var inflation = result.currentPay; // Current average payrate for all delegates
+			var inflationProportion = result.currentPay / maxInflation;
+
+			var blocksPer15Days = 6 * 60 * 24 * 15;
+
+			while (maxInflation * blocksPer15Days > 1000) {
+				currentDate.setDate(currentDate.getDate() + 15);
+
+				maxInflation = getMaxInflation(currentDate);
+				inflation = inflationProportion * maxInflation;
+
+				finalSupply += inflation * blocksPer15Days;
+				maxSupply += maxInflation * blocksPer15Days;
+			}
+
+			$scope.finalSupply = finalSupply;
+			$scope.maxSupply = maxSupply;
 		});
 
 		api.getFees().success(function(result) {

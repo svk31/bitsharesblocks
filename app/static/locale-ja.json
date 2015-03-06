@@ -36,7 +36,7 @@
     "api": "API"
   },
   "home": {
-    "history": "最近１４日間のBTSの値段",
+    "history": "最近１４日間の{{value}}の値段",
     "price": "プライス",
     "MA": "３０日間移動平均",
     "health": {
@@ -334,7 +334,7 @@
     "alert3": "The orderbook is empty",
     "collateral": "担保",
     "supply": "供給量",
-    "supplyAnd": "及び担保(BTS)推移",
+    "supplyAnd": "及び担保({{ value }})推移",
     "sell": "販売",
     "buy": "購入",
     "short": "空売渡",
@@ -359,7 +359,9 @@
       "avg": "平均フィードプライス",
       "med": "中央値フィードプライス",
       "null": "最近２４時間の間フィード不十分",
-      "last": "最終アップデート(UTC)"
+      "last": "最終アップデート(UTC)",
+      "dev": "Deviation from median",
+      "dev_avg": "Average deviation from median"
     },
     "covers": {
       "title": "MARGIN CALL ORDERS",
@@ -373,9 +375,9 @@
       "new": "ニューアカウント",
       "total": "総アカウント数",
       "assetTrx": "全体資産取引き類型",
-      "btsTrx": "BTS取引き類型",
-      "trxCount": "BTS取引き数",
-      "volume": "BTS取引き量",
+      "btsTrx": "{{ value }}取引き類型",
+      "trxCount": "{{ value }}取引き数",
+      "volume": "{{ value }}取引き量",
       "btcPrice": "BTS/BTCプライス推移",
       "usdPrice": "プライス推移",
       "prices": "PRICE CHARTS",
@@ -401,14 +403,17 @@
   "supply": {
     "title1": "情報",
     "title2": "ハードフォーク以来供給量変化",
-    "title3": "総BTS供給量",
-    "title4": "時間別BTS手数料支払い",
+    "title3": "総{{ value }}供給量",
+    "title4": "時間別{{ value }}手数料支払い",
     "height": "BTSX => BTSハードフォークブロック番号",
     "supply": "ハードフォーク時の供給量",
     "change": "ハードフォーク以来供給量変化",
-    "changeY": "BTS annualized inflation",
-    "supplyY": "BTS供給量",
-    "feesY": "BTS手数料"
+    "changeY": "{{ value }} annualized inflation",
+    "supplyY": "{{ value }}供給量",
+    "feesY": "{{ value }}手数料",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "統計",

@@ -8,7 +8,7 @@
 			<li class="list-group-item"><strong>{{ 'delegate.rank.current' | translate }}:</strong><span class="badge">{{delegate.rank}}</span></li>
 			<li class="list-group-item">{{ 'delegate.rank.dayChange' | translate }}:<span class="badge">{{delegate.dayChange}}</span></li>
 			<li class="list-group-item">{{ 'delegate.rank.weekChange' | translate }}:<span class="badge">{{ delegate.weekChange }}</span></li>
-			<li class="list-group-item">{{ 'delegate.rank.votes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for | number:0}} BTS</span></li>
+			<li class="list-group-item">{{ 'delegate.rank.votes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for | number:0}} {{ ::baseAsset }}</span></li>
 			<li class="list-group-item">{{ 'delegate.rank.percentVotes' | translate }}:<span class="badge">{{delegate.delegate_info.votes_for_percent}} %</span></li>
 		</ul>
 	</div>

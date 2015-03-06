@@ -36,7 +36,7 @@
     "api": "API"
   },
   "home": {
-    "history": "SON 14 GÜNLÜK BTS FİYATI",
+    "history": "SON 14 GÜNLÜK {{ value }} FİYATI",
     "price": "Fiyat",
     "MA": "30-günlük Hareketli Ortalama",
     "health": {
@@ -335,7 +335,7 @@
     "alert3": "The orderbook is empty",
     "collateral": "Teminat",
     "supply": "ARZ",
-    "supplyAnd": "VE TEMİNAT (BTS) GEÇMİŞİ",
+    "supplyAnd": "VE TEMİNAT ({{ value }}) GEÇMİŞİ",
     "sell": "Sat:",
     "buy": "Satın al:",
     "short": "Short",
@@ -360,7 +360,9 @@
       "avg": "Ortalama Feed Fiyatı",
       "med": "Medyan Feed Fiyatı",
       "null": "Son 24 saatte yeterli feed yok",
-      "last": "Son güncelleme (UTC)"
+      "last": "Son güncelleme (UTC)",
+      "dev": "Deviation from median",
+      "dev_avg": "Average deviation from median"
     },
     "covers": {
       "title": "MARGIN CALL ORDERS",
@@ -374,9 +376,9 @@
       "new": "YENİ HESAPLAR",
       "total": "TOPLAM HESAP SAYISI",
       "assetTrx": "TÜM VARLIK İŞLEM TİPLERİ",
-      "btsTrx": "BTS İŞLEM TİPLERİ",
-      "trxCount": "BTS İŞLEM SAYISI",
-      "volume": "BTS İŞLEM HACMİ",
+      "btsTrx": "{{ value }} İŞLEM TİPLERİ",
+      "trxCount": "{{ value }} İŞLEM SAYISI",
+      "volume": "{{ value }} İŞLEM HACMİ",
       "btcPrice": "BTS/BTC FİYAT GEÇMİŞİ",
       "usdPrice": "FİYAT GEÇMİŞİ",
       "prices": "PRICE CHARTS",
@@ -402,14 +404,17 @@
   "supply": {
     "title1": "BİLGİ",
     "title2": "BTS HARDFORK SONRASI ARZ DEĞİŞİMİ",
-    "title3": "TOPLAM BTS ARZI",
-    "title4": "ZAMANA GÖRE ÖDENEN BTS ÜCRETLERİ",
+    "title3": "TOPLAM {{ value }} ARZI",
+    "title4": "ZAMANA GÖRE ÖDENEN {{ value }} ÜCRETLERİ",
     "height": "BTSX yüksekliği => BTS hardfork bloğu",
     "supply": "Fork anındaki arz",
     "change": "Hardfork sonrası arz değişimi",
-    "changeY": "BTS annualized inflation",
-    "supplyY": "BTS arzı",
-    "feesY": "BTS ücretleri"
+    "changeY": "{{ value }} annualized inflation",
+    "supplyY": "{{ value }} arzı",
+    "feesY": "{{ value }} ücretleri",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "İSTATİSTİKLER",

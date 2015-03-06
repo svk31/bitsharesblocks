@@ -36,7 +36,7 @@
     "api": "API"
   },
   "home": {
-    "history": "ИСТОРИЯ ЦЕН НА BTS ЗА 14 ДНЕЙ",
+    "history": "ИСТОРИЯ ЦЕН НА {{ value }} ЗА 14 ДНЕЙ",
     "price": "Цена",
     "MA": "30-дневное Скользящее среднее",
     "health": {
@@ -336,7 +336,7 @@
     "alert3": "The orderbook is empty",
     "collateral": "Обеспечение",
     "supply": "ОБЪЕМ",
-    "supplyAnd": "И ИСТОРИЯ ЗАЛОГА (BTS)",
+    "supplyAnd": "И ИСТОРИЯ ЗАЛОГА ({{ value }})",
     "sell": "Продать",
     "buy": "Курить",
     "short": "Шорт",
@@ -361,7 +361,9 @@
       "avg": "Средняя цена актива",
       "med": "Медианная цена актива",
       "null": "Недостаточность активов за 24 часа",
-      "last": "Последнее обновление (UTC)"
+      "last": "Последнее обновление (UTC)",
+      "dev": "Deviation from median",
+      "dev_avg": "Average deviation from median"
     },
     "covers": {
       "title": "МАРЖИНАЛЬНЫЕ ТРЕБОВАНИЯ",
@@ -403,14 +405,17 @@
   "supply": {
     "title1": "ИНФОРМАЦИЯ",
     "title2": "ДНЕВНАЯ ИНФЛЯЦИЯ В ГОДОВОМ ИСЧИСЛЕНИИ",
-    "title3": "ОБЩЕЕ ПРЕДЛОЕЖНИЕ ПО BTS",
-    "title4": "КОМИССИИ BTS УПЛАЧЕННЫЕ ЗА ВРЕМЯ",
+    "title3": "ОБЩЕЕ ПРЕДЛОЕЖНИЕ ПО {{ value }}",
+    "title4": "КОМИССИИ {{ value }} УПЛАЧЕННЫЕ ЗА ВРЕМЯ",
     "height": "Размер BTSX => форк блока BTS",
     "supply": "Предложение в форке",
     "change": "Изменение в предложении с форка",
-    "changeY": "Годовая инфляция в BTS",
-    "supplyY": "Предложение BTS",
-    "feesY": "Комиссии BTS"
+    "changeY": "Годовая инфляция в {{ value }}",
+    "supplyY": "Предложение {{ value }}",
+    "feesY": "Комиссии {{ value }}",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "СТАТИСТИКА",

@@ -2,6 +2,7 @@ angular.module('app')
 
 .factory('Blocks', ['api', '$q', 'Assets', 'Accounts', function(api, $q, Assets, Accounts) {
 
+
 	var _booleanTrx = false;
 	var _blocksArray = [];
 	var _maxBlock;

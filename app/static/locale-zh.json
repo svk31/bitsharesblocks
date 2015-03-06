@@ -36,7 +36,7 @@
     "api": "API"
   },
   "home": {
-    "history": "BTS过去14天的价格历史",
+    "history": "{{ value }}过去14天的价格历史",
     "price": "价格",
     "MA": "30天移动平均价",
     "health": {
@@ -360,7 +360,9 @@
       "avg": "喂价种子平均数",
       "med": "喂价种子中位数",
       "null": "过去24小时没有足够的种子数",
-      "last": "最后的更新(UTC时间)"
+      "last": "最后的更新(UTC时间)",
+      "dev": "Deviation from median",
+      "dev_avg": "Average deviation from median"
     },
     "covers": {
       "title": "MARGIN CALL ORDERS",
@@ -374,9 +376,9 @@
       "new": "新账号",
       "total": "账户的总数",
       "assetTrx": "所有资产交易的种类",
-      "btsTrx": "BTS交易的种类",
-      "trxCount": "BTS 交易的数量",
-      "volume": "BTS 交易量",
+      "btsTrx": "{{ value }}交易的种类",
+      "trxCount": "{{ value }} 交易的数量",
+      "volume": "{{ value }} 交易量",
       "btcPrice": "BTS/BTC价格历史",
       "usdPrice": "价格历史",
       "prices": "PRICE CHARTS",
@@ -402,14 +404,17 @@
   "supply": {
     "title1": "INFO",
     "title2": "在BTS硬分叉后供应量的改变",
-    "title3": "BTS供应总量",
-    "title4": "随着时间过去付出的BTS交易费",
+    "title3": "{{ value }}供应总量",
+    "title4": "随着时间过去付出的{{ value }}交易费",
     "height": "BTSX转为BTS的硬分叉区块高度",
     "supply": "分叉时供应量",
     "change": "在硬分叉后改变的供应量",
-    "changeY": "BTS annualized inflation",
-    "supplyY": "BTS供应量",
-    "feesY": "BTS交易费"
+    "changeY": "{{ value }} annualized inflation",
+    "supplyY": "{{ value }}供应量",
+    "feesY": "{{ value }}交易费",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "统计数据",

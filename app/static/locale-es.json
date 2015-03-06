@@ -36,7 +36,7 @@
     "api": "API"
   },
   "home": {
-    "history": "PRECIO HISTORICO BTS ULTIMOS 14 DIAS",
+    "history": "PRECIO HISTORICO {{ value }} ULTIMOS 14 DIAS",
     "price": "Precio",
     "MA": "Media Móvil de 30 días",
     "health": {
@@ -335,7 +335,7 @@
     "alert3": "The orderbook is empty",
     "collateral": "Colateral",
     "supply": "OFERTA",
-    "supplyAnd": "E HISTORIA COLATERALES (BTS)",
+    "supplyAnd": "E HISTORIA COLATERALES ({{ value }})",
     "sell": "Vender",
     "buy": "Comprar",
     "short": "Short",
@@ -360,7 +360,9 @@
       "avg": "Media del Precio del Feed",
       "med": "Mediana del Precio del Feed",
       "null": "Sin suficientes feeds en las últimas 24hrs",
-      "last": "Última actualización (UTC)"
+      "last": "Última actualización (UTC)",
+      "dev": "Deviation from median",
+      "dev_avg": "Average deviation from median"
     },
     "covers": {
       "title": "MARGIN CALL ORDERS",
@@ -402,14 +404,17 @@
   "supply": {
     "title1": "INFO",
     "title2": "CAMBIO DE OFERTA DESPUES DEL HARDFORK DE BTS",
-    "title3": "OFERTA TOTAL DE BTS",
-    "title4": "COMISIONES DE BTS PAGADAS",
+    "title3": "OFERTA TOTAL DE {{ value }}",
+    "title4": "COMISIONES DE {{ value }} PAGADAS",
     "height": "Altura de BTSX => Bloque del hardfork de BTS",
     "supply": "Oferta en el fork",
     "change": "Cambio en la oferta desde el hardfork",
     "changeY": "BTS annualized inflation",
-    "supplyY": "Oferta BTS",
-    "feesY": "Comisiones BTS"
+    "supplyY": "Oferta {{ value }}",
+    "feesY": "Comisiones {{ value }}",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "ESTADISTICAS",

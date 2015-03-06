@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('priceChartsCtrl', ['$scope', '$rootScope', '$filter', '$state', 'api', 'Assets', 'Charts', 'Translate',
-  function($scope, $rootScope, $filter, $state, api, Assets, Charts, Translate) {
+.controller('priceChartsCtrl', ['$scope', '$rootScope', '$filter', '$state', 'api', 'Assets', 'Charts', 'Translate', 'appcst',
+  function($scope, $rootScope, $filter, $state, api, Assets, Charts, Translate, appcst) {
 
     $scope.priceUnits = [{
       name: 'USD',
@@ -52,7 +52,7 @@ angular.module('app')
 
     var toolTip = {
       valueDecimals: 0,
-      valueSuffix: ' BTS'
+      valueSuffix: ' ' + appcst.baseAsset
     };
 
     $scope.priceChart = new Charts.chartConfig({
@@ -105,7 +105,7 @@ angular.module('app')
       var toolTip = {
         valueDecimals: valueDecimals,
         valuePrefix: '',
-        valueSuffix: ' ' + $scope.priceUnit.name + '/BTS'
+        valueSuffix: ' ' + $scope.priceUnit.name + '/' + appcst.baseAsset
       };
 
       $scope.priceChart.series[0].tooltip = toolTip;

@@ -36,7 +36,7 @@
     "api": "API"
   },
   "home": {
-    "history": "지난 14일 BTS 시세",
+    "history": "지난 14일 {{ value }} 시세",
     "price": "가격",
     "MA": "30일 이동평균",
     "health": {
@@ -335,7 +335,7 @@
     "alert3": "The orderbook is empty",
     "collateral": "담보",
     "supply": "공급량",
-    "supplyAnd": "및 담보(BTS) 추이",
+    "supplyAnd": "및 담보({{ value }}) 추이",
     "sell": "매도",
     "buy": "매수",
     "short": "공매도",
@@ -360,7 +360,9 @@
       "avg": "가격정보 평균값",
       "med": "가격정보 중위값",
       "null": "지난 24시간동안 가격정보 불충분",
-      "last": "최종 업데이트 (UTC)"
+      "last": "최종 업데이트 (UTC)",
+      "dev": "Deviation from median",
+      "dev_avg": "Average deviation from median"
     },
     "covers": {
       "title": "마진콜 주문",
@@ -374,9 +376,9 @@
       "new": "신규 계정",
       "total": "총 계정수",
       "assetTrx": "전체 자산 거래유형",
-      "btsTrx": "BTS 거래유형",
-      "trxCount": "BTS 거래 수",
-      "volume": "BTS 거래량",
+      "btsTrx": "{{ value }} 거래유형",
+      "trxCount": "{{ value }} 거래 수",
+      "volume": "{{ value }} 거래량",
       "btcPrice": "BTS/BTC 시세 추이",
       "usdPrice": "시세 추이",
       "prices": "가격 차트",
@@ -402,14 +404,17 @@
   "supply": {
     "title1": "정보",
     "title2": "하드포크 이후 공급량 변화",
-    "title3": "총 BTS 공급량",
-    "title4": "시간별 BTS 수수료 지불액",
+    "title3": "총 {{ value }} 공급량",
+    "title4": "시간별 {{ value }} 수수료 지불액",
     "height": "BTSX => BTS 하드포크 블럭번호",
     "supply": "하드포크시 공급량",
     "change": "하드포크 이후 공급량 변화",
-    "changeY": "BTS 연간 인플레이션",
-    "supplyY": "BTS 공급량",
-    "feesY": "BTS 수수료"
+    "changeY": "{{ value }} 연간 인플레이션",
+    "supplyY": "{{ value }} 공급량",
+    "feesY": "{{ value }} 수수료",
+    "inflation": "Current annualized inflation",
+    "final": "Estimated final supply",
+    "max": "Theoretical maximum supply"
   },
   "genesis": {
     "stats": "통계",

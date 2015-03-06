@@ -45,7 +45,7 @@ var VoteRow = React.createClass({displayName: 'VoteRow',
 		return (
 			React.createElement("tr", null, 
 			React.createElement("td", null, React.createElement("a", {href: 'blocks/block?id='+vote.block}, vote.block)), 
-			React.createElement("td", null, vote.vote+' DVS')
+			React.createElement("td", null,  vote.vote+' '+this.props.base)
 			)
 			);
 	}
@@ -131,7 +131,7 @@ var VotesTable = React.createClass({
 			})
 			.map(function(vote) {
 				return (
-					React.createElement(VoteRow, {key: vote.block, data: vote})
+					React.createElement(VoteRow, {key: vote.block, data: vote, base: headers.baseAsset})
 					);
 
 			});

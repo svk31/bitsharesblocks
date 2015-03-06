@@ -1,8 +1,9 @@
 angular.module('app')
 
-.controller('blocksCtrl', ['$scope', '$rootScope', '$state', '$location', '$interval', '$timeout', '$alert', 'api', 'Assets', 'Blocks', 'Translate',
-  function($scope, $rootScope, $state, $location, $interval, $timeout, $alert, api, Assets, Blocks, Translate) {
+.controller('blocksCtrl', ['$scope', '$rootScope', '$state', '$location', '$interval', '$timeout', '$alert', 'api', 'Assets', 'Blocks', 'Translate', 'appcst',
+  function($scope, $rootScope, $state, $location, $interval, $timeout, $alert, api, Assets, Blocks, Translate, appcst) {
 
+    $scope.baseAsset = appcst.baseAsset;
     var top = parseInt($state.params.top, 10);
     var maxBlock, stopUpdate;
     var oldPage = 1,
@@ -10,8 +11,6 @@ angular.module('app')
     $scope.blockCount = 20;
     $scope.maxSize = 0;
     $scope.currentPage = 1;
-
-    // $scope.placeholder = 'initial';
 
     $scope.booleanTrx = Blocks.getBooleanTrx();
 

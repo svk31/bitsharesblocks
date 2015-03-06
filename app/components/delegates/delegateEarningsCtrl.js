@@ -1,8 +1,9 @@
 angular.module('app')
 
-.controller('delegateEarningsCtrl', ['$scope', '$rootScope', '$state', '$location', '$translate', 'api', 'Assets', 'Delegates', 'Translate', 'Charts', 'Meta',
-  function($scope, $rootScope, $state, $location, $translate, api, Assets, Delegates, Translate, Charts, Meta) {
+.controller('delegateEarningsCtrl', ['$scope', '$rootScope', '$state', '$location', '$translate', 'api', 'Assets', 'Delegates', 'Translate', 'Charts', 'Meta', 'appcst',
+  function($scope, $rootScope, $state, $location, $translate, api, Assets, Delegates, Translate, Charts, Meta, appcst) {
     $scope.delegateName = $state.params.name;
+    $scope.baseAsset = appcst.baseAsset;
 
     $scope.chartPay = new Charts.chartConfig({
       type: 'area',
@@ -14,7 +15,7 @@ angular.module('app')
         },
         tooltip: {
           valueDecimals: 0,
-          valueSuffix: ' BTS',
+          valueSuffix: ' '+$scope.baseAsset,
           headerFormat: '<span style="font-size: 10px">Block: {point.key}</span><br/>'
         }
       })],
@@ -23,7 +24,7 @@ angular.module('app')
       },
       yAxis: {
         title: {
-          text: 'BTS'
+          text: $scope.baseAsset
         }
       },
       size: {

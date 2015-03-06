@@ -1,9 +1,9 @@
 angular.module('app')
 
-.controller('delegateVotesCtrl', ['$scope', '$rootScope', '$state', '$location', '$translate', 'api', 'Assets', 'Delegates', 'Translate', 'Charts', 'Meta',
-  function($scope, $rootScope, $state, $location, $translate, api, Assets, Delegates, Translate, Charts, Meta) {
+.controller('delegateVotesCtrl', ['$scope', '$rootScope', '$state', '$location', '$translate', 'api', 'Assets', 'Delegates', 'Translate', 'Charts', 'Meta', 'appcst',
+  function($scope, $rootScope, $state, $location, $translate, api, Assets, Delegates, Translate, Charts, Meta, appcst) {
     // $scope.delegateName = $state.params.name;
-
+    $scope.baseAsset = appcst.baseAsset;
     $scope.highchartsVotes = new Charts.chartConfig({
       type: 'area',
       useHighStocks: false,
@@ -14,13 +14,13 @@ angular.module('app')
         },
         tooltip: {
           valueDecimals: 0,
-          valueSuffix: ' BTS',
+          valueSuffix: ' '+$scope.baseAsset,
           headerFormat: '<span style="font-size: 10px">Block: {point.key}</span><br/>'
         }
       })],
       yAxis: {
         title: {
-          text: 'BTS'
+          text: $scope.baseAsset
         }
       },
       size: {

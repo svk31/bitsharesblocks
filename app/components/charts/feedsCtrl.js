@@ -1,8 +1,9 @@
 angular.module('app')
 
-.controller('feedsChartsCtrl', ['$scope', '$rootScope', '$filter', '$state', '$location', 'api', 'Assets', 'Charts', 'Translate',
-  function($scope, $rootScope, $filter, $state, $location, api, Assets, Charts, Translate) {
+.controller('feedsChartsCtrl', ['$scope', '$rootScope', '$filter', '$state', '$location', 'api', 'Assets', 'Charts', 'Translate', 'appcst',
+  function($scope, $rootScope, $filter, $state, $location, api, Assets, Charts, Translate, appcst) {
 
+    $scope.baseAsset = appcst.baseAsset;
     var unit = ($state.params.asset) ? $state.params.asset : 'USD';
     $scope.priceUnits = [{
       symbol: unit,
@@ -74,7 +75,7 @@ angular.module('app')
       id: 'primary',
       labels: {
         align: 'left',
-        format: '{value}' + ' USD/DVS',
+        format: '{value}' + ' USD/' + $scope.baseAsset,
       }
     }, { // Secondary yAxis
       opposite: false,
@@ -85,7 +86,7 @@ angular.module('app')
 
     var toolTip = {
       valueDecimals: 5,
-      valueSuffix: ' USD/DVS'
+      valueSuffix: ' USD/' + $scope.baseAsset
     };
 
     $scope.feedsChart = new Charts.chartConfig({
@@ -144,7 +145,7 @@ angular.module('app')
         for (i = 0; i < 3; i++) {
           $scope.feedsChart.series[i].tooltip = {
             valueDecimals: valueDecimals,
-            valueSuffix: ' ' + asset + '/DVS'
+            valueSuffix: ' ' + asset + '/' + $scope.baseAsset
           };
         }
 
@@ -152,8 +153,13 @@ angular.module('app')
           id: 'primary',
           labels: {
             align: 'left',
-            format: '{value}' + ' ' + asset + '/DVS',
+            format: '{value}' + ' ' + asset + '/' + $scope.baseAsset
           }
+        };
+
+        $scope.feedsChart.series[2].tooltip = {
+          valueDecimals: 2,
+          valueSuffix: '%'
         };
       });
     }

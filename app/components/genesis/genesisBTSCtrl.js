@@ -1,9 +1,10 @@
 angular.module('app')
 
-.controller('genesisBTSCtrl', ['$scope', '$rootScope', 'Translate', 'Charts', 'api',
-	function($scope, $rootScope, Translate, Charts, api) {
+.controller('genesisBTSCtrl', ['$scope', '$rootScope', 'Translate', 'Charts', 'api', 'appcst',
+	function($scope, $rootScope, Translate, Charts, api, appcst) {
 
 		$scope.balanceLimit = 100;
+		$scope.baseAsset = appcst.baseAsset;
 
 		var Size = {
 			height: 250

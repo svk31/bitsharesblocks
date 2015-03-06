@@ -1,8 +1,8 @@
 angular.module('app')
 
-.controller('orderBookCtrl', ['$scope', '$rootScope', '$state', '$interval', 'api', '$filter', 'Translate', 'Assets', 'Charts', 'Meta',
-  function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts, Meta) {
-
+.controller('orderBookCtrl', ['$scope', '$rootScope', '$state', '$interval', 'api', '$filter', 'Translate', 'Assets', 'Charts', 'Meta', 'appcst',
+  function($scope, $rootScope, $state, $interval, api, $filter, Translate, Assets, Charts, Meta, appcst) {
+    $scope.baseAsset = appcst.baseAsset;
     $scope.orderByField = 'last_update';
     $scope.reverseSort = true;
     $scope.assetId = $state.params.asset;
@@ -24,7 +24,7 @@ angular.module('app')
     var toolTip = {
       enabled: true,
       shared: false,
-      valueSuffix: ' BTS',
+      valueSuffix: ' ' + $scope.baseAsset,
       valueDecimals: 0,
       headerFormat: '<span style="font-size: 10px">Price: {point.key:.3f}</span><br/>',
     };
@@ -71,7 +71,7 @@ angular.module('app')
         },
         labels: {
           formatter: function() {
-            return $filter('currency')(this.value, '', 0) + ' ' + 'BTS';
+            return $filter('currency')(this.value, '', 0) + ' ' + $scope.baseAsset;
           },
           align: 'right'
         }
@@ -83,7 +83,7 @@ angular.module('app')
     function fetchOrderBook() {
       Assets.fetchOrderBook($scope.assetId).then(function(result) {
         Meta.add('/asset/orderbook', {
-          title: 'Bitshares '+result.asset.symbol + ' orderbook: asks, bids, shorts and covers'
+          title: 'Bitshares ' + result.asset.symbol + ' orderbook: asks, bids, shorts and covers'
         });
 
         marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
@@ -149,7 +149,7 @@ angular.module('app')
     }
 
     function chartText() {
-      $scope.orderBookChart.xAxis.title.text = 'BTS/' + $scope.prefix + $scope.assetId;
+      $scope.orderBookChart.xAxis.title.text = $scope.baseAsset + '/' + $scope.prefix + $scope.assetId;
     }
 
     $scope.stopUpdate = function() {

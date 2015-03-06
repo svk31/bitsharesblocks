@@ -1,10 +1,13 @@
 angular.module('app')
 
-.controller('homeCtrl', ['$scope', '$rootScope', '$interval', '$alert', 'api', 'Delegates', 'Blocks', 'Translate', 'Charts', 'Alerts', 'Home',
-  function($scope, $rootScope, $interval, $alert, api, Delegates, Blocks, Translate, Charts, Alerts, Home) {
+.controller('homeCtrl', ['$scope', '$rootScope', '$interval', '$alert', 'api', 'Delegates', 'Blocks', 'Translate', 'Charts', 'Alerts', 'Home', 'appcst',
+  function($scope, $rootScope, $interval, $alert, api, Delegates, Blocks, Translate, Charts, Alerts, Home, appcst) {
 
     var stopHome, stopBlocks, stopPrice, movingAvg, price;
-
+    $scope.baseAsset = appcst.baseAsset;
+    $scope.translateBase = {
+      value: appcst.baseAsset
+    };
     $scope.priceUnits = [{
       name: 'USD',
       label: '$ USD',
@@ -189,7 +192,7 @@ angular.module('app')
       var toolTip = {
         valueDecimals: valueDecimals,
         valuePrefix: '',
-        valueSuffix: ' ' + $scope.priceUnit.name + '/DVS'
+        valueSuffix: ' ' + $scope.priceUnit.name + '/' + $scope.baseAsset
       };
       $scope.priceChart.yAxis = {
         labels: {
