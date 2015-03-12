@@ -6,6 +6,12 @@ angular.module('app')
 	var myFunction = {};
 	var basePrecision = appcst.basePrecision;
 	var _assets = {};
+	var _metaMarkets = {
+		BTC: 'bitBTC_BTC',
+		USD: 'BTC_bitUSD',
+		CNY: 'BTC_bitCNY'
+	};
+
 	_assets = store.get('assets');
 	if (_assets === undefined) {
 		_assets = {};
@@ -169,9 +175,9 @@ angular.module('app')
 				assets[i].volume.CNY = (assets[i].dailyVolume !== 0) ? prices.CNY * (assets[i].dailyVolume) : 0;
 				assets[i].volume.EUR = (assets[i].dailyVolume !== 0) ? prices.EUR * (assets[i].dailyVolume) : 0;
 
-				// decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
-				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, assets[i].decimals) + ' ' + assets[i].symbol;
-				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, assets[i].decimals) + ' ' + assets[i].symbol;
+				var decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
+				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
+				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
 
 			}
 		} else {

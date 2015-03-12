@@ -306,7 +306,6 @@ angular.module("app").factory('api', ['$http', function($http) {
         return $http.jsonp(url + 'slate/' + accountName + cb);
     };
 
-
     return api;
 
 }]);

@@ -35,6 +35,32 @@
       </div>
     </div>
 
+    <div class="col-md-12 meta-buttons">
+  <div class="col-sm-4 col-sm-offset-2 col-xs-12">
+  <a class="button-link" href="https://metaexchange.info/markets/BTS/BTC?refid=1" target="_blank">
+      <button class="button btn-success btn-lg btn-block meta-button-success" analytics-on analytics-event="Meta_BUY" analytics-category="MetaX" analytics-label="Buy_BTS">      
+        <span>{{ 'asset.buy' | translate }} BTS</span>
+        <br>
+        <span class="badge">1.00 BTC</span>
+        <span class="glyphicon glyphicon-arrow-right arrow"></span>
+        <span class="badge">{{ priceBuy | number:3}} BTS</span>
+      </button>
+    </a>
+  </div>
+  <img height="28px" width="31px" class="meta-logo" src="/img/smallLogo_metax.svg" alt="MetaExchange logo"/>
+  <div class="col-sm-4 col-xs-12">
+    <a class="button-link" href="https://metaexchange.info/markets/BTS/BTC?refid=1" analytics-on analytics-event="Meta_SELL" analytics-category="MetaX" analytics-label="Sell_BTS" target="_blank">
+      <button class="button btn-danger btn-lg btn-block meta-button-danger">
+        <span>{{ 'asset.sell' | translate }} BTS</span>
+        <br>
+        <span class="badge">{{ priceSell  | number:3 }} BTS</span>
+        <span class="glyphicon glyphicon-arrow-right arrow"></span>
+        <span class="badge">1.00 BTC</span>
+      </button>
+    </a>
+  </div>
+</div>
+
     <div class="col-md-3 col-sm-6" style="clear:left;">
       <div class="panel panel-default">
         <div class="panel-heading">

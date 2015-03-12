@@ -11,6 +11,7 @@ angular.module('app')
 
     $scope.asset = {};
     $scope.showOrders = true;
+    $scope.showMeta = false;
 
     $scope.orderTypes = {
       ask_order: 'asset.buy',
@@ -119,6 +120,23 @@ angular.module('app')
 
         if ($scope.showOrders === false && $scope.asset.covers.length === 0 && $scope.asset.order_history.length === 0) {
           $rootScope.$emit('noOrderbook');
+        }
+
+        if ($scope.asset.metaMarket) {
+          $scope.showMeta = true;
+          $scope.priceBuy = $scope.asset.metaMarket.bid / (1 + $scope.asset.metaMarket.bid_fee_percent / 100);
+          $scope.priceSell = $scope.asset.metaMarket.ask * (1 + $scope.asset.metaMarket.ask_fee_percent / 100);
+          $scope.marketQuote = $scope.asset.metaMarket.asset_name;
+          $scope.marketBase = 'BTC';
+
+          if ($scope.asset.metaMarket.flipped === false) {
+            $scope.priceBuy = 1 / ($scope.asset.metaMarket.ask * (1 + $scope.asset.metaMarket.bid_fee_percent / 100));
+            $scope.priceSell = 1 / ($scope.asset.metaMarket.bid / (1 + $scope.asset.metaMarket.ask_fee_percent / 100));
+            $scope.marketQuote = 'BTC';
+            $scope.marketBase = $scope.asset.metaMarket.asset_name;
+          }
+        } else {
+          $scope.showMeta = false;
         }
       });
     }

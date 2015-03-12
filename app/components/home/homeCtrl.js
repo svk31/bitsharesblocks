@@ -129,6 +129,19 @@ angular.module('app')
         forkInfo();
         checkMaintenance();
         checkHardfork();
+
+        if ($scope.home.metaMarket) {
+          $scope.showMeta = true;
+          $scope.priceBuy = $scope.home.metaMarket.bid / (1 + $scope.home.metaMarket.bid_fee_percent / 100);
+          $scope.priceSell = $scope.home.metaMarket.ask * (1 + $scope.home.metaMarket.ask_fee_percent / 100);
+
+          if ($scope.home.metaMarket.flipped === false) {
+            $scope.priceBuy = 1 / ($scope.home.metaMarket.ask * (1 + $scope.home.metaMarket.bid_fee_percent / 100));
+            $scope.priceSell = 1 / ($scope.home.metaMarket.bid / (1 + $scope.home.metaMarket.ask_fee_percent / 100));
+          }
+        } else {
+          $scope.showMeta = false;
+        }
       });
     }
 

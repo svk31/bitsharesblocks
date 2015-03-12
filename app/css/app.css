@@ -327,3 +327,60 @@ body { padding-top: 70px;
       background-size: cover;
       height:200px;
     }
+
+    .button-link:hover {
+      text-decoration: none;
+    }
+
+    .meta-button-success {
+      background-color: #18bc9c;
+      border-color: #18bc9c;
+    }
+
+    .meta-button-success:hover, .meta-button-success:focus, .meta-button-success:active {
+      background-color: #128f76;
+      border-color: #11866f;
+    }
+
+    .meta-button-danger {
+      background-color: #e74c3c;
+      border-color: #e74c3c;
+    }
+
+    .meta-button-danger:hover, .meta-button-danger:focus, .meta-button-danger:active {
+      background-color: #d62c1a;
+      border-color: #cd2a19;
+    }
+
+    .meta-buttons {
+      padding-bottom: 1.5em;
+    }
+
+    @media(min-width: 768px) {
+      .meta-logo {
+        float:left;
+        margin-top:21px;
+        margin-bottom:21px;
+      }
+    }
+
+    @media(max-width: 767px) {
+      .meta-logo {
+        display: block;
+        margin-top:10px;
+        margin-bottom:10px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .meta-button-success {
+        margin-bottom:10px;
+      }
+
+            .meta-button-danger {
+        margin-bottom:1em;
+      }
+
+    }
+
+
