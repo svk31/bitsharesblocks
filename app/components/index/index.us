@@ -28,34 +28,34 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a style="padding-top:5px" class="navbar-brand visible-sm visible-xs" ui-sref="home"><img class="visible-sm visible-xs" src="img/bitsharesbocks-weblogo-small.png"/><img class="hidden-sm hidden-xs" src="img/bitsharesbocks-weblogo-medium.png"/></a>
+            <a style="padding-top:5px" class="navbar-brand visible-sm visible-xs" ui-sref="home"><img height="40px"class="visible-sm visible-xs" src="img/bitsharesblocks_logo.png"/></a>
           </div>
           <nav class="hidden-sm hidden-xs">
             <ul class="nav navbar-nav">
-              <a ui-sref="home" role="button" class="navbar-brand" style="padding-top:5px;"><img class="visible-sm visible-xs" src="img/bitsharesbocks-weblogo-small.png"/><img class="hidden-sm hidden-xs" src="img/bitsharesbocks-weblogo-medium.png"/></a>
+              <a ui-sref="home" role="button" class="navbar-brand" style="padding-top:5px;"><img class="hidden-sm hidden-xs" src="img/bitsharesbocks-weblogo-medium.png"/></a>
               <li ui-sref-active='active'>
-                <a ui-sref="home">{{ 'nav.home' | translate }}</a>
+                <a ui-sref="home" translate>nav.home</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="blocks">{{ 'nav.blocks' | translate }}</a>
+                <a ui-sref="blocks" translate>nav.blocks</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="delegates">{{ 'nav.delegates' | translate }}</a>
+                <a ui-sref="delegates" translate>nav.delegates</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="accounts">{{ 'nav.accounts' | translate }}</a>
+                <a ui-sref="accounts" translate>nav.accounts</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="assets.market">{{ 'nav.assets' | translate }}</a>
+                <a ui-sref="assets.market" translate>nav.assets</a>
               </li>
               <li ui-sref-active='active' dropdown is-open="status.isopen" style="cursor:pointer;">
-                <a class="dropdown-toggle" ng-disabled="disabled">
-                  {{ 'nav.charts' | translate }}<span class="caret"></span>
+                <a class="dropdown-toggle" ng-disabled="disabled" translate>
+                  nav.charts<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
-                  <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
-                  <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li>
+                  <li><a ui-sref="charts.prices" translate>nav.general</a></li>
+                  <li><a ui-sref="genesisbts">nav.btsgenesis</a></li>
+                  <li><a ui-sref="genesisbtsx">nav.btsxgenesis</a></li>
                 </ul>
               </li>
             </ul>
@@ -63,39 +63,39 @@
           <nav class="hidden-sm hidden-xs">
             <ul class="nav navbar-nav navbar-right">
               <li ui-sref-active='active'>
-                <a ui-sref="about">{{ 'nav.about' | translate }}</a>
+                <a ui-sref="about" translate>nav.about</a>
               </li>
             </ul>
           </nav>
           <nav class="visible-sm visible-xs " collapse="!isCollapsed" ng-mouseleave="isCollapsed = false">
             <ul class="nav navbar-nav">
               <li ui-sref-active='active'>
-                <a ui-sref="home">{{ 'nav.home' | translate }}</a>
+                <a ui-sref="home" translate>nav.home</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="blocks">{{ 'nav.blocks' | translate }}</a>
+                <a ui-sref="blocks" translate>nav.blocks</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="delegates">{{ 'nav.delegates' | translate }}</a>
+                <a ui-sref="delegates" translate>nav.delegates</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="accounts">{{ 'nav.accounts' | translate }}</a>
+                <a ui-sref="accounts" translate>nav.accounts</a>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="assets.market">{{ 'nav.assets' | translate }}</a>
+                <a ui-sref="assets.market" translate>nav.assets</a>
               </li>
               <li ui-sref-active='active' dropdown is-open="status.isopenmobile">
-                <a class="dropdown-toggle" ng-disabled="disabled">
-                  {{ 'nav.charts' | translate }}<span class="caret"></span>
+                <a class="dropdown-toggle" ng-disabled="disabled" translate>
+                  nav.charts<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a ui-sref="charts.prices">{{ 'nav.general' | translate }}</a></li>
-                  <li><a ui-sref="genesisbts">{{ 'nav.btsgenesis' | translate }}</a></li>
-                  <li><a ui-sref="genesisbtsx">{{ 'nav.btsxgenesis' | translate }}</a></li>
+                  <li><a ui-sref="charts.prices" translate>nav.general</a></li>
+                  <li><a ui-sref="genesisbts" translate>nav.btsgenesis</a></li>
+                  <li><a ui-sref="genesisbtsx" translate>nav.btsxgenesis</a></li>
                 </ul>
               </li>
               <li ui-sref-active='active'>
-                <a ui-sref="about">{{ 'nav.about' | translate }}</a>
+                <a ui-sref="about" translate>nav.about</a>
               </li>
             </ul>
           </nav>
@@ -106,14 +106,14 @@
     
     <div ng-controller="footerCtrl" role="footer" id="footer" class="hidden-xs">
       <div class="text-center" style="vertical-align-middle; margin:0;">
-        <p style="display:inline-block;">{{ 'footer.vote' | translate }}:</p>
+        <p style="display:inline-block;"><span translate>footer.vote</span>:</p>
         <a href="bts:dev.bitsharesblocks/approve">dev.bitsharesblocks</a>
-        <p style="display:inline-block; margin-left:1.5em;">{{ 'footer.donate' | translate }}:</p>
+        <p style="display:inline-block; margin-left:1.5em;"><span translate>footer.donate</span>:</p>
         <a href="bts:donations.bitsharesblocks/transfer">donations.bitsharesblocks</a>
-        <p style="display:inline-block; margin-left:1.5em;">{{ 'footer.info' | translate }}:</p>
-        <a href="https://bitsharestalk.org/index.php?topic=11272.0" target="_blank">{{ 'footer.thread' | translate }}</a>
-        <p style="display:inline-block; margin-left:1.5em;"><small>{{ 'footer.version' | translate }}: <a href="https://github.com/BitShares/bitshares/releases" target="_blank"> {{ clientVersion }}</a></p>
-        <label style="display:inline-block; margin-left:1.5em;">{{ 'footer.language' | translate }}:&nbsp;</label><i class="fa fa-globe fa-lg"></i>
+        <p style="display:inline-block; margin-left:1.5em;"><span translate>footer.info</span>:</p>
+        <a href="https://bitsharestalk.org/index.php?topic=11272.0" target="_blank" translate>footer.thread</a>
+        <p style="display:inline-block; margin-left:1.5em;"><small><span translate>footer.version</span>: <a href="https://github.com/BitShares/bitshares/releases" target="_blank"> {{ clientVersion }}</a></p>
+        <label style="display:inline-block; margin-left:1.5em;"><span translate>footer.language</span>:&nbsp;</label><i class="fa fa-globe fa-lg"></i>
         <button style="border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="top" ng-model="language" ng-options="language.value for language in languages" bs-select>
         Action <span class="caret"></span>
         </button>
