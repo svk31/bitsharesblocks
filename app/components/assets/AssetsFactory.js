@@ -115,8 +115,7 @@ angular.module('app')
 		var i, supply = {},
 			assets = result.assets,
 			feeds = result.feeds,
-			prices = {},
-			decimals;
+			prices = {};
 
 		if (marketBoolean) {
 
@@ -143,6 +142,11 @@ angular.module('app')
 				var precision = assets[i].precision;
 				var assetPrice = (assets[i].status.last_valid_feed_price) ? parseFloat(assets[i].status.last_valid_feed_price / (100000 / precision)) : 0;
 
+				if (!assets[i].lastOrder) {
+					assets[i].lastOrder = 0;
+				}
+				assets[i].decimals = precision.toString().length;
+
 				assets[i].collateral = supply[assets[i]._id];
 				assets[i].collateralRatio = (assets[i].current_share_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].medianFeed / assets[i].current_share_supply : 0;
 
@@ -165,17 +169,17 @@ angular.module('app')
 				assets[i].volume.CNY = (assets[i].dailyVolume !== 0) ? prices.CNY * (assets[i].dailyVolume) : 0;
 				assets[i].volume.EUR = (assets[i].dailyVolume !== 0) ? prices.EUR * (assets[i].dailyVolume) : 0;
 
-				decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
-				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
-				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
+				// decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
+				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, assets[i].decimals) + ' ' + assets[i].symbol;
+				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, assets[i].decimals) + ' ' + assets[i].symbol;
 
 			}
 		} else {
 			for (i = 0; i < assets.length; i++) {
+				assets[i].decimals = assets[i].precision.toString().length;
+				// decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
 
-				decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
-
-				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
+				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, assets[i].decimals) + ' ' + assets[i].symbol;
 				assets[i].dailyVolume = $filter('number')(assets[i].dailyVolume, 2) + ' ' + baseAsset;
 
 				assets[i].lastPrice = (assets[i].lastPrice !== 0) ? (1 / assets[i].lastPrice) : 0;
@@ -183,7 +187,7 @@ angular.module('app')
 				assets[i].capText = $filter('number')(assets[i].cap, 0) + ' ' + baseAsset;
 				assets[i].vwapText = $filter('number')(assets[i].vwap, 3) + ' ' + baseAsset;
 				assets[i].lastPriceText = $filter('number')(assets[i].lastPrice, 3) + ' ' + baseAsset;
-				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
+				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, Math.floor(assets[i].decimals % 4)) + ' ' + assets[i].symbol;
 
 			}
 		}
