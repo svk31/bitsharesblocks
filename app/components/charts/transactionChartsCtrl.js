@@ -55,13 +55,21 @@ angular.module('app')
       type: 'column',
       useHighStocks: true,
       series: [new Charts.serie({
-        tooltip: {
-          valueDecimals: 0,
-          valueSuffix: ' ' + appcst.baseAsset
-        }
-      })],
+          id: 'primary',
+          tooltip: {
+            valueDecimals: 0,
+            valueSuffix: ' ' + appcst.baseAsset
+          }
+        }),
+        new Charts.serieTA({
+          periods: 15,
+          tooltip: {
+            valueDecimals: 0
+          }
+        })
+      ],
       size: Size,
-      noLegend: true,
+      noLegend: false,
       yAxis: {
         type: 'logarithmic',
         labels: {
@@ -139,6 +147,10 @@ angular.module('app')
       $scope.trxCountChart.series[0].data = tempArrays[0];
       $scope.valueChartConfig.series[0].data = tempArrays[1];
 
+      // $scope.valueChartConfig.series.push(new Charts.serieTA({
+      //   periods: 15
+      // }));
+
       $scope.assetCountChart.series[0].data = tempArrays[2];
       $scope.assetCountChart.series[1].data = tempArrays[3];
       $scope.assetCountChart.series[2].data = tempArrays[4];
@@ -166,6 +178,9 @@ angular.module('app')
 
         $scope.valueChartConfig.series[0].name = result.value;
         $scope.trxCountChart.series[0].name = result.count;
+
+        $scope.valueChartConfig.series[1].name = result.ma15;
+        $scope.trxCountChart.series[1].name = result.ma15;
 
       });
     }
