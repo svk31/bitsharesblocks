@@ -13,14 +13,14 @@ angular.module("app").factory('api', ['$http', function($http) {
     url = apis[0] + '/v1/';
     url_v2 = apis[0] + '/v2/';
 
-    // url = 'http://127.0.0.1:2095/v1/';
-    // url_v2 = 'http://127.0.0.1:2095/v2/';
+    url = 'http://127.0.0.1:2095/v1/';
+    url_v2 = 'http://127.0.0.1:2095/v2/';
 
     api.setAPI = function(index) {
         // var location = ['North America - New York', 'Asia - Singapore'];
         // console.log('changing API to:',location[index]);
-        url = apis[index] + '/v1/';
-        url_v2 = apis[index] + '/v2/';
+        // url = apis[index] + '/v1/';
+        // url_v2 = apis[index] + '/v2/';
     };
 
     api.getInfo = function() {

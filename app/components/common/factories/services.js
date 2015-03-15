@@ -17,7 +17,7 @@ angular.module('app.services', [])
 
 .constant('appcst', {
 	R_ISO8601_STR: /^(\d{4})-?(\d\d)-?(\d\d)(?:T(\d\d)(?::?(\d\d)(?::?(\d\d)(?:\.(\d+))?)?)?(Z|([+-])(\d\d):?(\d\d))?)?$/,
-	baseAsset: 'BTS',
+	baseAsset: 'PLS',
 	basePrecision: 100000,
 	translation: {
 		"nav": {
@@ -30,7 +30,7 @@ angular.module('app.services', [])
 			"general": "General",
 			"supply": "BTS Supply and Fees",
 			"btsgenesis": "{{ value }} Genesis",
-			"btsxgenesis": "BTSX Genesis",
+			"btsxgenesis": "PLS Genesis",
 			"about": "About"
 		},
 		"alerts": {
