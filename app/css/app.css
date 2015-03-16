@@ -377,10 +377,12 @@ body { padding-top: 70px;
         margin-bottom:10px;
       }
 
-            .meta-button-danger {
+      .meta-button-danger {
         margin-bottom:1em;
       }
-
     }
 
+    .vert-middle {
+      vertical-align: middle;
+    }
 
