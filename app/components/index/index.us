@@ -54,8 +54,8 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a ui-sref="charts.prices" translate>nav.general</a></li>
-                  <li><a ui-sref="genesisbts">nav.btsgenesis</a></li>
-                  <li><a ui-sref="genesisbtsx">nav.btsxgenesis</a></li>
+                  <li><a ui-sref="genesisbts" translate translate-values="{ value: 'BTS'}">nav.btsgenesis</a></li>
+                  <li><a ui-sref="genesisbtsx" translate>nav.btsxgenesis</a></li>
                 </ul>
               </li>
             </ul>
