@@ -344,7 +344,7 @@
     "external": "外部Coinmarketcap价格",
     "volume": "交易量",
     "marketAsset": "Market issued asset",
-    "range": "Today's range",
+    "range": "24h range",
     "assetInfo": {
       "title": "资产信息",
       "base": "基础资产",

@@ -344,7 +344,7 @@
     "external": "Prezzo su mercato esterno",
     "volume": "Volume",
     "marketAsset": "Market issued asset",
-    "range": "Today's range",
+    "range": "24h range",
     "assetInfo": {
       "title": "INFORMAZIONI VALORE",
       "base": "Valore base",

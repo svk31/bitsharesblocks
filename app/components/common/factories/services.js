@@ -366,7 +366,7 @@ angular.module('app.services', [])
 			"external": "External Coinmarketcap price",
 			"volume": "Volume",
 			"marketAsset": "Market issued asset",
-			"range": "Today's range",
+			"range": "24h range",
 			"assetInfo": {
 				"title": "ASSET INFO",
 				"base": "Base Asset",

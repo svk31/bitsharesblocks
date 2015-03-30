@@ -66,16 +66,15 @@
       <h3 class="panel-title">{{ 'asset.bids' | translate }} ({{ 'asset.buy' | translate }} {{prefix+asset.symbol}})</h3>
     </div>
     <table class="table table-condensed table-hover">
-
-      <th>{{ 'home.price' | translate }} ({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
       <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
       <th>{{ 'block.trx.amount' | translate }} ({{ ::baseAsset }})</th>
+      <th>{{ 'home.price' | translate }} ({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
     </thead>
     <tbody>
       <tr ng-repeat="ask in asset.asks | limitTo:10  track by $index">
-        <td>{{ask.price | number:2}}</td>
         <td>{{(ask.amount / ask.price) | number:assetDecimals}}</td>
         <td>{{ask.amount | number:2}}</td>
+        <td>{{ask.price | number:assetDecimals}}</td>
       </tr>
     </tbody>      
   </table>
@@ -95,7 +94,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="bid in asset.bids | orderBy:'price' | limitTo:10 track by $index">
-          <td>{{bid.price | number:2}}</td>
+          <td>{{bid.price | number:assetDecimals}}</td>
           <td>{{bid.amount | number:assetDecimals}}</td>
           <td>{{(bid.amount * bid.price) | number:2}}</td>
         </tr>

@@ -344,7 +344,7 @@
     "external": "Harici Coinmarketcap fiyatı",
     "volume": "Hacim",
     "marketAsset": "Market issued asset",
-    "range": "Today's range",
+    "range": "24h range",
     "assetInfo": {
       "title": "VARLIK BİLGİSİ",
       "base": "Baz Varlık",

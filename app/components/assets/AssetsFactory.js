@@ -186,7 +186,7 @@ angular.module('app')
 				// decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
 
 				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, assets[i].decimals) + ' ' + assets[i].symbol;
-				assets[i].dailyVolume = $filter('number')(assets[i].dailyVolume, 2) + ' ' + baseAsset;
+				assets[i].dailyVolumeText = $filter('number')(assets[i].dailyVolume, 2) + ' ' + baseAsset;
 
 				assets[i].lastPrice = (assets[i].lastPrice !== 0) ? (1 / assets[i].lastPrice) : 0;
 				assets[i].cap = (assets[i].lastPrice) * assets[i].current_share_supply;
@@ -444,10 +444,11 @@ angular.module('app')
 
 		// Apply price ratio to order history
 		var decimals = (asset.symbol.indexOf('BTC') === -1 && asset.symbol !== 'GOLD') ? 4 : 8;
-		var now = new Date();
-		var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+		var date24h = new Date();
+		date24h = new Date(date24h.setDate(date24h.getDate()-1));
 		var tradesFound = false;
 		asset.lastPrice = 0;
+		asset.dailyVolume = 0;
 
 		if (asset.order_history.length > 0) {
 			asset.lastPrice = 1 / (asset.order_history[0].bid_price.ratio * priceRatio);
@@ -455,12 +456,12 @@ angular.module('app')
 			asset.dailyHigh = 0;
 
 			asset.order_history.forEach(function(order) {
-				if (today < new Date(order.timestamp)) {
+				if (date24h < new Date(order.timestamp)) {
 					tradesFound = true;
 					asset.dailyHigh = Math.max(asset.dailyHigh, 1 / (order.ask_price.ratio * priceRatio));
 					asset.dailyLow = Math.min(asset.dailyLow, 1 / (order.ask_price.ratio * priceRatio));
+					asset.dailyVolume += order.ask_paid.amount / basePrecision;
 				}
-
 
 				order.ask_paid.amount = $filter('number')(order.ask_paid.amount / basePrecision, 2) + ' ' + baseAsset;
 				order.ask_received.amount = $filter('number')(order.ask_received.amount / asset.precision, 3) + ' ' + asset.symbol;
