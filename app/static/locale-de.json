@@ -13,7 +13,7 @@
 		"about": "Über"
 	},
 	"alerts": {
-		"del1": "Es wurde ein neuer Delegierte von mir angelegt. Bitte stimme für mich!",
+		"del1": "Es wurde ein neuer Delegierter von mir angelegt. Bitte stimme für mich!",
 		"del2": "anstelle von",
 		"del3": "Mehr Infos",
 		"del4": "hier"
@@ -22,7 +22,7 @@
 		"vote": "Bitte stimme für meinen Delegierten",
 		"donate": "Spende",
 		"info": "Info/Aktuelles",
-		"thread": "BitsharesTalk Beiträge",
+		"thread": "BitsharesTalk.org Beiträge",
 		"version": "Client Version",
 		"language": "Sprache"
 	},
@@ -40,12 +40,12 @@
 		"price": "Preis",
 		"MA": "30-Tage Moving Average",
 		"health": {
-			"title": "NETZWERK GESUNDHEIT",
+			"title": "NETZWERK STATUS",
 			"alert": "Netzwerk Alarmlevel:",
 			"particip": "Delegiertenbeteiligung:",
 			"confirm": "Mittlere Zeit für Bestätigungen:",
 			"forks": "Aufspaltungen in den letzten 24Std:",
-			"forkBlock": "Blockhöhe der letzten Aufspaltung:",
+			"forkBlock": "Block der letzten Aufspaltung:",
 			"signee": "Aufspaltung gelöst von:",
 			"latency": "Latenz des Delegierten:"
 		},
@@ -53,18 +53,18 @@
 			"title": "DELEGIERTEN STATISTIK",
 			"reg": "Registrierte Delegierte",
 			"votes": "Delegierte mit Stimmen",
-			"payReg": "Registrierung mit 100% Bezahlung",
-			"new24": "Neue Delegierte der letzten 24h",
-			"new7d": "Neue Delegierte der letzten 7d",
-			"pay": "Max. Bezahlung",
-			"averagePay": "Average pay rate"
+			"payReg": "Registrierungsgebühr für 100% Delegierten",
+			"new24": "Neue Delegierte der letzten 24 Stunden",
+			"new7d": "Neue Delegierte der letzten 7 Tage",
+			"pay": "Max. Vergütung",
+			"averagePay": "Durschn. Vergütung"
 		},
 		"blockchain": {
-			"title": "BLOCKKETTEN STATISTIK",
+			"title": "BLOCKCHAIN STATISTIK",
 			"supply": "Share Verfügbarkeit",
 			"unclaimed": "Noch nicht beansprucht",
 			"collat": "Als Collateral gebunden",
-			"change": "24h Änderung der Verfügbarkeit",
+			"change": "24 Stunden Änderung der Verfügbarkeit",
 			"current": "Aktueller Block",
 			"trx": "Blöcke mit Transaktionen",
 			"missed": "Gesamt verpasste Blöcke"
@@ -75,8 +75,8 @@
 			"user": "Nutzer-definierte Assets",
 			"shortReg": "Reg.-Gebühren (Kurzer Name)",
 			"longReg": "Reg.-Gebühren (Langer Name)",
-			"new7d": "Neue Assets der letzten 7d",
-			"new30d": "Neue Assets der letzten 30d",
+			"new7d": "Neue Assets der letzten 7 Tage",
+			"new30d": "Neue Assets der letzten 30 Tage",
 			"trx": "Asset Transaktionen"
 		},
 		"user": {
@@ -85,8 +85,8 @@
 			"unique": "Anzahl eindeutiger Konten",
 			"uniqueNew": "Neue eindeutige Konten",
 			"sub": "Anzahl reg. Unter-konten",
-			"new24": "Neue Konten der letzten 24h",
-			"new7d": "Neue Konten der letzten 7d"
+			"new24": "Neue Konten der letzten 24 Stunden",
+			"new7d": "Neue Konten der letzten 7 Tage"
 		},
 		"missed": {
 			"title": "LETZTE 10 VERPASSTE BLÖCKE"
@@ -127,7 +127,7 @@
 		"next": "Nächster Block",
 		"details": {
 			"title": "BLOCK DETAILS",
-			"signee": "Unterzeichnender Delegierte",
+			"signee": "signierender Delegierte",
 			"size": "Blockgröße",
 			"latency": "Latenz",
 			"time": "Bearbeitungszeit",
@@ -168,10 +168,10 @@
 			"asset_create": "Asset erzeugen",
 			"asset_issue": "Asset ausschütten",
 			"add_collateral": "Kollateral hinzufügen",
-			"withdraw_pay": "Delegiertenbezahlung einfordern",
+			"withdraw_pay": "Delegiertenvergütung einfordern",
 			"all": "Alle Transaktionen anzeigen",
 			"placeholder": "Nach Transaktionstyp filtern",
-			"withdrawal": "Abhebung",
+			"withdrawal": "Auszahlung",
 			"deposit": "Einzahlung",
 			"slate": "Satz von Delegierten definieren",
 			"slateID": "Delegiertensatz ID"
@@ -179,16 +179,16 @@
 	},
 	"delegates": {
 		"search": "Finde einen Delegierten",
-		"title": "DELEGIERTE INFOS",
+		"title": "DELEGIERTEN INFOS",
 		"rank": "Rang",
-		"change24": "24h Änderung",
-		"change7": "7d Änderung",
+		"change24": "24 Stunden Änderung",
+		"change7": "7 Tage Änderung",
 		"votes": "Stimmen",
-		"produced": "Erzeugt",
-		"missed": "Verpasst",
-		"rate": "Bezahlung",
+		"produced": "Blöcke signiert",
+		"missed": "Blöcke verpasst",
+		"rate": "Vergütung",
 		"latency": "Mittlere Latenz",
-		"feeds": "Active Feeds",
+		"feeds": "Aktive Feeds",
 		"feedFreq": "Häufigtkeit der Feeds",
 		"rel": "Verfügbarkeit",
 		"version": "Version",
@@ -198,7 +198,7 @@
 		"standby": "Standby Delegierte anzeigen"
 	},
 	"delegate": {
-		"prevRank": "Verheriger Rang",
+		"prevRank": "Vorheriger Rang",
 		"nextRank": "Nächster Rang",
 		"votesChart": "STIMMEN ENTWICKLUNG",
 		"sumVotes": "Summe der Stimmen",
@@ -209,18 +209,18 @@
 		"rank": {
 			"title": "RANG UND STIMMEN",
 			"current": "Aktueller Rang",
-			"dayChange": "24h Änderung Rang",
-			"weekChange": "7 Änderung Rang",
-			"votes": "Anzahl Stimmen für",
-			"percentVotes": "Prozentuale Stimmen frü"
+			"dayChange": "24 Stunden Rangänderung",
+			"weekChange": "7 Tage Rangänderung",
+			"votes": "Anzahl Stimmen",
+			"percentVotes": "Stimmenanteil in %"
 		},
 		"data": {
 			"title": "ÖFFENTLICHE DATEN",
 			"description": "Beschreibung",
 			"proposal": "Vorschlag",
 			"location": "Serverort",
-			"country": "Delegate country",
-			"handle": "BitsharesTalk Benutzername",
+			"country": "Betreiberland",
+			"handle": "BitsharesTalk.org Benutzername",
 			"ann": "Ankündigung",
 			"role": "Rolle",
 			"website": "Webseite",
@@ -231,19 +231,19 @@
 			"role_4": "Charity",
 			"role_5": "Technischer Support",
 			"role_6": "Gesetze/Regulierung",
-			"role_7": "Media/Public Relations"
+			"role_7": "Medien/Öffentlichkeitsarbeit"
 		},
 		"feeds": {
 			"title": "FEEDS",
-			"total": "Anzahl an Feeds",
-			"active": "Aktive fFeds",
+			"total": "Anzahl an Preis-Feeds",
+			"active": "Aktive Preis-Feeds",
 			"show": "Feeds anzeigen",
 			"valid": "Nur gültige Feeds anzeigen"
 		},
 		"info": {
 			"title": "DELEGIERTEN INFOS",
 			"earnings": "Gesamtertrag",
-			"withdrawn": "Eingeholter Ertrag",
+			"withdrawn": "ausbezahlter Ertrag",
 			"fees": "Bezahlte Gebühren"
 		},
 		"prod": {
@@ -292,7 +292,7 @@
 		"key": "Schlüssel",
 		"website": "Webseite",
 		"burn": "BURN OPERATIONS",
-		"parent": "Elternkonto",
+		"parent": "übergeordnetes Konto",
 		"subs": "Unterkonto"
 	},
 	"assets": {
@@ -310,16 +310,16 @@
 			"th3": "Ask Tiege",
 			"th4": "Gültige Feeds",
 			"th5": "Mittlerer Feedpreis",
-			"th6": "Share Verfügbarkeit",
-			"th7": "24h Volumen",
-			"th8": "Market Cap",
+			"th6": "Verfügbare Anteile",
+			"th7": "24 Stunden Umsatz",
+			"th8": "Marktkapitalisierung",
 			"yield": "Ertrag"
 		},
 		"user": {
 			"show": "UIA anzeigen",
 			"title": "NUTZER-DEFINIERTE ASSETS",
 			"th1": "Asset ID",
-			"th3": "24hr-gemittelter Preis",
+			"th3": "24 Stunden-gemittelter Preis",
 			"th4": "Aktuelle Verfügbarkeit",
 			"th5": "Maximale Verfügbarkeit",
 			"th6": "Initialisiert"
@@ -336,7 +336,7 @@
 		"alert3": "Das Orderbuch ist leer",
 		"collateral": "Kollateral",
 		"supply": "VERFÜGBARKEIT",
-		"supplyAnd": "UND COLLATERAL ({{ value }}) VERLAUF",
+		"supplyAnd": "UND KOLLATERAL ({{ value }}) VERLAUF",
 		"sell": "Verkaufen",
 		"buy": "Kaufen",
 		"short": "Shorten",
@@ -348,7 +348,7 @@
 		"range": "Tagesintervall",
 		"assetInfo": {
 			"title": "ASSET INFO",
-			"base": "Base Asset",
+			"base": "Basis Asset",
 			"name": "Vollständiger Name",
 			"precision": "Präzision",
 			"regdate": "Registrierungsdatum"
@@ -360,10 +360,10 @@
 		"feeds": {
 			"avg": "Mittlerer Feed Preis",
 			"med": "Median Feed Preis",
-			"null": "Ungenügend Feeds in den letzten 24h",
+			"null": "Ungenügend Feeds in den letzten 24 Stunden",
 			"last": "Letzte Aktualisierung  (UTC)",
-			"dev": "Deviation from median",
-			"dev_avg": "Average deviation from median"
+			"dev": "Abweichung vom Median",
+			"dev_avg": "Durschn. Abweichung vom Median"
 		},
 		"covers": {
 			"title": "MARGIN CALL ORDER",
@@ -382,11 +382,11 @@
 			"volume": "{{ value }} TRANSAKTIONSVOLUMEN",
 			"btcPrice": "BTS/BTC PREISVERLAUF",
 			"usdPrice": "PREISVERLAUF",
-			"prices": "PPREIS CHARTS",
-			"trx": "TRANSAKTIONEN CHARTS",
-			"accounts": "KONTEN CHARTS",
+			"prices": "KURS CHARTS",
+			"trx": "TRANSAKTIONs CHARTS",
+			"accounts": "KONTO CHARTS",
 			"supply": "VERFÜGBARKEITS CHARTS",
-			"feeds": "FEEDS CHARTS"
+			"feeds": "FEED CHARTS"
 		},
 		"value": "Wert",
 		"reg": "Kontoregistrierung",
@@ -394,11 +394,11 @@
 		"feed": "Feedaktualisierung durch Delegierten",
 		"update": "Kontoaktualisierung",
 		"new": "Neues Konto",
-		"ma15": "15-Tage Moving Average",
+		"ma15": "15-Tage gleitender Durschnitt",
 		"feeds": {
 			"title": "FEED TRACKING",
 			"latest": "Letzter Preis",
-			"vwap": "24hr gewichteter mittlerer Preis",
+			"vwap": "24 Stunden gewichteter mittlerer Preis",
 			"deviation": "Abweichung vom Feed"
 		}
 	},
@@ -406,39 +406,39 @@
 		"title1": "INFO",
 		"title2": "JAHRESINFLATION",
 		"title3": "VERFÜGBARKEIT VON {{ value }}",
-		"title4": "{{ value }} GEBPHREN ÜBER DER ZEIT",
-		"height": "Blockhöhe BTSX => BTS Harte Aufspaltung",
-		"supply": "Verfügbarkeit zur Aufspaltung",
-		"change": "Änderung der Verfügbarkeit seit der harten Aufspaltung",
+		"title4": "{{ value }} GEBÜHREN",
+		"height": "Blockhöhe BTSX => BTS Hardfork",
+		"supply": "Verfügbarkeit zum Hardfork",
+		"change": "Änderung der Verfügbarkeit seit dem Hardfork",
 		"changeY": "{{ value }} Inflation",
 		"supplyY": "{{ value }} VERFÜGBARKEIT",
 		"feesY": "{{ value }} Gebühren",
-		"inflation": "Current annualized inflation",
-		"final": "Estimated final supply",
-		"max": "Theoretical maximum supply"
+		"inflation": "Aktuelle Inflation pro Jahr",
+		"final": "Voraussichtlich verfügbare Anteile",
+		"max": "theoretisch max. verfügbare Anteile"
 	},
 	"genesis": {
 		"stats": "STATISTIKEN",
-		"biggest": "ANZAHL ADRESSEN PRO BETRAG",
-		"total": "Anzahl Adressen",
+		"biggest": "ANZAHL KONTEN PRO BETRAG",
+		"total": "Anzahl Konten",
 		"supply": "Initiale Verfügbarkeit",
 		"sharedrop": "AGS+PTS+DNS+VOTE sharedrop Betrag",
-		"market": "Anzahl Markt-Assets",
-		"whale": "Größter Adressbetrag",
-		"higher": "Adressen mit Beträgen größer als",
-		"percent": "PROZENT DER VERFÜGBARKEIT PRO ANZAHL ADRESSEN",
+		"market": "Anzahl Marktbezogener BitAssets",
+		"whale": "Höchster Kontostand",
+		"higher": "Kontos mit Guthaben größer als",
+		"percent": "PROZENT DER VERFÜGBARKEIT PRO ANZAHL KONTEN",
 		"top": "TOP",
 		"sharedropTitle": "SHAREDROP",
-		"addresses": "ADRESSEN",
-		"address": "Adresse",
-		"balance": "Betrag",
+		"addresses": "KONTEN",
+		"address": "Konto",
+		"balance": "Kontostand",
 		"percentOf": "%",
 		"cumul": "Kumulative %",
 		"x": "Anzahl an Konten",
 		"y": "%",
 		"tooltip": "Prozent der Verfügbarkeit",
 		"piechart": {
-			"title": "PIECES OF THE PIE"
+			"title": "Stück vom Kuchen"
 		}
 	}
 }
