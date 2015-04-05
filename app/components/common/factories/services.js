@@ -435,7 +435,7 @@ angular.module('app.services', [])
 			"title4": "{{ value }} FEES PAID OVER TIME",
 			"height": "Height of BTSX => BTS hardfork block",
 			"supply": "Supply at fork",
-			"change": "Change in supply since the hardfork",
+			"change": "Change in supply since launch",
 			"changeY": "{{ value }} annualized inflation",
 			"supplyY": "{{ value }} supply",
 			"feesY": "{{ value }} fees",

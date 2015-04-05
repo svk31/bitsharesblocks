@@ -45,17 +45,17 @@
               <li ui-sref-active='active'>
                 <a ui-sref="accounts" translate>nav.accounts</a>
               </li>
-              <li ui-sref-active='active'>
+<!--               <li ui-sref-active='active'>
                 <a ui-sref="assets.market" translate>nav.assets</a>
-              </li>
+              </li> -->
               <li ui-sref-active='active' dropdown is-open="status.isopen" style="cursor:pointer;">
                 <a class="dropdown-toggle" ng-disabled="disabled" translate>
                   nav.charts<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a ui-sref="charts.prices" translate>nav.general</a></li>
-                  <li><a ui-sref="genesisbts">nav.btsgenesis</a></li>
-                  <li><a ui-sref="genesisbtsx">nav.btsxgenesis</a></li>
+                  <!-- <li><a ui-sref="genesisbts" translate>nav.btsgenesis</a></li> -->
+                  <!-- <li><a ui-sref="genesisbtsx" translate>nav.btsxgenesis</a></li> -->
                 </ul>
               </li>
             </ul>
@@ -81,17 +81,17 @@
               <li ui-sref-active='active'>
                 <a ui-sref="accounts" translate>nav.accounts</a>
               </li>
-              <li ui-sref-active='active'>
+<!--               <li ui-sref-active='active'>
                 <a ui-sref="assets.market" translate>nav.assets</a>
-              </li>
+              </li> -->
               <li ui-sref-active='active' dropdown is-open="status.isopenmobile">
                 <a class="dropdown-toggle" ng-disabled="disabled" translate>
                   nav.charts<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a ui-sref="charts.prices" translate>nav.general</a></li>
-                  <li><a ui-sref="genesisbts" translate>nav.btsgenesis</a></li>
-                  <li><a ui-sref="genesisbtsx" translate>nav.btsxgenesis</a></li>
+                  <!-- <li><a ui-sref="genesisbts" translate>nav.btsgenesis</a></li> -->
+                  <!-- <li><a ui-sref="genesisbtsx" translate>nav.btsxgenesis</a></li> -->
                 </ul>
               </li>
               <li ui-sref-active='active'>
@@ -128,7 +128,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-47309945-4', 'auto');
+    ga('create', 'UA-47309945-7', 'auto');
     </script>   
 
   </body>

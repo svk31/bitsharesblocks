@@ -5,16 +5,14 @@ angular.module("app").factory('api', ['$http', function($http) {
     var cb = '?callback=JSON_CALLBACK';
 
     var apis = [
-        'https://api.bitsharesblocks.com',
-        'http://104.236.93.62',
-        'http://128.199.123.149'
+        'http://104.131.23.218:2095'
     ];
 
     url = apis[0] + '/v1/';
     url_v2 = apis[0] + '/v2/';
 
-    url = 'http://127.0.0.1:2095/v1/';
-    url_v2 = 'http://127.0.0.1:2095/v2/';
+    // url = 'http://127.0.0.1:2095/v1/';
+    // url_v2 = 'http://127.0.0.1:2095/v2/';
 
     api.setAPI = function(index) {
         // var location = ['North America - New York', 'Asia - Singapore'];

@@ -8,8 +8,8 @@ angular.module('app')
 			value: appcst.baseAsset
 		};
 		$scope.data = {
-			'hardFork': 991700,
-			'supply': 2498764341.60685
+			'hardFork': 1,
+			'supply': 2000000000.0
 		};
 
 		var Size = {
