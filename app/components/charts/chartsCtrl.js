@@ -4,10 +4,10 @@ angular.module('app')
   function($scope, $rootScope, $filter, $state, api, Assets, Charts, Translate) {
 
     $scope.tabs = [{
-      active: true,
+      active: false,
       name: 'charts.prices'
     }, {
-      active: false,
+      active: true,
       name: 'charts.transactions'
     }, {
       active: false,

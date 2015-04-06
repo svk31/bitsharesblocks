@@ -53,7 +53,7 @@
                   nav.charts<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a ui-sref="charts.prices" translate>nav.general</a></li>
+                  <li><a ui-sref="charts.transactions" translate>nav.general</a></li>
                   <!-- <li><a ui-sref="genesisbts" translate>nav.btsgenesis</a></li> -->
                   <!-- <li><a ui-sref="genesisbtsx" translate>nav.btsxgenesis</a></li> -->
                 </ul>
@@ -89,7 +89,7 @@
                   nav.charts<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a ui-sref="charts.prices" translate>nav.general</a></li>
+                  <li><a ui-sref="charts.transactions" translate>nav.general</a></li>
                   <!-- <li><a ui-sref="genesisbts" translate>nav.btsgenesis</a></li> -->
                   <!-- <li><a ui-sref="genesisbtsx" translate>nav.btsxgenesis</a></li> -->
                 </ul>
