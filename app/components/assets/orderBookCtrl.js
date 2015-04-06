@@ -8,6 +8,7 @@ angular.module('app')
     $scope.assetId = $state.params.asset;
     $scope.prefix = 'bit';
     var marketAsset = true;
+    var metaFlip = false;
 
     $scope.asset = {};
     $scope.showOrders = true;
@@ -122,22 +123,8 @@ angular.module('app')
           $rootScope.$emit('noOrderbook');
         }
 
-        if ($scope.asset.metaMarket) {
-          $scope.showMeta = true;
-          $scope.priceBuy = $scope.asset.metaMarket.bid / (1 + $scope.asset.metaMarket.bid_fee_percent / 100);
-          $scope.priceSell = $scope.asset.metaMarket.ask * (1 + $scope.asset.metaMarket.ask_fee_percent / 100);
-          $scope.marketQuote = $scope.asset.metaMarket.asset_name;
-          $scope.marketBase = 'BTC';
+        metaCalcs();
 
-          if ($scope.asset.metaMarket.flipped === false) {
-            $scope.priceBuy = 1 / ($scope.asset.metaMarket.ask * (1 + $scope.asset.metaMarket.bid_fee_percent / 100));
-            $scope.priceSell = 1 / ($scope.asset.metaMarket.bid / (1 + $scope.asset.metaMarket.ask_fee_percent / 100));
-            $scope.marketQuote = 'BTC';
-            $scope.marketBase = $scope.asset.metaMarket.asset_name;
-          }
-        } else {
-          $scope.showMeta = false;
-        }
       });
     }
     fetchOrderBook();
@@ -146,6 +133,30 @@ angular.module('app')
     $scope.filterFeeds = function(boolean) {
       $scope.filteredFeeds = Assets.filterFeeds($scope.asset, boolean).feeds;
     };
+
+    $scope.invertMeta = function() {
+      metaFlip = !metaFlip;
+    };
+
+    function metaCalcs() {
+      if ($scope.asset.metaMarket) {
+        $scope.showMeta = true;
+        $scope.priceBuy = $scope.asset.metaMarket.bid / (1 + $scope.asset.metaMarket.bid_fee_percent / 100);
+        $scope.priceSell = $scope.asset.metaMarket.ask * (1 + $scope.asset.metaMarket.ask_fee_percent / 100);
+        $scope.marketQuote = $scope.asset.metaMarket.asset_name;
+        $scope.marketBase = 'BTC';
+        $scope.buyText = "1.00 "+$scope.marketBase;
+
+        if ($scope.asset.metaMarket.flipped === false) {
+          $scope.priceBuy = 1 / ($scope.asset.metaMarket.ask * (1 + $scope.asset.metaMarket.bid_fee_percent / 100));
+          $scope.priceSell = 1 / ($scope.asset.metaMarket.bid / (1 + $scope.asset.metaMarket.ask_fee_percent / 100));
+          $scope.marketQuote = 'BTC';
+          $scope.marketBase = $scope.asset.metaMarket.asset_name;
+        }
+      } else {
+        $scope.showMeta = false;
+      }
+    }
 
     function updatePlots() {
       if (marketAsset) {
