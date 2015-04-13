@@ -147,7 +147,7 @@
       </thead>
       <tbody>
         <tr ng-repeat-start="order in asset.order_history | limitTo:10  track by $index">
-          <td ng-class="{'ask-text':order.ask_type === 'ask_order','bid-text':order.ask_type === 'bid_order','cover-text':order.ask_type === 'cover_order','short-text':order.ask_type === 'short_order'}">{{ orderTypes[order.ask_type] | translate }}</td>          
+          <td ng-class="{'ask-text':order.ask_type === 'bid_order','bid-text':order.ask_type === 'ask_order','cover-text':order.ask_type === 'cover_order','short-text':order.ask_type === 'short_order'}">{{ orderTypes[order.ask_type] | translate }}</td>          
           <td>{{ order.ask_price.ratio }}</td>
           <td>{{ order.ask_paid.amount }}</td>
           <td>{{ order.ask_received.amount }}</td>

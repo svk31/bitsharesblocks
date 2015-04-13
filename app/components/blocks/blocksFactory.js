@@ -61,6 +61,7 @@ angular.module('app')
 				if (blocks[i].trxLength > 0) {
 					blocks[i].formFees = [];
 					blocks[i].totalValue = [];
+					blocks[i].localTime = new Date(blocks[i].timestamp);
 					for (var feesAsset in blocks[i].fees) {
 						feesAsset = parseInt(feesAsset, 10);
 						blocks[i].formFees.push({

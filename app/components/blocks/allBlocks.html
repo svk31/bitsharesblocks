@@ -38,7 +38,7 @@
         <tbody >
           <tr ng-repeat="block in blocks track by block._id" class="repeated-item">
             <td><a ui-sref="block({ 'id' : block._id })" >{{block._id | number:0}}</a></td>
-            <td class="hidden-xs">{{block.timestamp | date:'medium'}}</td>
+            <td class="hidden-xs">{{block.localTime | date:'medium'}}</td>
             <td><a ui-sref="delegate.info({ 'name' : block.signee })" >{{block.signee}}</a></td>
             <td class="hidden-xs">{{block.trxLength}}</td>
             <td ng-if="block.trxLength>0"><span ng-repeat="value in block.totalValue"><p style="margin:0;padding:0;"><span ng-if="value.asset.indexOf('BTC') !== -1 || value.asset=='GOLD'">{{value.value | number:6}}</span><span ng-if="value.asset.indexOf('BTC') === -1 && value.asset!=='GOLD'">{{value.value | number:2}}</span> <span ng-if="value.asset===baseAsset">{{ ::baseAsset }}</span> <a ng-if="value.asset!==baseAsset" ui-sref="asset.orderbook({ 'asset' : value.asset})">{{value.asset}}</a></p></span></td>

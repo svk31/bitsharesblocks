@@ -35,7 +35,7 @@
           <tr ng-repeat="account in accounts track by $index" class="repeated-item">
             <td><a ui-sref="account({ 'name' : account.name })" >{{account.name}}</a></td>
             <td>{{account._id}}</td>
-            <td>{{account.registration_date | date:'medium'}}</td>
+            <td>{{account.localTime | date:'medium'}}</td>
             <td><a ng-if="account.reg_block!==0" ui-sref="block({ 'id' : account.reg_block })" >{{account.reg_block | number:0}}</a><span ng-if="account.reg_block === 0">{{ 'nav.btsxgenesis' | translate }}</span></td>
             <td class="hidden-xs">{{account.last_update | date:'medium'}}</td>
             <td><span ng-repeat="value in account.burnArray"><p style="margin:0;padding:0;"><span ng-if="value.asset=='BTC' || value.asset=='GOLD'">{{value.amount | number:6}}</span><span ng-if="value.asset!=='BTC' && value.asset!=='GOLD'">{{value.amount | number:2}}</span> <span ng-if="value.asset===baseAsset"> {{ value.asset }}</span> <a ng-if="value.asset!==baseAsset" ui-sref="asset.orderbook({ 'asset' : value.asset})">{{value.asset}}</a></p></span></td>

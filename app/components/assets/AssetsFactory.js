@@ -492,7 +492,7 @@ angular.module('app')
 						}
 					}
 					for (i = i; i >= 0; i--) {
-						asset.sum.asks[i][1] += asset.sum.asks[i + 1][1];
+						asset.sum.asks[i][1] += expiredCovers.amount;
 					}
 				}
 
@@ -514,7 +514,7 @@ angular.module('app')
 						}
 					}
 					for (i = i; i >= 0; i--) {
-						asset.sum.asks[i][1] += asset.sum.asks[i + 1][1];
+						asset.sum.asks[i][1] += forcedCovers.amount;
 					}
 				}
 			}
