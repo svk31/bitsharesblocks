@@ -418,10 +418,18 @@ angular.module('app')
 				}
 				asset.shortSum = flattenArray(asset.shortSum, true, asset.medianFeed);
 
+				// Filter shorts too far outside a normal range
+				asset.shorts = asset.shorts.filter(function(entry, i) {
+					if (entry.price_limit < asset.medianFeed / 2) {
+						return false || i < 10;
+					}
+					return true;
+				});
+
 				// Saturate price limit at feed price
 				asset.shorts.forEach(function(short) {
 					short.price_limit = (short.price_limit > asset.medianFeed || short.price_limit === 'None') ? asset.medianFeed : short.price_limit;
-					priceString = _splitPrice(1/short.price_limit, asset.symbol);
+					priceString = _splitPrice(1 / short.price_limit, asset.symbol);
 					short.priceInt = priceString[0];
 					short.priceDec = priceString[1];
 				});
@@ -471,8 +479,11 @@ angular.module('app')
 					cover.priceDec = priceString[1];
 				});
 
+				// Filter covers to only show for next week or forced margin calls
+				var oneWeek = new Date();
+				oneWeek.setDate(oneWeek.getDate()+7);
 				asset.covers = asset.covers.filter(function(entry, i) {
-					return i < 10;
+					return (entry.expiration < oneWeek || entry.callPrice < feedPrice) || i < 30;
 				});
 
 				if (expiredCovers.amount > 0) {
@@ -484,9 +495,9 @@ angular.module('app')
 
 						if (asset.sum.asks[i][0] < expiredCovers.price) {
 							if (i !== asset.sum.asks.length - 1) {
-								asset.sum.asks.splice(i+1, 0, [expiredCovers.price, asset.sum.asks[i + 1][1] + expiredCovers.amount]);
+								asset.sum.asks.splice(i + 1, 0, [expiredCovers.price, asset.sum.asks[i + 1][1] + expiredCovers.amount]);
 							} else {
-								asset.sum.asks.splice(i+1, 0, [expiredCovers.price, expiredCovers.amount]);
+								asset.sum.asks.splice(i + 1, 0, [expiredCovers.price, expiredCovers.amount]);
 							}
 							break;
 						}
@@ -506,9 +517,9 @@ angular.module('app')
 
 						if (asset.sum.asks[i][0] < forcedCovers.price) {
 							if (i !== asset.sum.asks.length - 1) {
-								asset.sum.asks.splice(i+1, 0, [forcedCovers.price, asset.sum.asks[i + 1][1] + forcedCovers.amount]);
+								asset.sum.asks.splice(i + 1, 0, [forcedCovers.price, asset.sum.asks[i + 1][1] + forcedCovers.amount]);
 							} else {
-								asset.sum.asks.splice(i+1, 0, [forcedCovers.price, forcedCovers.amount]);
+								asset.sum.asks.splice(i + 1, 0, [forcedCovers.price, forcedCovers.amount]);
 							}
 							break;
 						}
@@ -534,6 +545,7 @@ angular.module('app')
 		asset.dailyVolume = 0;
 
 		if (asset.order_history.length > 0) {
+
 			asset.lastPrice = 1 / (asset.order_history[0].bid_price.ratio * priceRatio);
 			asset.dailyLow = 1 / (asset.order_history[0].ask_price.ratio * priceRatio);
 			asset.dailyHigh = 0;
@@ -559,6 +571,11 @@ angular.module('app')
 
 			});
 
+			// Filter order history to show only for 24h or max of 30 rows
+			asset.order_history = asset.order_history.filter(function(entry, i) {
+				return (new Date(entry.timestamp) > date24h && i < 30) || i < 30;
+			});
+
 			if (tradesFound) {
 				asset.dailyLow = $filter('number')(asset.dailyLow, 2) + ' ' + baseAsset + '/' + prefix + asset.symbol;
 				asset.dailyHigh = $filter('number')(asset.dailyHigh, 2) + ' ' + baseAsset + '/' + prefix + asset.symbol;
@@ -573,6 +590,10 @@ angular.module('app')
 		// Asks and bids
 
 		if (asset.asks.length > 0) {
+			asset.asks = asset.asks.filter(function(ask, i) {
+				return ask.price > asset.asks[0].price / 2 || i < 10;
+			});
+
 			for (i = 0; i < asset.asks.length; i++) {
 				priceString = _splitPrice(asset.asks[i].price, asset.symbol);
 				asset.asks[i].priceInt = priceString[0];
@@ -585,6 +606,10 @@ angular.module('app')
 		}
 
 		if (asset.bids.length > 0) {
+			asset.bids = asset.bids.filter(function(bid, i) {
+				return bid.price < asset.bids[0].price * 2 || i < 10;
+			});
+
 			for (i = 0; i < asset.bids.length; i++) {
 				priceString = _splitPrice(asset.bids[i].price, asset.symbol);
 				asset.bids[i].priceInt = priceString[0];
