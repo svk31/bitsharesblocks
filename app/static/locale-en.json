@@ -359,7 +359,7 @@
 		},
 		"feeds": {
 			"avg": "Average Feed Price",
-			"med": "Median Feed Price",
+			"med": "Call Price",
 			"null": "Not enough feeds in the last 24hrs",
 			"last": "Last update (UTC)",
 			"dev": "Deviation from median",

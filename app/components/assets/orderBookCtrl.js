@@ -32,13 +32,15 @@ angular.module('app')
     };
 
     var series = [];
+    var seriesColors = ['#2ca02c', '#c90808', '#6390bc'];
     for (var i = 0; i < 3; i++) {
       series.push(new Charts.serie({
         tooltip: toolTip,
         id: i,
         marker: {
           enabled: false
-        }
+        },
+        color: seriesColors[i]
       }));
     }
 
@@ -53,6 +55,11 @@ angular.module('app')
       series: series,
       size: {
         height: 250
+      },
+      plotOptions: {
+        series: {
+          fillOpacity: 0.5
+        }
       },
       xAxis: {
         title: {
@@ -145,7 +152,7 @@ angular.module('app')
         $scope.priceSell = $scope.asset.metaMarket.ask * (1 + $scope.asset.metaMarket.ask_fee_percent / 100);
         $scope.marketQuote = $scope.asset.metaMarket.asset_name;
         $scope.marketBase = 'BTC';
-        $scope.buyText = "1.00 "+$scope.marketBase;
+        $scope.buyText = "1.00 " + $scope.marketBase;
 
         if ($scope.asset.metaMarket.flipped === false) {
           $scope.priceBuy = 1 / ($scope.asset.metaMarket.ask * (1 + $scope.asset.metaMarket.bid_fee_percent / 100));
