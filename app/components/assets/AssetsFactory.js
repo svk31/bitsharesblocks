@@ -484,14 +484,14 @@ angular.module('app')
 
 						if (asset.sum.asks[i][0] < expiredCovers.price) {
 							if (i !== asset.sum.asks.length - 1) {
-								asset.sum.asks.splice(i, 0, [expiredCovers.price, asset.sum.asks[i + 1][1] + expiredCovers.amount]);
+								asset.sum.asks.splice(i+1, 0, [expiredCovers.price, asset.sum.asks[i + 1][1] + expiredCovers.amount]);
 							} else {
-								asset.sum.asks.splice(i, 0, [expiredCovers.price, expiredCovers.amount]);
+								asset.sum.asks.splice(i+1, 0, [expiredCovers.price, expiredCovers.amount]);
 							}
 							break;
 						}
 					}
-					for (i = i - 1; i >= 0; i--) {
+					for (i = i; i >= 0; i--) {
 						asset.sum.asks[i][1] += asset.sum.asks[i + 1][1];
 					}
 				}
@@ -506,14 +506,14 @@ angular.module('app')
 
 						if (asset.sum.asks[i][0] < forcedCovers.price) {
 							if (i !== asset.sum.asks.length - 1) {
-								asset.sum.asks.splice(i, 0, [forcedCovers.price, asset.sum.asks[i + 1][1] + forcedCovers.amount]);
+								asset.sum.asks.splice(i+1, 0, [forcedCovers.price, asset.sum.asks[i + 1][1] + forcedCovers.amount]);
 							} else {
-								asset.sum.asks.splice(i, 0, [forcedCovers.price, forcedCovers.amount]);
+								asset.sum.asks.splice(i+1, 0, [forcedCovers.price, forcedCovers.amount]);
 							}
 							break;
 						}
 					}
-					for (i = i - 1; i >= 0; i--) {
+					for (i = i; i >= 0; i--) {
 						asset.sum.asks[i][1] += asset.sum.asks[i + 1][1];
 					}
 				}
