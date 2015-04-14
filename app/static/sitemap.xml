@@ -5,35 +5,58 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
   http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://bitsharesblocks.com/</loc>
-    <lastmod>2015-03-06T14:37:47+00:00</lastmod>
+    <loc>https://bitsharesblocks.com</loc>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://bitsharesblocks.com/blocks</loc>
-    <lastmod>2015-03-06T14:37:47+00:00</lastmod>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://bitsharesblocks.com/delegates</loc>
-    <lastmod>2015-03-06T14:37:47+00:00</lastmod>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
   <loc>https://bitsharesblocks.com/accounts</loc>
-    <lastmod>2015-03-06T14:37:47+00:00</lastmod>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://bitsharesblocks.com/assets/market</loc>
-    <lastmod>2015-03-06T14:37:47+00:00</lastmod>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
   <loc>https://bitsharesblocks.com/assets/user</loc>
-    <lastmod>2015-03-06T14:37:47+00:00</lastmod>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-  <loc>https://bitsharesblocks.com/charts</loc>
-    <lastmod>2015-03-06T14:37:47+00:00</lastmod>
+  <loc>https://bitsharesblocks.com/charts/prices</loc>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+  <loc>https://bitsharesblocks.com/charts/transactions</loc>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+  <loc>https://bitsharesblocks.com/charts/accounts</loc>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+  <loc>https://bitsharesblocks.com/charts/supply</loc>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://bitsharesblocks.com/about</loc>
-    <lastmod>2015-03-06T14:37:47+00:00</lastmod>
+    <lastmod>2015-04-14T14:37:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>
