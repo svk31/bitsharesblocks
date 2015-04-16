@@ -6,13 +6,6 @@ angular.module('app')
 	var myFunction = {};
 	var basePrecision = appcst.basePrecision;
 	var _assets = {};
-	var _metaMarkets = {
-		BTC: 'bitBTC_BTC',
-		USD: 'BTC_bitUSD',
-		CNY: 'BTC_bitCNY',
-		GOLD: 'BTC_bitGOLD',
-		SILVER: 'BTC_bitSILVER'
-	};
 
 	_assets = store.get('assets');
 	if (_assets === undefined) {

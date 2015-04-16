@@ -132,10 +132,27 @@ angular.module('app')
           }
         });
 
+        var filterInt = Math.floor(result.stats.currentPrice.length / 400);
+
+        result.stats.currentPrice = result.stats.currentPrice.filter(function(entry, index) {
+          return (index % filterInt) === 0;
+        });
+
+        result.stats.vwap24hrs = result.stats.vwap24hrs.filter(function(entry, index) {
+          return (index % filterInt) === 0;
+        });
+
+        result.stats.feed = result.stats.feed.filter(function(entry, index) {
+          return (index % filterInt) === 0;
+        });
+
         var deviation = [];
         for (i = 0; i < result.stats.feed.length; i++) {
-          deviation.push([result.stats.feed[i][0], 100 * (result.stats.currentPrice[i][1] - result.stats.feed[i][1]) / (result.stats.feed[i][1])]);
+          if (result.stats.currentPrice[i][1] && result.stats.feed[i][1]) {
+            deviation.push([result.stats.feed[i][0], 100 * (result.stats.currentPrice[i][1] - result.stats.feed[i][1]) / (result.stats.feed[i][1])]);
+          }
         }
+
         $scope.feedsChart.series[0].data = result.stats.feed;
         $scope.feedsChart.series[1].data = result.stats.currentPrice;
         $scope.feedsChart.series[2].data = deviation;
