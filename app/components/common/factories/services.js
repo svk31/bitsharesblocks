@@ -1,20 +1,5 @@
 angular.module('app.services', [])
 
-.factory('getAssetDetail', function($q, api) {
-	return {
-		fetch: function(assetId) {
-			var deferred = $q.defer();
-			api.getAssetDetail(assetId).success(function(result) {
-				deferred.resolve({
-					symbol: result.symbol,
-					precision: result.precision
-				});
-			});
-			return deferred.promise;
-		}
-	};
-})
-
 .constant('appcst', {
 	R_ISO8601_STR: /^(\d{4})-?(\d\d)-?(\d\d)(?:T(\d\d)(?::?(\d\d)(?::?(\d\d)(?:\.(\d+))?)?)?(Z|([+-])(\d\d):?(\d\d))?)?$/,
 	baseAsset: 'PLS',
@@ -330,7 +315,7 @@ angular.module('app.services', [])
 				"th2": "Bid depth",
 				"th3": "Ask depth",
 				"th4": "Valid Feeds",
-				"th5": "Median Feed Price",
+				"th5": "Call Price",
 				"th6": "Share Supply",
 				"th7": "24h Volume",
 				"th8": "Market Cap",
@@ -366,7 +351,7 @@ angular.module('app.services', [])
 			"external": "External Coinmarketcap price",
 			"volume": "Volume",
 			"marketAsset": "Market issued asset",
-			"range": "Today's range",
+			"range": "24h range",
 			"assetInfo": {
 				"title": "ASSET INFO",
 				"base": "Base Asset",
@@ -380,7 +365,7 @@ angular.module('app.services', [])
 			},
 			"feeds": {
 				"avg": "Average Feed Price",
-				"med": "Median Feed Price",
+				"med": "Call Price",
 				"null": "Not enough feeds in the last 24hrs",
 				"last": "Last update (UTC)",
 				"dev": "Deviation from median",

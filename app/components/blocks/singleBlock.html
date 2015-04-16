@@ -81,7 +81,7 @@
 						<th ng-if="trxInfo[$index].name">{{ 'accounts.name' | translate }}</th>
 						<th>{{ 'block.trx.asset' | translate }}</th>			
 						<th ng-if="trxInfo[$index].burn">{{ 'block.trx.message' | translate }}</th>			
-						<th ng-if="trxInfo[$index].balance">{{ 'genesis.address' | translate }}</th>
+						<th class="hidden-xs" ng-if="trxInfo[$index].balance">{{ 'genesis.address' | translate }}</th>
 						<th>{{ 'block.trx.amount' | translate }}</th>
 					</tr>
 				</thead>
@@ -98,7 +98,7 @@
 						<td ng-if="trxInfo[$parent.$index].name"><a ui-sref="account({ 'name' : op.name })" >{{op.name}}</a></td>
 						<td><a ng-if="op.asset !== baseAsset" ui-sref="asset.orderbook({ 'asset' : op.asset })"> {{op.asset}}</a><span ng-if="op.asset === baseAsset">{{op.asset }}</span> </td>
 						<td ng-if="trxInfo[$parent.$index].burn">{{op.message}}</td>
-						<td ng-if="trxInfo[$parent.$index].balance"><span ng-if="op.balance_id">{{op.balance_id}}</span></td>
+						<td class="hidden-xs" ng-if="trxInfo[$parent.$index].balance"><span ng-if="op.balance_id">{{op.balance_id}}</span></td>
 						<td>{{op.amount}}</td>
 					</tr>
 				</tbody>

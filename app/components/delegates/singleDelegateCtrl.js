@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('singleDelegateCtrl', ['$scope', '$rootScope', '$state', '$location', '$translate', 'api', 'Delegates', 'Translate', 'Meta',
-  function($scope, $rootScope, $state, $location, $translate, api, Delegates, Translate, Meta) {
+.controller('singleDelegateCtrl', ['$scope', '$rootScope', '$state', '$location', '$translate', 'api', 'Delegates', 'Translate', 'Meta', 'appcst',
+  function($scope, $rootScope, $state, $location, $translate, api, Delegates, Translate, Meta, appcst) {
     $scope.delegateName = $state.params.name;
     $scope.status = {};
     $scope.status.open = false;
@@ -30,11 +30,16 @@ angular.module('app')
       name: 'delegate.earnings'
     }];
 
+    $scope.$watch('delegateName', function(nv, ov) {
+      if (nv) {
+        Meta.add('/delegate/*', {
+          title: appcst.baseAsset + ':' + nv + ' info: votes history, salary and feeds'
+        });
+      }
+    });
+
     function fetchDelegate(name, rank) {
       Delegates.fetchDelegate(name, rank).then(function(result) {
-        Meta.add('/delegates/delegate', {
-          title: 'Bitshares Delegate ' + result.delegate.name + ' info: votes history, salary and feeds'
-        });
         $scope.delegate = result.delegate;
         $scope.latencies = result.latencies;
         $scope.delegateName = result.delegate.name;

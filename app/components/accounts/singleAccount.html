@@ -1,8 +1,7 @@
 <div class="text-center col-xs-12">
   <h1 id="delegateH">{{account.name}}</h1>
 
-  <img alt="Account Robo Avatar" height="150" width="150" ng-src="https://robohash.org/set_1/{{account.name}}?size=200x200">
-
+  <identicon account="{{ account.name }}" size="150"/>  
   <div class="container" id="next-delegate">
     <a ng-if="account._id>1" href="" ng-click="getNextAccount(account._id-1)" analytics-on analytics-event="Previous Account" analytics-category="Navigation" analytics-label="Previous Account"><span class="glyphicon glyphicon-arrow-left"></span> {{'account.previous' | translate }}</a>
     <a href="" ng-click="getNextAccount(account._id+1)" analytics-on analytics-event="Next Account" analytics-category="Navigation" analytics-label="Next Account">{{'account.next' | translate }} <span class="glyphicon glyphicon-arrow-right"></span></a>

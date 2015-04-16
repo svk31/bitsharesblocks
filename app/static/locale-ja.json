@@ -343,7 +343,7 @@
     "external": "外部Coinmarketcapプライス",
     "volume": "取引き量",
     "marketAsset": "マーケット発行資産",
-    "range": "Today's range",
+    "range": "24h range",
     "assetInfo": {
       "title": "資産情報",
       "base": "基準資産",

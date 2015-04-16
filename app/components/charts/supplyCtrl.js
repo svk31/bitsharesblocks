@@ -9,7 +9,7 @@ angular.module('app')
 		};
 		$scope.data = {
 			'hardFork': 1,
-			'supply': 2000000000.0
+			'supply': 1999999925.84
 		};
 
 		var Size = {

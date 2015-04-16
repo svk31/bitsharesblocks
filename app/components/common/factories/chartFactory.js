@@ -69,6 +69,10 @@ angular.module("app").factory('Charts', ['appcst', function(appcst) {
 			newSerie.data = options.data;
 		}
 
+		if (options.color) {
+			newSerie.color = options.color;
+		}
+
 		if (options.stacking) {
 			newSerie.stacking = options.stacking;
 		}

@@ -58,6 +58,7 @@ angular.module('app')
 	function _updateFees(blocks) {
 		if (blocks.length > 0 && blocks[0] !== _maxBlock) {
 			for (var i = 0; i < blocks.length; i++) {
+				blocks[i].localTime = new Date(blocks[i].timestamp);
 				if (blocks[i].trxLength > 0) {
 					blocks[i].formFees = [];
 					blocks[i].totalValue = [];

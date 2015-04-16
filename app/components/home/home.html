@@ -36,6 +36,9 @@
     </div> -->
 
 <!--     <div class="col-md-12 meta-buttons">
+=======
+    <div class="col-md-12 meta-buttons">
+>>>>>>> master
       <div class="col-sm-4 col-sm-offset-2 col-xs-12">
         <a class="button-link" href="https://metaexchange.info/markets/BTS/BTC?refid=1" target="_blank">
           <button class="button btn-success btn-lg btn-block meta-button-success" analytics-on analytics-event="Meta_BUY" analytics-category="MetaX" analytics-label="Buy_BTS">      
@@ -60,6 +63,7 @@
         </a>
       </div>
     </div> -->
+
 
     <div class="col-md-3 col-sm-6" style="clear:left;">
       <div class="panel panel-default">
@@ -217,18 +221,18 @@
         <table class="table table-condensed table-hover table-bordered">
           <thead>
             <tr>
-              <th class="hidden-xs">{{'blocks.blockNum' | translate }}</th>
+              <th >{{'blocks.blockNum' | translate }}</th>
               <th>{{'accounts.name' | translate }}</th>
               <th>{{'block.trx.amount' | translate }}</th>
-              <th>{{'block.trx.message' | translate }}</th>
+              <th class="hidden-xs">{{'block.trx.message' | translate }}</th>
             </tr>
           </thead>
           <tbody >
             <tr ng-repeat="burn in burns | limitTo: 15 track by $index " class="repeated-item">
-              <td class="hidden-xs"><a ui-sref="block({ 'id' : burn.block })" >{{ burn.block }}</a></td>
+              <td><a ui-sref="block({ 'id' : burn.block })" >{{ burn.block }}</a></td>
               <td><a ui-sref="account({ 'name' : burn.name })" >{{burn.name}}</a></td>
               <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</a></td>
-              <td>{{ burn.message }}</td>
+              <td class="hidden-xs">{{ burn.message }}</td>
             </tr>
           </tbody>
         </table>

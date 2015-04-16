@@ -176,7 +176,7 @@ angular.module('app')
     }
 
     fetchBurns();
-    stopBurns = $interval(fetchBurns, 60000);
+    stopBurns = $interval(fetchBurns, 5*60000);
 
     function stopUpdate() {
       if (angular.isDefined(stopHome)) {
