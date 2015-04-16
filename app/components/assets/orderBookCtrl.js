@@ -91,12 +91,18 @@ angular.module('app')
 
     function fetchOrderBook() {
       Assets.fetchOrderBook($scope.assetId).then(function(result) {
-        Meta.add('/asset/orderbook', {
-          title: 'Bitshares ' + result.asset.symbol + ' orderbook: asks, bids, shorts and covers'
-        });
+
 
         marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
         $scope.asset = result.asset;
+
+        $scope.$watch('asset.lastPrice', function(nv, ov) {
+          if (nv) {
+            Meta.add('/asset/orderbook', {
+              title: result.asset.symbol + ':' + result.asset.lastPrice
+            });
+          }
+        });
 
         if ($scope.asset.symbol.indexOf('BTC') !== -1 || $scope.asset.symbol.indexOf('GOLD') !== -1) {
           $scope.assetDecimals = 6;
@@ -181,6 +187,26 @@ angular.module('app')
       if ($scope.asset.medianLine) {
         $scope.orderBookChart.xAxis.currentMin = 0.5 * ($scope.asset.medianLine);
         $scope.orderBookChart.xAxis.currentMax = 1.5 * ($scope.asset.medianLine);
+      } else {
+        var askLength = $scope.asset.sum.asks.length;
+        var bidLength = $scope.asset.sum.bids.length;
+        var i, askMax, askMin, bidMax, bidMin;
+
+        if (askLength > 0 && bidLength > 0) {
+          askMax = $scope.asset.asks[0].price;
+          bidMin = $scope.asset.bids[0].price;
+        } else if (askLength > 0) {
+          askMax = $scope.asset.asks[0].price;
+          bidMin = $scope.asset.asks[0].price;
+        } else if (bidLength > 0) {
+          bidMin = $scope.asset.bids[0].price;
+          askMax = $scope.asset.bids[0].price;
+        }
+
+        if (askMax && bidMin) {
+          $scope.orderBookChart.xAxis.currentMin = 0.4 * (askMax + bidMin) / 2;
+          $scope.orderBookChart.xAxis.currentMax = 1.6 * (askMax + bidMin) / 2;
+        }
       }
     }
 

@@ -193,7 +193,7 @@ angular.module('app')
 				assets[i].lastPrice = (assets[i].lastPrice !== 0) ? (1 / assets[i].lastPrice) : 0;
 				assets[i].cap = (assets[i].lastPrice) * assets[i].current_share_supply;
 				assets[i].capText = $filter('number')(assets[i].cap, 0) + ' ' + baseAsset;
-				assets[i].vwapText = $filter('number')(assets[i].vwap, 3) + ' ' + baseAsset;
+				assets[i].vwapText = $filter('number')((assets[i].vwap !== 0) ? 1 / assets[i].vwap : 0, 3) + ' ' + baseAsset;
 				assets[i].lastPriceText = $filter('number')(assets[i].lastPrice, 3) + ' ' + baseAsset;
 				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, Math.floor(assets[i].decimals % 4)) + ' ' + assets[i].symbol;
 

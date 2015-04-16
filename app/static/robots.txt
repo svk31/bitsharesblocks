@@ -1,5 +1,6 @@
 User-agent: *
 Disallow:/*?id
+Disallow:/*?asset
 Disallow:/*?name
 Disallow:/*?trx
 Disallow:/*?top
