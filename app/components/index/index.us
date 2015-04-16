@@ -10,12 +10,98 @@
   <meta name="description" content="{{meta.description}}">
   <meta name="author" content="Sigve Kvalsvik">
   <link rel="shortcut icon" href="http://bitsharesblocks.com/favicon.ico?v=2" />
-  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
-  <script src="https://code.highcharts.com/stock/highstock.js"></script>
-  <script src="js/app.js"></script>
+  <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script defer src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
+  <script defer src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script defer src="js/app.js"></script>
+
+  <style type="text/css">
+    /* 
+  Allow angular.js to be loaded in body, hiding cloaked elements until 
+  templates compile.  The !important is important given that there may be 
+  other selectors that are more specific or come later and might alter display.  
+  */
+  [ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+  }
+
+  .spinner1 {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: solid 30px;
+    border-radius: 5em;
+    border-color: #0099ff transparent #0099ff transparent;
+    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+  }
+
+  ..dot:before, .dot:after {
+    content: ".";
+  }
+
+  .dot {
+    animation: fade 1s linear infinite;
+    -webkit-animation: fade 1s linear infinite;
+    -moz-animation: fade 1s linear infinite;
+    -o-animation: fade 1s linear infinite;
+  }
+  .dot:after {
+    animation: fade 2s linear infinite;
+    -webkit-animation: fade 2s linear infinite;
+    -moz-animation: fade 2s linear infinite;
+    -o-animation: fade 2s linear infinite;
+  }
+
+  @keyframes spin{
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes spin{
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fade{
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fade{
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .item {
+    display: inline-block;
+    padding: 10em 5em;
+    width:100%;
+    text-align: center;
+  }
+
+</style>
 </head>
 <body>
   <header ng-cloak class="navbar navbar-default navbar-fixed-top" role="navigation" bs-navbar>
@@ -103,9 +189,14 @@
     </div>
   </header>
 
+  <div ng-if="false" class="item">
+    <div class="spinner1"></div>
+    <h5>Loading<span class="dot">.</span></h5>
+  </div>
+
   <div ng-cloak ui-view ng-focus="isCollapsed = false" ng-click="isCollapsed = false"></div>
 
-  <div ng-controller="footerCtrl" role="footer" id="footer" class="hidden-xs">
+  <div ng-cloak ng-controller="footerCtrl" role="footer" id="footer" class="hidden-xs">
     <div class="text-center" style="vertical-align-middle; margin:0;">
       <p style="display:inline-block;"><span translate>footer.vote</span>:</p>
       <a href="bts:dev.bitsharesblocks/approve">dev.bitsharesblocks</a>
