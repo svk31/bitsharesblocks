@@ -82,7 +82,7 @@ angular.module('app')
       size: Size,
       yAxis: [{
         id: 'primary',
-        min: 0,
+        type: 'logarithmic',
         labels: {
           align: 'left',
           formatter: function() {
@@ -90,7 +90,7 @@ angular.module('app')
           }
         }
       }, {
-        min: 0,
+        type: 'logarithmic',
         opposite: false,
         labels: {
           formatter: function() {
@@ -104,10 +104,18 @@ angular.module('app')
       type: 'column',
       useHighStocks: true,
       series: [new Charts.serie({
-        tooltip: toolTip,
-      })],
+          id: 'primary',
+          tooltip: toolTip,
+        }),
+        new Charts.serieTA({
+          periods: 15,
+          tooltip: {
+            valueDecimals: 0
+          }
+        })
+      ],
       size: Size,
-      noLegend: true,
+      noLegend: false,
       yAxis: {
         type: 'logarithmic',
         labels: {
@@ -127,7 +135,6 @@ angular.module('app')
       $scope.accountsChart.series[1].data = reduceArray(result.uniqueAccounts, 0, 2);
       $scope.accountsChart.series[2].data = reduceArray(result.uniqueAccounts, 0, 1);
 
-
       $scope.newAccountsChart.series[0].data = reduceArray(result.accounts, 0, 2);
 
       $scope.accountsChart.reflow = true;
@@ -141,6 +148,8 @@ angular.module('app')
         $scope.accountsChart.series[2].name = result.uniqueNew;
 
         $scope.newAccountsChart.series[0].name = result.acc;
+
+        $scope.newAccountsChart.series[1].name = result.ma15;
       });
     }
 

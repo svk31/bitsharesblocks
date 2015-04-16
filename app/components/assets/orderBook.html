@@ -34,42 +34,69 @@
   </div>
 </div>
 
+<div ng-if="showMeta" class="col-md-12 meta-buttons">
+  <div class="col-sm-4 col-sm-offset-2 col-xs-12">
+    <a class="button-link" ng-href="https://metaexchange.info/markets/{{ marketBase}}/{{ marketQuote }}?refid=1" analytics-on analytics-event="Meta_BUY" analytics-category="MetaX" analytics-label="Buy_ASSET" target="_blank">
+      <button class="button btn-success btn-lg btn-block meta-button-success">      
+        <span>{{ 'asset.buy' | translate }} {{ prefix + asset.symbol }}</span>
+        <br>
+        <span class="badge"> {{ buyText }}</span>
+        <span class="glyphicon glyphicon-arrow-right arrow"></span>
+        <span class="badge">{{ priceBuy | number:3}} {{ prefix + asset.symbol }}</span>
+      </button>
+    </a>
+  </div>
+  <img height="28px" width="31px" class="meta-logo" src="/img/smallLogo_metax.svg" alt="MetaExchange logo"/>
+  <div class="col-sm-4 col-xs-12">
+    <a class="button-link" ng-click="$event.stopPropagation();" ng-href="https://metaexchange.info/markets/{{ marketBase}}/{{ marketQuote }}?refid=1" analytics-on analytics-event="Meta_SELL" analytics-category="MetaX" analytics-label="Sell_ASSET" target="_blank">
+      <button class="button btn-danger btn-lg btn-block meta-button-danger">
+        <span>{{ 'asset.sell' | translate }} {{ prefix + asset.symbol }}</span>
+        <br>
+        <span class="badge">{{ priceSell  | number:3 }} {{ prefix + asset.symbol }}</span>
+        <span class="glyphicon glyphicon-arrow-right arrow"></span>
+        <span class="badge">{{ buyText }}</span>
+
+      </button>
+    </a>
+  </div>
+</div>
+
 <div ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6 no-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ 'asset.bids' | translate }} ({{ 'asset.buy' | translate }} {{prefix+asset.symbol}})</h3>
+      <h3 class="panel-title bid-text">{{ 'asset.bids' | translate }} ({{ 'asset.buy' | translate }} {{prefix+asset.symbol}})</h3>
     </div>
-    <table class="table table-condensed table-hover">
-
-      <th>{{ 'home.price' | translate }} ({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
-      <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
-      <th>{{ 'block.trx.amount' | translate }} ({{ ::baseAsset }})</th>
-    </thead>
-    <tbody>
-      <tr ng-repeat="ask in asset.asks | limitTo:10  track by $index">
-        <td>{{ask.price | number:2}}</td>
-        <td>{{(ask.amount / ask.price) | number:assetDecimals}}</td>
-        <td>{{ask.amount | number:2}}</td>
-      </tr>
-    </tbody>      
-  </table>
-</div>
+    <table fixed-header table-height="310px" class="table table-condensed table-hover">
+      <thead>
+        <th>{{ 'block.trx.amount' | translate }} <br> ({{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.amount' | translate }} <br>({{ ::baseAsset }})</th>
+        <th>{{ 'home.price' | translate }}<br> ({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="ask in asset.asks track by $index">
+          <td>{{(ask.amount / ask.price) | number:assetDecimals}}</td>
+          <td>{{ask.amount | number:2}}</td>
+          <td><span ng-class="{'cover-text':ask.type === 'cover', 'bid-text':ask.type !== 'cover'}">{{ ask.priceInt }}</span><span class="decimal-text">.{{ ask.priceDec }}</span></td>
+        </tr>
+      </tbody>      
+    </table>
+  </div>
 </div>
 
 <div ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6 no-right-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ 'asset.asks' | translate }} ({{ 'asset.sell' | translate }} {{prefix+asset.symbol}})</h3>
+      <h3 class="panel-title ask-text">{{ 'asset.asks' | translate }} ({{ 'asset.sell' | translate }} {{prefix+asset.symbol}})</h3>
     </div>
-    <table class="table table-condensed table-hover">
+    <table fixed-header table-height="310px" class="table table-condensed table-hover">
       <thead>
-        <th>{{ 'home.price' | translate }} ({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.amount' | translate }} ({{ ::baseAsset }})</th>
+        <th>{{ 'home.price' | translate }} <br>({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.amount' | translate }} <br>({{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.amount' | translate }} <br>({{ ::baseAsset }})</th>
       </thead>
       <tbody>
-        <tr ng-repeat="bid in asset.bids | orderBy:'price' | limitTo:10 track by $index">
-          <td>{{bid.price | number:2}}</td>
+        <tr ng-repeat="bid in asset.bids track by $index">
+          <td><span class="ask-text">{{ bid.priceInt }}</span><span class="decimal-text">.{{ bid.priceDec }}</span></td>
           <td>{{bid.amount | number:assetDecimals}}</td>
           <td>{{(bid.amount * bid.price) | number:2}}</td>
         </tr>
@@ -81,24 +108,23 @@
 <div ng-if="showOrders===true && asset.issuer_account_id ===-2" class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 no-right-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ 'asset.shorts' | translate }} ({{ 'assets.plot.type3' | translate }} {{prefix+asset.symbol}})</h3>
+      <h3 class="panel-title short-text">{{ 'asset.shorts' | translate }} ({{ 'assets.plot.type3' | translate }} {{prefix+asset.symbol}})</h3>
     </div>
-    <table class="table table-condensed table-hover">
+    <table fixed-header table-height="310px" class="table table-condensed table-hover">
       <thead>
-        <th>{{ 'block.trx.amount' | translate }} ({{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.amount' | translate }} ({{ ::baseAsset }})</th>
-        <th>{{ 'block.trx.collateral' | translate }} ({{ ::baseAsset }})</th>
-        <th>{{ 'block.trx.interest' | translate }} (%)</th>
-        <th>{{ 'block.trx.priceLimit' | translate }} ({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
+        <th>{{ 'home.price' | translate }} <br>({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.amount' | translate }} <br>({{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.amount' | translate }} <br>({{ ::baseAsset }})</th>
+        <th>{{ 'block.trx.collateral' | translate }} <br>({{ ::baseAsset }})</th>
+        <th>{{ 'block.trx.interest' | translate }} <br>(%)</th>
       </thead>
       <tbody>
-        <tr ng-repeat="short in asset.shorts | limitTo:10  track by $index">
+        <tr ng-repeat="short in asset.shorts track by $index">
+          <td><span class="short-text">{{ short.priceInt }}</span><span class="decimal-text">.{{ short.priceDec }}</span></td>
           <td>{{(short.collateral * asset.medianFeed / 2) | number:assetDecimals}}</td>
           <td>{{(short.collateral / 2) | number:2}}</td>
           <td>{{short.collateral | number:3}}</td>
           <td>{{short.interest | number:3}}</td>          
-          <td ng-if="short.price_limit>0">{{(1/short.price_limit | number:3)}}</td>
-          <td ng-if="!(short.price_limit>0)">{{(short.price_limit)}}</td>
         </tr>
       </tbody>
     </table>
@@ -110,7 +136,7 @@
     <div class="panel-heading">
       <h3 class="panel-title">{{ 'asset.order_history.title' | translate }}</h3>
     </div>
-    <table id="order_history" class="table table-condensed table-orderhistory">
+    <table fixed-header table-height="310px" id="order_history" class="table table-condensed table-orderhistory">
       <thead>
         <th>{{ 'block.trx.type' | translate }}</th>
         <th>{{ 'block.trx.price' | translate }}</th>
@@ -121,16 +147,16 @@
 
       </thead>
       <tbody>
-        <tr ng-repeat-start="order in asset.order_history | limitTo:10  track by $index">
-          <td>{{ orderTypes[order.ask_type] | translate }}</td>          
+        <tr ng-repeat-start="order in asset.order_history  | limitTo:50 track by $index">
+          <td ng-class="{'ask-text':order.ask_type === 'bid_order','bid-text':order.ask_type === 'ask_order','cover-text':order.ask_type === 'cover_order','short-text':order.ask_type === 'short_order'}">{{ orderTypes[order.ask_type] | translate }}</td>          
           <td>{{ order.ask_price.ratio }}</td>
           <td>{{ order.ask_paid.amount }}</td>
           <td>{{ order.ask_received.amount }}</td>
           <td>{{ order.fees_collected.amount }}</td>
-          <td>{{ order.timestamp | date:'medium'}}</td>
+          <td>{{ order.localTime | date:'medium'}}</td>
         </tr>
         <tr ng-repeat-end>
-          <td>{{ orderTypes[order.bid_type] | translate  }}</td>          
+          <td ng-class="{'ask-text':order.bid_type === 'bid_order','bid-text':order.bid_type === 'sell_order','cover-text':order.bid_type === 'cover_order','short-text':order.bid_type === 'short_order'}">{{ orderTypes[order.bid_type] | translate  }}</td>          
           <td>{{ order.bid_price.ratio}}</td>
           <td>{{ order.bid_paid.amount }}</td>
           <td>{{ order.bid_received.amount }}</td>
@@ -145,19 +171,18 @@
 <div ng-if="asset.covers.length > 0 && asset.issuer_account_id ===-2" class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 no-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ 'asset.covers.title' | translate }} ({{ 'assets.plot.type4' | translate }} {{prefix+asset.symbol}})</h3>
+      <h3 class="panel-title cover-text">{{ 'asset.covers.title' | translate }} ({{ 'assets.plot.type4' | translate }} {{prefix+asset.symbol}})</h3>
     </div>
-    <table class="table table-condensed table-hover">
+    <table fixed-header table-height="310px" class="table table-condensed table-hover">
       <thead>
-        <th>{{ 'asset.covers.price' | translate }} ({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
-        <th>{{ 'block.trx.interest' | translate }} (%)</th>
-        <th>{{ 'asset.covers.owed' | translate }} ({{ prefix+asset.symbol }})</th>
-        <th>{{ 'block.trx.collateral' | translate }} ({{ ::baseAsset }})</th>        
+        <th>{{ 'asset.covers.price' | translate }} <br>({{ ::baseAsset }}/{{prefix+asset.symbol}})</th>
+        <th>{{ 'block.trx.interest' | translate }} <br>(%)</th>
+        <th>{{ 'asset.covers.owed' | translate }} <br>({{ prefix+asset.symbol }})</th>
+        <th>{{ 'block.trx.collateral' | translate }} <br>({{ ::baseAsset }})</th>        
         <th>{{ 'asset.covers.expiration' | translate }}</th>
-
       </thead>
       <tbody>
-        <tr ng-repeat="cover in asset.covers | limitTo:10  track by $index">
+        <tr ng-repeat="cover in asset.covers track by $index">
           <td>{{(cover.callPrice) | number:3}}</td>          
           <td>{{cover.interest | number:3}}</td>
           <td ng-if="asset.symbol.indexOf('BTC') === -1 && asset.symbol!='GOLD'"> {{ cover.owed | number:3}} </td>

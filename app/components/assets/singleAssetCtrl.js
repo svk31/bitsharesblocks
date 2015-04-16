@@ -41,7 +41,6 @@ angular.module('app')
 
     $rootScope.$on('noOrderbook', function() {
       $scope.noOrderbook = true;
-      $scope.goTo('asset.info');
     });
   }
 ]);

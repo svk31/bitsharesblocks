@@ -69,6 +69,10 @@ angular.module("app").factory('Charts', ['appcst', function(appcst) {
 			newSerie.data = options.data;
 		}
 
+		if (options.color) {
+			newSerie.color = options.color;
+		}
+
 		if (options.stacking) {
 			newSerie.stacking = options.stacking;
 		}
@@ -93,6 +97,10 @@ angular.module("app").factory('Charts', ['appcst', function(appcst) {
 		var type = (options.type) ? options.type : 'trendline';
 		var algorithm = (options.algorithm) ? options.algorithm : 'SMA';
 		var periods = (options.periods) ? options.periods : 15;
+		var tooltip = (options.tooltip) ? options.tooltip : {
+			valueDecimals: 5,
+			valueSuffix: ' USD/' + appcst.baseAsset
+		};
 
 		var newSerie = {
 			linkedTo: linkedTo,
@@ -100,10 +108,7 @@ angular.module("app").factory('Charts', ['appcst', function(appcst) {
 			type: type,
 			algorithm: algorithm,
 			periods: periods,
-			tooltip: {
-				valueDecimals: 5,
-				valueSuffix: ' USD/'+appcst.baseAsset
-			}
+			tooltip: tooltip
 		};
 		return newSerie;
 	}
@@ -150,7 +155,7 @@ angular.module("app").factory('Charts', ['appcst', function(appcst) {
 		if (options.plotOptions) {
 			config.options.plotOptions = options.plotOptions;
 		}
-
+		
 		if (options.tooltip) {
 			config.options.tooltip = options.tooltip;
 		}

@@ -6,8 +6,7 @@
 <div class="delegate-band">
 <div class="text-center col-md-4 col-md-offset-1 col-xs-6">
     <a class="hidden-xs" href="bts:{{delegate.name}}/disapprove"><span style="font-size:2em; color:red;" class="glyphicon glyphicon glyphicon-thumbs-down"></span></a>
-      <!-- <identicon account="{{delegate.name}}" size="135"/> -->
-    <img alt="Delegate Robo Avatar" height="135" width="135" ng-src="https://robohash.org/set_1/{{delegate.name}}?size=200x200"/>
+    <identicon account="{{ delegate.name }}" size="135" class="vert-middle"/>  
     <a class="hidden-xs" ng-href="bts:{{delegate.name}}/approve"><span style="font-size:2em; color:green;" class="glyphicon glyphicon glyphicon-thumbs-up"></span></a>
 
     <div id="next-delegate">

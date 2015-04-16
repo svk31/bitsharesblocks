@@ -476,6 +476,7 @@ angular.module('app')
 		if (boolean) {
 			if (feeds[0]) {
 				for (feed in feeds[0].feeds) {
+					feeds[0].feeds[feed].localTime = new Date(feeds[0].feeds[feed].last_update);
 					match = feeds[0].feeds[feed].last_update.match(appcst.R_ISO8601_STR);
 					var currentDate = new Date(Date.UTC(match[1], match[2] - 1, match[3], match[4], match[5], match[6]));
 					if (currentDate > yesterday) {

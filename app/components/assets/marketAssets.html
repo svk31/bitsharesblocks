@@ -14,6 +14,7 @@
       <th ng-click="orderByField='status.bid_depth'; reverseSort = !reverseSort" class="sortable"><ng-sort-arrows order-string="status.bid_depth" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th3' | translate }}</th>
       <th class="hidden-xs sortable" ng-click="orderByField='numberValidFeeds'; reverseSort = !reverseSort" ><ng-sort-arrows order-string="numberFeeds" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.th4' | translate }}</th>
       <th class="hidden-xs">{{ 'assets.market.th5' | translate }}</th>
+      <th>{{ 'charts.feeds.latest' | translate }}</th>
       <th class="hidden-xs">{{ 'assets.market.th6' | translate }}</th>
       <th class="sortable" ng-click="orderByField='yield'; reverseSort = !reverseSort"><ng-sort-arrows order-string="yield" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'assets.market.yield' | translate }}</th>
       <th ng-click="orderByField='collateralRatio'; reverseSort = !reverseSort" class="sortable hidden-xs"><ng-sort-arrows order-string="collateralRatio" reverse-sort="{{reverseSort}}" order-by-field="{{orderByField}}"></ng-sort-arrows>{{ 'block.trx.collateral' | translate }}</th>
@@ -27,8 +28,8 @@
       <td>{{asset.status.ask_depth | number:0}} {{ ::baseAsset }}</td>
       <td>{{asset.status.bid_depth | number:0}} {{ ::baseAsset }}</td>
       <td ng-class="{'hidden-xs':true, 'alert-success': (asset.numberValidFeeds>50), 'alert-warning': (asset.numberValidFeeds<51 && asset.numberValidFeeds>=25), 'alert-danger': (asset.numberValidFeeds<25)}">{{asset.numberValidFeeds}}</td>
-      <td class="hidden-xs" ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(asset.medianFeed | number:4) +' '+asset.symbol}}/{{ ::baseAsset }}</td>
-      <td class="hidden-xs" ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(asset.medianFeed | number:7) +' '+asset.symbol}}/{{ ::baseAsset }}</td>
+      <td class="hidden-xs">{{(asset.medianFeed | number:asset.decimals) +' '+asset.symbol}}/{{ ::baseAsset }}</td>
+      <td>{{ (asset.lastOrder | number:asset.decimals) +' '+asset.symbol}}/{{ ::baseAsset }}</td>
       <td class="hidden-xs">{{ asset.current_share_supply }}</td>
       <td >{{ asset.yield | number:2 }}%</td>
       <td class="hidden-xs">{{ ( asset.collateralRatio ) | number:0 }} %</td>

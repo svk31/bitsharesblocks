@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcrea.ngStrap', 'app.services', 'ngAnimate', 'once',
         'angulartics', 'angulartics.google.analytics', 'highcharts-ng', 'ui.bootstrap.tpls', 'ui.bootstrap.collapse', 'ui.bootstrap.pagination',
-        'ui.bootstrap.dropdown', 'ui.bootstrap.alert', 'ui.bootstrap.tabs', 'pascalprecht.translate', 'ngCookies', 'meta'
+        'ui.bootstrap.dropdown', 'ui.bootstrap.alert', 'ui.bootstrap.tabs', 'pascalprecht.translate', 'ngCookies', 'meta', 'anguFixedHeaderTable'
     ])
     .config(['$locationProvider', '$compileProvider', '$translateProvider', '$modalProvider', 'MetaProvider', '$urlMatcherFactoryProvider',
         function($locationProvider, $compileProvider, $translateProvider, $modalProvider, MetaProvider, $urlMatcherFactoryProvider) {

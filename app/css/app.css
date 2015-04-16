@@ -153,177 +153,256 @@ body { padding-top: 70px;
 }
 
 /*
-  We're using CSS keyframe animations for when
-  the leave event is triggered for the element
-  that has the .repeated-item class
-  
-  .repeated-item.ng-leave {
-    -webkit-animation:0.5s my_animation;
-    -moz-animation:0.5s my_animation;
-    -o-animation:0.5s my_animation;
-    animation:0.5s my_animation;
-  }
-  */
+We're using CSS keyframe animations for when
+the leave event is triggered for the element
+that has the .repeated-item class
 
-  @keyframes my_animation {
-    from { opacity:1; }
-    to { opacity:0; }
-  }
+.repeated-item.ng-leave {
+  -webkit-animation:0.5s my_animation;
+  -moz-animation:0.5s my_animation;
+  -o-animation:0.5s my_animation;
+  animation:0.5s my_animation;
+}
+*/
+
+@keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
 
 /*
-  Unfortunately each browser vendor requires
-  its own definition of keyframe animation code...
-  */
-  @-webkit-keyframes my_animation {
-    from { opacity:1; }
-    to { opacity:0; }
+Unfortunately each browser vendor requires
+its own definition of keyframe animation code...
+*/
+@-webkit-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-moz-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-o-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+  to    { transform: translateX(-100%); }
+}
+
+th {
+  text-align: center;  
+}
+table td {
+  text-align: center;
+  vertical-align: center;
+}
+
+.bold {
+  font-weight:bold;
+}
+
+.inline {
+  display: inline;
+}
+
+@media (max-width: 767px) {
+
+  .visible-xs.collapse.in {
+    display: block!important;
+  }
+  .visible-xs.collapse {
+    display: none!important;
   }
 
-  @-moz-keyframes my_animation {
-    from { opacity:1; }
-    to { opacity:0; }
-  }
+}
 
-  @-o-keyframes my_animation {
-    from { opacity:1; }
-    to { opacity:0; }
-  }
+.navbar .collapse {
+  border-top: 1px solid #e7e7e7;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
 
-  /* slide in from the bottom */
-  @keyframes slideOutLeft {
-    to    { transform: translateX(-100%); }
-  }
+.dropdown-menu>li>a:hover {
+  background-color: rgba(75, 162, 187, 0.41);
+}
 
-  th {
-    text-align: center;  
-  }
-  table td {
-    text-align: center;
-    vertical-align: center;
-  }
+.nav>li.active,.nav>li:hover {
+  background-color: #EBEBEB;
+}
 
-  .bold {
-    font-weight:bold;
-  }
+.example-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
 
-  .inline {
-    display: inline;
-  }
+.example-enter.example-enter-active {
+  opacity: 1;
+}
 
-  @media (max-width: 767px) {
-
-    .visible-xs.collapse.in {
-      display: block!important;
-    }
-    .visible-xs.collapse {
-      display: none!important;
-    }
-
-  }
-
-  .navbar .collapse {
-    border-top: 1px solid #e7e7e7;
-    margin-left: -15px;
-    margin-right: -15px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-
-  .dropdown-menu>li>a:hover {
-    background-color: rgba(75, 162, 187, 0.41);
-  }
-
-  .nav>li.active,.nav>li:hover {
-    background-color: #EBEBEB;
-  }
-
-  .example-enter {
-    opacity: 0.01;
-    transition: opacity .5s ease-in;
-  }
-
-  .example-enter.example-enter-active {
-    opacity: 1;
-  }
-
-  .modal-backdrop.am-fade {
-    opacity: .5;
-    transition: opacity .15s linear;
-    &.ng-enter {
-      opacity: 0;
-      &.ng-enter-active {
-        opacity: .5;
-      }
-    }
-    &.ng-leave {
+.modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
       opacity: .5;
-      &.ng-leave-active {
-        opacity: 0;
-      }
     }
   }
+  &.ng-leave {
+    opacity: .5;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
 
-  .modal-open { 
-    overflow: scroll;
+.modal-open { 
+  overflow: scroll;
+}
+
+/* bootstrap hack: fix content width inside hidden tabs */
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: block;     /* undo display:none          */
+  height: 0;          /* height:0 is also invisible */ 
+  overflow-y: hidden; /* no-overflow                */
+}
+.tab-content > .active,
+.pill-content > .active {
+  height: auto;       /* let the content decide it  */
+} 
+/* bootstrap hack end */
+
+.clickable {
+  cursor: pointer;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-left-padding {
+  padding-left: 0;
+}
+
+.no-right-padding {
+  padding-right: 0;
+}
+
+.table-orderhistory>tbody>tr:nth-child(4n-1)>td,.table-orderhistory>tbody>tr:nth-child(4n-1)>th,.table-orderhistory>tbody>tr:nth-child(4n)>td,.table-orderhistory>tbody>tr:nth-child(4n)>th {
+  background-color:#f9f9f9
+}
+
+.market-data>li:first-child {
+  margin-left:2%;
+}
+
+.market-data>li {
+  margin-top:0.75em;
+  margin-right:1.0em;
+}
+
+.market-data>li>span:nth-child(odd) {
+  color:grey;
+  text-transform:capitalize;
+  font-size:0.85em;
+}
+
+.nav-tabs>li.active>a {
+  background-color: #EBEBEB
+}
+
+.nav-tabs>li.disabled>a {
+  background-color: #EBEBEB
+}
+
+.delegate-band {
+  background: #FFFFFF;
+  background-size: cover;
+  height:200px;
+}
+
+.button-link:hover {
+  text-decoration: none;
+}
+
+.meta-button-success {
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+}
+
+.meta-button-success:hover, .meta-button-success:focus, .meta-button-success:active {
+  background-color: #128f76;
+  border-color: #11866f;
+}
+
+.meta-button-danger {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.meta-button-danger:hover, .meta-button-danger:focus, .meta-button-danger:active {
+  background-color: #d62c1a;
+  border-color: #cd2a19;
+}
+
+.meta-buttons {
+  padding-bottom: 1.5em;
+}
+
+@media(min-width: 768px) {
+  .meta-logo {
+    float:left;
+    margin-top:21px;
+    margin-bottom:21px;
+  }
+}
+
+@media(max-width: 767px) {
+  .meta-logo {
+    display: block;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* bootstrap hack: fix content width inside hidden tabs */
-  .tab-content > .tab-pane,
-  .pill-content > .pill-pane {
-    display: block;     /* undo display:none          */
-    height: 0;          /* height:0 is also invisible */ 
-    overflow-y: hidden; /* no-overflow                */
+  .meta-button-success {
+    margin-bottom:10px;
   }
-  .tab-content > .active,
-  .pill-content > .active {
-    height: auto;       /* let the content decide it  */
-    } /* bootstrap hack end */
 
-    .clickable {
-      cursor: pointer;
-    }
+  .meta-button-danger {
+    margin-bottom:1em;
+  }
+}
 
-    .no-padding {
-      padding: 0;
-    }
+.vert-middle {
+  vertical-align: middle;
+}
 
-    .no-left-padding {
-      padding-left: 0;
-    }
+.ask-text {
+  color:#c90808;
+}
 
-    .no-right-padding {
-      padding-right: 0;
-    }
+.bid-text {
+  color:#2ca02c;
+}
 
-    .table-orderhistory>tbody>tr:nth-child(4n-1)>td,.table-orderhistory>tbody>tr:nth-child(4n-1)>th,.table-orderhistory>tbody>tr:nth-child(4n)>td,.table-orderhistory>tbody>tr:nth-child(4n)>th {
-      background-color:#f9f9f9
-    }
+.short-text {
+  color:#6390bc;
+}
 
-    .market-data>li:first-child {
-      margin-left:2%;
-    }
+.cover-text {
+  color:#CCBD16;
+}
 
-    .market-data>li {
-      margin-top:0.75em;
-      margin-right:1.0em;
-    }
-
-    .market-data>li>span:nth-child(odd) {
-      color:grey;
-      text-transform:capitalize;
-      font-size:0.85em;
-    }
-
-    .nav-tabs>li.active>a {
-      background-color: #EBEBEB
-    }
-
-    .nav-tabs>li.disabled>a {
-      background-color: #EBEBEB
-    }
-
-    .delegate-band {
-      background: #FFFFFF;
-      background-size: cover;
-      height:200px;
-    }
+.decimal-text {
+  font-size: 0.95em;
+}

@@ -1,16 +1,24 @@
 angular.module('app')
 
-.controller('singleAccountCtrl', ['$scope', '$rootScope', '$state', '$location', 'Accounts', 'Meta',
-  function($scope, $rootScope, $state, $location, Accounts, Meta) {
+.controller('singleAccountCtrl', ['$scope', '$rootScope', '$state', '$location', 'Accounts', 'Meta', 'appcst',
+  function($scope, $rootScope, $state, $location, Accounts, Meta, appcst) {
 
     $scope.accountName = $state.params.name;
 
+
+    $scope.$watch('accountName', function(nv, ov) {
+      if (nv) {
+        Meta.add('/accounts/account*', {
+          title: appcst.baseAsset + ':' + nv
+        });
+      }
+    });
+
     function fetchAccount(name, id, goTo) {
       Accounts.fetchAccount(name, id).then(function(result) {
-        Meta.add('/accounts/account', {
-          title: 'Bitshares Account ' + result[0].name
-        });
         $scope.account = result[0];
+
+        $scope.accountName = $scope.account.name;
 
         if (id || goTo) {
           $location.search('name', $scope.account.name);

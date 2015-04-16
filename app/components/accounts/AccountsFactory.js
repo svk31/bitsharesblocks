@@ -123,6 +123,7 @@ angular.module('app')
 		accounts.forEach(function(account, index) {
 			account.totalBurn = {};
 			account.burnArray = [];
+			account.localTime = new Date(account.registration_date);
 			if (account.burn.length > 0) {
 				account.burn.forEach(function(burn, index) {
 					if (!account.totalBurn[burn.amount.asset_id]) {

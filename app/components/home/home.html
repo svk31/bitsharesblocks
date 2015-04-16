@@ -11,8 +11,8 @@
         <div class="panel-heading" style="overflow: hidden;">
           <h3 style="display: inline-block;" class="panel-title">{{ 'home.history' | translate:translateBase }} </h3>
           <button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentUnit" data-html="1" ng-options="unit.name as unit.label for unit in priceUnits" bs-select>
-          Action <span class="caret"></span>
-        </button>
+            Action <span class="caret"></span>
+          </button>
         </div>
         <highchart id="priceChart" config="priceChart" ></highchart>
       </div>
@@ -21,7 +21,7 @@
     <div class="col-md-5 col-sm-5 net-health">
       <div class="panel panel-default">
         <div class="panel-heading">
-        <h3 class="panel-title">{{ 'home.health.title' | translate }}</h3>
+          <h3 class="panel-title">{{ 'home.health.title' | translate }}</h3>
         </div>
         <ul class="list-group">
           <li class="clearfix list-group-item">{{ 'home.health.alert' | translate }}<span ng-class="{'badge':true,'alert-success': (security.alert_level=='green'), 'alert-warning': (security.alert_level=='yellow'), 'alert-danger': (security.alert_level=='red')}">{{security.alert_level}}</span></li>
@@ -34,6 +34,32 @@
         </ul>
       </div>
     </div>
+
+<!--     <div class="col-md-12 meta-buttons">
+      <div class="col-sm-4 col-sm-offset-2 col-xs-12">
+        <a class="button-link" href="https://metaexchange.info/markets/BTS/BTC?refid=1" target="_blank">
+          <button class="button btn-success btn-lg btn-block meta-button-success" analytics-on analytics-event="Meta_BUY" analytics-category="MetaX" analytics-label="Buy_BTS">      
+            <span>{{ 'asset.buy' | translate }} BTS</span>
+            <br>
+            <span class="badge">1.00 BTC</span>
+            <span class="glyphicon glyphicon-arrow-right arrow"></span>
+            <span class="badge">{{ priceBuy | number:3}} BTS</span>
+          </button>
+        </a>
+      </div>
+      <img height="28px" width="31px" class="meta-logo" src="/img/smallLogo_metax.svg" alt="MetaExchange logo"/>
+      <div class="col-sm-4 col-xs-12">
+        <a class="button-link" href="https://metaexchange.info/markets/BTS/BTC?refid=1" analytics-on analytics-event="Meta_SELL" analytics-category="MetaX" analytics-label="Sell_BTS" target="_blank">
+          <button class="button btn-danger btn-lg btn-block meta-button-danger">
+            <span>{{ 'asset.sell' | translate }} BTS</span>
+            <br>
+            <span class="badge">{{ priceSell  | number:3 }} BTS</span>
+            <span class="glyphicon glyphicon-arrow-right arrow"></span>
+            <span class="badge">1.00 BTC</span>
+          </button>
+        </a>
+      </div>
+    </div> -->
 
     <div class="col-md-3 col-sm-6" style="clear:left;">
       <div class="panel panel-default">
@@ -180,33 +206,33 @@
       </div>
     </div>
 
-<div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 style="display: inline-block;" class="panel-title">{{ 'home.burns.title' | translate }}</h3>
-      <button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentSort" data-html="1" ng-options="unit.name as unit.label for unit in sortBurns" bs-select>
-          Action <span class="caret"></span>
-        </button>
+    <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 style="display: inline-block;" class="panel-title">{{ 'home.burns.title' | translate }}</h3>
+          <button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentSort" data-html="1" ng-options="unit.name as unit.label for unit in sortBurns" bs-select>
+            Action <span class="caret"></span>
+          </button>
+        </div>
+        <table class="table table-condensed table-hover table-bordered">
+          <thead>
+            <tr>
+              <th >{{'blocks.blockNum' | translate }}</th>
+              <th>{{'accounts.name' | translate }}</th>
+              <th>{{'block.trx.amount' | translate }}</th>
+              <th class="hidden-xs">{{'block.trx.message' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr ng-repeat="burn in burns | limitTo: 15 track by $index " class="repeated-item">
+              <td><a ui-sref="block({ 'id' : burn.block })" >{{ burn.block }}</a></td>
+              <td><a ui-sref="account({ 'name' : burn.name })" >{{burn.name}}</a></td>
+              <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</a></td>
+              <td class="hidden-xs">{{ burn.message }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <table class="table table-condensed table-hover table-bordered">
-      <thead>
-        <tr>
-          <th class="hidden-xs">{{'blocks.blockNum' | translate }}</th>
-          <th>{{'accounts.name' | translate }}</th>
-          <th>{{'block.trx.amount' | translate }}</th>
-          <th>{{'block.trx.message' | translate }}</th>
-        </tr>
-      </thead>
-      <tbody >
-        <tr ng-repeat="burn in burns | limitTo: 15 track by $index " class="repeated-item">
-          <td class="hidden-xs"><a ui-sref="block({ 'id' : burn.block })" >{{ burn.block }}</a></td>
-          <td><a ui-sref="account({ 'name' : burn.name })" >{{burn.name}}</a></td>
-          <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</a></td>
-          <td>{{ burn.message }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
-<div class="container" id="endofhome"></div>
+    <div class="container" id="endofhome"></div>
