@@ -70,7 +70,7 @@
     </thead>
     <tbody>
       <tr ng-if="feed.delegate_name!=='MARKET'" ng-repeat="feed in filteredFeeds | orderBy: orderByField:reverseSort track by feed.delegate_name" class="repeated-item">
-        <td><a ui-sref="delegate.feeds({ 'name' : feed.delegate_name })" once-text="feed.delegate_name"></a></td>
+        <td><a ui-sref="delegate.feeds({ 'name' : feed.delegate_name })"></a>{{ feed.delegate_name }}</td>
         <td>{{feed.last_update | date:'medium'}}</td>
         <td ng-if="asset.symbol!='BTC' && asset.symbol!='GOLD'">{{(1 / feed.price | number:2)+' '+asset.symbol+'/'+baseAsset }}</td>
         <td ng-if="asset.symbol=='BTC' || asset.symbol=='GOLD'">{{(1 / feed.price | number:0)+' '+asset.symbol+'/'+baseAsset }}</td>

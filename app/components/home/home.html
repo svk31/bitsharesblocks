@@ -142,7 +142,7 @@
           <tbody >
             <tr ng-repeat="block in home.missed track by block._id " class="repeated-item">
               <td><a ui-sref="block({ 'id' : block._id })" >{{block._id  | number:0}}</a></td>
-              <td><div ng-repeat="delegate in block.delegates"><a ui-sref="delegate.info({ 'name' : delegate })" once-text="delegate"></a></div></td>
+              <td><div ng-repeat="delegate in block.delegates"><a ui-sref="delegate.info({ 'name' : delegate })">{{ delegate }}</a></div></td>
             </tr>
           </tbody>
         </table>

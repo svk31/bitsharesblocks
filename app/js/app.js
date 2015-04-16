@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcrea.ngStrap', 'app.services', 'ngAnimate', 'once',
+var app = angular.module('app', ['ui.router', 'ngSanitize', 'app.filters', 'mgcrea.ngStrap', 'app.services', 
         'angulartics', 'angulartics.google.analytics', 'highcharts-ng', 'ui.bootstrap.tpls', 'ui.bootstrap.collapse', 'ui.bootstrap.pagination',
         'ui.bootstrap.dropdown', 'ui.bootstrap.alert', 'ui.bootstrap.tabs', 'pascalprecht.translate', 'ngCookies', 'meta', 'anguFixedHeaderTable'
     ])

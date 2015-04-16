@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script defer src="//cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
-  <script defer src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script defer src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.min.js"></script>
+  <script defer src="https://code.highcharts.com/stock/highstock.src.js"></script>
   <script defer src="js/app.js"></script>
 
   <style type="text/css">
