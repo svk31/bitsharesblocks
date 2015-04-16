@@ -71,7 +71,8 @@ body { padding-top: 70px;
   max-width: 1400px;
   margin: 0px auto;
   background-image: url(../img/pw_pattern.png);
-  background-repeat: repeat-xy;}
+}
+
 
   #footer {
     position: fixed;
