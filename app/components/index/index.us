@@ -198,8 +198,7 @@
 
   <div ng-cloak ng-controller="footerCtrl" role="footer" id="footer" class="hidden-xs">
     <div class="text-center" style="vertical-align-middle; margin:0;">
-      <p style="display:inline-block;"><span translate>footer.vote</span>:</p>
-      <a href="bts:dev.bitsharesblocks/approve">dev.bitsharesblocks</a>
+      <a href="https://github.com/svk31/bitsharesblocks" target="_blank"><i style="font-size:1.5em;" class="fa fa-github-square"></i></a>
       <p style="display:inline-block; margin-left:1.5em;"><span translate>footer.donate</span>:</p>
       <a href="bts:donations.bitsharesblocks/transfer">donations.bitsharesblocks</a>
       <p style="display:inline-block; margin-left:1.5em;"><span translate>footer.info</span>:</p>
