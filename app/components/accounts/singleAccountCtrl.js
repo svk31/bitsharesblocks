@@ -25,10 +25,10 @@ angular.module('app')
         }
 
         if ($scope.account.burn.length > 0) {
-          $scope.burnBlocks = {};
           $scope.account.burn.forEach(function(burn, i) {
-            Accounts.getBlockNumber(burn.transaction_id).then(function(result) {
-              $scope.burnBlocks[i] = result;
+            burn.for = burn.index.account_id > 0;
+            Accounts.getBlockNumber(burn.index.transaction_id).then(function(result) {
+              $scope.account.burn[i].block = result;
             });
           });
         }

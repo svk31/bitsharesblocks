@@ -61,15 +61,17 @@
     <table  class="table table-condensed table-hover table-bordered" style="margin-bottom:0;">
       <thead>
         <tr>
-        <th>{{'blocks.blockNum' | translate }}</th>
-        <th>{{'block.trx.amount' | translate }}</th>
-        <th>{{'block.trx.message' | translate }}</th>
+          <th></th>
+          <th>{{'blocks.blockNum' | translate }}</th>
+          <th>{{'block.trx.amount' | translate }}</th>
+          <th>{{'block.trx.message' | translate }}</th>
         </tr>
       </thead>
       <tbody >
-        <tr ng-repeat="burn in account.burn track by $index" class="repeated-item">
-          <td><a ui-sref="block({ 'id' : burnBlocks[$index] })" >{{ burnBlocks[$index] }}</a></td>
-          <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</a></td>
+        <tr ng-repeat="burn in account.burn | orderBy:['-realAmount', '-block'] track by $index" class="repeated-item">
+          <td class="icon-column"><i class="fa fa-fw fa-2x" ng-class="burn.for ? 'fa-thumbs-o-up' : 'fa-thumbs-o-down'"/></td>
+          <td><a ui-sref="block({ 'id' : burn.block })" >{{ burn.block }}</a></td>
+          <td>{{ burn.realAmount }} {{ burn.assetSymbol }}</td>
           <td>{{ burn.message }}</td>
         </tr>
       </tbody>
