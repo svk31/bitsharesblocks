@@ -34,7 +34,8 @@ angular.module('app')
 				// FEES
 				console.log(trx[1]);
 
-				trx[1].fees_paid.forEach(function(fees, j) {
+				var feesArray = (trx[1].balance) ? trx[1].balance : trx[1].fees_paid;
+				feesArray.forEach(function(fees, j) {
 					assetId = parseInt(fees[0], 10);
 					if (tempFees[assetId] === undefined) {
 						tempFees[assetId] = {};
@@ -45,23 +46,37 @@ angular.module('app')
 				});
 
 				// TOTAL VALUE
-				trx[1].op_deltas.forEach(function(op_delta, j) {
-					var value;
-					trxAssetId = parseInt(op_delta[1][0][0], 10);
-					if (tempValues[trxAssetId] === undefined) {
-						tempValues[trxAssetId] = {};
-						tempValues[trxAssetId].amount = 0;
-						if (tempFees[trxAssetId]) {
-							tempValues[trxAssetId].amount += tempFees[trxAssetId].price;
+				if (trx[1].withdraws) {
+					trx[1].withdraws.forEach(function(withdrawal, j) {
+						var value; 
+						trxAssetId = parseInt(withdrawal[0], 10);
+						if (tempValues[trxAssetId] === undefined) {
+							tempValues[trxAssetId] = {};
+							tempValues[trxAssetId].amount = 0;
+							tempValues[trxAssetId].asset = Assets.getSymbol(trxAssetId);
 						}
-						tempValues[trxAssetId].asset = Assets.getSymbol(trxAssetId);
-					}
-					value = (op_delta[1].amount) ? op_delta[1].amount : op_delta[1][0][1];
-					console.log('value:',value);
-					if (value > 0) {
+						value = (withdrawal[1].amount) ? withdrawal[1].amount : withdrawal[1]; 
 						tempValues[trxAssetId].amount += value / Assets.getPrecision(trxAssetId);
-					}
-				});
+					});
+				} else if (trx[1].op_deltas) {
+					trx[1].op_deltas.forEach(function(op_delta, j) {
+						var value;
+						trxAssetId = parseInt(op_delta[1][0][0], 10);
+						if (tempValues[trxAssetId] === undefined) {
+							tempValues[trxAssetId] = {};
+							tempValues[trxAssetId].amount = 0;
+							if (tempFees[trxAssetId]) {
+								tempValues[trxAssetId].amount += tempFees[trxAssetId].price;
+							}
+							tempValues[trxAssetId].asset = Assets.getSymbol(trxAssetId);
+						}
+						value = (op_delta[1].amount) ? op_delta[1].amount : op_delta[1][0][1];
+						console.log('value:', value);
+						if (value > 0) {
+							tempValues[trxAssetId].amount += value / Assets.getPrecision(trxAssetId);
+						}
+					});
+				}
 
 				// VOTES
 				var currentVotes = (trx[1].net_delegate_votes) ? trx[1].net_delegate_votes : trx[1].delegate_vote_deltas;
@@ -226,7 +241,7 @@ angular.module('app')
 					trxInfo.burn = true;
 				}
 				if (trx[1].trx.operations[j].type === 'withdraw_pay_op_type' && trxInfo.trxCode !== 8) {
-					trxInfo.ops[j].amount = $filter('number')((trx[1].trx.operations[j].data.amount) / Assets.getPrecision(0), 4) + ' '+_baseAsset;
+					trxInfo.ops[j].amount = $filter('number')((trx[1].trx.operations[j].data.amount) / Assets.getPrecision(0), 4) + ' ' + _baseAsset;
 					trxInfo.ops[j].asset = _baseAsset;
 					delegateID = trx[1].trx.operations[j].data.account_id;
 					fetchName = true;

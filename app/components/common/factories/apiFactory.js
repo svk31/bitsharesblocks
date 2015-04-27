@@ -19,8 +19,8 @@ angular.module("app").factory('api', ['$http', function($http) {
     api.setAPI = function(index) {
         // var location = ['North America - New York', 'Asia - Singapore'];
         // console.log('changing API to:',location[index]);
-        url = apis[index] + '/v1/';
-        url_v2 = apis[index] + '/v2/';
+        // url = apis[index] + '/v1/';
+        // url_v2 = apis[index] + '/v2/';
     };
 
     api.getInfo = function() {
