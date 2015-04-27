@@ -45,8 +45,8 @@ angular.module('app')
                   getAccountName($scope.trx[i][1].trx.operations[j].data.account_id, i);
                   break;
                 }
-                if ($scope.trx[i][1].trx.operations[j].data.issuer_account_id) {
-                  identifyAccount($scope.trx[i][1].trx.operations[j].data.issuer_account_id, i);
+                if ($scope.trx[i][1].trx.operations[j].data.issuer_id) {
+                  identifyAccount($scope.trx[i][1].trx.operations[j].data.issuer_id, i);
                   break;
                 }
               }

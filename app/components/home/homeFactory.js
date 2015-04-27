@@ -6,8 +6,8 @@
 			var deferred = $q.defer();
 			api.getHome(cacheBoolean).success(function(result) {
 				deferred.resolve({
-					home: result,
-					averageConfirm: result.security.estimated_confirmation_seconds / 2
+					home: result
+					// averageConfirm: result.security.estimated_confirmation_seconds / 2
 				});
 			});
 

@@ -149,19 +149,19 @@ angular.module('app')
 				assets[i].decimals = precision.toString().length;
 
 				assets[i].collateral = supply[assets[i]._id];
-				assets[i].collateralRatio = (assets[i].current_share_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].medianFeed / assets[i].current_share_supply : 0;
+				assets[i].collateralRatio = (assets[i].current_supply !== 0) ? 100 * supply[assets[i]._id] * assets[i].medianFeed / assets[i].current_supply : 0;
 
-				assets[i].yield = (assets[i].current_share_supply > 0) ? 100 * (assets[i].collected_fees / assets[i].precision) / assets[i].current_share_supply : 0;
+				assets[i].yield = (assets[i].current_supply > 0) ? 100 * (assets[i].collected_fees / assets[i].precision) / assets[i].current_supply : 0;
 
 				assets[i].cap = {};
 				assets[i].price = (assetPrice !== 0) ? assetPrice * (100000 / precision) : 0;
 
-				assets[i].marketCap = (assets[i].price !== 0) ? (assets[i].current_share_supply / assets[i].price) : 0;
-				assets[i].cap.BTS = (assets[i].price !== 0) ? (assets[i].current_share_supply / assets[i].price) : 0;
-				assets[i].cap.BTC = (assets[i].price !== 0) ? prices.BTC * (assets[i].current_share_supply / assets[i].price) : 0;
-				assets[i].cap.USD = (assets[i].price !== 0) ? prices.USD * (assets[i].current_share_supply / assets[i].price) : 0;
-				assets[i].cap.CNY = (assets[i].price !== 0) ? prices.CNY * (assets[i].current_share_supply / assets[i].price) : 0;
-				assets[i].cap.EUR = (assets[i].price !== 0) ? prices.EUR * (assets[i].current_share_supply / assets[i].price) : 0;
+				assets[i].marketCap = (assets[i].price !== 0) ? (assets[i].current_supply / assets[i].price) : 0;
+				assets[i].cap.BTS = (assets[i].price !== 0) ? (assets[i].current_supply / assets[i].price) : 0;
+				assets[i].cap.BTC = (assets[i].price !== 0) ? prices.BTC * (assets[i].current_supply / assets[i].price) : 0;
+				assets[i].cap.USD = (assets[i].price !== 0) ? prices.USD * (assets[i].current_supply / assets[i].price) : 0;
+				assets[i].cap.CNY = (assets[i].price !== 0) ? prices.CNY * (assets[i].current_supply / assets[i].price) : 0;
+				assets[i].cap.EUR = (assets[i].price !== 0) ? prices.EUR * (assets[i].current_supply / assets[i].price) : 0;
 
 				assets[i].volume = {};
 				assets[i].volume.BTS = assets[i].dailyVolume || 0;
@@ -171,8 +171,8 @@ angular.module('app')
 				assets[i].volume.EUR = (assets[i].dailyVolume !== 0) ? prices.EUR * (assets[i].dailyVolume) : 0;
 
 				var decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
-				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, decimals) + ' ' + assets[i].symbol;
-				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, decimals) + ' ' + assets[i].symbol;
+				assets[i].current_supply = $filter('number')(assets[i].current_supply, decimals) + ' ' + assets[i].symbol;
+				assets[i].max_supply = $filter('number')(assets[i].max_supply, decimals) + ' ' + assets[i].symbol;
 
 			}
 		} else {
@@ -180,15 +180,15 @@ angular.module('app')
 				assets[i].decimals = assets[i].precision.toString().length;
 				// decimals = (assets[i].symbol.indexOf('BTC') === -1 && assets[i].symbol !== 'GOLD') ? 0 : 3;
 
-				assets[i].maximum_share_supply = $filter('number')(assets[i].maximum_share_supply, assets[i].decimals) + ' ' + assets[i].symbol;
+				assets[i].max_supply = $filter('number')(assets[i].max_supply, assets[i].decimals) + ' ' + assets[i].symbol;
 				assets[i].dailyVolumeText = $filter('number')(assets[i].dailyVolume, 2) + ' ' + baseAsset;
 
 				assets[i].lastPrice = (assets[i].lastPrice !== 0) ? (1 / assets[i].lastPrice) : 0;
-				assets[i].cap = (assets[i].lastPrice) * assets[i].current_share_supply;
+				assets[i].cap = (assets[i].lastPrice) * assets[i].current_supply;
 				assets[i].capText = $filter('number')(assets[i].cap, 0) + ' ' + baseAsset;
 				assets[i].vwapText = $filter('number')((assets[i].vwap !== 0) ? 1 / assets[i].vwap : 0, 3) + ' ' + baseAsset;
 				assets[i].lastPriceText = $filter('number')(assets[i].lastPrice, 3) + ' ' + baseAsset;
-				assets[i].current_share_supply = $filter('number')(assets[i].current_share_supply, Math.floor(assets[i].decimals % 4)) + ' ' + assets[i].symbol;
+				assets[i].current_supply = $filter('number')(assets[i].current_supply, Math.floor(assets[i].decimals % 4)) + ' ' + assets[i].symbol;
 
 			}
 		}
@@ -233,7 +233,7 @@ angular.module('app')
 		_getAsset(id).then(function(result) {
 			var returnArray = {};
 			returnArray.asset = result;
-			if (result.issuer_account_id === -2) {
+			if (result.issuer_id === -2) {
 				returnArray = assetInfo(result);
 			}
 			deferred.resolve(returnArray);
@@ -271,13 +271,13 @@ angular.module('app')
 		}
 
 		var collateral, collateralAsset;
-		if (asset.issuer_account_id === -2) {
+		if (asset.issuer_id === -2) {
 			var feedPrice = (asset.medianFeed) ? asset.medianFeed : 0;
 
 			collateral = asset.collateral[asset.collateral.length - 1][1];
 			collateralAsset = asset.collateral[asset.collateral.length - 1][1] * feedPrice;
 
-			asset.yield = (asset.current_share_supply > 0) ? 100 * (asset.collected_fees / asset.precision) / asset.current_share_supply : 0;
+			asset.yield = (asset.current_supply > 0) ? 100 * (asset.collected_fees / asset.precision) / asset.current_supply : 0;
 
 			// Convert collateral to asset unit
 			for (i = 0; i < asset.collateral.length; i++) {
@@ -338,7 +338,7 @@ angular.module('app')
 		var prefix = '',
 			priceString,
 			i;
-		if (asset.issuer_account_id === -2) {
+		if (asset.issuer_id === -2) {
 			prefix = 'bit';
 			if (!asset.medianFeed) {
 				asset.medianFeed = 0;
@@ -538,29 +538,28 @@ angular.module('app')
 		asset.dailyVolume = 0;
 
 		if (asset.order_history.length > 0) {
-
-			asset.lastPrice = 1 / (asset.order_history[0].bid_price.ratio * priceRatio);
-			asset.dailyLow = 1 / (asset.order_history[0].ask_price.ratio * priceRatio);
+			asset.lastPrice = 1 / (asset.order_history[0].bid_index.order_price.ratio * priceRatio);
+			asset.dailyLow = 1 / (asset.order_history[0].ask_index.order_price.ratio * priceRatio);
 			asset.dailyHigh = 0;
 
 			asset.order_history.forEach(function(order) {
 				order.localTime = new Date(order.timestamp);
 				if (date24h < order.localTime) {
 					tradesFound = true;
-					asset.dailyHigh = Math.max(asset.dailyHigh, 1 / (order.ask_price.ratio * priceRatio));
-					asset.dailyLow = Math.min(asset.dailyLow, 1 / (order.ask_price.ratio * priceRatio));
+					asset.dailyHigh = Math.max(asset.dailyHigh, 1 / (order.ask_index.order_price.ratio * priceRatio));
+					asset.dailyLow = Math.min(asset.dailyLow, 1 / (order.ask_index.order_price.ratio * priceRatio));
 					asset.dailyVolume += order.ask_paid.amount / basePrecision;
 				}
 
 				order.ask_paid.amount = $filter('number')(order.ask_paid.amount / basePrecision, 2) + ' ' + baseAsset;
 				order.ask_received.amount = $filter('number')(order.ask_received.amount / asset.precision, 3) + ' ' + asset.symbol;
-				order.ask_price.ratio = $filter('number')(1 / (order.ask_price.ratio * priceRatio), 3) + ' ' + baseAsset + '/' + asset.symbol;
+				order.ask_index.order_price.ratio = $filter('number')(1 / (order.ask_index.order_price.ratio * priceRatio), 3) + ' ' + baseAsset + '/' + asset.symbol;
 
 				order.bid_paid.amount = $filter('number')(order.bid_paid.amount / asset.precision, 3) + ' ' + asset.symbol;
 				order.bid_received.amount = $filter('number')(order.bid_received.amount / basePrecision, 2) + ' ' + baseAsset;
-				order.bid_price.ratio = $filter('number')(1 / (order.bid_price.ratio * priceRatio), 3) + ' ' + baseAsset + '/' + asset.symbol;
+				order.bid_index.order_price.ratio = $filter('number')(1 / (order.bid_index.order_price.ratio * priceRatio), 3) + ' ' + baseAsset + '/' + asset.symbol;
 
-				order.fees_collected.amount = $filter('number')(order.fees_collected.amount / asset.precision, decimals) + ' ' + asset.symbol;
+				order.quote_fees.amount = $filter('number')(order.quote_fees.amount / asset.precision, decimals) + ' ' + asset.symbol;
 
 			});
 

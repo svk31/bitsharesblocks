@@ -143,7 +143,7 @@ angular.module('app')
     });
 
     var myIndexAlert = $alert({
-      'title': 'An upgrade to v0.4.26 for delegates is required asap, see https://bitsharestalk.org/index.php?topic=7067.msg161432#msg161432',
+      'title': 'Currently undergoing upgrade maintenance, normal service will resume shortly',
       'content': '',
       'container': '#alerts-container-indexing',
       'type': 'danger',

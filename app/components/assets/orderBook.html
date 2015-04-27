@@ -19,7 +19,7 @@
             <span style="display:block;">{{ 'asset.range' | translate }}:</span>
             <span style="display:block;">{{ asset.dailyLow }} - {{ asset.dailyHigh }}</span>
           </li>
-          <li ng-if="asset.issuer_account_id ===-2">
+          <li ng-if="asset.issuer_id ===-2">
             <span style="display:block;">{{ 'asset.feeds.med' | translate }}:</span>
             <span style="display:block;">{{ asset.feedText }}</span>
           </li>
@@ -61,7 +61,7 @@
   </div>
 </div>
 
-<div ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6 no-padding">
+<div ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_id ===-2),'col-md-6':(asset.issuer_id !==-2)}" class="col-sm-6 col-xs-6 no-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title bid-text">{{ 'asset.bids' | translate }} ({{ 'asset.buy' | translate }} {{prefix+asset.symbol}})</h3>
@@ -83,7 +83,7 @@
   </div>
 </div>
 
-<div ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_account_id ===-2),'col-md-6':(asset.issuer_account_id !==-2)}" class="col-sm-6 col-xs-6 no-right-padding">
+<div ng-if="showOrders===true" ng-class="{'col-md-3':(asset.issuer_id ===-2),'col-md-6':(asset.issuer_id !==-2)}" class="col-sm-6 col-xs-6 no-right-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title ask-text">{{ 'asset.asks' | translate }} ({{ 'asset.sell' | translate }} {{prefix+asset.symbol}})</h3>
@@ -105,7 +105,7 @@
   </div>
 </div>
 
-<div ng-if="showOrders===true && asset.issuer_account_id ===-2" class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 no-right-padding">
+<div ng-if="showOrders===true && asset.issuer_id ===-2" class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 no-right-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title short-text">{{ 'asset.shorts' | translate }} ({{ 'assets.plot.type3' | translate }} {{prefix+asset.symbol}})</h3>
@@ -168,7 +168,7 @@
   </div>
 </div>
 
-<div ng-if="asset.covers.length > 0 && asset.issuer_account_id ===-2" class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 no-padding">
+<div ng-if="asset.covers.length > 0 && asset.issuer_id ===-2" class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 no-padding">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title cover-text">{{ 'asset.covers.title' | translate }} ({{ 'assets.plot.type4' | translate }} {{prefix+asset.symbol}})</h3>

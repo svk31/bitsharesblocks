@@ -32,27 +32,35 @@ angular.module('app')
 				var tempVotes = [];
 
 				// FEES
-				trx[1].balance.forEach(function(balance, j) {
-					assetId = parseInt(balance[0], 10);
+				console.log(trx[1]);
+
+				trx[1].fees_paid.forEach(function(fees, j) {
+					assetId = parseInt(fees[0], 10);
 					if (tempFees[assetId] === undefined) {
 						tempFees[assetId] = {};
 						tempFees[assetId].price = 0;
 						tempFees[assetId].asset = Assets.getSymbol(assetId);
 					}
-					tempFees[assetId].price += balance[1] / Assets.getPrecision(assetId);
+					tempFees[assetId].price += fees[1] / Assets.getPrecision(assetId);
 				});
 
 				// TOTAL VALUE
-				trx[1].withdraws.forEach(function(withdrawal, j) {
+				trx[1].op_deltas.forEach(function(op_delta, j) {
 					var value;
-					trxAssetId = parseInt(withdrawal[0], 10);
+					trxAssetId = parseInt(op_delta[1][0][0], 10);
 					if (tempValues[trxAssetId] === undefined) {
 						tempValues[trxAssetId] = {};
 						tempValues[trxAssetId].amount = 0;
+						if (tempFees[trxAssetId]) {
+							tempValues[trxAssetId].amount += tempFees[trxAssetId].price;
+						}
 						tempValues[trxAssetId].asset = Assets.getSymbol(trxAssetId);
 					}
-					value = (withdrawal[1].amount) ? withdrawal[1].amount : withdrawal[1];
-					tempValues[trxAssetId].amount += value / Assets.getPrecision(trxAssetId);
+					value = (op_delta[1].amount) ? op_delta[1].amount : op_delta[1][0][1];
+					console.log('value:',value);
+					if (value > 0) {
+						tempValues[trxAssetId].amount += value / Assets.getPrecision(trxAssetId);
+					}
 				});
 
 				// VOTES
@@ -225,7 +233,7 @@ angular.module('app')
 				}
 				if (trx[1].trx.operations[j].type === 'create_asset_op_type') {
 					trxInfo.ops[j].asset = trx[1].trx.operations[j].data.symbol;
-					trxInfo.issuer = trx[1].trx.operations[j].data.issuer_account_id;
+					trxInfo.issuer = trx[1].trx.operations[j].data.issuer_id;
 				}
 
 				if (trx[1].trx.operations[j].type === 'issue_asset_op_type') {
@@ -235,7 +243,7 @@ angular.module('app')
 				}
 
 				if (trx[1].trx.operations[j].type === 'define_delegate_slate_op_type') {
-					trxInfo.issuer = trx[1].trx.operations[j].data.issuer_account_id;
+					trxInfo.issuer = trx[1].trx.operations[j].data.issuer_id;
 				}
 
 				if (trx[1].trx.operations[j].type === 'update_feed_op_type') {

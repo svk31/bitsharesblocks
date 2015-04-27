@@ -93,7 +93,7 @@ angular.module('app')
       Assets.fetchOrderBook($scope.assetId).then(function(result) {
 
 
-        marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
+        marketAsset = (result.asset.issuer_id === -2) ? true : false;
         $scope.asset = result.asset;
 
         $scope.$watch('asset.lastPrice', function(nv, ov) {
@@ -240,7 +240,7 @@ angular.module('app')
         $scope.orderBookChart.series[0].name = result['asset.buy'] + ' ' + $scope.prefix + $scope.assetId;
         $scope.orderBookChart.series[1].name = result['asset.sell'] + ' ' + $scope.prefix + $scope.assetId;
         $scope.orderBookChart.xAxis.plotLines[0].label.text = result['asset.feeds.med'];
-        if ($scope.asset.issuer_account_id === -2) {
+        if ($scope.asset.issuer_id === -2) {
           $scope.orderBookChart.series[2].name = result['asset.short'] + ' ' + $scope.prefix + $scope.assetId;
         }
       });

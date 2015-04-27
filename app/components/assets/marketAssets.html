@@ -30,7 +30,7 @@
       <td ng-class="{'hidden-xs':true, 'alert-success': (asset.numberValidFeeds>50), 'alert-warning': (asset.numberValidFeeds<51 && asset.numberValidFeeds>=25), 'alert-danger': (asset.numberValidFeeds<25)}">{{asset.numberValidFeeds}}</td>
       <td class="hidden-xs">{{(asset.medianFeed | number:asset.decimals) +' '+asset.symbol}}/{{ ::baseAsset }}</td>
       <td>{{ (asset.lastOrder | number:asset.decimals) +' '+asset.symbol}}/{{ ::baseAsset }}</td>
-      <td class="hidden-xs">{{ asset.current_share_supply }}</td>
+      <td class="hidden-xs">{{ asset.current_supply }}</td>
       <td >{{ asset.yield | number:2 }}%</td>
       <td class="hidden-xs">{{ ( asset.collateralRatio ) | number:0 }} %</td>
       <td ng-if="capUnit==='BTC'">{{ priceUnit.symbol + (asset.volume[capUnit] | number:2) }}</td>

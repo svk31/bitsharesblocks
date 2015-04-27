@@ -26,7 +26,7 @@ angular.module('app.filters',[])
 
     if ((input !==undefined)) {
       input.forEach(function(entry,index) {
-        if(entry.issuer_account_id !== 0 && entry.issuer_account_id !==-2){
+        if(entry.issuer_id !== 0 && entry.issuer_id !==-2){
           arrayToReturn.push(entry);
         }
       });

@@ -51,7 +51,7 @@ var MarketAssetRow = React.createClass({displayName: 'MarketAssetRow',
 			React.createElement("td", null, asset._id), 
 			React.createElement("td", null, React.createElement("a", {href: 'assets/asset?id='+asset.symbol}, asset.symbol)), 
 			React.createElement("td", null, asset.dailyVolume), 
-			React.createElement("td", null, asset.current_share_supply), 
+			React.createElement("td", null, asset.current_supply), 
 			React.createElement("td", null, asset.maximum_share_supply), 
 			tdInit
 			)

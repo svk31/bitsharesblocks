@@ -68,7 +68,7 @@ var UserAssetRow = React.createClass({displayName: 'UserAssetRow',
 			React.createElement("td", null, asset.dailyVolumeText), 
 			React.createElement("td", null,  asset.vwapText, "/", asset.symbol, " "), 
 			React.createElement("td", null,  asset.lastPriceText, "/", asset.symbol, " "), 
-			React.createElement("td", null,  asset.current_share_supply), 
+			React.createElement("td", null,  asset.current_supply), 
 			React.createElement("td", null,  asset.capText), 
 			tdInit
 			)

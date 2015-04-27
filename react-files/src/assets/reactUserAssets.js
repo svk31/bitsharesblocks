@@ -68,7 +68,7 @@ var UserAssetRow = React.createClass({
 			<td>{asset.dailyVolumeText}</td>
 			<td>{ asset.vwapText }/{asset.symbol} </td>
 			<td>{ asset.lastPriceText }/{asset.symbol} </td>
-			<td>{ asset.current_share_supply }</td>
+			<td>{ asset.current_supply }</td>
 			<td>{ asset.capText }</td>
 			{tdInit}
 			</tr>

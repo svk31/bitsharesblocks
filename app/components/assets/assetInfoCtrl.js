@@ -160,7 +160,7 @@ angular.module('app')
         Meta.add('/asset/info', {
           title: 'Bitshares ' + result.asset.symbol + ' info: supply, price, registration data'
         });
-        marketAsset = (result.asset.issuer_account_id === -2) ? true : false;
+        marketAsset = (result.asset.issuer_id === -2) ? true : false;
         $scope.asset = result.asset;
 
         if (marketAsset) {
@@ -243,10 +243,10 @@ angular.module('app')
         $scope.supplyChart.series.pop();
       }
 
-      if ($scope.asset.issuer_account_id === 0 || marketAsset) {
+      if ($scope.asset.issuer_id === 0 || marketAsset) {
         $scope.issuerAccount = 'MARKET';
       } else {
-        api.getAccountByNr($scope.asset.issuer_account_id).success(function(account) {
+        api.getAccountByNr($scope.asset.issuer_id).success(function(account) {
           $scope.issuerAccount = account.name;
         });
       }
@@ -304,7 +304,7 @@ angular.module('app')
         $scope.priceHistoryChart.series[0].name = result['asset.ohlc'];
 
         $scope.priceHistoryChart.series[1].name = result['asset.volume'];
-        if ($scope.asset.issuer_account_id === -2) {
+        if ($scope.asset.issuer_id === -2) {
           $scope.supplyChart.series[1].name = result['asset.collateral'];
         }
 
