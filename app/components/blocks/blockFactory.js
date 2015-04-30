@@ -32,8 +32,6 @@ angular.module('app')
 				var tempVotes = [];
 
 				// FEES
-				console.log(trx[1]);
-
 				var feesArray = (trx[1].balance) ? trx[1].balance : trx[1].fees_paid;
 				feesArray.forEach(function(fees, j) {
 					assetId = parseInt(fees[0], 10);
@@ -71,7 +69,6 @@ angular.module('app')
 							tempValues[trxAssetId].asset = Assets.getSymbol(trxAssetId);
 						}
 						value = (op_delta[1].amount) ? op_delta[1].amount : op_delta[1][0][1];
-						console.log('value:', value);
 						if (value > 0) {
 							tempValues[trxAssetId].amount += value / Assets.getPrecision(trxAssetId);
 						}

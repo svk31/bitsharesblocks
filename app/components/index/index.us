@@ -9,12 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="description" content="{{meta.description}}">
   <meta name="author" content="Sigve Kvalsvik">
-  <link rel="shortcut icon" href="http://bitsharesblocks.com/favicon.ico?v=2" />
+  <link rel="shortcut icon" href="//bitsharesblocks.com/favicon.ico?v=2" />
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script defer src="//cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react.min.js"></script>
-  <script defer src="https://code.highcharts.com/stock/highstock.src.js"></script>
+  <script defer src="//code.highcharts.com/stock/highstock.src.js"></script>
   <script defer src="js/app.js"></script>
 
   <style type="text/css">
