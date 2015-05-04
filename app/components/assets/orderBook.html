@@ -149,15 +149,15 @@
       <tbody>
         <tr ng-repeat-start="order in asset.order_history  | limitTo:50 track by $index">
           <td ng-class="{'ask-text':order.ask_type === 'bid_order','bid-text':order.ask_type === 'ask_order','cover-text':order.ask_type === 'cover_order','short-text':order.ask_type === 'short_order'}">{{ orderTypes[order.ask_type] | translate }}</td>          
-          <td>{{ order.ask_price.ratio }}</td>
+          <td>{{ order.ask_index.order_price.ratio }}</td>
           <td>{{ order.ask_paid.amount }}</td>
           <td>{{ order.ask_received.amount }}</td>
-          <td>{{ order.fees_collected.amount }}</td>
+          <td>{{ order.quote_fees.amount }}</td>
           <td>{{ order.localTime | date:'medium'}}</td>
         </tr>
         <tr ng-repeat-end>
           <td ng-class="{'ask-text':order.bid_type === 'bid_order','bid-text':order.bid_type === 'sell_order','cover-text':order.bid_type === 'cover_order','short-text':order.bid_type === 'short_order'}">{{ orderTypes[order.bid_type] | translate  }}</td>          
-          <td>{{ order.bid_price.ratio}}</td>
+          <td>{{ order.bid_index.order_price.ratio}}</td>
           <td>{{ order.bid_paid.amount }}</td>
           <td>{{ order.bid_received.amount }}</td>
           <td></td>

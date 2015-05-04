@@ -28,7 +28,7 @@ angular.module('app')
       shared: false,
       valueSuffix: ' ' + $scope.baseAsset,
       valueDecimals: 0,
-      headerFormat: '<span style="font-size: 10px">Price: {point.key:.3f}</span><br/>',
+      headerFormat: '<span style="font-size: 10px">Price: {point.key:.3f}</span><br/>'
     };
 
     var series = [];
@@ -72,7 +72,7 @@ angular.module('app')
           label: {
             text: 'median feed price'
           }
-        }],
+        }]
       },
       yAxis: {
         title: {
@@ -96,7 +96,7 @@ angular.module('app')
         marketAsset = (result.asset.issuer_id === -2) ? true : false;
         $scope.asset = result.asset;
 
-        $scope.$watch('asset.lastPrice', function(nv, ov) {
+        $scope.$watch('asset.lastPrice', function(nv) {
           if (nv) {
             Meta.add('/asset/orderbook', {
               title: result.asset.symbol + ':' + result.asset.lastPrice
@@ -140,6 +140,7 @@ angular.module('app')
 
       });
     }
+    
     fetchOrderBook();
     stopAsset = $interval(fetchOrderBook, 20000);
 
