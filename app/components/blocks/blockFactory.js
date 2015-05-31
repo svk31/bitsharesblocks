@@ -46,7 +46,7 @@ angular.module('app')
 				trx[1].op_deltas.forEach(function(withdrawal, j) {
 					if (j < trx[1].op_deltas.length - 1 || trx[1].op_deltas.length === 1) {
 						var value;
-						console.log(withdrawal);
+						// console.log(withdrawal);
 						trxAssetId = parseInt(withdrawal[1][0][0], 10);
 						if (tempValues[trxAssetId] === undefined) {
 							tempValues[trxAssetId] = {};

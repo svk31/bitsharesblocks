@@ -6,18 +6,19 @@
 
     <div ng-if="maxBlock < home.hardFork && showForkAlert" class="col-md-12"><alert  type="{{forkAlert.type}}" close="closeAlert()">{{forkAlert.msg}}</alert></div>
 
-<!--     <div class="col-md-7 col-sm-7">
+   <div class="col-sm-12">
       <div class="panel panel-default">
         <div class="panel-heading" style="overflow: hidden;">
           <h3 style="display: inline-block;" class="panel-title">{{ 'home.history' | translate:translateBase }} </h3>
-          <button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentUnit" data-html="1" ng-options="unit.name as unit.label for unit in priceUnits" bs-select>
+          <!-- <button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentUnit" data-html="1" ng-options="unit.name as unit.label for unit in priceUnits" bs-select>
             Action <span class="caret"></span>
-          </button>
+          </button> -->
         </div>
         <highchart id="priceChart" config="priceChart" ></highchart>
       </div>
     </div>
 
+<!--  
     <div class="col-md-5 col-sm-5 net-health">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -146,7 +147,7 @@
           <tbody >
             <tr ng-repeat="block in home.missed track by block._id " class="repeated-item">
               <td><a ui-sref="block({ 'id' : block._id })" >{{block._id  | number:0}}</a></td>
-              <td><div ng-repeat="delegate in block.delegates"><a ui-sref="delegate.info({ 'name' : delegate })" once-text="delegate"></a></div></td>
+              <td><div ng-repeat="delegate in block.delegates"><a ui-sref="delegate.info({ 'name' : delegate })">{{delegate}}</a></div></td>
             </tr>
           </tbody>
         </table>

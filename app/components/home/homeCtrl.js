@@ -9,24 +9,12 @@ angular.module('app')
       value: appcst.baseAsset
     };
     $scope.priceUnits = [{
-      name: 'USD',
-      label: '$ USD',
-      symbol: "$"
-    }, {
-      name: 'BTC',
-      label: '\u0243 BTC',
-      symbol: '\u0243'
-    }, {
       name: 'CNY',
       label: '¥ CNY',
       symbol: '¥'
-    }, {
-      name: 'EUR',
-      label: '€ EUR',
-      symbol: '€'
     }];
 
-    $scope.currentUnit = store.get('currentUnit');
+    $scope.currentUnit = "CNY"; // store.get('currentUnit');
     if ($scope.currentUnit === undefined) {
       $scope.currentUnit = $scope.priceUnits[0].name;
       $scope.priceUnit = $scope.priceUnits[0];
@@ -37,7 +25,7 @@ angular.module('app')
         }
       });
     }
-    $scope.currentUnit = $scope.priceUnit.name;
+    $scope.currentUnit =  "CNY"; // $scope.priceUnit.name;
 
     $scope.$watch('currentUnit', function(newValue, oldValue) {
       if (newValue !== oldValue) {
@@ -231,11 +219,13 @@ angular.module('app')
     }
 
     function forkInfo() {
-      Delegates.fetchDelegatesById($scope.home.forks.previous.forkInfo[1].signing_delegate).then(function(result) {
-        $scope.forkDelegateName = result.name;
-      });
-      $scope.forkLatency = $scope.home.forks.previous.forkInfo[1].latency / 1000000;
-      $scope.previousForkHeight = $scope.home.forks.previous._id + 1;
+      if ($scope.home.forks.previous) {
+        Delegates.fetchDelegatesById($scope.home.forks.previous.forkInfo[1].signing_delegate).then(function(result) {
+          $scope.forkDelegateName = result.name;
+        });
+        $scope.forkLatency = $scope.home.forks.previous.forkInfo[1].latency / 1000000;
+        $scope.previousForkHeight = $scope.home.forks.previous._id + 1;
+      }
     }
 
     var myAlert = Alerts.upgrade();

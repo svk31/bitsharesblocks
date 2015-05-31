@@ -18,7 +18,7 @@ module.exports = function(lineman) {
         "vendor/js/angular-translate.js",
         "vendor/js/angular-translate-loader-static-files.min.js",
         "vendor/js/angular-translate-storage-cookie.min.js",
-        "vendor/js/angular-translate-storage-local.min.js",        
+        "vendor/js/angular-translate-storage-local.min.js",
         "vendor/js/underscore.js",
         "vendor/js/tooltip.js",
         "vendor/js/**/*.js",
