@@ -70,6 +70,8 @@ angular.module('app')
 						});
 					}
 					if (blocks[i].transactions) {
+						console.log(blocks[i]);
+
 						for (var valueAsset in blocks[i].transactions.totalvalue) {
 							valueAsset = parseInt(valueAsset, 10);
 							blocks[i].totalValue.push({

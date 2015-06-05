@@ -108,7 +108,7 @@ angular.module("app").factory('Translate', ['$translate', '$q', 'appcst',
 			var deferred = $q.defer();
 			$translate.use(_currentKey).then(function(result) {
 				$translate(['charts.transfer', 'charts.reg', 'charts.feed', 'charts.update', 'assets.plot.type1',
-					'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'block.trx.burn', 'block.trx.asset_create',
+					'assets.plot.type2', 'assets.plot.type3', 'assets.plot.type4', 'block.trx.note', 'block.trx.burn', 'block.trx.asset_create',
 					'block.trx.asset_issue', 'block.trx.add_collateral', 'block.trx.withdraw_pay', 'block.trx.all', 'block.trx.withdrawal',
 					'block.trx.deposit', 'block.trx.slate'
 				]).then(function(result) {
@@ -128,6 +128,8 @@ angular.module("app").factory('Translate', ['$translate', '$q', 'appcst',
 						short_op_type: result['assets.plot.type3'],
 						asset_cover: result['assets.plot.type4'],
 						cover_op_type: result['assets.plot.type4'],
+						note_op_type: result['block.trx.note'],
+						secret_note: result['block.trx.note'],
 						burn: result['block.trx.burn'],
 						burn_op_type: result['block.trx.burn'],
 						asset_create: result['block.trx.asset_create'],

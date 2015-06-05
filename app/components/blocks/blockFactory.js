@@ -1,7 +1,7 @@
 angular.module('app')
 
-.factory('Block', ['api', '$q', 'Assets', 'Delegates', '$translate', '$filter', 'appcst',
-	function(api, $q, Assets, Delegates, $translate, $filter, appcst) {
+.factory('Block', ['api', '$q', 'Assets', 'Delegates', 'Accounts', '$translate', '$filter', 'appcst',
+	function(api, $q, Assets, Delegates, Accounts, $translate, $filter, appcst) {
 
 		var _baseAsset = appcst.baseAsset;
 		var _trxTypes;
@@ -152,7 +152,9 @@ angular.module('app')
 			trxInfo.id = trx[0];
 
 			var fetchName = false,
-				delegateID;
+				fetchAccount = false,
+				delegateID,
+				accountID;
 			trxInfo.ops = [];
 
 			trxInfo.ratio = false;
@@ -211,8 +213,13 @@ angular.module('app')
 				}
 				if (trx[1].trx.operations[j].type === 'add_collateral_op_type') {
 					trxInfo.cover = true;
-
 					marketInfo = marketData(trx[1].trx.operations[j], 'cover_index', 'add_collateral');
+				}
+
+				if (trx[1].trx.operations[j].type === 'note_op_type') {
+					fetchAccount = true;
+					trxInfo.name = true;
+					accountID = {id: trx[1].trx.operations[j].data.owner_account_id, op: j};
 				}
 
 				if (trx[1].trx.operations[j].type === 'burn_op_type') {
@@ -312,6 +319,12 @@ angular.module('app')
 			if (fetchName) {
 				Delegates.fetchDelegatesById(delegateID).then(function(result) {
 					trxInfo.delegate = result.name;
+				});
+			}
+
+			if (fetchAccount) {
+				Accounts.fetchAccount(null, accountID.id).then(function(result) {
+					trxInfo.ops[accountID.op].name = result[0].name;
 				});
 			}
 

@@ -173,6 +173,7 @@
       "placeholder": "Filtrer par type de transaction",
       "withdrawal": "Retrait",
       "deposit": "Versement",
+      "note": "Note secret",
       "slate": "Definir liste de délégués",
       "slateID": "ID de la liste de délégués"
     }

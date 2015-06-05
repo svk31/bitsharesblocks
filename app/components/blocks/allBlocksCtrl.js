@@ -220,6 +220,8 @@ angular.module('app')
       type: 'asset_issue'
     }, {
       type: 'burn'
+    }, {
+      type: 'secret_note'
     }];
 
     $scope.selectedTypes = store.get('transactionTypes');
