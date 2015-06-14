@@ -38,7 +38,7 @@
 	"home": {
 		"history": "{{ value }} PREIS HISTORIE ZULETZT 14 TAGE",
 		"price": "Preis",
-		"MA": "30-Tage Moving Average",
+		"MA": "30-Tage gleitender Durschnitt",
 		"health": {
 			"title": "NETZWERK STATUS",
 			"alert": "Netzwerk Alarmlevel:",
@@ -127,7 +127,7 @@
 		"next": "Nächster Block",
 		"details": {
 			"title": "BLOCK DETAILS",
-			"signee": "signierender Delegierte",
+			"signee": "Signierender Delegierter",
 			"size": "Blockgröße",
 			"latency": "Latenz",
 			"time": "Bearbeitungszeit",
@@ -189,7 +189,7 @@
 		"rate": "Vergütung",
 		"latency": "Mittlere Latenz",
 		"feeds": "Aktive Feeds",
-		"feedFreq": "Häufigtkeit der Feeds",
+		"feedFreq": "Häufigkeit der Feeds",
 		"rel": "Verfügbarkeit",
 		"version": "Version",
 		"filter": "filtern",
@@ -243,7 +243,7 @@
 		"info": {
 			"title": "DELEGIERTEN INFOS",
 			"earnings": "Gesamtertrag",
-			"withdrawn": "ausbezahlter Ertrag",
+			"withdrawn": "Ausbezahlter Ertrag",
 			"fees": "Bezahlte Gebühren"
 		},
 		"prod": {
@@ -251,9 +251,9 @@
 			"prod": "Blöcke produziert",
 			"missed": "Blöcke verpasst",
 			"last": "Zuletzt produzierter Block",
-			"lat50": "Mittlere Latenz der letzten 50 blocks",
-			"lat100": "Mittlere Latenz der letzten 100 blocks",
-			"lat200": "Mittlere Latenz der letzten 200 blocks"
+			"lat50": "Mittlere Latenz der letzten 50 Blöcke",
+			"lat100": "Mittlere Latenz der letzten 100 Blöcke",
+			"lat200": "Mittlere Latenz der letzten 200 Blöcke"
 		},
 		"votes": {
 			"title": "STIMMEN VERLAUF",
@@ -266,7 +266,7 @@
 	},
 	"accounts": {
 		"title": "KONTEN",
-		"search1": "Finde eine Konto über den Namen",
+		"search1": "Finde ein Konto über den Namen",
 		"search2": "Gehe zu KontoID",
 		"recent": "AKTUELL",
 		"newer": "NEUER",
@@ -279,7 +279,7 @@
 		"update": "Letztes Update",
 		"yes": "Ja",
 		"no": "Nein",
-		"wall": "Wall total"
+		"wall": "Gesamter Burn"
 	},
 	"account": {
 		"previous": "Vorheriges Konto",
@@ -291,7 +291,7 @@
 		"date": "Datum",
 		"key": "Schlüssel",
 		"website": "Webseite",
-		"burn": "BURN OPERATIONS",
+		"burn": "BURN VORGÄNGE",
 		"parent": "übergeordnetes Konto",
 		"subs": "Unterkonto"
 	},
@@ -307,7 +307,7 @@
 			"title": "MARKT ASSETS",
 			"th1": "Assetsymbol",
 			"th2": "Bid Tiefe",
-			"th3": "Ask Tiege",
+			"th3": "Ask Tiefe",
 			"th4": "Gültige Feeds",
 			"th5": "Mittlerer Feedpreis",
 			"th6": "Verfügbare Anteile",
@@ -326,13 +326,13 @@
 		}
 	},
 	"asset": {
-		"orderbook": "ORDER BOOK",
+		"orderbook": "ORDERBUCH",
 		"bids": "BIDS",
 		"asks": "ASKS",
 		"shorts": "SHORTS",
 		"priceH": "PREISVERLAUF",
 		"alert1": "Markt inaktiv: Ungenügend gültige Feeds",
-		"alert2": "Markt inaktiv: Ungenügend Markttiefe",
+		"alert2": "Markt inaktiv: Ungenügende Markttiefe",
 		"alert3": "Das Orderbuch ist leer",
 		"collateral": "Kollateral",
 		"supply": "VERFÜGBARKEIT",
@@ -344,7 +344,7 @@
 		"ohlc": "Preis: OHLC",
 		"external": "Externer Coinmarketcap Preis",
 		"volume": "Volumen",
-		"marketAsset": "Market issued asset",
+		"marketAsset": "Markt Asset",
 		"range": "Tagesintervall",
 		"assetInfo": {
 			"title": "ASSET INFO",
@@ -383,7 +383,7 @@
 			"btcPrice": "BTS/BTC PREISVERLAUF",
 			"usdPrice": "PREISVERLAUF",
 			"prices": "KURS CHARTS",
-			"trx": "TRANSAKTIONs CHARTS",
+			"trx": "TRANSAKTIONS CHARTS",
 			"accounts": "KONTO CHARTS",
 			"supply": "VERFÜGBARKEITS CHARTS",
 			"feeds": "FEED CHARTS"
@@ -415,7 +415,7 @@
 		"feesY": "{{ value }} Gebühren",
 		"inflation": "Aktuelle Inflation pro Jahr",
 		"final": "Voraussichtlich verfügbare Anteile",
-		"max": "theoretisch max. verfügbare Anteile"
+		"max": "Theoretisch max. verfügbare Anteile"
 	},
 	"genesis": {
 		"stats": "STATISTIKEN",
