@@ -19,6 +19,10 @@ angular.module('app')
       name: 'EUR',
       label: '€ EUR',
       symbol: '€'
+    }, {
+      name: 'GBP',
+      label: '£ GBP',
+      symbol: '£'
     }];
 
     $scope.currentUnit = store.get('chartsUnit');
