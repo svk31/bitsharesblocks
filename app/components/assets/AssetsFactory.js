@@ -456,10 +456,10 @@ angular.module('app')
           cover.interest = cover.interest_rate.ratio * 100;
           cover.expiration = new Date(cover.expiration);
 
-          if (cover.expiration < now) {
+          if (cover.callPrice < feedPrice) {
             expiredCovers.amount += cover.owed * feedPrice;
             expiredCovers.count++;
-          } else if (cover.callPrice < feedPrice) {
+          } else if (cover.expiration < now) {
             forcedCovers.amount += cover.owed * feedPrice;
             forcedCovers.count++;
           }
