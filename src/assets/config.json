@@ -1,0 +1,32 @@
+{
+  "helmet": {
+    "title": "Bitsharesblocks",
+    "meta":[
+      {
+        "name": "description",
+        "content": "Webpack Node React Starter Kit"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      }
+    ],
+    "link": [
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.ico",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css",
+        "type": "stylesheet/css"
+      }
+    ]
+  }
+}

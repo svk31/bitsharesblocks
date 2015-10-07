@@ -1,8 +1,0 @@
-<div class="panel panel-default">
-	<div class="panel-heading">
-	  <h3 style="display: inline-block;" class="panel-title">{{ 'charts.titles.usdPrice' | translate }}</h3><button style="padding: 0; float: right; display: inline-block; border-color:rgba(226, 226, 226, 0);" type="button" class="btn btn-default" placement="bottom" ng-model="currentUnit" data-html="1" ng-options="unit.name as unit.label for unit in priceUnits" bs-select>
-	      Action <span class="caret"></span>
-	    </button>
-	</div>
-	<highchart id="priceChart" config="priceChart" ></highchart>
-</div>

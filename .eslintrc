@@ -1,4 +1,3 @@
-// see http://eslint.org/docs/rules/
 {
   "parser": "babel-eslint",
   "plugins": [
@@ -11,7 +10,9 @@
   },
   "globals": {
     "__DEV__": true,
-    "__SERVER__": true
+    "__SERVER__": true,
+    "io": true,
+    "EventEmitter": true
   },
   "ecmaFeatures": {
     "jsx": true
@@ -19,12 +20,10 @@
   "rules": {
     // Strict mode
     "strict": [2, "never"],
-
+    "no-underscore-dangle": true,
+    "new-cap": true,
     // Code style
-    "quotes": [2, "single", "avoid-escape"],
-    "indent": [4, 2],
-    "camelcase": [0],
-    "new-cap": [0],
-    "no-underscore-dangle": [0]
+    "indent": [2, 2],
+    "quotes": [1, "double", "avoid-escape"]
   }
 }

@@ -1,0 +1,3907 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"call",
+				"callBacks〔variable〕"
+			],
+			[
+				"block",
+				"blockchainTypes"
+			],
+			[
+				"un",
+				"unSubHeadBlock"
+			],
+			[
+				"rece",
+				"receiveBlock〔function〕"
+			],
+			[
+				"constat",
+				"constants"
+			],
+			[
+				"Link",
+				"LinkContainer"
+			],
+			[
+				"wi",
+				"witness_id"
+			],
+			[
+				"wit",
+				"witnessMethods"
+			],
+			[
+				"gl",
+				"global_property"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"defer",
+				"deferred"
+			],
+			[
+				"defe",
+				"deferred"
+			],
+			[
+				"for",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"get",
+				"getBlock"
+			],
+			[
+				"udpa",
+				"updateObjects"
+			],
+			[
+				"compone",
+				"componentWillReceiveProps"
+			],
+			[
+				"Block",
+				"BlockchainActions"
+			],
+			[
+				"lates",
+				"latestTransactions"
+			],
+			[
+				"to",
+				"totalBidAmount"
+			],
+			[
+				"bala",
+				"balance_claim"
+			],
+			[
+				"asset",
+				"asset_obj〔variable〕"
+			],
+			[
+				"account",
+				"account_name〔variable〕"
+			],
+			[
+				"accountna",
+				"account_names_by_id"
+			],
+			[
+				"chain_ac",
+				"chain_account_names"
+			],
+			[
+				"objec",
+				"objectIdChecker〔function〕"
+			],
+			[
+				"name",
+				"name_or_id"
+			],
+			[
+				"link",
+				"linkToAccount"
+			],
+			[
+				"cur",
+				"currentAccount〔variable〕"
+			],
+			[
+				"new_",
+				"new_url"
+			],
+			[
+				"filter",
+				"filterDelegate"
+			],
+			[
+				"Witn",
+				"WitnessCard"
+			],
+			[
+				"Wit",
+				"WitnessCard"
+			],
+			[
+				"deleg",
+				"delegate_data〔variable〕"
+			],
+			[
+				"delegate",
+				"delegate_data"
+			],
+			[
+				"col",
+				"collateral"
+			],
+			[
+				"back",
+				"backing_balance〔variable〕"
+			],
+			[
+				"coll",
+				"collateral〔variable〕"
+			],
+			[
+				"collate",
+				"collateral_balance"
+			],
+			[
+				"bac",
+				"backing_asset"
+			],
+			[
+				"backin",
+				"backing_asset〔variable〕"
+			],
+			[
+				"backing",
+				"backing_balance〔variable〕"
+			],
+			[
+				"short",
+				"short_amount〔variable〕"
+			],
+			[
+				"B",
+				"BorrowModalContent"
+			],
+			[
+				"bor",
+				"borrowQuote"
+			],
+			[
+				"quote",
+				"quoteIsBitAsset"
+			],
+			[
+				"bita",
+				"bitasset_data_id"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"Format",
+				"FormattedRelative"
+			],
+			[
+				"Form",
+				"FormattedRelative"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"selec",
+				"selected_asset"
+			],
+			[
+				"bal",
+				"balance"
+			],
+			[
+				"new",
+				"new_state〔variable〕"
+			],
+			[
+				"no",
+				"notifySubscribers"
+			],
+			[
+				"co",
+				"componentWillMount"
+			],
+			[
+				"com",
+				"componentWillUnmount"
+			],
+			[
+				"qute",
+				"quoteAsset"
+			],
+			[
+				"balan",
+				"balancePrecision"
+			],
+			[
+				"id_",
+				"id_or_symbol"
+			],
+			[
+				"baseA",
+				"baseAsset〔variable〕"
+			],
+			[
+				"quoteA",
+				"quoteAsset〔argument〕"
+			],
+			[
+				"blokc",
+				"blocks〔variable〕"
+			],
+			[
+				"witne",
+				"witness_account"
+			],
+			[
+				"linkto",
+				"linkToAsset"
+			],
+			[
+				"current",
+				"currentAccount"
+			],
+			[
+				"class",
+				"classNames"
+			],
+			[
+				"order",
+				"orderHistoryAsk"
+			],
+			[
+				"high",
+				"highestBid〔variable〕"
+			],
+			[
+				"limit",
+				"limitByPrecision"
+			],
+			[
+				"sel",
+				"sellAmount"
+			],
+			[
+				"curre",
+				"current_sub〔variable〕"
+			],
+			[
+				"curr",
+				"current_sub"
+			],
+			[
+				"unsu",
+				"unsubscribeFromAccount"
+			],
+			[
+				"ca",
+				"calcTime"
+			],
+			[
+				"Bloc",
+				"BlockchainStore"
+			],
+			[
+				"sela",
+				"sellAssetAmount"
+			],
+			[
+				"buyas",
+				"buyAssetAmount"
+			],
+			[
+				"price",
+				"priceChange"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"start",
+				"start_symbol〔variable〕"
+			],
+			[
+				"full",
+				"full_accounts"
+			],
+			[
+				"root",
+				"root_dir〔variable〕"
+			],
+			[
+				"roo",
+				"root_dir〔variable〕"
+			],
+			[
+				"upload",
+				"uploaded_files"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"GE",
+				"Genesis"
+			],
+			[
+				"Dr",
+				"DropdownButton"
+			],
+			[
+				"miss",
+				"missingAccounts〔variable〕"
+			],
+			[
+				"witn",
+				"witness_name〔variable〕"
+			],
+			[
+				"getwit",
+				"getWitnessAccounts"
+			],
+			[
+				"cha",
+				"chain_types"
+			],
+			[
+				"exi",
+				"existingAccount〔variable〕"
+			],
+			[
+				"balance",
+				"balanceUpdates〔variable〕"
+			],
+			[
+				"existing",
+				"existingBalances〔variable〕"
+			],
+			[
+				"object",
+				"object_type"
+			],
+			[
+				"confir",
+				"confirm_and_broadcast"
+			],
+			[
+				"accoun",
+				"account_id_to_name〔variable〕"
+			],
+			[
+				"word",
+				"word-wrap"
+			],
+			[
+				"exis",
+				"existingAccount〔variable〕"
+			],
+			[
+				"history",
+				"history_update"
+			],
+			[
+				"histor",
+				"history_update"
+			],
+			[
+				"refe",
+				"referrer_id"
+			],
+			[
+				"pass",
+				"password_length"
+			],
+			[
+				"Webso",
+				"WebSocketClient〔variable〕"
+			],
+			[
+				"passw",
+				"password_repeat"
+			],
+			[
+				"war",
+				"warning"
+			],
+			[
+				"Wall",
+				"WalletDb"
+			],
+			[
+				"auto",
+				"autoCompleteAccounts"
+			],
+			[
+				"_issu",
+				"_issueButtonClick"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"_on",
+				"_onCreateAsset"
+			],
+			[
+				"PrivateKe",
+				"PrivateKeyStore"
+			],
+			[
+				"accout",
+				"account"
+			],
+			[
+				"li",
+				"linkedAccounts"
+			],
+			[
+				"myA",
+				"myAccounts"
+			],
+			[
+				"acc",
+				"AccountMemberStats"
+			],
+			[
+				"final",
+				"finalBalance"
+			],
+			[
+				"From",
+				"from"
+			],
+			[
+				"account_",
+				"account_name_to_id"
+			],
+			[
+				"account_na",
+				"account_name_to_id"
+			],
+			[
+				"val",
+				"validateTransferFields"
+			],
+			[
+				"searc",
+				"searchAccounts"
+			],
+			[
+				"acco",
+				"account"
+			],
+			[
+				"Order",
+				"OrderRow"
+			],
+			[
+				"a",
+				"amountSymbol"
+			],
+			[
+				"mod",
+				"modalId"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/layouts/CoreLayout.js",
+			"settings":
+			{
+				"buffer_size": 560,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/reducers/rootReducer.js",
+			"settings":
+			{
+				"buffer_size": 166,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/reducers/blocks.js",
+			"settings":
+			{
+				"buffer_size": 868,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/reducers/accounts.js",
+			"settings":
+			{
+				"buffer_size": 564,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/views/BlocksView.jsx",
+			"settings":
+			{
+				"buffer_size": 1953,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/views/WitnessesView.jsx",
+			"settings":
+			{
+				"buffer_size": 837,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/actions/blockchainActions.js",
+			"settings":
+			{
+				"buffer_size": 1219,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/actions/witnessActions.js",
+			"settings":
+			{
+				"buffer_size": 914,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/lib/blockchain_api.js",
+			"settings":
+			{
+				"buffer_size": 189,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/lib/socket_api.js",
+			"settings":
+			{
+				"buffer_size": 1964,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 2 files for \"addDisconnectedListener\"\n\n/home/sigve/Dev/BTS/frontend/frontend-redux/src/lib/socket_api.js:\n   29    },\n   30  \n   31:   addDisconnectedListener: (callback) => {\n   32      Api.on(DISCONNECTED_EVENT, callback);\n   33    },\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 266,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/constants/blockchainTypes.js",
+			"settings":
+			{
+				"buffer_size": 184,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/constants/accountTypes.js",
+			"settings":
+			{
+				"buffer_size": 198,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/constants/index.js",
+			"settings":
+			{
+				"buffer_size": 147,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/containers/Root.js",
+			"settings":
+			{
+				"buffer_size": 1859,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/routes/routes.js",
+			"settings":
+			{
+				"buffer_size": 531,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/views/Home/HomeView.js",
+			"settings":
+			{
+				"buffer_size": 1043,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/views/Header/Header.jsx",
+			"settings":
+			{
+				"buffer_size": 791,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entry-points/client.js",
+			"settings":
+			{
+				"buffer_size": 444,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/index.js",
+			"settings":
+			{
+				"buffer_size": 2742,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "build/webpack/server.js",
+			"settings":
+			{
+				"buffer_size": 1787,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import { createReducer } from 'utils/utils';\n\n// normally this would be imported from /constants, but in trying to keep\n// this starter kit as small as possible we'll just define it here.\nconst COUNTER_INCREMENT = 'COUNTER_INCREMENT';\n\nconst initialState = 0;\nexport default createReducer(initialState, {\n  [COUNTER_INCREMENT] : (state) => state + 1\n});\n",
+			"file": "src/reducers/counter.js",
+			"file_size": 354,
+			"file_write_time": 130879333961004139,
+			"settings":
+			{
+				"buffer_size": 354,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/stores/configureStore.js",
+			"settings":
+			{
+				"buffer_size": 923,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 49.0,
+		"last_filter": "white",
+		"selected_items":
+		[
+			[
+				"white",
+				"Whitespace: Remove Trailing Whitespace"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"subli",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"subl",
+				"SublimeLinter: Clear Caches"
+			],
+			[
+				"sub",
+				"SublimeLinter: Choose Lint Mode"
+			]
+		],
+		"width": 526.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/sigve/Dev/BTS/frontend/frontend-redux",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/actions",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/assets",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/constants",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/containers",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/document",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/entry-points",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/layouts",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/lib",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/reducers",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/routes",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/stores",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/styles",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/utils",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/views",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/views/Header",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/views/Home"
+	],
+	"file_history":
+	[
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/.eslintrc",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/package.json",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/redux-bitsharesblocks.sublime-project",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/build/webpack/client.js",
+		"/home/sigve/Dev/BTS/frontend/frontend-redux/src/index.html",
+		"/home/sigve/Dev/BTS/backend/bitsharesblocks/apiServer/package.json",
+		"/home/sigve/Dev/BTS/backend/bitsharesblocks/blocks/components/blocks.js",
+		"/home/sigve/Dev/BTS/backend/bitsharesblocks/config.json",
+		"/home/sigve/Dev/BTS/backend/bitsharesblocks/blocks/package.json",
+		"/home/sigve/Dev/BTS/backend/bitsharesblocks/blocks/grapheneApi.js",
+		"/home/sigve/Dev/BTS/backend/bitsharesblocks/utils/chain_types.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/CreateAccount.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/AccountStore.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Forms/AccountSelect.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Forms/AccountNameInput.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/AccountImage.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Blockchain/Operation.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Blockchain/LinkToAccountById.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/AccountLeftPanel.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Dashboard/Dashboard.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Dashboard/AccountCard.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Utility/ChainTypes.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Utility/BindToChainState.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/common/utils.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Utility/BalanceComponent.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Utility/FormattedAsset.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/api/ChainStore.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/AccountAssets.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/actions/AssetActions.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/Exchange.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Notifier/Notifier.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/BuySell.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/actions/MarketsActions.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/OrderBook.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/chain/chain_types.coffee",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/AccountSelector.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Explorer/Delegates.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/App.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Blockchain/Transaction.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/Markets.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/SettingsStore.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/assets/locales/locale-en.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/AccountPage.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Blockchain/BlockContainer.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Explorer/Blocks.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Explorer/BlocksContainer.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Blockchain/LinkToWitnessById.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Explorer/Accounts.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Explorer/Witnesses.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Explorer/WitnessCard.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Forms/PasswordInput.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Wallet/WalletUnlockModal.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Utility/AmountSelector.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/AccountOverview.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/exchange.scss",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Transfer/Transfer.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Modal/BorrowModal.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Utility/FetchChainObject.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/actions/BlockchainActions.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/rpc_api/WalletApi.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/actions/AccountActions.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/api/accountApi.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/test/README.txt",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Explorer/TransactionChart.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/assets/stylesheets/dark-theme.scss",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/BlockchainStore.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Explorer/BlocktimeChart.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Blockchain/BlockTime.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/README.md",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/assets/locales/locale-fr.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Blockchain/TransactionConfirm.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Modal/ConfirmModal.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/utils/locales/locale-fr.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Header/Header.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/MarketHistory.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/ExchangeContainer.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Utility/FormattedPrice.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/DepthHighChart.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/PriceChart.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/AccountVoting.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/AccountMemberStats.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/MarketsContainer.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/AssetStore.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/WalletDb.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/MarketsStore.js",
+		"/home/sigve/Dev/graphene/graphene/programs/witness_node/witness_node_data_dir/config.ini",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Wallet/BalanceClaim.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/ImportKeysStore.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/BalanceClaimStore.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Utility/ChainComponent.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/common/market_utils.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/api/chain.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/TransactionConfirmStore.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/actions/TransactionConfirmActions.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Account/AccountHistory.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/assets/stylesheets/app.scss",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Explorer/Assets.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/BaseComponent.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/node_modules/react-translate-component/index.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/MyOpenOrders.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Exchange/DepthChart.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Wallet/ImportKeys.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/package.json",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/src/stores/tcomb_structs.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Forms/ExistingAccountsAccountSelect.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/LoadingIndicator.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/node_modules/jdenticon/package.json",
+		"/home/sigve/Dev/graphene/ui-graphene/web/node_modules/jdenticon/jdenticon.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Footer/FooterContainer.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Footer/Footer.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Icon/Icon.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Wallet/ExistingAccount.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Wallet/Wallet.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/components/Wallet/WalletCreate.jsx",
+		"/home/sigve/Dev/graphene/ui-graphene/cli/webpack.config.js",
+		"/home/sigve/backups/svk31_01_10_14.json",
+		"/home/sigve/Dev/graphene/ui-graphene/server.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/conf/webpack.config.js",
+		"/home/sigve/Dev/graphene/ui-graphene/.gitignore",
+		"/home/sigve/Dev/graphene/ui-graphene/web/dist/vendors.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/dist/2.app.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/app/assets/heatmap.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/node_modules/react-highcharts/stocks.js",
+		"/home/sigve/Dev/graphene/ui-graphene/dl/node_modules/crypto-js/ripemd160.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/dist/app.js",
+		"/home/sigve/Dev/graphene/ui-graphene/web/dist/app.css",
+		"/home/sigve/Dev/BTS/frontend/nginx_conf/sites-available-default",
+		"/home/sigve/Dev/graphene/ui-graphene/web/dist/index.html"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/sigve/Dev/BTS/frontend/frontend-redux/src/lib",
+			"",
+			"/home/sigve/Dev/graphene/ui-graphene/web/app/, /home/sigve/Dev/graphene/ui-graphene/dl/src/",
+			"/home/sigve/Dev/graphene/ui-graphene/web/app/",
+			"/home/sigve/Dev/graphene/ui-graphene/web,-node_modules",
+			"/home/sigve/Dev/graphene/ui-graphene/,-node_modules",
+			"/home/sigve/Dev/graphene/ui-graphene/",
+			"/home/sigve/Dev/graphene/ui-graphene/web/app/",
+			"/home/sigve/Dev/graphene/ui-graphene/web/app/assets",
+			"/home/sigve/Dev/graphene/ui-graphene/web/app/components",
+			"",
+			"/home/sigve/Dev/graphene/ui-graphene/dl",
+			"",
+			"/home/sigve/Dev/BTS/frontend/bitsharesblocks",
+			"/home/sigve/Dev/BTS/frontend/bitsharesblocks/app",
+			"/home/sigve/Dev/BTS/frontend/bitsharesblocks/app/utils",
+			"/home/sigve/Dev/graphene/ui-graphene/dl",
+			"/home/sigve/Dev/graphene/ui-graphene/web",
+			"/home/sigve/Dev/graphene/ui-graphene/dl",
+			"/home/sigve/Dev/graphene/ui-graphene/web",
+			"/home/sigve/Dev/graphene/ui-graphene/dl",
+			"/home/sigve/Dev/graphene/ui-graphene/web",
+			"/home/sigve/Dev/graphene/ui-graphene/dl",
+			"/home/sigve/Dev/graphene/ui-graphene/web",
+			"/home/sigve/Dev/graphene/ui-graphene/dl",
+			"/home/sigve/Dev/graphene/ui-graphene/web",
+			"/home/sigve/Dev/graphene/ui-graphene/dl",
+			"/home/sigve/Dev/graphene/ui-graphene/web",
+			"/home/sigve/Dev/graphene/ui-graphene/dl",
+			"/home/sigve/Dev/graphene/ui-graphene/web",
+			"/home/sigve/Dev/graphene/ui-graphene/dl",
+			"/home/sigve/Dev/graphene/ui-graphene/web",
+			"",
+			"/home/sigve/Dev/graphene/graphene-ui/web/",
+			"/home/sigve/Dev/graphene/graphene-gui/web/",
+			"/home/sigve/Dev/graphene/gui/web/",
+			"/home/sigve/Dev/graphene/svk_gui",
+			"/home/sigve/Dev/graphene/gui/web",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"key",
+			"socket",
+			"newBlock",
+			"head_block",
+			"addDisconnectedListener",
+			"types",
+			"constants.js",
+			"blockchainTypes",
+			"blocks",
+			"blockchainActions",
+			"blocks",
+			"blockchainTypes",
+			"Block",
+			"Blocks",
+			"new_block",
+			"head_block",
+			"types",
+			"this",
+			"function",
+			"ca",
+			"function",
+			"let",
+			"var",
+			"\"",
+			"req",
+			"counter",
+			"constants",
+			"constant",
+			"constants",
+			"BlocksView",
+			"HomeView",
+			"reducers",
+			"let",
+			"transactionsCollection",
+			"blockMethods",
+			"objectsById",
+			"public",
+			"redisClient",
+			"initPromise",
+			"blockTimes",
+			"settings_v2",
+			"account_names",
+			"unclaimed_balance_rows",
+			"account_name",
+			"account_name: ",
+			"tryT",
+			"error",
+			"account_n",
+			"successfully issued",
+			".get",
+			"_issueAsset",
+			"ChainAsset",
+			"base",
+			"FormattedAsset",
+			"_orderbookClick",
+			"account_name",
+			"supplyCollection",
+			"startDay",
+			"securityCollection",
+			"linkToAccount",
+			"claim",
+			"balance",
+			"8rem",
+			"10rem",
+			"minWidth",
+			"span",
+			"dispatch",
+			"onCreateLimitOrder",
+			"onCancel",
+			"cancel",
+			"indexOf",
+			"filter",
+			"filterDelegate",
+			"filter",
+			".set",
+			".get",
+			"linkToAccount",
+			"transfer",
+			"fetchFullAccount",
+			"Link",
+			"router",
+			"context",
+			"fetchFullAccount",
+			"getAccount",
+			"DelegateCard",
+			"ChainAccount",
+			"fetchObject",
+			"getObject",
+			"fetchFullAccount",
+			"getObject",
+			"id",
+			"account",
+			"name_or_id",
+			"getAccount",
+			"ChainAccountsList",
+			"DEBUG",
+			"fetchFullAccount",
+			"get_full_accounts",
+			"getAcc",
+			"linkToAccount",
+			"takeRight",
+			"LinkToAccountById",
+			"LinkToWitnessById",
+			"Link",
+			"LinkToWitnessById",
+			"string",
+			"hideDate",
+			"hide",
+			"Operation",
+			"Row",
+			"0",
+			"ch",
+			"#account_notify",
+			"key",
+			"AccountNotifications",
+			"name",
+			"history",
+			"get",
+			"currentAccount",
+			"fetchRecentHistory",
+			"history",
+			"accountHistories",
+			"account",
+			"accountHistories",
+			"account",
+			"AccountNotifications",
+			"<Operation",
+			"SettingsActions"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Witness",
+			"Witnesses",
+			"'",
+			"quote.id",
+			"witness-id = \"1.6.",
+			"\"",
+			"this.props.PrivateKeys",
+			"this.props.Accounts",
+			"\"",
+			"AccountAssets",
+			"AccountAsses",
+			"<Translate component=\"h5\" content=\"account.errors.not_found\" name={account_name} />",
+			"WalletDb.process_transaction(tr, null, true)",
+			"close",
+			"open",
+			"low",
+			"operation.st_operations = [",
+			"].y",
+			"].x",
+			".y",
+			".x",
+			".price",
+			"\"",
+			"quotePrecision",
+			"basePrecision",
+			"quotePrecision",
+			"baseSymbol",
+			"quoteSymbol",
+			"baseSymbol",
+			": null",
+			"key={opIndex} opCount={opCount}",
+			"Delegates",
+			"Delegate",
+			"delegates",
+			"Delegate",
+			"Delegates",
+			"delegate",
+			"Delegate",
+			"Delegates",
+			"Witnesses",
+			"Assets",
+			"Explorer",
+			"",
+			"\"",
+			"right-td",
+			"\"right_td\"",
+			"className={right_td}",
+			"missingFee={missingFee} assets={assets}",
+			"fee={op[1].fee} missingFee={missingFee}",
+			"",
+			"missingAssets",
+			"",
+			"missing={missingFee}",
+			"\"",
+			":",
+			"\"",
+			"this.state.account.balances",
+			"TransferForm",
+			"",
+			"issuer_id"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 9,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/layouts/CoreLayout.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								445,
+								445
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/reducers/rootReducer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								166
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/reducers/blocks.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 868,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/reducers/accounts.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 564,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/views/BlocksView.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1953,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								180,
+								180
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/views/WitnessesView.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 837,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								778,
+								778
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/actions/blockchainActions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								764,
+								764
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/actions/witnessActions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 914,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								156,
+								156
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/lib/blockchain_api.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								189,
+								189
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/lib/socket_api.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1259,
+								1314
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 588.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 266,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										145,
+										168
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								266,
+								266
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"default_dir": "/home/sigve/Dev/BTS/frontend/frontend-redux",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/constants/blockchainTypes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								184,
+								184
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/constants/accountTypes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 198,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/constants/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								147,
+								147
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"open_with_edit": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/containers/Root.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1859,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								581,
+								581
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "src/routes/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 531,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								531,
+								531
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "src/views/Home/HomeView.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1043,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								990,
+								990
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "src/views/Header/Header.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 791,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								746,
+								746
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "src/entry-points/client.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								444,
+								444
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "config/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2742,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1928,
+								1928
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 588.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "build/webpack/server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								83,
+								83
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "src/reducers/counter.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								354,
+								354
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "src/stores/configureStore.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								844,
+								844
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "redux-bitsharesblocks.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"chain_t",
+				"utils/chain_types.js"
+			],
+			[
+				"utils",
+				"utils/utils.js"
+			],
+			[
+				"transaccha",
+				"web/app/components/Explorer/TransactionChart.jsx"
+			],
+			[
+				"timec",
+				"web/app/components/Explorer/BlocktimeChart.jsx"
+			],
+			[
+				"block",
+				"web/app/components/Explorer/Blocks.jsx"
+			],
+			[
+				"blockchainac",
+				"dl/src/actions/BlockchainActions.js"
+			],
+			[
+				"blockchainst",
+				"dl/src/stores/BlockchainStore.js"
+			],
+			[
+				"blocks",
+				"web/app/components/Explorer/Blocks.jsx"
+			],
+			[
+				"settings",
+				"dl/src/stores/SettingsStore.js"
+			],
+			[
+				"marketsc",
+				"web/app/components/Exchange/MarketsContainer.jsx"
+			],
+			[
+				"markets",
+				"web/app/components/Exchange/Markets.jsx"
+			],
+			[
+				"balancec",
+				"web/app/components/Wallet/BalanceClaim.jsx"
+			],
+			[
+				"mobileme",
+				"web/app/components/Header/MobileMenu.jsx"
+			],
+			[
+				"header",
+				"web/app/components/Header/Header.jsx"
+			],
+			[
+				"accountsele",
+				"web/app/components/Forms/AccountSelect.jsx"
+			],
+			[
+				"accountnamei",
+				"web/app/components/Forms/AccountNameInput.jsx"
+			],
+			[
+				"accountim",
+				"web/app/components/Account/AccountImage.jsx"
+			],
+			[
+				"createac",
+				"web/app/components/Account/CreateAccount.jsx"
+			],
+			[
+				"accountst",
+				"dl/src/stores/AccountStore.js"
+			],
+			[
+				"app",
+				"web/app/App.jsx"
+			],
+			[
+				"operation",
+				"web/app/components/Blockchain/Operation.jsx"
+			],
+			[
+				"formatteda",
+				"web/app/components/Utility/FormattedAsset.jsx"
+			],
+			[
+				"notifier",
+				"web/app/components/Notifier/Notifier.jsx"
+			],
+			[
+				"orderbo",
+				"web/app/components/Exchange/OrderBook.jsx"
+			],
+			[
+				"marketsac",
+				"dl/src/actions/MarketsActions.js"
+			],
+			[
+				"buyse",
+				"web/app/components/Exchange/BuySell.jsx"
+			],
+			[
+				"exchange",
+				"web/app/components/Exchange/Exchange.jsx"
+			],
+			[
+				"assetac",
+				"dl/src/actions/AssetActions.js"
+			],
+			[
+				"chainstore",
+				"dl/src/api/ChainStore.js"
+			],
+			[
+				"bindt",
+				"web/app/components/Utility/BindToChainState.jsx"
+			],
+			[
+				"chain",
+				"dl/src/chain/chain_types.coffee"
+			],
+			[
+				"chaintyp",
+				"web/app/components/Utility/ChainTypes.js"
+			],
+			[
+				"bindto",
+				"web/app/components/Utility/BindToChainState.jsx"
+			],
+			[
+				"accountc",
+				"web/app/components/Dashboard/AccountCard.jsx"
+			],
+			[
+				"dashbo",
+				"web/app/components/Dashboard/Dashboard.jsx"
+			],
+			[
+				"formatte",
+				"web/app/components/Utility/FormattedAsset.jsx"
+			],
+			[
+				"orderbook",
+				"web/app/components/Exchange/OrderBook.jsx"
+			],
+			[
+				"accountlefp",
+				"web/app/components/Account/AccountLeftPanel.jsx"
+			],
+			[
+				"linkac",
+				"web/app/components/Blockchain/LinkToAccountById.jsx"
+			],
+			[
+				"linktoa",
+				"web/app/components/Blockchain/LinkToAccountById.jsx"
+			],
+			[
+				"opera",
+				"web/app/components/Blockchain/Operation.jsx"
+			],
+			[
+				"transa",
+				"web/app/components/Blockchain/Transaction.jsx"
+			],
+			[
+				"buysel",
+				"web/app/components/Exchange/BuySell.jsx"
+			],
+			[
+				"marketst",
+				"dl/src/stores/MarketsStore.js"
+			],
+			[
+				"delegates",
+				"web/app/components/Explorer/Delegates.jsx"
+			],
+			[
+				"chainst",
+				"dl/src/api/ChainStore.js"
+			],
+			[
+				"linkto",
+				"web/app/components/Blockchain/LinkToAccountById.jsx"
+			],
+			[
+				"chains",
+				"dl/src/api/ChainStore.js"
+			],
+			[
+				"accountse",
+				"web/app/components/Account/AccountSelector.jsx"
+			],
+			[
+				"linktoac",
+				"web/app/components/Blockchain/LinkToAccountById.jsx"
+			],
+			[
+				"accountpag",
+				"web/app/components/Account/AccountPage.jsx"
+			],
+			[
+				"chainsto",
+				"dl/src/api/ChainStore.js"
+			],
+			[
+				"accountap",
+				"dl/src/api/accountApi.js"
+			],
+			[
+				"bindtoc",
+				"web/app/components/Utility/BindToChainState.jsx"
+			],
+			[
+				"chaint",
+				"web/app/components/Utility/ChainTypes.js"
+			],
+			[
+				"link",
+				"web/app/components/Blockchain/LinkToAccountById.jsx"
+			],
+			[
+				"operaiton",
+				"web/app/components/Blockchain/Operation.jsx"
+			],
+			[
+				"transactionch",
+				"web/app/components/Explorer/TransactionChart.jsx"
+			],
+			[
+				"linktoaccou",
+				"web/app/components/Blockchain/LinkToAccountById.jsx"
+			],
+			[
+				"linktowi",
+				"web/app/components/Blockchain/LinkToWitnessById.jsx"
+			],
+			[
+				"formattedpr",
+				"web/app/components/Utility/FormattedPrice.jsx"
+			],
+			[
+				"operat",
+				"web/app/components/Blockchain/Operation.jsx"
+			],
+			[
+				"exchan",
+				"web/app/components/Exchange/Exchange.jsx"
+			],
+			[
+				"transaction",
+				"web/app/components/Blockchain/Transaction.jsx"
+			],
+			[
+				"accountp",
+				"web/app/components/Account/AccountPage.jsx"
+			],
+			[
+				"ontifire",
+				"web/app/components/Notifier/NotifierContainer.jsx"
+			],
+			[
+				"accountpa",
+				"web/app/components/Account/AccountPage.jsx"
+			],
+			[
+				"locale",
+				"web/app/assets/locales/locale-en.js"
+			],
+			[
+				"settingss",
+				"dl/src/stores/SettingsStore.js"
+			],
+			[
+				"linktow",
+				"web/app/components/Blockchain/LinkToWitnessById.jsx"
+			],
+			[
+				"formattedas",
+				"web/app/components/Utility/FormattedAsset.jsx"
+			],
+			[
+				"blockca",
+				"web/app/components/Blockchain/BlockContainer.jsx"
+			],
+			[
+				"blockscon",
+				"web/app/components/Explorer/BlocksContainer.jsx"
+			],
+			[
+				"accountove",
+				"web/app/components/Account/AccountOverview.jsx"
+			],
+			[
+				"transac",
+				"web/app/components/Blockchain/Transaction.jsx"
+			],
+			[
+				"accounts",
+				"web/app/components/Explorer/Accounts.jsx"
+			],
+			[
+				"witnesse",
+				"web/app/components/Explorer/Witnesses.jsx"
+			],
+			[
+				"accountover",
+				"web/app/components/Account/AccountOverview.jsx"
+			],
+			[
+				"transfer",
+				"web/app/components/Transfer/Transfer.jsx"
+			],
+			[
+				"exchange.scss",
+				"web/app/components/Exchange/exchange.scss"
+			],
+			[
+				"accountac",
+				"dl/src/actions/AccountActions.js"
+			],
+			[
+				"accounta",
+				"dl/src/api/accountApi.js"
+			],
+			[
+				"walleta",
+				"dl/src/rpc_api/WalletApi.js"
+			],
+			[
+				"readm",
+				"dl/test/README.txt"
+			],
+			[
+				"readme.txt",
+				"dl/test/README.txt"
+			],
+			[
+				"chaintp",
+				"web/app/components/Utility/ChainTypes.js"
+			],
+			[
+				"amountsele",
+				"web/app/components/Utility/AmountSelector.jsx"
+			],
+			[
+				"passwordin",
+				"web/app/components/Forms/PasswordInput.jsx"
+			],
+			[
+				"unlcokmod",
+				"web/app/components/Wallet/WalletUnlockModal.jsx"
+			],
+			[
+				"walletun",
+				"web/app/components/Wallet/WalletUnlockModal.jsx"
+			],
+			[
+				"fetchcha",
+				"web/app/components/Utility/FetchChainObject.js"
+			],
+			[
+				"bindtoch",
+				"web/app/components/Utility/BindToChainState.jsx"
+			],
+			[
+				"unlockmod",
+				"web/app/components/Wallet/WalletUnlockModal.jsx"
+			],
+			[
+				"unlockmoda",
+				"web/app/components/Wallet/WalletUnlockModal.jsx"
+			],
+			[
+				"blockch",
+				"dl/src/stores/BlockchainStore.js"
+			],
+			[
+				"blocktime",
+				"web/app/components/Blockchain/BlockTime.jsx"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"locale-fr",
+				"web/app/assets/locales/locale-fr.js"
+			],
+			[
+				"bidto",
+				"web/app/components/Utility/BindToChainState.jsx"
+			],
+			[
+				"amountselec",
+				"web/app/components/Utility/AmountSelector.jsx"
+			],
+			[
+				"transactionco",
+				"web/app/components/Blockchain/TransactionConfirm.jsx"
+			],
+			[
+				"confirmmo",
+				"web/app/components/Modal/ConfirmModal.jsx"
+			],
+			[
+				"walletapi",
+				"dl/src/rpc_api/WalletApi.js"
+			],
+			[
+				"bindtocha",
+				"web/app/components/Utility/BindToChainState.jsx"
+			],
+			[
+				"accountpage",
+				"web/app/components/Account/AccountPage.jsx"
+			],
+			[
+				"oepration",
+				"web/app/components/Blockchain/Operation.jsx"
+			],
+			[
+				"accountas",
+				"web/app/components/Account/AccountAssets.jsx"
+			],
+			[
+				"marketh",
+				"web/app/components/Exchange/MarketHistory.jsx"
+			],
+			[
+				"exchangec",
+				"web/app/components/Exchange/ExchangeContainer.jsx"
+			],
+			[
+				"pricec",
+				"web/app/components/Exchange/PriceChart.jsx"
+			],
+			[
+				"hhighc",
+				"web/app/components/Exchange/DepthHighChart.jsx"
+			],
+			[
+				"chainstor",
+				"dl/src/api/ChainStore.js"
+			],
+			[
+				"accountv",
+				"web/app/components/Account/AccountVoting.jsx"
+			],
+			[
+				"walletd",
+				"dl/src/stores/WalletDb.js"
+			],
+			[
+				"assetst",
+				"dl/src/stores/AssetStore.js"
+			],
+			[
+				"makrets",
+				"web/app/components/Exchange/Markets.jsx"
+			],
+			[
+				"accountlef",
+				"web/app/components/Account/AccountLeftPanel.jsx"
+			],
+			[
+				"accountov",
+				"web/app/components/Account/AccountOverview.jsx"
+			],
+			[
+				"accountasset",
+				"web/app/components/Account/AccountAssets.jsx"
+			],
+			[
+				"formatted",
+				"web/app/components/Utility/FormattedAsset.jsx"
+			],
+			[
+				"import",
+				"dl/src/stores/ImportKeysStore.js"
+			],
+			[
+				"importke",
+				"dl/src/stores/ImportKeysStore.js"
+			],
+			[
+				"balanc",
+				"dl/src/stores/BalanceClaimStore.js"
+			],
+			[
+				"balaca",
+				"web/app/components/Wallet/BalanceClaim.jsx"
+			],
+			[
+				"chain.js",
+				"dl/src/api/chain.js"
+			],
+			[
+				"chainc",
+				"web/app/components/Utility/ChainComponent.jsx"
+			],
+			[
+				"accountca",
+				"web/app/components/Dashboard/AccountCard.jsx"
+			],
+			[
+				"market_utils",
+				"dl/src/common/market_utils.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 282.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
