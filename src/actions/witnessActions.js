@@ -1,6 +1,5 @@
-import fetch from 'isomorphic-fetch';
 import {accountTypes} from '../constants';
-import {accountApi} from '../lib/socket_api';
+import {accountApi, fetchApi} from '../lib/apis';
 
 console.log('accountTypes:', accountTypes);
 
@@ -46,7 +45,7 @@ export function fetchWitnesses() {
   return dispatch => {
     console.log('dispatch requestWitnesses');
     dispatch(requestWitnesses());
-    return fetch('http://127.0.0.1:8091/v1/witnesses')
+    return fetchApi('v1/witnesses')
       .then(response => response.json())
       .then(json => {console.log('got this json:', json); dispatch(receiveWitnesses(json));})
       .catch(err => {

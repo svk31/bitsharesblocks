@@ -4,8 +4,10 @@ console.log('launching socket_api.js');
 import blockchainApi from './blockchain_api.js';
 import accountApi from './account_api.js';
 import SocketIO from 'socket.io-client';
+import fetch from 'isomorphic-fetch';
 
-const _socket = SocketIO.connect('http://localhost:8091');
+const API_HOST = __DEV__ ? 'http://localhost' : 'http://45.55.41.119';
+const _socket = SocketIO.connect(API_HOST + ':8091');
 let callBacks = new Map();
 
 let api = {
@@ -37,7 +39,12 @@ _socket.on('disconnect', () => {
 //   console.log('socket message:', data);
 // });
 
+let fetchApi = (route) => {
+  return fetch(API_HOST + ':8091/' + route);
+};
+
 module.exports = {
   blockchainApi: blockchainApi(api),
-  accountApi: accountApi(api)
+  accountApi: accountApi(api),
+  fetchApi: fetchApi
 };

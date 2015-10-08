@@ -1,6 +1,5 @@
-import fetch from 'isomorphic-fetch';
 import {blockchainTypes} from '../constants';
-import {blockchainApi} from '../lib/socket_api';
+import {blockchainApi, fetchApi} from '../lib/apis';
 
 // MULTIPLE BLOCKS METHODS
 function requestBlocks() {
@@ -60,7 +59,7 @@ export function fetchBlocks() {
   return dispatch => {
     console.log('dispatch requestBlocks');
     dispatch(requestBlocks());
-    return fetch('http://127.0.0.1:8091/v1/blocks/recent')
+    return fetchApi('v1/blocks/recent')
       .then(response => response.json())
       .then(json => {console.log('got this json:', json); dispatch(receiveLatestBlocks(json));})
       .catch(err => {

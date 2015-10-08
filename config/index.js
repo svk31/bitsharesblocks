@@ -14,7 +14,7 @@ const config = new Map();
 config.set('dir_src',  'src');
 config.set('dir_dist', 'dist');
 
-config.set('server_host',  'localhost');
+config.set('server_host',  '0.0.0.0');
 config.set('server_port',  process.env.PORT || 4000);
 config.set('webpack_port', 3000);
 
